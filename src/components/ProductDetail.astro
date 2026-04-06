@@ -1,0 +1,88 @@
+---
+const { product } = Astro.props;
+---
+
+<section class="product-detail-page">
+  <div class="container">
+
+    <!-- breadcrumb -->
+    <div class="breadcrumb">
+      <a href="/">Home</a>
+      <span>/</span>
+      <a href="/products">Products</a>
+      <span>/</span>
+      <a href={`/products/${product.category}`}>{product.categoryName}</a>
+      <span>/</span>
+      <span>{product.name}</span>
+    </div>
+
+    <!-- 顶部 -->
+    <div class="product-top">
+      <div class="product-gallery">
+
+        <div class="product-main-image slider-wrapper">
+          <button class="slider-arrow left">‹</button>
+
+          <img
+            id="mainProductImage"
+            src={product.images[0]}
+            alt={product.name}
+          />
+
+          <button class="slider-arrow right">›</button>
+        </div>
+
+        <div class="product-thumbs">
+          {product.images.map((img, i) => (
+            <img
+              class={`thumb-image ${i === 0 ? 'active-thumb' : ''}`}
+              src={img}
+              data-full={img}
+            />
+          ))}
+        </div>
+      </div>
+
+      <div class="product-summary">
+        <h1>{product.name}</h1>
+        <p class="product-short-desc">{product.desc}</p>
+
+        <div class="product-actions">
+          <button class="quote-btn">Get a Quote</button>
+          <a href="https://wa.me/61436605126" target="_blank" class="whatsapp-btn">
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Description -->
+    <section class="detail-block">
+      <h2>Product Description</h2>
+      <p>{product.longDesc}</p>
+    </section>
+
+    <!-- Features -->
+    <section class="detail-block">
+      <h2>Product Features</h2>
+      <ul class="feature-list">
+        {product.features.map(f => <li>{f}</li>)}
+      </ul>
+    </section>
+
+    <!-- Related -->
+    <section class="detail-block">
+      <h2>Related Products</h2>
+
+      <div class="related-slider-track">
+        {product.related.map(p => (
+          <a href={`/products/${product.category}/${p.slug}`} class="related-slide-card">
+            <img src={p.img} />
+            <h4>{p.name}</h4>
+          </a>
+        ))}
+      </div>
+    </section>
+
+  </div>
+</section>

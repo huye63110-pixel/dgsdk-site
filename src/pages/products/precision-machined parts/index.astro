@@ -1,0 +1,97 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const products = [
+  {
+    name: 'Lathe-Machined Shaft End Fixing Component',
+    image: '/assets/img/precision-machined-parts/Lathe-Machined-Shaft-End-Fixing-Component.jpg',
+    href: '/products/precision-machined parts/lathe-machined-shaft-end-fixing-component',
+    desc: 'Accurately machined shaft-end fixing part for stable industrial assembly performance.'
+  },
+  {
+    name: 'Lathe-Machined Bearing Outer Retainer Plate',
+    image: '/assets/img/precision-machined-parts/Lathe-Machined-Bearing-Outer-Retainer-Plate.jpg',
+    href: '/products/precision-machined parts/lathe-machined-bearing-outer-retainer-plate',
+    desc: 'Precision retainer plate designed for secure bearing positioning and long-term reliability.'
+  },
+  {
+    name: 'CNC-Milled Wing Connection Block',
+    image: '/assets/img/precision-machined-parts/CNC-Milled-Wing-Connection-Block.jpg',
+    href: '/products/precision-machined parts/cnc-wing-connection-block',
+    desc: 'High-accuracy CNC-milled block for structural connection and industrial equipment use.'
+  },
+  {
+    name: 'Precision Bearing Bracket - CNC Milled',
+    image: '/assets/img/precision-machined-parts/Precision-Bearing-Bracket-CNC-Milled.jpg',
+    href: '/products/precision-machined parts/precision-bearing-bracket-cnc-milled',
+    desc: 'Robust bracket component manufactured for consistent alignment, support and precision.'
+  },
+  {
+    name: 'CNC-Milled Front Panel for Rubber Roller Assembly',
+    image: '/assets/img/precision-machined-parts/CNC-Milled-Front-Panel-for-Rubber-Roller-Assembly.jpg',
+    href: '/products/precision-machined parts/cnc-milled-front-panel-rubber-roller-assembly',
+    desc: 'Machined front panel built for roller assembly systems and precision equipment integration.'
+  },
+  {
+    name: 'Milled Front Inner Fixing Plate for Paper Roll Guide Rail',
+    image: '/assets/img/precision-machined-parts/Milled-Front-Inner-Fixing-Plate-for-Paper-Roll-Guide-Rail.jpg',
+    href: '/products/precision-machined parts/milled-front-inner-fixing-plate-paper-roll-guide-rail',
+    desc: 'Inner fixing plate engineered for guide rail systems and smooth mechanical support.'
+  },
+  {
+    name: 'Custom Precision Machined Parts',
+    image: '/assets/img/precision-machined-parts/Precision-Machined-Parts.jpg',
+    href: '/products/precision-machined parts/custom-precision-machined-parts',
+    desc: 'Tailored CNC and lathe-machining solutions for custom drawings, prototypes and OEM projects.'
+  }
+];
+---
+
+<Layout title="Precision Machined Parts | DGSDK">
+  <section
+    class="products-hero"
+    style="background: linear-gradient(rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.18)), url('/assets/img/header-bg.jpg') center/cover no-repeat;"
+  >
+    <div class="container products-hero-inner">
+      <span class="products-hero-kicker">DGSDK Product Portfolio</span>
+      <h1>Precision Machined Parts</h1>
+      <p>
+        High-precision machined components for industrial equipment, automation systems,
+        custom assemblies, brackets, shafts, fixing plates and OEM manufacturing applications.
+      </p>
+    </div>
+  </section>
+
+  <section class="products-overview-section">
+    <div class="container products-overview-layout">
+      <aside class="products-sidebar">
+        <div class="products-sidebar-box">
+          <h3>Browse Categories</h3>
+          <a href="/products">All Products</a>
+          <a href="/products/static-eliminator">Static Elimination Systems</a>
+          <a href="/products/cleaning-machine">Cleaning Machine</a>
+          <a href="/products/precision-machined-parts" class="active-category">Precision Machined Parts</a>
+          <a href="/products/automation">Automation Equipment</a>
+        </div>
+      </aside>
+
+      <div class="products-main">
+        <section class="apple-product-section">
+          <div class="apple-card-grid">
+            {products.map((product) => (
+              <a href={product.href} class="apple-product-card">
+                <img src={product.image} alt={product.name} />
+
+                <div class="apple-product-card-body">
+                  <span class="apple-card-tag">Precision Machined Parts</span>
+                  <h3>{product.name}</h3>
+                  <p>{product.desc}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+</Layout>

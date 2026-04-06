@@ -1,0 +1,73 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const products = [
+  {
+    name: 'Diffusion Plate Cleaning and Inspection Production Line',
+    image: '/assets/img/automation/product-a.jpg',
+    href: '/products/automation/product-a',
+    desc: 'Integrated production line for diffusion plate cleaning, inspection, and continuous conveying with stable industrial workflow.'
+  },
+  {
+    name: 'Robotic Automatic Loading and Unloading Cleaning Machine',
+    image: '/assets/img/automation/product-b.jpg',
+    href: '/products/automation/product-b',
+    desc: 'Automated cleaning equipment with mechanical loading and unloading support for improved efficiency and reduced manual handling.'
+  },
+  {
+    name: 'Polarizer Absorption Axis Angle Measuring System',
+    image: '/assets/img/automation/product-c.jpg',
+    href: '/products/automation/product-c',
+    desc: 'High-precision measuring system for polarizer absorption axis angle, retardation, chromaticity, and transmittance analysis.'
+  }
+];
+---
+
+<Layout title="Automation Equipment | DGSDK">
+  <section
+    class="products-hero"
+    style="background: linear-gradient(rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.18)), url('/assets/img/header-bg.jpg') center/cover no-repeat;"
+  >
+    <div class="container products-hero-inner">
+      <span class="products-hero-kicker">DGSDK Product Portfolio</span>
+      <h1>Automation Equipment</h1>
+      <p>
+        Efficient industrial automation solutions designed to improve production
+        consistency, reduce labor costs, and support customized manufacturing needs.
+      </p>
+    </div>
+  </section>
+
+  <section class="products-overview-section">
+    <div class="container products-overview-layout">
+      <aside class="products-sidebar">
+        <div class="products-sidebar-box">
+          <h3>Browse Categories</h3>
+          <a href="/products">All Products</a>
+          <a href="/products/static-eliminator">Static Elimination Systems</a>
+          <a href="/products/cleaning-machine">Cleaning Machine</a>
+          <a href="/products/precision-machined parts">Precision Machined Parts</a>
+          <a href="/products/automation" class="active-category">Automation Equipment</a>
+        </div>
+      </aside>
+
+      <div class="products-main">
+        <section class="apple-product-section">
+          <div class="apple-card-grid">
+            {products.map((product) => (
+              <a href={product.href} class="apple-product-card">
+                <img src={product.image} alt={product.name} />
+
+                <div class="apple-product-card-body">
+                  <span class="apple-card-tag">Automation Equipment</span>
+                  <h3>{product.name}</h3>
+                  <p>{product.desc}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+</Layout>

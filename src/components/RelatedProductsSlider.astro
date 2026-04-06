@@ -1,0 +1,53 @@
+---
+const { current = '', items = [] } = Astro.props;
+const filteredItems = items.filter((item) => item.key !== current);
+---
+
+<section class="detail-block">
+  <div class="related-slider-wrap" data-current={current}>
+    <div class="related-slider-header">
+      <h2>Related Products</h2>
+
+      <div class="related-slider-nav">
+        <button class="related-slider-btn related-slider-prev" type="button">‹</button>
+        <button class="related-slider-btn related-slider-next" type="button">›</button>
+      </div>
+    </div>
+
+    <div class="related-slider-track">
+      {filteredItems.map((item) => (
+        <a href={item.href} class="related-slide-card" data-key={item.key}>
+          <img src={item.image} alt={item.title} />
+          <h4>{item.title}</h4>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const wrap = document.querySelector('.related-slider-wrap');
+    if (!wrap) return;
+
+    const track = wrap.querySelector('.related-slider-track');
+    const prevBtn = wrap.querySelector('.related-slider-prev');
+    const nextBtn = wrap.querySelector('.related-slider-next');
+
+    if (!track) return;
+
+    const scrollAmount = 320;
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      });
+    }
+  });
+</script>

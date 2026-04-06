@@ -1,0 +1,268 @@
+---
+import ProductLayout from '../../../layouts/ProductLayout.astro';
+---
+
+<ProductLayout title="ST-G Series Ion Bar | DGSDK">
+  <section class="product-detail-page">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <a href="/products">Products</a>
+        <span>/</span>
+        <a href="/products/static-eliminator">Static Eliminator</a>
+        <span>/</span>
+        <span>ST-G Series</span>
+      </div>
+
+      <!-- 顶部产品信息 -->
+      <div class="product-top">
+        <div class="product-gallery">
+          <div class="product-main-image slider-wrapper">
+            <button class="slider-arrow left" id="prevImage">‹</button>
+
+            <img
+              id="mainProductImage"
+              src="/assets/img/static-eliminator/ST-G.jpg"
+              alt="ST-G Series Ion Bar"
+            />
+
+            <button class="slider-arrow right" id="nextImage">›</button>
+          </div>
+
+          <div class="product-thumbs">
+            <img
+              class="thumb-image active-thumb"
+              src="/assets/img/static-eliminator/ST-G.jpg"
+              alt="ST-G Series Thumbnail 1"
+              data-full="/assets/img/static-eliminator/ST-G.jpg"
+            />
+            <img
+              class="thumb-image"
+              src="/assets/img/static-eliminator/ST-G2.jpg"
+              alt="ST-G Series Thumbnail 2"
+              data-full="/assets/img/static-eliminator/ST-G2.jpg"
+            />
+          </div>
+        </div>
+
+        <div class="product-summary">
+          <h1>ST-G Series Intelligent Static Elimination Rod</h1>
+          <p class="product-short-desc">
+            A high-performance ion bar designed for fast and stable static elimination
+            in electronics, printing, textile, and automated industrial production lines.
+          </p>
+
+          <div class="product-actions">
+            <button class="quote-btn" id="openQuoteModal" type="button">Get a Quote</button>
+            <a href="https://wa.me/61436605126" target="_blank" class="whatsapp-btn">WhatsApp</a>
+          </div>
+
+          <div class="product-highlights">
+            <div class="highlight-item">
+              <h4>Fast Static Removal</h4>
+              <p>Improves efficiency with strong ion output and stable performance.</p>
+            </div>
+            <div class="highlight-item">
+              <h4>Industrial Reliability</h4>
+              <p>Suitable for continuous operation in demanding production environments.</p>
+            </div>
+            <div class="highlight-item">
+              <h4>Easy Integration</h4>
+              <p>Compact structure for convenient installation on automated lines.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Description -->
+      <section class="detail-block">
+        <h2>Product Description</h2>
+        <p>
+          The ST-G Series intelligent static elimination rod is specially developed for
+          high-speed industrial static control. It helps remove electrostatic charges
+          quickly and efficiently, reducing product defects and improving production quality.
+        </p>
+        <p>
+          It is widely used in electronics manufacturing, printing, optoelectronics,
+          textile, packaging, and other industries where electrostatic control is critical.
+        </p>
+      </section>
+
+      <!-- Product Features -->
+      <section class="detail-block">
+        <h2>Product Features</h2>
+        <ul class="feature-list">
+          <li>Fast static elimination speed for high-efficiency production lines</li>
+          <li>High-performance ion generation system for stable electrostatic control</li>
+          <li>Abnormal discharge detection for safer operation</li>
+          <li>Reliable performance in electronics and precision manufacturing</li>
+          <li>Designed for industrial applications with stable long-term operation</li>
+        </ul>
+      </section>
+
+      <!-- Technical Advantages -->
+      <section class="detail-block">
+        <h2>Technical Advantages</h2>
+
+        <div class="advantage-grid">
+          <div class="advantage-card blue">
+            <h3>Fast</h3>
+            <p>
+              Static elimination speed can be significantly improved compared with
+              conventional products, helping increase line efficiency.
+            </p>
+          </div>
+
+          <div class="advantage-card yellow">
+            <h3>High Performance</h3>
+            <p>
+              Enhanced ion generation output provides stronger static removal capability
+              for more demanding industrial environments.
+            </p>
+          </div>
+
+          <div class="advantage-card green">
+            <h3>Safe</h3>
+            <p>
+              Built-in abnormal discharge detection helps protect equipment and ensures
+              safer operation during production.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Specifications -->
+      <section class="detail-block">
+        <h2>Technical Specifications</h2>
+
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <tr>
+              <td>Power Supply</td>
+              <td>DC24V</td>
+            </tr>
+            <tr>
+              <td>Power</td>
+              <td>12W</td>
+            </tr>
+            <tr>
+              <td>Ion Balance</td>
+              <td>±20V</td>
+            </tr>
+            <tr>
+              <td>Operating Temperature</td>
+              <td>0–45℃</td>
+            </tr>
+            <tr>
+              <td>Operating Humidity</td>
+              <td>15–75% RH</td>
+            </tr>
+            <tr>
+              <td>Static Elimination Time</td>
+              <td>&lt;2s</td>
+            </tr>
+            <tr>
+              <td>Working Distance</td>
+              <td>30mm–1000mm</td>
+            </tr>
+            <tr>
+              <td>Dimensions</td>
+              <td>30×82×300mm (customizable)</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <!-- Industry Applications -->
+      <section class="detail-block">
+        <h2>Industry Applications</h2>
+        <div class="application-tags">
+          <span>Electronics</span>
+          <span>Printing</span>
+          <span>Optoelectronics</span>
+          <span>Textile</span>
+          <span>Packaging</span>
+          <span>SMT Production</span>
+        </div>
+      </section>
+
+      <!-- Related Products -->
+      <section class="detail-block">
+  <div class="related-slider-wrap" data-current="st-g-series">
+    <div class="related-slider-header">
+      <h2>Related Products</h2>
+
+      <div class="related-slider-nav">
+        <button class="related-slider-btn related-slider-prev" type="button">‹</button>
+        <button class="related-slider-btn related-slider-next" type="button">›</button>
+      </div>
+    </div>
+
+    <div class="related-slider-track">
+      <a href="/products/static-eliminator/st-g-series" class="related-slide-card" data-key="st-g-series">
+        <img src="/assets/img/static-eliminator/ST-G.jpg" alt="ST-G Series" />
+        <h4>ST-G Series Intelligent Ion Rod</h4>
+      </a>
+
+      <a href="/products/static-eliminator/st-e-series" class="related-slide-card" data-key="st-e-series">
+        <img src="/assets/img/static-eliminator/ST-E.jpg" alt="ST-E Series" />
+        <h4>ST-E Series Intelligent Ion Rod</h4>
+      </a>
+
+      <a href="/products/static-eliminator/st-f-series" class="related-slide-card" data-key="st-f-series">
+        <img src="/assets/img/static-eliminator/ST-F.jpg" alt="ST-F Series" />
+        <h4>ST-F Series Intelligent Ion Rod</h4>
+      </a>
+
+      <a href="/products/static-eliminator/st-s200" class="related-slide-card" data-key="st-s200">
+        <img src="/assets/img/static-eliminator/ST-S200.jpg" alt="ST-S200" />
+        <h4>ST-S200 Mini Ionizer Fan</h4>
+      </a>
+
+      <a href="/products/static-eliminator/st-101a" class="related-slide-card" data-key="st-101a">
+        <img src="/assets/img/static-eliminator/ST-101A.jpg" alt="ST101A" />
+        <h4>ST101A Table Ionizing Air Blower</h4>
+      </a>
+
+      <a href="/products/static-eliminator/st-104a" class="related-slide-card" data-key="st-104a">
+        <img src="/assets/img/static-eliminator/ST-104A.jpg" alt="ST104A" />
+        <h4>ST104A Horizontal Ion Blower</h4>
+      </a>
+
+      <a href="/products/static-eliminator/st-1200" class="related-slide-card" data-key="st-1200">
+        <img src="/assets/img/static-eliminator/ST-1200.jpg" alt="ST1200" />
+        <h4>ST1200 Horizontal Ion Fan</h4>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+    </div>
+  </section>
+
+  <!-- Quote Modal -->
+  <div class="quote-modal" id="quoteModal">
+    <div class="quote-modal-overlay" id="closeQuoteModal"></div>
+
+    <div class="quote-modal-content">
+      <button class="quote-modal-close" id="closeQuoteModalBtn" type="button">×</button>
+
+      <h2>Get a Quote</h2>
+      <p>
+        If you have any questions about this product, please leave your contact
+        details and we will get back to you as soon as possible.
+      </p>
+
+      <form class="quote-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <input type="text" placeholder="Your Phone" />
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+  </script>
+</ProductLayout>

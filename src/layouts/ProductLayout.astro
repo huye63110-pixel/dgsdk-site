@@ -1,0 +1,204 @@
+---
+import Layout from './Layout.astro';
+
+const { title } = Astro.props;
+---
+
+<Layout title={title}>
+
+  <!-- HERO（统一背景） -->
+ <section 
+  class="inner-hero"
+  style="background-image: url('/assets/img/static-eliminator/banner-bg.jpg');"
+>
+    <div class="inner-hero-overlay"></div>
+    <div class="container inner-hero-content">
+      <h1>PRODUCT DETAILS</h1>
+      <p>Professional Industrial Solutions</p>
+    </div>
+  </section>
+
+  <!-- 内容 -->
+  <main class="product-main">
+    <slot />
+  </main>
+
+  <!-- 全站通用 Quote Modal -->
+  <div class="quote-modal" id="quoteModal">
+    <div class="quote-modal-overlay" id="closeQuoteModal"></div>
+
+    <div class="quote-modal-content">
+      <button class="quote-modal-close" id="closeQuoteModalBtn" type="button">×</button>
+
+      <h2>Get a Quote</h2>
+      <p>
+        If you have any questions about this product, please leave your contact
+        details and we will get back to you as soon as possible.
+      </p>
+
+      <form class="quote-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <input type="text" placeholder="Your Phone" />
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 全站通用图片放大 -->
+  <div class="image-lightbox" id="imageLightbox">
+    <div class="image-lightbox-overlay" id="closeImageLightbox"></div>
+    <div class="image-lightbox-content">
+      <button class="image-lightbox-close" id="closeImageLightboxBtn" type="button">×</button>
+      <img id="lightboxImage" src="" alt="Zoomed product image" />
+    </div>
+  </div>
+
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      // ===== Quote Modal =====
+      const quoteModal = document.getElementById('quoteModal');
+      const closeQuoteOverlay = document.getElementById('closeQuoteModal');
+      const closeQuoteBtn = document.getElementById('closeQuoteModalBtn');
+
+      document.querySelectorAll('.quote-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          if (quoteModal) quoteModal.classList.add('active');
+        });
+      });
+
+      if (closeQuoteOverlay && quoteModal) {
+        closeQuoteOverlay.addEventListener('click', () => {
+          quoteModal.classList.remove('active');
+        });
+      }
+
+      if (closeQuoteBtn && quoteModal) {
+        closeQuoteBtn.addEventListener('click', () => {
+          quoteModal.classList.remove('active');
+        });
+      }
+
+      // ===== Main Product Gallery Slider =====
+      const mainImage = document.getElementById('mainProductImage');
+      const thumbs = document.querySelectorAll('.thumb-image');
+      const prevBtn = document.getElementById('prevImage');
+      const nextBtn = document.getElementById('nextImage');
+      const thumbsWrap = document.querySelector('.product-thumbs');
+
+      if (mainImage) {
+        const imageList = Array.from(thumbs)
+          .map((thumb) => thumb.dataset.full)
+          .filter(Boolean);
+
+        let currentIndex = 0;
+
+        function updateMainImage(index) {
+          if (!imageList.length) return;
+          currentIndex = index;
+          mainImage.src = imageList[index];
+
+          thumbs.forEach((thumb, i) => {
+            if (i === index) {
+              thumb.classList.add('active-thumb');
+            } else {
+              thumb.classList.remove('active-thumb');
+            }
+          });
+        }
+
+        if (imageList.length > 0) {
+          updateMainImage(0);
+        }
+
+        thumbs.forEach((thumb, index) => {
+          thumb.addEventListener('click', () => {
+            updateMainImage(index);
+          });
+        });
+
+        if (prevBtn && nextBtn) {
+          if (imageList.length <= 1) {
+            prevBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+          } else {
+            prevBtn.addEventListener('click', () => {
+              const newIndex = currentIndex === 0 ? imageList.length - 1 : currentIndex - 1;
+              updateMainImage(newIndex);
+            });
+
+            nextBtn.addEventListener('click', () => {
+              const newIndex = currentIndex === imageList.length - 1 ? 0 : currentIndex + 1;
+              updateMainImage(newIndex);
+            });
+          }
+        }
+
+        if (thumbsWrap && imageList.length <= 1) {
+          thumbsWrap.style.display = 'none';
+        }
+      }
+
+      // ===== Image Lightbox =====
+      const imageLightbox = document.getElementById('imageLightbox');
+      const lightboxImage = document.getElementById('lightboxImage');
+      const closeImageOverlay = document.getElementById('closeImageLightbox');
+      const closeImageBtn = document.getElementById('closeImageLightboxBtn');
+
+      if (mainImage && imageLightbox && lightboxImage) {
+        mainImage.style.cursor = 'zoom-in';
+        mainImage.addEventListener('click', () => {
+          lightboxImage.src = mainImage.src;
+          imageLightbox.classList.add('active');
+        });
+      }
+
+      if (closeImageOverlay && imageLightbox) {
+        closeImageOverlay.addEventListener('click', () => {
+          imageLightbox.classList.remove('active');
+        });
+      }
+
+      if (closeImageBtn && imageLightbox) {
+        closeImageBtn.addEventListener('click', () => {
+          imageLightbox.classList.remove('active');
+        });
+      }
+
+      // ===== Related Products Slider =====
+      document.querySelectorAll('.related-slider-wrap').forEach((wrap) => {
+        const track = wrap.querySelector('.related-slider-track');
+        const prev = wrap.querySelector('.related-slider-prev');
+        const next = wrap.querySelector('.related-slider-next');
+        const currentKey = wrap.dataset.current;
+
+        if (!track) return;
+
+        // 隐藏当前产品
+        if (currentKey) {
+          track.querySelectorAll('.related-slide-card').forEach((card) => {
+            if (card.dataset.key === currentKey) {
+              card.style.display = 'none';
+            }
+          });
+        }
+
+        const scrollAmount = 320;
+
+        if (prev) {
+          prev.addEventListener('click', () => {
+            track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+          });
+        }
+
+        if (next) {
+          next.addEventListener('click', () => {
+            track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+          });
+        }
+      });
+    });
+  </script>
+
+</Layout>

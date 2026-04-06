@@ -1,0 +1,273 @@
+---
+import ProductLayout from '../../../layouts/ProductLayout.astro';
+---
+
+<ProductLayout title="Automation Product C | DGSDK">
+  <section class="product-detail-page">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <a href="/products">Products</a>
+        <span>/</span>
+        <a href="/products/automation">Automation Equipment</a>
+        <span>/</span>
+        <span>Polarizer Absorption Axis Angle Measuring Instrument</span>
+      </div>
+
+      <div class="product-top">
+        <div class="product-gallery">
+          <div class="product-main-image slider-wrapper">
+            <button class="slider-arrow left" id="prevImage">‹</button>
+
+            <img
+              id="mainProductImage"
+              src="/assets/img/automation/product-c.jpg"
+              alt="Polarizer Absorption Axis Angle Measuring Instrument"
+            />
+
+            <button class="slider-arrow right" id="nextImage">›</button>
+          </div>
+
+          <div class="product-thumbs">
+            <img
+              class="thumb-image active-thumb"
+              src="/assets/img/automation/product-c.jpg"
+              alt="Automation Product A Thumbnail 1"
+              data-full="/assets/img/automation/product-c.jpg"
+            />
+          </div>
+        </div>
+
+        <div class="product-summary">
+          <h1>Polarizer Absorption Axis Angle Measuring Instrument</h1>
+          <p class="product-short-desc">
+            Customized automation equipment designed to improve efficiency,
+            process stability, and production consistency.
+          </p>
+
+          <div class="product-actions">
+            <button class="quote-btn" id="openQuoteModal" type="button">Get a Quote</button>
+            <a href="https://wa.me/61436605126" target="_blank" class="whatsapp-btn">WhatsApp</a>
+          </div>
+
+          <div class="product-highlights">
+            <div class="highlight-item">
+              <h4>Efficient Operation</h4>
+              <p>Helps streamline production and reduce manual workload.</p>
+            </div>
+            <div class="highlight-item">
+              <h4>Stable Performance</h4>
+              <p>Built for reliable and continuous industrial use.</p>
+            </div>
+            <div class="highlight-item">
+              <h4>Custom Support</h4>
+              <p>Can be adapted to specific production requirements.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="detail-block">
+        <h2>Product Description</h2>
+        <p>
+          This automation equipment is developed for industrial production applications
+          requiring higher efficiency, process control, and stable product quality.
+        </p>
+        <p>
+          It can be widely used in customized manufacturing lines, assembly processes,
+          inspection stations, and other automation scenarios.
+        </p>
+      </section>
+
+      <section class="detail-block">
+        <h2>Product Features</h2>
+        <ul class="feature-list">
+          <li>Improves production efficiency and consistency</li>
+          <li>Reduces manual intervention and operating errors</li>
+          <li>Supports continuous industrial operation</li>
+          <li>Suitable for customized automation solutions</li>
+          <li>Designed for integration into existing production lines</li>
+        </ul>
+      </section>
+
+      <section class="detail-block">
+        <h2>Technical Advantages</h2>
+        <div class="advantage-grid">
+          <div class="advantage-card blue">
+            <h3>Efficient</h3>
+            <p>Improves workflow efficiency and reduces repetitive manual operations.</p>
+          </div>
+
+          <div class="advantage-card yellow">
+            <h3>Flexible</h3>
+            <p>Can be adjusted or customized according to different project needs.</p>
+          </div>
+
+          <div class="advantage-card green">
+            <h3>Reliable</h3>
+            <p>Stable structure and dependable performance for industrial applications.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-block">
+        <h2>Technical Specifications</h2>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <tr>
+              <td>Voltage</td>
+              <td>Customized</td>
+            </tr>
+            <tr>
+              <td>Power</td>
+              <td>Customized</td>
+            </tr>
+            <tr>
+              <td>Application</td>
+              <td>Industrial Automation</td>
+            </tr>
+            <tr>
+              <td>Control Mode</td>
+              <td>Automatic / Semi-automatic</td>
+            </tr>
+            <tr>
+              <td>Structure</td>
+              <td>Customized</td>
+            </tr>
+            <tr>
+              <td>Installation</td>
+              <td>Production Line / Workstation</td>
+            </tr>
+            <tr>
+              <td>Material</td>
+              <td>Industrial Grade Components</td>
+            </tr>
+            <tr>
+              <td>Dimensions</td>
+              <td>Customized</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <section class="detail-block">
+        <h2>Industry Applications</h2>
+        <div class="application-tags">
+          <span>Assembly Line</span>
+          <span>Industrial Manufacturing</span>
+          <span>Automation Integration</span>
+          <span>Inspection Station</span>
+          <span>Customized Equipment</span>
+        </div>
+      </section>
+
+      <section class="detail-block">
+        <div class="related-slider-wrap" data-current="product-a">
+          <div class="related-slider-header">
+            <h2>Related Products</h2>
+
+            <div class="related-slider-nav">
+              <button class="related-slider-btn related-slider-prev" type="button">‹</button>
+              <button class="related-slider-btn related-slider-next" type="button">›</button>
+            </div>
+          </div>
+
+          <div class="related-slider-track">
+            <a href="/products/automation/product-a" class="related-slide-card" data-key="product-a">
+              <img src="/assets/img/automation/product-a.jpg" alt="Diffusion Plate Cleaning and Inspection Production Line" />
+              <h4>Diffusion Plate Cleaning and Inspection Production Line</h4>
+            </a>
+
+            <a href="/products/automation/product-b" class="related-slide-card" data-key="product-b">
+              <img src="/assets/img/automation/product-b.jpg" alt="Robotic Automatic Loading and Unloading Cleaning Machine" />
+              <h4>Robotic Automatic Loading and Unloading Cleaning Machine</h4>
+            </a>
+
+            <a href="/products/automation/product-c" class="related-slide-card" data-key="product-c">
+              <img src="/assets/img/automation/product-c.jpg" alt="Polarizer Absorption Axis Angle Measuring System" />
+              <h4>Polarizer Absorption Axis Angle Measuring System</h4>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <div class="quote-modal" id="quoteModal">
+    <div class="quote-modal-overlay" id="closeQuoteModal"></div>
+
+    <div class="quote-modal-content">
+      <button class="quote-modal-close" id="closeQuoteModalBtn" type="button">×</button>
+
+      <h2>Get a Quote</h2>
+      <p>
+        If you have any questions about this product, please leave your contact
+        details and we will get back to you as soon as possible.
+      </p>
+
+      <form class="quote-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <input type="text" placeholder="Your Phone" />
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <script is:inline>
+    const openBtn = document.getElementById('openQuoteModal');
+    const modal = document.getElementById('quoteModal');
+    const closeOverlay = document.getElementById('closeQuoteModal');
+    const closeBtn = document.getElementById('closeQuoteModalBtn');
+
+    if (openBtn && modal) {
+      openBtn.addEventListener('click', () => modal.classList.add('active'));
+    }
+
+    if (closeOverlay && modal) {
+      closeOverlay.addEventListener('click', () => modal.classList.remove('active'));
+    }
+
+    if (closeBtn && modal) {
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    }
+
+    const mainImage = document.getElementById('mainProductImage');
+    const thumbs = document.querySelectorAll('.thumb-image');
+    const prevBtn = document.getElementById('prevImage');
+    const nextBtn = document.getElementById('nextImage');
+
+    let currentIndex = 0;
+    const imageList = Array.from(thumbs).map((thumb) => thumb.dataset.full);
+
+    function updateMainImage(index) {
+      if (!mainImage || !thumbs.length) return;
+      currentIndex = index;
+      mainImage.src = imageList[index];
+
+      thumbs.forEach((thumb, i) => {
+        thumb.classList.toggle('active-thumb', i === index);
+      });
+    }
+
+    thumbs.forEach((thumb, index) => {
+      thumb.addEventListener('click', () => updateMainImage(index));
+    });
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        const newIndex = currentIndex === 0 ? imageList.length - 1 : currentIndex - 1;
+        updateMainImage(newIndex);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        const newIndex = currentIndex === imageList.length - 1 ? 0 : currentIndex + 1;
+        updateMainImage(newIndex);
+      });
+    }
+  </script>
+</ProductLayout>
