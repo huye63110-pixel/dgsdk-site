@@ -12183,6 +12183,10 @@ textarea.quote-input {
   background: #1877f2;
 }
 
+.float-btn.youtube {
+  background: #ff0000;
+}
+
 .float-btn.top {
   background: #9ca3af;
 }
@@ -15510,5 +15514,158 @@ max-height:90%;
 
   .apple-product-card img {
     height: 200px;
+  }
+}
+/* =========================
+   MOBILE HERO FIX
+   ========================= */
+@media (max-width: 768px) {
+  /* 顶部导航区域 */
+  #mainNav {
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
+    background-color: rgba(33, 37, 41, 0.78) !important;
+    backdrop-filter: blur(6px);
+  }
+
+  #mainNav .navbar-brand {
+    max-width: 190px;
+    display: flex;
+    align-items: center;
+  }
+
+  #mainNav .navbar-brand img {
+    max-height: 48px !important;
+    width: auto !important;
+    object-fit: contain;
+  }
+
+  #mainNav .navbar-toggler {
+    padding: 10px 14px !important;
+    font-size: 0.95rem !important;
+    border-radius: 10px !important;
+  }
+
+  /* 首页大图区域 */
+  header.masthead {
+    min-height: auto !important;
+    height: auto !important;
+    padding-top: 150px !important;
+    padding-bottom: 72px !important;
+    background-position: center center !important;
+    background-size: cover !important;
+  }
+
+  header.masthead .masthead-subheading {
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 14px !important;
+    padding: 0 18px;
+  }
+
+  header.masthead .masthead-heading {
+    font-size: 2.15rem !important;
+    line-height: 1.12 !important;
+    letter-spacing: -0.5px;
+    max-width: 92%;
+    margin: 0 auto 18px auto !important;
+    word-break: break-word;
+  }
+
+  header.masthead p,
+  header.masthead .hero-desc,
+  header.masthead .masthead-description {
+    font-size: 0.98rem !important;
+    line-height: 1.65 !important;
+    max-width: 88%;
+    margin: 0 auto 26px auto !important;
+    text-align: center;
+  }
+
+  header.masthead .btn,
+  header.masthead .btn-primary,
+  header.masthead .btn-xl {
+    font-size: 1rem !important;
+    padding: 16px 26px !important;
+    border-radius: 14px !important;
+    width: auto;
+    max-width: 88%;
+    white-space: normal;
+  }
+
+  /* 右侧浮动社交按钮 */
+  .floating-social {
+    right: 10px !important;
+    top: 56% !important;
+    transform: translateY(-50%) !important;
+    gap: 10px !important;
+  }
+
+  .floating-social .float-btn {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 20px !important;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+  }
+
+  /* 手机端先隐藏次要社交按钮，只保留最重要的 */
+  .floating-social .linkedin,
+  .floating-social .tiktok,
+  .floating-social .instagram,
+  .floating-social .facebook,
+  .floating-social .youtube {
+    display: none !important;
+  }
+
+  /* 顶部返回按钮稍微下移，避免压住内容 */
+  .floating-social .top {
+    margin-top: 4px;
+  }
+}
+
+/* 更小屏幕再压一层 */
+@media (max-width: 480px) {
+  #mainNav .navbar-brand {
+    max-width: 165px;
+  }
+
+  #mainNav .navbar-brand img {
+    max-height: 42px !important;
+  }
+
+  header.masthead {
+    padding-top: 138px !important;
+    padding-bottom: 64px !important;
+  }
+
+  header.masthead .masthead-heading {
+    font-size: 1.85rem !important;
+    line-height: 1.1 !important;
+    max-width: 90%;
+  }
+
+  header.masthead .masthead-subheading {
+    font-size: 0.88rem !important;
+  }
+
+  header.masthead p,
+  header.masthead .hero-desc,
+  header.masthead .masthead-description {
+    font-size: 0.92rem !important;
+    max-width: 90%;
+  }
+
+  header.masthead .btn,
+  header.masthead .btn-primary,
+  header.masthead .btn-xl {
+    width: 78% !important;
+    font-size: 0.98rem !important;
+    padding: 15px 20px !important;
+  }
+
+  .floating-social .float-btn {
+    width: 46px !important;
+    height: 46px !important;
+    font-size: 18px !important;
   }
 }
