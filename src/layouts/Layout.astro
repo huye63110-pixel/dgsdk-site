@@ -1,4 +1,6 @@
 ---
+import Analytics from '@vercel/analytics/astro';
+
 const { title = "DGSDK" } = Astro.props;
 ---
 
@@ -323,5 +325,7 @@ const { title = "DGSDK" } = Astro.props;
 
   });
 </script>
+
+    <Analytics />
   </body>
 </html>
