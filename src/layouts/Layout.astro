@@ -1,5 +1,10 @@
 ---
-const { title = "DGSDK" } = Astro.props;
+const { 
+  title = "DGSDK | Industrial Automation & Static Control Solutions",
+  description = "DGSDK is a professional manufacturer in Dongguan, China, specializing in static elimination systems, industrial cleaning machines, automation equipment, and precision CNC parts.",
+  image = "/assets/img/header-bg.jpg",
+  canonical = Astro.url.href
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -7,14 +12,69 @@ const { title = "DGSDK" } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Primary SEO -->
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph (Facebook, LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`https://dg-sdk.vercel.app${image}`} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="DGSDK" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`https://dg-sdk.vercel.app${image}`} />
+
+    <!-- Extra SEO -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="DGSDK - Dongguan Shidike Automation Equipment Co., Ltd." />
+    <meta name="keywords" content="static eliminator, static elimination system, cleaning machine, CNC parts, precision machined parts, automation equipment, industrial automation, Dongguan, China manufacturer" />
+
+    <!-- Geo targeting -->
+    <meta name="geo.region" content="CN-GD" />
+    <meta name="geo.placename" content="Dongguan, Guangdong, China" />
 
     <link rel="stylesheet" href="/css/styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "DGSDK",
+      "alternateName": "Dongguan Shidike Automation Equipment Co., Ltd.",
+      "url": "https://dg-sdk.vercel.app",
+      "logo": "https://dg-sdk.vercel.app/logo.png",
+      "description": "Professional manufacturer specializing in static elimination systems, industrial cleaning machines, automation equipment, and precision CNC parts.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Binhai Road 33",
+        "addressLocality": "Dongguan",
+        "addressRegion": "Guangdong",
+        "addressCountry": "CN"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+86-13602342003",
+        "contactType": "sales",
+        "availableLanguage": ["English", "Chinese"]
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/henry-hu-0ba80737a",
+        "https://youtube.com/@machiningmasters01",
+        "https://www.tiktok.com/@machingmasters"
+      ]
+    }
+    </script>
   </head>
 
   <body id="page-top">
@@ -44,49 +104,36 @@ const { title = "DGSDK" } = Astro.props;
               <a class="nav-link" href="/">Home</a>
             </li>
 
-<!-- Products dropdown -->
-<li class="nav-item dropdown">
-  <a
-    class="nav-link dropdown-toggle"
-    href="/products"
-    id="navbarDropdown"
-    role="button"
-    data-bs-toggle="dropdown"
-    aria-expanded="false"
-  >
-    Products
-  </a>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="/products">All Products</a></li>
-    <li><a class="dropdown-item" href="/products/static-eliminator">Static Elimination System</a></li>
-    <li><a class="dropdown-item" href="/products/cleaning-machine">Cleaning Machine</a></li>
-    <li><a class="dropdown-item" href="/products/precision-machined-parts">Precision Machined Parts</a></li>
-    <li><a class="dropdown-item" href="/products/automation">Automation Equipment</a></li>
-  </ul>
-</li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="/products" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Products
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/products">All Products</a></li>
+                <li><a class="dropdown-item" href="/products/static-eliminator">Static Elimination System</a></li>
+                <li><a class="dropdown-item" href="/products/cleaning-machine">Cleaning Machine</a></li>
+                <li><a class="dropdown-item" href="/products/precision-machined-parts">Precision Machined Parts</a></li>
+                <li><a class="dropdown-item" href="/products/automation">Automation Equipment</a></li>
+              </ul>
+            </li>
 
-<li class="nav-item">
-  <a class="nav-link" href="/applications">Applications</a>
-</li>
+            <li class="nav-item">
+              <a class="nav-link" href="/applications">Applications</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/faq">FAQ</a>
+            </li>
 
-<li class="nav-item">
-  <a class="nav-link" href="/about">About Us</a>
-</li>
-
-<li class="nav-item">
-  <a class="nav-link" href="/contact">Contact Us</a>
-</li>
-
-<li class="nav-item">
-  <a class="nav-link" href="/faq">FAQ</a>
-</li>
-
-            <!-- Language -->
             <li class="nav-item lang-dropdown" id="langDropdown">
               <button class="nav-link lang-btn" type="button" id="langToggle">
                 EN <i class="fas fa-chevron-down"></i>
               </button>
-
               <ul class="lang-menu" id="langMenu">
                 <li><a href="/">English</a></li>
                 <li><a href="/zh/">中文</a></li>
@@ -95,100 +142,46 @@ const { title = "DGSDK" } = Astro.props;
               </ul>
             </li>
 
-            <!-- Search -->
             <li class="nav-item nav-icon-item search-dropdown" id="searchDropdown">
               <button class="nav-link nav-icon-btn" type="button" id="searchToggle">
                 <i class="fas fa-search"></i>
               </button>
-
               <div class="search-box" id="searchBox">
                 <input type="text" placeholder="Search products..." />
               </div>
             </li>
-
-           
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- MAIN CONTENT -->
     <main style="padding-top: 110px;">
       <slot />
     </main>
 
     <!-- FLOATING SOCIAL -->
     <div class="floating-social">
-      <a
-        href="mailto:huye63110@gmail.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Email"
-        class="float-btn email"
-      >
+      <a href="mailto:huye63110@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email" class="float-btn email">
         <i class="fas fa-envelope"></i>
       </a>
-
-      <a
-        href="https://wa.me/61436605126?text=Hello%20I%20am%20interested%20in%20your%20products"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="WhatsApp"
-        class="float-btn whatsapp"
-      >
+      <a href="https://wa.me/61436605126?text=Hello%20I%20am%20interested%20in%20your%20products" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="float-btn whatsapp">
         <i class="fab fa-whatsapp"></i>
       </a>
-
-      <a
-        href="https://www.linkedin.com/in/henry-hu-0ba80737a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="LinkedIn"
-        class="float-btn linkedin"
-      >
+      <a href="https://www.linkedin.com/in/henry-hu-0ba80737a" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="float-btn linkedin">
         <i class="fab fa-linkedin-in"></i>
       </a>
-
-      <a
-        href="https://www.tiktok.com/@machingmasters?_r=1&_t=ZS-95L0IYIiEBp"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="TikTok"
-        class="float-btn tiktok"
-      >
+      <a href="https://www.tiktok.com/@machingmasters" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="float-btn tiktok">
         <i class="fab fa-tiktok"></i>
       </a>
-
-      <a
-        href="https://www.instagram.com/ls_machiningmasters?igsh=dnBnb3RpNDIxaW4%3D&utm_source=qr"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Instagram"
-        class="float-btn instagram"
-      >
+      <a href="https://www.instagram.com/ls_machiningmasters" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="float-btn instagram">
         <i class="fab fa-instagram"></i>
       </a>
-
-      <a
-        href="https://youtube.com/@machiningmasters01?si=ujPewMZvkUSWKNyY"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="YouTube"
-        class="float-btn youtube"
-      >
+      <a href="https://youtube.com/@machiningmasters01" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="float-btn youtube">
         <i class="fab fa-youtube"></i>
       </a>
-
-      <a
-        href="https://www.facebook.com/yourcompany"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Facebook"
-        class="float-btn facebook"
-      >
+      <a href="https://www.facebook.com/yourcompany" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="float-btn facebook">
         <i class="fab fa-facebook-f"></i>
       </a>
-
       <a href="#page-top" aria-label="Back to Top" class="float-btn top">
         <i class="fas fa-arrow-up"></i>
       </a>
@@ -199,13 +192,8 @@ const { title = "DGSDK" } = Astro.props;
       <div class="footer-container">
         <div class="footer-col footer-brand">
           <img src="/logo.png" alt="DGSDK Logo" class="footer-logo" />
-          <p>
-            DGSDK is a professional manufacturer in Dongguan, China, specializing in
-            static elimination systems, industrial cleaning machines, automation equipment,
-            and precision CNC parts.
-          </p>
+          <p>DGSDK is a professional manufacturer in Dongguan, China, specializing in static elimination systems, industrial cleaning machines, automation equipment, and precision CNC parts.</p>
         </div>
-
         <div class="footer-col">
           <h4>Quick Links</h4>
           <a href="/">Home</a>
@@ -214,15 +202,13 @@ const { title = "DGSDK" } = Astro.props;
           <a href="/contact">Contact Us</a>
           <a href="/faq">FAQ</a>
         </div>
-
         <div class="footer-col">
           <h4>Products</h4>
           <a href="/products/static-eliminator">Static Eliminator</a>
           <a href="/products/cleaning-machine">Cleaning Machine</a>
-          <a href="/products/precision-machined-parts">Precision Machined Parts Parts</a>
+          <a href="/products/precision-machined-parts">Precision Machined Parts</a>
           <a href="/products/automation">Automation Equipment</a>
         </div>
-
         <div class="footer-col">
           <h4>Contact</h4>
           <p>Phone: +86 13602342003</p>
@@ -231,97 +217,68 @@ const { title = "DGSDK" } = Astro.props;
           <p>Address: Binhai Road 33, Dongguan, Guangdong, China</p>
         </div>
       </div>
-
       <div class="footer-bottom">
         <p>© 2026 DGSDK. All rights reserved.</p>
       </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script
-      is:inline
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Theme JS -->
+    <script is:inline src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script is:inline src="/js/scripts.js"></script>
 
-    <!-- Inline toggle script -->
     <script is:inline>
       const langToggle = document.getElementById('langToggle');
       const langMenu = document.getElementById('langMenu');
-
       const searchToggle = document.getElementById('searchToggle');
       const searchBox = document.getElementById('searchBox');
 
       if (langToggle && langMenu) {
-        langToggle.addEventListener('click', function (e) {
+        langToggle.addEventListener('click', function(e) {
           e.stopPropagation();
           langMenu.classList.toggle('show');
           if (searchBox) searchBox.classList.remove('show');
         });
       }
-
       if (searchToggle && searchBox) {
-        searchToggle.addEventListener('click', function (e) {
+        searchToggle.addEventListener('click', function(e) {
           e.stopPropagation();
           searchBox.classList.toggle('show');
           if (langMenu) langMenu.classList.remove('show');
         });
       }
-
-      document.addEventListener('click', function () {
+      document.addEventListener('click', function() {
         if (langMenu) langMenu.classList.remove('show');
         if (searchBox) searchBox.classList.remove('show');
       });
     </script>
 
     <!-- GLOBAL QUOTE MODAL -->
-<div class="quote-modal" id="quoteModal">
-  <div class="quote-modal-overlay" id="closeQuoteModal"></div>
+    <div class="quote-modal" id="quoteModal">
+      <div class="quote-modal-overlay" id="closeQuoteModal"></div>
+      <div class="quote-modal-content">
+        <button class="quote-modal-close" id="closeQuoteModalBtn">×</button>
+        <h2>Get a Quote</h2>
+        <p>Please leave your contact details and we will get back to you shortly.</p>
+        <form class="quote-form">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea placeholder="Your Message"></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
 
-  <div class="quote-modal-content">
-    <button class="quote-modal-close" id="closeQuoteModalBtn">×</button>
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', () => {
+        const modal = document.getElementById('quoteModal');
+        const closeOverlay = document.getElementById('closeQuoteModal');
+        const closeBtn = document.getElementById('closeQuoteModalBtn');
 
-    <h2>Get a Quote</h2>
-    <p>
-      Please leave your contact details and we will get back to you shortly.
-    </p>
-
-    <form class="quote-form">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message"></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
-</div>
-<script is:inline>
-  document.addEventListener('DOMContentLoaded', () => {
-
-    const modal = document.getElementById('quoteModal');
-    const closeOverlay = document.getElementById('closeQuoteModal');
-    const closeBtn = document.getElementById('closeQuoteModalBtn');
-
-    // 👉 所有按钮统一控制
-    document.querySelectorAll('.quote-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        modal.classList.add('active');
+        document.querySelectorAll('.quote-btn').forEach(btn => {
+          btn.addEventListener('click', () => modal.classList.add('active'));
+        });
+        if (closeOverlay) closeOverlay.addEventListener('click', () => modal.classList.remove('active'));
+        if (closeBtn) closeBtn.addEventListener('click', () => modal.classList.remove('active'));
       });
-    });
-
-    if (closeOverlay) {
-      closeOverlay.addEventListener('click', () => {
-        modal.classList.remove('active');
-      });
-    }
-
-    if (closeBtn) {
-      closeBtn.addEventListener('click', () => {
-        modal.classList.remove('active');
-      });
-    }
-
-  });
-</script>
+    </script>
   </body>
 </html>
