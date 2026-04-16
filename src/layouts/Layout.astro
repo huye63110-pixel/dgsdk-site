@@ -1,4 +1,4 @@
----
+---import { Analytics } from '@vercel/analytics/astro';
 const { 
   title = "DGSDK | Industrial Automation & Static Control Solutions",
   description = "DGSDK is a professional manufacturer in Dongguan, China, specializing in static elimination systems, industrial cleaning machines, automation equipment, and precision CNC parts.",
@@ -280,5 +280,6 @@ const {
         if (closeBtn) closeBtn.addEventListener('click', () => modal.classList.remove('active'));
       });
     </script>
+    <Analytics />
   </body>
 </html>
