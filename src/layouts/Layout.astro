@@ -1,4 +1,5 @@
----import { Analytics } from '@vercel/analytics/astro';
+---
+import Analytics from '@vercel/analytics/astro';
 const { 
   title = "DGSDK | Industrial Automation & Static Control Solutions",
   description = "DGSDK is a professional manufacturer in Dongguan, China, specializing in static elimination systems, industrial cleaning machines, automation equipment, and precision CNC parts.",
@@ -258,7 +259,8 @@ const {
         <button class="quote-modal-close" id="closeQuoteModalBtn">×</button>
         <h2>Get a Quote</h2>
         <p>Please leave your contact details and we will get back to you shortly.</p>
-        <form class="quote-form">
+        <form class="quote-form" id="quoteFormMain">
+          <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" />
           <input type="text" placeholder="Your Name" required />
           <input type="email" placeholder="Your Email" required />
           <textarea placeholder="Your Message"></textarea>
@@ -266,18 +268,33 @@ const {
         </form>
       </div>
     </div>
-
     <script is:inline>
       document.addEventListener('DOMContentLoaded', () => {
         const modal = document.getElementById('quoteModal');
         const closeOverlay = document.getElementById('closeQuoteModal');
         const closeBtn = document.getElementById('closeQuoteModalBtn');
+        const form = document.getElementById('quoteFormMain');
 
         document.querySelectorAll('.quote-btn').forEach(btn => {
           btn.addEventListener('click', () => modal.classList.add('active'));
         });
         if (closeOverlay) closeOverlay.addEventListener('click', () => modal.classList.remove('active'));
         if (closeBtn) closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+
+        if (form) {
+          form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const honeypot = form.querySelector('input[name="website"]');
+            if (honeypot && honeypot.value !== '') {
+              return;
+            }
+            alert('Message sent! We will contact you shortly.');
+            modal.classList.remove('active');
+            form.reset();
+          });
+        }
+      });
+    </script>
       });
     </script>
     <Analytics />
