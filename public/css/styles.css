@@ -11565,8 +11565,26 @@ header.masthead .masthead-heading {
   color: #6b7280;
   font-size: 17px;
   line-height: 1.8;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   max-width: 620px;
+}
+
+.response-guarantee {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  margin-bottom: 36px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 999px;
+  color: #166534;
+  font-size: 15px;
+}
+
+.response-guarantee i {
+  color: #16a34a;
+  font-size: 15px;
 }
 
 .contact-left h3 {
@@ -15832,4 +15850,31 @@ max-height:90%;
     width: 100%;
     text-align: center;
   }
+}
+/* =========================
+   SPEC CUSTOM NOTE
+========================= */
+.spec-custom-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 14px 18px;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 12px;
+  color: #78350f;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.spec-custom-note i {
+  color: #d97706;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.spec-custom-note a {
+  color: #b45309;
+  font-weight: 600;
 }
