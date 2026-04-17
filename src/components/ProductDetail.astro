@@ -77,7 +77,7 @@ const { product } = Astro.props;
       <div class="related-slider-track">
         {product.related.map(p => (
           <a href={`/products/${product.category}/${p.slug}`} class="related-slide-card">
-            <img src={p.img} />
+            <img src={p.img} loading="lazy" />
             <h4>{p.name}</h4>
           </a>
         ))}

@@ -1,12 +1,15 @@
 ---
 import Analytics from '@vercel/analytics/astro';
 import SpeedInsights from '@vercel/speed-insights/astro';
-const { 
+const {
   title = "DGSDK | Industrial Automation & Static Control Solutions",
   description = "DGSDK is a professional manufacturer in Dongguan, China, specializing in static elimination systems, industrial cleaning machines, automation equipment, and precision CNC parts.",
   image = "/assets/img/header-bg.jpg",
   canonical = Astro.url.href
 } = Astro.props;
+
+const path = new URL(canonical).pathname;
+const base = "https://www.dg-sdk.com";
 ---
 
 <!DOCTYPE html>
@@ -20,11 +23,16 @@ const {
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
 
+    <!-- hreflang for multilingual versions -->
+    <link rel="alternate" hreflang="en" href={`${base}${path}`} />
+    <link rel="alternate" hreflang="zh" href={`${base}/zh${path === '/' ? '/' : path}`} />
+    <link rel="alternate" hreflang="x-default" href={`${base}${path}`} />
+
     <!-- Open Graph (Facebook, LinkedIn) -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={`https://dg-sdk.vercel.app${image}`} />
+    <meta property="og:image" content={`https://www.dg-sdk.com${image}`} />
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content="DGSDK" />
 
@@ -32,7 +40,7 @@ const {
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={`https://dg-sdk.vercel.app${image}`} />
+    <meta name="twitter:image" content={`https://www.dg-sdk.com${image}`} />
 
     <!-- Extra SEO -->
     <meta name="robots" content="index, follow" />
@@ -54,8 +62,8 @@ const {
       "@type": "Organization",
       "name": "DGSDK",
       "alternateName": "Dongguan Shidike Automation Equipment Co., Ltd.",
-      "url": "https://dg-sdk.vercel.app",
-      "logo": "https://dg-sdk.vercel.app/logo.png",
+      "url": "https://www.dg-sdk.com",
+      "logo": "https://www.dg-sdk.com/logo.png",
       "description": "Professional manufacturer specializing in static elimination systems, industrial cleaning machines, automation equipment, and precision CNC parts.",
       "address": {
         "@type": "PostalAddress",
@@ -84,7 +92,7 @@ const {
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand" href="/">
-          <img src="/logo.png" alt="DGSDK Logo" />
+          <img src="/logo.png" alt="DGSDK Logo" loading="lazy" />
         </a>
 
         <button
@@ -193,7 +201,7 @@ const {
     <footer class="site-footer">
       <div class="footer-container">
         <div class="footer-col footer-brand">
-          <img src="/logo.png" alt="DGSDK Logo" class="footer-logo" />
+          <img src="/logo.png" alt="DGSDK Logo" class="footer-logo" loading="lazy" />
           <p>DGSDK is a professional manufacturer in Dongguan, China, specializing in static elimination systems, industrial cleaning machines, automation equipment, and precision CNC parts.</p>
         </div>
         <div class="footer-col">
@@ -220,7 +228,7 @@ const {
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 DGSDK. All rights reserved.</p>
+        <p>© 2026 DGSDK. All rights reserved. <a href="/privacy" style="color:rgba(255,255,255,0.5);text-decoration:none;margin-left:12px;">Privacy Policy</a></p>
       </div>
     </footer>
 
@@ -294,8 +302,6 @@ const {
             form.reset();
           });
         }
-      });
-    </script>
       });
     </script>
     <Analytics />

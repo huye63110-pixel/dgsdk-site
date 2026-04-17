@@ -39,4 +39,5 @@
   <url><loc>https://www.dg-sdk.com/about</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.dg-sdk.com/contact</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.dg-sdk.com/faq</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.dg-sdk.com/privacy</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
 </urlset>
