@@ -11519,6 +11519,23 @@ header.masthead .masthead-heading {
   display: block;
   border: 1px solid #e5e7eb;
 }
+
+@media (max-width: 768px) {
+  .cert-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .cert-card {
+    min-height: auto;
+    padding: 12px;
+  }
+  .cert-card img {
+    height: auto;
+    max-height: 200px;
+    width: 100%;
+  }
+}
+
 .contact-modern {
   background: #fff;
 }
