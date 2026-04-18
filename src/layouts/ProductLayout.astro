@@ -11,9 +11,37 @@ const {
 
 const productName = title.split('|')[0].trim();
 const canonical = Astro.url.href;
+const base = "https://www.dg-sdk.com";
+
+// Build breadcrumb from URL path
+const pathParts = new URL(canonical).pathname.replace(/\/$/, '').split('/').filter(Boolean);
+const categoryLabels: Record<string, string> = {
+  'products': 'Products',
+  'static-eliminator': 'Static Eliminator',
+  'cleaning-machine': 'Cleaning Machine',
+  'precision-machined-parts': 'Precision Machined Parts',
+  'automation': 'Automation Equipment',
+};
+const breadcrumbItems = [
+  { name: 'Home', url: base },
+  ...pathParts.map((part, i) => ({
+    name: categoryLabels[part] || productName,
+    url: `${base}/${pathParts.slice(0, i + 1).join('/')}`,
+  })),
+];
 ---
 
 <Layout title={title} description={description} image={image}>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": breadcrumbItems.map((item, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": item.name,
+      "item": item.url,
+    }))
+  })} />
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Product",
