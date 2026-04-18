@@ -17,7 +17,7 @@ const filteredItems = items.filter((item) => item.key !== current);
     <div class="related-slider-track">
       {filteredItems.map((item) => (
         <a href={item.href} class="related-slide-card" data-key={item.key}>
-          <img src={item.image} alt={item.title} />
+          <img src={item.image} alt={item.title} loading="lazy" />
           <h4>{item.title}</h4>
         </a>
       ))}

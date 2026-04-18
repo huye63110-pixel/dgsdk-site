@@ -107,7 +107,7 @@ const supportBlocks = [
         {applicationItems.map((item) => (
           <a href={item.href} class="application-card">
             <div class="application-card-image-wrap">
-              <img src={item.image} alt={item.title} class="application-card-image" />
+              <img src={item.image} alt={item.title} class="application-card-image" loading="lazy" />
             </div>
 
             <div class="application-card-body">

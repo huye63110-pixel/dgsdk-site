@@ -1,10 +1,75 @@
 ---
 import Layout from './Layout.astro';
 
-const { title } = Astro.props;
+const {
+  title,
+  description = "Industrial product by DGSDK – Dongguan Shidike Automation Equipment Co., Ltd.",
+  image = "/assets/img/header-bg.jpg",
+  sku = "",
+  category = "Industrial Equipment",
+} = Astro.props;
+
+const productName = title.split('|')[0].trim();
+const canonical = Astro.url.href;
+const base = "https://www.dg-sdk.com";
+
+// Build breadcrumb from URL path
+const pathParts = new URL(canonical).pathname.replace(/\/$/, '').split('/').filter(Boolean);
+const categoryLabels: Record<string, string> = {
+  'products': 'Products',
+  'static-eliminator': 'Static Eliminator',
+  'cleaning-machine': 'Cleaning Machine',
+  'precision-machined-parts': 'Precision Machined Parts',
+  'automation': 'Automation Equipment',
+};
+const breadcrumbItems = [
+  { name: 'Home', url: base },
+  ...pathParts.map((part, i) => ({
+    name: categoryLabels[part] || productName,
+    url: `${base}/${pathParts.slice(0, i + 1).join('/')}`,
+  })),
+];
 ---
 
-<Layout title={title}>
+<Layout title={title} description={description} image={image}>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": breadcrumbItems.map((item, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": item.name,
+      "item": item.url,
+    }))
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": productName,
+    "description": description,
+    "image": `https://www.dg-sdk.com${image}`,
+    "sku": sku || productName.replace(/\s+/g, '-').toLowerCase(),
+    "category": category,
+    "brand": {
+      "@type": "Brand",
+      "name": "DGSDK"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Dongguan Shidike Automation Equipment Co., Ltd.",
+      "url": "https://www.dg-sdk.com"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": canonical,
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "DGSDK"
+      }
+    }
+  })} />
 
   <!-- HERO（统一背景） -->
  <section 
@@ -51,7 +116,7 @@ const { title } = Astro.props;
     <div class="image-lightbox-overlay" id="closeImageLightbox"></div>
     <div class="image-lightbox-content">
       <button class="image-lightbox-close" id="closeImageLightboxBtn" type="button">×</button>
-      <img id="lightboxImage" src="" alt="Zoomed product image" />
+      <img id="lightboxImage" src="" alt="Zoomed product image" loading="lazy" />
     </div>
   </div>
 
