@@ -1,0 +1,382 @@
+---
+import ZhLayout from '../../layouts/ZhLayout.astro';
+
+const applicationItems = [
+  {
+    title: '电子制造',
+    image: '/assets/img/static-white-bg.png',
+    desc: '适用于PCB、FPC、SMT和电子生产线的静电控制和精密清洁解决方案。',
+    href: '/zh/products/static-eliminator'
+  },
+  {
+    title: 'SMT生产',
+    image: '/assets/img/cleaning-machine/smt-cleaner.jpg',
+    desc: 'SMT贴装、检验和内嵌生产的可靠清洁和工艺支持设备。',
+    href: '/zh/products/cleaning-machine'
+  },
+  {
+    title: '显示屏与光学薄膜',
+    image: '/assets/img/cleaning-machine/optical.jpg',
+    desc: '适用于光学薄膜、偏光片、背光板和LCM制造环境的工业清洁设备。',
+    href: '/zh/products/cleaning-machine'
+  },
+  {
+    title: '精密加工',
+    image: '/assets/img/about/about-cnc-process.jpg',
+    desc: '高精度CNC加工零件，具有稳定公差和长期可靠的制造质量。',
+    href: '/zh/products/precision-machined-parts'
+  },
+  {
+    title: '自动化集成',
+    image: '/assets/img/automation/product-c.jpg',
+    desc: '定制自动化系统，旨在改善工作流程、减少人工操作、提升生产效率。',
+    href: '/zh/products/automation'
+  },
+  {
+    title: '工业包装与物料处理',
+    image: '/assets/img/cleaning-machine/roll-chip-cleaner.jpg',
+    desc: '物料处理、表面清洁和实用工业流程改善支持设备。',
+    href: '/zh/products/cleaning-machine'
+  }
+];
+
+const supportBlocks = [
+  {
+    label: '静电控制',
+    title: '降低敏感生产区域的静电风险。',
+    desc: '离子棒、离子风机和防静电系统，有助于提高电子、包装、纺织品和自动化生产线的质量稳定性。',
+    href: '/zh/products/static-eliminator'
+  },
+  {
+    label: '清洁解决方案',
+    title: '为精密制造保持清洁表面。',
+    desc: '清洁机支持PCB、FPC、偏光片、光学薄膜、SMT和背光板工艺，这些场景中污染物直接影响产品质量。',
+    href: '/zh/products/cleaning-machine'
+  },
+  {
+    label: '定制制造',
+    title: '使设备和零件与实际生产需求匹配。',
+    desc: '从CNC零件到自动化设备，史帝克为定制制造项目提供实用工业解决方案。',
+    href: '/zh/products'
+  }
+];
+---
+
+<ZhLayout
+  title="应用领域 | DGSDK 史帝克"
+  description="了解史帝克解决方案如何提升电子制造、SMT生产、光学薄膜、PCB和精密加工行业的生产效率。"
+  canonical="https://www.dg-sdk.com/zh/applications"
+>
+  <section
+    class="applications-hero"
+    style="background: linear-gradient(rgba(113, 87, 87, 0.28), rgba(106, 56, 56, 0.18)), url('/assets/img/static-eliminator/banner-bg2.jpg') center/cover no-repeat;"
+  >
+    <div class="applications-hero-overlay"></div>
+    <div class="container applications-hero-content">
+      <span class="applications-hero-kicker">应用解决方案</span>
+      <h1>围绕效率、清洁度和生产可靠性构建的工业应用。</h1>
+      <p>
+        史帝克解决方案广泛应用于电子制造、SMT生产、显示屏加工、光学薄膜应用、自动化集成和精密加工环境。
+      </p>
+    </div>
+  </section>
+
+  <section class="applications-intro-section">
+    <div class="container">
+      <div class="applications-intro-box">
+        <span class="applications-section-label">我们的价值所在</span>
+        <h2>专为真实工业工作流程而构建，而非仅供展示。</h2>
+        <p>
+          我们的解决方案专为制造环境设计，在这些环境中，静电、污染、人工操作和零件质量不稳定会直接影响效率、良率和长期生产可靠性。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="applications-grid-section">
+    <div class="container">
+      <div class="applications-section-heading text-center">
+        <span class="applications-section-label">应用领域</span>
+        <h2>我们的解决方案应用场景。</h2>
+        <p>
+          为需要稳定性能、更清洁表面、更低静电风险和可靠工艺集成的生产线提供实用工业支持。
+        </p>
+      </div>
+
+      <div class="applications-grid">
+        {applicationItems.map((item) => (
+          <a href={item.href} class="application-card">
+            <div class="application-card-image-wrap">
+              <img src={item.image} alt={item.title} class="application-card-image" loading="lazy" />
+            </div>
+            <div class="application-card-body">
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+              <span class="application-card-link">查看相关产品</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="applications-support-section">
+    <div class="container">
+      <div class="applications-section-heading text-center">
+        <span class="applications-section-label">核心解决方案支持</span>
+        <h2>支持生产质量的三大实用方向。</h2>
+        <p>
+          我们的应用能力围绕静电控制、精密清洁和定制化制造支持构建，服务工业客户。
+        </p>
+      </div>
+
+      <div class="applications-support-grid">
+        {supportBlocks.map((item) => (
+          <a href={item.href} class="applications-support-card">
+            <span class="applications-support-label">{item.label}</span>
+            <h3>{item.title}</h3>
+            <p>{item.desc}</p>
+            <span class="applications-support-link">了解更多</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="applications-highlight-section">
+    <div class="container">
+      <div class="applications-highlight-panel">
+        <div class="applications-highlight-copy">
+          <span class="applications-section-label dark">综合制造价值</span>
+          <h2>从工艺问题到实用工业解决方案。</h2>
+          <p>
+            无论您的生产线需要静电消除、精密清洁、自动化支持还是定制加工零件，史帝克都能帮助将产品与实际制造需求相结合。
+          </p>
+          <div class="applications-highlight-actions">
+            <a href="/zh/products" class="applications-primary-btn">浏览产品</a>
+            <a href="/zh/contact" class="applications-secondary-btn">联系我们</a>
+          </div>
+        </div>
+
+        <div class="applications-highlight-visual">
+          <div class="applications-highlight-card">
+            <strong>应用领域</strong>
+            <span>电子、SMT、光学薄膜、自动化、CNC制造</span>
+          </div>
+          <div class="applications-highlight-card">
+            <strong>核心优势</strong>
+            <span>更清洁表面、更低静电风险、稳定工作流程、高效生产</span>
+          </div>
+          <div class="applications-highlight-card">
+            <strong>服务支持</strong>
+            <span>产品匹配、高效沟通、长期工业合作</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="applications-cta-section">
+    <div class="container">
+      <div class="applications-cta-box">
+        <div class="applications-cta-copy">
+          <span class="applications-section-label">讨论您的项目</span>
+          <h2>需要为您的生产线提供解决方案？</h2>
+          <p>
+            与史帝克讨论您的应用场景、生产工艺或定制工业设备需求。
+          </p>
+        </div>
+
+        <div class="applications-cta-actions">
+          <a href="/zh/contact" class="applications-primary-btn">联系我们</a>
+          <a href="/zh/about" class="applications-secondary-btn dark-outline">关于史帝克</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .applications-hero {
+      position: relative;
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 150px 0 95px;
+      overflow: hidden;
+      text-align: center;
+    }
+    .applications-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+    }
+    .applications-hero-content { position: relative; z-index: 2; max-width: 980px; }
+    .applications-hero-kicker, .applications-section-label {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: #fff4cc;
+      color: #8a6a00;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .applications-section-label.dark { background: rgba(255,255,255,0.12); color: #fff4cc; }
+    .applications-hero h1 {
+      margin-bottom: 18px;
+      font-size: clamp(2.5rem, 5vw, 4.8rem);
+      line-height: 1.05;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #111;
+    }
+    .applications-hero p { max-width: 820px; margin: 0 auto; font-size: 1.06rem; line-height: 1.85; color: rgba(17,17,17,0.72); }
+    .applications-intro-section { padding: 70px 0 30px; background: #fff; }
+    .applications-intro-box { max-width: 880px; margin: 0 auto; text-align: center; }
+    .applications-intro-box h2, .applications-section-heading h2, .applications-highlight-copy h2, .applications-cta-copy h2 {
+      margin-bottom: 16px;
+      font-size: clamp(2rem, 3.6vw, 3.2rem);
+      line-height: 1.1;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #111;
+    }
+    .applications-intro-box p, .applications-section-heading p, .applications-highlight-copy p, .applications-cta-copy p {
+      margin: 0 auto;
+      max-width: 820px;
+      font-size: 1rem;
+      line-height: 1.85;
+      color: #666;
+    }
+    .applications-grid-section { padding: 45px 0 90px; background: #fff; }
+    .applications-section-heading { max-width: 820px; margin: 0 auto 40px; }
+    .applications-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+    .application-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: #fff;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid #ececec;
+      box-shadow: 0 18px 45px rgba(15,23,42,0.06);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .application-card:hover { transform: translateY(-8px); box-shadow: 0 28px 60px rgba(15,23,42,0.12); }
+    .application-card-image-wrap {
+      background: linear-gradient(180deg, #f7f8fa 0%, #ffffff 100%);
+      padding: 24px;
+      min-height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .application-card-image { width: 100%; max-width: 280px; max-height: 200px; object-fit: contain; display: block; filter: drop-shadow(0 18px 28px rgba(15,23,42,0.10)); }
+    .application-card-body { padding: 24px 24px 26px; }
+    .application-card-body h3 { margin-bottom: 12px; font-size: 1.35rem; line-height: 1.35; font-weight: 700; color: #111; }
+    .application-card-body p { margin-bottom: 18px; font-size: 0.95rem; line-height: 1.8; color: #666; }
+    .application-card-link { display: inline-flex; align-items: center; gap: 6px; color: #0071e3; font-weight: 600; font-size: 0.95rem; }
+    .applications-support-section { padding: 95px 0; background: #f7f8fa; }
+    .applications-support-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+    .applications-support-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: 0 20px 46px rgba(15,23,42,0.06);
+      border: 1px solid #ececec;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .applications-support-card:hover { transform: translateY(-8px); box-shadow: 0 28px 60px rgba(15,23,42,0.12); }
+    .applications-support-label {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: #fff4cc;
+      color: #8a6a00;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .applications-support-card h3 { margin-bottom: 14px; font-size: 1.5rem; line-height: 1.25; font-weight: 800; color: #111; }
+    .applications-support-card p { margin-bottom: 18px; font-size: 0.96rem; line-height: 1.85; color: #666; }
+    .applications-support-link { color: #0071e3; font-weight: 600; font-size: 0.95rem; }
+    .applications-highlight-section { padding: 95px 0; background: #fff; }
+    .applications-highlight-panel {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: stretch;
+      border-radius: 34px;
+      padding: 42px;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      box-shadow: 0 28px 70px rgba(15,23,42,0.16);
+    }
+    .applications-highlight-copy h2 { color: #fff; }
+    .applications-highlight-copy p { color: rgba(255,255,255,0.82); margin: 0 0 24px; }
+    .applications-highlight-actions, .applications-cta-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .applications-primary-btn, .applications-secondary-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 152px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.28s ease;
+    }
+    .applications-primary-btn { background: #ffcc00; color: #111; }
+    .applications-primary-btn:hover { background: #ffd633; }
+    .applications-secondary-btn { background: rgba(255,255,255,0.10); color: #fff; border: 1px solid rgba(255,255,255,0.18); }
+    .applications-secondary-btn:hover { background: rgba(255,255,255,0.16); }
+    .applications-secondary-btn.dark-outline { background: transparent; color: #111; border: 1px solid rgba(17,17,17,0.12); }
+    .applications-secondary-btn.dark-outline:hover { background: #f7f8fa; }
+    .applications-highlight-visual { display: grid; gap: 16px; align-content: center; }
+    .applications-highlight-card {
+      padding: 20px 22px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(8px);
+    }
+    .applications-highlight-card strong { display: block; margin-bottom: 8px; font-size: 1rem; color: #fff; }
+    .applications-highlight-card span { display: block; font-size: 0.94rem; line-height: 1.75; color: rgba(255,255,255,0.80); }
+    .applications-cta-section { padding: 0 0 95px; background: #fff; }
+    .applications-cta-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 28px;
+      padding: 38px 40px;
+      border-radius: 30px;
+      background: linear-gradient(180deg, #f7f8fa 0%, #ffffff 100%);
+      border: 1px solid #ececec;
+      box-shadow: 0 18px 45px rgba(15,23,42,0.06);
+    }
+    .applications-cta-copy { max-width: 720px; }
+    @media (max-width: 1200px) {
+      .applications-grid, .applications-support-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .applications-highlight-panel { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 991px) {
+      .applications-hero { min-height: 500px; padding: 135px 0 80px; }
+      .applications-cta-box { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 768px) {
+      .applications-grid, .applications-support-grid { grid-template-columns: 1fr; }
+      .applications-hero { min-height: 300px; padding: 0 0 70px; }
+      .applications-hero h1 { font-size: clamp(2.1rem, 8vw, 3rem); }
+      .applications-highlight-panel, .applications-cta-box { padding: 28px 22px; border-radius: 24px; }
+      .application-card, .applications-support-card { border-radius: 24px; }
+      .application-card-image-wrap { min-height: 220px; }
+    }
+  </style>
+</ZhLayout>

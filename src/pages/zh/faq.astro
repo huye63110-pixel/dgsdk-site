@@ -1,0 +1,335 @@
+---
+import ZhLayout from '../../layouts/ZhLayout.astro';
+
+const faqItems = [
+  {
+    question: '最小起订量是多少？是否接受小批量试单？',
+    answer: '我们的标准最小起订量通常为每款产品500件，部分产品类别可以从100件起订。我们也支持部分产品的小批量试单，样品可能需要收取一定费用，通常可在后续批量订单中扣除。对于达到一定数量的混合订单，可能免收额外的处理费用。'
+  },
+  {
+    question: '接受哪些付款方式？',
+    answer: '我们通常接受电汇（T/T）付款，一般为30%定金，余款在发货前付清。对于较大订单，也可商议信用证（L/C）安排。PayPal可用于小额样品订单。为保障交易安全，我们可提供形式发票、公司注册资料及出口相关证明文件。'
+  },
+  {
+    question: '交货期一般是多久？是否支持加急订单？',
+    answer: '标准生产交期一般为样品确认后25至35个工作日，具体时间视产品类型和订单数量而定。对于紧急项目，在排期允许的情况下可协商加急生产，可能会产生额外费用。部分订单也可安排分批发货。'
+  },
+  {
+    question: '如何保证产品质量？',
+    answer: '我们实行完善的质量管控流程，包括原材料检验、生产过程检查和出货前最终检验。我们的质量管理程序旨在确保产品性能稳定一致。如发生经核实的质量问题，我们将根据实际情况与客户协商妥善处理方案，如补货、更换或赔偿等。'
+  },
+  {
+    question: '是否提供OEM或ODM服务？',
+    answer: '是的，我们提供OEM和ODM服务。OEM项目中，客户可提供自有图纸、规格或品牌要求；ODM项目中，我们可根据应用需求协助进行产品开发和方案设计。如有需要，我们也支持签署保密协议（NDA）。'
+  },
+  {
+    question: '产品是否符合国际认证标准？',
+    answer: '我们的产品可根据产品类别和目标市场，提供相关国际标准合规证明。常见认证包括ISO、CE、FCC、RoHS、REACH等。如有特殊认证要求，可根据您的项目需求协商处理流程。'
+  },
+  {
+    question: '提供哪些运输方式？',
+    answer: '我们支持多种运输方式，包括海运、空运、快递及铁路运输（视目的地和货物要求而定）。我们可根据成本和交期提供运输建议，也可配合客户指定的货代进行发货。'
+  },
+  {
+    question: '是否可以协助处理关税和进口税？',
+    answer: '我们可提供必要的出口文件，如商业发票、装箱单及原产地证明（如适用）。进口关税、增值税及清关费用取决于目的国和产品HS编码。如有需要，我们也可商议部分市场的DDP或DDU发货方式。'
+  },
+  {
+    question: '是否提供样品？',
+    answer: '是的，可提供产品样品供评估。样品费用及运费安排视产品类型和是否需要定制而定。大多数情况下，样品费用可在后续批量订单中抵扣。定制样品的制作周期视需求复杂程度而定。'
+  },
+  {
+    question: '如何应对汇率波动？',
+    answer: '报价通常有效期有限，最终定价可能取决于订单确认时的汇率。对于大型项目，我们可以商议分阶段付款或其他实际解决方案，以便在适当情况下降低汇率风险。'
+  }
+];
+---
+
+<ZhLayout
+  title="常见问题 | DGSDK 史帝克"
+  description="关于史帝克产品的常见问题，包括静电消除器、清洁机、自动化设备和精密CNC零件的订购、质量、交期等信息。"
+  canonical="https://www.dg-sdk.com/zh/faq"
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  })} />
+
+  <section
+    class="faq-hero"
+    style="background: linear-gradient(rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.18)), url('/assets/img/faq/faq-bg.jpg') center/cover no-repeat;"
+  >
+    <div class="faq-hero-overlay"></div>
+    <div class="container faq-hero-content">
+      <span class="faq-hero-kicker">常见问题</span>
+      <h1>关于我们产品、应用和服务的常见问题解答。</h1>
+      <p>
+        浏览史帝克解决方案的常见问题，涵盖工业应用、产品类别、定制制造、自动化支持及合作方式等内容。
+      </p>
+    </div>
+  </section>
+
+  <section class="faq-intro-section">
+    <div class="container">
+      <div class="faq-intro-box">
+        <span class="faq-section-label">支持与信息</span>
+        <h2>清晰实用的问题解答。</h2>
+        <p>本页面帮助客户在开始合作前，充分了解我们的产品、服务和工业应用能力。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-main-section">
+    <div class="container">
+      <div class="faq-layout">
+        <aside class="faq-side-panel">
+          <div class="faq-side-card">
+            <span class="faq-side-label">快速指南</span>
+            <h3>需要帮助找到合适的解决方案？</h3>
+            <p>
+              浏览本页问题，或直接联系史帝克，获取产品推荐和定制工业支持。
+            </p>
+            <div class="faq-side-actions">
+              <a href="/zh/contact" class="faq-primary-btn">联系我们</a>
+              <a href="/zh/products" class="faq-text-link">浏览产品</a>
+            </div>
+          </div>
+        </aside>
+
+        <div class="faq-content">
+          <div class="faq-heading-block">
+            <span class="faq-section-label">常见问题</span>
+            <h2>客户和合作伙伴的常见问题。</h2>
+            <p>帮助产品选型和业务沟通更加顺畅。</p>
+          </div>
+
+          <div class="faq-list">
+            {faqItems.map((item, index) => (
+              <details class="faq-item" open={index === 0}>
+                <summary class="faq-question">
+                  <span>{item.question}</span>
+                  <span class="faq-icon"></span>
+                </summary>
+                <div class="faq-answer">
+                  <p>{item.answer}</p>
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-bottom-section">
+    <div class="container">
+      <div class="faq-bottom-panel">
+        <div class="faq-bottom-copy">
+          <span class="faq-section-label dark">仍有疑问？</span>
+          <h2>欢迎讨论您的应用或产品需求。</h2>
+          <p>
+            如果您的问题未在此列出，我们的团队可以帮助您进行产品选型、应用匹配和定制工业解决方案。
+          </p>
+        </div>
+
+        <div class="faq-bottom-actions">
+          <a href="/zh/contact" class="faq-primary-btn">联系我们</a>
+          <a href="/zh/applications" class="faq-secondary-btn">查看应用领域</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .faq-hero {
+      position: relative;
+      min-height: 680px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 125px 0 60px;
+      background:
+        linear-gradient(rgba(15, 23, 42, 0.18), rgba(15, 23, 42, 0.10)),
+        url('/assets/img/header-bg.jpg') center/cover no-repeat;
+      overflow: hidden;
+      text-align: center;
+    }
+    .faq-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+    }
+    .faq-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 960px;
+    }
+    .faq-hero-kicker,
+    .faq-section-label,
+    .faq-side-label {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: #fff4cc;
+      color: #8a6a00;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .faq-section-label.dark {
+      background: rgba(255,255,255,0.12);
+      color: #fff4cc;
+    }
+    .faq-hero h1 {
+      margin-bottom: 18px;
+      font-size: clamp(2.4rem, 5vw, 4.6rem);
+      line-height: 1.06;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #111;
+    }
+    .faq-hero p {
+      max-width: 820px;
+      margin: 0 auto;
+      font-size: 1.04rem;
+      line-height: 1.85;
+      color: rgba(17,17,17,0.72);
+    }
+    .faq-intro-section { padding: 70px 0 32px; background: #fff; }
+    .faq-intro-box, .faq-heading-block { max-width: 860px; margin: 0 auto; text-align: center; }
+    .faq-intro-box h2, .faq-heading-block h2, .faq-bottom-copy h2 {
+      margin-bottom: 16px;
+      font-size: clamp(2rem, 3.4vw, 3rem);
+      line-height: 1.1;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #111;
+    }
+    .faq-intro-box p, .faq-heading-block p, .faq-bottom-copy p, .faq-side-card p {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.85;
+      color: #666;
+    }
+    .faq-main-section { padding: 40px 0 95px; background: #fff; }
+    .faq-layout {
+      display: grid;
+      grid-template-columns: 300px minmax(0, 1fr);
+      gap: 30px;
+      align-items: start;
+    }
+    .faq-side-panel { position: sticky; top: 110px; margin-left: -16px; }
+    .faq-side-card {
+      padding: 28px;
+      border-radius: 28px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8f9fb 100%);
+      border: 1px solid #ececec;
+      box-shadow: 0 18px 45px rgba(15,23,42,0.06);
+    }
+    .faq-side-card h3 { margin-bottom: 14px; font-size: 1.5rem; line-height: 1.25; font-weight: 800; color: #111; }
+    .faq-side-actions { display: flex; flex-direction: column; gap: 12px; margin-top: 22px; }
+    .faq-primary-btn, .faq-secondary-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 150px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.28s ease;
+    }
+    .faq-primary-btn { background: #ffcc00; color: #111; }
+    .faq-primary-btn:hover { background: #ffd633; }
+    .faq-secondary-btn { background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.18); }
+    .faq-secondary-btn:hover { background: rgba(255,255,255,0.18); }
+    .faq-text-link { display: inline-block; text-decoration: none; color: #0071e3; font-weight: 600; font-size: 0.96rem; }
+    .faq-content { display: flex; flex-direction: column; gap: 26px; align-items: flex-start; width: 100%; max-width: 860px; }
+    .faq-list { display: grid; gap: 18px; width: 100%; }
+    .faq-item {
+      background: #fff;
+      border: 1px solid #ececec;
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(15,23,42,0.05);
+      transition: box-shadow 0.28s ease, transform 0.28s ease;
+    }
+    .faq-item:hover { transform: translateY(-3px); box-shadow: 0 22px 50px rgba(15,23,42,0.10); }
+    .faq-question {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 24px 26px;
+      font-size: 1.14rem;
+      line-height: 1.5;
+      font-weight: 700;
+      color: #111;
+      user-select: none;
+    }
+    .faq-question::-webkit-details-marker { display: none; }
+    .faq-icon { position: relative; width: 22px; height: 22px; flex-shrink: 0; }
+    .faq-icon::before, .faq-icon::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 16px;
+      height: 2px;
+      background: #111;
+      border-radius: 999px;
+      transform: translate(-50%, -50%);
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+    .faq-icon::after { transform: translate(-50%, -50%) rotate(90deg); }
+    .faq-item[open] .faq-icon::after { opacity: 0; transform: translate(-50%, -50%) rotate(90deg) scaleX(0.2); }
+    .faq-answer { padding: 0 26px 24px; }
+    .faq-answer p { margin: 0; font-size: 1rem; line-height: 1.85; color: #666; }
+    .faq-bottom-section { padding: 0 0 95px; background: #fff; }
+    .faq-bottom-panel {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 28px;
+      padding: 40px 42px;
+      border-radius: 32px;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      box-shadow: 0 28px 70px rgba(15,23,42,0.16);
+    }
+    .faq-bottom-copy { max-width: 720px; }
+    .faq-bottom-copy h2 { color: #fff; }
+    .faq-bottom-copy p { color: rgba(255,255,255,0.82); }
+    .faq-bottom-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .faq-heading-block { width: 100%; max-width: 860px; margin: 0; text-align: left; }
+    .faq-heading-block h2, .faq-heading-block p { width: 100%; max-width: 100%; margin-left: 0; margin-right: 0; }
+    .faq-heading-block .faq-section-label { margin-left: 0; margin-right: auto; }
+    @media (max-width: 991px) {
+      .faq-layout { grid-template-columns: 1fr; }
+      .faq-side-panel { position: sticky; top: 120px; margin-left: 0; }
+      .faq-bottom-panel { flex-direction: column; align-items: flex-start; }
+      .faq-heading-block { width: 100%; max-width: 860px; margin: 0 auto; text-align: center; }
+      .faq-content { align-items: stretch; width: 100%; }
+      .faq-heading-block .faq-section-label { margin-left: auto; margin-right: auto; }
+    }
+    @media (max-width: 768px) {
+      .faq-hero { min-height: 260px; padding: 105px 0 45px; }
+      .faq-hero h1 { font-size: clamp(2rem, 8vw, 2.9rem); }
+      .faq-side-card, .faq-item, .faq-bottom-panel { border-radius: 24px; }
+      .faq-question { padding: 20px; font-size: 1rem; }
+      .faq-answer { padding: 0 20px 20px; }
+      .faq-bottom-panel { padding: 28px 22px; }
+    }
+  </style>
+</ZhLayout>
