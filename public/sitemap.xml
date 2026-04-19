@@ -54,4 +54,13 @@
 
   <!-- Chinese version -->
   <url><loc>https://www.dg-sdk.com/zh/</loc><lastmod>2026-04-19</lastmod><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.dg-sdk.com/zh/about</loc><lastmod>2026-04-19</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.dg-sdk.com/zh/contact</loc><lastmod>2026-04-19</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.dg-sdk.com/zh/faq</loc><lastmod>2026-04-19</lastmod><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.dg-sdk.com/zh/applications</loc><lastmod>2026-04-19</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.dg-sdk.com/zh/products</loc><lastmod>2026-04-19</lastmod><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.dg-sdk.com/zh/products/static-eliminator</loc><lastmod>2026-04-19</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.dg-sdk.com/zh/products/cleaning-machine</loc><lastmod>2026-04-19</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.dg-sdk.com/zh/products/precision-machined-parts</loc><lastmod>2026-04-19</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.dg-sdk.com/zh/products/automation</loc><lastmod>2026-04-19</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
 </urlset>
