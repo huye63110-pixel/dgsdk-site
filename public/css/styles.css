@@ -16203,3 +16203,81 @@ max-height:90%;
     margin-bottom: 10px;
   }
 }
+
+/* ==========================================================
+   MOBILE OPTIMIZATIONS
+   ========================================================== */
+
+/* 1. Products hero: reduce height + dark overlay so image is visible */
+@media (max-width: 767px) {
+  .products-hero {
+    min-height: 260px !important;
+    height: 260px !important;
+    text-align: left;
+  }
+
+  /* Override white overlay with darker one */
+  .products-hero::before {
+    background: rgba(0, 0, 0, 0.48) !important;
+    z-index: 1 !important;
+  }
+
+  .products-hero-inner {
+    z-index: 2 !important;
+    padding: 0 16px;
+  }
+
+  .products-hero h1 {
+    color: #fff !important;
+    font-size: clamp(1.6rem, 7vw, 2.2rem) !important;
+    margin-bottom: 10px;
+  }
+
+  .products-hero p {
+    color: rgba(255,255,255,0.88) !important;
+    font-size: 0.88rem !important;
+    margin: 0;
+  }
+
+  .products-hero-kicker {
+    background: rgba(255,244,204,0.92) !important;
+    color: #7a5c00 !important;
+    font-size: 11px !important;
+    margin-bottom: 12px;
+  }
+}
+
+/* 2. Social buttons: collapsible on mobile – handled via JS.
+   Base state: only toggle + email + whatsapp + top visible */
+@media (max-width: 767px) {
+  .floating-social {
+    right: 10px !important;
+    bottom: 24px !important;
+    gap: 8px !important;
+  }
+
+  .float-social-group {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+  }
+
+  .float-toggle {
+    background: #374151 !important;
+    border: none !important;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .float-toggle.open {
+    background: #ef4444 !important;
+    transform: rotate(45deg);
+  }
+
+  /* Content: leave room for social buttons (52px from right) */
+  .products-overview-section .container,
+  .products-overview-section .apple-card-grid,
+  .products-overview-section .category-products-grid {
+    padding-right: 0;
+  }
+}
