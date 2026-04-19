@@ -140,7 +140,7 @@ const {
                 <i class="fas fa-search"></i>
               </button>
               <div class="search-box" id="searchBox">
-                <input type="text" placeholder="搜索产品..." />
+                <input type="text" placeholder="搜索产品..." autocomplete="off" />
               </div>
             </li>
           </ul>
@@ -234,32 +234,6 @@ const {
 
     <script is:inline src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script is:inline src="/js/scripts.js"></script>
-
-    <script is:inline>
-      const langToggle = document.getElementById('langToggle');
-      const langMenu = document.getElementById('langMenu');
-      const searchToggle = document.getElementById('searchToggle');
-      const searchBox = document.getElementById('searchBox');
-
-      if (langToggle && langMenu) {
-        langToggle.addEventListener('click', function(e) {
-          e.stopPropagation();
-          langMenu.classList.toggle('show');
-          if (searchBox) searchBox.classList.remove('show');
-        });
-      }
-      if (searchToggle && searchBox) {
-        searchToggle.addEventListener('click', function(e) {
-          e.stopPropagation();
-          searchBox.classList.toggle('show');
-          if (langMenu) langMenu.classList.remove('show');
-        });
-      }
-      document.addEventListener('click', function() {
-        if (langMenu) langMenu.classList.remove('show');
-        if (searchBox) searchBox.classList.remove('show');
-      });
-    </script>
 
     <script is:inline>
       document.addEventListener('DOMContentLoaded', () => {
