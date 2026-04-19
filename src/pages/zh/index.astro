@@ -181,28 +181,35 @@ import ZhLayout from '../../layouts/ZhLayout.astro';
         <h3 class="section-subheading text-muted">认证质量与国际合规</h3>
       </div>
       <div class="cert-grid">
-        <img src="/assets/img/cert/cert1.png" alt="证书1" loading="lazy" />
-        <img src="/assets/img/cert/cert2.png" alt="证书2" loading="lazy" />
-        <img src="/assets/img/cert/cert3.png" alt="证书3" loading="lazy" />
-        <img src="/assets/img/cert/cert4.png" alt="证书4" loading="lazy" />
-        <img src="/assets/img/cert/cert5.png" alt="证书5" loading="lazy" />
-        <img src="/assets/img/cert/cert6.png" alt="证书6" loading="lazy" />
-        <img src="/assets/img/cert/cert7.png" alt="证书7" loading="lazy" />
-        <img src="/assets/img/cert/cert8.png" alt="证书8" loading="lazy" />
+        <div class="cert-card"><img src="/assets/img/cert/cert1.png" alt="证书1" loading="lazy" /></div>
+        <div class="cert-card"><img src="/assets/img/cert/cert2.png" alt="证书2" loading="lazy" /></div>
+        <div class="cert-card"><img src="/assets/img/cert/cert3.png" alt="证书3" loading="lazy" /></div>
+        <div class="cert-card"><img src="/assets/img/cert/cert4.png" alt="证书4" loading="lazy" /></div>
+        <div class="cert-card"><img src="/assets/img/cert/cert5.png" alt="证书5" loading="lazy" /></div>
+        <div class="cert-card"><img src="/assets/img/cert/cert6.png" alt="证书6" loading="lazy" /></div>
+        <div class="cert-card"><img src="/assets/img/cert/cert7.png" alt="证书7" loading="lazy" /></div>
+        <div class="cert-card"><img src="/assets/img/cert/cert8.png" alt="证书8" loading="lazy" /></div>
       </div>
     </div>
   </section>
 
   <!-- 获取报价 -->
-  <section class="page-section" id="contact">
-    <div class="container">
+  <section class="quote-section" id="contact">
+    <div class="quote-overlay"></div>
+    <div class="container quote-content">
       <div class="text-center">
-        <h2 class="section-heading text-uppercase">获取免费报价</h2>
-        <h3 class="section-subheading text-muted">如果您需要了解我们的产品，请填写以下表格提交询价，工作日24小时内回复。</h3>
+        <h2 class="quote-title">获取免费报价</h2>
+        <p class="quote-desc">如果您需要了解我们的产品，请填写以下表格提交询价，工作日24小时内回复。</p>
       </div>
-      <div class="text-center mt-4">
-        <a href="/zh/contact" class="btn btn-primary btn-xl text-uppercase quote-btn">发送询价</a>
-      </div>
+      <form action="https://formspree.io/f/mkopvoyk" method="POST" class="quote-form">
+        <input type="text" name="name" placeholder="您的姓名（必填）" required />
+        <input type="email" name="email" placeholder="您的电子邮箱（必填）" required />
+        <input type="text" name="phone" placeholder="您的电话号码" />
+        <textarea name="message" rows="5" placeholder="请输入您的询价内容" required></textarea>
+        <!-- honeypot -->
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+        <button type="submit">发送询价</button>
+      </form>
     </div>
   </section>
 </ZhLayout>
