@@ -241,3 +241,47 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 })();
+
+// ===== MOBILE: COLLAPSIBLE SOCIAL BUTTONS =====
+document.addEventListener('DOMContentLoaded', function () {
+  if (window.innerWidth >= 768) return;
+
+  var social = document.querySelector('.floating-social');
+  if (!social) return;
+
+  // Separate "always visible" from secondary buttons
+  var alwaysClasses = ['email', 'whatsapp', 'top'];
+  var allBtns = Array.from(social.querySelectorAll('.float-btn'));
+  var always = allBtns.filter(function (b) {
+    return alwaysClasses.some(function (c) { return b.classList.contains(c); });
+  });
+  var secondary = allBtns.filter(function (b) {
+    return !alwaysClasses.some(function (c) { return b.classList.contains(c); });
+  });
+
+  // Build collapsible group
+  var group = document.createElement('div');
+  group.className = 'float-social-group';
+  group.style.cssText = 'display:none;flex-direction:column;gap:8px;';
+  secondary.forEach(function (b) { group.appendChild(b); });
+
+  // Toggle button
+  var toggle = document.createElement('button');
+  toggle.className = 'float-btn float-toggle';
+  toggle.setAttribute('aria-label', 'More social links');
+  toggle.innerHTML = '<i class="fas fa-plus"></i>';
+  toggle.addEventListener('click', function () {
+    var open = group.style.display === 'flex';
+    group.style.display = open ? 'none' : 'flex';
+    toggle.classList.toggle('open', !open);
+    toggle.innerHTML = open
+      ? '<i class="fas fa-plus"></i>'
+      : '<i class="fas fa-times"></i>';
+  });
+
+  // Rebuild: group (hidden), toggle, email, whatsapp, top
+  social.innerHTML = '';
+  social.appendChild(group);
+  social.appendChild(toggle);
+  always.forEach(function (b) { social.appendChild(b); });
+});
