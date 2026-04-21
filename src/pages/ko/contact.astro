@@ -1,0 +1,139 @@
+---
+import KoLayout from '../../layouts/KoLayout.astro';
+---
+
+<KoLayout
+  title="문의하기 | DGSDK"
+  description="DGSDK에 문의하세요. 산업용 자동화 설비, 정전기 제거기, 세정기, 정밀 CNC 부품의 견적·기술 지원은 여기에서. 영업 시간 내 24시간 이내 답변 드립니다."
+  canonical="https://www.dg-sdk.com/ko/contact"
+>
+  <section
+    class="contact-hero"
+    style="background: linear-gradient(rgba(113, 87, 87, 0.28), rgba(106, 56, 56, 0.18)), url('/assets/img/contact/contact.jpg') center/cover no-repeat;"
+  >
+    <div class="category-hero-overlay"></div>
+    <div class="container category-hero-content">
+      <h1>문의하기</h1>
+      <p>
+        산업용 자동화 설비, 정전기 제거기, 세정기, 정밀 CNC 부품의 견적 및 상담은 DGSDK로 편하게 문의하세요.
+      </p>
+    </div>
+  </section>
+
+  <section class="page-section contact-modern">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-left">
+          <h2>문의하기</h2>
+
+          <p class="company-name">동관사제극자동화설비유한공사</p>
+
+          <p class="contact-desc">
+            신뢰성 높은 산업용 자동화 솔루션, 정전기 제거 시스템, 세정기, 정밀 CNC 부품을 전 세계 고객에게 제공합니다. 제품 정보 및 거래 상담은 언제든지 환영합니다.
+          </p>
+
+          <div class="response-guarantee">
+            <i class="fas fa-clock"></i>
+            <span>영업 시간 내 <strong>24시간 이내</strong> 답변 드립니다.</span>
+          </div>
+
+          <h3>궁금한 점은 문의해 주세요</h3>
+
+          <div class="contact-info-list">
+            <div class="contact-info-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div>
+                <span class="contact-label">전화:</span>
+                <p>+86 13602342003</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-icon">
+                <i class="fab fa-whatsapp"></i>
+              </div>
+              <div>
+                <span class="contact-label">WhatsApp:</span>
+                <p>+61 436605126</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <span class="contact-label">이메일:</span>
+                <p>huye63110@gmail.com</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <span class="contact-label">주소:</span>
+                <p>중국 광둥성 동관시 빈하이로 33호</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-right">
+          <div class="map-box">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3678.478825294075!2d113.76762507613407!3d22.784714925161143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34039625f048b6f7%3A0x20abebbe17b92cf2!2z5Lit5Zu95bm_5Lic55yB5Lic6I6e5biC5ruo5rKz6LevMzPlj7cg6YKu5pS_57yW56CBOiA1MjM4NTA!5e0!3m2!1szh-CN!2sus!4v1745226418103!5m2!1szh-CN!2sus"
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section bg-light">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-heading text-uppercase">문의 양식</h2>
+        <h3 class="section-subheading text-muted">
+          정보를 입력해 주세요. 영업 시간 내 24시간 이내 답변 드립니다.
+        </h3>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <form action="https://formspree.io/f/mkopvoyk" method="POST">
+            <div class="form-group mb-3">
+              <input class="form-control" type="text" name="name" placeholder="이름 *" required />
+            </div>
+
+            <div class="form-group mb-3">
+              <input class="form-control" type="email" name="email" placeholder="이메일 주소 *" required />
+            </div>
+
+            <div class="form-group mb-3">
+              <input class="form-control" type="text" name="company" placeholder="회사명" />
+            </div>
+
+            <div class="form-group mb-3">
+              <textarea class="form-control" name="message" rows="6" placeholder="메시지 *" required></textarea>
+            </div>
+
+            <div class="text-center">
+              <button class="btn btn-primary btn-xl text-uppercase" type="submit">
+                전송하기
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</KoLayout>
