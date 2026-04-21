@@ -221,4 +221,27 @@ import EsLayout from '../../layouts/EsLayout.astro';
       <a href="/es/contact" class="home-bottom-btn">Solicitar cotización gratuita</a>
     </div>
   </section>
+<script is:inline>
+  const slides = document.querySelectorAll(".hero-slide");
+  const dots = document.querySelectorAll(".hero-dot");
+  const prevBtn = document.querySelector(".hero-prev");
+  const nextBtn = document.querySelector(".hero-next");
+  let currentSlide = 0;
+  let heroTimer;
+  function showSlide(index) {
+    if (!slides.length) return;
+    slides.forEach((slide, i) => { slide.classList.toggle("active", i === index); });
+    dots.forEach((dot, i) => { dot.classList.toggle("active", i === index); });
+    currentSlide = index;
+  }
+  function nextSlide() { showSlide(currentSlide === slides.length - 1 ? 0 : currentSlide + 1); }
+  function prevSlide() { showSlide(currentSlide === 0 ? slides.length - 1 : currentSlide - 1); }
+  function startHeroAutoPlay() { heroTimer = setInterval(nextSlide, 5000); }
+  function resetHeroAutoPlay() { clearInterval(heroTimer); startHeroAutoPlay(); }
+  if (nextBtn) { nextBtn.addEventListener("click", () => { nextSlide(); resetHeroAutoPlay(); }); }
+  if (prevBtn) { prevBtn.addEventListener("click", () => { prevSlide(); resetHeroAutoPlay(); }); }
+  dots.forEach((dot, index) => { dot.addEventListener("click", () => { showSlide(index); resetHeroAutoPlay(); }); });
+  showSlide(0);
+  startHeroAutoPlay();
+</script>
 </EsLayout>
