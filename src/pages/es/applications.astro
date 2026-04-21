@@ -1,0 +1,382 @@
+---
+import EsLayout from '../../layouts/EsLayout.astro';
+
+const applicationItems = [
+  {
+    title: 'Fabricación de electrónica',
+    image: '/assets/img/static-white-bg.png',
+    desc: 'Soluciones de control de estática y limpieza de precisión para PCB, FPC, SMT y líneas de producción electrónica.',
+    href: '/es/products/static-eliminator'
+  },
+  {
+    title: 'Producción SMT',
+    image: '/assets/img/cleaning-machine/smt-cleaner.jpg',
+    desc: 'Equipos de limpieza confiables y soporte de proceso para montaje SMT, inspección y producción en línea.',
+    href: '/es/products/cleaning-machine'
+  },
+  {
+    title: 'Pantallas y películas ópticas',
+    image: '/assets/img/cleaning-machine/optical.jpg',
+    desc: 'Equipos de limpieza industrial para entornos de fabricación de películas ópticas, polarizadores, retroiluminación y LCM.',
+    href: '/es/products/cleaning-machine'
+  },
+  {
+    title: 'Mecanizado de precisión',
+    image: '/assets/img/about/about-cnc-process.jpg',
+    desc: 'Piezas CNC mecanizadas de alta precisión con tolerancias estables y calidad de fabricación confiable a largo plazo.',
+    href: '/es/products/precision-machined-parts'
+  },
+  {
+    title: 'Integración de automatización',
+    image: '/assets/img/automation/product-c.jpg',
+    desc: 'Sistemas de automatización personalizados diseñados para mejorar los flujos de trabajo, reducir la operación manual y aumentar la eficiencia productiva.',
+    href: '/es/products/automation'
+  },
+  {
+    title: 'Embalaje industrial',
+    image: '/assets/img/cleaning-machine/roll-chip-cleaner.jpg',
+    desc: 'Equipos de soporte para el manejo de materiales, limpieza de superficies y mejora práctica de procesos industriales.',
+    href: '/es/products/cleaning-machine'
+  }
+];
+
+const supportBlocks = [
+  {
+    label: 'Control de estática',
+    title: 'Reducir los riesgos de estática en zonas de producción sensibles.',
+    desc: 'Barras ionizadoras, sopladores de iones y sistemas antiestáticos que ayudan a mejorar la estabilidad de calidad en líneas de producción de electrónica, embalaje, textiles y automatización.',
+    href: '/es/products/static-eliminator'
+  },
+  {
+    label: 'Soluciones de limpieza',
+    title: 'Mantener superficies limpias para la fabricación de precisión.',
+    desc: 'Las máquinas limpiadoras dan soporte a procesos de PCB, FPC, polarizadores, películas ópticas, SMT y retroiluminación, donde la contaminación afecta directamente la calidad del producto.',
+    href: '/es/products/cleaning-machine'
+  },
+  {
+    label: 'Fabricación personalizada',
+    title: 'Adaptar equipos y piezas a las necesidades reales de producción.',
+    desc: 'Desde piezas CNC hasta equipos de automatización, DGSDK ofrece soluciones industriales prácticas para proyectos de fabricación personalizada.',
+    href: '/es/products'
+  }
+];
+---
+
+<EsLayout
+  title="Aplicaciones | DGSDK"
+  description="Descubra cómo las soluciones DGSDK mejoran la eficiencia en fabricación de electrónica, producción SMT, películas ópticas, PCB y mecanizado de precisión."
+  canonical="https://www.dg-sdk.com/es/applications"
+>
+  <section
+    class="applications-hero"
+    style="background: linear-gradient(rgba(113, 87, 87, 0.28), rgba(106, 56, 56, 0.18)), url('/assets/img/static-eliminator/banner-bg2.jpg') center/cover no-repeat;"
+  >
+    <div class="applications-hero-overlay"></div>
+    <div class="container applications-hero-content">
+      <span class="applications-hero-kicker">Soluciones de aplicación</span>
+      <h1>Aplicaciones industriales construidas en torno a la eficiencia, la limpieza y la confiabilidad productiva.</h1>
+      <p>
+        Las soluciones DGSDK se utilizan ampliamente en fabricación de electrónica, producción SMT, procesamiento de pantallas, aplicaciones de películas ópticas, integración de automatización y entornos de mecanizado de precisión.
+      </p>
+    </div>
+  </section>
+
+  <section class="applications-intro-section">
+    <div class="container">
+      <div class="applications-intro-box">
+        <span class="applications-section-label">Nuestro valor</span>
+        <h2>Construido para flujos de trabajo industriales reales, no solo para exhibición.</h2>
+        <p>
+          Nuestras soluciones están diseñadas para entornos de fabricación donde la estática, la contaminación, la operación manual y la inestabilidad en la calidad de las piezas afectan directamente la eficiencia, el rendimiento y la confiabilidad productiva a largo plazo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="applications-grid-section">
+    <div class="container">
+      <div class="applications-section-heading text-center">
+        <span class="applications-section-label">Áreas de aplicación</span>
+        <h2>Dónde se aplican nuestras soluciones.</h2>
+        <p>
+          Soporte industrial práctico para líneas de producción que necesitan rendimiento estable, superficies más limpias, menor riesgo de estática e integración de procesos confiable.
+        </p>
+      </div>
+
+      <div class="applications-grid">
+        {applicationItems.map((item) => (
+          <a href={item.href} class="application-card">
+            <div class="application-card-image-wrap">
+              <img src={item.image} alt={item.title} class="application-card-image" loading="lazy" />
+            </div>
+            <div class="application-card-body">
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+              <span class="application-card-link">Ver productos relacionados</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="applications-support-section">
+    <div class="container">
+      <div class="applications-section-heading text-center">
+        <span class="applications-section-label">Soporte de soluciones principales</span>
+        <h2>Tres enfoques prácticos que respaldan la calidad de producción.</h2>
+        <p>
+          Nuestras capacidades de aplicación se construyen en torno al control de estática, la limpieza de precisión y el soporte de fabricación personalizada para clientes industriales.
+        </p>
+      </div>
+
+      <div class="applications-support-grid">
+        {supportBlocks.map((item) => (
+          <a href={item.href} class="applications-support-card">
+            <span class="applications-support-label">{item.label}</span>
+            <h3>{item.title}</h3>
+            <p>{item.desc}</p>
+            <span class="applications-support-link">Saber más</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="applications-highlight-section">
+    <div class="container">
+      <div class="applications-highlight-panel">
+        <div class="applications-highlight-copy">
+          <span class="applications-section-label dark">Valor integral de fabricación</span>
+          <h2>Del problema de proceso a la solución industrial práctica.</h2>
+          <p>
+            Ya sea que su línea de producción necesite eliminación de estática, limpieza de precisión, soporte de automatización o piezas mecanizadas personalizadas, DGSDK puede ayudar a relacionar los productos con las necesidades reales de fabricación.
+          </p>
+          <div class="applications-highlight-actions">
+            <a href="/es/products" class="applications-primary-btn">Ver productos</a>
+            <a href="/es/contact" class="applications-secondary-btn">Contáctenos</a>
+          </div>
+        </div>
+
+        <div class="applications-highlight-visual">
+          <div class="applications-highlight-card">
+            <strong>Áreas de aplicación</strong>
+            <span>Electrónica, SMT, películas ópticas, automatización, fabricación CNC</span>
+          </div>
+          <div class="applications-highlight-card">
+            <strong>Ventajas principales</strong>
+            <span>Superficies más limpias, menor riesgo de estática, flujo de trabajo estable, producción eficiente</span>
+          </div>
+          <div class="applications-highlight-card">
+            <strong>Soporte de servicio</strong>
+            <span>Selección de productos, comunicación eficiente, colaboración industrial a largo plazo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="applications-cta-section">
+    <div class="container">
+      <div class="applications-cta-box">
+        <div class="applications-cta-copy">
+          <span class="applications-section-label">Hable sobre su proyecto</span>
+          <h2>¿Necesita una solución para su línea de producción?</h2>
+          <p>
+            Discuta con DGSDK su aplicación, proceso de producción o necesidades de equipos industriales personalizados.
+          </p>
+        </div>
+
+        <div class="applications-cta-actions">
+          <a href="/es/contact" class="applications-primary-btn">Contáctenos</a>
+          <a href="/es/about" class="applications-secondary-btn dark-outline">Sobre DGSDK</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .applications-hero {
+      position: relative;
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 150px 0 95px;
+      overflow: hidden;
+      text-align: center;
+    }
+    .applications-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+    }
+    .applications-hero-content { position: relative; z-index: 2; max-width: 980px; }
+    .applications-hero-kicker, .applications-section-label {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: #fff4cc;
+      color: #8a6a00;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .applications-section-label.dark { background: rgba(255,255,255,0.12); color: #fff4cc; }
+    .applications-hero h1 {
+      margin-bottom: 18px;
+      font-size: clamp(2.5rem, 5vw, 4.8rem);
+      line-height: 1.05;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #111;
+    }
+    .applications-hero p { max-width: 820px; margin: 0 auto; font-size: 1.06rem; line-height: 1.85; color: rgba(17,17,17,0.72); }
+    .applications-intro-section { padding: 70px 0 30px; background: #fff; }
+    .applications-intro-box { max-width: 880px; margin: 0 auto; text-align: center; }
+    .applications-intro-box h2, .applications-section-heading h2, .applications-highlight-copy h2, .applications-cta-copy h2 {
+      margin-bottom: 16px;
+      font-size: clamp(2rem, 3.6vw, 3.2rem);
+      line-height: 1.1;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #111;
+    }
+    .applications-intro-box p, .applications-section-heading p, .applications-highlight-copy p, .applications-cta-copy p {
+      margin: 0 auto;
+      max-width: 820px;
+      font-size: 1rem;
+      line-height: 1.85;
+      color: #666;
+    }
+    .applications-grid-section { padding: 45px 0 90px; background: #fff; }
+    .applications-section-heading { max-width: 820px; margin: 0 auto 40px; }
+    .applications-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+    .application-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: #fff;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid #ececec;
+      box-shadow: 0 18px 45px rgba(15,23,42,0.06);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .application-card:hover { transform: translateY(-8px); box-shadow: 0 28px 60px rgba(15,23,42,0.12); }
+    .application-card-image-wrap {
+      background: linear-gradient(180deg, #f7f8fa 0%, #ffffff 100%);
+      padding: 24px;
+      min-height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .application-card-image { width: 100%; max-width: 280px; max-height: 200px; object-fit: contain; display: block; filter: drop-shadow(0 18px 28px rgba(15,23,42,0.10)); }
+    .application-card-body { padding: 24px 24px 26px; }
+    .application-card-body h3 { margin-bottom: 12px; font-size: 1.35rem; line-height: 1.35; font-weight: 700; color: #111; }
+    .application-card-body p { margin-bottom: 18px; font-size: 0.95rem; line-height: 1.8; color: #666; }
+    .application-card-link { display: inline-flex; align-items: center; gap: 6px; color: #0071e3; font-weight: 600; font-size: 0.95rem; }
+    .applications-support-section { padding: 95px 0; background: #f7f8fa; }
+    .applications-support-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+    .applications-support-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: 0 20px 46px rgba(15,23,42,0.06);
+      border: 1px solid #ececec;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .applications-support-card:hover { transform: translateY(-8px); box-shadow: 0 28px 60px rgba(15,23,42,0.12); }
+    .applications-support-label {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: #fff4cc;
+      color: #8a6a00;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .applications-support-card h3 { margin-bottom: 14px; font-size: 1.5rem; line-height: 1.25; font-weight: 800; color: #111; }
+    .applications-support-card p { margin-bottom: 18px; font-size: 0.96rem; line-height: 1.85; color: #666; }
+    .applications-support-link { color: #0071e3; font-weight: 600; font-size: 0.95rem; }
+    .applications-highlight-section { padding: 95px 0; background: #fff; }
+    .applications-highlight-panel {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: stretch;
+      border-radius: 34px;
+      padding: 42px;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      box-shadow: 0 28px 70px rgba(15,23,42,0.16);
+    }
+    .applications-highlight-copy h2 { color: #fff; }
+    .applications-highlight-copy p { color: rgba(255,255,255,0.82); margin: 0 0 24px; }
+    .applications-highlight-actions, .applications-cta-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .applications-primary-btn, .applications-secondary-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 152px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.28s ease;
+    }
+    .applications-primary-btn { background: #ffcc00; color: #111; }
+    .applications-primary-btn:hover { background: #ffd633; }
+    .applications-secondary-btn { background: rgba(255,255,255,0.10); color: #fff; border: 1px solid rgba(255,255,255,0.18); }
+    .applications-secondary-btn:hover { background: rgba(255,255,255,0.16); }
+    .applications-secondary-btn.dark-outline { background: transparent; color: #111; border: 1px solid rgba(17,17,17,0.12); }
+    .applications-secondary-btn.dark-outline:hover { background: #f7f8fa; }
+    .applications-highlight-visual { display: grid; gap: 16px; align-content: center; }
+    .applications-highlight-card {
+      padding: 20px 22px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(8px);
+    }
+    .applications-highlight-card strong { display: block; margin-bottom: 8px; font-size: 1rem; color: #fff; }
+    .applications-highlight-card span { display: block; font-size: 0.94rem; line-height: 1.75; color: rgba(255,255,255,0.80); }
+    .applications-cta-section { padding: 0 0 95px; background: #fff; }
+    .applications-cta-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 28px;
+      padding: 38px 40px;
+      border-radius: 30px;
+      background: linear-gradient(180deg, #f7f8fa 0%, #ffffff 100%);
+      border: 1px solid #ececec;
+      box-shadow: 0 18px 45px rgba(15,23,42,0.06);
+    }
+    .applications-cta-copy { max-width: 720px; }
+    @media (max-width: 1200px) {
+      .applications-grid, .applications-support-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .applications-highlight-panel { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 991px) {
+      .applications-hero { min-height: 500px; padding: 135px 0 80px; }
+      .applications-cta-box { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 768px) {
+      .applications-grid, .applications-support-grid { grid-template-columns: 1fr; }
+      .applications-hero { min-height: 300px; padding: 0 0 70px; }
+      .applications-hero h1 { font-size: clamp(2.1rem, 8vw, 3rem); }
+      .applications-highlight-panel, .applications-cta-box { padding: 28px 22px; border-radius: 24px; }
+      .application-card, .applications-support-card { border-radius: 24px; }
+      .application-card-image-wrap { min-height: 220px; }
+    }
+  </style>
+</EsLayout>

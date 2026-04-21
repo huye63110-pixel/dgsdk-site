@@ -1,0 +1,140 @@
+---
+import KoLayout from './KoLayout.astro';
+
+const {
+  title,
+  description = "DGSDK 산업 제품 - 둥관 자동화 장비",
+  image = "/assets/img/header-bg.jpg",
+  sku = "",
+  category = "산업 장비",
+} = Astro.props;
+
+const productName = title.split('|')[0].trim();
+const canonical = Astro.url.href;
+const base = "https://www.dg-sdk.com";
+
+const pathParts = new URL(canonical).pathname.replace(/\/$/, '').split('/').filter(Boolean);
+const categoryLabels: Record<string, string> = {
+  'ko': '한국어',
+  'products': '제품',
+  'static-eliminator': '정전기 제거',
+  'cleaning-machine': '세척기',
+  'precision-machined-parts': '정밀 가공 부품',
+  'automation': '자동화 장비',
+};
+const breadcrumbItems = [
+  { name: '홈', url: `${base}/ko/` },
+  ...pathParts.filter(p => p !== 'ko').map((part, i) => ({
+    name: categoryLabels[part] || productName,
+    url: `${base}/${pathParts.slice(0, pathParts.indexOf(part) + 1).join('/')}`,
+  })),
+];
+---
+
+<KoLayout title={title} description={description} image={image} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": breadcrumbItems.map((item, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": item.name,
+      "item": item.url,
+    }))
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": productName,
+    "description": description,
+    "image": `https://www.dg-sdk.com${image}`,
+    "sku": sku || productName.replace(/\s+/g, '-').toLowerCase(),
+    "category": category,
+    "brand": {
+      "@type": "Brand",
+      "name": "DGSDK"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "东莞史帝克自动化设备有限公司",
+      "url": "https://www.dg-sdk.com"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": canonical,
+      "priceCurrency": "KRW",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "DGSDK"
+      }
+    }
+  })} />
+
+  <section
+    class="inner-hero"
+    style="background-image: url('/assets/img/static-eliminator/banner-bg.jpg');"
+  >
+    <div class="inner-hero-overlay"></div>
+    <div class="container inner-hero-content">
+      <h1>제품 상세</h1>
+      <p>전문 산업 솔루션</p>
+    </div>
+  </section>
+
+  <main class="product-main">
+    <slot />
+  </main>
+
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mainImage = document.getElementById('mainProductImage');
+      const thumbs = document.querySelectorAll('.thumb-image');
+      const prevBtn = document.getElementById('prevImage');
+      const nextBtn = document.getElementById('nextImage');
+      const thumbsWrap = document.querySelector('.product-thumbs');
+
+      if (mainImage) {
+        const imageList = Array.from(thumbs).map(t => t.dataset.full).filter(Boolean);
+        let currentIndex = 0;
+
+        function updateMainImage(index) {
+          if (!imageList.length) return;
+          currentIndex = index;
+          mainImage.src = imageList[index];
+          thumbs.forEach((t, i) => t.classList.toggle('active-thumb', i === index));
+        }
+
+        if (imageList.length > 0) updateMainImage(0);
+        thumbs.forEach((t, i) => t.addEventListener('click', () => updateMainImage(i)));
+
+        if (prevBtn && nextBtn) {
+          if (imageList.length <= 1) {
+            prevBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+          } else {
+            prevBtn.addEventListener('click', () => updateMainImage(currentIndex === 0 ? imageList.length - 1 : currentIndex - 1));
+            nextBtn.addEventListener('click', () => updateMainImage(currentIndex === imageList.length - 1 ? 0 : currentIndex + 1));
+          }
+        }
+        if (thumbsWrap && imageList.length <= 1) thumbsWrap.style.display = 'none';
+      }
+
+      document.querySelectorAll('.related-slider-wrap').forEach((wrap) => {
+        const track = wrap.querySelector('.related-slider-track');
+        const prev = wrap.querySelector('.related-slider-prev');
+        const next = wrap.querySelector('.related-slider-next');
+        const currentKey = wrap.dataset.current;
+        if (!track) return;
+        if (currentKey) {
+          track.querySelectorAll('.related-slide-card').forEach(card => {
+            if (card.dataset.key === currentKey) card.style.display = 'none';
+          });
+        }
+        const scrollAmount = 320;
+        if (prev) prev.addEventListener('click', () => track.scrollBy({ left: -scrollAmount, behavior: 'smooth' }));
+        if (next) next.addEventListener('click', () => track.scrollBy({ left: scrollAmount, behavior: 'smooth' }));
+      });
+    });
+  </script>
+</KoLayout>

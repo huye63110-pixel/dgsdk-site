@@ -1,0 +1,335 @@
+---
+import EsLayout from '../../layouts/EsLayout.astro';
+
+const faqItems = [
+  {
+    question: '¿Cuál es el pedido mínimo? ¿Se aceptan pedidos de prueba en pequeñas cantidades?',
+    answer: 'Nuestro pedido mínimo estándar es generalmente de 500 unidades por producto, aunque algunas categorías de productos permiten pedidos desde 100 unidades. También aceptamos pedidos de prueba en pequeñas cantidades para ciertos productos; las muestras pueden tener un costo adicional que normalmente se puede descontar en pedidos de mayor volumen posteriores. Para pedidos mixtos que superen cierta cantidad, puede que no se apliquen cargos adicionales de gestión.'
+  },
+  {
+    question: '¿Qué métodos de pago se aceptan?',
+    answer: 'Generalmente aceptamos transferencia bancaria (T/T), normalmente con un depósito del 30% y el saldo antes del envío. Para pedidos de mayor volumen, también se puede negociar una carta de crédito (L/C). PayPal está disponible para pedidos de muestras de pequeño importe. Para garantizar la seguridad de la transacción, podemos proporcionar factura proforma, documentos de registro de la empresa y documentación relacionada con la exportación.'
+  },
+  {
+    question: '¿Cuáles son los plazos de entrega habituales? ¿Se aceptan pedidos urgentes?',
+    answer: 'El plazo de producción estándar es generalmente de 25 a 35 días hábiles después de la confirmación de la muestra, dependiendo del tipo de producto y la cantidad del pedido. Para proyectos urgentes, se puede negociar producción acelerada según disponibilidad del calendario, lo que puede conllevar costos adicionales. También es posible acordar envíos parciales para algunos pedidos.'
+  },
+  {
+    question: '¿Cómo se garantiza la calidad del producto?',
+    answer: 'Implementamos un proceso completo de control de calidad que incluye inspección de materias primas, inspecciones durante la producción y una inspección final antes del envío. Nuestros procedimientos de gestión de calidad están diseñados para garantizar un rendimiento del producto consistente y estable. En caso de problemas de calidad verificados, trabajaremos con el cliente para encontrar una solución adecuada, como reposición, sustitución o compensación.'
+  },
+  {
+    question: '¿Se ofrecen servicios OEM u ODM?',
+    answer: 'Sí, ofrecemos servicios OEM y ODM. En proyectos OEM, los clientes pueden proporcionar sus propios planos, especificaciones o requisitos de marca; en proyectos ODM, podemos ayudar en el desarrollo del producto y el diseño de soluciones según los requisitos de la aplicación. También podemos firmar acuerdos de confidencialidad (NDA) si es necesario.'
+  },
+  {
+    question: '¿Los productos cumplen con certificaciones internacionales?',
+    answer: 'Nuestros productos pueden ofrecer documentación de cumplimiento con normas internacionales relevantes, según la categoría del producto y el mercado de destino. Las certificaciones habituales incluyen ISO, CE, FCC, RoHS, REACH, entre otras. Si tiene requisitos de certificación específicos, se puede negociar el proceso según las necesidades de su proyecto.'
+  },
+  {
+    question: '¿Qué métodos de envío están disponibles?',
+    answer: 'Admitimos múltiples métodos de envío, incluidos transporte marítimo, aéreo, mensajería exprés y transporte ferroviario (según el destino y los requisitos de la carga). Podemos proporcionar recomendaciones de transporte en función del costo y los plazos de entrega, o coordinar el envío con el agente de carga designado por el cliente.'
+  },
+  {
+    question: '¿Puede ayudar con aranceles e impuestos de importación?',
+    answer: 'Podemos proporcionar los documentos de exportación necesarios, como factura comercial, lista de empaque y certificado de origen (si aplica). Los aranceles de importación, el IVA y los gastos de despacho de aduanas dependen del país de destino y del código HS del producto. También podemos negociar el envío bajo términos DDP o DDU para determinados mercados si es necesario.'
+  },
+  {
+    question: '¿Se pueden obtener muestras?',
+    answer: 'Sí, se pueden proporcionar muestras de productos para evaluación. El costo de las muestras y los arreglos de flete dependen del tipo de producto y de si se requieren personalizaciones. En la mayoría de los casos, el costo de las muestras puede descontarse en pedidos de mayor volumen posteriores. El tiempo de fabricación de muestras personalizadas depende de la complejidad de los requisitos.'
+  },
+  {
+    question: '¿Cómo se manejan las fluctuaciones de moneda?',
+    answer: 'Las cotizaciones generalmente tienen un período de validez limitado, y el precio final puede depender del tipo de cambio vigente en el momento de la confirmación del pedido. Para proyectos de gran envergadura, podemos negociar pagos por etapas u otras soluciones prácticas para reducir el riesgo cambiario cuando sea conveniente.'
+  }
+];
+---
+
+<EsLayout
+  title="Preguntas frecuentes | DGSDK"
+  description="Preguntas frecuentes sobre los productos DGSDK, incluyendo eliminadores de estática, máquinas limpiadoras, equipos de automatización y piezas CNC de precisión."
+  canonical="https://www.dg-sdk.com/es/faq"
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  })} />
+
+  <section
+    class="faq-hero"
+    style="background: linear-gradient(rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.18)), url('/assets/img/faq/faq-bg.jpg') center/cover no-repeat;"
+  >
+    <div class="faq-hero-overlay"></div>
+    <div class="container faq-hero-content">
+      <span class="faq-hero-kicker">Preguntas frecuentes</span>
+      <h1>Respuestas a las preguntas más comunes sobre nuestros productos, aplicaciones y servicios.</h1>
+      <p>
+        Explore las preguntas frecuentes sobre las soluciones DGSDK, que cubren aplicaciones industriales, categorías de productos, fabricación personalizada, soporte de automatización y modalidades de colaboración.
+      </p>
+    </div>
+  </section>
+
+  <section class="faq-intro-section">
+    <div class="container">
+      <div class="faq-intro-box">
+        <span class="faq-section-label">Soporte e información</span>
+        <h2>Respuestas claras y prácticas.</h2>
+        <p>Esta página ayuda a los clientes a comprender completamente nuestros productos, servicios y capacidades de aplicación industrial antes de comenzar una colaboración.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-main-section">
+    <div class="container">
+      <div class="faq-layout">
+        <aside class="faq-side-panel">
+          <div class="faq-side-card">
+            <span class="faq-side-label">Guía rápida</span>
+            <h3>¿Necesita ayuda para encontrar la solución adecuada?</h3>
+            <p>
+              Explore las preguntas de esta página o contacte directamente a DGSDK para recomendaciones de productos y soporte industrial personalizado.
+            </p>
+            <div class="faq-side-actions">
+              <a href="/es/contact" class="faq-primary-btn">Contáctenos</a>
+              <a href="/es/products" class="faq-text-link">Ver productos</a>
+            </div>
+          </div>
+        </aside>
+
+        <div class="faq-content">
+          <div class="faq-heading-block">
+            <span class="faq-section-label">Preguntas frecuentes</span>
+            <h2>Preguntas habituales de clientes y socios.</h2>
+            <p>Para facilitar la selección de productos y la comunicación comercial.</p>
+          </div>
+
+          <div class="faq-list">
+            {faqItems.map((item, index) => (
+              <details class="faq-item" open={index === 0}>
+                <summary class="faq-question">
+                  <span>{item.question}</span>
+                  <span class="faq-icon"></span>
+                </summary>
+                <div class="faq-answer">
+                  <p>{item.answer}</p>
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-bottom-section">
+    <div class="container">
+      <div class="faq-bottom-panel">
+        <div class="faq-bottom-copy">
+          <span class="faq-section-label dark">¿Aún tiene dudas?</span>
+          <h2>Le invitamos a discutir su aplicación o necesidades de producto.</h2>
+          <p>
+            Si su pregunta no está en esta lista, nuestro equipo puede ayudarle con la selección de productos, la compatibilidad con su aplicación y soluciones industriales personalizadas.
+          </p>
+        </div>
+
+        <div class="faq-bottom-actions">
+          <a href="/es/contact" class="faq-primary-btn">Contáctenos</a>
+          <a href="/es/applications" class="faq-secondary-btn">Ver aplicaciones</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .faq-hero {
+      position: relative;
+      min-height: 680px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 125px 0 60px;
+      background:
+        linear-gradient(rgba(15, 23, 42, 0.18), rgba(15, 23, 42, 0.10)),
+        url('/assets/img/header-bg.jpg') center/cover no-repeat;
+      overflow: hidden;
+      text-align: center;
+    }
+    .faq-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+    }
+    .faq-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 960px;
+    }
+    .faq-hero-kicker,
+    .faq-section-label,
+    .faq-side-label {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: #fff4cc;
+      color: #8a6a00;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .faq-section-label.dark {
+      background: rgba(255,255,255,0.12);
+      color: #fff4cc;
+    }
+    .faq-hero h1 {
+      margin-bottom: 18px;
+      font-size: clamp(2.4rem, 5vw, 4.6rem);
+      line-height: 1.06;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #111;
+    }
+    .faq-hero p {
+      max-width: 820px;
+      margin: 0 auto;
+      font-size: 1.04rem;
+      line-height: 1.85;
+      color: rgba(17,17,17,0.72);
+    }
+    .faq-intro-section { padding: 70px 0 32px; background: #fff; }
+    .faq-intro-box, .faq-heading-block { max-width: 860px; margin: 0 auto; text-align: center; }
+    .faq-intro-box h2, .faq-heading-block h2, .faq-bottom-copy h2 {
+      margin-bottom: 16px;
+      font-size: clamp(2rem, 3.4vw, 3rem);
+      line-height: 1.1;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #111;
+    }
+    .faq-intro-box p, .faq-heading-block p, .faq-bottom-copy p, .faq-side-card p {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.85;
+      color: #666;
+    }
+    .faq-main-section { padding: 40px 0 95px; background: #fff; }
+    .faq-layout {
+      display: grid;
+      grid-template-columns: 300px minmax(0, 1fr);
+      gap: 30px;
+      align-items: start;
+    }
+    .faq-side-panel { position: sticky; top: 110px; margin-left: -16px; }
+    .faq-side-card {
+      padding: 28px;
+      border-radius: 28px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8f9fb 100%);
+      border: 1px solid #ececec;
+      box-shadow: 0 18px 45px rgba(15,23,42,0.06);
+    }
+    .faq-side-card h3 { margin-bottom: 14px; font-size: 1.5rem; line-height: 1.25; font-weight: 800; color: #111; }
+    .faq-side-actions { display: flex; flex-direction: column; gap: 12px; margin-top: 22px; }
+    .faq-primary-btn, .faq-secondary-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 150px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.28s ease;
+    }
+    .faq-primary-btn { background: #ffcc00; color: #111; }
+    .faq-primary-btn:hover { background: #ffd633; }
+    .faq-secondary-btn { background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.18); }
+    .faq-secondary-btn:hover { background: rgba(255,255,255,0.18); }
+    .faq-text-link { display: inline-block; text-decoration: none; color: #0071e3; font-weight: 600; font-size: 0.96rem; }
+    .faq-content { display: flex; flex-direction: column; gap: 26px; align-items: flex-start; width: 100%; max-width: 860px; }
+    .faq-list { display: grid; gap: 18px; width: 100%; }
+    .faq-item {
+      background: #fff;
+      border: 1px solid #ececec;
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(15,23,42,0.05);
+      transition: box-shadow 0.28s ease, transform 0.28s ease;
+    }
+    .faq-item:hover { transform: translateY(-3px); box-shadow: 0 22px 50px rgba(15,23,42,0.10); }
+    .faq-question {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 24px 26px;
+      font-size: 1.14rem;
+      line-height: 1.5;
+      font-weight: 700;
+      color: #111;
+      user-select: none;
+    }
+    .faq-question::-webkit-details-marker { display: none; }
+    .faq-icon { position: relative; width: 22px; height: 22px; flex-shrink: 0; }
+    .faq-icon::before, .faq-icon::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 16px;
+      height: 2px;
+      background: #111;
+      border-radius: 999px;
+      transform: translate(-50%, -50%);
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+    .faq-icon::after { transform: translate(-50%, -50%) rotate(90deg); }
+    .faq-item[open] .faq-icon::after { opacity: 0; transform: translate(-50%, -50%) rotate(90deg) scaleX(0.2); }
+    .faq-answer { padding: 0 26px 24px; }
+    .faq-answer p { margin: 0; font-size: 1rem; line-height: 1.85; color: #666; }
+    .faq-bottom-section { padding: 0 0 95px; background: #fff; }
+    .faq-bottom-panel {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 28px;
+      padding: 40px 42px;
+      border-radius: 32px;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      box-shadow: 0 28px 70px rgba(15,23,42,0.16);
+    }
+    .faq-bottom-copy { max-width: 720px; }
+    .faq-bottom-copy h2 { color: #fff; }
+    .faq-bottom-copy p { color: rgba(255,255,255,0.82); }
+    .faq-bottom-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .faq-heading-block { width: 100%; max-width: 860px; margin: 0; text-align: left; }
+    .faq-heading-block h2, .faq-heading-block p { width: 100%; max-width: 100%; margin-left: 0; margin-right: 0; }
+    .faq-heading-block .faq-section-label { margin-left: 0; margin-right: auto; }
+    @media (max-width: 991px) {
+      .faq-layout { grid-template-columns: 1fr; }
+      .faq-side-panel { position: sticky; top: 120px; margin-left: 0; }
+      .faq-bottom-panel { flex-direction: column; align-items: flex-start; }
+      .faq-heading-block { width: 100%; max-width: 860px; margin: 0 auto; text-align: center; }
+      .faq-content { align-items: stretch; width: 100%; }
+      .faq-heading-block .faq-section-label { margin-left: auto; margin-right: auto; }
+    }
+    @media (max-width: 768px) {
+      .faq-hero { min-height: 260px; padding: 105px 0 45px; }
+      .faq-hero h1 { font-size: clamp(2rem, 8vw, 2.9rem); }
+      .faq-side-card, .faq-item, .faq-bottom-panel { border-radius: 24px; }
+      .faq-question { padding: 20px; font-size: 1rem; }
+      .faq-answer { padding: 0 20px 20px; }
+      .faq-bottom-panel { padding: 28px 22px; }
+    }
+  </style>
+</EsLayout>

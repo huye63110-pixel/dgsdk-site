@@ -1,0 +1,270 @@
+---
+import Analytics from '@vercel/analytics/astro';
+import SpeedInsights from '@vercel/speed-insights/astro';
+const {
+  title = "DGSDK | 산업 자동화 및 정전기 제거 솔루션",
+  description = "DGSDK는 중국 둥관을 거점으로 하는 전문 제조업체로, 정전기 제거 시스템, 산업용 세척기, 자동화 장비 및 정밀 CNC 부품을 전문으로 합니다.",
+  image = "/assets/img/header-bg.webp",
+  canonical = Astro.url.href
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="ko" href={canonical} />
+    <link rel="alternate" hreflang="en" href={canonical.replace('/ko', '')} />
+    <link rel="alternate" hreflang="x-default" href={canonical.replace('/ko', '')} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`https://www.dg-sdk.com${image}`} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="DGSDK" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`https://www.dg-sdk.com${image}`} />
+
+    <!-- SEO -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="DGSDK - 东莞史帝克自动化设备有限公司" />
+    <meta name="keywords" content="정전기 제거, 산업용 세척기, 정밀 CNC 부품, 자동화 장비, 둥관 제조업체" />
+    <meta name="geo.region" content="CN-GD" />
+    <meta name="geo.placename" content="Dongguan, Guangdong, China" />
+
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["Organization", "LocalBusiness"],
+      "name": "DGSDK",
+      "alternateName": "东莞史帝克自动化设备有限公司",
+      "url": "https://www.dg-sdk.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.dg-sdk.com/logo.png",
+        "width": 600,
+        "height": 169
+      },
+      "description": "정전기 제거 시스템, 산업용 세척기, 자동화 장비 및 정밀 CNC 부품 전문 제조업체.",
+      "foundingDate": "2013",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "滨海路33号",
+        "addressLocality": "东莞",
+        "addressRegion": "广东",
+        "postalCode": "523000",
+        "addressCountry": "CN"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+86-13602342003",
+          "contactType": "sales",
+          "availableLanguage": ["English", "Chinese", "Korean"],
+          "areaServed": "Worldwide"
+        }
+      ],
+      "email": "huye63110@gmail.com"
+    }
+    </script>
+  </head>
+
+  <body id="page-top">
+    <!-- 내비게이션 -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="/ko/">
+          <img src="/logo.png" alt="DGSDK Logo" loading="lazy" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          메뉴 <i class="fas fa-bars ms-1"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+            <li class="nav-item"><a class="nav-link" href="/ko/">홈</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="/ko/products" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">제품</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/ko/products">전체 제품</a></li>
+                <li><a class="dropdown-item" href="/ko/products/static-eliminator">정전기 제거 시스템</a></li>
+                <li><a class="dropdown-item" href="/ko/products/cleaning-machine">산업용 세척기</a></li>
+                <li><a class="dropdown-item" href="/ko/products/precision-machined-parts">정밀 가공 부품</a></li>
+                <li><a class="dropdown-item" href="/ko/products/automation">자동화 장비</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="/ko/applications">응용 분야</a></li>
+            <li class="nav-item"><a class="nav-link" href="/ko/about">회사 소개</a></li>
+            <li class="nav-item"><a class="nav-link" href="/ko/contact">문의하기</a></li>
+            <li class="nav-item"><a class="nav-link" href="/ko/faq">자주 묻는 질문</a></li>
+
+            <li class="nav-item lang-dropdown" id="langDropdown">
+              <button class="nav-link lang-btn" type="button" id="langToggle">
+                KR <i class="fas fa-chevron-down"></i>
+              </button>
+              <ul class="lang-menu" id="langMenu">
+                <li><a href="/">English</a></li>
+                <li><a href="/zh/">中文</a></li>
+                <li><a href="/vi/">Tiếng Việt</a></li>
+                <li><a href="/ar/">العربية</a></li>
+                <li><a href="/ja/">日本語</a></li>
+                <li><a href="/ko/">한국어</a></li>
+                <li><a href="/es/">Español</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item nav-icon-item search-dropdown" id="searchDropdown">
+              <button class="nav-link nav-icon-btn" type="button" id="searchToggle">
+                <i class="fas fa-search"></i>
+              </button>
+              <div class="search-box" id="searchBox">
+                <input type="text" placeholder="제품 검색..." autocomplete="off" />
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main style="padding-top: 110px;">
+      <slot />
+    </main>
+
+    <!-- 플로팅 소셜 버튼 -->
+    <div class="floating-social">
+      <a href="mailto:huye63110@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email" class="float-btn email">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://wa.me/61436605126?text=안녕하세요, 제품에 관심이 있습니다" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="float-btn whatsapp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/henry-hu-0ba80737a" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="float-btn linkedin">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://www.tiktok.com/@machingmasters" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="float-btn tiktok">
+        <i class="fab fa-tiktok"></i>
+      </a>
+      <a href="https://www.instagram.com/ls_machiningmasters" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="float-btn instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://youtube.com/@machiningmasters01" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="float-btn youtube">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://www.facebook.com/yourcompany" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="float-btn facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="#page-top" aria-label="맨 위로" class="float-btn top">
+        <i class="fas fa-arrow-up"></i>
+      </a>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-col footer-brand">
+          <img src="/logo.png" alt="DGSDK Logo" class="footer-logo" loading="lazy" />
+          <p>DGSDK는 중국 광둥성 둥관시에 위치한 전문 제조업체로, 정전기 제거 시스템, 산업용 세척기, 자동화 장비 및 정밀 CNC 부품을 전문으로 제조합니다.</p>
+        </div>
+        <div class="footer-col">
+          <h4>빠른 링크</h4>
+          <a href="/ko/">홈</a>
+          <a href="/ko/applications">응용 분야</a>
+          <a href="/ko/about">회사 소개</a>
+          <a href="/ko/contact">문의하기</a>
+          <a href="/ko/faq">자주 묻는 질문</a>
+        </div>
+        <div class="footer-col">
+          <h4>제품</h4>
+          <a href="/ko/products/static-eliminator">정전기 제거 시스템</a>
+          <a href="/ko/products/cleaning-machine">산업용 세척기</a>
+          <a href="/ko/products/precision-machined-parts">정밀 가공 부품</a>
+          <a href="/ko/products/automation">자동화 장비</a>
+        </div>
+        <div class="footer-col">
+          <h4>연락처</h4>
+          <p>전화：+86 13602342003</p>
+          <p>WhatsApp：+61 436605126</p>
+          <p>이메일：huye63110@gmail.com</p>
+          <p>주소：중국 광둥성 둥관시 빈하이로 33호</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 DGSDK. 모든 권리 보유. <a href="/privacy" style="color:rgba(255,255,255,0.5);text-decoration:none;margin-left:12px;">개인정보처리방침</a></p>
+      </div>
+    </footer>
+
+    <!-- 견적 모달 -->
+    <div class="quote-modal" id="quoteModal">
+      <div class="quote-modal-overlay" id="closeQuoteModal"></div>
+      <div class="quote-modal-content">
+        <button class="quote-modal-close" id="closeQuoteModalBtn">×</button>
+        <h2>견적 받기</h2>
+        <p>연락처를 남겨주시면 빠른 시일 내에 답변드리겠습니다.</p>
+        <form class="quote-form" id="quoteFormMain">
+          <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" />
+          <input type="text" placeholder="이름" required />
+          <input type="email" placeholder="이메일" required />
+          <textarea placeholder="메시지"></textarea>
+          <button type="submit">메시지 보내기</button>
+        </form>
+      </div>
+    </div>
+
+    <script is:inline src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script is:inline src="/js/scripts.js"></script>
+
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', () => {
+        const modal = document.getElementById('quoteModal');
+        const closeOverlay = document.getElementById('closeQuoteModal');
+        const closeBtn = document.getElementById('closeQuoteModalBtn');
+        const form = document.getElementById('quoteFormMain');
+
+        document.querySelectorAll('.quote-btn').forEach(btn => {
+          btn.addEventListener('click', () => modal.classList.add('active'));
+        });
+        if (closeOverlay) closeOverlay.addEventListener('click', () => modal.classList.remove('active'));
+        if (closeBtn) closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+
+        if (form) {
+          form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const honeypot = form.querySelector('input[name="website"]');
+            if (honeypot && honeypot.value !== '') return;
+            alert('메시지가 전송되었습니다! 빠른 시일 내에 연락드리겠습니다.');
+            modal.classList.remove('active');
+            form.reset();
+          });
+        }
+      });
+    </script>
+
+    <Analytics />
+    <SpeedInsights />
+  </body>
+</html>
