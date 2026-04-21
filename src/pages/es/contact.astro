@@ -1,0 +1,139 @@
+---
+import EsLayout from '../../layouts/EsLayout.astro';
+---
+
+<EsLayout
+  title="Contacto | DGSDK"
+  description="Contacte a DGSDK para obtener cotizaciones y soporte técnico en automatización industrial, eliminadores de estática, máquinas limpiadoras y piezas CNC de precisión. Respondemos en 24 horas hábiles."
+  canonical="https://www.dg-sdk.com/es/contact"
+>
+  <section
+    class="contact-hero"
+    style="background: linear-gradient(rgba(113, 87, 87, 0.28), rgba(106, 56, 56, 0.18)), url('/assets/img/contact/contact.jpg') center/cover no-repeat;"
+  >
+    <div class="category-hero-overlay"></div>
+    <div class="container category-hero-content">
+      <h1>Contáctenos</h1>
+      <p>
+        Póngase en contacto con DGSDK para obtener cotizaciones e información sobre equipos de automatización industrial, eliminadores de estática, máquinas limpiadoras y piezas CNC de precisión.
+      </p>
+    </div>
+  </section>
+
+  <section class="page-section contact-modern">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-left">
+          <h2>Contáctenos</h2>
+
+          <p class="company-name">Dongguan Shidike Automation Equipment Co., Ltd.</p>
+
+          <p class="contact-desc">
+            Estamos comprometidos a brindar soluciones confiables de automatización industrial, sistemas de eliminación de estática, máquinas limpiadoras y piezas CNC de precisión a clientes de todo el mundo. No dude en contactarnos para obtener más información sobre productos y oportunidades de colaboración.
+          </p>
+
+          <div class="response-guarantee">
+            <i class="fas fa-clock"></i>
+            <span>Respondemos en <strong>24 horas hábiles</strong> a todas las consultas.</span>
+          </div>
+
+          <h3>Si tiene alguna pregunta, contáctenos</h3>
+
+          <div class="contact-info-list">
+            <div class="contact-info-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div>
+                <span class="contact-label">Teléfono:</span>
+                <p>+86 13602342003</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-icon">
+                <i class="fab fa-whatsapp"></i>
+              </div>
+              <div>
+                <span class="contact-label">WhatsApp:</span>
+                <p>+61 436605126</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <span class="contact-label">Email:</span>
+                <p>huye63110@gmail.com</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <span class="contact-label">Dirección:</span>
+                <p>Calle Binhai 33, Dongguan, Guangdong, China</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-right">
+          <div class="map-box">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3678.478825294075!2d113.76762507613407!3d22.784714925161143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34039625f048b6f7%3A0x20abebbe17b92cf2!2z5Lit5Zu95bm_5Lic55yB5Lic6I6e5biC5ruo5rKz6LevMzPlj7cg6YKu5pS_57yW56CBOiA1MjM4NTA!5e0!3m2!1szh-CN!2sus!4v1745226418103!5m2!1szh-CN!2sus"
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section bg-light">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-heading text-uppercase">Enviar consulta</h2>
+        <h3 class="section-subheading text-muted">
+          Deje sus datos y le responderemos en 24 horas hábiles.
+        </h3>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <form action="https://formspree.io/f/mkopvoyk" method="POST">
+            <div class="form-group mb-3">
+              <input class="form-control" type="text" name="name" placeholder="Tu nombre *" required />
+            </div>
+
+            <div class="form-group mb-3">
+              <input class="form-control" type="email" name="email" placeholder="Tu email *" required />
+            </div>
+
+            <div class="form-group mb-3">
+              <input class="form-control" type="text" name="company" placeholder="Nombre de empresa" />
+            </div>
+
+            <div class="form-group mb-3">
+              <textarea class="form-control" name="message" rows="6" placeholder="Tu mensaje *" required></textarea>
+            </div>
+
+            <div class="text-center">
+              <button class="btn btn-primary btn-xl text-uppercase" type="submit">
+                Enviar mensaje
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</EsLayout>

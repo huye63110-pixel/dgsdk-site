@@ -1,0 +1,270 @@
+---
+import Analytics from '@vercel/analytics/astro';
+import SpeedInsights from '@vercel/speed-insights/astro';
+const {
+  title = "DGSDK | Soluciones de Automatización Industrial y Eliminación de Estática",
+  description = "DGSDK es un fabricante profesional en Dongguan, China, especializado en sistemas de eliminación de electricidad estática, máquinas limpiadoras industriales, equipos de automatización y piezas CNC de precisión.",
+  image = "/assets/img/header-bg.webp",
+  canonical = Astro.url.href
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="es" href={canonical} />
+    <link rel="alternate" hreflang="en" href={canonical.replace('/es', '')} />
+    <link rel="alternate" hreflang="x-default" href={canonical.replace('/es', '')} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`https://www.dg-sdk.com${image}`} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="DGSDK" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`https://www.dg-sdk.com${image}`} />
+
+    <!-- SEO -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="DGSDK - Dongguan Shidike Automation Equipment Co., Ltd." />
+    <meta name="keywords" content="eliminador de estática, máquinas limpiadoras industriales, piezas CNC de precisión, equipos de automatización, fabricante Dongguan" />
+    <meta name="geo.region" content="CN-GD" />
+    <meta name="geo.placename" content="Dongguan, Guangdong, China" />
+
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["Organization", "LocalBusiness"],
+      "name": "DGSDK",
+      "alternateName": "Dongguan Shidike Automation Equipment Co., Ltd.",
+      "url": "https://www.dg-sdk.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.dg-sdk.com/logo.png",
+        "width": 600,
+        "height": 169
+      },
+      "description": "Fabricante profesional especializado en sistemas de eliminación de electricidad estática, máquinas limpiadoras industriales, equipos de automatización y piezas CNC de precisión.",
+      "foundingDate": "2013",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Binhai Road 33",
+        "addressLocality": "Dongguan",
+        "addressRegion": "Guangdong",
+        "postalCode": "523000",
+        "addressCountry": "CN"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+86-13602342003",
+          "contactType": "sales",
+          "availableLanguage": ["English", "Chinese", "Spanish"],
+          "areaServed": "Worldwide"
+        }
+      ],
+      "email": "huye63110@gmail.com"
+    }
+    </script>
+  </head>
+
+  <body id="page-top">
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="/es/">
+          <img src="/logo.png" alt="DGSDK Logo" loading="lazy" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          Menú <i class="fas fa-bars ms-1"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+            <li class="nav-item"><a class="nav-link" href="/es/">Inicio</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="/es/products" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Productos</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/es/products">Todos los productos</a></li>
+                <li><a class="dropdown-item" href="/es/products/static-eliminator">Sistemas eliminadores de estática</a></li>
+                <li><a class="dropdown-item" href="/es/products/cleaning-machine">Máquinas limpiadoras</a></li>
+                <li><a class="dropdown-item" href="/es/products/precision-machined-parts">Piezas mecanizadas de precisión</a></li>
+                <li><a class="dropdown-item" href="/es/products/automation">Equipos de automatización</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="/es/applications">Aplicaciones</a></li>
+            <li class="nav-item"><a class="nav-link" href="/es/about">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="/es/contact">Contacto</a></li>
+            <li class="nav-item"><a class="nav-link" href="/es/faq">Preguntas frecuentes</a></li>
+
+            <li class="nav-item lang-dropdown" id="langDropdown">
+              <button class="nav-link lang-btn" type="button" id="langToggle">
+                ES <i class="fas fa-chevron-down"></i>
+              </button>
+              <ul class="lang-menu" id="langMenu">
+                <li><a href="/">English</a></li>
+                <li><a href="/zh/">中文</a></li>
+                <li><a href="/vi/">Tiếng Việt</a></li>
+                <li><a href="/ar/">العربية</a></li>
+                <li><a href="/ja/">日本語</a></li>
+                <li><a href="/ko/">한국어</a></li>
+                <li><a href="/es/">Español</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item nav-icon-item search-dropdown" id="searchDropdown">
+              <button class="nav-link nav-icon-btn" type="button" id="searchToggle">
+                <i class="fas fa-search"></i>
+              </button>
+              <div class="search-box" id="searchBox">
+                <input type="text" placeholder="Buscar productos..." autocomplete="off" />
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main style="padding-top: 110px;">
+      <slot />
+    </main>
+
+    <!-- Botones sociales flotantes -->
+    <div class="floating-social">
+      <a href="mailto:huye63110@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email" class="float-btn email">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://wa.me/61436605126?text=Hola%2C%20estoy%20interesado%20en%20sus%20productos" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="float-btn whatsapp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/henry-hu-0ba80737a" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="float-btn linkedin">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://www.tiktok.com/@machingmasters" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="float-btn tiktok">
+        <i class="fab fa-tiktok"></i>
+      </a>
+      <a href="https://www.instagram.com/ls_machiningmasters" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="float-btn instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://youtube.com/@machiningmasters01" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="float-btn youtube">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://www.facebook.com/yourcompany" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="float-btn facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="#page-top" aria-label="Volver arriba" class="float-btn top">
+        <i class="fas fa-arrow-up"></i>
+      </a>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-col footer-brand">
+          <img src="/logo.png" alt="DGSDK Logo" class="footer-logo" loading="lazy" />
+          <p>DGSDK es un fabricante profesional en Dongguan, China, especializado en sistemas de eliminación de electricidad estática, máquinas limpiadoras industriales, equipos de automatización y piezas CNC de precisión.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Enlaces rápidos</h4>
+          <a href="/es/">Inicio</a>
+          <a href="/es/applications">Aplicaciones</a>
+          <a href="/es/about">Nosotros</a>
+          <a href="/es/contact">Contacto</a>
+          <a href="/es/faq">Preguntas frecuentes</a>
+        </div>
+        <div class="footer-col">
+          <h4>Productos</h4>
+          <a href="/es/products/static-eliminator">Eliminador de estática</a>
+          <a href="/es/products/cleaning-machine">Máquinas limpiadoras</a>
+          <a href="/es/products/precision-machined-parts">Piezas de precisión</a>
+          <a href="/es/products/automation">Equipos de automatización</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <p>Teléfono: +86 13602342003</p>
+          <p>WhatsApp: +61 436605126</p>
+          <p>Email: huye63110@gmail.com</p>
+          <p>Dirección: Calle Binhai 33, Dongguan, Guangdong, China</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 DGSDK. Todos los derechos reservados. <a href="/privacy" style="color:rgba(255,255,255,0.5);text-decoration:none;margin-left:12px;">Política de privacidad</a></p>
+      </div>
+    </footer>
+
+    <!-- Modal de cotización global -->
+    <div class="quote-modal" id="quoteModal">
+      <div class="quote-modal-overlay" id="closeQuoteModal"></div>
+      <div class="quote-modal-content">
+        <button class="quote-modal-close" id="closeQuoteModalBtn">×</button>
+        <h2>Solicitar cotización</h2>
+        <p>Deja tus datos de contacto y nos pondremos en contacto contigo a la brevedad.</p>
+        <form class="quote-form" id="quoteFormMain" action="https://formspree.io/f/mkopvoyk" method="POST">
+          <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" />
+          <input type="text" name="name" placeholder="Tu nombre" required />
+          <input type="email" name="email" placeholder="Tu email" required />
+          <textarea name="message" placeholder="Tu mensaje"></textarea>
+          <button type="submit">Enviar mensaje</button>
+        </form>
+      </div>
+    </div>
+
+    <script is:inline src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script is:inline src="/js/scripts.js"></script>
+
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', () => {
+        const modal = document.getElementById('quoteModal');
+        const closeOverlay = document.getElementById('closeQuoteModal');
+        const closeBtn = document.getElementById('closeQuoteModalBtn');
+        const form = document.getElementById('quoteFormMain');
+
+        document.querySelectorAll('.quote-btn').forEach(btn => {
+          btn.addEventListener('click', () => modal.classList.add('active'));
+        });
+        if (closeOverlay) closeOverlay.addEventListener('click', () => modal.classList.remove('active'));
+        if (closeBtn) closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+
+        if (form) {
+          form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const honeypot = form.querySelector('input[name="website"]');
+            if (honeypot && honeypot.value !== '') return;
+            alert('¡Mensaje enviado! Nos pondremos en contacto contigo a la brevedad.');
+            modal.classList.remove('active');
+            form.reset();
+          });
+        }
+      });
+    </script>
+
+    <Analytics />
+    <SpeedInsights />
+  </body>
+</html>

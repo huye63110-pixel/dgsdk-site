@@ -1,0 +1,139 @@
+---
+import JaLayout from '../../layouts/JaLayout.astro';
+---
+
+<JaLayout
+  title="お問い合わせ | DGSDK"
+  description="DGSDKへのお問い合わせ。産業用自動化設備、静電気除去器、洗浄機、精密CNC部品のお見積もり・技術サポートはこちら。営業時間内に24時間以内にご回答いたします。"
+  canonical="https://www.dg-sdk.com/ja/contact"
+>
+  <section
+    class="contact-hero"
+    style="background: linear-gradient(rgba(113, 87, 87, 0.28), rgba(106, 56, 56, 0.18)), url('/assets/img/contact/contact.jpg') center/cover no-repeat;"
+  >
+    <div class="category-hero-overlay"></div>
+    <div class="container category-hero-content">
+      <h1>お問い合わせ</h1>
+      <p>
+        産業用自動化設備、静電気除去器、洗浄機、精密CNC部品のお見積もりやご相談はDGSDKまでお気軽にどうぞ。
+      </p>
+    </div>
+  </section>
+
+  <section class="page-section contact-modern">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-left">
+          <h2>お問い合わせ</h2>
+
+          <p class="company-name">東莞史帝克自動化設備有限公司</p>
+
+          <p class="contact-desc">
+            信頼性の高い産業用自動化ソリューション、静電気除去システム、洗浄機、精密CNC部品を世界中のお客様にご提供しています。製品情報やお取引のご相談はいつでも歓迎いたします。
+          </p>
+
+          <div class="response-guarantee">
+            <i class="fas fa-clock"></i>
+            <span>営業時間内に<strong>24時間以内</strong>にご回答いたします。</span>
+          </div>
+
+          <h3>ご不明な点はお問い合わせください</h3>
+
+          <div class="contact-info-list">
+            <div class="contact-info-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div>
+                <span class="contact-label">電話：</span>
+                <p>+86 13602342003</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-icon">
+                <i class="fab fa-whatsapp"></i>
+              </div>
+              <div>
+                <span class="contact-label">WhatsApp：</span>
+                <p>+61 436605126</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <span class="contact-label">メール：</span>
+                <p>huye63110@gmail.com</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <span class="contact-label">住所：</span>
+                <p>中国広東省東莞市濱海路33号</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-right">
+          <div class="map-box">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3678.478825294075!2d113.76762507613407!3d22.784714925161143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34039625f048b6f7%3A0x20abebbe17b92cf2!2z5Lit5Zu95bm_5Lic55yB5Lic6I6e5biC5ruo5rKz6LevMzPlj7cg6YKu5pS_57yW56CBOiA1MjM4NTA!5e0!3m2!1szh-CN!2sus!4v1745226418103!5m2!1szh-CN!2sus"
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section bg-light">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-heading text-uppercase">お問い合わせフォーム</h2>
+        <h3 class="section-subheading text-muted">
+          お客様の情報をご記入ください。営業時間内に24時間以内にご回答いたします。
+        </h3>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <form action="https://formspree.io/f/mkopvoyk" method="POST">
+            <div class="form-group mb-3">
+              <input class="form-control" type="text" name="name" placeholder="お名前 *" required />
+            </div>
+
+            <div class="form-group mb-3">
+              <input class="form-control" type="email" name="email" placeholder="メールアドレス *" required />
+            </div>
+
+            <div class="form-group mb-3">
+              <input class="form-control" type="text" name="company" placeholder="会社名" />
+            </div>
+
+            <div class="form-group mb-3">
+              <textarea class="form-control" name="message" rows="6" placeholder="メッセージ *" required></textarea>
+            </div>
+
+            <div class="text-center">
+              <button class="btn btn-primary btn-xl text-uppercase" type="submit">
+                送信する
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</JaLayout>
