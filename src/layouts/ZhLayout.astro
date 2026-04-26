@@ -5,8 +5,10 @@ const {
   title = "DGSDK | 工业自动化与静电消除解决方案",
   description = "东莞史帝克自动化设备有限公司，专业生产静电消除器、工业清洁机、自动化设备和精密CNC零件。",
   image = "/assets/img/header-bg.webp",
-  canonical = Astro.url.href
+  canonical: _rawCanonical = Astro.url.href
 } = Astro.props;
+const _segments = new URL(_rawCanonical).pathname.split('/').filter(Boolean);
+const canonical = _segments.length > 1 ? _rawCanonical.replace(/\/$/, '') : _rawCanonical;
 ---
 
 <!DOCTYPE html>

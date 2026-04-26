@@ -5,8 +5,10 @@ const {
   title = "DGSDK | Soluciones de Automatización Industrial y Eliminación de Estática",
   description = "DGSDK es un fabricante profesional en Dongguan, China, especializado en sistemas de eliminación de electricidad estática, máquinas limpiadoras industriales, equipos de automatización y piezas CNC de precisión.",
   image = "/assets/img/header-bg.webp",
-  canonical = Astro.url.href
+  canonical: _rawCanonical = Astro.url.href
 } = Astro.props;
+const _segments = new URL(_rawCanonical).pathname.split('/').filter(Boolean);
+const canonical = _segments.length > 1 ? _rawCanonical.replace(/\/$/, '') : _rawCanonical;
 ---
 
 <!DOCTYPE html>

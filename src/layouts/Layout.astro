@@ -5,11 +5,14 @@ const {
   title = "DGSDK | Industrial Automation & Static Control Solutions",
   description = "DGSDK is a professional manufacturer in Dongguan, China, specializing in static elimination systems, industrial cleaning machines, automation equipment, and precision CNC parts.",
   image = "/assets/img/header-bg.webp",
-  canonical = Astro.url.href
+  canonical: _rawCanonical = Astro.url.href
 } = Astro.props;
 
-const path = new URL(canonical).pathname;
 const base = "https://www.dg-sdk.com";
+// Normalize canonical: strip trailing slash for deep paths (keep / and /lang/)
+const _segments = new URL(_rawCanonical).pathname.split('/').filter(Boolean);
+const canonical = _segments.length > 1 ? _rawCanonical.replace(/\/$/, '') : _rawCanonical;
+const path = new URL(canonical).pathname;
 ---
 
 <!DOCTYPE html>

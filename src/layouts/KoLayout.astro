@@ -5,8 +5,10 @@ const {
   title = "DGSDK | 산업 자동화 및 정전기 제거 솔루션",
   description = "DGSDK는 중국 둥관을 거점으로 하는 전문 제조업체로, 정전기 제거 시스템, 산업용 세척기, 자동화 장비 및 정밀 CNC 부품을 전문으로 합니다.",
   image = "/assets/img/header-bg.webp",
-  canonical = Astro.url.href
+  canonical: _rawCanonical = Astro.url.href
 } = Astro.props;
+const _segments = new URL(_rawCanonical).pathname.split('/').filter(Boolean);
+const canonical = _segments.length > 1 ? _rawCanonical.replace(/\/$/, '') : _rawCanonical;
 ---
 
 <!DOCTYPE html>

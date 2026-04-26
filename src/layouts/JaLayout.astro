@@ -5,8 +5,10 @@ const {
   title = "DGSDK | 産業用自動化・静電気除去ソリューション",
   description = "DGSDKは中国東莞を拠点とする専門メーカーで、静電気除去システム、産業用洗浄機、自動化設備、精密CNC部品を専門としています。",
   image = "/assets/img/header-bg.webp",
-  canonical = Astro.url.href
+  canonical: _rawCanonical = Astro.url.href
 } = Astro.props;
+const _segments = new URL(_rawCanonical).pathname.split('/').filter(Boolean);
+const canonical = _segments.length > 1 ? _rawCanonical.replace(/\/$/, '') : _rawCanonical;
 ---
 
 <!DOCTYPE html>

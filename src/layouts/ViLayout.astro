@@ -5,8 +5,10 @@ const {
   title = "DGSDK | Giải Pháp Tự Động Hóa Công Nghiệp & Khử Tĩnh Điện",
   description = "DGSDK là nhà sản xuất chuyên nghiệp tại Đông Quan, Trung Quốc, chuyên sản xuất hệ thống khử tĩnh điện, máy làm sạch công nghiệp, thiết bị tự động hóa và linh kiện CNC chính xác.",
   image = "/assets/img/header-bg.webp",
-  canonical = Astro.url.href
+  canonical: _rawCanonical = Astro.url.href
 } = Astro.props;
+const _segments = new URL(_rawCanonical).pathname.split('/').filter(Boolean);
+const canonical = _segments.length > 1 ? _rawCanonical.replace(/\/$/, '') : _rawCanonical;
 ---
 
 <!DOCTYPE html>

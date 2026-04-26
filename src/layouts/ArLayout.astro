@@ -5,8 +5,10 @@ const {
   title = "DGSDK | حلول الأتمتة الصناعية وإزالة الكهرباء الساكنة",
   description = "DGSDK شركة مصنعة متخصصة في دونغقوان، الصين، تتخصص في أنظمة إزالة الكهرباء الساكنة، آلات التنظيف الصناعية، معدات الأتمتة وقطع CNC الدقيقة.",
   image = "/assets/img/header-bg.webp",
-  canonical = Astro.url.href
+  canonical: _rawCanonical = Astro.url.href
 } = Astro.props;
+const _segments = new URL(_rawCanonical).pathname.split('/').filter(Boolean);
+const canonical = _segments.length > 1 ? _rawCanonical.replace(/\/$/, '') : _rawCanonical;
 ---
 
 <!DOCTYPE html>
