@@ -16281,3 +16281,79 @@ max-height:90%;
     padding-right: 0;
   }
 }
+
+/* === Accessibility & Performance Improvements === */
+
+/* Touch targets: hero slider dots — min 44×44px tap area */
+.hero-dots button,
+button.hero-dot {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Touch targets: navbar toggler */
+.navbar-toggler {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* Touch targets: nav links on mobile */
+@media (max-width: 991px) {
+  .navbar-nav .nav-link {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .lang-btn,
+  .nav-icon-btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Contrast: muted text — lighten to meet WCAG AA (#767676 on white = 4.54:1) */
+.text-muted,
+.section-subheading.text-muted {
+  color: #555555 !important;
+}
+
+/* Contrast: timeline / card meta text */
+.timeline-subheading,
+.card-subtitle {
+  color: #5a5a5a !important;
+}
+
+/* Contrast: footer paragraph text */
+.site-footer p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Contrast: footer link subtle */
+.footer-bottom a {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+/* Ensure skip-to-content link is reachable (for screen readers) */
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-to-content:focus {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  padding: 8px 16px;
+  background: #fff;
+  color: #000;
+  z-index: 9999;
+  font-weight: 700;
+}

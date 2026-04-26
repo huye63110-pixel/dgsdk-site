@@ -53,7 +53,12 @@ const canonical = _segments.length > 1 ? _rawCanonical.replace(/\/$/, '') : _raw
     <meta name="geo.placename" content="Dongguan, Guangdong, China" />
 
     <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <!-- Performance hints -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <!-- Font Awesome: deferred (non-render-blocking) -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" /></noscript>
     <link rel="icon" type="image/png" href="/favicon.png" />
 
     <!-- Structured Data -->
@@ -99,7 +104,7 @@ const canonical = _segments.length > 1 ? _rawCanonical.replace(/\/$/, '') : _raw
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand" href="/zh/">
-          <img src="/logo.png" alt="DGSDK Logo" loading="lazy" />
+          <img src="/logo.png" alt="DGSDK Logo" width="200" height="56" loading="eager" />
         </a>
         <button
           class="navbar-toggler"
@@ -131,7 +136,7 @@ const canonical = _segments.length > 1 ? _rawCanonical.replace(/\/$/, '') : _raw
             <li class="nav-item"><a class="nav-link" href="/zh/faq">常见问题</a></li>
 
             <li class="nav-item lang-dropdown" id="langDropdown">
-              <button class="nav-link lang-btn" type="button" id="langToggle">
+              <button class="nav-link lang-btn" type="button" id="langToggle" aria-label="选择语言" aria-expanded="false">
                 中文 <i class="fas fa-chevron-down"></i>
               </button>
               <ul class="lang-menu" id="langMenu">
@@ -146,7 +151,7 @@ const canonical = _segments.length > 1 ? _rawCanonical.replace(/\/$/, '') : _raw
             </li>
 
             <li class="nav-item nav-icon-item search-dropdown" id="searchDropdown">
-              <button class="nav-link nav-icon-btn" type="button" id="searchToggle">
+              <button class="nav-link nav-icon-btn" type="button" id="searchToggle" aria-label="搜索产品" aria-expanded="false">
                 <i class="fas fa-search"></i>
               </button>
               <div class="search-box" id="searchBox">
@@ -194,7 +199,7 @@ const canonical = _segments.length > 1 ? _rawCanonical.replace(/\/$/, '') : _raw
     <footer class="site-footer">
       <div class="footer-container">
         <div class="footer-col footer-brand">
-          <img src="/logo.png" alt="DGSDK Logo" class="footer-logo" loading="lazy" />
+          <img src="/logo.png" alt="DGSDK Logo" width="180" height="50" class="footer-logo" loading="lazy" />
           <p>DGSDK（东莞史帝克自动化设备有限公司）是专业制造商，专注于静电消除系统、工业清洁机、自动化设备和精密CNC零件。</p>
         </div>
         <div class="footer-col">
@@ -229,7 +234,7 @@ const canonical = _segments.length > 1 ? _rawCanonical.replace(/\/$/, '') : _raw
     <div class="quote-modal" id="quoteModal">
       <div class="quote-modal-overlay" id="closeQuoteModal"></div>
       <div class="quote-modal-content">
-        <button class="quote-modal-close" id="closeQuoteModalBtn">×</button>
+        <button class="quote-modal-close" id="closeQuoteModalBtn" type="button" aria-label="关闭报价表单">×</button>
         <h2>获取报价</h2>
         <p>请留下您的联系方式，我们将尽快与您联系。</p>
         <form class="quote-form" id="quoteFormMain">

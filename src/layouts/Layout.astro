@@ -59,8 +59,18 @@ const path = new URL(canonical).pathname;
     <meta name="geo.region" content="CN-GD" />
     <meta name="geo.placename" content="Dongguan, Guangdong, China" />
 
+    <!-- Performance hints -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+
+    <!-- Critical CSS -->
     <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <!-- Font Awesome: deferred (non-render-blocking) -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" /></noscript>
+
     <link rel="icon" type="image/png" href="/favicon.png" />
 
     <!-- Structured Data: Organization + LocalBusiness -->
@@ -134,8 +144,8 @@ const path = new URL(canonical).pathname;
     <!-- NAV -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand" href="/">
-          <img src="/logo.png" alt="DGSDK Logo" loading="lazy" />
+        <a class="navbar-brand" href="/" aria-label="DGSDK homepage">
+          <img src="/logo.png" alt="DGSDK Logo" width="200" height="56" loading="eager" />
         </a>
 
         <button
@@ -184,8 +194,8 @@ const path = new URL(canonical).pathname;
             </li>
 
             <li class="nav-item lang-dropdown" id="langDropdown">
-              <button class="nav-link lang-btn" type="button" id="langToggle">
-                EN <i class="fas fa-chevron-down"></i>
+              <button class="nav-link lang-btn" type="button" id="langToggle" aria-label="Select language" aria-expanded="false">
+                EN <i class="fas fa-chevron-down" aria-hidden="true"></i>
               </button>
               <ul class="lang-menu" id="langMenu">
                 <li><a href="/">English</a></li>
@@ -199,11 +209,11 @@ const path = new URL(canonical).pathname;
             </li>
 
             <li class="nav-item nav-icon-item search-dropdown" id="searchDropdown">
-              <button class="nav-link nav-icon-btn" type="button" id="searchToggle">
-                <i class="fas fa-search"></i>
+              <button class="nav-link nav-icon-btn" type="button" id="searchToggle" aria-label="Search products" aria-expanded="false">
+                <i class="fas fa-search" aria-hidden="true"></i>
               </button>
-              <div class="search-box" id="searchBox">
-                <input type="text" placeholder="Search products..." />
+              <div class="search-box" id="searchBox" role="search">
+                <input type="text" placeholder="Search products..." aria-label="Search products" />
               </div>
             </li>
           </ul>
@@ -247,7 +257,7 @@ const path = new URL(canonical).pathname;
     <footer class="site-footer">
       <div class="footer-container">
         <div class="footer-col footer-brand">
-          <img src="/logo.png" alt="DGSDK Logo" class="footer-logo" loading="lazy" />
+          <img src="/logo.png" alt="DGSDK Logo" width="180" height="50" class="footer-logo" loading="lazy" />
           <p>DGSDK is a professional manufacturer in Dongguan, China, specializing in static elimination systems, industrial cleaning machines, automation equipment, and precision CNC parts.</p>
         </div>
         <div class="footer-col">
@@ -311,7 +321,7 @@ const path = new URL(canonical).pathname;
     <div class="quote-modal" id="quoteModal">
       <div class="quote-modal-overlay" id="closeQuoteModal"></div>
       <div class="quote-modal-content">
-        <button class="quote-modal-close" id="closeQuoteModalBtn">×</button>
+        <button class="quote-modal-close" id="closeQuoteModalBtn" type="button" aria-label="Close quote form">×</button>
         <h2>Get a Quote</h2>
         <p>Please leave your contact details and we will get back to you shortly.</p>
         <form class="quote-form" id="quoteFormMain">
