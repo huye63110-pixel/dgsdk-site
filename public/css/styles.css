@@ -16368,3 +16368,81 @@ button.hero-dot {
   z-index: 9999;
   font-weight: 700;
 }
+
+/* === Product Page SEO Content Sections === */
+
+/* Application Scenarios */
+.scenario-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.scenario-item {
+  background: #f8f9fa;
+  border-left: 4px solid #1a1a6e;
+  border-radius: 0 8px 8px 0;
+  padding: 20px 24px;
+}
+
+.scenario-item h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a6e;
+  margin-bottom: 8px;
+}
+
+.scenario-item p {
+  font-size: 0.92rem;
+  color: #444;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* FAQ Section */
+.faq-block {
+  background: #fafafa;
+  border-radius: 12px;
+  padding: 32px;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.faq-item {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 18px 0;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-question {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a6e;
+  margin-bottom: 8px;
+  cursor: default;
+}
+
+.faq-answer {
+  font-size: 0.92rem;
+  color: #444;
+  line-height: 1.7;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .scenario-list {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-block {
+    padding: 20px 16px;
+  }
+}
