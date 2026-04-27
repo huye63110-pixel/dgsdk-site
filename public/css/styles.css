@@ -13916,6 +13916,17 @@ textarea.quote-input {
   color: #fff;
 }
 
+/* Hero banner label — visually matches old h1 but is a <p> to avoid duplicate H1 */
+.inner-hero-label {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
