@@ -142,6 +142,60 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
         </div>
       </section>
 
+
+      <section class="detail-block">
+        <h2>Application Scenarios</h2>
+        <div class="scenario-list">
+          <div class="scenario-item">
+            <h3>CCL Surface Preparation Before PCB Imaging</h3>
+            <p>Copper clad laminate surfaces must be free of dust, oil residue, and particulate contamination before the photoresist coating and UV imaging steps in PCB manufacturing. Even sub-micron particles on the copper foil surface create pinholes in the resist layer, causing open circuits or shorts in the finished board. The ST-DT1340 removes these contaminants across a 1400mm cleaning width in a single inline pass.</p>
+          </div>
+          <div class="scenario-item">
+            <h3>Thin Film CCL for High-Density Interconnect PCBs</h3>
+            <p>HDI and high-frequency PCB substrates use thinner copper foils (sometimes below 12 microns) that are especially vulnerable to contamination-induced defects. The magnetic levitation drive system ensures there is no mechanical vibration transmitted to the delicate substrate during cleaning, preventing deformation or micro-cracks that would cause electrical failures.</p>
+          </div>
+          <div class="scenario-item">
+            <h3>High-Volume CCL Processing Lines</h3>
+            <p>With intelligent PLC control and a cleaning width up to 1400mm, the ST-DT1340 handles large-format CCL panels at production speeds compatible with continuous PCB manufacturing lines. The quick-change window structure minimizes roller changeover time, keeping the line running with minimal interruption.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-block">
+        <h2>Why Clean CCL Before PCB Processing?</h2>
+        <p>CCL is the base material for all printed circuit boards. Contamination on the copper surface at this stage propagates through every subsequent manufacturing step — etching, plating, lamination, and final testing. Catching and removing contamination at the CCL stage is far more cost-effective than discovering defective boards at the end of the production line. The ST-DT1340's combined adhesive roller and static elimination approach removes both physical particles and the electrostatic charge that attracts them.</p>
+      </section>
+
+      <section class="detail-block faq-block">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3 class="faq-question">What is CCL and why does it need cleaning?</h3>
+            <p class="faq-answer">CCL (Copper Clad Laminate) is the base substrate for printed circuit boards, consisting of a fiberglass or resin core laminated with copper foil. Dust and particles on the copper surface during PCB manufacturing cause photoresist defects, etching errors, and plating voids that lead to electrical failures in the finished board.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">What is the maximum cleaning width of the ST-DT1340?</h3>
+            <p class="faq-answer">The ST-DT1340 handles CCL panels up to 1400mm in width, making it suitable for large-format PCB manufacturing and high-density multilayer board production.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">How does magnetic levitation improve the cleaning process?</h3>
+            <p class="faq-answer">The magnetic levitation drive system eliminates the friction, vibration, and particle generation associated with conventional roller bearing drives. This is critical for CCL cleaning because mechanical vibration can cause micro-cracks in thin copper foil, and particles from the drive system would defeat the purpose of cleaning.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">Can the ST-DT1340 handle very thin copper foil?</h3>
+            <p class="faq-answer">Yes. The adhesive roller cleaning method applies controlled, even pressure without impact loads, making it suitable for thin-film CCL materials used in HDI and high-frequency PCB substrates.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">Does the machine require chemical solvents?</h3>
+            <p class="faq-answer">No. The ST-DT1340 uses dry adhesive roller cleaning combined with integrated static elimination, with no solvents or water. This eliminates chemical handling requirements, drying steps, and the risk of substrate warping from moisture.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">Can this machine be integrated with an automated PCB production line?</h3>
+            <p class="faq-answer">Yes. The intelligent PLC control system is compatible with standard production line communication protocols. Contact us with your line layout and throughput requirements for integration specifications.</p>
+          </div>
+        </div>
+      </section>
+
       <section class="detail-block">
         <div class="related-slider-wrap" data-current="ccl-cleaner">
           <div class="related-slider-header">
@@ -170,4 +224,19 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
 
     </div>
   </section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"What is CCL and why does it need cleaning?","acceptedAnswer":{"@type":"Answer","text":"CCL (Copper Clad Laminate) is the base substrate for printed circuit boards, consisting of a fiberglass or resin core laminated with copper foil. Dust and particles on the copper surface during PCB manufacturing cause photoresist defects, etching errors, and plating voids that lead to electrical failures in the finished board."}},
+    {"@type":"Question","name":"What is the maximum cleaning width of the ST-DT1340?","acceptedAnswer":{"@type":"Answer","text":"The ST-DT1340 handles CCL panels up to 1400mm in width, making it suitable for large-format PCB manufacturing and high-density multilayer board production."}},
+    {"@type":"Question","name":"How does magnetic levitation improve the cleaning process?","acceptedAnswer":{"@type":"Answer","text":"The magnetic levitation drive system eliminates the friction, vibration, and particle generation associated with conventional roller bearing drives. This is critical for CCL cleaning because mechanical vibration can cause micro-cracks in thin copper foil, and particles from the drive system would defeat the purpose of cleaning."}},
+    {"@type":"Question","name":"Can the ST-DT1340 handle very thin copper foil?","acceptedAnswer":{"@type":"Answer","text":"Yes. The adhesive roller cleaning method applies controlled, even pressure without impact loads, making it suitable for thin-film CCL materials used in HDI and high-frequency PCB substrates."}},
+    {"@type":"Question","name":"Does the machine require chemical solvents?","acceptedAnswer":{"@type":"Answer","text":"No. The ST-DT1340 uses dry adhesive roller cleaning combined with integrated static elimination, with no solvents or water. This eliminates chemical handling requirements, drying steps, and the risk of substrate warping from moisture."}},
+    {"@type":"Question","name":"Can this machine be integrated with an automated PCB production line?","acceptedAnswer":{"@type":"Answer","text":"Yes. The intelligent PLC control system is compatible with standard production line communication protocols. Contact us with your line layout and throughput requirements for integration specifications."}}
+  ]
+}
+</script>
 </ProductLayout>
