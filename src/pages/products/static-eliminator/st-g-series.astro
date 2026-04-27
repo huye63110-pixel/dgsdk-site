@@ -17,18 +17,15 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
         <span>ST-G Series</span>
       </div>
 
-      <!-- 顶部产品信息 -->
       <div class="product-top">
         <div class="product-gallery">
           <div class="product-main-image slider-wrapper">
             <button class="slider-arrow left" id="prevImage">‹</button>
-
             <img
               id="mainProductImage"
               src="/assets/img/static-eliminator/st-g.jpg"
               alt="ST-G Series Ion Bar"
             />
-
             <button class="slider-arrow right" id="nextImage">›</button>
           </div>
 
@@ -57,7 +54,7 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
           </p>
 
           <div class="product-actions">
-            <button class="quote-btn" id="openQuoteModal" type="button">Get a Quote</button>
+            <button class="quote-btn" type="button">Get a Quote</button>
             <a href="https://wa.me/61436605126" target="_blank" class="whatsapp-btn">WhatsApp</a>
           </div>
 
@@ -78,7 +75,6 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
         </div>
       </div>
 
-      <!-- Product Description -->
       <section class="detail-block">
         <h2>Product Description</h2>
         <p>
@@ -95,7 +91,6 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
         </p>
       </section>
 
-      <!-- Product Features -->
       <section class="detail-block">
         <h2>Product Features</h2>
         <ul class="feature-list">
@@ -107,41 +102,26 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
         </ul>
       </section>
 
-      <!-- Technical Advantages -->
       <section class="detail-block">
         <h2>Technical Advantages</h2>
-
         <div class="advantage-grid">
           <div class="advantage-card blue">
             <h3>Long Range</h3>
-            <p>
-              50~300mm effective elimination range with strong airflow coverage for
-              wider production area static control.
-            </p>
+            <p>50~300mm effective elimination range with strong airflow coverage for wider production area static control.</p>
           </div>
-
           <div class="advantage-card yellow">
             <h3>Precise Ion Balance</h3>
-            <p>
-              ±10V ion balance performance ensures even neutralization without
-              over-charging surfaces.
-            </p>
+            <p>±10V ion balance performance ensures even neutralization without over-charging surfaces.</p>
           </div>
-
           <div class="advantage-card green">
             <h3>Self-Diagnostic</h3>
-            <p>
-              Built-in self-diagnostic circuit with overcurrent protection ensures
-              safe, reliable long-term operation.
-            </p>
+            <p>Built-in self-diagnostic circuit with overcurrent protection ensures safe, reliable long-term operation.</p>
           </div>
         </div>
       </section>
 
-      <!-- Specifications -->
       <section class="detail-block">
         <h2>Technical Specifications</h2>
-
         <div class="spec-table-wrap">
           <table class="spec-table">
             <tr><td>Model</td><td>ST-G Series (multiple variants)</td></tr>
@@ -157,93 +137,127 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
         </div>
       </section>
 
-      <!-- Industry Applications -->
       <section class="detail-block">
         <h2>Industry Applications</h2>
         <div class="application-tags">
           <span>Electronics Manufacturing</span>
           <span>SMT Production</span>
           <span>PCB Assembly</span>
+          <span>Semiconductor</span>
+          <span>Optical Manufacturing</span>
           <span>Precision Packaging</span>
         </div>
       </section>
 
-      <!-- Related Products -->
       <section class="detail-block">
-  <div class="related-slider-wrap" data-current="st-g-series">
-    <div class="related-slider-header">
-      <h2>Related Products</h2>
+        <h2>Application Scenarios</h2>
+        <div class="scenario-list">
+          <div class="scenario-item">
+            <h3>Semiconductor and Cleanroom Manufacturing</h3>
+            <p>Wafer handling, chip packaging, and MEMS manufacturing require sub-10V ion balance and consistent performance over extended periods. The ST-G Series' ±10V ion balance and self-monitoring capability make it the preferred choice in semiconductor environments where a degraded ionizer that goes undetected can damage product worth thousands of dollars per wafer.</p>
+          </div>
+          <div class="scenario-item">
+            <h3>High-Volume Electronics Lines with Limited Maintenance Access</h3>
+            <p>On fully automated electronics assembly lines, stopping production for ionizer maintenance is costly. The ST-G Series' auto-cleaning function extends intervals between manual interventions. When cleaning is needed, the self-diagnostic alarm notifies maintenance teams in advance, preventing undetected performance degradation.</p>
+          </div>
+          <div class="scenario-item">
+            <h3>Optical Coating and Precision Lens Manufacturing</h3>
+            <p>Even sub-micron dust particles can cause coating defects on precision optical components. The ST-G Series maintains consistent ion balance across its 50–300 mm effective range, ensuring surfaces remain charge-free throughout the coating process — and the self-monitoring system confirms that performance has not drifted between production runs.</p>
+          </div>
+        </div>
+      </section>
 
-      <div class="related-slider-nav">
-        <button class="related-slider-btn related-slider-prev" type="button">‹</button>
-        <button class="related-slider-btn related-slider-next" type="button">›</button>
-      </div>
-    </div>
+      <section class="detail-block">
+        <h2>How to Choose the Right Ion Bar</h2>
+        <p>The ST-G Series is the premium choice for critical applications where consistent performance, self-monitoring, and minimal manual maintenance are priorities. For standard inline conveyor use at normal working distances, the <a href="/products/static-eliminator/st-e-series">ST-E Series</a> provides reliable performance at lower cost. For applications requiring longer elimination distances (up to 400 mm), the <a href="/products/static-eliminator/st-f-series">ST-F Series</a> is more suitable. If unsure, contact us with your application details and we will recommend the right model.</p>
+      </section>
 
-    <div class="related-slider-track">
-      <a href="/products/static-eliminator/st-g-series" class="related-slide-card" data-key="st-g-series">
-        <img src="/assets/img/static-eliminator/st-g.jpg" alt="ST-G Series" loading="lazy" />
-        <h4>ST-G Series Intelligent Ion Rod</h4>
-      </a>
+      <section class="detail-block faq-block">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3 class="faq-question">What makes the ST-G Series "intelligent"?</h3>
+            <p class="faq-answer">The ST-G Series incorporates a self-monitoring circuit that continuously measures ionization performance and alerts operators when cleaning or servicing is required. Some variants include automatic cleaning cycles that clear emitter tip contamination without stopping production, maintaining consistent performance between scheduled maintenance intervals.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">How does the ST-G Series compare to the ST-E and ST-F series?</h3>
+            <p class="faq-answer">All three use DC 24V / ±5kV. The ST-E Series is the standard inline model. The ST-F Series extends the working distance to 400 mm. The ST-G Series is the premium tier, adding intelligent self-monitoring and auto-cleaning — recommended for critical or hard-to-access installations where undetected performance loss would be costly.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">What ion balance does the ST-G Series achieve?</h3>
+            <p class="faq-answer">The ST-G Series achieves ±10V ion balance, which exceeds the ANSI/ESD S3.1 requirement of ±35V and meets the more demanding requirements of semiconductor and precision optics manufacturing environments.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">What is the effective static elimination distance of the ST-G Series?</h3>
+            <p class="faq-answer">The ST-G Series has an effective elimination distance of 50–300 mm, making it versatile for both close-proximity and mid-distance conveyor line installations.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">Can the ST-G Series be used in semiconductor manufacturing?</h3>
+            <p class="faq-answer">Yes. The ST-G Series' ±10V ion balance, self-monitoring, and CE certification make it well suited for semiconductor wafer handling, chip packaging, and other ESD-sensitive precision processes.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">Is the ST-G Series compatible with automation control systems?</h3>
+            <p class="faq-answer">Yes. The DC 24V interface is compatible with standard PLC and industrial automation controllers. Alarm outputs from the self-diagnostic circuit can be wired to production line monitoring systems for remote status visibility.</p>
+          </div>
+        </div>
+      </section>
 
-      <a href="/products/static-eliminator/st-e-series" class="related-slide-card" data-key="st-e-series">
-        <img src="/assets/img/static-eliminator/st-e.jpg" alt="ST-E Series" loading="lazy" />
-        <h4>ST-E Series Intelligent Ion Rod</h4>
-      </a>
-
-      <a href="/products/static-eliminator/st-f-series" class="related-slide-card" data-key="st-f-series">
-        <img src="/assets/img/static-eliminator/st-f.jpg" alt="ST-F Series" loading="lazy" />
-        <h4>ST-F Series Intelligent Ion Rod</h4>
-      </a>
-
-      <a href="/products/static-eliminator/st-s200" class="related-slide-card" data-key="st-s200">
-        <img src="/assets/img/static-eliminator/st-s200.jpg" alt="ST-S200" loading="lazy" />
-        <h4>ST-S200 Mini Ionizer Fan</h4>
-      </a>
-
-      <a href="/products/static-eliminator/st-101a" class="related-slide-card" data-key="st-101a">
-        <img src="/assets/img/static-eliminator/st-101a.jpg" alt="ST101A" loading="lazy" />
-        <h4>ST101A Table Ionizing Air Blower</h4>
-      </a>
-
-      <a href="/products/static-eliminator/st-104a" class="related-slide-card" data-key="st-104a">
-        <img src="/assets/img/static-eliminator/st-104a.jpg" alt="ST104A" loading="lazy" />
-        <h4>ST104A Horizontal Ion Blower</h4>
-      </a>
-
-      <a href="/products/static-eliminator/st-1200" class="related-slide-card" data-key="st-1200">
-        <img src="/assets/img/static-eliminator/st-1200.jpg" alt="ST1200" loading="lazy" />
-        <h4>ST1200 Horizontal Ion Fan</h4>
-      </a>
-    </div>
-  </div>
-</section>
-
-
+      <section class="detail-block">
+        <div class="related-slider-wrap" data-current="st-g-series">
+          <div class="related-slider-header">
+            <h2>Related Products</h2>
+            <div class="related-slider-nav">
+              <button class="related-slider-btn related-slider-prev" type="button">‹</button>
+              <button class="related-slider-btn related-slider-next" type="button">›</button>
+            </div>
+          </div>
+          <div class="related-slider-track">
+            <a href="/products/static-eliminator/st-g-series" class="related-slide-card" data-key="st-g-series">
+              <img src="/assets/img/static-eliminator/st-g.jpg" alt="ST-G Series" loading="lazy" />
+              <h4>ST-G Series Intelligent Ion Rod</h4>
+            </a>
+            <a href="/products/static-eliminator/st-e-series" class="related-slide-card" data-key="st-e-series">
+              <img src="/assets/img/static-eliminator/st-e.jpg" alt="ST-E Series" loading="lazy" />
+              <h4>ST-E Series Intelligent Ion Rod</h4>
+            </a>
+            <a href="/products/static-eliminator/st-f-series" class="related-slide-card" data-key="st-f-series">
+              <img src="/assets/img/static-eliminator/st-f.jpg" alt="ST-F Series" loading="lazy" />
+              <h4>ST-F Series Intelligent Ion Rod</h4>
+            </a>
+            <a href="/products/static-eliminator/st-s200" class="related-slide-card" data-key="st-s200">
+              <img src="/assets/img/static-eliminator/st-s200.jpg" alt="ST-S200" loading="lazy" />
+              <h4>ST-S200 Mini Ionizer Fan</h4>
+            </a>
+            <a href="/products/static-eliminator/st-101a" class="related-slide-card" data-key="st-101a">
+              <img src="/assets/img/static-eliminator/st-101a.webp" alt="ST101A" loading="lazy" />
+              <h4>ST101A Table Ionizing Air Blower</h4>
+            </a>
+            <a href="/products/static-eliminator/st-104a" class="related-slide-card" data-key="st-104a">
+              <img src="/assets/img/static-eliminator/st-104a.jpg" alt="ST104A" loading="lazy" />
+              <h4>ST104A Horizontal Ion Blower</h4>
+            </a>
+            <a href="/products/static-eliminator/st-1200" class="related-slide-card" data-key="st-1200">
+              <img src="/assets/img/static-eliminator/st-1200.jpg" alt="ST1200" loading="lazy" />
+              <h4>ST1200 Horizontal Ion Fan</h4>
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   </section>
 
-  <!-- Quote Modal -->
-  <div class="quote-modal" id="quoteModal">
-    <div class="quote-modal-overlay" id="closeQuoteModal"></div>
-
-    <div class="quote-modal-content">
-      <button class="quote-modal-close" id="closeQuoteModalBtn" type="button">×</button>
-
-      <h2>Get a Quote</h2>
-      <p>
-        If you have any questions about this product, please leave your contact
-        details and we will get back to you as soon as possible.
-      </p>
-
-      <form class="quote-form">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <input type="text" placeholder="Your Phone" />
-        <textarea rows="5" placeholder="Your Message"></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
-  </div>
-  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"What makes the ST-G Series intelligent?","acceptedAnswer":{"@type":"Answer","text":"The ST-G Series incorporates a self-monitoring circuit that continuously measures ionization performance and alerts operators when cleaning or servicing is required. Some variants include automatic cleaning cycles that clear emitter tip contamination without stopping production."}},
+    {"@type":"Question","name":"How does the ST-G Series compare to the ST-E and ST-F series?","acceptedAnswer":{"@type":"Answer","text":"All three use DC 24V / ±5kV. The ST-E Series is the standard inline model. The ST-F Series extends the working distance to 400 mm. The ST-G Series adds intelligent self-monitoring and auto-cleaning for critical or hard-to-access installations."}},
+    {"@type":"Question","name":"What ion balance does the ST-G Series achieve?","acceptedAnswer":{"@type":"Answer","text":"The ST-G Series achieves ±10V ion balance, which exceeds the ANSI/ESD S3.1 requirement of ±35V and meets the demanding requirements of semiconductor and precision optics manufacturing."}},
+    {"@type":"Question","name":"What is the effective static elimination distance of the ST-G Series?","acceptedAnswer":{"@type":"Answer","text":"The ST-G Series has an effective elimination distance of 50–300 mm, making it versatile for both close-proximity and mid-distance conveyor line installations."}},
+    {"@type":"Question","name":"Can the ST-G Series be used in semiconductor manufacturing?","acceptedAnswer":{"@type":"Answer","text":"Yes. The ST-G Series ±10V ion balance, self-monitoring, and CE certification make it well suited for semiconductor wafer handling, chip packaging, and ESD-sensitive precision processes."}},
+    {"@type":"Question","name":"Is the ST-G Series compatible with automation control systems?","acceptedAnswer":{"@type":"Answer","text":"Yes. The DC 24V interface is compatible with standard PLC and industrial automation controllers. Alarm outputs from the self-diagnostic circuit can be wired to production line monitoring systems."}}
+  ]
+}
+</script>
 </ProductLayout>
