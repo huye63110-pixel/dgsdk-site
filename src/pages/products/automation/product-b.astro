@@ -167,6 +167,60 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
         </div>
       </section>
 
+
+      <section class="detail-block">
+        <h2>Application Scenarios</h2>
+        <div class="scenario-list">
+          <div class="scenario-item">
+            <h3>Automated Cleaning Line Loading and Unloading</h3>
+            <p>Manual loading and unloading of cleaning machines is a labor-intensive process that introduces contamination risk from operator handling and creates throughput variability based on operator speed. Robotic automatic loading and unloading integrates with the cleaning machine to provide consistent, high-speed material handling that eliminates these variables and allows the cleaning machine to run at its designed throughput without a manual bottleneck.</p>
+          </div>
+          <div class="scenario-item">
+            <h3>Electronics Component Handling Automation</h3>
+            <p>PCBs, display panels, FPCs, and optical components are ESD-sensitive and easily scratched by manual handling. Robotic handling with appropriate end-effectors (vacuum cups, edge grippers) eliminates the risk of ESD damage, fingerprints, and scratches from operator contact, while also providing the consistent positioning accuracy that automated cleaning systems require for correct material alignment through the cleaning station.</p>
+          </div>
+          <div class="scenario-item">
+            <h3>Lights-Out Manufacturing Integration</h3>
+            <p>Manufacturers aiming for unattended or minimally attended production shifts use robotic loading and unloading systems to operate cleaning stages without full-time operators. The system handles the complete material transfer cycle — picking from the input magazine, loading the cleaning machine, unloading cleaned parts, and placing to the output magazine — without operator presence between setup and magazine changes.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-block">
+        <h2>Integration with Your Cleaning Process</h2>
+        <p>The Robotic Automatic Loading and Unloading Cleaning Machine is configured around your specific product, cleaning machine, and production layout. Robot selection, end-effector design, input/output magazine design, and control system integration depend on the part dimensions, weight, fragility, and throughput requirement. Contact us with your product and process specifications to begin the design discussion.</p>
+      </section>
+
+      <section class="detail-block faq-block">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3 class="faq-question">What does the robotic loading and unloading system do?</h3>
+            <p class="faq-answer">The system automates the material handling around a cleaning machine — picking parts from an input magazine or conveyor, loading them into the cleaning machine, unloading cleaned parts, and placing them to an output magazine or downstream conveyor. This eliminates manual handling steps that introduce contamination and throughput variability.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">What types of products can the robotic system handle?</h3>
+            <p class="faq-answer">The system can be configured for PCBs, display panels, optical films, FPCs, precision components, and other flat or sheet-type products. End-effector design (vacuum cups, edge grippers, custom tooling) is matched to the product's dimensions, weight, and fragility requirements.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">Can the system handle ESD-sensitive components?</h3>
+            <p class="faq-answer">Yes. ESD-safe end-effectors and ionizing systems can be incorporated into the robotic handling system for ESD-sensitive products. Specify your ESD requirements during the design phase.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">Is the system fully automatic or semi-automatic?</h3>
+            <p class="faq-answer">Both modes are available. Fully automatic operation runs the complete load/clean/unload cycle without operator intervention between magazine changes. Semi-automatic mode requires an operator to initiate each cycle or to handle exceptional conditions. The control mode is configured to your operational requirement.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">How is the system integrated with the cleaning machine?</h3>
+            <p class="faq-answer">The robotic system communicates with the cleaning machine's PLC via standard industrial interfaces (digital I/O, Profibus, EtherNet/IP, or similar) for synchronized operation. Integration specifications are confirmed during the design phase based on your cleaning machine's control system.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">What is the process for ordering a custom robotic system?</h3>
+            <p class="faq-answer">Contact us with your product dimensions and weight, cleaning machine model, required throughput, and facility layout. We provide a design proposal covering robot selection, end-effector design, magazine design, and control integration, followed by a quotation and lead time.</p>
+          </div>
+        </div>
+      </section>
+
       <section class="detail-block">
         <div class="related-slider-wrap" data-current="product-b">
           <div class="related-slider-header">
@@ -275,4 +329,19 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
       });
     }
   </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"What does the robotic loading and unloading system do?","acceptedAnswer":{"@type":"Answer","text":"The system automates the material handling around a cleaning machine — picking parts from an input magazine or conveyor, loading them into the cleaning machine, unloading cleaned parts, and placing them to an output magazine or downstream conveyor. This eliminates manual handling steps that introduce contamination and throughput variability."}},
+    {"@type":"Question","name":"What types of products can the robotic system handle?","acceptedAnswer":{"@type":"Answer","text":"The system can be configured for PCBs, display panels, optical films, FPCs, precision components, and other flat or sheet-type products. End-effector design (vacuum cups, edge grippers, custom tooling) is matched to the product's dimensions, weight, and fragility requirements."}},
+    {"@type":"Question","name":"Can the system handle ESD-sensitive components?","acceptedAnswer":{"@type":"Answer","text":"Yes. ESD-safe end-effectors and ionizing systems can be incorporated into the robotic handling system for ESD-sensitive products. Specify your ESD requirements during the design phase."}},
+    {"@type":"Question","name":"Is the system fully automatic or semi-automatic?","acceptedAnswer":{"@type":"Answer","text":"Both modes are available. Fully automatic operation runs the complete load/clean/unload cycle without operator intervention between magazine changes. Semi-automatic mode requires an operator to initiate each cycle or to handle exceptional conditions. The control mode is configured to your operational requirement."}},
+    {"@type":"Question","name":"How is the system integrated with the cleaning machine?","acceptedAnswer":{"@type":"Answer","text":"The robotic system communicates with the cleaning machine's PLC via standard industrial interfaces (digital I/O, Profibus, EtherNet/IP, or similar) for synchronized operation. Integration specifications are confirmed during the design phase based on your cleaning machine's control system."}},
+    {"@type":"Question","name":"What is the process for ordering a custom robotic system?","acceptedAnswer":{"@type":"Answer","text":"Contact us with your product dimensions and weight, cleaning machine model, required throughput, and facility layout. We provide a design proposal covering robot selection, end-effector design, magazine design, and control integration, followed by a quotation and lead time."}}
+  ]
+}
+</script>
 </ProductLayout>
