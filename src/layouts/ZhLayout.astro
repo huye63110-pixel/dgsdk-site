@@ -228,7 +228,7 @@ const canonical = _segments.length > 1 ? _rawCanonical.replace(/\/$/, '') : _raw
         <button class="quote-modal-close" id="closeQuoteModalBtn" type="button" aria-label="关闭报价表单">×</button>
         <h2>获取报价</h2>
         <p>请留下您的联系方式，我们将尽快与您联系。</p>
-        <form class="quote-form" id="quoteFormMain">
+        <form class="quote-form" id="quoteFormMain" action="https://formspree.io/f/mkopvoyk" method="POST">
           <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" />
           <input type="text" placeholder="您的姓名" required />
           <input type="email" placeholder="您的邮箱" required />
@@ -255,13 +255,30 @@ const canonical = _segments.length > 1 ? _rawCanonical.replace(/\/$/, '') : _raw
         if (closeBtn) closeBtn.addEventListener('click', () => modal.classList.remove('active'));
 
         if (form) {
-          form.addEventListener('submit', (e) => {
+          form.addEventListener('submit', async (e) => {
             e.preventDefault();
             const honeypot = form.querySelector('input[name="website"]');
             if (honeypot && honeypot.value !== '') return;
-            alert('留言已发送！我们将尽快与您联系。');
-            modal.classList.remove('active');
-            form.reset();
+            const btn = form.querySelector('button[type="submit"]');
+            if (btn) btn.disabled = true;
+            try {
+              const res = await fetch('https://formspree.io/f/mkopvoyk', {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+              });
+              if (res.ok) {
+                alert('消息已发送！我们将尽快与您联系。');
+                modal.classList.remove('active');
+                form.reset();
+              } else {
+                alert('Error sending message. Please try again.');
+              }
+            } catch(err) {
+              alert('Error sending message. Please try again.');
+            } finally {
+              if (btn) btn.disabled = false;
+            }
           });
         }
       });
