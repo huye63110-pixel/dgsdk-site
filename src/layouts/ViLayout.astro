@@ -228,11 +228,11 @@ const canonical = _segments.length > 1 ? _rawCanonical.replace(/\/$/, '') : _raw
         <button class="quote-modal-close" id="closeQuoteModalBtn" type="button" aria-label="Đóng biểu mẫu báo giá">×</button>
         <h2>Nhận báo giá</h2>
         <p>Vui lòng để lại thông tin liên hệ và chúng tôi sẽ phản hồi sớm.</p>
-        <form class="quote-form" id="quoteFormMain">
+        <form class="quote-form" id="quoteFormMain" action="https://formspree.io/f/mkopvoyk" method="POST">
           <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" />
-          <input type="text" placeholder="Họ và tên" required />
-          <input type="email" placeholder="Email" required />
-          <textarea placeholder="Tin nhắn"></textarea>
+          <input type="text" name="name" placeholder="Họ và tên" required />
+          <input type="email" name="email" placeholder="Email" required />
+          <textarea name="message" placeholder="Tin nhắn"></textarea>
           <button type="submit">Gửi tin nhắn</button>
         </form>
       </div>
@@ -255,13 +255,30 @@ const canonical = _segments.length > 1 ? _rawCanonical.replace(/\/$/, '') : _raw
         if (closeBtn) closeBtn.addEventListener('click', () => modal.classList.remove('active'));
 
         if (form) {
-          form.addEventListener('submit', (e) => {
+          form.addEventListener('submit', async (e) => {
             e.preventDefault();
             const honeypot = form.querySelector('input[name="website"]');
             if (honeypot && honeypot.value !== '') return;
-            alert('Tin nhắn đã được gửi! Chúng tôi sẽ phản hồi sớm nhất có thể.');
-            modal.classList.remove('active');
-            form.reset();
+            const btn = form.querySelector('button[type="submit"]');
+            if (btn) btn.disabled = true;
+            try {
+              const res = await fetch('https://formspree.io/f/mkopvoyk', {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+              });
+              if (res.ok) {
+                alert('Tin nhắn đã được gửi! Chúng tôi sẽ phản hồi sớm nhất có thể.');
+                modal.classList.remove('active');
+                form.reset();
+              } else {
+                alert('Error sending message. Please try again.');
+              }
+            } catch(err) {
+              alert('Error sending message. Please try again.');
+            } finally {
+              if (btn) btn.disabled = false;
+            }
           });
         }
       });

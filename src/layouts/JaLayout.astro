@@ -228,11 +228,11 @@ const canonical = _segments.length > 1 ? _rawCanonical.replace(/\/$/, '') : _raw
         <button class="quote-modal-close" id="closeQuoteModalBtn" type="button" aria-label="見積フォームを閉じる">×</button>
         <h2>お見積もり</h2>
         <p>お問い合わせ内容をご記入ください。営業時間内に折り返しご連絡いたします。</p>
-        <form class="quote-form" id="quoteFormMain">
+        <form class="quote-form" id="quoteFormMain" action="https://formspree.io/f/mkopvoyk" method="POST">
           <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" />
-          <input type="text" placeholder="お名前" required />
-          <input type="email" placeholder="メールアドレス" required />
-          <textarea placeholder="メッセージ"></textarea>
+          <input type="text" name="name" placeholder="お名前" required />
+          <input type="email" name="email" placeholder="メールアドレス" required />
+          <textarea name="message" placeholder="メッセージ"></textarea>
           <button type="submit">送信する</button>
         </form>
       </div>
@@ -255,13 +255,30 @@ const canonical = _segments.length > 1 ? _rawCanonical.replace(/\/$/, '') : _raw
         if (closeBtn) closeBtn.addEventListener('click', () => modal.classList.remove('active'));
 
         if (form) {
-          form.addEventListener('submit', (e) => {
+          form.addEventListener('submit', async (e) => {
             e.preventDefault();
             const honeypot = form.querySelector('input[name="website"]');
             if (honeypot && honeypot.value !== '') return;
-            alert('メッセージを送信しました。折り返しご連絡いたします。');
-            modal.classList.remove('active');
-            form.reset();
+            const btn = form.querySelector('button[type="submit"]');
+            if (btn) btn.disabled = true;
+            try {
+              const res = await fetch('https://formspree.io/f/mkopvoyk', {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+              });
+              if (res.ok) {
+                alert('メッセージを送信しました。折り返しご連絡いたします。');
+                modal.classList.remove('active');
+                form.reset();
+              } else {
+                alert('Error sending message. Please try again.');
+              }
+            } catch(err) {
+              alert('Error sending message. Please try again.');
+            } finally {
+              if (btn) btn.disabled = false;
+            }
           });
         }
       });
