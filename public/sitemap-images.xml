@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- ========== Static Eliminator ========== -->
+  <url>
+    <loc>https://www.dg-sdk.com/products/static-eliminator/st-g-series</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-g.jpg</image:loc>
+      <image:title>ST-G Series Intelligent Static Elimination Rod – DC ±5kV Ion Bar</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-g2.jpg</image:loc>
+      <image:title>ST-G Series Ion Bar Detail View – Self-Diagnostic Ionizing Bar</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/static-eliminator/st-e-series</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-e.jpg</image:loc>
+      <image:title>ST-E Series Intelligent Ion Bar – Inline Static Eliminator Bar</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/static-eliminator/st-f-series</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-f.jpg</image:loc>
+      <image:title>ST-F Series Long-Range Ion Bar – 400mm Static Elimination Rod</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/static-eliminator/st-s200</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-s200.jpg</image:loc>
+      <image:title>ST-S200 Mini Ionizer Fan – Compact Desktop Static Eliminator</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/static-eliminator/st-101a</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-101a.webp</image:loc>
+      <image:title>ST101A Table Ionizing Air Blower – Benchtop Static Eliminator Fan</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-101a2.jpg</image:loc>
+      <image:title>ST101A Ionizing Blower Side View – ESD Control Fan</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-101a3.jpg</image:loc>
+      <image:title>ST101A Ionizing Air Blower Detail – Table Top Static Eliminator</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/static-eliminator/st-104a</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-104a.jpg</image:loc>
+      <image:title>ST104A Horizontal Ion Blower – Overhead Ionizing Fan for Production Lines</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/static-eliminator/st-1200</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-1200.jpg</image:loc>
+      <image:title>ST1200 Horizontal Ion Fan – Wide-Coverage Static Elimination Fan</image:title>
+    </image:image>
+  </url>
+
+  <!-- ========== Cleaning Machine ========== -->
+  <url>
+    <loc>https://www.dg-sdk.com/products/cleaning-machine/backlight-cleaner</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/backlight-cleaner.jpg</image:loc>
+      <image:title>Backlight Module Cleaning Machine – LCD Backlight Unit Cleaner</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/cleaning-machine/ccl-cleaner</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/ccl-cleaner.jpg</image:loc>
+      <image:title>CCL Surface Cleaning Machine – Copper Clad Laminate Cleaner</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/cleaning-machine/fpc-4-axis-cleaner</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/fpc-4-axis-cleaner.jpg</image:loc>
+      <image:title>FPC 4-Axis High Precision Cleaning Machine – Flexible PCB Cleaner</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/cleaning-machine/fpc-8-axis-cleaner</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/fpc-8-axis-cleaner.jpg</image:loc>
+      <image:title>FPC 8-Axis Advanced Cleaning Machine – High-Throughput FPC Cleaner</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/cleaning-machine/inspection-cleaner</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/inspection-cleaner.jpg</image:loc>
+      <image:title>Inspection Cleaning Machine – Pre-Inspection Surface Cleaner</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/inspection-cleaner-2.jpg</image:loc>
+      <image:title>Inspection Cleaner Detail View – Industrial Panel Cleaning System</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/cleaning-machine/lcm-cleaner</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/lcm-cleaner.jpg</image:loc>
+      <image:title>LCM Module Industrial Cleaning Machine – LCD Module Cleaner</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/cleaning-machine/optical-film-cleaner</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/optical.jpg</image:loc>
+      <image:title>Large Size Optical Film Cleaning Machine – Precision Optical Cleaner</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/cleaning-machine/pcb-cleaner</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/pcb-cleaner.jpg</image:loc>
+      <image:title>PCB Surface Cleaning Machine – Printed Circuit Board Cleaner</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/cleaning-machine/pcb-vertical-cleaner</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/stick-pcb-vertical-cleaning-machine.jpg</image:loc>
+      <image:title>PCB Vertical Cleaning System – Stick PCB Vertical Cleaning Machine</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/cleaning-machine/polarizer-cleaner</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/polarizer-cleaner.webp</image:loc>
+      <image:title>Polarizer Precision Cleaning Machine – Polarizer Film Cleaner</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/polarizer-cleaner2.jpg</image:loc>
+      <image:title>Polarizer Cleaner Detail View – Optical Film Cleaning Equipment</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/cleaning-machine/roll-chip-cleaner</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/roll-chip-cleaner.jpg</image:loc>
+      <image:title>Roll Chip Universal Cleaning Machine – Roller Type Surface Cleaner</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/cleaning-machine/smt-cleaner</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/smt-cleaner.jpg</image:loc>
+      <image:title>SMT Inline Cleaning Machine SMT600 – Surface Mount Technology Cleaner</image:title>
+    </image:image>
+  </url>
+
+  <!-- ========== Precision Machined Parts ========== -->
+  <url>
+    <loc>https://www.dg-sdk.com/products/precision-machined-parts/cnc-milled-front-panel-rubber-roller-assembly</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/precision-machined-parts/cnc-milled-front-panel-rubber-roller-assembly.jpg</image:loc>
+      <image:title>CNC Milled Front Panel Rubber Roller Assembly – Precision Machined Part</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/precision-machined-parts/cnc-wing-connection-block</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/precision-machined-parts/cnc-milled-wing-connection-block.jpg</image:loc>
+      <image:title>CNC Milled Wing Connection Block – Custom Precision Machined Component</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/precision-machined-parts/custom-precision-machined-parts</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/precision-machined-parts/precision-machined-parts.jpg</image:loc>
+      <image:title>Custom Precision Machined Parts – CNC Manufacturing China</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/precision-machined-parts/lathe-machined-bearing-outer-retainer-plate</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/precision-machined-parts/lathe-machined-bearing-outer-retainer-plate.jpg</image:loc>
+      <image:title>Lathe Machined Bearing Outer Retainer Plate – CNC Turned Part</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/precision-machined-parts/lathe-machined-shaft-end-fixing-component</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/precision-machined-parts/lathe-machined-shaft-end-fixing-component.jpg</image:loc>
+      <image:title>Lathe Machined Shaft End Fixing Component – Precision Turned Part</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/precision-machined-parts/milled-front-inner-fixing-plate-paper-roll-guide-rail</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/precision-machined-parts/milled-front-inner-fixing-plate-paper-roll-guide-rail.jpg</image:loc>
+      <image:title>Milled Front Inner Fixing Plate Paper Roll Guide Rail – CNC Milled Part</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/precision-machined-parts/precision-bearing-bracket-cnc-milled</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/precision-machined-parts/precision-bearing-bracket-cnc-milled.jpg</image:loc>
+      <image:title>Precision Bearing Bracket CNC Milled – Custom Machined Bracket</image:title>
+    </image:image>
+  </url>
+
+  <!-- ========== Automation Equipment ========== -->
+  <url>
+    <loc>https://www.dg-sdk.com/products/automation/product-a</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/automation/product-a.jpg</image:loc>
+      <image:title>Diffusion Plate Cleaning and Inspection Production Line – Automation Equipment</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/automation/product-b</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/automation/product-b.jpg</image:loc>
+      <image:title>Robotic Automatic Loading and Unloading Cleaning Machine – Industrial Automation</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/automation/product-c</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/automation/product-c.jpg</image:loc>
+      <image:title>Polarizer Absorption Axis Angle Measuring System – Optical Inspection Equipment</image:title>
+    </image:image>
+  </url>
+
+</urlset>
