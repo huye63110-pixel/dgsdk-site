@@ -107,7 +107,7 @@ const canonical = _segments.length > 1 ? _rawCanonical.replace(/\/$/, '') : _raw
       <div class="container">
         <a class="navbar-brand" href="/ar/">
           <picture>
-            <source srcset="/logo.webp" type="image/webp" />
+            <source srcset="/logo-300.webp 300w, /logo.webp 600w" sizes="(max-width: 768px) 160px, 200px" type="image/webp" />
             <img src="/logo.png" alt="DGSDK Logo" width="200" height="56" loading="eager" fetchpriority="high" />
           </picture>
         </a>
@@ -243,8 +243,8 @@ const canonical = _segments.length > 1 ? _rawCanonical.replace(/\/$/, '') : _raw
       </div>
     </div>
 
-    <script is:inline src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script is:inline src="/js/scripts.js"></script>
+    <script is:inline defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="/js/scripts.js"></script>
 
     <script is:inline>
       document.addEventListener('DOMContentLoaded', () => {

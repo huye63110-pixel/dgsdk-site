@@ -100,7 +100,7 @@
       <div class="container">
         <a class="navbar-brand" href="/" aria-label="DGSDK homepage">
           <picture>
-            <source srcset="/logo.webp" type="image/webp" />
+            <source srcset="/logo-300.webp 300w, /logo.webp 600w" sizes="(max-width: 768px) 160px, 200px" type="image/webp" />
             <img src="/logo.png" alt="DGSDK Logo" width="200" height="56" loading="eager" fetchpriority="high" />
           </picture>
         </a>
@@ -350,7 +350,7 @@
         <a href="/applications" class="portfolio-item app-card">
           <div class="portfolio-link">
             <picture>
-              <source srcset="/assets/img/portfolio/2-700.webp 700w, /assets/img/portfolio/2.webp 1180w" sizes="(max-width: 768px) 100vw, 679px" type="image/webp" />
+              <source srcset="/assets/img/portfolio/2-700.webp 700w, /assets/img/portfolio/2-900.webp 900w, /assets/img/portfolio/2.webp 1180w" sizes="(max-width: 768px) 100vw, 679px" type="image/webp" />
               <img class="img-fluid" src="/assets/img/portfolio/2.jpg" alt="SMT Production" loading="lazy" width="679" height="509" />
             </picture>
           </div>
@@ -612,13 +612,11 @@
   </a>
 </div>
 
-<!-- Bootstrap JS -->
-<script
-  is:inline
-  src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap JS (deferred — removes from critical path) -->
+<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- Theme JS -->
-<script is:inline src="/js/scripts.js"></script>
+<script defer src="/js/scripts.js"></script>
 
 <script is:inline>
   const slides = document.querySelectorAll('.hero-slide');
