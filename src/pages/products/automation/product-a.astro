@@ -264,7 +264,7 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
         details and we will get back to you as soon as possible.
       </p>
 
-      <form class="quote-form" id="quoteFormProduct" action="https://formspree.io/f/mkopvoyk" method="POST">
+      <form class="quote-form" id="quoteFormProduct" action="https://formspree.io/f/mvzlpdwy" method="POST">
         <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" />
         <input type="text" name="name" placeholder="Your Name" required />
         <input type="email" name="email" placeholder="Your Email" required />
@@ -302,7 +302,7 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
         const btn = quoteForm.querySelector('button[type="submit"]');
         if (btn) btn.disabled = true;
         try {
-          const res = await fetch('https://formspree.io/f/mkopvoyk', {
+          const res = await fetch('https://formspree.io/f/mvzlpdwy', {
             method: 'POST',
             body: new FormData(quoteForm),
             headers: { 'Accept': 'application/json' }

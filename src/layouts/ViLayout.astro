@@ -231,7 +231,7 @@ const canonical = _segments.length > 1 ? _rawCanonical.replace(/\/$/, '') : _raw
         <button class="quote-modal-close" id="closeQuoteModalBtn" type="button" aria-label="Đóng biểu mẫu báo giá">×</button>
         <h2>Nhận báo giá</h2>
         <p>Vui lòng để lại thông tin liên hệ và chúng tôi sẽ phản hồi sớm.</p>
-        <form class="quote-form" id="quoteFormMain" action="https://formspree.io/f/mkopvoyk" method="POST">
+        <form class="quote-form" id="quoteFormMain" action="https://formspree.io/f/mvzlpdwy" method="POST">
           <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" />
           <input type="text" name="name" placeholder="Họ và tên" required />
           <input type="email" name="email" placeholder="Email" required />
@@ -265,7 +265,7 @@ const canonical = _segments.length > 1 ? _rawCanonical.replace(/\/$/, '') : _raw
             const btn = form.querySelector('button[type="submit"]');
             if (btn) btn.disabled = true;
             try {
-              const res = await fetch('https://formspree.io/f/mkopvoyk', {
+              const res = await fetch('https://formspree.io/f/mvzlpdwy', {
                 method: 'POST',
                 body: new FormData(form),
                 headers: { 'Accept': 'application/json' }
