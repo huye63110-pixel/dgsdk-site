@@ -231,7 +231,7 @@ const canonical = _segments.length > 1 ? _rawCanonical.replace(/\/$/, '') : _raw
         <button class="quote-modal-close" id="closeQuoteModalBtn" type="button" aria-label="見積フォームを閉じる">×</button>
         <h2>お見積もり</h2>
         <p>お問い合わせ内容をご記入ください。営業時間内に折り返しご連絡いたします。</p>
-        <form class="quote-form" id="quoteFormMain" action="https://formspree.io/f/mkopvoyk" method="POST">
+        <form class="quote-form" id="quoteFormMain" action="https://formspree.io/f/mvzlpdwy" method="POST">
           <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" />
           <input type="text" name="name" placeholder="お名前" required />
           <input type="email" name="email" placeholder="メールアドレス" required />
@@ -265,7 +265,7 @@ const canonical = _segments.length > 1 ? _rawCanonical.replace(/\/$/, '') : _raw
             const btn = form.querySelector('button[type="submit"]');
             if (btn) btn.disabled = true;
             try {
-              const res = await fetch('https://formspree.io/f/mkopvoyk', {
+              const res = await fetch('https://formspree.io/f/mvzlpdwy', {
                 method: 'POST',
                 body: new FormData(form),
                 headers: { 'Accept': 'application/json' }
