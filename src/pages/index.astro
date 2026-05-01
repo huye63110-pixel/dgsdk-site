@@ -46,7 +46,7 @@
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
 
     <!-- Preload LCP hero image -->
-    <link rel="preload" as="image" href="/assets/img/header-bg.webp" fetchpriority="high" type="image/webp" />
+    <link rel="preload" as="image" href="/assets/img/hero-products.webp" fetchpriority="high" type="image/webp" />
 
     <!-- Critical CSS (render-blocking, kept) -->
     <link rel="stylesheet" href="/css/styles.css" />
@@ -202,10 +202,11 @@
    <header class="masthead hero-slider">
 
   <div class="hero-slides">
-    <div class="hero-slide hero-slide-1 active" style="background-image: url('/assets/img/header-bg.webp');"></div>
+    <div class="hero-slide hero-slide-products active" style="background-image: url('/assets/img/hero-products.webp');"></div>
+    <div class="hero-slide hero-slide-1" style="background-image: url('/assets/img/header-bg.webp');"></div>
     <div class="hero-slide hero-slide-2" style="background-image: url('/assets/img/portfolio/hero-2.webp');"></div>
     <div class="hero-slide hero-slide-3" style="background-image: url('/assets/img/portfolio/hero-3.webp');"></div>
-  </div> <!-- ✅ 这一行是关键 -->
+  </div>
 
   <div class="hero-overlay"></div>
 
@@ -234,6 +235,7 @@
     <button class="hero-dot active" type="button" aria-label="Slide 1" aria-current="true"></button>
     <button class="hero-dot" type="button" aria-label="Slide 2"></button>
     <button class="hero-dot" type="button" aria-label="Slide 3"></button>
+    <button class="hero-dot" type="button" aria-label="Slide 4"></button>
   </div>
 
 </header>
