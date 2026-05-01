@@ -5,13 +5,14 @@ const {
   title = "DGSDK | Industrial Automation & Static Control Solutions",
   description = "DGSDK is a professional manufacturer in Dongguan, China, specializing in static elimination systems, industrial cleaning machines, automation equipment, and precision CNC parts.",
   image = "/assets/img/header-bg.webp",
-  canonical: _rawCanonical = Astro.url.href
+  canonical: _rawCanonical = Astro.url.href,
+  noLangAlternates = false,
 } = Astro.props;
 
 const base = "https://www.dg-sdk.com";
-// Normalize canonical: strip trailing slash for deep paths (keep / and /lang/)
-const _segments = new URL(_rawCanonical).pathname.split('/').filter(Boolean);
-const canonical = _segments.length > 1 ? _rawCanonical.replace(/\/$/, '') : _rawCanonical;
+// Normalize canonical: strip trailing slash for all non-root paths
+const _rawPath = new URL(_rawCanonical).pathname;
+const canonical = _rawPath === '/' ? _rawCanonical : _rawCanonical.replace(/\/$/, '');
 const path = new URL(canonical).pathname;
 ---
 
@@ -28,12 +29,12 @@ const path = new URL(canonical).pathname;
 
     <!-- hreflang for multilingual versions -->
     <link rel="alternate" hreflang="en" href={`${base}${path}`} />
-    <link rel="alternate" hreflang="zh" href={`${base}/zh${path === '/' ? '/' : path}`} />
-    <link rel="alternate" hreflang="vi" href={`${base}/vi${path === '/' ? '/' : path}`} />
-    <link rel="alternate" hreflang="ar" href={`${base}/ar${path === '/' ? '/' : path}`} />
-    <link rel="alternate" hreflang="ja" href={`${base}/ja${path === '/' ? '/' : path}`} />
-    <link rel="alternate" hreflang="ko" href={`${base}/ko${path === '/' ? '/' : path}`} />
-    <link rel="alternate" hreflang="es" href={`${base}/es${path === '/' ? '/' : path}`} />
+    {!noLangAlternates && <link rel="alternate" hreflang="zh" href={`${base}/zh${path === '/' ? '/' : path}`} />}
+    {!noLangAlternates && <link rel="alternate" hreflang="vi" href={`${base}/vi${path === '/' ? '/' : path}`} />}
+    {!noLangAlternates && <link rel="alternate" hreflang="ar" href={`${base}/ar${path === '/' ? '/' : path}`} />}
+    {!noLangAlternates && <link rel="alternate" hreflang="ja" href={`${base}/ja${path === '/' ? '/' : path}`} />}
+    {!noLangAlternates && <link rel="alternate" hreflang="ko" href={`${base}/ko${path === '/' ? '/' : path}`} />}
+    {!noLangAlternates && <link rel="alternate" hreflang="es" href={`${base}/es${path === '/' ? '/' : path}`} />}
     <link rel="alternate" hreflang="x-default" href={`${base}${path}`} />
 
     <!-- Open Graph (Facebook, LinkedIn) -->
