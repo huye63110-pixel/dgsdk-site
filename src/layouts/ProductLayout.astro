@@ -10,7 +10,8 @@ const {
 } = Astro.props;
 
 const productName = title.split('|')[0].trim();
-const canonical = Astro.url.href;
+const _rawHref = Astro.url.href;
+const canonical = Astro.url.pathname === '/' ? _rawHref : _rawHref.replace(/\/$/, '');
 const base = "https://www.dg-sdk.com";
 
 // Build breadcrumb from URL path
