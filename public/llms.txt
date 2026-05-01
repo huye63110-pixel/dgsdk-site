@@ -1,0 +1,26 @@
+# DGSDK - Dongguan Shidike Automation Equipment Co., Ltd.
+
+> DGSDK manufactures static elimination systems, industrial cleaning machines, precision CNC machined parts, and automation equipment for electronics, SMT, optical film, and display manufacturing industries.
+
+## Products
+
+- [Static Elimination Systems](https://www.dg-sdk.com/products/static-eliminator): Ionizing bars, ionizing air blowers, ionizing air guns, and static control equipment for ESD-sensitive manufacturing.
+- [Industrial Cleaning Machines](https://www.dg-sdk.com/products/cleaning-machine): Polarizer cleaners, optical film cleaners, PCB cleaners, FPC cleaners, SMT cleaners, backlight cleaners, and LCM cleaners.
+- [Precision Machined Parts](https://www.dg-sdk.com/products/precision-machined-parts): CNC milled components, lathe machined shafts, bearing brackets, and custom precision parts.
+- [Automation Equipment](https://www.dg-sdk.com/products/automation): Diffusion plate cleaning lines, robotic loading/unloading systems, and polarizer angle measurement instruments.
+
+## Company
+
+- Founded: 2013
+- Location: Dongguan, Guangdong, China
+- Specialization: Industrial automation and static control solutions for global manufacturers
+- Contact: dgsdk2013@gmail.com | +86 13602342003
+
+## Key Pages
+
+- [Homepage](https://www.dg-sdk.com/)
+- [All Products](https://www.dg-sdk.com/products)
+- [Applications](https://www.dg-sdk.com/applications)
+- [About Us](https://www.dg-sdk.com/about)
+- [Contact](https://www.dg-sdk.com/contact)
+- [FAQ](https://www.dg-sdk.com/faq)
