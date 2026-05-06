@@ -1,0 +1,17 @@
+{
+  "redirects": [
+    { "source": "/vi/productscleaning-machinepolarizer-cleaner", "destination": "/vi/products/cleaning-machine/polarizer-cleaner", "permanent": true },
+    { "source": "/vi/productsautomationproduct-a", "destination": "/vi/products/automation/product-a", "permanent": true },
+    { "source": "/ja/productscleaning-machine", "destination": "/ja/products/cleaning-machine", "permanent": true },
+    { "source": "/es/productsprecision-machined-partscnc-milled-front-panel-rubber-roller-assembly", "destination": "/es/products/precision-machined-parts/cnc-milled-front-panel-rubber-roller-assembly", "permanent": true },
+    { "source": "/vi/productsprecision-machined-partscnc-wing-connection-block", "destination": "/vi/products/precision-machined-parts/cnc-wing-connection-block", "permanent": true },
+    { "source": "/ko/productscleaning-machine", "destination": "/ko/products/cleaning-machine", "permanent": true },
+    { "source": "/vi/productsstatic-eliminatorst-e-series", "destination": "/vi/products/static-eliminator/st-e-series", "permanent": true },
+    { "source": "/ar/productsprecision-machined-partscnc-milled-front-panel-rubber-roller-assembly", "destination": "/ar/products/precision-machined-parts/cnc-milled-front-panel-rubber-roller-assembly", "permanent": true },
+    { "source": "/ko/productsprecision-machined-partscnc-milled-front-panel-rubber-roller-assembly", "destination": "/ko/products/precision-machined-parts/cnc-milled-front-panel-rubber-roller-assembly", "permanent": true },
+    { "source": "/vi/productsstatic-eliminatorst-1200", "destination": "/vi/products/static-eliminator/st-1200", "permanent": true },
+    { "source": "/ja/productsstatic-eliminatorst-g-series", "destination": "/ja/products/static-eliminator/st-g-series", "permanent": true },
+    { "source": "/applications/electronics", "destination": "/applications", "permanent": true },
+    { "source": "/applications/smt", "destination": "/applications", "permanent": true }
+  ]
+}
