@@ -65,11 +65,11 @@ const supportBlocks = [
 <Layout title="Industrial Applications | DGSDK Static Control & Cleaning" description="Discover how DGSDK solutions improve efficiency in electronics manufacturing, SMT production, optical film, PCB and precision machining industries.">
  <section
     class="applications-hero"
-    style="background: linear-gradient(rgba(113, 87, 87, 0.28), rgba(106, 56, 56, 0.18)), url('/assets/img/static-eliminator/banner-bg2.jpg') center/cover no-repeat;"
+    style="background: linear-gradient(rgba(113, 87, 87, 0.28), rgba(106, 56, 56, 0.18)), url('/assets/img/static-eliminator/banner-bg2.jpg') center/cover no-repeat; background-attachment: fixed;">
     <div class="applications-hero-overlay"></div>
     <div class="container applications-hero-content">
-      <span class="applications-hero-kicker">Application Solutions</span>
-      <h1>Industrial applications built around efficiency, cleanliness, and production reliability.</h1>
+      <span class="applications-hero-kicker" data-aos="fade-down" data-aos-duration="600">Application Solutions</span>
+      <h1 data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">Industrial applications built around efficiency, cleanliness, and production reliability.</h1>
       <p>
         DGSDK solutions are used across electronics manufacturing, SMT production,
         display processing, optical film applications, automation integration, and
@@ -80,7 +80,7 @@ const supportBlocks = [
 
   <section class="applications-intro-section">
     <div class="container">
-      <div class="applications-intro-box">
+      <div class="applications-intro-box" data-aos="fade-up" data-aos-duration="700">
         <span class="applications-section-label">Where We Create Value</span>
         <h2>Built for real industrial workflows, not just product display.</h2>
         <p>
@@ -96,7 +96,7 @@ const supportBlocks = [
     <div class="container">
       <div class="applications-section-heading text-center">
         <span class="applications-section-label">Application Areas</span>
-        <h2>Where our solutions are used.</h2>
+        <h2 data-aos="fade-up" data-aos-duration="700">Where our solutions are used.</h2>
         <p>
           Practical industrial support for production lines that need stable performance,
           cleaner surfaces, lower static risk, and reliable process integration.
@@ -104,8 +104,8 @@ const supportBlocks = [
       </div>
 
       <div class="applications-grid">
-        {applicationItems.map((item) => (
-          <a href={item.href} class="application-card">
+        {applicationItems.map((item, i) => (
+          <a href={item.href} class="application-card" data-aos="fade-up" data-aos-delay={i * 80} data-aos-duration="600">
             <div class="application-card-image-wrap">
               <img src={item.image} alt={item.title} class="application-card-image" loading="lazy" />
             </div>
@@ -125,7 +125,7 @@ const supportBlocks = [
     <div class="container">
       <div class="applications-section-heading text-center">
         <span class="applications-section-label">Core Solution Support</span>
-        <h2>Three practical directions that support production quality.</h2>
+        <h2 data-aos="fade-up" data-aos-duration="700">Three practical directions that support production quality.</h2>
         <p>
           Our application capability is built around electrostatic control, precision cleaning,
           and customized manufacturing support for industrial customers.
@@ -133,8 +133,8 @@ const supportBlocks = [
       </div>
 
       <div class="applications-support-grid">
-        {supportBlocks.map((item) => (
-          <a href={item.href} class="applications-support-card">
+        {supportBlocks.map((item, i) => (
+          <a href={item.href} class="applications-support-card" data-aos="fade-up" data-aos-delay={i * 100} data-aos-duration="600">
             <span class="applications-support-label">{item.label}</span>
             <h3>{item.title}</h3>
             <p>{item.desc}</p>
