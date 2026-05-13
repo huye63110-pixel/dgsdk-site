@@ -1,0 +1,71 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const posts = [
+  {
+    slug: 'polarizer-cleaner-tutorial',
+    title: 'Polarizer Cleaning Machine: 8-Step Operating Guide for Zero-Defect Results',
+    excerpt: 'Learn how to operate a polarizer cleaning machine step by step — from parameter setup and consumable installation to troubleshooting jams, scratches, and static issues. Achieve 99%+ cleaning yield.',
+    date: 'May 13, 2026',
+    tags: ['Cleaning Machine', 'Tutorial', 'Polarizer'],
+    image: '/assets/img/cleaning-machine/polarizer-cleaner.jpg',
+    readTime: '10 min read',
+  },
+];
+---
+
+<Layout
+  title="Blog | Industrial Cleaning & Automation Insights – DGSDK"
+  description="Practical guides, operation tutorials, and technical insights for polarizer cleaners, static eliminators, and industrial automation equipment from DGSDK."
+>
+
+  <section
+    class="category-hero"
+    style="background: linear-gradient(rgba(10,20,50,0.6), rgba(10,20,50,0.5)), url('/assets/img/header-bg.webp') center/cover no-repeat;">
+    <div class="category-hero-overlay"></div>
+    <div class="container category-hero-content">
+      <h1>DGSDK Technical Blog</h1>
+      <p>Operation tutorials, parameter guides, and industry insights for industrial cleaning machines, static eliminators, and automation equipment.</p>
+    </div>
+  </section>
+
+  <section class="page-section" style="background:#f5f6f7;padding:60px 20px 80px;">
+    <div class="container">
+      <div class="breadcrumb" style="margin-bottom:32px;">
+        <a href="/">Home</a><span>/</span><span>Blog</span>
+      </div>
+
+      <div class="blog-index-grid">
+        {posts.map(post => (
+          <a href={`/blog/${post.slug}`} class="blog-index-card">
+            <div class="blog-index-img">
+              <img src={post.image} alt={post.title} loading="lazy" />
+            </div>
+            <div class="blog-index-content">
+              <div class="blog-index-tags">
+                {post.tags.map(tag => <span class="blog-tag">{tag}</span>)}
+              </div>
+              <h2>{post.title}</h2>
+              <p>{post.excerpt}</p>
+              <div class="blog-index-meta">
+                <span><i class="fas fa-calendar-alt"></i> {post.date}</span>
+                <span><i class="fas fa-clock"></i> {post.readTime}</span>
+              </div>
+              <span class="blog-read-more">Read Article <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="category-info-block">
+    <div class="container">
+      <h2>Industrial Equipment Guides from DGSDK</h2>
+      <p>
+        DGSDK publishes practical, hands-on guides for operators, engineers, and procurement managers working with industrial cleaning machines, static elimination systems, and automation equipment. Our articles cover real production scenarios — parameter settings, maintenance schedules, troubleshooting, and yield optimization — drawn from manufacturing experience in display, optical film, PCB, and electronics industries.
+      </p>
+    </div>
+  </section>
+
+</Layout>
