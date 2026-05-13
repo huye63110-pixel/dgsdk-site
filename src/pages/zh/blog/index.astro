@@ -1,0 +1,72 @@
+---
+import ZhLayout from '../../../layouts/ZhLayout.astro';
+
+const posts = [
+  {
+    slug: 'polarizer-cleaner-tutorial',
+    title: '偏光片清洁机操作指南：8步实现零缺陷清洁效果',
+    excerpt: '逐步学习偏光片清洁机的操作方法——从参数设置和耗材安装到排除卡机、划伤和静电问题。实现99%以上清洁良率。',
+    date: '2026年5月13日',
+    tags: ['清洁机', '操作教程', '偏光片'],
+    image: '/assets/img/cleaning-machine/polarizer-cleaner.jpg',
+    readTime: '约10分钟',
+  },
+];
+---
+
+<ZhLayout
+  title="技术博客 | 工业清洁与自动化技术 – DGSDK 史帝克"
+  description="偏光片清洁机、静电消除器和工业自动化设备的实用操作指南、参数教程和技术资讯。"
+  canonical="https://www.dg-sdk.com/zh/blog"
+>
+
+  <section
+    class="category-hero"
+    style="background: linear-gradient(rgba(10,20,50,0.6), rgba(10,20,50,0.5)), url('/assets/img/header-bg.webp') center/cover no-repeat;">
+    <div class="category-hero-overlay"></div>
+    <div class="container category-hero-content">
+      <h1>史帝克技术博客</h1>
+      <p>工业清洁机、静电消除器和自动化设备的操作教程、参数指南和行业技术资讯。</p>
+    </div>
+  </section>
+
+  <section class="page-section" style="background:#f5f6f7;padding:60px 20px 80px;">
+    <div class="container">
+      <div class="breadcrumb" style="margin-bottom:32px;">
+        <a href="/zh/">首页</a><span>/</span><span>技术博客</span>
+      </div>
+
+      <div class="blog-index-grid">
+        {posts.map((post, i) => (
+          <a href={`/zh/blog/${post.slug}`} class="blog-index-card" data-aos="fade-up" data-aos-delay={i * 100} data-aos-duration="600">
+            <div class="blog-index-img">
+              <img src={post.image} alt={post.title} loading="lazy" />
+            </div>
+            <div class="blog-index-content">
+              <div class="blog-index-tags">
+                {post.tags.map(tag => <span class="blog-tag">{tag}</span>)}
+              </div>
+              <h2>{post.title}</h2>
+              <p>{post.excerpt}</p>
+              <div class="blog-index-meta">
+                <span><i class="fas fa-calendar-alt"></i> {post.date}</span>
+                <span><i class="fas fa-clock"></i> {post.readTime}</span>
+              </div>
+              <span class="blog-read-more">阅读全文 <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="category-info-block">
+    <div class="container">
+      <h2>史帝克工业设备技术指南</h2>
+      <p>
+        史帝克发布面向工业清洁机、静电消除系统和自动化设备操作人员、工程师和采购人员的实用操作指南。我们的文章涵盖真实生产场景——参数设置、维护计划、故障排除和良率优化——来源于显示屏、光学薄膜、PCB和电子行业的制造经验。
+      </p>
+    </div>
+  </section>
+
+</ZhLayout>

@@ -1,0 +1,373 @@
+---
+import ZhLayout from '../../../layouts/ZhLayout.astro';
+---
+
+<ZhLayout
+  title="偏光片清洁机操作指南：8步实现零缺陷清洁效果 | DGSDK"
+  description="偏光片清洁机逐步操作教程：参数设置、辊筒维护，以及如何实现99%以上清洁良率和零划伤。"
+  image="/assets/img/cleaning-machine/polarizer-cleaner.jpg"
+  canonical="https://www.dg-sdk.com/zh/blog/polarizer-cleaner-tutorial"
+>
+
+  <!-- 文章结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "偏光片清洁机操作指南：8步实现零缺陷清洁效果",
+    "description": "偏光片清洁机逐步操作教程：参数设置、辊筒维护，以及如何实现99%以上清洁良率和零划伤。",
+    "image": "https://www.dg-sdk.com/assets/img/cleaning-machine/polarizer-cleaner.jpg",
+    "author": {
+      "@type": "Organization",
+      "name": "DGSDK – 东莞史帝克自动化设备有限公司",
+      "url": "https://www.dg-sdk.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "DGSDK 史帝克",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.dg-sdk.com/assets/img/dgsdk-logo.png"
+      }
+    },
+    "datePublished": "2026-05-13",
+    "dateModified": "2026-05-13",
+    "mainEntityOfPage": "https://www.dg-sdk.com/zh/blog/polarizer-cleaner-tutorial"
+  }
+  </script>
+
+  <section class="blog-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/zh/">首页</a><span>/</span>
+        <a href="/zh/blog">技术博客</a><span>/</span>
+        <span>偏光片清洁机操作教程</span>
+      </div>
+
+      <div class="blog-post-meta">
+        <span class="blog-tag">清洁机</span>
+        <span class="blog-tag">操作教程</span>
+        <span class="blog-tag">偏光片</span>
+      </div>
+
+      <h1>偏光片清洁机操作指南：8步实现零缺陷清洁效果</h1>
+      <p class="blog-lead">
+        按照正确的流程操作<strong>偏光片清洁机</strong>并不复杂。只要参数正确、操作规范，就能实现99%以上的清洁良率，同时做到零划伤。本教程专为光学薄膜生产环境编写——按照每个步骤操作，掌握设备操作要领，将缺陷率保持在接近零的水平。
+      </p>
+
+      <div class="blog-post-info">
+        <span><i class="fas fa-calendar-alt"></i> 2026年5月13日</span>
+        <span><i class="fas fa-user"></i> 史帝克技术团队</span>
+        <span><i class="fas fa-clock"></i> 约10分钟</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="blog-body-section">
+    <div class="container">
+      <div class="blog-layout">
+
+        <!-- 目录 -->
+        <aside class="blog-toc">
+          <div class="toc-box">
+            <h3>目录</h3>
+            <ol>
+              <li><a href="#pre-startup">开机前检查清单</a></li>
+              <li><a href="#step1">第1步：开机与初始化</a></li>
+              <li><a href="#step2">第2步：参数设置</a></li>
+              <li><a href="#step3">第3步：薄膜预处理</a></li>
+              <li><a href="#step4">第4步：自动送料与对齐</a></li>
+              <li><a href="#step5">第5步：静电消除与粘尘辊清洁</a></li>
+              <li><a href="#step6">第6步：出料与暂存</a></li>
+              <li><a href="#step7">第7步：关机程序</a></li>
+              <li><a href="#step8">第8步：耗材更换</a></li>
+              <li><a href="#troubleshooting">故障排除指南</a></li>
+              <li><a href="#acceptance">质量验收标准</a></li>
+            </ol>
+          </div>
+        </aside>
+
+        <!-- 正文 -->
+        <article class="blog-article">
+
+          <div class="blog-featured-img">
+            <img
+              src="/assets/img/cleaning-machine/polarizer-cleaner.jpg"
+              alt="偏光片清洁机运行中"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- 第一部分：开机前检查 -->
+          <section id="pre-startup">
+            <h2>第一部分：开机前检查清单</h2>
+            <p>开启<strong>偏光片清洁机</strong>之前，彻底的开机前检查可以预防大多数常见故障，保护设备和薄膜。</p>
+
+            <h3>1.1 环境与设备检查</h3>
+            <ul>
+              <li>确认设备安装在<strong>千级洁净室</strong>中，放置在水平、无振动的台面上。环境温度保持<strong>22±3°C</strong>，相对湿度<strong>45%–65%</strong>。</li>
+              <li>确认电源（三相或单相220V）和气压（0.5–0.7 MPa）在规格范围内。确认急停按钮已释放，机架无变形或松动部件。</li>
+              <li>检查进料台和出料台是否有异物，确认传送导轨和辊筒清洁——无胶水残留或粉尘积聚。</li>
+            </ul>
+
+            <h3>1.2 耗材安装与更换</h3>
+            <ul>
+              <li>安装<strong>硅胶粘尘辊</strong>（上下各一支）。确认每支辊筒表面无划伤或变形，与薄膜表面平行运行，施压均匀。</li>
+              <li>装入新的<strong>可剥离集尘纸卷</strong>，必须与粘尘辊贴合，无褶皱或横向偏移。</li>
+              <li>检查<strong>静电消除离子棒</strong>（额定7–10 kV）：无遮挡物，出风口无堵塞，全宽离子气流均匀。</li>
+            </ul>
+
+            <h3>1.3 默认参数预设</h3>
+            <div class="param-table-wrap">
+              <table class="param-table">
+                <thead>
+                  <tr>
+                    <th>薄膜厚度</th>
+                    <th>传送速度</th>
+                    <th>辊筒压力</th>
+                    <th>静电电压</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>0.05–0.3 mm（薄型）</td>
+                    <td>5–15 m/min</td>
+                    <td>轻压：0.1–0.2 MPa</td>
+                    <td>7–9 kV</td>
+                  </tr>
+                  <tr>
+                    <td>0.3–1 mm（标准型）</td>
+                    <td>3–10 m/min</td>
+                    <td>中压：0.2–0.3 MPa</td>
+                    <td>7–9 kV</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="blog-callout info">
+              <i class="fas fa-info-circle"></i>
+              <p>避免速度过快（清洁遗漏）或过慢（薄膜重叠/卡机）。离子棒电压不得超过9 kV——过高电压会损坏偏光片涂层。</p>
+            </div>
+          </section>
+
+          <!-- 各步骤 -->
+          <section id="step1">
+            <h2>第1步：开机与系统初始化</h2>
+            <div class="step-block">
+              <div class="step-action">
+                <strong>操作：</strong>接通主电源空开，按下操作面板上的<em>开机</em>按键，等待自检程序完成。在触摸屏上点击<em>初始化</em>，等待状态指示灯变绿。
+              </div>
+              <div class="step-detail">
+                <strong>注意观察：</strong>自检期间观察风机、离子棒和辊筒状态。如有异常声音或指示灯报警——立即停机排查，确认正常后再继续。
+              </div>
+              <div class="blog-callout warning">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p><strong>关键提示：</strong>行业数据显示，超过60%的设备故障源于跳过初始化、强制提前启动。务必等待自检完成。</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="step2">
+            <h2>第2步：参数设置与空跑验证</h2>
+            <div class="step-block">
+              <div class="step-action">
+                <strong>操作：</strong>在触摸屏上输入传送速度、辊筒压力和离子化电压。切换到<em>空跑</em>模式，运行3–5分钟以验证稳定性。
+              </div>
+              <div class="step-detail">
+                <strong>注意观察：</strong>确认粘尘辊运转平稳，纸卷收卷均匀，离子棒放电正常——无火花，无焦味。
+              </div>
+              <div class="blog-callout warning">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p><strong>关键提示：</strong>参数必须匹配具体的薄膜材料和厚度。每次切换到不同规格的偏光片时，须在量产前重新标定参数。</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="step3">
+            <h2>第3步：偏光片薄膜预处理</h2>
+            <div class="step-block">
+              <div class="step-action">
+                <strong>操作：</strong>将偏光片整齐堆放在上料架上，去除所有外包装。逐片检查是否有明显大颗粒污染、折痕或折叠痕迹。
+              </div>
+              <div class="step-detail">
+                <strong>注意观察：</strong>必须佩戴<strong>洁净室手套和指套</strong>——严禁裸手触摸薄膜表面。每次只取一片，避免叠放或摩擦。
+              </div>
+              <div class="blog-callout warning">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p><strong>关键提示：</strong>如有大颗粒，先用<strong>低压离子风枪</strong>去除。跳过此步骤会划伤薄膜和粘尘辊。</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="step4">
+            <h2>第4步：自动送料与对齐</h2>
+            <div class="step-block">
+              <div class="step-action">
+                <strong>操作：</strong>将一片薄膜平放入进料口，紧靠传送导轨。设备自动将其送入清洁区。每片之间保持<strong>5–10秒间隔</strong>。
+              </div>
+              <div class="step-detail">
+                <strong>注意观察：</strong>无偏斜，无翘边。送料节奏与设备传送速度匹配。
+              </div>
+              <div class="blog-callout warning">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p><strong>关键提示：</strong>对于翘曲薄膜，先整平再送料，或将进料间隙增大至5cm。送入翘曲薄膜不作调整是导致卡机和辊筒损坏的主要原因。</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="step5">
+            <h2>第5步：静电消除+粘尘辊清洁（核心清洁阶段）</h2>
+            <div class="step-block">
+              <div class="step-action">
+                <strong>操作：</strong>设备自动先启动离子棒，在1–2秒内中和表面静电荷。随后上下粘尘辊同步运转，从两面粘取粉尘、纤维和微小颗粒。
+              </div>
+              <div class="step-detail">
+                <strong>注意观察：</strong>薄膜通过清洁区时应平稳顺畅，薄膜与辊筒之间无弹跳或间隙。集尘纸卷应持续稳定地吸附转移的污染物。
+              </div>
+              <div class="blog-callout success">
+                <i class="fas fa-check-circle"></i>
+                <p><strong>这是核心步骤。</strong>完整的静电中和与全覆盖粘尘辊清洁共同实现<strong>99%以上微小颗粒去除率</strong>。两个阶段均不得中断或跳过。</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="step6">
+            <h2>第6步：出料与洁净侧暂存</h2>
+            <div class="step-block">
+              <div class="step-action">
+                <strong>操作：</strong>清洁后的薄膜通过出料导轨输出到暂存台，设备平稳送出——无碰撞，无叠放。
+              </div>
+              <div class="step-detail">
+                <strong>注意观察：</strong>暂存台铺<strong>洁净室离型纸</strong>，逐片分开放置，防止再次污染和表面摩擦。
+              </div>
+              <div class="blog-callout info">
+                <i class="fas fa-info-circle"></i>
+                <p><strong>关键提示：</strong>出料速度与进料速度匹配，实现连续不间断流程。减少启停次数可延长辊筒和离子棒使用寿命。</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="step7">
+            <h2>第7步：批次结束关机</h2>
+            <div class="step-block">
+              <div class="step-action">
+                <strong>操作：</strong>最后一片薄膜出料后，按下<em>停止</em>键，等待设备完全静止——辊筒停转，离子棒断电。然后关闭气源，切断主电源。
+              </div>
+              <div class="step-detail">
+                <strong>注意观察：</strong>关机后清理进出料区域的残留物，检查粘尘辊和纸卷的污染程度。
+              </div>
+              <div class="blog-callout warning">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p><strong>关键提示：</strong>严禁突然切断电源。硬断电跳过关机程序，长期操作会损坏电机和控制系统。</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="step8">
+            <h2>第8步：耗材更换与设备清洁</h2>
+            <div class="step-block">
+              <div class="step-action">
+                <strong>操作：</strong>集尘纸卷污染超过三分之一时更换。粘尘辊处理：用蘸有IPA（异丙醇）的洁净室擦拭布擦除残留物和划痕，清洁效果不足时更换辊筒。
+              </div>
+              <div class="step-detail">
+                <strong>注意观察：</strong>擦拭离子棒、传送导轨和机器表面，清除内部废料盘中积累的碎屑。
+              </div>
+              <div class="blog-callout success">
+                <i class="fas fa-check-circle"></i>
+                <p><strong>关键提示：</strong>每班检查耗材状态，按需更换。有经验的操作人员一致反映，耗材状态是影响清洁良率的最重要因素。</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 故障排除 -->
+          <section id="troubleshooting">
+            <h2>第三部分：故障排除——常见问题与解决方法</h2>
+            <div class="trouble-grid">
+              <div class="trouble-card">
+                <h4><i class="fas fa-times-circle"></i> 薄膜出现划伤或压痕</h4>
+                <p><strong>原因：</strong>粘尘辊表面有硬质颗粒；辊筒压力设置过高；预处理时未去除大颗粒。</p>
+                <p><strong>解决：</strong>停机清洁辊筒，降低辊筒压力，严格执行预处理流程，送料前去除所有可见颗粒。</p>
+              </div>
+              <div class="trouble-card">
+                <h4><i class="fas fa-times-circle"></i> 清洁后仍有粉尘或静电</h4>
+                <p><strong>原因：</strong>离子棒电压过低或出风口堵塞；集尘纸卷已饱和；粘尘辊已失去粘性。</p>
+                <p><strong>解决：</strong>将静电电压提高至8–9 kV并清洁离子棒出风口，立即更换纸卷，清洁或更换粘尘辊。</p>
+              </div>
+              <div class="trouble-card">
+                <h4><i class="fas fa-times-circle"></i> 薄膜卡机或翘曲堵塞</h4>
+                <p><strong>原因：</strong>传送速度过高；薄膜翘曲或厚度不均；进料间隙过窄。</p>
+                <p><strong>解决：</strong>降低传送速度，送料前整平翘曲薄膜，加大进料间隙使薄膜更顺畅进入。</p>
+              </div>
+              <div class="trouble-card">
+                <h4><i class="fas fa-times-circle"></i> 良率低或结果不稳定</h4>
+                <p><strong>原因：</strong>参数与薄膜规格不匹配；洁净室污染水平过高；老化耗材未及时更换。</p>
+                <p><strong>解决：</strong>针对当前薄膜批次重新标定参数，确认洁净室等级达到千级，按计划更换所有耗材。</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 质量验收 -->
+          <section id="acceptance">
+            <h2>第四部分：质量验收——如何确认清洁效果</h2>
+            <div class="acceptance-list">
+              <div class="acceptance-item">
+                <div class="acceptance-icon"><i class="fas fa-eye"></i></div>
+                <div>
+                  <h4>目视检验</h4>
+                  <p>在强定向光源下，薄膜表面<strong>无可见粉尘、纤维、指纹或污渍</strong>，无划伤、压痕或翘曲。</p>
+                </div>
+              </div>
+              <div class="acceptance-item">
+                <div class="acceptance-icon"><i class="fas fa-bolt"></i></div>
+                <div>
+                  <h4>静电荷检测</h4>
+                  <p>使用静电场强计检测。表面电荷读数须<strong>≤100V</strong>，以满足光学薄膜清洁规格。</p>
+                </div>
+              </div>
+              <div class="acceptance-item">
+                <div class="acceptance-icon"><i class="fas fa-chart-line"></i></div>
+                <div>
+                  <h4>良率确认</h4>
+                  <p>抽取连续50片样品。<strong>清洁良率≥99%</strong>，无再次污染或物理损伤事件。</p>
+                </div>
+              </div>
+              <div class="acceptance-item">
+                <div class="acceptance-icon"><i class="fas fa-cogs"></i></div>
+                <div>
+                  <h4>设备状态检查</h4>
+                  <p>运行结束后检查所有机器部件是否有异常磨损或碎屑积聚，确认耗材在使用寿命范围内。</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 总结 -->
+          <section>
+            <h2>总结</h2>
+            <p>
+              <strong>偏光片清洁机</strong>稳定出色的清洁效果取决于三点：严格的开机前例行检查、精准匹配每种薄膜规格的参数设置，以及定期的耗材维护。按照本8步指南操作的新手操作人员，从第一天就能实现稳定的高良率清洁效果。
+            </p>
+            <p>
+              掌握基础操作后，下一阶段是学习参数智能优化和与生产线的在线集成——这两点能进一步提升产能和良率稳定性。
+            </p>
+            <blockquote class="blog-quote">
+              "细节决定好清洁和优秀清洁之间的差距。工序是基础，参数是引擎——两者都做对，良率自然就来了。"
+            </blockquote>
+          </section>
+
+          <!-- 行动引导 -->
+          <div class="blog-cta">
+            <h3>寻找偏光片清洁机？</h3>
+            <p>史帝克为光学薄膜和显示屏生产线制造精密偏光片清洁机。欢迎咨询您的基材规格、产能需求和洁净室配置。</p>
+            <div class="blog-cta-buttons">
+              <a href="/zh/products/cleaning-machine/polarizer-cleaner" class="cta-btn primary">查看偏光片清洁机</a>
+              <a href="/zh/contact" class="cta-btn secondary">获取报价</a>
+            </div>
+          </div>
+
+        </article>
+      </div>
+    </div>
+  </section>
+
+</ZhLayout>

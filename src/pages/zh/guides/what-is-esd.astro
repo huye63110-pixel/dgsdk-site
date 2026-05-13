@@ -1,0 +1,125 @@
+---
+import ZhLayout from '../../../layouts/ZhLayout.astro';
+---
+
+<ZhLayout title="什么是静电放电（ESD）？静电危害详解 | DGSDK"
+  description="ESD（静电放电）是带电体之间瞬间放电的现象。了解ESD的成因、如何损坏电子元件、工业防护标准及控制方法。"
+  canonical="https://www.dg-sdk.com/zh/guides/what-is-esd">
+  <section
+    class="products-hero"
+    style="background: linear-gradient(rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.18)), url('/assets/img/static-eliminator/bg-2.jpg') center/cover no-repeat; background-attachment: fixed;">
+    <div class="container products-hero-inner">
+      <span class="products-hero-kicker" data-aos="fade-down" data-aos-duration="600">静电知识指南</span>
+      <h1 data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">什么是静电放电（ESD）？</h1>
+      <p data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
+        静电放电是电子制造中导致元件损坏的主要原因之一。了解其成因、危害机制和控制方法，有助于保护元件、提升生产良率。
+      </p>
+    </div>
+  </section>
+
+  <section class="category-info-block">
+    <div class="container" style="max-width:900px;">
+      <div class="breadcrumb" style="margin-bottom:24px;">
+        <a href="/zh/">首页</a><span>/</span><a href="/zh/guides">指南</a><span>/</span><span>什么是ESD</span>
+      </div>
+
+      <h2>静电放电：定义与含义</h2>
+      <p>
+        <strong>ESD（静电放电）</strong>是指两个处于不同静电电位的带电体之间发生的瞬间电流流动。当电场强度超过介质（通常是空气）的绝缘强度时，放电发生，形成短暂但强烈的电流冲击。
+      </p>
+      <p>
+        在日常生活中，ESD就是冬天触摸门把手时感受到的轻微电击。但在电子制造中，同样的现象发生在微小尺度上，人体往往感觉不到，却足以永久损坏敏感的半导体器件。
+      </p>
+
+      <h3>ESD放电模型</h3>
+      <p>工业ESD防护标准定义了三种主要放电模型，用于描述放电事件如何到达电子器件：</p>
+      <ul>
+        <li><strong>人体模型（HBM）</strong> — 代表带电人体通过器件向大地放电。这是制造中最常见的ESD事件。人体在不同鞋底材料和地板条件下可积累2,000至35,000V的静电荷。HBM是器件ESD防护等级的主要评级基准。</li>
+        <li><strong>机器模型（MM）</strong> — 代表带电机器部件向器件放电。发生频率低于HBM，但峰值电流更高。</li>
+        <li><strong>器件充电模型（CDM）</strong> — 器件本身积累静电荷，在接触接地面时瞬间放电。CDM事件速度极快，在高速IC处理中越来越受到关注。</li>
+      </ul>
+
+      <h3>静电荷的产生机制</h3>
+      <p>
+        静电通过<strong>摩擦起电效应</strong>积累。当两种材料接触后分离时，发生电荷转移，其中一种材料获得额外电子（带负电），另一种失去电子（带正电）。积累电压的大小取决于材料性质、分离速度和环境湿度。
+      </p>
+      <p>电子制造中常见的静电来源包括：</p>
+      <ul>
+        <li>人员在非导电地板上行走 — 干燥条件下可积累35,000V静电荷</li>
+        <li>非导电包装材料 — 塑料袋、泡沫、气泡袋等</li>
+        <li>非防静电工作台面和设备外壳</li>
+        <li>高速传送带和料卷在走料过程中产生的摩擦静电</li>
+        <li>流过管道或喷嘴的压缩气体或液体</li>
+      </ul>
+
+      <h3>ESD如何损坏电子元件</h3>
+      <p>
+        敏感元件（包括CMOS IC、MOSFET和光电器件）可被人体无法感知的微弱放电永久损坏。ESD损伤分为两类：
+      </p>
+      <ul>
+        <li><strong>灾难性失效</strong> — 器件立即失效，测试可检出。</li>
+        <li><strong>潜在损伤</strong> — 器件仍可工作，但内部已有微小损伤，在现场使用过程中提前失效。潜在损伤更危险，因为在生产测试中无法被捕获，却可能导致客诉和现场退货。</li>
+      </ul>
+      <p>
+        ESD损伤会在栅极氧化层产生热点，造成金属互连熔断，或在结处形成反向漏电通道。这些损伤通常在光学显微镜下不可见，需要专业的失效分析设备才能确认。
+      </p>
+
+      <h3>ESD防护区域（EPA）</h3>
+      <p>
+        电子制造商通过建立<strong>ESD防护区域（EPA）</strong>来系统管控ESD风险。EPA将接地工作台、防静电地板、腕带、离子化设备和人员培训整合为一套完整的防护体系，针对HBM和CDM两种放电模型均进行防护。
+      </p>
+      <p>
+        在EPA内部，离子棒和离子风机对绝缘体和非导电基材进行电荷中和——这正是静电消除器的核心作用。接地方式可以处理导体上的静电，但只有离子化才能中和薄膜、PCB表面、光学元件等ESD敏感材料上的电荷。
+      </p>
+
+      <h3>工业ESD防护标准</h3>
+      <p>主要的ESD防护标准包括：</p>
+      <ul>
+        <li><strong>ANSI/ESD S20.20</strong> — 电子器件和组件保护项目的开发和实施标准，被全球电子制造商广泛采用。</li>
+        <li><strong>IEC 61340-5-1</strong> — 电子器件防护的国际标准，与S20.20高度兼容。</li>
+        <li><strong>JEDEC JESD22</strong> — 半导体器件的ESD测试方法标准，包含HBM、MM和CDM测试规范。</li>
+      </ul>
+
+      <h3>AC与DC静电消除技术</h3>
+      <p>工业静电消除器主要采用三种离子化技术，各自适合不同的生产需求：</p>
+      <ul>
+        <li><strong>交流（AC）离子棒</strong> — 交流高压驱动发射针，同时产生等量正负离子，结构简单，适用于输送线和薄膜线的通用静电控制，响应速度中等。</li>
+        <li><strong>稳态直流（DC）离子棒</strong> — 正负发射针独立工作，离子平衡可调，臭氧产生量低于AC型，适用于光学和洁净室等对洁净度要求较高的应用。</li>
+        <li><strong>脉冲直流（Pulse DC）离子棒</strong> — 高压在正负极间快速交替脉冲，离子流平衡性最佳，残余电压极低，是高速电子和显示屏制造中ESD精密控制的首选技术。</li>
+      </ul>
+      <p>
+        史帝克ST-G系列和ST-E系列采用智能离子化技术，内置平衡监测和报警输出，可持续验证消除器性能，无需人工定期检测。
+      </p>
+
+      <div style="margin-top:40px; padding:28px 32px; background:#f0f4ff; border-radius:12px; border-left:4px solid #2563eb;">
+        <h3 style="margin:0 0 12px; color:#1a1a2e;">需要适合您生产线的静电消除方案？</h3>
+        <p style="margin:0 0 16px; color:#374151;">史帝克技术团队可根据您的基材类型、线速和生产环境，推荐最适合的静电控制设备。</p>
+        <a href="/zh/contact" style="display:inline-block; padding:10px 24px; background:#2563eb; color:#fff; border-radius:8px; text-decoration:none; font-weight:600; font-size:0.95rem;">联系我们咨询</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="related-categories-section">
+    <div class="container">
+      <h2 class="related-cat-title">相关产品</h2>
+      <div class="related-cat-grid">
+        <a href="/zh/products/static-eliminator" class="related-cat-card" data-aos="fade-up" data-aos-delay="0">
+          <img src="/assets/img/static-white-bg.png" alt="静电消除系统" loading="lazy" />
+          <div class="related-cat-info">
+            <h3>静电消除系统</h3>
+            <p>离子棒、离子风机及ESD控制设备，适用于工业精密生产环境。</p>
+            <span class="related-cat-link">查看产品 →</span>
+          </div>
+        </a>
+        <a href="/zh/products/cleaning-machine" class="related-cat-card" data-aos="fade-up" data-aos-delay="100">
+          <img src="/assets/img/cleaning-machine/polarizer-cleaner.jpg" alt="工业清洁机" loading="lazy" />
+          <div class="related-cat-info">
+            <h3>工业清洁机</h3>
+            <p>在静电敏感工艺前去除表面颗粒和污染物。</p>
+            <span class="related-cat-link">查看产品 →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+</ZhLayout>
