@@ -103,7 +103,7 @@ import Layout from '../layouts/Layout.astro';
               <div class="portfolio-link">
                 <picture>
                   <source srcset="/assets/img/portfolio/1-700.webp 700w, /assets/img/portfolio/1.webp 1180w" sizes="(max-width: 768px) 100vw, 679px" type="image/webp" />
-                  <img class="img-fluid" src="/assets/img/portfolio/1.jpg" alt="Electronics Manufacturing" loading="lazy" width="679" height="509" />
+                  <picture><source srcset="/assets/img/portfolio/1.webp" type="image/webp" /><img class="img-fluid" src="/assets/img/portfolio/1.jpg" alt="Electronics Manufacturing" loading="lazy" width="679" height="509" /></picture>
                 </picture>
               </div>
               <div class="portfolio-caption">
@@ -117,7 +117,7 @@ import Layout from '../layouts/Layout.astro';
               <div class="portfolio-link">
                 <picture>
                   <source srcset="/assets/img/portfolio/2-700.webp 700w, /assets/img/portfolio/2-900.webp 900w, /assets/img/portfolio/2.webp 1180w" sizes="(max-width: 768px) 100vw, 679px" type="image/webp" />
-                  <img class="img-fluid" src="/assets/img/portfolio/2.jpg" alt="SMT Production" loading="lazy" width="679" height="509" />
+                  <picture><source srcset="/assets/img/portfolio/2.webp" type="image/webp" /><img class="img-fluid" src="/assets/img/portfolio/2.jpg" alt="SMT Production" loading="lazy" width="679" height="509" /></picture>
                 </picture>
               </div>
               <div class="portfolio-caption">
@@ -131,7 +131,7 @@ import Layout from '../layouts/Layout.astro';
               <div class="portfolio-link">
                 <picture>
                   <source srcset="/assets/img/portfolio/3-700.webp 700w, /assets/img/portfolio/3.webp 1180w" sizes="(max-width: 768px) 100vw, 679px" type="image/webp" />
-                  <img class="img-fluid" src="/assets/img/portfolio/3.jpg" alt="Precision Machining" loading="lazy" width="679" height="509" />
+                  <picture><source srcset="/assets/img/portfolio/3.webp" type="image/webp" /><img class="img-fluid" src="/assets/img/portfolio/3.jpg" alt="Precision Machining" loading="lazy" width="679" height="509" /></picture>
                 </picture>
               </div>
               <div class="portfolio-caption">
@@ -167,28 +167,28 @@ import Layout from '../layouts/Layout.astro';
         </div>
         <ul class="timeline">
           <li data-aos="fade-right">
-            <div class="timeline-image"><img class="rounded-circle img-fluid" src="/assets/img/about/1.jpg" alt="Company Foundation" loading="lazy" /></div>
+            <div class="timeline-image"><picture><source srcset="/assets/img/about/1.webp" type="image/webp" /><img class="rounded-circle img-fluid" src="/assets/img/about/1.jpg" alt="Company Foundation" loading="lazy" /></picture></div>
             <div class="timeline-panel">
               <div class="timeline-heading"><h4>Founded in 2013</h4><h4 class="subheading">Professional Industrial Manufacturer</h4></div>
               <div class="timeline-body"><p class="text-muted">DGSDK was established in Dongguan, focusing on industrial automation, static elimination systems, and precision manufacturing solutions.</p></div>
             </div>
           </li>
           <li class="timeline-inverted" data-aos="fade-left">
-            <div class="timeline-image"><img class="rounded-circle img-fluid" src="/assets/img/about/2.jpg" alt="Technology Development" loading="lazy" /></div>
+            <div class="timeline-image"><picture><source srcset="/assets/img/about/2.webp" type="image/webp" /><img class="rounded-circle img-fluid" src="/assets/img/about/2.jpg" alt="Technology Development" loading="lazy" /></picture></div>
             <div class="timeline-panel">
               <div class="timeline-heading"><h4>Technology Expansion</h4><h4 class="subheading">Static Control & Cleaning Solutions</h4></div>
               <div class="timeline-body"><p class="text-muted">We expanded our product range to include static eliminators and industrial cleaning machines for electronics, SMT, and optical film industries.</p></div>
             </div>
           </li>
           <li data-aos="fade-right">
-            <div class="timeline-image"><img class="rounded-circle img-fluid" src="/assets/img/about/3.jpg" alt="Precision Manufacturing" loading="lazy" /></div>
+            <div class="timeline-image"><picture><source srcset="/assets/img/about/3.webp" type="image/webp" /><img class="rounded-circle img-fluid" src="/assets/img/about/3.jpg" alt="Precision Manufacturing" loading="lazy" /></picture></div>
             <div class="timeline-panel">
               <div class="timeline-heading"><h4>Advanced Manufacturing</h4><h4 class="subheading">Automation, Static Control, CNC</h4></div>
               <div class="timeline-body"><p class="text-muted">Our core business now covers automation systems, static control equipment, cleaning machines, precision CNC parts, and OEM manufacturing services.</p></div>
             </div>
           </li>
           <li class="timeline-inverted" data-aos="fade-left">
-            <div class="timeline-image"><img class="rounded-circle img-fluid" src="/assets/img/about/4.jpg" alt="Global Cooperation" loading="lazy" /></div>
+            <div class="timeline-image"><picture><source srcset="/assets/img/about/4.webp" type="image/webp" /><img class="rounded-circle img-fluid" src="/assets/img/about/4.jpg" alt="Global Cooperation" loading="lazy" /></picture></div>
             <div class="timeline-panel">
               <div class="timeline-heading"><h4>Global Service</h4><h4 class="subheading">Long-Term Industrial Cooperation</h4></div>
               <div class="timeline-body"><p class="text-muted">DGSDK serves global customers with stable quality, engineering support, and practical industrial solutions for long-term cooperation.</p></div>
@@ -206,14 +206,14 @@ import Layout from '../layouts/Layout.astro';
           <h3 class="section-subheading text-muted">Certified quality and international compliance</h3>
         </div>
         <div class="cert-grid">
-          <div class="cert-card" data-aos="zoom-in" data-aos-delay="0"><img src="/assets/img/cert/cert1.png" alt="Certificate 1" loading="lazy" width="300" height="212" /></div>
-          <div class="cert-card" data-aos="zoom-in" data-aos-delay="60"><img src="/assets/img/cert/cert2.png" alt="Certificate 2" loading="lazy" width="300" height="212" /></div>
-          <div class="cert-card" data-aos="zoom-in" data-aos-delay="120"><img src="/assets/img/cert/cert3.png" alt="Certificate 3" loading="lazy" width="300" height="212" /></div>
-          <div class="cert-card" data-aos="zoom-in" data-aos-delay="180"><img src="/assets/img/cert/cert4.png" alt="Certificate 4" loading="lazy" width="300" height="212" /></div>
-          <div class="cert-card" data-aos="zoom-in" data-aos-delay="240"><img src="/assets/img/cert/cert5.png" alt="Certificate 5" loading="lazy" width="300" height="212" /></div>
-          <div class="cert-card" data-aos="zoom-in" data-aos-delay="300"><img src="/assets/img/cert/cert6.png" alt="Certificate 6" loading="lazy" width="300" height="212" /></div>
-          <div class="cert-card" data-aos="zoom-in" data-aos-delay="360"><img src="/assets/img/cert/cert7.png" alt="Certificate 7" loading="lazy" width="300" height="212" /></div>
-          <div class="cert-card" data-aos="zoom-in" data-aos-delay="420"><img src="/assets/img/cert/cert8.png" alt="Certificate 8" loading="lazy" width="300" height="212" /></div>
+          <div class="cert-card" data-aos="zoom-in" data-aos-delay="0"><picture><source srcset="/assets/img/cert/cert1.webp" type="image/webp" /><img src="/assets/img/cert/cert1.png" alt="Certificate 1" loading="lazy" width="300" height="212" /></picture></div>
+          <div class="cert-card" data-aos="zoom-in" data-aos-delay="60"><picture><source srcset="/assets/img/cert/cert2.webp" type="image/webp" /><img src="/assets/img/cert/cert2.png" alt="Certificate 2" loading="lazy" width="300" height="212" /></picture></div>
+          <div class="cert-card" data-aos="zoom-in" data-aos-delay="120"><picture><source srcset="/assets/img/cert/cert3.webp" type="image/webp" /><img src="/assets/img/cert/cert3.png" alt="Certificate 3" loading="lazy" width="300" height="212" /></picture></div>
+          <div class="cert-card" data-aos="zoom-in" data-aos-delay="180"><picture><source srcset="/assets/img/cert/cert4.webp" type="image/webp" /><img src="/assets/img/cert/cert4.png" alt="Certificate 4" loading="lazy" width="300" height="212" /></picture></div>
+          <div class="cert-card" data-aos="zoom-in" data-aos-delay="240"><picture><source srcset="/assets/img/cert/cert5.webp" type="image/webp" /><img src="/assets/img/cert/cert5.png" alt="Certificate 5" loading="lazy" width="300" height="212" /></picture></div>
+          <div class="cert-card" data-aos="zoom-in" data-aos-delay="300"><picture><source srcset="/assets/img/cert/cert6.webp" type="image/webp" /><img src="/assets/img/cert/cert6.png" alt="Certificate 6" loading="lazy" width="300" height="212" /></picture></div>
+          <div class="cert-card" data-aos="zoom-in" data-aos-delay="360"><picture><source srcset="/assets/img/cert/cert7.webp" type="image/webp" /><img src="/assets/img/cert/cert7.png" alt="Certificate 7" loading="lazy" width="300" height="212" /></picture></div>
+          <div class="cert-card" data-aos="zoom-in" data-aos-delay="420"><picture><source srcset="/assets/img/cert/cert8.webp" type="image/webp" /><img src="/assets/img/cert/cert8.png" alt="Certificate 8" loading="lazy" width="300" height="212" /></picture></div>
         </div>
       </div>
     </section>
@@ -227,7 +227,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
         <div class="blog-index-grid" style="max-width:900px;margin:0 auto;" data-aos="fade-up" data-aos-delay="100">
           <a href="/blog/polarizer-cleaner-tutorial" class="blog-index-card">
-            <div class="blog-index-img"><img src="/assets/img/cleaning-machine/polarizer-cleaner.jpg" alt="Polarizer cleaning machine tutorial" loading="lazy" /></div>
+            <div class="blog-index-img"><picture><source srcset="/assets/img/cleaning-machine/polarizer-cleaner.webp" type="image/webp" /><img src="/assets/img/cleaning-machine/polarizer-cleaner.jpg" alt="Polarizer cleaning machine tutorial" loading="lazy" /></picture></div>
             <div class="blog-index-content">
               <div class="blog-index-tags"><span class="blog-tag">Cleaning Machine</span><span class="blog-tag">Tutorial</span></div>
               <h2>Polarizer Cleaning Machine: 8-Step Operating Guide for Zero-Defect Results</h2>
