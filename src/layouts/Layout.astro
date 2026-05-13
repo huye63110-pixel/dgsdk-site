@@ -30,11 +30,6 @@ const path = new URL(canonical).pathname;
     <!-- hreflang for multilingual versions -->
     <link rel="alternate" hreflang="en" href={`${base}${path}`} />
     {!noLangAlternates && <link rel="alternate" hreflang="zh" href={`${base}/zh${path === '/' ? '/' : path}`} />}
-    {!noLangAlternates && <link rel="alternate" hreflang="vi" href={`${base}/vi${path === '/' ? '/' : path}`} />}
-    {!noLangAlternates && <link rel="alternate" hreflang="ar" href={`${base}/ar${path === '/' ? '/' : path}`} />}
-    {!noLangAlternates && <link rel="alternate" hreflang="ja" href={`${base}/ja${path === '/' ? '/' : path}`} />}
-    {!noLangAlternates && <link rel="alternate" hreflang="ko" href={`${base}/ko${path === '/' ? '/' : path}`} />}
-    {!noLangAlternates && <link rel="alternate" hreflang="es" href={`${base}/es${path === '/' ? '/' : path}`} />}
     <link rel="alternate" hreflang="x-default" href={`${base}${path}`} />
 
     <!-- Open Graph (Facebook, LinkedIn) -->
@@ -222,11 +217,6 @@ const path = new URL(canonical).pathname;
               <ul class="lang-menu" id="langMenu">
                 <li><a href="/">English</a></li>
                 <li><a href="/zh/">中文</a></li>
-                <li><a href="/vi/">Tiếng Việt</a></li>
-                <li><a href="/ar/">العربية</a></li>
-                <li><a href="/ja/">日本語</a></li>
-                <li><a href="/ko/">한국어</a></li>
-                <li><a href="/es/">Español</a></li>
               </ul>
             </li>
 
