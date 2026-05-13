@@ -1,738 +1,381 @@
 ---
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>DGSDK | Static Eliminators & Industrial Cleaning Machines</title>
-    <meta name="description" content="DGSDK (Dongguan Shidike) manufactures static eliminators, ionizing bars, industrial film cleaning machines, and precision CNC parts for global electronics, SMT, and automation industries." />
+<Layout
+  title="DGSDK | Static Eliminators & Industrial Cleaning Machines"
+  description="DGSDK (Dongguan Shidike) manufactures static eliminators, ionizing bars, industrial film cleaning machines, and precision CNC parts for global electronics, SMT, and automation industries."
+  image="/assets/img/header-bg.webp"
+  canonical="https://www.dg-sdk.com/"
+>
 
-    <!-- Primary SEO -->
-    <link rel="canonical" href="https://www.dg-sdk.com/" />
-    <meta name="robots" content="index, follow" />
-    <meta name="author" content="DGSDK - Dongguan Shidike Automation Equipment Co., Ltd." />
-    <meta name="keywords" content="static eliminator, ionizing bar, ionizing air blower, anti-static equipment, ESD equipment, film cleaning machine, polarizer cleaning machine, industrial cleaning machine, CNC machined parts, Dongguan manufacturer" />
-    <meta name="geo.region" content="CN-GD" />
-    <meta name="geo.placename" content="Dongguan, Guangdong, China" />
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["Organization", "LocalBusiness"],
+    "name": "DGSDK",
+    "alternateName": "Dongguan Shidike Automation Equipment Co., Ltd.",
+    "url": "https://www.dg-sdk.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.dg-sdk.com/logo.png",
+      "width": 600,
+      "height": 168
+    },
+    "image": "https://www.dg-sdk.com/assets/img/header-bg.webp",
+    "description": "Professional manufacturer specializing in static elimination systems, industrial cleaning machines, automation equipment, and precision CNC parts.",
+    "foundingDate": "2013",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Binhai Road 33",
+      "addressLocality": "Dongguan",
+      "addressRegion": "Guangdong",
+      "postalCode": "523000",
+      "addressCountry": "CN"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+86-13602342003",
+      "contactType": "sales",
+      "availableLanguage": ["English", "Chinese"],
+      "areaServed": "Worldwide"
+    },
+    "sameAs": ["https://www.facebook.com/yourcompany", "https://www.tiktok.com/@machineforge"]
+  }
+  </script>
 
-    <!-- hreflang multilingual -->
-    <link rel="alternate" hreflang="en" href="https://www.dg-sdk.com/" />
-    <link rel="alternate" hreflang="zh" href="https://www.dg-sdk.com/zh/" />
-    <link rel="alternate" hreflang="vi" href="https://www.dg-sdk.com/vi/" />
-    <link rel="alternate" hreflang="ar" href="https://www.dg-sdk.com/ar/" />
-    <link rel="alternate" hreflang="ja" href="https://www.dg-sdk.com/ja/" />
-    <link rel="alternate" hreflang="ko" href="https://www.dg-sdk.com/ko/" />
-    <link rel="alternate" hreflang="es" href="https://www.dg-sdk.com/es/" />
-    <link rel="alternate" hreflang="x-default" href="https://www.dg-sdk.com/" />
+  <main id="main-content">
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="DGSDK | Static Eliminator, Cleaning Machine & CNC Parts Manufacturer" />
-    <meta property="og:description" content="DGSDK manufactures static eliminators, ionizing bars, industrial film cleaning machines, and precision CNC parts for global electronics and automation industries." />
-    <meta property="og:image" content="https://www.dg-sdk.com/assets/img/header-bg.webp" />
-    <meta property="og:url" content="https://www.dg-sdk.com/" />
-    <meta property="og:site_name" content="DGSDK" />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="DGSDK | Static Eliminator & Industrial Cleaning Machine Manufacturer" />
-    <meta name="twitter:description" content="DGSDK manufactures static eliminators, ionizing bars, industrial film cleaning machines, and precision CNC parts for global electronics and automation industries." />
-    <meta name="twitter:image" content="https://www.dg-sdk.com/assets/img/header-bg.webp" />
-
-    <!-- Performance: DNS prefetch & preconnect -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
-
-    <!-- Preload LCP hero image -->
-    <link rel="preload" as="image" href="/assets/img/header-bg.webp" fetchpriority="high" type="image/webp" />
-
-    <!-- Critical CSS (render-blocking, kept) -->
-    <link rel="stylesheet" href="/css/styles.css" />
-
-    <!-- Font Awesome: deferred to avoid render-blocking -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" /></noscript>
-
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": ["Organization", "LocalBusiness"],
-      "name": "DGSDK",
-      "alternateName": "Dongguan Shidike Automation Equipment Co., Ltd.",
-      "url": "https://www.dg-sdk.com",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.dg-sdk.com/logo.png",
-        "width": 600,
-        "height": 168
-      },
-      "image": "https://www.dg-sdk.com/assets/img/header-bg.webp",
-      "description": "Professional manufacturer specializing in static elimination systems, industrial cleaning machines, automation equipment, and precision CNC parts.",
-      "foundingDate": "2013",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Binhai Road 33",
-        "addressLocality": "Dongguan",
-        "addressRegion": "Guangdong",
-        "postalCode": "523000",
-        "addressCountry": "CN"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+86-13602342003",
-        "contactType": "sales",
-        "availableLanguage": ["English", "Chinese"],
-        "areaServed": "Worldwide"
-      },
-      "sameAs": ["https://www.facebook.com/yourcompany", "https://www.tiktok.com/@machineforge"]
-    }
-    </script>
-  </head>
-
-  <body id="page-top">
-    <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand" href="/" aria-label="DGSDK homepage">
-          <picture>
-            <source srcset="/logo-300.webp 300w, /logo.webp 600w" sizes="(max-width: 768px) 160px, 200px" type="image/webp" />
-            <img src="/logo.png" alt="DGSDK Logo" width="200" height="56" loading="eager" fetchpriority="high" />
-          </picture>
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarResponsive"
-          aria-controls="navbarResponsive"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          Menu
-          <i class="fas fa-bars ms-1"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-
-  <li class="nav-item">
-    <a class="nav-link" href="/">Home</a>
-  </li>
-
-<!-- Products dropdown -->
-<li class="nav-item dropdown">
-  <a
-    class="nav-link dropdown-toggle"
-    href="/products"
-    id="navbarDropdown"
-    role="button"
-    data-bs-toggle="dropdown"
-    aria-expanded="false"
-  >
-    Products
-  </a>
-  <ul class="dropdown-menu">
-  <li><a class="dropdown-item" href="/products">All Products</a></li>
-  <li><a class="dropdown-item" href="/products/static-eliminator">Static Elimination System</a></li>
-  <li><a class="dropdown-item" href="/products/cleaning-machine">Cleaning Machine</a></li>
-  <li><a class="dropdown-item" href="/products/precision-machined-parts">Precision Machined Parts</a></li>
-  <li><a class="dropdown-item" href="/products/automation">Automation Equipment</a></li>
-</ul>
-</li>
-
-  <li class="nav-item">
-    <a class="nav-link" href="/applications">Applications</a>
-  </li>
-
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="/guides" id="navbarResourcesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-      Resources
-    </a>
-    <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="/blog">Blog</a></li>
-      <li><a class="dropdown-item" href="/guides/what-is-esd">What Is ESD?</a></li>
-      <li><a class="dropdown-item" href="/guides/how-to-prevent-static">How to Prevent Static</a></li>
-      <li><a class="dropdown-item" href="/guides/esd-control-products">ESD Control Products</a></li>
-      <li><a class="dropdown-item" href="/guides/industrial-static-eliminator">Industrial Static Eliminators</a></li>
-      <li><a class="dropdown-item" href="/faq">FAQ</a></li>
-    </ul>
-  </li>
-
-  <li class="nav-item">
-    <a class="nav-link" href="/about">About Us</a>
-  </li>
-
-  <li class="nav-item">
-    <a class="nav-link" href="/contact">Contact Us</a>
-  </li>
-
-<li class="nav-item lang-dropdown" id="langDropdown">
-  <button class="nav-link lang-btn" type="button" id="langToggle" aria-label="Select language" aria-expanded="false">
-    EN <i class="fas fa-chevron-down" aria-hidden="true"></i>
-  </button>
-
-  <ul class="lang-menu" id="langMenu">
-    <li><a href="/">English</a></li>
-    <li><a href="/zh/">中文</a></li>
-    <li><a href="/vi/">Tiếng Việt</a></li>
-    <li><a href="/ar/">العربية</a></li>
-    <li><a href="/ja/">日本語</a></li>
-    <li><a href="/ko/">한국어</a></li>
-    <li><a href="/es/">Español</a></li>
-  </ul>
-</li>
-
-<li class="nav-item nav-icon-item search-dropdown" id="searchDropdown">
-  <button class="nav-link nav-icon-btn" type="button" id="searchToggle" aria-label="Search products" aria-expanded="false">
-    <i class="fas fa-search" aria-hidden="true"></i>
-  </button>
-
-  <div class="search-box" id="searchBox" role="search">
-    <input type="text" placeholder="Search products..." aria-label="Search products" />
-  </div>
-</li>
-
-
-  
-
-          </ul>
-        </div>
+    <!-- Masthead Hero Slider -->
+    <header class="masthead hero-slider">
+      <div class="hero-slides">
+        <div class="hero-slide hero-slide-1 active" style="background-image: url('/assets/img/header-bg.webp');"></div>
+        <div class="hero-slide hero-slide-products" style="background-image: url('/assets/img/hero-products.webp');"></div>
+        <div class="hero-slide hero-slide-2" style="background-image: url('/assets/img/portfolio/hero-2.webp');"></div>
       </div>
-    </nav>
-
-    <main id="main-content">
-    <!-- Masthead-->
-   <header class="masthead hero-slider">
-
-  <div class="hero-slides">
-    <div class="hero-slide hero-slide-1 active" style="background-image: url('/assets/img/header-bg.webp');"></div>
-    <div class="hero-slide hero-slide-products" style="background-image: url('/assets/img/hero-products.webp');"></div>
-    <div class="hero-slide hero-slide-2" style="background-image: url('/assets/img/portfolio/hero-2.webp');"></div>
-  </div>
-
-  <div class="hero-overlay"></div>
-
-  <div class="container hero-content">
-    <div class="masthead-subheading">
-      Dongguan Shidike Automation Equipment Co., Ltd.
-    </div>
-
-    <h1 class="masthead-heading text-uppercase">
-      Static Eliminator · Cleaning Machine · CNC Manufacturing
-    </h1>
-
-    <p class="hero-desc">
-      Professional industrial solutions for electronics, SMT, optical film, automation equipment, and precision manufacturing.
-    </p>
-
-    <a class="btn btn-primary btn-xl text-uppercase" href="/contact">
-      Request a Quote
-    </a>
-  </div>
-
-  <button class="hero-arrow hero-prev" type="button" aria-label="Previous slide">‹</button>
-  <button class="hero-arrow hero-next" type="button" aria-label="Next slide">›</button>
-
-  <div class="hero-dots" role="group" aria-label="Slide navigation">
-    <button class="hero-dot active" type="button" aria-label="Slide 1" aria-current="true"></button>
-    <button class="hero-dot" type="button" aria-label="Slide 2"></button>
-    <button class="hero-dot" type="button" aria-label="Slide 3"></button>
-  </div>
-
-</header>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <div class="masthead-subheading">Dongguan Shidike Automation Equipment Co., Ltd.</div>
+        <h1 class="masthead-heading text-uppercase">
+          Static Eliminator · Cleaning Machine · CNC Manufacturing
+        </h1>
+        <p class="hero-desc">
+          Professional industrial solutions for electronics, SMT, optical film, automation equipment, and precision manufacturing.
+        </p>
+        <a class="btn btn-primary btn-xl text-uppercase" href="/contact">Request a Quote</a>
+      </div>
+      <button class="hero-arrow hero-prev" type="button" aria-label="Previous slide">‹</button>
+      <button class="hero-arrow hero-next" type="button" aria-label="Next slide">›</button>
+      <div class="hero-dots" role="group" aria-label="Slide navigation">
+        <button class="hero-dot active" type="button" aria-label="Slide 1" aria-current="true"></button>
+        <button class="hero-dot" type="button" aria-label="Slide 2"></button>
+        <button class="hero-dot" type="button" aria-label="Slide 3"></button>
+      </div>
+    </header>
 
     <!-- Products -->
-<section class="page-section" id="services">
-  <div class="container">
-
-    <div class="text-center">
-      <h2 class="section-heading text-uppercase">Our Core Products</h2>
-      <h3 class="section-subheading text-muted">
-        Advanced automation solutions designed to improve efficiency, reduce defects, and optimize your production process.
-      </h3>
-    </div>
-
-    <div class="row text-center">
-
-      <!-- Static Eliminator -->
-      <div class="col-lg-3 col-md-6 mb-4">
-  <a href="/products/static-eliminator" class="product-card">
-    <span class="fa-stack fa-4x product-icon">
-      <i class="fas fa-circle fa-stack-2x text-primary"></i>
-      <i class="fas fa-bolt fa-stack-1x fa-inverse"></i>
-    </span>
-    <h4>Static Elimination</h4>
-    <p>
-      High-performance ionizing equipment for eliminating static electricity and improving production stability.
-    </p>
-  </a>
-</div>
-
-      <!-- Automation -->
-      <div class="col-lg-3 col-md-6 mb-4">
-        <a href="/products/automation" class="product-card">
-          <span class="fa-stack fa-4x product-icon">
-            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-gears fa-stack-1x fa-inverse"></i>
-          </span>
-          <h4>Automation Systems</h4>
-          <p>
-            Custom automation solutions designed to streamline workflows and increase production efficiency.
-          </p>
-        </a>
+    <section class="page-section" id="services">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-heading text-uppercase">Our Core Products</h2>
+          <h3 class="section-subheading text-muted">
+            Advanced automation solutions designed to improve efficiency, reduce defects, and optimize your production process.
+          </h3>
+        </div>
+        <div class="row text-center">
+          <div class="col-lg-3 col-md-6 mb-4">
+            <a href="/products/static-eliminator" class="product-card">
+              <span class="fa-stack fa-4x product-icon">
+                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                <i class="fas fa-bolt fa-stack-1x fa-inverse"></i>
+              </span>
+              <h4>Static Elimination</h4>
+              <p>High-performance ionizing equipment for eliminating static electricity and improving production stability.</p>
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <a href="/products/automation" class="product-card">
+              <span class="fa-stack fa-4x product-icon">
+                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                <i class="fas fa-gears fa-stack-1x fa-inverse"></i>
+              </span>
+              <h4>Automation Systems</h4>
+              <p>Custom automation solutions designed to streamline workflows and increase production efficiency.</p>
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <a href="/products/precision-machined-parts" class="product-card">
+              <span class="fa-stack fa-4x product-icon">
+                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                <i class="fas fa-industry fa-stack-1x fa-inverse"></i>
+              </span>
+              <h4>Precision CNC Parts</h4>
+              <p>High-precision CNC machining with strict quality control and reliable performance.</p>
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <a href="/products/cleaning-machine" class="product-card">
+              <span class="fa-stack fa-4x product-icon">
+                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                <i class="fas fa-soap fa-stack-1x fa-inverse"></i>
+              </span>
+              <h4>Cleaning Machine</h4>
+              <p>Precision cleaning equipment for PCB, FPC, SMT, polarizer, backlight, and optical film manufacturing.</p>
+            </a>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <a href="/products" class="btn btn-warning text-uppercase px-4 py-2">View All Products</a>
+        </div>
       </div>
+    </section>
 
-      <!-- CNC -->
-<div class="col-lg-3 col-md-6 mb-4">
-  <a href="/products/precision-machined-parts" class="product-card">
-    <span class="fa-stack fa-4x product-icon">
-      <i class="fas fa-circle fa-stack-2x text-primary"></i>
-      <i class="fas fa-industry fa-stack-1x fa-inverse"></i>
-    </span>
-    <h4>Precision CNC Parts</h4>
-    <p>
-      High-precision CNC machining with strict quality control and reliable performance.
-    </p>
-  </a>
-</div>
-      <!-- cleaningmachine -->
-<div class="col-lg-3 col-md-6 mb-4">
-  <a href="/products/cleaning-machine" class="product-card">
-    <span class="fa-stack fa-4x product-icon">
-      <i class="fas fa-circle fa-stack-2x text-primary"></i>
-      <i class="fas fa-soap fa-stack-1x fa-inverse"></i>
-    </span>
-    <h4>Cleaning Machine</h4>
-    <p>
-      Precision cleaning equipment for PCB, FPC, SMT, polarizer, backlight, and optical film manufacturing.
-    </p>
-  </a>
-</div>
-
-    </div>
-
-    <!-- CTA -->
-    <div class="text-center mt-4">
-      <a href="/products" class="btn btn-warning text-uppercase px-4 py-2">
-        View All Products
-      </a>
-    </div>
-
-  </div>
-</section>
-
-   <!-- Applications -->
-<section class="page-section bg-light" id="portfolio">
-  <div class="container">
-    <div class="text-center">
-      <h2 class="section-heading text-uppercase">Applications</h2>
-      <h3 class="section-subheading text-muted">
-        Discover how our solutions improve efficiency, reduce defects, and optimize your production line.
-      </h3>
-    </div>
-
-    <div class="row">
-
-      <!-- Electronics -->
-      <div class="col-lg-4 col-sm-6 mb-4">
-        <a href="/applications" class="portfolio-item app-card">
-          <div class="portfolio-link">
-            <picture>
-              <source srcset="/assets/img/portfolio/1-700.webp 700w, /assets/img/portfolio/1.webp 1180w" sizes="(max-width: 768px) 100vw, 679px" type="image/webp" />
-              <img class="img-fluid" src="/assets/img/portfolio/1.jpg" alt="Electronics Manufacturing" loading="lazy" width="679" height="509" />
-            </picture>
+    <!-- Applications -->
+    <section class="page-section bg-light" id="portfolio">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-heading text-uppercase">Applications</h2>
+          <h3 class="section-subheading text-muted">
+            Discover how our solutions improve efficiency, reduce defects, and optimize your production line.
+          </h3>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-sm-6 mb-4">
+            <a href="/applications" class="portfolio-item app-card">
+              <div class="portfolio-link">
+                <picture>
+                  <source srcset="/assets/img/portfolio/1-700.webp 700w, /assets/img/portfolio/1.webp 1180w" sizes="(max-width: 768px) 100vw, 679px" type="image/webp" />
+                  <img class="img-fluid" src="/assets/img/portfolio/1.jpg" alt="Electronics Manufacturing" loading="lazy" width="679" height="509" />
+                </picture>
+              </div>
+              <div class="portfolio-caption">
+                <div class="portfolio-caption-heading">Electronics Manufacturing</div>
+                <div class="portfolio-caption-subheading text-muted">Static control & cleaning solutions</div>
+              </div>
+            </a>
           </div>
-          <div class="portfolio-caption">
-            <div class="portfolio-caption-heading">Electronics Manufacturing</div>
-            <div class="portfolio-caption-subheading text-muted">
-              Static control & cleaning solutions
-            </div>
+          <div class="col-lg-4 col-sm-6 mb-4">
+            <a href="/applications" class="portfolio-item app-card">
+              <div class="portfolio-link">
+                <picture>
+                  <source srcset="/assets/img/portfolio/2-700.webp 700w, /assets/img/portfolio/2-900.webp 900w, /assets/img/portfolio/2.webp 1180w" sizes="(max-width: 768px) 100vw, 679px" type="image/webp" />
+                  <img class="img-fluid" src="/assets/img/portfolio/2.jpg" alt="SMT Production" loading="lazy" width="679" height="509" />
+                </picture>
+              </div>
+              <div class="portfolio-caption">
+                <div class="portfolio-caption-heading">SMT Production</div>
+                <div class="portfolio-caption-subheading text-muted">Industrial automation & equipment support</div>
+              </div>
+            </a>
           </div>
-        </a>
+          <div class="col-lg-4 col-sm-6 mb-4">
+            <a href="/applications" class="portfolio-item app-card">
+              <div class="portfolio-link">
+                <picture>
+                  <source srcset="/assets/img/portfolio/3-700.webp 700w, /assets/img/portfolio/3.webp 1180w" sizes="(max-width: 768px) 100vw, 679px" type="image/webp" />
+                  <img class="img-fluid" src="/assets/img/portfolio/3.jpg" alt="Precision Machining" loading="lazy" width="679" height="509" />
+                </picture>
+              </div>
+              <div class="portfolio-caption">
+                <div class="portfolio-caption-heading">Precision Machining</div>
+                <div class="portfolio-caption-subheading text-muted">High-precision CNC component solutions</div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <a href="/contact" class="btn btn-warning text-uppercase px-4 py-2">Discuss Your Application</a>
+        </div>
       </div>
-
-      <!-- SMT -->
-      <div class="col-lg-4 col-sm-6 mb-4">
-        <a href="/applications" class="portfolio-item app-card">
-          <div class="portfolio-link">
-            <picture>
-              <source srcset="/assets/img/portfolio/2-700.webp 700w, /assets/img/portfolio/2-900.webp 900w, /assets/img/portfolio/2.webp 1180w" sizes="(max-width: 768px) 100vw, 679px" type="image/webp" />
-              <img class="img-fluid" src="/assets/img/portfolio/2.jpg" alt="SMT Production" loading="lazy" width="679" height="509" />
-            </picture>
-          </div>
-          <div class="portfolio-caption">
-            <div class="portfolio-caption-heading">SMT Production</div>
-            <div class="portfolio-caption-subheading text-muted">
-              Industrial automation & equipment support
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <!-- CNC -->
-      <div class="col-lg-4 col-sm-6 mb-4">
-        <a href="/applications" class="portfolio-item app-card">
-          <div class="portfolio-link">
-            <picture>
-              <source srcset="/assets/img/portfolio/3-700.webp 700w, /assets/img/portfolio/3.webp 1180w" sizes="(max-width: 768px) 100vw, 679px" type="image/webp" />
-              <img class="img-fluid" src="/assets/img/portfolio/3.jpg" alt="Precision Machining" loading="lazy" width="679" height="509" />
-            </picture>
-          </div>
-          <div class="portfolio-caption">
-            <div class="portfolio-caption-heading">Precision Machining</div>
-            <div class="portfolio-caption-subheading text-muted">
-              High-precision CNC component solutions
-            </div>
-          </div>
-        </a>
-      </div>
-
-    </div>
-
-    <!-- CTA按钮 -->
-    <div class="text-center mt-4">
-      <a href="/contact" class="btn btn-warning text-uppercase px-4 py-2">
-        Discuss Your Application
-      </a>
-    </div>
-
-  </div>
-</section>
+    </section>
 
     <!-- About -->
     <section class="page-section" id="about">
       <div class="container">
         <div class="text-center">
           <h2 class="section-heading text-uppercase">About DGSDK</h2>
-          <h3 class="section-subheading text-muted">
-            Dongguan Shidike Automation Equipment Co., Ltd.
-          </h3>
+          <h3 class="section-subheading text-muted">Dongguan Shidike Automation Equipment Co., Ltd.</h3>
         </div>
         <ul class="timeline">
           <li>
-  <div class="timeline-image">
-    <img class="rounded-circle img-fluid" src="/assets/img/about/1.jpg" alt="Company Foundation" loading="lazy" />
-  </div>
-  <div class="timeline-panel">
-    <div class="timeline-heading">
-      <h4>Founded in 2013</h4>
-      <h4 class="subheading">Professional Industrial Manufacturer</h4>
-    </div>
-    <div class="timeline-body">
-      <p class="text-muted">
-        DGSDK was established in Dongguan, focusing on industrial automation,
-        static elimination systems, and precision manufacturing solutions.
-      </p>
-    </div>
-  </div>
-</li>
-
-<li class="timeline-inverted">
-  <div class="timeline-image">
-    <img class="rounded-circle img-fluid" src="/assets/img/about/2.jpg" alt="Technology Development" loading="lazy" />
-  </div>
-  <div class="timeline-panel">
-    <div class="timeline-heading">
-      <h4>Technology Expansion</h4>
-      <h4 class="subheading">Static Control & Cleaning Solutions</h4>
-    </div>
-    <div class="timeline-body">
-      <p class="text-muted">
-        We expanded our product range to include static eliminators and industrial
-        cleaning machines for electronics, SMT, and optical film industries.
-      </p>
-    </div>
-  </div>
-</li>
-
-<li>
-  <div class="timeline-image">
-    <img class="rounded-circle img-fluid" src="/assets/img/about/3.jpg" alt="Precision Manufacturing" loading="lazy" />
-  </div>
-  <div class="timeline-panel">
-    <div class="timeline-heading">
-      <h4>Advanced Manufacturing</h4>
-      <h4 class="subheading">Automation, Static Control, CNC</h4>
-    </div>
-    <div class="timeline-body">
-      <p class="text-muted">
-        Our core business now covers automation systems, static control equipment,
-        cleaning machines, precision CNC parts, and OEM manufacturing services.
-      </p>
-    </div>
-  </div>
-</li>
-
-<li class="timeline-inverted">
-  <div class="timeline-image">
-    <img class="rounded-circle img-fluid" src="/assets/img/about/4.jpg" alt="Global Cooperation" loading="lazy" />
-  </div>
-  <div class="timeline-panel">
-    <div class="timeline-heading">
-      <h4>Global Service</h4>
-      <h4 class="subheading">Long-Term Industrial Cooperation</h4>
-    </div>
-    <div class="timeline-body">
-      <p class="text-muted">
-        DGSDK serves global customers with stable quality, engineering support,
-        and practical industrial solutions for long-term cooperation.
-      </p>
-    </div>
-  </div>
-</li>
+            <div class="timeline-image">
+              <img class="rounded-circle img-fluid" src="/assets/img/about/1.jpg" alt="Company Foundation" loading="lazy" />
+            </div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4>Founded in 2013</h4>
+                <h4 class="subheading">Professional Industrial Manufacturer</h4>
+              </div>
+              <div class="timeline-body">
+                <p class="text-muted">DGSDK was established in Dongguan, focusing on industrial automation, static elimination systems, and precision manufacturing solutions.</p>
+              </div>
+            </div>
+          </li>
+          <li class="timeline-inverted">
+            <div class="timeline-image">
+              <img class="rounded-circle img-fluid" src="/assets/img/about/2.jpg" alt="Technology Development" loading="lazy" />
+            </div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4>Technology Expansion</h4>
+                <h4 class="subheading">Static Control & Cleaning Solutions</h4>
+              </div>
+              <div class="timeline-body">
+                <p class="text-muted">We expanded our product range to include static eliminators and industrial cleaning machines for electronics, SMT, and optical film industries.</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="timeline-image">
+              <img class="rounded-circle img-fluid" src="/assets/img/about/3.jpg" alt="Precision Manufacturing" loading="lazy" />
+            </div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4>Advanced Manufacturing</h4>
+                <h4 class="subheading">Automation, Static Control, CNC</h4>
+              </div>
+              <div class="timeline-body">
+                <p class="text-muted">Our core business now covers automation systems, static control equipment, cleaning machines, precision CNC parts, and OEM manufacturing services.</p>
+              </div>
+            </div>
+          </li>
+          <li class="timeline-inverted">
+            <div class="timeline-image">
+              <img class="rounded-circle img-fluid" src="/assets/img/about/4.jpg" alt="Global Cooperation" loading="lazy" />
+            </div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4>Global Service</h4>
+                <h4 class="subheading">Long-Term Industrial Cooperation</h4>
+              </div>
+              <div class="timeline-body">
+                <p class="text-muted">DGSDK serves global customers with stable quality, engineering support, and practical industrial solutions for long-term cooperation.</p>
+              </div>
+            </div>
+          </li>
         </ul>
       </div>
     </section>
 
+    <!-- Certifications -->
     <section id="certifications" class="page-section bg-light">
-  <div class="container">
-    <div class="text-center">
-      <h2 class="section-heading text-uppercase">Certifications</h2>
-      <h3 class="section-subheading text-muted">
-        Certified quality and international compliance
-      </h3>
-    </div>
-
-    <div class="cert-grid">
-      <div class="cert-card"><img src="/assets/img/cert/cert1.png" alt="Certificate 1" loading="lazy" width="300" height="212" /></div>
-      <div class="cert-card"><img src="/assets/img/cert/cert2.png" alt="Certificate 2" loading="lazy" width="300" height="212" /></div>
-      <div class="cert-card"><img src="/assets/img/cert/cert3.png" alt="Certificate 3" loading="lazy" width="300" height="212" /></div>
-      <div class="cert-card"><img src="/assets/img/cert/cert4.png" alt="Certificate 4" loading="lazy" width="300" height="212" /></div>
-      <div class="cert-card"><img src="/assets/img/cert/cert5.png" alt="Certificate 5" loading="lazy" width="300" height="212" /></div>
-      <div class="cert-card"><img src="/assets/img/cert/cert6.png" alt="Certificate 6" loading="lazy" width="300" height="212" /></div>
-      <div class="cert-card"><img src="/assets/img/cert/cert7.png" alt="Certificate 7" loading="lazy" width="300" height="212" /></div>
-      <div class="cert-card"><img src="/assets/img/cert/cert8.png" alt="Certificate 8" loading="lazy" width="300" height="212" /></div>
-    </div>
-  </div>
-</section>
-
- <!-- BLOG PREVIEW -->
-<section class="page-section" style="background:#f5f6f7;padding:70px 20px;">
-  <div class="container">
-    <div class="text-center" style="margin-bottom:40px;">
-      <h2 class="section-heading text-uppercase">Technical Blog</h2>
-      <h3 class="section-subheading text-muted">Operation guides and industry insights for industrial cleaning and automation equipment.</h3>
-    </div>
-    <div class="blog-index-grid" style="max-width:900px;margin:0 auto;">
-      <a href="/blog/polarizer-cleaner-tutorial" class="blog-index-card">
-        <div class="blog-index-img">
-          <img src="/assets/img/cleaning-machine/polarizer-cleaner.jpg" alt="Polarizer cleaning machine tutorial" loading="lazy" />
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-heading text-uppercase">Certifications</h2>
+          <h3 class="section-subheading text-muted">Certified quality and international compliance</h3>
         </div>
-        <div class="blog-index-content">
-          <div class="blog-index-tags">
-            <span class="blog-tag">Cleaning Machine</span>
-            <span class="blog-tag">Tutorial</span>
-          </div>
-          <h2>Polarizer Cleaning Machine: 8-Step Operating Guide for Zero-Defect Results</h2>
-          <p>Learn how to operate a polarizer cleaning machine step by step — parameter setup, consumable installation, troubleshooting, and how to achieve 99%+ cleaning yield.</p>
-          <div class="blog-index-meta">
-            <span><i class="fas fa-calendar-alt"></i> May 13, 2026</span>
-            <span><i class="fas fa-clock"></i> 10 min read</span>
-          </div>
-          <span class="blog-read-more">Read Article <i class="fas fa-arrow-right"></i></span>
+        <div class="cert-grid">
+          <div class="cert-card"><img src="/assets/img/cert/cert1.png" alt="Certificate 1" loading="lazy" width="300" height="212" /></div>
+          <div class="cert-card"><img src="/assets/img/cert/cert2.png" alt="Certificate 2" loading="lazy" width="300" height="212" /></div>
+          <div class="cert-card"><img src="/assets/img/cert/cert3.png" alt="Certificate 3" loading="lazy" width="300" height="212" /></div>
+          <div class="cert-card"><img src="/assets/img/cert/cert4.png" alt="Certificate 4" loading="lazy" width="300" height="212" /></div>
+          <div class="cert-card"><img src="/assets/img/cert/cert5.png" alt="Certificate 5" loading="lazy" width="300" height="212" /></div>
+          <div class="cert-card"><img src="/assets/img/cert/cert6.png" alt="Certificate 6" loading="lazy" width="300" height="212" /></div>
+          <div class="cert-card"><img src="/assets/img/cert/cert7.png" alt="Certificate 7" loading="lazy" width="300" height="212" /></div>
+          <div class="cert-card"><img src="/assets/img/cert/cert8.png" alt="Certificate 8" loading="lazy" width="300" height="212" /></div>
         </div>
-      </a>
+      </div>
+    </section>
+
+    <!-- Blog Preview -->
+    <section class="page-section" style="background:#f5f6f7;padding:70px 20px;">
+      <div class="container">
+        <div class="text-center" style="margin-bottom:40px;">
+          <h2 class="section-heading text-uppercase">Technical Blog</h2>
+          <h3 class="section-subheading text-muted">Operation guides and industry insights for industrial cleaning and automation equipment.</h3>
+        </div>
+        <div class="blog-index-grid" style="max-width:900px;margin:0 auto;">
+          <a href="/blog/polarizer-cleaner-tutorial" class="blog-index-card">
+            <div class="blog-index-img">
+              <img src="/assets/img/cleaning-machine/polarizer-cleaner.jpg" alt="Polarizer cleaning machine tutorial" loading="lazy" />
+            </div>
+            <div class="blog-index-content">
+              <div class="blog-index-tags">
+                <span class="blog-tag">Cleaning Machine</span>
+                <span class="blog-tag">Tutorial</span>
+              </div>
+              <h2>Polarizer Cleaning Machine: 8-Step Operating Guide for Zero-Defect Results</h2>
+              <p>Learn how to operate a polarizer cleaning machine step by step — parameter setup, consumable installation, troubleshooting, and how to achieve 99%+ cleaning yield.</p>
+              <div class="blog-index-meta">
+                <span><i class="fas fa-calendar-alt"></i> May 13, 2026</span>
+                <span><i class="fas fa-clock"></i> 10 min read</span>
+              </div>
+              <span class="blog-read-more">Read Article <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </a>
+        </div>
+        <div style="text-align:center;margin-top:32px;">
+          <a href="/blog" style="display:inline-block;padding:12px 28px;border-radius:10px;background:#111827;color:#fff;font-weight:700;text-decoration:none;font-size:15px;">View All Articles</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Get a Free Quote -->
+    <section class="quote-section" id="contact">
+      <div class="quote-overlay"></div>
+      <div class="container quote-content">
+        <div class="text-center">
+          <h2 class="quote-title">GET A FREE QUOTE</h2>
+          <p class="quote-desc">
+            If you are searching for information about our products, please submit your inquiry by filling out the form below.
+          </p>
+        </div>
+        <form action="https://formspree.io/f/mvzlpdwy" method="POST" class="quote-form">
+          <input type="text" name="name" placeholder="Your name (Required)" required />
+          <input type="email" name="email" placeholder="Your email address (Required)" required />
+          <input type="text" name="phone" placeholder="Your phone number" />
+          <textarea name="message" rows="5" placeholder="Please enter your message information" required></textarea>
+          <button type="submit">Send message</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer CTA -->
+  <section class="home-bottom-cta">
+    <div class="container">
+      <h2>Ready to Start Your Project?</h2>
+      <p>Contact DGSDK for industrial automation solutions, static eliminators, cleaning machines, and precision CNC parts.</p>
+      <a href="/contact" class="home-bottom-btn">Get a Free Quote</a>
     </div>
-    <div style="text-align:center;margin-top:32px;">
-      <a href="/blog" style="display:inline-block;padding:12px 28px;border-radius:10px;background:#111827;color:#fff;font-weight:700;text-decoration:none;font-size:15px;transition:background 0.25s;">View All Articles</a>
-    </div>
-  </div>
-</section>
+  </section>
 
- <!-- GET A FREE QUOTE -->
-<section class="quote-section" id="contact">
-  <div class="quote-overlay"></div>
+  <!-- Hero Slider Script -->
+  <script is:inline>
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.hero-dot');
+    const prevBtn = document.querySelector('.hero-prev');
+    const nextBtn = document.querySelector('.hero-next');
 
-  <div class="container quote-content">
-    <div class="text-center">
-      <h2 class="quote-title">GET A FREE QUOTE</h2>
-      <p class="quote-desc">
-        If you are searching for information about our products, please submit your inquiry
-        by filling out the form below.
-      </p>
-    </div>
+    let currentSlide = 0;
+    let heroTimer;
 
-    <form
-      action="https://formspree.io/f/mvzlpdwy"
-      method="POST"
-      class="quote-form"
-    >
-      <input type="text" name="name" placeholder="Your name (Required)" required />
-      <input type="email" name="email" placeholder="Your email address (Required)" required />
-      <input type="text" name="phone" placeholder="Your phone number" />
-      <textarea name="message" rows="5" placeholder="Please enter your message information" required></textarea>
-      <button type="submit">Send message</button>
-    </form>
-  </div>
-</section>
+    function showSlide(index) {
+      if (!slides.length) return;
+      slides.forEach((slide, i) => { slide.classList.toggle('active', i === index); });
+      dots.forEach((dot, i) => { dot.classList.toggle('active', i === index); });
+      currentSlide = index;
+    }
 
-    </main><!-- /#main-content -->
+    function nextSlide() {
+      showSlide(currentSlide === slides.length - 1 ? 0 : currentSlide + 1);
+    }
 
-<!-- FOOTER CTA -->
-<section class="home-bottom-cta">
-  <div class="container">
-    <h2>Ready to Start Your Project?</h2>
-    <p>
-      Contact DGSDK for industrial automation solutions, static eliminators,
-      cleaning machines, and precision CNC parts.
-    </p>
-    <a href="/contact" class="home-bottom-btn">Get a Free Quote</a>
-  </div>
-</section>
+    function prevSlide() {
+      showSlide(currentSlide === 0 ? slides.length - 1 : currentSlide - 1);
+    }
 
-<!-- FOOTER -->
-<footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-col footer-brand">
-      <picture>
-        <source srcset="/logo.webp" type="image/webp" />
-        <img src="/logo.png" alt="DGSDK Logo" class="footer-logo" loading="lazy" width="180" height="50" />
-      </picture>
-      <p>
-        DGSDK is a professional manufacturer in Dongguan, China, specializing in
-        static elimination systems, industrial cleaning machines, automation equipment,
-        and precision CNC parts.
-      </p>
-    </div>
+    function startHeroAutoPlay() { heroTimer = setInterval(nextSlide, 5000); }
+    function resetHeroAutoPlay() { clearInterval(heroTimer); startHeroAutoPlay(); }
 
-    <div class="footer-col">
-      <p class="footer-col-title">Quick Links</p>
-      <a href="/">Home</a>
-      <a href="/applications">Applications</a>
-      <a href="/about">About Us</a>
-      <a href="/contact">Contact Us</a>
-      <a href="/faq">FAQ</a>
-      <a href="/blog">Blog</a>
-    </div>
+    if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); resetHeroAutoPlay(); });
+    if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); resetHeroAutoPlay(); });
+    dots.forEach((dot, index) => { dot.addEventListener('click', () => { showSlide(index); resetHeroAutoPlay(); }); });
 
-    <div class="footer-col">
-  <p class="footer-col-title">Products</p>
-  <a href="/products/static-eliminator">Static Eliminator</a>
-  <a href="/products/cleaning-machine">Cleaning Machine</a>
-  <a href="/products/precision-machined-parts">Precision Machined Parts</a>
-  <a href="/products/automation">Automation Equipment</a>
-</div>
-
-    <div class="footer-col">
-      <p class="footer-col-title">Contact</p>
-      <p>Phone: +86 13602342003</p>
-      <p>WhatsApp: +61 436605126</p>
-      <p>Email: dgsdk2013@gmail.com</p>
-      <p>Address: Binhai Road 33, Dongguan, Guangdong, China</p>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <p>© 2026 DGSDK. All rights reserved.</p>
-  </div>
-</footer>
-
-<!-- FLOATING SOCIAL -->
-<div class="floating-social">
-  <a href="mailto:dgsdk2013@gmail.com" target="_blank" aria-label="Email" class="float-btn email">
-    <i class="fas fa-envelope"></i>
-  </a>
-
-  <a href="https://wa.me/61436605126" target="_blank" aria-label="WhatsApp" class="float-btn whatsapp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <a href="https://www.tiktok.com/@machineforge?_r=1&_t=ZS-95scfOHz6Ea" target="_blank" aria-label="TikTok" class="float-btn tiktok">
-    <i class="fab fa-tiktok"></i>
-  </a>
-
-  <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook" class="float-btn facebook">
-    <i class="fab fa-facebook-f"></i>
-  </a>
-
-  
-
-  <a href="#page-top" aria-label="Back to Top" class="float-btn top">
-    <i class="fas fa-arrow-up"></i>
-  </a>
-</div>
-
-<!-- Bootstrap JS (deferred — removes from critical path) -->
-<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- Theme JS -->
-<script defer src="/js/scripts.js"></script>
-
-<script is:inline>
-  const slides = document.querySelectorAll('.hero-slide');
-  const dots = document.querySelectorAll('.hero-dot');
-  const prevBtn = document.querySelector('.hero-prev');
-  const nextBtn = document.querySelector('.hero-next');
-
-  let currentSlide = 0;
-  let heroTimer;
-
-  function showSlide(index) {
-    if (!slides.length) return;
-
-    slides.forEach((slide, i) => {
-      slide.classList.toggle('active', i === index);
-    });
-
-    dots.forEach((dot, i) => {
-      dot.classList.toggle('active', i === index);
-    });
-
-    currentSlide = index;
-  }
-
-  function nextSlide() {
-    const next = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
-    showSlide(next);
-  }
-
-  function prevSlide() {
-    const prev = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
-    showSlide(prev);
-  }
-
-  function startHeroAutoPlay() {
-    heroTimer = setInterval(() => {
-      nextSlide();
-    }, 5000);
-  }
-
-  function resetHeroAutoPlay() {
-    clearInterval(heroTimer);
+    showSlide(0);
     startHeroAutoPlay();
-  }
+  </script>
 
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      nextSlide();
-      resetHeroAutoPlay();
-    });
-  }
-
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      prevSlide();
-      resetHeroAutoPlay();
-    });
-  }
-
-  dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-      showSlide(index);
-      resetHeroAutoPlay();
-    });
-  });
-
-  showSlide(0);
-  startHeroAutoPlay();
-</script>
-
-</body>
-</html>
+</Layout>
