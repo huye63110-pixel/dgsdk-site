@@ -9,12 +9,12 @@ import ZhLayout from '../../layouts/ZhLayout.astro';
 >
   <section
     class="about-hero"
-    style="background: linear-gradient(rgba(2, 1, 1, 0.28), rgba(36, 31, 31, 0.18)), url('/assets/img/about/about-us.webp') center/cover no-repeat;"
+    style="background: linear-gradient(rgba(2, 1, 1, 0.28), rgba(36, 31, 31, 0.18)), url('/assets/img/about/about-us.webp') center/cover no-repeat; background-attachment: fixed;"
   >
     <div class="about-hero-overlay"></div>
     <div class="container about-hero-content">
-      <span class="about-hero-kicker">关于史帝克</span>
-      <h1>专注可靠性的工业自动化与精密制造解决方案。</h1>
+      <span class="about-hero-kicker" data-aos="fade-down" data-aos-duration="600">关于史帝克</span>
+      <h1 data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">专注可靠性的工业自动化与精密制造解决方案。</h1>
       <p>
         东莞史帝克自动化设备有限公司，专业生产静电消除系统、清洁机、自动化设备和精密加工零件，服务全球工业客户。
       </p>
@@ -24,7 +24,7 @@ import ZhLayout from '../../layouts/ZhLayout.astro';
   <section class="about-intro-section">
     <div class="container">
       <div class="about-intro-grid">
-        <div class="about-intro-copy">
+        <div class="about-intro-copy" data-aos="fade-right" data-aos-duration="700">
           <span class="about-section-label">公司简介</span>
           <h2>专注品质、工程与实用工业解决方案的专业制造商。</h2>
           <p>
@@ -50,7 +50,7 @@ import ZhLayout from '../../layouts/ZhLayout.astro';
           </div>
         </div>
 
-        <div class="about-image-stack">
+        <div class="about-image-stack" data-aos="fade-left" data-aos-duration="700">
           <img src="/assets/img/about/about-lobby.webp" alt="DGSDK 公司大厅" class="about-main-image" loading="lazy" />
           <img src="/assets/img/about/about-lathe.jpg" alt="DGSDK CNC 车床设备" class="about-float-image" loading="lazy" />
         </div>
@@ -69,25 +69,25 @@ import ZhLayout from '../../layouts/ZhLayout.astro';
       </div>
 
       <div class="about-values-grid">
-        <div class="about-value-card">
+        <div class="about-value-card" data-aos="fade-up" data-aos-delay="0" data-aos-duration="600">
           <img src="/assets/img/about/about-support.png" alt="技术支持" class="about-value-icon" loading="lazy" />
           <h3>专业技术支持</h3>
           <p>我们提供及时沟通与实用技术支持，助力产品选型与项目讨论。</p>
         </div>
 
-        <div class="about-value-card">
+        <div class="about-value-card" data-aos="fade-up" data-aos-delay="80" data-aos-duration="600">
           <img src="/assets/img/about/icon-delivery.png" alt="交货保障" class="about-value-icon" loading="lazy" />
           <h3>稳定交货保障</h3>
           <p>稳定的生产管理体系，支持按时交货和高效制造协调。</p>
         </div>
 
-        <div class="about-value-card">
+        <div class="about-value-card" data-aos="fade-up" data-aos-delay="160" data-aos-duration="600">
           <img src="/assets/img/about/icon-guarantee.png" alt="质量保证" class="about-value-icon" loading="lazy" />
           <h3>品质保证</h3>
           <p>注重产品一致性、检验标准和可靠的工业性能。</p>
         </div>
 
-        <div class="about-value-card">
+        <div class="about-value-card" data-aos="fade-up" data-aos-delay="240" data-aos-duration="600">
           <img src="/assets/img/about/icon-support.png" alt="长期合作" class="about-value-icon" loading="lazy" />
           <h3>长期稳定合作</h3>
           <p>我们的目标是与全球工业客户建立稳固持久的合作伙伴关系。</p>
@@ -105,25 +105,25 @@ import ZhLayout from '../../layouts/ZhLayout.astro';
       </div>
 
       <div class="about-business-grid">
-        <a href="/zh/products/static-eliminator" class="about-business-card">
+        <a href="/zh/products/static-eliminator" class="about-business-card" data-aos="fade-up" data-aos-delay="0" data-aos-duration="600">
           <img src="/assets/img/static-white-bg.png" alt="静电消除系统" loading="lazy" />
           <h3>静电消除系统</h3>
           <p>离子棒、离子风机和静电控制解决方案，适用于敏感工业环境。</p>
         </a>
 
-        <a href="/zh/products/cleaning-machine" class="about-business-card">
+        <a href="/zh/products/cleaning-machine" class="about-business-card" data-aos="fade-up" data-aos-delay="80" data-aos-duration="600">
           <img src="/assets/img/cleaning-machine/polarizer-cleaner.jpg" alt="工业清洁机" loading="lazy" />
           <h3>工业清洁机</h3>
           <p>适用于PCB、FPC、SMT、偏光片、LCM、背光板和光学薄膜应用的精密清洁设备。</p>
         </a>
 
-        <a href="/zh/products/automation" class="about-business-card">
+        <a href="/zh/products/automation" class="about-business-card" data-aos="fade-up" data-aos-delay="160" data-aos-duration="600">
           <img src="/assets/img/automation/product-c.jpg" alt="自动化设备" loading="lazy" />
           <h3>自动化设备</h3>
           <p>定制工业自动化系统，旨在改善工作流程、提升生产效率。</p>
         </a>
 
-        <a href="/zh/products/precision-machined-parts" class="about-business-card">
+        <a href="/zh/products/precision-machined-parts" class="about-business-card" data-aos="fade-up" data-aos-delay="240" data-aos-duration="600">
           <img src="/assets/img/precision-machined-parts/precision-bearing-bracket-cnc-milled.jpg" alt="精密加工零件" loading="lazy" />
           <h3>精密加工零件</h3>
           <p>具有稳定公差控制和可靠制造质量的高精度CNC零件。</p>
@@ -141,7 +141,7 @@ import ZhLayout from '../../layouts/ZhLayout.astro';
       </div>
 
       <div class="about-gallery-grid">
-        <div class="about-gallery-item item">
+        <div class="about-gallery-item" data-aos="zoom-in" data-aos-delay="240" data-aos-duration="600"" data-aos="zoom-in" data-aos-delay="160" data-aos-duration="600"" data-aos="zoom-in" data-aos-delay="80" data-aos-duration="600"" data-aos="zoom-in" data-aos-delay="0" data-aos-duration="600" item">
           <img src="/assets/img/about/about-machining-center.jpg" alt="加工中心设备" loading="lazy" />
         </div>
         <div class="about-gallery-item item">
@@ -215,7 +215,7 @@ import ZhLayout from '../../layouts/ZhLayout.astro';
       <div class="about-timeline">
         <div class="about-timeline-line"></div>
 
-        <div class="about-timeline-item left">
+        <div class="about-timeline-item left" data-aos="fade-right" data-aos-duration="700">
           <div class="about-timeline-dot">01</div>
           <div class="about-timeline-card">
             <h3>公司成立</h3>
@@ -223,7 +223,7 @@ import ZhLayout from '../../layouts/ZhLayout.astro';
           </div>
         </div>
 
-        <div class="about-timeline-item right">
+        <div class="about-timeline-item right" data-aos="fade-left" data-aos-duration="700">
           <div class="about-timeline-dot">02</div>
           <div class="about-timeline-card">
             <h3>产品扩展</h3>
@@ -231,7 +231,7 @@ import ZhLayout from '../../layouts/ZhLayout.astro';
           </div>
         </div>
 
-        <div class="about-timeline-item left">
+        <div class="about-timeline-item left" data-aos="fade-right" data-aos-duration="700">
           <div class="about-timeline-dot">03</div>
           <div class="about-timeline-card">
             <h3>制造能力提升</h3>
@@ -239,7 +239,7 @@ import ZhLayout from '../../layouts/ZhLayout.astro';
           </div>
         </div>
 
-        <div class="about-timeline-item right">
+        <div class="about-timeline-item right" data-aos="fade-left" data-aos-duration="700">
           <div class="about-timeline-dot">04</div>
           <div class="about-timeline-card">
             <h3>全球合作</h3>
@@ -252,7 +252,7 @@ import ZhLayout from '../../layouts/ZhLayout.astro';
 
   <section class="about-cta-section">
     <div class="container">
-      <div class="about-cta-box">
+      <div class="about-cta-box" data-aos="fade-up" data-aos-duration="700">
         <div class="about-cta-copy">
           <span class="about-section-label">与我们合作</span>
           <h2>正在寻找可靠的工业制造合作伙伴？</h2>

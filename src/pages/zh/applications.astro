@@ -73,8 +73,8 @@ const supportBlocks = [
   >
     <div class="applications-hero-overlay"></div>
     <div class="container applications-hero-content">
-      <span class="applications-hero-kicker">应用解决方案</span>
-      <h1>围绕效率、清洁度和生产可靠性构建的工业应用。</h1>
+      <span class="applications-hero-kicker" data-aos="fade-down" data-aos-duration="600">应用解决方案</span>
+      <h1 data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">围绕效率、清洁度和生产可靠性构建的工业应用。</h1>
       <p>
         史帝克解决方案广泛应用于电子制造、SMT生产、显示屏加工、光学薄膜应用、自动化集成和精密加工环境。
       </p>
@@ -83,7 +83,7 @@ const supportBlocks = [
 
   <section class="applications-intro-section">
     <div class="container">
-      <div class="applications-intro-box">
+      <div class="applications-intro-box" data-aos="fade-up" data-aos-duration="700">
         <span class="applications-section-label">我们的价值所在</span>
         <h2>专为真实工业工作流程而构建，而非仅供展示。</h2>
         <p>
@@ -104,8 +104,8 @@ const supportBlocks = [
       </div>
 
       <div class="applications-grid">
-        {applicationItems.map((item) => (
-          <a href={item.href} class="application-card">
+        {applicationItems.map((item, i) => (
+          <a href={item.href} class="application-card" data-aos="fade-up" data-aos-delay={i * 80} data-aos-duration="600">
             <div class="application-card-image-wrap">
               <img src={item.image} alt={item.title} class="application-card-image" loading="lazy" />
             </div>
@@ -131,8 +131,8 @@ const supportBlocks = [
       </div>
 
       <div class="applications-support-grid">
-        {supportBlocks.map((item) => (
-          <a href={item.href} class="applications-support-card">
+        {supportBlocks.map((item, i) => (
+          <a href={item.href} class="applications-support-card" data-aos="fade-up" data-aos-delay={i * 100} data-aos-duration="600">
             <span class="applications-support-label">{item.label}</span>
             <h3>{item.title}</h3>
             <p>{item.desc}</p>
