@@ -51,12 +51,12 @@ const products = [
   description="Custom precision CNC machined parts: brackets, fixing plates, shaft ends, and OEM machined components for industrial automation and electronics manufacturing.">
   <section
     class="products-hero"
-    style="background: linear-gradient(rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.18)), url('/assets/img/cleaning-machine/cnc-parts.jpg') center/cover no-repeat;"
+    style="background: linear-gradient(rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.18)), url('/assets/img/cleaning-machine/cnc-parts.jpg') center/cover no-repeat; background-attachment: fixed;"
   >
     <div class="container products-hero-inner">
-      <span class="products-hero-kicker">DGSDK Product Portfolio</span>
-      <h1>Precision Machined Parts</h1>
-      <p>
+      <span class="products-hero-kicker" data-aos="fade-down" data-aos-duration="600">DGSDK Product Portfolio</span>
+      <h1 data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">Precision Machined Parts</h1>
+      <p data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
         High-precision machined components for industrial equipment, automation systems,
         custom assemblies, brackets, shafts, fixing plates and OEM manufacturing applications.
       </p>
@@ -79,8 +79,8 @@ const products = [
       <div class="products-main">
         <section class="apple-product-section">
           <div class="apple-card-grid">
-            {products.map((product) => (
-              <a href={product.href} class="apple-product-card">
+            {products.map((product, i) => (
+              <a href={product.href} class="apple-product-card" data-aos="fade-up" data-aos-delay={i * 80} data-aos-duration="600">
                 <img src={product.image} alt={product.name} loading="lazy" />
 
                 <div class="apple-product-card-body">
@@ -94,7 +94,7 @@ const products = [
         </section>
 
         <section class="category-info-block">
-          <h2>About DGSDK Precision Machined Parts</h2>
+          <h2 data-aos="fade-up" data-aos-duration="700">About DGSDK Precision Machined Parts</h2>
           <p>DGSDK manufactures precision machined components using CNC milling, CNC turning, and lathe machining processes. We produce parts to tight dimensional tolerances. These parts go into industrial automation equipment, cleaning machine frames, roller assembly systems, and guide rail mechanisms.</p>
           <p>We serve electronics manufacturing and precision engineering applications. We supply both standard catalog components and fully custom-machined parts produced to customer drawings. Materials include aluminum alloy, carbon steel, and stainless steel. We inspect all components to verify dimensional accuracy before delivery.</p>
 

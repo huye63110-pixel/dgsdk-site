@@ -27,12 +27,12 @@ const products = [
   description="DGSDK industrial automation equipment: diffusion plate cleaning lines, robotic loading/unloading systems, and polarizer measurement instruments for display manufacturing.">
   <section
     class="products-hero"
-    style="background: linear-gradient(rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.18)), url('/assets/img/automation/automation-bg.png') center/cover no-repeat;"
+    style="background: linear-gradient(rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.18)), url('/assets/img/automation/automation-bg.png') center/cover no-repeat; background-attachment: fixed;"
   >
     <div class="container products-hero-inner">
-      <span class="products-hero-kicker">DGSDK Product Portfolio</span>
-      <h1>Automation Equipment</h1>
-      <p>
+      <span class="products-hero-kicker" data-aos="fade-down" data-aos-duration="600">DGSDK Product Portfolio</span>
+      <h1 data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">Automation Equipment</h1>
+      <p data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
         Efficient industrial automation solutions designed to improve production
         consistency, reduce labor costs, and support customized manufacturing needs.
       </p>
@@ -55,8 +55,8 @@ const products = [
       <div class="products-main">
         <section class="apple-product-section">
           <div class="apple-card-grid">
-            {products.map((product) => (
-              <a href={product.href} class="apple-product-card">
+            {products.map((product, i) => (
+              <a href={product.href} class="apple-product-card" data-aos="fade-up" data-aos-delay={i * 100} data-aos-duration="600">
                 <img src={product.image} alt={product.name} loading="lazy" />
 
                 <div class="apple-product-card-body">
@@ -70,7 +70,7 @@ const products = [
         </section>
 
         <section class="category-info-block">
-          <h2>About DGSDK Automation Equipment</h2>
+          <h2 data-aos="fade-up" data-aos-duration="700">About DGSDK Automation Equipment</h2>
           <p>DGSDK designs and manufactures industrial automation equipment for electronics manufacturing, optical film processing, and display component production. Our automation systems integrate mechanical handling, precision cleaning, automated inspection, and measurement into one production line. This reduces manual labor and improves output consistency.</p>
           <p>We develop each automation system around the customer's requirements. These include throughput targets, material types, and integration with existing line equipment. Custom configurations are available for specialized applications.</p>
 
