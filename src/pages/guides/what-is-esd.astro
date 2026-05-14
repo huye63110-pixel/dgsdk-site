@@ -11,8 +11,8 @@ import Layout from '../../layouts/Layout.astro';
       <span class="products-hero-kicker" data-aos="fade-down" data-aos-duration="600">ESD Knowledge Guide</span>
       <h1 data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">What Is ESD? Electrostatic Discharge Explained</h1>
       <p>
-        Electrostatic discharge is one of the leading causes of damage in electronics manufacturing.
-        Understanding its causes, mechanisms, and control methods protects components and improves production yield.
+        ESD stands for electrostatic discharge. An ESD event is the sudden flow of electricity between two charged objects at different potentials.
+        ESD is one of the top causes of hidden damage in electronics manufacturing.
       </p>
     </div>
   </section>
@@ -20,107 +20,107 @@ import Layout from '../../layouts/Layout.astro';
   <section class="category-info-block">
     <div class="container" style="max-width:900px;">
 
-      <h2>Electrostatic Discharge: Definition and Meaning</h2>
       <p>
-        <strong>ESD</strong>, or <strong>electrostatic discharge</strong>, is the <strong>sudden flow of electricity</strong> between two <strong>charged object</strong>s at different electrostatic potentials. This <strong>discharge occurs</strong> when the electric field exceeds the dielectric strength of the separating medium — typically air. The result is a brief but intense current flow.
-      </p>
-      <p>
-        In everyday life, an <strong>esd event</strong> is the small shock you feel when touching a metal door handle after walking across a carpet. In electronics manufacturing, the same phenomenon occurs at much smaller scales. It is often imperceptible to humans. But it carries enough energy to permanently damage sensitive semiconductor devices.
+        Electrostatic discharge (ESD) causes a brief, high-energy current pulse. ESD is one of the top causes of hidden damage in electronics manufacturing, display production, and precision assembly.
       </p>
 
-      <h3>ESD Discharge Models</h3>
-      <p>
-        The <strong>ESD meaning</strong> in industrial contexts refers to uncontrolled discharge events that damage <strong>electronic components</strong> or cause process defects. The <strong>definition of ESD</strong> covers three main discharge models that describe how <strong>electrostatic discharge ESD</strong> events reach electronic devices:
-      </p>
-      <ul>
-        <li><strong>Human Body Model (HBM)</strong> — represents discharge from a human body through a component to ground. This is the most common <strong>esd event</strong> in manufacturing. The human body accumulates charges of 2,000–35,000V depending on footwear, flooring, and humidity. The <strong>human body model hbm</strong> is the primary benchmark for <strong>esd sensitive</strong> component ratings.</li>
-        <li><strong>Machine Model (MM)</strong> — represents discharge from charged machine components or assembly fixtures. It is less common than HBM but delivers higher peak currents.</li>
-        <li><strong>Charged Device Model (CDM)</strong> — the component itself accumulates <strong>electricity charge</strong> and discharges when it contacts a grounded surface. <strong>Charged device model cdm</strong> events are extremely fast and are a growing concern in modern high-speed IC handling.</li>
-      </ul>
+      <picture>
+        <source srcset="/assets/img/static-eliminator/st-g-series.webp" type="image/webp" />
+        <img src="/assets/img/static-eliminator/st-g-series.jpg" alt="DGSDK industrial static eliminator for ESD control in electronics manufacturing" style="width:100%;max-width:640px;border-radius:8px;margin:24px auto;display:block;" loading="lazy" />
+      </picture>
 
-      <h3>How Static Charge Builds Up</h3>
       <p>
-        Static electricity builds up through the triboelectric effect. This is the charge separation that occurs when two materials contact and then separate. When a person walks, sits, or handles packaging, electrons transfer between surfaces. This creates an <strong>electricity charge</strong> imbalance. The resulting voltage depends on the materials, the speed of separation, and relative humidity.
-      </p>
-      <p>
-        Common sources of electrostatic charge in electronics manufacturing include:
-      </p>
-      <ul>
-        <li>Human bodies moving across non-conductive flooring — a <strong>negatively charged</strong> body can reach 35,000V in dry conditions while the other surface becomes <strong>positively charged</strong></li>
-        <li>Non-conductive packaging materials — plastic bags, foam, and bubble wrap act as <strong>charged material</strong> that holds static</li>
-        <li>Non-ESD-safe work surfaces and equipment covers</li>
-        <li>Moving film and web materials on conveyor lines — <strong>static generating</strong> behavior increases with line speed</li>
-        <li>Spraying, mixing, or pouring of powders and liquids</li>
-        <li>Automated handling equipment with non-conductive components</li>
-      </ul>
-
-      <h3>How ESD Damages Electronic Components</h3>
-      <p>
-        Modern semiconductor devices are highly vulnerable to ESD damage. Thin gate oxide layers in CMOS transistors are at risk. So are junction structures in MOSFETs and metal layers in <strong>integrated circuits</strong>. A discharge too small for a human to detect — as low as 10–100V — can cause latent damage. The component passes post-assembly testing but fails in the field. This is the most dangerous outcome because it is invisible during production.
-      </p>
-      <p>
-        ESD damage to <strong>electronic components</strong> falls into two categories:
-      </p>
-      <ul>
-        <li><strong>Catastrophic failure</strong> — the component fails immediately and completely. Electrical testing detects this type. It causes instant scrap or rework cost.</li>
-        <li><strong>Latent damage</strong> — the component is weakened but continues to function. The device may fail hours, days, or weeks after assembly in customer hands. Latent damage drives a significant proportion of field return failures in electronics products.</li>
-      </ul>
-
-      <h3>Industries Most Affected by ESD</h3>
-      <p>
-        ESD damage affects any industry that handles <strong>esd sensitive</strong> components or processes where static charge causes production problems. <strong>Esd sensitivity</strong> increases as semiconductor geometries shrink and operating voltages decrease:
-      </p>
-      <ul>
-        <li><strong>PCB and SMT manufacturing</strong> — <strong>electronic components</strong> placed on boards face continuous handling-related discharge risks</li>
-        <li><strong>Semiconductor fabrication and test</strong> — bare die and packaged ICs are extremely sensitive, especially at advanced nodes</li>
-        <li><strong>Display manufacturing (LCD/OLED)</strong> — static on optical films and polarizers attracts particles and causes defects</li>
-        <li><strong>Medical device manufacturing</strong> — ESD damage causes critical device failures with direct safety implications</li>
-        <li><strong>Automotive electronics</strong> — stringent reliability requirements make latent ESD damage unacceptable</li>
-        <li><strong>Printing, packaging, and plastics</strong> — static charge causes process jams, sheet misfeeds, and surface contamination even without electronic components present</li>
-      </ul>
-
-      <h3>How to Prevent ESD Damage</h3>
-      <p>
-        <strong>Prevent ESD</strong> damage by following three principles: grounding conductors, ionizing insulators, and maintaining ESD protected areas (EPAs). A complete ESD control program combines several elements:
-      </p>
-      <ul>
-        <li><strong>Grounding and bonding</strong> — connect all conductive objects (people, equipment, tools) to a common ground point. This prevents charge from building up or discharging through sensitive components.</li>
-        <li><strong>Ionization</strong> — use <a href="/products/static-eliminator">static eliminators and ionizing bars</a> to neutralize charge on non-conductive surfaces that cannot be grounded. Insulators like plastic films, optical coatings, and PCB substrates require ionization rather than grounding.</li>
-        <li><strong>Dissipative materials</strong> — use packaging, work surfaces, and floor coverings made from <strong>dissipative materials</strong> with controlled resistivity. Each <strong>static dissipative material</strong> type — conductive, dissipative, or insulative — has a defined resistivity range. These prevent charge generation and accumulation in <strong>static generating</strong> environments.</li>
-        <li><strong>Training and procedures</strong> — establish and enforce handling procedures that minimize discharge risk at every point in the production process.</li>
-      </ul>
-
-      <h3>ESD Standards</h3>
-      <p>
-        The principal ESD control standard for electronics manufacturing is <strong>ANSI/ESD S20.20</strong>. It defines the requirements for an ESD control program. The equivalent international standard is <strong>IEC 61340-5-1</strong>. Both standards specify requirements for ESD protected areas, grounding, ionization equipment, packaging, and program auditing. Compliance is increasingly required by customers in automotive, medical, and aerospace electronics supply chains.
-      </p>
-      <p>
-        An <strong>effective esd control program</strong> combines grounding, ionization, and <strong>static dissipative material</strong> selection. Regular auditing confirms the program stays on track. DGSDK's static elimination products support <strong>esd protection</strong> programs compliant with these standards. Our ionizing bars, ion blowers, and ion fans provide the ionization component of a complete ESD control system. We serve production environments ranging from small-batch assembly to high-volume automated manufacturing lines.
+        In everyday life, an ESD event is the small shock you feel when you touch a metal door handle after walking across carpet. In electronics manufacturing, the same effect happens at smaller scales. Even a tiny discharge event carries enough energy to damage a semiconductor device permanently. Controlling ESD before it reaches your components protects both quality and production yield.
       </p>
 
-      <h3>ESD Prevention: Key Steps for Operators</h3>
+      <h2>What Causes Static Electricity and ESD?</h2>
       <p>
-        Effective ESD prevention at the operator level requires grounding, proper material selection, and scheduled equipment maintenance. All conductive objects on the workbench must be bonded to a common ground point. Personnel handling bare circuit boards or sensitive components must wear a calibrated wrist strap in direct skin contact to maintain a reliable discharge path to ground.
+        Static electricity builds through the triboelectric effect. This effect causes charge separation when two materials touch and then separate.
       </p>
       <p>
-        ESD-sensitive components require storage in static-shielding bags whenever they are outside a designated ESD protected area. Standard plastic surfaces generate triboelectric charge and must be replaced with dissipative work surface materials. ESD-safe trays and bins maintain component protection through every stage of the handling and assembly process. All ESD protected area boundaries must be clearly marked to define the protected zone limits for all production personnel.
+        Walking across carpet, unwrapping plastic packaging, and moving film across a conveyor roller all generate static electricity. Charged objects in a dry factory hold far more electrostatic energy than in a humid environment. ESD events are more frequent in air-conditioned spaces below 40% relative humidity.
       </p>
       <p>
-        Ionizing bars and ion fans require scheduled inspection and emitter maintenance to sustain neutralization performance within specification. Emitter point contamination from airborne dust and process residues reduces ion output and raises residual voltage on product surfaces. A cleaning interval of four to twelve weeks maintains neutralization efficiency at the rated level. Emitters that have degraded below the rated performance threshold must be replaced promptly to prevent undetected charge accumulation on sensitive substrates.
+        Common sources of static charge include human bodies on non-conductive flooring, plastic bags and foam packaging, moving film on conveyor lines, and standard plastic work surfaces. Any non-conductive surface that contacts a moving object is a potential source of harmful electrostatic charge.
       </p>
 
-      <h3>DGSDK Static Elimination Products for ESD Control</h3>
+      <h2>How Much Voltage Does an ESD Event Involve?</h2>
       <p>
-        DGSDK manufactures a range of <a href="/products/static-eliminator">industrial static eliminators</a> for electronics and display manufacturing:
+        Static charge on common charged objects in a factory reaches high voltages. A person walking on synthetic carpet may carry 35,000V. Working at a vinyl bench generates 6,000V. Picking up a plastic bag generates up to 20,000V.
       </p>
-      <ul>
-        <li><a href="/products/static-eliminator/st-g-series">ST-G Intelligent Static Elimination Bar</a> — high-performance ionizing bar with balance monitoring for inline production use</li>
-        <li><a href="/products/static-eliminator/st-e-series">ST-E Intelligent Ion Rod</a> — compact ionizing solution for integration into machines and enclosures</li>
-        <li><a href="/products/static-eliminator/st-s200">ST-S200 Mini Ionizer Fan</a> — desktop ionizing fan for ESD-sensitive workstations</li>
-        <li><a href="/products/static-eliminator/st-101a">ST101A Desktop Ion Fan</a> — workstation-level ESD protection for assembly and inspection areas</li>
-      </ul>
       <p>
-        <a href="/contact">Contact us</a> to discuss your ESD control requirements and receive a product recommendation for your specific application.
+        Modern CMOS devices fail from an electrostatic discharge event of 100–200V. This voltage is well below what humans can feel. Discharges occurring at voltages you cannot sense destroy the components you handle. This mismatch between human perception and device sensitivity is the central challenge of ESD control.
+      </p>
+
+      <h2>ESD Discharge Models</h2>
+      <p>Two models describe how electrostatic discharge reaches a sensitive component.</p>
+      <p>
+        The Human Body Model (HBM) covers discharges occurring when a charged person touches a component. The human body stores static electricity at 2,000–35,000V depending on footwear, flooring, and humidity. HBM events discharge over about 150 nanoseconds. HBM is the most common ESD scenario in assembly environments.
+      </p>
+      <p>
+        The Charged Device Model (CDM) covers discharges occurring when the device itself is charged and contacts a grounded surface. CDM events discharge in under one nanosecond. This speed makes them destructive to high-speed integrated circuits. CDM sensitivity worsens as transistor geometries shrink and gate oxide layers become thinner.
+      </p>
+
+      <h2>How ESD Damages Electronic Components</h2>
+      <p>ESD damage takes two forms: catastrophic failure and latent damage.</p>
+      <p>
+        Catastrophic failure means the component fails right away. An ESD event burns a junction or ruptures gate oxide. Electrical testing catches this failure at the production stage. The result is direct scrap or rework cost.
+      </p>
+      <p>
+        Latent damage is more dangerous. The component weakens from an ESD event but passes testing. It then fails in the field — hours, days, or weeks after shipment. Industry data shows that latent ESD damage accounts for a large share of field return failures. Standard functional testing cannot detect latent damage.
+      </p>
+      <p>
+        Both failure modes share one root cause: discharges occurring through a device structure that cannot handle the current. Preventing ESD events before they reach the device is the only reliable solution.
+      </p>
+
+      <h2>Industries Most Affected by Electrostatic Discharge</h2>
+      <p>
+        PCB and SMT manufacturing faces continuous ESD risk. Components are handled repeatedly during printing, placement, reflow, and inspection. Static electricity on plastic carriers and feeders adds risk at every stage of the line.
+      </p>
+      <p>
+        Semiconductor fabrication and test environments handle bare die and packaged ICs at advanced nodes. At geometries below 7nm, sub-100V discharge events cause measurable damage. Cleanrooms use ionization to neutralize static electricity on wafers and handling equipment at every process step.
+      </p>
+      <p>
+        Display panel manufacturing is vulnerable because static electricity on polarizer films attracts airborne particles. These particles cause bright-spot or dark-spot defects visible after final inspection. ESD into thin-film transistor arrays damages pixels and creates visible defects that cannot be reworked.
+      </p>
+      <p>
+        Printing, packaging, and plastics industries face static electricity as a process problem rather than a component damage issue. Charged objects cause sheet misfeeds, ink misting, label errors, and surface contamination. The cost appears as downtime and waste.
+      </p>
+
+      <h2>How to Prevent ESD Damage</h2>
+      <p>
+        Effective ESD control follows three principles: ground what you can ground, ionize what you cannot ground, and keep all sensitive parts inside an ESD protected area (EPA).
+      </p>
+      <p>
+        Grounding connects all conductive objects — people, equipment, and tools — to a common ground point. This prevents static electricity from building between charged objects. A calibrated wrist strap is the most important item for any operator who handles sensitive components. Surface resistance of work surfaces and flooring must fall within dissipative or conductive ranges per ANSI/ESD S20.20.
+      </p>
+      <p>
+        Ionization handles surfaces that cannot be grounded. Plastic films, PCB laminates, and glass panels accumulate static electricity with no path to ground. <a href="/products/static-eliminator">Industrial static eliminators and ionizing bars</a> emit balanced positive and negative ions that neutralize charge on insulating surfaces. Ionization reduces residual charge to below ±100V on standard lines and below ±20V on precision production lines where display panels and optical films are processed.
+      </p>
+      <p>
+        ESD-safe materials slow charge buildup on surfaces that operators and components contact. Dissipative work surfaces, static-shielding bags, and conductive floor coverings reduce the size of any discharge event that occurs. Replace standard plastic bins, bags, and work surfaces with ESD-rated alternatives throughout the EPA.
+      </p>
+
+      <h2>ESD Standards</h2>
+      <p>
+        The main ESD control standard for electronics manufacturing is ANSI/ESD S20.20. The international version is IEC 61340-5-1. Both standards set requirements for ESD protected areas, grounding, ionization, packaging, and auditing. Compliance is required by many customers in automotive, medical, and aerospace supply chains.
+      </p>
+      <p>
+        Regular audits keep the program effective over time. Wrist strap checks, surface resistance measurements, and ionizer performance verification are the core audit activities. Clean emitter needles on ionizing bars every four to twelve weeks to maintain rated neutralization performance.
+      </p>
+
+      <h2>DGSDK Static Elimination Products for ESD Control</h2>
+      <p>
+        DGSDK manufactures <a href="/products/static-eliminator">industrial static eliminators</a> for electronics, display, and precision manufacturing environments.
+      </p>
+      <p>
+        The <a href="/products/static-eliminator/st-g-series">ST-G Intelligent Static Elimination Bar</a> uses DC pulsed ionization with real-time balance monitoring and self-diagnostic alerts. It is designed for inline use on display panel, PCB, and optical film production lines.
+      </p>
+      <p>
+        The <a href="/products/static-eliminator/st-e-series">ST-E Intelligent Ion Rod</a> is a compact ionizer for integration inside machines and enclosures. The <a href="/products/static-eliminator/st-s200">ST-S200 Mini Ionizer Fan</a> and <a href="/products/static-eliminator/st-101a">ST101A Desktop Ion Fan</a> provide workstation-level ESD control for assembly and inspection areas.
+      </p>
+      <p>
+        <a href="/contact">Contact us</a> to discuss your ESD control needs and get a product recommendation for your process.
       </p>
 
     </div>
