@@ -1,0 +1,175 @@
+---
+import ZhLayout from '../../../layouts/ZhLayout.astro';
+---
+
+<ZhLayout title="什么是离子棒？工作原理与应用场景 | DGSDK"
+  description="离子棒是工业生产中常用的静电消除装置，通过发射正负离子中和绝缘材料表面的静电荷。了解离子棒的工作原理、类型、选型要点和维护方法。"
+  canonical="https://www.dg-sdk.com/zh/guides/what-is-an-ionizing-bar">
+  <section
+    class="products-hero"
+    style="background: linear-gradient(rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.18)), url('/assets/img/static-eliminator/banner-bg.jpg') center/cover no-repeat; background-attachment: fixed;">
+    <div class="container products-hero-inner">
+      <span class="products-hero-kicker" data-aos="fade-down" data-aos-duration="600">静电消除指南</span>
+      <h1 data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">什么是离子棒？工作原理与应用场景</h1>
+      <p data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
+        离子棒是工业生产中广泛使用的非接触式静电消除装置，通过发射平衡的正负离子，中和薄膜、面板、PCB等绝缘材料表面的静电荷。
+      </p>
+    </div>
+  </section>
+
+  <section class="category-info-block">
+    <div class="container" style="max-width:900px;">
+      <div class="breadcrumb" style="margin-bottom:24px;">
+        <a href="/zh/">首页</a><span>/</span><a href="/zh/guides">指南</a><span>/</span><span>什么是离子棒</span>
+      </div>
+
+      <h2>离子棒是什么？</h2>
+      <p>
+        <strong>离子棒</strong>——又称<strong>静电消除棒</strong>、<strong>离子化棒</strong>——安装在运动材料附近，持续发射正负离子云。这些离子能中和塑料薄膜、玻璃面板、偏光片、PCB基板等绝缘材料表面的静电荷。与接地腕带不同，离子棒适用于无法接地的非导电材料。
+      </p>
+
+      <picture>
+        <source srcset="/assets/img/static-eliminator/st-g-series.webp" type="image/webp" />
+        <img src="/assets/img/static-eliminator/st-g-series.jpg" alt="DGSDK ST-G系列智能离子棒，用于工业生产线的静电消除" style="width:100%;max-width:640px;border-radius:8px;margin:24px auto;display:block;" loading="lazy" />
+      </picture>
+
+      <h2>离子棒的工作原理</h2>
+      <p>
+        离子棒利用<strong>电晕放电</strong>原理：在发射针阵列上施加高压（交流或直流，数千伏），每个针尖产生的强电场使周围空气分子电离，形成正负离子。这些离子向带电表面漂移并中和静电荷。整个过程具有自调节特性——一旦表面恢复中性，离子吸收即停止。
+      </p>
+      <p>
+        经处理后的残余电荷：根据离子棒类型、工作距离和线速度，通常可达 <strong>±10～100V</strong>。
+      </p>
+
+      <h3>离子棒的主要组成部件</h3>
+      <p>
+        发射针（钨、不锈钢或碳尖材质）负责电离周围空气；高压电源（交流或直流）产生电晕放电所需电压；接地外壳引导离子流并保护人员安全；智能型号内置自诊断系统，可实时监测离子平衡并在针尖需要清洁时发出警报。
+      </p>
+
+      <h2>离子棒的主要类型</h2>
+
+      <h3>1. 交流（AC）离子棒</h3>
+      <p>
+        交流离子棒每根发射针同时产生两种极性的离子，结构简单、成本低、可靠性高。缺点是当发射针受污染不均匀时，离子平衡可能发生偏移。残余电荷典型值为 <strong>±10～50V</strong>，适合包装线、普通传送带及对成本敏感的应用场景。
+      </p>
+
+      <h3>2. 直流脉冲静电消除器</h3>
+      <p>
+        直流脉冲型采用独立的正负极针排，交替发射正负离子，可精确调节离子平衡。残余电荷可低至 <strong>±5～20V</strong>，大多数型号标配自诊断反馈功能，适用于显示面板、光学薄膜贴合及高速生产线。
+      </p>
+
+      <h3>3. 智能离子棒</h3>
+      <p>
+        智能静电消除器——如 <a href="/zh/products/static-eliminator/st-g-series">DGSDK ST-G系列</a>——将直流脉冲电离与实时自诊断监测相结合。内置传感器可在针尖污染和离子失衡影响良率之前提前检测并发出警报，适用于显示屏制造、半导体生产线及对品质要求苛刻的生产环境。
+      </p>
+
+      <h2>离子棒与其他静电控制方式的对比</h2>
+      <div class="spec-table-wrap" style="margin:24px 0;">
+        <table class="spec-table">
+          <tr style="background:#f5c400;color:#111;">
+            <th style="text-align:left;padding:10px 14px;">方式</th>
+            <th style="text-align:left;padding:10px 14px;">覆盖范围</th>
+            <th style="text-align:left;padding:10px 14px;">适用绝缘材料</th>
+            <th style="text-align:left;padding:10px 14px;">最佳应用场景</th>
+          </tr>
+          <tr>
+            <td><strong>离子棒</strong></td>
+            <td>线型 / 宽幅</td>
+            <td>✅ 适用</td>
+            <td>传送带、薄膜、面板</td>
+          </tr>
+          <tr>
+            <td>离子风机 / 离子风枪</td>
+            <td>点 / 区域</td>
+            <td>✅ 适用</td>
+            <td>工作台、元件取放</td>
+          </tr>
+          <tr>
+            <td>接地（ESD腕带）</td>
+            <td>人员 / 导体</td>
+            <td>❌ 仅导体</td>
+            <td>操作员防护</td>
+          </tr>
+          <tr>
+            <td>导电地板</td>
+            <td>区域</td>
+            <td>❌ 仅导体</td>
+            <td>房间级防护</td>
+          </tr>
+          <tr>
+            <td>防静电涂层</td>
+            <td>表面</td>
+            <td>✅ 适用</td>
+            <td>包装、薄膜（临时性）</td>
+          </tr>
+        </table>
+      </div>
+
+      <h2>离子棒的典型应用场景</h2>
+      <p>
+        <strong>显示面板制造</strong>：在贴合工序前中和偏光片和玻璃面板的静电，防止粒子吸附和亮点缺陷。<strong>PCB与SMT生产线</strong>：消除基板、柔性载板和元件盘在印刷和贴片前的静电荷。<strong>包装与印刷</strong>：防止薄膜粘连、送纸不顺、油墨飞溅和标签贴错位。<strong>光学薄膜加工</strong>：在检验前去除扩散膜和棱镜膜的静电。<strong>半导体晶圆操作</strong>：在后道工序中保护裸芯片免受静电放电损伤。
+      </p>
+
+      <h2>如何选择合适的离子棒</h2>
+      <p>
+        <strong>覆盖长度</strong>：选择等于或略大于基材宽度的离子棒，标准长度为150～1500mm，也可定制。<strong>工作距离</strong>：大多数型号工作距离为25～300mm；若需残余电荷低于±20V，建议选用直流脉冲型并将工作距离控制在50～100mm以内。<strong>线速度</strong>：高速线需串联多根离子棒或缩短安装距离以维持较低的残余电荷。<strong>交流vs直流</strong>：普通用途选交流型；显示屏和半导体应用选直流脉冲或智能型。<strong>使用环境</strong>：洁净室需选用密封外壳型号；粉尘或油雾环境需选择易于清洁发射针的结构。
+      </p>
+
+      <h2>离子棒的日常维护</h2>
+      <p>
+        发射针污染是离子输出量下降的首要原因。断电后用干棉签清洁发射针即可恢复性能。清洁频率参考：洁净室环境每3～6个月清洁一次；标准工厂环境每1～3个月清洁一次；粉尘或油雾环境每周检查，按需清洁。智能型号内置污染指示功能，无需人工判断清洁时机。
+      </p>
+
+      <h2>DGSDK 离子棒产品</h2>
+      <p>
+        DGSDK 生产适用于显示屏、PCB、光学薄膜和工业场景的离子棒，所有型号均采用直流脉冲或智能电离技术，并具备自诊断功能。
+      </p>
+
+      <div class="advantage-grid" style="margin:28px 0;">
+        <div class="advantage-card blue">
+          <h3><a href="/zh/products/static-eliminator/st-g-series" style="color:inherit;text-decoration:none;">ST-G 系列</a></h3>
+          <p>智能静电消除棒，内置自诊断监测。直流 ±5kV，适用于显示面板、PCB 和光学薄膜制造。</p>
+        </div>
+        <div class="advantage-card yellow">
+          <h3><a href="/zh/products/static-eliminator/st-e-series" style="color:inherit;text-decoration:none;">ST-E 系列</a></h3>
+          <p>紧凑型内嵌离子棒，适合传送带集成安装，理想用于 SMT 和 PCB 生产线空间受限场景。</p>
+        </div>
+        <div class="advantage-card green">
+          <h3><a href="/zh/products/static-eliminator/st-f-series" style="color:inherit;text-decoration:none;">ST-F 系列</a></h3>
+          <p>远距离静电消除棒，工作距离最远可达 400mm，适用于无法近距离安装的应用场景。</p>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin:32px 0;">
+        <a href="/zh/products/static-eliminator" style="display:inline-block;padding:13px 32px;background:#f5c400;color:#111;font-weight:700;border-radius:8px;text-decoration:none;font-size:16px;margin-right:12px;">查看全部离子棒</a>
+        <a href="/zh/contact" style="display:inline-block;padding:13px 32px;background:#111827;color:#fff;font-weight:700;border-radius:8px;text-decoration:none;font-size:16px;">获取报价</a>
+      </div>
+
+      <h2>常见问题</h2>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-question">离子棒和离子风机有什么区别？</h3>
+          <p class="faq-answer">离子棒覆盖线型区域，适合中和传送带上移动材料的全幅宽静电。离子风机通过定向气流将离子输送至特定点或区域，适合工作台应用。生产线首选离子棒，工作台静电控制首选离子风机。</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">离子棒需要安装多近才能有效工作？</h3>
+          <p class="faq-answer">大多数离子棒的工作距离为25～150mm。标准直流脉冲型在50～100mm工作距离下可实现±20～50V的残余电荷。<a href="/zh/products/static-eliminator/st-f-series">ST-F系列</a>远距离静电消除棒的工作距离可达300～400mm。</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">静电消除棒触摸安全吗？</h3>
+          <p class="faq-answer">离子棒发射的离子云触摸安全，外壳已接地，到达材料表面时的离子电流极低（微安级）。工业静电消除棒在外壳打开时会自动切断高压电源。</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">如何判断静电消除器是否正常工作？</h3>
+          <p class="faq-answer">用静电场强计测量经过离子棒后材料表面的残余电荷。正常工作的静电消除器能将大多数应用的静电荷降至±100V以下，精密作业可达±20V以下。智能型号内置离子平衡指示功能。</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">一根离子棒能覆盖整条生产线的宽度吗？</h3>
+          <p class="faq-answer">标准离子棒最长可达1500mm，多根可首尾相连以覆盖更宽的幅面。DGSDK 可提供定制长度的静电消除器。<a href="/zh/contact">联系我们</a>，提供您的基材宽度和线速度，我们将为您确认最佳配置。</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</ZhLayout>
