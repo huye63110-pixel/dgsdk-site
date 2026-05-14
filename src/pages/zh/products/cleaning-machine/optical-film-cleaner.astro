@@ -21,15 +21,21 @@ import ZhProductLayout from '../../../../layouts/ZhProductLayout.astro';
         <div class="product-gallery">
           <div class="product-main-image slider-wrapper">
             <button class="slider-arrow left" id="prevImage">‹</button>
-            <img id="mainProductImage" src="/assets/img/cleaning-machine/optical-film-hero.webp" alt="大尺寸光学薄膜清洁机" loading="lazy" />
+            <picture><source srcset="/assets/img/cleaning-machine/optical.webp" type="image/webp" /><img
+              id="mainProductImage"
+              src="/assets/img/cleaning-machine/optical.jpg"
+              alt="大尺寸光学薄膜清洁机"
+            /></picture>
             <button class="slider-arrow right" id="nextImage">›</button>
           </div>
 
           <div class="product-thumbs">
-            <img class="thumb-image active-thumb" src="/assets/img/cleaning-machine/optical-film-hero.webp" alt="光学薄膜清洁机" data-full="/assets/img/cleaning-machine/optical-film-hero.webp" loading="lazy" />
-            <img class="thumb-image" src="/assets/img/cleaning-machine/optical-film-roller-1.webp" alt="辊轴粘尘细节" data-full="/assets/img/cleaning-machine/optical-film-roller-1.webp" loading="lazy" />
-            <img class="thumb-image" src="/assets/img/cleaning-machine/optical-film-roller-2.webp" alt="薄膜通过清洁辊" data-full="/assets/img/cleaning-machine/optical-film-roller-2.webp" loading="lazy" />
-            <img class="thumb-image" src="/assets/img/cleaning-machine/cleaning-production-line.webp" alt="光学薄膜清洁生产线" data-full="/assets/img/cleaning-machine/cleaning-production-line.webp" loading="lazy" />
+            <picture><source srcset="/assets/img/cleaning-machine/optical.webp" type="image/webp" /><img
+              class="thumb-image active-thumb"
+              src="/assets/img/cleaning-machine/optical.jpg"
+              alt="光学薄膜清洁机缩略图"
+              data-full="/assets/img/cleaning-machine/optical.jpg"
+            /></picture>
           </div>
         </div>
 

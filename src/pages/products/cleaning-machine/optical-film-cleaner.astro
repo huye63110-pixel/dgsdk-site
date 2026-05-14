@@ -21,15 +21,8 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
         <div class="product-gallery">
           <div class="product-main-image slider-wrapper">
             <button class="slider-arrow left" id="prevImage">‹</button>
-            <img id="mainProductImage" src="/assets/img/cleaning-machine/optical-film-hero.webp" alt="Large Size Optical Film Cleaning Machine" loading="lazy" />
+            <picture><source srcset="/assets/img/cleaning-machine/optical.webp" type="image/webp" /><img id="mainProductImage" src="/assets/img/cleaning-machine/optical.jpg" alt="Large Size Optical Film Cleaning Machine" loading="lazy" /></picture>
             <button class="slider-arrow right" id="nextImage">›</button>
-          </div>
-
-          <div class="product-thumbs">
-            <img class="thumb-image active-thumb" src="/assets/img/cleaning-machine/optical-film-hero.webp" alt="Optical Film Cleaning Machine" data-full="/assets/img/cleaning-machine/optical-film-hero.webp" loading="lazy" />
-            <img class="thumb-image" src="/assets/img/cleaning-machine/optical-film-roller-1.webp" alt="Optical Film Roller Cleaning Detail" data-full="/assets/img/cleaning-machine/optical-film-roller-1.webp" loading="lazy" />
-            <img class="thumb-image" src="/assets/img/cleaning-machine/optical-film-roller-2.webp" alt="Film Passing Through Cleaning Rollers" data-full="/assets/img/cleaning-machine/optical-film-roller-2.webp" loading="lazy" />
-            <img class="thumb-image" src="/assets/img/cleaning-machine/cleaning-production-line.webp" alt="Optical Film Cleaning Production Line" data-full="/assets/img/cleaning-machine/cleaning-production-line.webp" loading="lazy" />
           </div>
 
         </div>
