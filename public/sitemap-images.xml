@@ -8,10 +8,12 @@
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-g.jpg</image:loc>
       <image:title>ST-G Series Intelligent Static Elimination Rod – DC ±5kV Ion Bar</image:title>
+      <image:caption>DGSDK ST-G Series intelligent static elimination ionizing bar — industrial ESD control rod for display panel, PCB and electronics manufacturing production lines</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-g2.jpg</image:loc>
-      <image:title>ST-G Series Ion Bar Detail View – Self-Diagnostic Ionizing Bar</image:title>
+      <image:title>ST-G Series Static Elimination Rod – Self-Diagnostic Ionizing Bar Detail</image:title>
+      <image:caption>Close-up detail of DGSDK ST-G Series static eliminator ion bar showing self-diagnostic indicator and ionizing needle array for industrial ESD neutralization</image:caption>
     </image:image>
   </url>
 
@@ -20,6 +22,7 @@
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-e.jpg</image:loc>
       <image:title>ST-E Series Intelligent Ion Bar – Inline Static Eliminator Bar</image:title>
+      <image:caption>DGSDK ST-E Series intelligent static elimination ion bar for inline ESD control — removes electrostatic charge from film, PCB and display substrates during manufacturing</image:caption>
     </image:image>
   </url>
 
@@ -27,7 +30,8 @@
     <loc>https://www.dg-sdk.com/products/static-eliminator/st-f-series</loc>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-f.jpg</image:loc>
-      <image:title>ST-F Series Long-Range Ion Bar – 400mm Static Elimination Rod</image:title>
+      <image:title>ST-F Series Long-Range Ionizing Bar – 400mm Static Elimination Rod</image:title>
+      <image:caption>DGSDK ST-F Series long-range static elimination ionizing bar — wide-area ESD neutralization for large-format optical film, polarizer and display manufacturing lines</image:caption>
     </image:image>
   </url>
 
@@ -36,22 +40,26 @@
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-s200.jpg</image:loc>
       <image:title>ST-S200 Mini Ionizer Fan – Compact Desktop Static Eliminator</image:title>
+      <image:caption>DGSDK ST-S200 compact mini ionizing fan blower for desktop static elimination — small-area ESD control for precision assembly workbenches and cleanroom environments</image:caption>
     </image:image>
   </url>
 
   <url>
     <loc>https://www.dg-sdk.com/products/static-eliminator/st-101a</loc>
     <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-101a.webp</image:loc>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-101a.jpg</image:loc>
       <image:title>ST101A Table Ionizing Air Blower – Benchtop Static Eliminator Fan</image:title>
+      <image:caption>DGSDK ST101A desktop ionizing air blower for static elimination on workbenches — ESD control fan for electronics assembly, PCB inspection and precision manufacturing</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-101a2.jpg</image:loc>
-      <image:title>ST101A Ionizing Blower Side View – ESD Control Fan</image:title>
+      <image:title>ST101A Ionizing Blower Side View – ESD Control Fan Application</image:title>
+      <image:caption>DGSDK ST101A table-top static eliminator ionizing fan in production environment — side view showing air flow direction for ESD neutralization</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-101a3.jpg</image:loc>
-      <image:title>ST101A Ionizing Air Blower Detail – Table Top Static Eliminator</image:title>
+      <image:title>ST101A Desktop Ionizer Detail – Table Top Static Eliminator</image:title>
+      <image:caption>Detail view of DGSDK ST101A benchtop ionizing air blower controls and ion emitter for static elimination in precision electronics manufacturing</image:caption>
     </image:image>
   </url>
 
@@ -60,6 +68,7 @@
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-104a.jpg</image:loc>
       <image:title>ST104A Horizontal Ion Blower – Overhead Ionizing Fan for Production Lines</image:title>
+      <image:caption>DGSDK ST104A horizontal static eliminator ionizing fan — overhead ESD control blower for production lines, cleanrooms and electronics assembly areas</image:caption>
     </image:image>
   </url>
 
@@ -67,24 +76,23 @@
     <loc>https://www.dg-sdk.com/products/static-eliminator/st-1200</loc>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-1200.jpg</image:loc>
-      <image:title>ST1200 Horizontal Ion Fan – Wide-Coverage Static Elimination Fan</image:title>
+      <image:title>ST1200 Horizontal Ion Fan – Wide-Coverage Industrial Static Eliminator</image:title>
+      <image:caption>DGSDK ST1200 wide-area horizontal ionizing fan for large-scale static elimination — industrial ESD control for display manufacturing, optical film and large substrate processing</image:caption>
     </image:image>
   </url>
 
   <!-- ========== Cleaning Machine ========== -->
   <url>
-    <loc>https://www.dg-sdk.com/products/cleaning-machine/backlight-cleaner</loc>
+    <loc>https://www.dg-sdk.com/products/cleaning-machine/polarizer-cleaner</loc>
     <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/backlight-cleaner.jpg</image:loc>
-      <image:title>Backlight Module Cleaning Machine – LCD Backlight Unit Cleaner</image:title>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/polarizer-cleaner.jpg</image:loc>
+      <image:title>Polarizer Precision Cleaning Machine – LCD Polarizer Film Cleaner</image:title>
+      <image:caption>DGSDK polarizer precision cleaning machine — removes dust, particles and static from polarizer film before LCD panel lamination, preventing optical defects in display manufacturing</image:caption>
     </image:image>
-  </url>
-
-  <url>
-    <loc>https://www.dg-sdk.com/products/cleaning-machine/ccl-cleaner</loc>
     <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/ccl-cleaner.jpg</image:loc>
-      <image:title>CCL Surface Cleaning Machine – Copper Clad Laminate Cleaner</image:title>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/polarizer-cleaner2.jpg</image:loc>
+      <image:title>Polarizer Cleaning Machine Side View – Optical Film Cleaning Equipment</image:title>
+      <image:caption>Side view of DGSDK polarizer precision cleaning machine showing adhesive roller mechanism and film transport system for display panel manufacturing</image:caption>
     </image:image>
   </url>
 
@@ -93,6 +101,7 @@
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/fpc-4-axis-cleaner.jpg</image:loc>
       <image:title>FPC 4-Axis High Precision Cleaning Machine – Flexible PCB Cleaner</image:title>
+      <image:caption>DGSDK FPC 4-axis high precision cleaning machine for flexible printed circuit board surface cleaning — removes contamination before bonding and assembly in electronics manufacturing</image:caption>
     </image:image>
   </url>
 
@@ -100,7 +109,8 @@
     <loc>https://www.dg-sdk.com/products/cleaning-machine/fpc-8-axis-cleaner</loc>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/fpc-8-axis-cleaner.jpg</image:loc>
-      <image:title>FPC 8-Axis Advanced Cleaning Machine – High-Throughput FPC Cleaner</image:title>
+      <image:title>FPC 8-Axis Advanced Cleaning Machine – High-Throughput FPC Surface Cleaner</image:title>
+      <image:caption>DGSDK FPC 8-axis advanced cleaning machine for high-throughput flexible circuit board cleaning — precision surface contamination removal for electronics and display manufacturing</image:caption>
     </image:image>
   </url>
 
@@ -108,11 +118,13 @@
     <loc>https://www.dg-sdk.com/products/cleaning-machine/inspection-cleaner</loc>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/inspection-cleaner.jpg</image:loc>
-      <image:title>Inspection Cleaning Machine – Pre-Inspection Surface Cleaner</image:title>
+      <image:title>Inspection Stage Cleaning Machine STXT Series – Pre-Inspection Surface Cleaner</image:title>
+      <image:caption>DGSDK STXT series inspection stage cleaning machine — removes surface contamination before AOI, optical inspection and quality control in display and electronics manufacturing</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/inspection-cleaner-2.jpg</image:loc>
-      <image:title>Inspection Cleaner Detail View – Industrial Panel Cleaning System</image:title>
+      <image:title>Inspection Cleaning Machine Detail – Industrial Panel Cleaning System</image:title>
+      <image:caption>Detail view of DGSDK inspection cleaner showing roller cleaning mechanism for pre-quality-inspection surface treatment</image:caption>
     </image:image>
   </url>
 
@@ -120,7 +132,8 @@
     <loc>https://www.dg-sdk.com/products/cleaning-machine/lcm-cleaner</loc>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/lcm-cleaner.jpg</image:loc>
-      <image:title>LCM Module Industrial Cleaning Machine – LCD Module Cleaner</image:title>
+      <image:title>LCM Module Industrial Cleaning Machine – Liquid Crystal Module Cleaner</image:title>
+      <image:caption>DGSDK LCM series liquid crystal module industrial cleaning machine with fully sealed magnetic levitation drive — 1 piece/second throughput for high-volume display manufacturing production lines</image:caption>
     </image:image>
   </url>
 
@@ -128,7 +141,8 @@
     <loc>https://www.dg-sdk.com/products/cleaning-machine/optical-film-cleaner</loc>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/optical.jpg</image:loc>
-      <image:title>Large Size Optical Film Cleaning Machine – Precision Optical Cleaner</image:title>
+      <image:title>Large Size Optical Film Cleaning Machine – Precision Optical Film Cleaner</image:title>
+      <image:caption>DGSDK large-format optical film cleaning machine — precision dust and static elimination from optical film before lamination, designed for display panel and LCD manufacturing</image:caption>
     </image:image>
   </url>
 
@@ -136,7 +150,8 @@
     <loc>https://www.dg-sdk.com/products/cleaning-machine/pcb-cleaner</loc>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/pcb-cleaner.jpg</image:loc>
-      <image:title>PCB Surface Cleaning Machine – Printed Circuit Board Cleaner</image:title>
+      <image:title>PCB Surface Cleaning Machine STKF Series – Printed Circuit Board Cleaner</image:title>
+      <image:caption>DGSDK STKF series PCB surface cleaning machine with magnetic levitation drive and dual adhesive rollers — cleans 4-12mil copper foil boards for multi-layer PCB manufacturing</image:caption>
     </image:image>
   </url>
 
@@ -144,19 +159,8 @@
     <loc>https://www.dg-sdk.com/products/cleaning-machine/pcb-vertical-cleaner</loc>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/stick-pcb-vertical-cleaning-machine.jpg</image:loc>
-      <image:title>PCB Vertical Cleaning System – Stick PCB Vertical Cleaning Machine</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://www.dg-sdk.com/products/cleaning-machine/polarizer-cleaner</loc>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/polarizer-cleaner.webp</image:loc>
-      <image:title>Polarizer Precision Cleaning Machine – Polarizer Film Cleaner</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/polarizer-cleaner2.jpg</image:loc>
-      <image:title>Polarizer Cleaner Detail View – Optical Film Cleaning Equipment</image:title>
+      <image:title>PCB Vertical Cleaning System – Stick PCB Vertical Surface Cleaning Machine</image:title>
+      <image:caption>DGSDK PCB vertical cleaning system for automated inline surface cleaning — removes contamination from printed circuit boards before soldering, printing and inspection</image:caption>
     </image:image>
   </url>
 
@@ -165,6 +169,7 @@
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/roll-chip-cleaner.jpg</image:loc>
       <image:title>Roll Chip Universal Cleaning Machine – Roller Type Surface Cleaner</image:title>
+      <image:caption>DGSDK roll chip universal cleaning machine — versatile adhesive roller cleaner for removing dust and particles from electronic components and substrates</image:caption>
     </image:image>
   </url>
 
@@ -173,6 +178,25 @@
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/smt-cleaner.jpg</image:loc>
       <image:title>SMT Inline Cleaning Machine SMT600 – Surface Mount Technology Cleaner</image:title>
+      <image:caption>DGSDK SMT600 series inline surface mount technology cleaning machine — pre-soldering and post-inspection surface cleaning for SMT production lines</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/cleaning-machine/backlight-cleaner</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/backlight-cleaner.jpg</image:loc>
+      <image:title>Backlight Panel Cleaning Machine – LCD Backlight Unit Surface Cleaner</image:title>
+      <image:caption>DGSDK backlight panel cleaning machine — removes dust and contamination from LCD backlight units before assembly, ensuring defect-free display panel production</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/cleaning-machine/ccl-cleaner</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/ccl-cleaner.jpg</image:loc>
+      <image:title>Stick CCL Cleaning Machine ST DT1340 – Copper Clad Laminate Surface Cleaner</image:title>
+      <image:caption>DGSDK CCL copper clad laminate cleaning machine ST DT1340 — precision surface cleaning for PCB substrate pre-processing and copper foil board preparation</image:caption>
     </image:image>
   </url>
 
@@ -182,6 +206,7 @@
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/precision-machined-parts/cnc-milled-front-panel-rubber-roller-assembly.jpg</image:loc>
       <image:title>CNC Milled Front Panel Rubber Roller Assembly – Precision Machined Part</image:title>
+      <image:caption>Custom CNC milled front panel rubber roller assembly — precision machined component for industrial cleaning machine and display manufacturing equipment</image:caption>
     </image:image>
   </url>
 
@@ -190,6 +215,7 @@
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/precision-machined-parts/cnc-milled-wing-connection-block.jpg</image:loc>
       <image:title>CNC Milled Wing Connection Block – Custom Precision Machined Component</image:title>
+      <image:caption>Precision CNC milled wing connection block — custom machined structural component for industrial automation and cleaning machine assembly</image:caption>
     </image:image>
   </url>
 
@@ -198,6 +224,7 @@
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/precision-machined-parts/precision-machined-parts.jpg</image:loc>
       <image:title>Custom Precision Machined Parts – CNC Manufacturing China</image:title>
+      <image:caption>DGSDK custom precision CNC machined parts for industrial automation, cleaning machines and ESD control equipment — manufactured to specification in China</image:caption>
     </image:image>
   </url>
 
@@ -205,7 +232,8 @@
     <loc>https://www.dg-sdk.com/products/precision-machined-parts/lathe-machined-bearing-outer-retainer-plate</loc>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/precision-machined-parts/lathe-machined-bearing-outer-retainer-plate.jpg</image:loc>
-      <image:title>Lathe Machined Bearing Outer Retainer Plate – CNC Turned Part</image:title>
+      <image:title>Lathe Machined Bearing Outer Retainer Plate – CNC Turned Precision Part</image:title>
+      <image:caption>Precision lathe machined bearing outer retainer plate — custom CNC turned component for industrial roller assemblies in cleaning machines and manufacturing equipment</image:caption>
     </image:image>
   </url>
 
@@ -214,6 +242,7 @@
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/precision-machined-parts/lathe-machined-shaft-end-fixing-component.jpg</image:loc>
       <image:title>Lathe Machined Shaft End Fixing Component – Precision Turned Part</image:title>
+      <image:caption>Custom precision lathe machined shaft end fixing component — CNC turned part for industrial machine shaft assembly and alignment</image:caption>
     </image:image>
   </url>
 
@@ -222,6 +251,7 @@
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/precision-machined-parts/milled-front-inner-fixing-plate-paper-roll-guide-rail.jpg</image:loc>
       <image:title>Milled Front Inner Fixing Plate Paper Roll Guide Rail – CNC Milled Part</image:title>
+      <image:caption>CNC milled front inner fixing plate and paper roll guide rail — precision machined structural component for industrial cleaning machine paper roll feed system</image:caption>
     </image:image>
   </url>
 
@@ -230,6 +260,7 @@
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/precision-machined-parts/precision-bearing-bracket-cnc-milled.jpg</image:loc>
       <image:title>Precision Bearing Bracket CNC Milled – Custom Machined Bracket</image:title>
+      <image:caption>Precision CNC milled bearing bracket — custom machined support component for industrial cleaning machines, roller assemblies and automation equipment</image:caption>
     </image:image>
   </url>
 
@@ -238,7 +269,8 @@
     <loc>https://www.dg-sdk.com/products/automation/product-a</loc>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/automation/product-a.jpg</image:loc>
-      <image:title>Diffusion Plate Cleaning and Inspection Production Line – Automation Equipment</image:title>
+      <image:title>Diffusion Plate Cleaning and Inspection Production Line – Industrial Automation</image:title>
+      <image:caption>DGSDK automated diffusion plate cleaning and inspection production line — integrated automation solution for display component manufacturing and quality control</image:caption>
     </image:image>
   </url>
 
@@ -246,7 +278,8 @@
     <loc>https://www.dg-sdk.com/products/automation/product-b</loc>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/automation/product-b.jpg</image:loc>
-      <image:title>Robotic Automatic Loading and Unloading Cleaning Machine – Industrial Automation</image:title>
+      <image:title>Robotic Automatic Loading and Unloading Cleaning Machine – Industrial Robot</image:title>
+      <image:caption>DGSDK robotic automatic loading and unloading cleaning machine — industrial automation system for hands-free substrate handling and surface cleaning in display manufacturing</image:caption>
     </image:image>
   </url>
 
@@ -255,6 +288,26 @@
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/automation/product-c.jpg</image:loc>
       <image:title>Polarizer Absorption Axis Angle Measuring System – Optical Inspection Equipment</image:title>
+      <image:caption>DGSDK polarizer absorption axis angle measuring system — precision optical inspection equipment for polarizer film quality control in LCD and display panel manufacturing</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ========== Blog / Tutorial Pages ========== -->
+  <url>
+    <loc>https://www.dg-sdk.com/blog/optical-film-cleaner-tutorial</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/optical.jpg</image:loc>
+      <image:title>Optical Film Cleaning Machine Operating Guide – 9-Step Tutorial</image:title>
+      <image:caption>Step-by-step operating guide for the DGSDK optical film dust removal cleaning machine — covers setup, roller pressure adjustment, static elimination and maintenance for display manufacturing</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/blog/polarizer-cleaner-tutorial</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/polarizer-cleaner.jpg</image:loc>
+      <image:title>Polarizer Cleaning Machine Operating Guide – Step-by-Step Tutorial</image:title>
+      <image:caption>Complete operating guide for DGSDK polarizer precision cleaning machine — setup, parameters, troubleshooting and maintenance for LCD display panel manufacturing</image:caption>
     </image:image>
   </url>
 

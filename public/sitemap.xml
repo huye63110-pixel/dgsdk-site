@@ -1,73 +1,606 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- ===== CORE PAGES ===== -->
   <url><loc>https://www.dg-sdk.com/</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://www.dg-sdk.com/about</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.dg-sdk.com/applications</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.dg-sdk.com/contact</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.dg-sdk.com/faq</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.dg-sdk.com/privacy</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.dg-sdk.com/privacy</loc><lastmod>2026-04-28</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://www.dg-sdk.com/products</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+
+  <!-- ===== GUIDES (EN) ===== -->
   <url><loc>https://www.dg-sdk.com/guides</loc><lastmod>2026-05-04</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.dg-sdk.com/guides/what-is-esd</loc><lastmod>2026-05-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.dg-sdk.com/guides/how-to-prevent-static</loc><lastmod>2026-05-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.dg-sdk.com/guides/esd-control-products</loc><lastmod>2026-05-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.dg-sdk.com/guides/industrial-static-eliminator</loc><lastmod>2026-05-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/products/automation</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.dg-sdk.com/products/automation/product-a</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/products/automation/product-b</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/products/automation/product-c</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/products/cleaning-machine</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.dg-sdk.com/products/cleaning-machine/backlight-cleaner</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/products/cleaning-machine/ccl-cleaner</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/products/cleaning-machine/fpc-4-axis-cleaner</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/products/cleaning-machine/fpc-8-axis-cleaner</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/products/cleaning-machine/inspection-cleaner</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/products/cleaning-machine/lcm-cleaner</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/products/cleaning-machine/optical-film-cleaner</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/products/cleaning-machine/pcb-cleaner</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/products/cleaning-machine/pcb-vertical-cleaner</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/products/cleaning-machine/polarizer-cleaner</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/products/cleaning-machine/roll-chip-cleaner</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/products/cleaning-machine/smt-cleaner</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/products/precision-machined-parts</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.dg-sdk.com/products/precision-machined-parts/cnc-milled-front-panel-rubber-roller-assembly</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/products/precision-machined-parts/cnc-wing-connection-block</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/products/precision-machined-parts/custom-precision-machined-parts</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/products/precision-machined-parts/lathe-machined-bearing-outer-retainer-plate</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/products/precision-machined-parts/lathe-machined-shaft-end-fixing-component</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/products/precision-machined-parts/milled-front-inner-fixing-plate-paper-roll-guide-rail</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/products/precision-machined-parts/precision-bearing-bracket-cnc-milled</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- ===== BLOG (EN) ===== -->
+  <url><loc>https://www.dg-sdk.com/blog</loc><lastmod>2026-05-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url>
+    <loc>https://www.dg-sdk.com/blog/optical-film-cleaner-tutorial</loc>
+    <lastmod>2026-05-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/optical.jpg</image:loc>
+      <image:title>Large Size Optical Film Cleaning Machine — 9-Step Operating Guide</image:title>
+      <image:caption>Step-by-step guide for operating the DGSDK optical film dust removal cleaning machine in display manufacturing</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.dg-sdk.com/blog/polarizer-cleaner-tutorial</loc>
+    <lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/polarizer-cleaner.jpg</image:loc>
+      <image:title>Polarizer Precision Cleaning Machine — Operating Guide</image:title>
+      <image:caption>Operating guide for DGSDK polarizer precision cleaning machine used in LCD and display panel manufacturing</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ===== STATIC ELIMINATOR PRODUCTS (EN) ===== -->
   <url><loc>https://www.dg-sdk.com/products/static-eliminator</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.dg-sdk.com/products/static-eliminator/st-101a</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/products/static-eliminator/st-104a</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/products/static-eliminator/st-1200</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/products/static-eliminator/st-e-series</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/products/static-eliminator/st-f-series</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/products/static-eliminator/st-g-series</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/products/static-eliminator/st-s200</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/static-eliminator/st-g-series</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-g.jpg</image:loc>
+      <image:title>ST-G Series Intelligent Static Elimination Rod | DGSDK Ionizing Bar</image:title>
+      <image:caption>ST-G Series intelligent static elimination ionizing bar for industrial ESD control in electronics and display manufacturing</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-g2.jpg</image:loc>
+      <image:title>ST-G Series Static Eliminator Bar — Installation Detail</image:title>
+      <image:caption>DGSDK ST-G Series static elimination rod installation and application in precision manufacturing environment</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/static-eliminator/st-e-series</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-e.jpg</image:loc>
+      <image:title>ST-E Series Intelligent Ion Rod | Static Eliminator Bar | DGSDK</image:title>
+      <image:caption>ST-E Series ionizing bar for static elimination and ESD control in industrial production lines</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/static-eliminator/st-f-series</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-f.jpg</image:loc>
+      <image:title>ST-F Series Long-Range Ionizing Bar | Static Eliminator | DGSDK</image:title>
+      <image:caption>ST-F Series long-range static elimination ion bar for wide-area ESD neutralization in manufacturing</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/static-eliminator/st-101a</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-101a.jpg</image:loc>
+      <image:title>ST101A Desktop Static Eliminator Blower | ESD Ionizing Fan | DGSDK</image:title>
+      <image:caption>ST101A table-top ionizing air blower for static elimination on workbenches and precision assembly areas</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-101a2.jpg</image:loc>
+      <image:title>ST101A Ionizing Blower — Application View</image:title>
+      <image:caption>DGSDK ST101A desktop static eliminator blower in use for ESD control on electronics workbench</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-101a3.jpg</image:loc>
+      <image:title>ST101A Desktop Ionizer — Detail View</image:title>
+      <image:caption>Close-up detail of the DGSDK ST101A ionizing air blower for ESD control</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/static-eliminator/st-104a</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-104a.jpg</image:loc>
+      <image:title>ST104A Horizontal Static Eliminator Blower | ESD Control | DGSDK</image:title>
+      <image:caption>ST104A horizontal ion blower for static elimination in cleanroom and precision electronics assembly</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/static-eliminator/st-1200</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-1200.jpg</image:loc>
+      <image:title>ST1200 Industrial Static Eliminator Fan | Wide-Area ESD Control | DGSDK</image:title>
+      <image:caption>ST1200 wide-area horizontal ionizing fan for large-scale static elimination in industrial manufacturing environments</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/static-eliminator/st-s200</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-s200.jpg</image:loc>
+      <image:title>ST-S200 Mini Static Eliminator Fan | Compact Ionizing Blower | DGSDK</image:title>
+      <image:caption>ST-S200 compact mini ionizing blower for desktop and small-area static elimination in precision assembly</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ===== CLEANING MACHINE PRODUCTS (EN) ===== -->
+  <url><loc>https://www.dg-sdk.com/products/cleaning-machine</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/cleaning-machine/polarizer-cleaner</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/polarizer-cleaner.jpg</image:loc>
+      <image:title>Polarizer Precision Cleaning Machine | DGSDK Industrial Cleaner</image:title>
+      <image:caption>High-precision polarizer film cleaning machine for LCD display panel manufacturing — removes dust, particles and static before lamination</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/polarizer-cleaner2.jpg</image:loc>
+      <image:title>Polarizer Cleaning Machine — Side View</image:title>
+      <image:caption>DGSDK polarizer precision cleaning machine side view showing roller and feed mechanism</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/cleaning-machine/fpc-4-axis-cleaner</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/fpc-4-axis-cleaner.jpg</image:loc>
+      <image:title>FPC 4-Axis High Precision Cleaning Machine | DGSDK</image:title>
+      <image:caption>4-axis high precision FPC flexible circuit board cleaning machine for precision electronics manufacturing</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/cleaning-machine/fpc-8-axis-cleaner</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/fpc-8-axis-cleaner.jpg</image:loc>
+      <image:title>FPC 8-Axis Advanced Cleaning Machine | DGSDK</image:title>
+      <image:caption>8-axis advanced FPC cleaning machine for high-throughput flexible circuit board surface cleaning</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/cleaning-machine/optical-film-cleaner</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/optical.jpg</image:loc>
+      <image:title>Large Size Optical Film Cleaning Machine | DGSDK Industrial Cleaner</image:title>
+      <image:caption>Large-format optical film precision cleaning machine — removes dust, fiber and particles before lamination in display manufacturing</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/cleaning-machine/lcm-cleaner</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/lcm-cleaner.jpg</image:loc>
+      <image:title>LCM Module Industrial Cleaning Machine | Liquid Crystal Module Cleaner | DGSDK</image:title>
+      <image:caption>Industrial LCM module cleaning machine with magnetic levitation drive for liquid crystal display assembly lines</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/cleaning-machine/pcb-cleaner</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/pcb-cleaner.jpg</image:loc>
+      <image:title>PCB Surface Cleaning Machine | STKF Series | DGSDK</image:title>
+      <image:caption>PCB surface cleaning machine with magnetic levitation drive and dual adhesive rollers for multi-layer copper foil board cleaning</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/cleaning-machine/pcb-vertical-cleaner</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/stick-pcb-vertical-cleaning-machine.jpg</image:loc>
+      <image:title>PCB Vertical Cleaning System | DGSDK Industrial Cleaner</image:title>
+      <image:caption>Vertical PCB board cleaning system for automated inline surface cleaning in PCB manufacturing</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/cleaning-machine/roll-chip-cleaner</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/roll-chip-cleaner.jpg</image:loc>
+      <image:title>Roll Chip Universal Cleaning Machine | DGSDK</image:title>
+      <image:caption>Universal roll chip cleaning machine for removing dust and particles from electronic components and substrates</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/cleaning-machine/smt-cleaner</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/smt-cleaner.jpg</image:loc>
+      <image:title>SMT Inline Cleaning Machine SMT600 Series | DGSDK</image:title>
+      <image:caption>SMT600 series inline surface mount technology cleaning machine for pre-soldering and post-inspection cleaning</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/cleaning-machine/backlight-cleaner</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/backlight-cleaner.jpg</image:loc>
+      <image:title>Backlight Panel Cleaning Machine | DGSDK Industrial Cleaner</image:title>
+      <image:caption>Backlight unit cleaning machine for removing dust and contamination before LCD backlight panel assembly</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/cleaning-machine/ccl-cleaner</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/ccl-cleaner.jpg</image:loc>
+      <image:title>Stick CCL Cleaning Machine ST DT1340 | Copper Clad Laminate Cleaner | DGSDK</image:title>
+      <image:caption>CCL copper clad laminate surface cleaning machine for PCB substrate pre-processing and surface preparation</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/cleaning-machine/inspection-cleaner</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/inspection-cleaner.jpg</image:loc>
+      <image:title>Inspection Stage Cleaning Machine STXT Series | DGSDK</image:title>
+      <image:caption>STXT series inspection stage cleaning machine for pre-inspection surface cleaning in display and electronics quality control</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/inspection-cleaner-2.jpg</image:loc>
+      <image:title>Inspection Cleaning Machine — Application View</image:title>
+      <image:caption>DGSDK inspection cleaner in operation for pre-AOI and pre-quality-inspection surface cleaning</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ===== PRECISION MACHINED PARTS (EN) ===== -->
+  <url><loc>https://www.dg-sdk.com/products/precision-machined-parts</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/precision-machined-parts/cnc-milled-front-panel-rubber-roller-assembly</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/precision-machined-parts/cnc-milled-front-panel-rubber-roller-assembly.jpg</image:loc>
+      <image:title>CNC Milled Front Panel Rubber Roller Assembly | DGSDK Precision Parts</image:title>
+      <image:caption>Custom CNC milled front panel rubber roller assembly for industrial cleaning machine applications</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/precision-machined-parts/cnc-wing-connection-block</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/precision-machined-parts/cnc-milled-wing-connection-block.jpg</image:loc>
+      <image:title>CNC Wing Connection Block | DGSDK Precision Machined Parts</image:title>
+      <image:caption>Precision CNC milled wing connection block for industrial equipment assembly</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/precision-machined-parts/custom-precision-machined-parts</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/precision-machined-parts/precision-machined-parts.jpg</image:loc>
+      <image:title>Custom Precision Machined Parts | CNC Machining Services | DGSDK</image:title>
+      <image:caption>Custom CNC precision machined parts for industrial automation, cleaning machines and ESD control equipment</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/precision-machined-parts/lathe-machined-bearing-outer-retainer-plate</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/precision-machined-parts/lathe-machined-bearing-outer-retainer-plate.jpg</image:loc>
+      <image:title>Lathe Machined Bearing Outer Retainer Plate | DGSDK Precision Parts</image:title>
+      <image:caption>Precision lathe machined bearing outer retainer plate for industrial roller and cleaning machine assemblies</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/precision-machined-parts/lathe-machined-shaft-end-fixing-component</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/precision-machined-parts/lathe-machined-shaft-end-fixing-component.jpg</image:loc>
+      <image:title>Lathe Machined Shaft End Fixing Component | DGSDK Precision Parts</image:title>
+      <image:caption>Custom precision lathe machined shaft end fixing component for industrial machine assembly</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/precision-machined-parts/milled-front-inner-fixing-plate-paper-roll-guide-rail</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/precision-machined-parts/milled-front-inner-fixing-plate-paper-roll-guide-rail.jpg</image:loc>
+      <image:title>Milled Front Inner Fixing Plate Paper Roll Guide Rail | DGSDK</image:title>
+      <image:caption>CNC milled front inner fixing plate and paper roll guide rail for precision cleaning machine construction</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/products/precision-machined-parts/precision-bearing-bracket-cnc-milled</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/precision-machined-parts/precision-bearing-bracket-cnc-milled.jpg</image:loc>
+      <image:title>Precision Bearing Bracket CNC Milled | DGSDK Machined Parts</image:title>
+      <image:caption>Precision CNC milled bearing bracket for industrial cleaning machine and automation equipment</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ===== AUTOMATION PRODUCTS (EN) ===== -->
+  <url><loc>https://www.dg-sdk.com/products/automation</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url>
+    <loc>https://www.dg-sdk.com/products/automation/product-a</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/automation/product-a.jpg</image:loc>
+      <image:title>Industrial Automation Product | DGSDK</image:title>
+      <image:caption>DGSDK industrial automation equipment for precision electronics manufacturing</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.dg-sdk.com/products/automation/product-b</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/automation/product-b.jpg</image:loc>
+      <image:title>Industrial Automation Equipment | DGSDK</image:title>
+      <image:caption>DGSDK automation system for display and electronics manufacturing production lines</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.dg-sdk.com/products/automation/product-c</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/automation/product-c.jpg</image:loc>
+      <image:title>Industrial Automation Solution | DGSDK</image:title>
+      <image:caption>DGSDK precision automation solution for industrial cleaning and ESD control applications</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ===== CHINESE PAGES ===== -->
   <url><loc>https://www.dg-sdk.com/zh/</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://www.dg-sdk.com/zh/about</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.dg-sdk.com/zh/applications</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.dg-sdk.com/zh/contact</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.dg-sdk.com/zh/faq</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.dg-sdk.com/zh/products</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/products/automation</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/products/automation/product-a</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/products/automation/product-b</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/products/automation/product-c</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- GUIDES (ZH) -->
+  <url><loc>https://www.dg-sdk.com/zh/guides</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.dg-sdk.com/zh/guides/what-is-esd</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dg-sdk.com/zh/guides/how-to-prevent-static</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dg-sdk.com/zh/guides/esd-control-products</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dg-sdk.com/zh/guides/industrial-static-eliminator</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- BLOG (ZH) -->
+  <url><loc>https://www.dg-sdk.com/zh/blog</loc><lastmod>2026-05-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url>
+    <loc>https://www.dg-sdk.com/zh/blog/optical-film-cleaner-tutorial</loc>
+    <lastmod>2026-05-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/optical.jpg</image:loc>
+      <image:title>大尺寸光学薄膜清洁机9步操作教程 | 史帝克DGSDK</image:title>
+      <image:caption>光学膜片粘尘机操作步骤详解，适用于显示屏贴合工序前的薄膜清洁处理</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.dg-sdk.com/zh/blog/polarizer-cleaner-tutorial</loc>
+    <lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/polarizer-cleaner.jpg</image:loc>
+      <image:title>偏光片精密清洁机操作指南 | 史帝克DGSDK</image:title>
+      <image:caption>偏光片清洁机使用教程，适用于LCD显示面板贴合前的偏光片表面清洁工序</image:caption>
+    </image:image>
+  </url>
+
+  <!-- STATIC ELIMINATOR (ZH) -->
+  <url><loc>https://www.dg-sdk.com/zh/products/static-eliminator</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/zh/products/static-eliminator/st-g-series</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-g.jpg</image:loc>
+      <image:title>ST-G系列智能离子棒 | 静电消除器 | 史帝克DGSDK</image:title>
+      <image:caption>ST-G系列智能静电消除离子棒，适用于电子制造和显示屏生产的工业级ESD防护</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-g2.jpg</image:loc>
+      <image:title>ST-G系列离子棒安装应用图 | 史帝克静电消除器</image:title>
+      <image:caption>史帝克ST-G系列静电消除离子棒在精密制造环境中的安装与应用</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/zh/products/static-eliminator/st-e-series</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-e.jpg</image:loc>
+      <image:title>ST-E系列智能离子棒 | 静电消除器 | 史帝克DGSDK</image:title>
+      <image:caption>ST-E系列离子棒静电消除设备，用于工业生产线ESD防护和静电控制</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/zh/products/static-eliminator/st-f-series</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-f.jpg</image:loc>
+      <image:title>ST-F系列远距离离子棒 | 静电消除器 | 史帝克DGSDK</image:title>
+      <image:caption>ST-F系列远距离静电消除离子棒，适用于宽幅面工业生产环境的ESD中和</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/zh/products/static-eliminator/st-101a</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-101a.jpg</image:loc>
+      <image:title>ST101A台式离子风机 | ESD防护静电消除器 | 史帝克DGSDK</image:title>
+      <image:caption>ST101A台式离子风机，适用于工作台和精密电子装配区域的静电消除</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/zh/products/static-eliminator/st-104a</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-104a.jpg</image:loc>
+      <image:title>ST104A横置离子风机 | 静电消除设备 | 史帝克DGSDK</image:title>
+      <image:caption>ST104A横置式离子风机，用于洁净室和精密电子装配的静电消除</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/zh/products/static-eliminator/st-1200</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-1200.jpg</image:loc>
+      <image:title>ST1200工业宽幅离子风机 | 大面积静电消除器 | 史帝克DGSDK</image:title>
+      <image:caption>ST1200工业级宽幅离子风机，适用于大面积工业制造环境的静电消除</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/zh/products/static-eliminator/st-s200</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-s200.jpg</image:loc>
+      <image:title>ST-S200迷你离子风机 | 小型静电消除器 | 史帝克DGSDK</image:title>
+      <image:caption>ST-S200紧凑型迷你离子风机，适用于桌面和小区域精密装配的静电消除</image:caption>
+    </image:image>
+  </url>
+
+  <!-- CLEANING MACHINE (ZH) -->
   <url><loc>https://www.dg-sdk.com/zh/products/cleaning-machine</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/products/cleaning-machine/backlight-cleaner</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/products/cleaning-machine/ccl-cleaner</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/products/cleaning-machine/fpc-4-axis-cleaner</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/products/cleaning-machine/fpc-8-axis-cleaner</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/products/cleaning-machine/inspection-cleaner</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/products/cleaning-machine/lcm-cleaner</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/products/cleaning-machine/optical-film-cleaner</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/products/cleaning-machine/pcb-cleaner</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/products/cleaning-machine/pcb-vertical-cleaner</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/products/cleaning-machine/polarizer-cleaner</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/products/cleaning-machine/roll-chip-cleaner</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/products/cleaning-machine/smt-cleaner</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/zh/products/cleaning-machine/polarizer-cleaner</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/polarizer-cleaner.jpg</image:loc>
+      <image:title>偏光片精密清洁机 | 史帝克DGSDK工业清洁设备</image:title>
+      <image:caption>偏光片精密清洁机，贴合前去除灰尘、颗粒和静电污染，适用于LCD显示面板制造</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/zh/products/cleaning-machine/fpc-4-axis-cleaner</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/fpc-4-axis-cleaner.jpg</image:loc>
+      <image:title>FPC四轴高精度清洁机 | 史帝克DGSDK</image:title>
+      <image:caption>四轴高精度FPC柔性电路板清洁机，适用于精密电子制造</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/zh/products/cleaning-machine/fpc-8-axis-cleaner</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/fpc-8-axis-cleaner.jpg</image:loc>
+      <image:title>FPC八轴高端清洁机 | 史帝克DGSDK</image:title>
+      <image:caption>八轴高端FPC清洁机，适用于高通量柔性电路板表面清洁</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/zh/products/cleaning-machine/optical-film-cleaner</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/optical.jpg</image:loc>
+      <image:title>大尺寸光学薄膜清洁机 | 史帝克DGSDK工业清洁设备</image:title>
+      <image:caption>大幅面光学薄膜精密清洁机，贴合前去除灰尘、纤维和颗粒，适用于显示屏制造</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/zh/products/cleaning-machine/lcm-cleaner</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/lcm-cleaner.jpg</image:loc>
+      <image:title>LCM模组工业清洁机 | 液晶模组清洁设备 | 史帝克DGSDK</image:title>
+      <image:caption>LCM液晶模组工业清洁机，磁悬浮传动设计，适用于液晶显示装配产线</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/zh/products/cleaning-machine/pcb-cleaner</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/pcb-cleaner.jpg</image:loc>
+      <image:title>PCB表面清洁机 STKF系列 | 史帝克DGSDK</image:title>
+      <image:caption>STKF系列PCB表面清洁机，磁悬浮传动，双面粘尘胶辊，支持多层铜箔板清洁</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/zh/products/cleaning-machine/pcb-vertical-cleaner</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/stick-pcb-vertical-cleaning-machine.jpg</image:loc>
+      <image:title>PCB垂直清洁系统 | 史帝克DGSDK工业清洁设备</image:title>
+      <image:caption>PCB垂直清洁系统，适用于PCB制造的在线表面清洁处理</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/zh/products/cleaning-machine/roll-chip-cleaner</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/roll-chip-cleaner.jpg</image:loc>
+      <image:title>滚轮通用清洁机 | 史帝克DGSDK</image:title>
+      <image:caption>通用滚轮清洁机，去除电子元件和基板表面的灰尘和颗粒污染</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/zh/products/cleaning-machine/smt-cleaner</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/smt-cleaner.jpg</image:loc>
+      <image:title>SMT在线清洁机 SMT600系列 | 史帝克DGSDK</image:title>
+      <image:caption>SMT600系列表面贴装在线清洁机，适用于焊接前和检验前的表面清洁</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/zh/products/cleaning-machine/backlight-cleaner</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/backlight-cleaner.jpg</image:loc>
+      <image:title>背光板清洁机 | 史帝克DGSDK工业清洁设备</image:title>
+      <image:caption>背光单元清洁机，LCD背光板装配前去除灰尘和污染物</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/zh/products/cleaning-machine/ccl-cleaner</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/ccl-cleaner.jpg</image:loc>
+      <image:title>史帝克CCL清洁机 ST DT1340 | 覆铜板清洁设备 | DGSDK</image:title>
+      <image:caption>CCL覆铜板表面清洁机，用于PCB基板预处理和表面准备</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/zh/products/cleaning-machine/inspection-cleaner</loc>
+    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/inspection-cleaner.jpg</image:loc>
+      <image:title>检验台清洁机 STXT系列 | 史帝克DGSDK</image:title>
+      <image:caption>STXT系列检验台清洁机，显示屏和电子元件检验前表面清洁处理</image:caption>
+    </image:image>
+  </url>
+
+  <!-- PRECISION MACHINED PARTS (ZH) -->
   <url><loc>https://www.dg-sdk.com/zh/products/precision-machined-parts</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.dg-sdk.com/zh/products/precision-machined-parts/cnc-milled-front-panel-rubber-roller-assembly</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.dg-sdk.com/zh/products/precision-machined-parts/cnc-wing-connection-block</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -76,23 +609,11 @@
   <url><loc>https://www.dg-sdk.com/zh/products/precision-machined-parts/lathe-machined-shaft-end-fixing-component</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.dg-sdk.com/zh/products/precision-machined-parts/milled-front-inner-fixing-plate-paper-roll-guide-rail</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.dg-sdk.com/zh/products/precision-machined-parts/precision-bearing-bracket-cnc-milled</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/products/static-eliminator</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/products/static-eliminator/st-101a</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/products/static-eliminator/st-104a</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/products/static-eliminator/st-1200</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/products/static-eliminator/st-e-series</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/products/static-eliminator/st-f-series</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/products/static-eliminator/st-g-series</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/products/static-eliminator/st-s200</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/blog</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.dg-sdk.com/blog/optical-film-cleaner-tutorial</loc><lastmod>2026-05-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/blog/polarizer-cleaner-tutorial</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/guides</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/guides/what-is-esd</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/guides/how-to-prevent-static</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/guides/esd-control-products</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/guides/industrial-static-eliminator</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/blog</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/blog/polarizer-cleaner-tutorial</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/blog/optical-film-cleaner-tutorial</loc><lastmod>2026-05-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- AUTOMATION (ZH) -->
+  <url><loc>https://www.dg-sdk.com/zh/products/automation</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.dg-sdk.com/zh/products/automation/product-a</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dg-sdk.com/zh/products/automation/product-b</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dg-sdk.com/zh/products/automation/product-c</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
 </urlset>
