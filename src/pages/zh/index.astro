@@ -226,34 +226,93 @@ import ZhLayout from '../../layouts/ZhLayout.astro';
           <h2 class="section-heading text-uppercase">技术博客</h2>
           <h3 class="section-subheading text-muted">工业清洁机和自动化设备的操作指南与行业技术资讯。</h3>
         </div>
-        <div class="blog-index-grid" style="max-width:900px;margin:0 auto;" data-aos="fade-up" data-aos-delay="100">
-          <a href="/zh/blog/optical-film-cleaner-tutorial" class="blog-index-card">
-            <div class="blog-index-img"><picture><source srcset="/assets/img/cleaning-machine/optical.webp" type="image/webp" /><img src="/assets/img/cleaning-machine/optical.jpg" alt="光学薄膜清洁机操作教程" loading="lazy" /></picture></div>
-            <div class="blog-index-content">
-              <div class="blog-index-tags"><span class="blog-tag">清洁机</span><span class="blog-tag">操作教程</span></div>
-              <h2>光学膜片粘尘机操作指南：9步实现零缺陷贴合效果</h2>
-              <p>逐步学习光学薄膜清洁机的操作方法——胶辊压力、速度设置、静电消除、故障排除，确保贴合工序无颗粒缺陷。</p>
-              <div class="blog-index-meta">
-                <span><i class="fas fa-calendar-alt"></i> 2026年5月14日</span>
-                <span><i class="fas fa-clock"></i> 约12分钟</span>
+
+        <style>
+          .blog-carousel-outer{position:relative;max-width:960px;margin:0 auto;}
+          .blog-carousel-track{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:4px;scrollbar-width:none;-ms-overflow-style:none;}
+          .blog-carousel-track::-webkit-scrollbar{display:none;}
+          .blog-carousel-track .blog-index-card{flex:0 0 calc(50% - 12px);scroll-snap-align:start;min-width:280px;}
+          .blog-carousel-btn{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:none;background:#111827;color:#fff;font-size:20px;line-height:1;cursor:pointer;z-index:3;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.18);transition:background .2s;}
+          .blog-carousel-btn:hover{background:#f5c400;color:#111;}
+          .blog-carousel-btn.prev{left:-20px;}
+          .blog-carousel-btn.next{right:-20px;}
+          .blog-carousel-dots{display:flex;justify-content:center;gap:8px;margin-top:18px;}
+          .blog-carousel-dots span{width:8px;height:8px;border-radius:50%;background:#ccc;cursor:pointer;transition:background .2s;}
+          .blog-carousel-dots span.active{background:#111827;}
+          @media(max-width:640px){
+            .blog-carousel-track .blog-index-card{flex:0 0 88%;}
+            .blog-carousel-btn.prev{left:-10px;}
+            .blog-carousel-btn.next{right:-10px;}
+          }
+        </style>
+
+        <div class="blog-carousel-outer" data-aos="fade-up" data-aos-delay="100">
+          <button class="blog-carousel-btn prev" id="blogPrevZH" aria-label="上一篇">&#8249;</button>
+          <div class="blog-carousel-track" id="blogTrackZH">
+            <a href="/zh/blog/polarizer-cleaner-selection-guide" class="blog-index-card">
+              <div class="blog-index-img"><picture><source srcset="/assets/img/cleaning-machine/polarizer-cleaner.webp" type="image/webp" /><img src="/assets/img/cleaning-machine/polarizer-cleaner.jpg" alt="偏光片清洁机选型指南" loading="lazy" /></picture></div>
+              <div class="blog-index-content">
+                <div class="blog-index-tags"><span class="blog-tag">清洁机</span><span class="blog-tag">选型指南</span></div>
+                <h2>偏光片清洁机选型全攻略：技术要点拆解与落地逻辑</h2>
+                <p>选偏光片清洁机不是看参数堆砌，而是看是否匹配你的产线痛点。OLED、高翘曲、AOI连线三大场景的选型核心技术解析。</p>
+                <div class="blog-index-meta">
+                  <span><i class="fas fa-calendar-alt"></i> 2026年5月15日</span>
+                  <span><i class="fas fa-clock"></i> 约12分钟</span>
+                </div>
+                <span class="blog-read-more">阅读全文 <i class="fas fa-arrow-right"></i></span>
               </div>
-              <span class="blog-read-more">阅读全文 <i class="fas fa-arrow-right"></i></span>
-            </div>
-          </a>
-          <a href="/zh/blog/polarizer-cleaner-tutorial" class="blog-index-card">
-            <div class="blog-index-img"><picture><source srcset="/assets/img/cleaning-machine/polarizer-cleaner.webp" type="image/webp" /><img src="/assets/img/cleaning-machine/polarizer-cleaner.jpg" alt="偏光片清洁机操作教程" loading="lazy" /></picture></div>
-            <div class="blog-index-content">
-              <div class="blog-index-tags"><span class="blog-tag">清洁机</span><span class="blog-tag">操作教程</span></div>
-              <h2>偏光片清洁机操作指南：8步实现零缺陷清洁效果</h2>
-              <p>逐步学习偏光片清洁机的操作方法——参数设置、耗材安装、故障排除，以及如何实现99%以上清洁良率。</p>
-              <div class="blog-index-meta">
-                <span><i class="fas fa-calendar-alt"></i> 2026年5月13日</span>
-                <span><i class="fas fa-clock"></i> 约10分钟</span>
+            </a>
+            <a href="/zh/blog/optical-film-cleaner-tutorial" class="blog-index-card">
+              <div class="blog-index-img"><picture><source srcset="/assets/img/cleaning-machine/optical.webp" type="image/webp" /><img src="/assets/img/cleaning-machine/optical.jpg" alt="光学薄膜清洁机操作教程" loading="lazy" /></picture></div>
+              <div class="blog-index-content">
+                <div class="blog-index-tags"><span class="blog-tag">清洁机</span><span class="blog-tag">操作教程</span></div>
+                <h2>光学膜片粘尘机操作指南：9步实现零缺陷贴合效果</h2>
+                <p>逐步学习光学薄膜清洁机的操作方法——胶辊压力、速度设置、静电消除、故障排除，确保贴合工序无颗粒缺陷。</p>
+                <div class="blog-index-meta">
+                  <span><i class="fas fa-calendar-alt"></i> 2026年5月14日</span>
+                  <span><i class="fas fa-clock"></i> 约12分钟</span>
+                </div>
+                <span class="blog-read-more">阅读全文 <i class="fas fa-arrow-right"></i></span>
               </div>
-              <span class="blog-read-more">阅读全文 <i class="fas fa-arrow-right"></i></span>
-            </div>
-          </a>
+            </a>
+            <a href="/zh/blog/polarizer-cleaner-tutorial" class="blog-index-card">
+              <div class="blog-index-img"><picture><source srcset="/assets/img/cleaning-machine/polarizer-cleaner.webp" type="image/webp" /><img src="/assets/img/cleaning-machine/polarizer-cleaner.jpg" alt="偏光片清洁机操作教程" loading="lazy" /></picture></div>
+              <div class="blog-index-content">
+                <div class="blog-index-tags"><span class="blog-tag">清洁机</span><span class="blog-tag">操作教程</span></div>
+                <h2>偏光片清洁机操作指南：8步实现零缺陷清洁效果</h2>
+                <p>逐步学习偏光片清洁机的操作方法——参数设置、耗材安装、故障排除，以及如何实现99%以上清洁良率。</p>
+                <div class="blog-index-meta">
+                  <span><i class="fas fa-calendar-alt"></i> 2026年5月13日</span>
+                  <span><i class="fas fa-clock"></i> 约10分钟</span>
+                </div>
+                <span class="blog-read-more">阅读全文 <i class="fas fa-arrow-right"></i></span>
+              </div>
+            </a>
+          </div>
+          <button class="blog-carousel-btn next" id="blogNextZH" aria-label="下一篇">&#8250;</button>
+          <div class="blog-carousel-dots" id="blogDotsZH">
+            <span class="active"></span><span></span><span></span>
+          </div>
         </div>
+
+        <script>
+          (function(){
+            const track = document.getElementById('blogTrackZH');
+            const dots = document.querySelectorAll('#blogDotsZH span');
+            function getCardWidth(){
+              const card = track.querySelector('.blog-index-card');
+              return card ? card.offsetWidth + 24 : 340;
+            }
+            document.getElementById('blogPrevZH').addEventListener('click',()=>track.scrollBy({left:-getCardWidth(),behavior:'smooth'}));
+            document.getElementById('blogNextZH').addEventListener('click',()=>track.scrollBy({left:getCardWidth(),behavior:'smooth'}));
+            track.addEventListener('scroll',()=>{
+              const idx = Math.round(track.scrollLeft / getCardWidth());
+              dots.forEach((d,i)=>d.classList.toggle('active',i===idx));
+            },{passive:true});
+            dots.forEach((d,i)=>d.addEventListener('click',()=>track.scrollTo({left:i*getCardWidth(),behavior:'smooth'})));
+          })();
+        </script>
+
         <div style="text-align:center;margin-top:32px;" data-aos="fade-up" data-aos-delay="150">
           <a href="/zh/blog" style="display:inline-block;padding:12px 28px;border-radius:10px;background:#111827;color:#fff;font-weight:700;text-decoration:none;font-size:15px;">查看全部文章</a>
         </div>

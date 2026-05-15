@@ -20,7 +20,16 @@
   <url><loc>https://www.dg-sdk.com/guides/what-is-an-ionizing-bar</loc><lastmod>2026-05-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- ===== BLOG (EN) ===== -->
-  <url><loc>https://www.dg-sdk.com/blog</loc><lastmod>2026-05-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.dg-sdk.com/blog</loc><lastmod>2026-05-15</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url>
+    <loc>https://www.dg-sdk.com/blog/polarizer-cleaner-selection-guide</loc>
+    <lastmod>2026-05-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/polarizer-cleaner.jpg</image:loc>
+      <image:title>Polarizer Cleaning Machine Buyer's Guide — Technical Selection Criteria</image:title>
+      <image:caption>Technical selection guide for polarizer cleaning machines covering OLED compatibility, high-warp handling, and AOI inline integration</image:caption>
+    </image:image>
+  </url>
   <url>
     <loc>https://www.dg-sdk.com/blog/optical-film-cleaner-tutorial</loc>
     <lastmod>2026-05-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
@@ -381,7 +390,16 @@
   <url><loc>https://www.dg-sdk.com/zh/guides/what-is-an-ionizing-bar</loc><lastmod>2026-05-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- BLOG (ZH) -->
-  <url><loc>https://www.dg-sdk.com/zh/blog</loc><lastmod>2026-05-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.dg-sdk.com/zh/blog</loc><lastmod>2026-05-15</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url>
+    <loc>https://www.dg-sdk.com/zh/blog/polarizer-cleaner-selection-guide</loc>
+    <lastmod>2026-05-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/polarizer-cleaner.jpg</image:loc>
+      <image:title>偏光片清洁机选型指南：技术要点与产线适配 | 史帝克DGSDK</image:title>
+      <image:caption>偏光片清洁机选型技术指南，涵盖OLED兼容、高翘曲处理和AOI在线集成等场景</image:caption>
+    </image:image>
+  </url>
   <url>
     <loc>https://www.dg-sdk.com/zh/blog/optical-film-cleaner-tutorial</loc>
     <lastmod>2026-05-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>

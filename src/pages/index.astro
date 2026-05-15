@@ -225,34 +225,93 @@ import Layout from '../layouts/Layout.astro';
           <h2 class="section-heading text-uppercase">Technical Blog</h2>
           <h3 class="section-subheading text-muted">Operation guides and industry insights for industrial cleaning and automation equipment.</h3>
         </div>
-        <div class="blog-index-grid" style="max-width:900px;margin:0 auto;" data-aos="fade-up" data-aos-delay="100">
-          <a href="/blog/optical-film-cleaner-tutorial" class="blog-index-card">
-            <div class="blog-index-img"><picture><source srcset="/assets/img/cleaning-machine/optical.webp" type="image/webp" /><img src="/assets/img/cleaning-machine/optical.jpg" alt="Optical film cleaning machine tutorial" loading="lazy" /></picture></div>
-            <div class="blog-index-content">
-              <div class="blog-index-tags"><span class="blog-tag">Cleaning Machine</span><span class="blog-tag">Tutorial</span></div>
-              <h2>Optical Film Cleaning Machine: 9-Step Operating Guide for Zero-Defect Results</h2>
-              <p>Learn how to operate an optical film cleaning machine step by step — roller pressure, speed settings, static elimination, troubleshooting, and how to achieve defect-free lamination.</p>
-              <div class="blog-index-meta">
-                <span><i class="fas fa-calendar-alt"></i> May 14, 2026</span>
-                <span><i class="fas fa-clock"></i> 12 min read</span>
+
+        <style>
+          .blog-carousel-outer{position:relative;max-width:960px;margin:0 auto;}
+          .blog-carousel-track{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:4px;scrollbar-width:none;-ms-overflow-style:none;}
+          .blog-carousel-track::-webkit-scrollbar{display:none;}
+          .blog-carousel-track .blog-index-card{flex:0 0 calc(50% - 12px);scroll-snap-align:start;min-width:280px;}
+          .blog-carousel-btn{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:none;background:#111827;color:#fff;font-size:20px;line-height:1;cursor:pointer;z-index:3;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.18);transition:background .2s;}
+          .blog-carousel-btn:hover{background:#f5c400;color:#111;}
+          .blog-carousel-btn.prev{left:-20px;}
+          .blog-carousel-btn.next{right:-20px;}
+          .blog-carousel-dots{display:flex;justify-content:center;gap:8px;margin-top:18px;}
+          .blog-carousel-dots span{width:8px;height:8px;border-radius:50%;background:#ccc;cursor:pointer;transition:background .2s;}
+          .blog-carousel-dots span.active{background:#111827;}
+          @media(max-width:640px){
+            .blog-carousel-track .blog-index-card{flex:0 0 88%;}
+            .blog-carousel-btn.prev{left:-10px;}
+            .blog-carousel-btn.next{right:-10px;}
+          }
+        </style>
+
+        <div class="blog-carousel-outer" data-aos="fade-up" data-aos-delay="100">
+          <button class="blog-carousel-btn prev" id="blogPrevEN" aria-label="Previous article">&#8249;</button>
+          <div class="blog-carousel-track" id="blogTrackEN">
+            <a href="/blog/polarizer-cleaner-selection-guide" class="blog-index-card">
+              <div class="blog-index-img"><picture><source srcset="/assets/img/cleaning-machine/polarizer-cleaner.webp" type="image/webp" /><img src="/assets/img/cleaning-machine/polarizer-cleaner.jpg" alt="Polarizer cleaning machine selection guide" loading="lazy" /></picture></div>
+              <div class="blog-index-content">
+                <div class="blog-index-tags"><span class="blog-tag">Cleaning Machine</span><span class="blog-tag">Selection Guide</span></div>
+                <h2>Polarizer Cleaning Machine Buyer's Guide: Technical Selection Criteria and Production Line Fit</h2>
+                <p>Not all polarizer cleaners are equal. Learn which parameters matter for OLED, high-warp, and AOI inline applications — and how to match equipment to your actual line pain points.</p>
+                <div class="blog-index-meta">
+                  <span><i class="fas fa-calendar-alt"></i> May 15, 2026</span>
+                  <span><i class="fas fa-clock"></i> 12 min read</span>
+                </div>
+                <span class="blog-read-more">Read Article <i class="fas fa-arrow-right"></i></span>
               </div>
-              <span class="blog-read-more">Read Article <i class="fas fa-arrow-right"></i></span>
-            </div>
-          </a>
-          <a href="/blog/polarizer-cleaner-tutorial" class="blog-index-card">
-            <div class="blog-index-img"><picture><source srcset="/assets/img/cleaning-machine/polarizer-cleaner.webp" type="image/webp" /><img src="/assets/img/cleaning-machine/polarizer-cleaner.jpg" alt="Polarizer cleaning machine tutorial" loading="lazy" /></picture></div>
-            <div class="blog-index-content">
-              <div class="blog-index-tags"><span class="blog-tag">Cleaning Machine</span><span class="blog-tag">Tutorial</span></div>
-              <h2>Polarizer Cleaning Machine: 8-Step Operating Guide for Zero-Defect Results</h2>
-              <p>Learn how to operate a polarizer cleaning machine step by step — parameter setup, consumable installation, troubleshooting, and how to achieve 99%+ cleaning yield.</p>
-              <div class="blog-index-meta">
-                <span><i class="fas fa-calendar-alt"></i> May 13, 2026</span>
-                <span><i class="fas fa-clock"></i> 10 min read</span>
+            </a>
+            <a href="/blog/optical-film-cleaner-tutorial" class="blog-index-card">
+              <div class="blog-index-img"><picture><source srcset="/assets/img/cleaning-machine/optical.webp" type="image/webp" /><img src="/assets/img/cleaning-machine/optical.jpg" alt="Optical film cleaning machine tutorial" loading="lazy" /></picture></div>
+              <div class="blog-index-content">
+                <div class="blog-index-tags"><span class="blog-tag">Cleaning Machine</span><span class="blog-tag">Tutorial</span></div>
+                <h2>Optical Film Cleaning Machine: 9-Step Operating Guide for Zero-Defect Results</h2>
+                <p>Learn how to operate an optical film cleaning machine step by step — roller pressure, speed settings, static elimination, troubleshooting, and how to achieve defect-free lamination.</p>
+                <div class="blog-index-meta">
+                  <span><i class="fas fa-calendar-alt"></i> May 14, 2026</span>
+                  <span><i class="fas fa-clock"></i> 12 min read</span>
+                </div>
+                <span class="blog-read-more">Read Article <i class="fas fa-arrow-right"></i></span>
               </div>
-              <span class="blog-read-more">Read Article <i class="fas fa-arrow-right"></i></span>
-            </div>
-          </a>
+            </a>
+            <a href="/blog/polarizer-cleaner-tutorial" class="blog-index-card">
+              <div class="blog-index-img"><picture><source srcset="/assets/img/cleaning-machine/polarizer-cleaner.webp" type="image/webp" /><img src="/assets/img/cleaning-machine/polarizer-cleaner.jpg" alt="Polarizer cleaning machine tutorial" loading="lazy" /></picture></div>
+              <div class="blog-index-content">
+                <div class="blog-index-tags"><span class="blog-tag">Cleaning Machine</span><span class="blog-tag">Tutorial</span></div>
+                <h2>Polarizer Cleaning Machine: 8-Step Operating Guide for Zero-Defect Results</h2>
+                <p>Learn how to operate a polarizer cleaning machine step by step — parameter setup, consumable installation, troubleshooting, and how to achieve 99%+ cleaning yield.</p>
+                <div class="blog-index-meta">
+                  <span><i class="fas fa-calendar-alt"></i> May 13, 2026</span>
+                  <span><i class="fas fa-clock"></i> 10 min read</span>
+                </div>
+                <span class="blog-read-more">Read Article <i class="fas fa-arrow-right"></i></span>
+              </div>
+            </a>
+          </div>
+          <button class="blog-carousel-btn next" id="blogNextEN" aria-label="Next article">&#8250;</button>
+          <div class="blog-carousel-dots" id="blogDotsEN">
+            <span class="active"></span><span></span><span></span>
+          </div>
         </div>
+
+        <script>
+          (function(){
+            const track = document.getElementById('blogTrackEN');
+            const dots = document.querySelectorAll('#blogDotsEN span');
+            function getCardWidth(){
+              const card = track.querySelector('.blog-index-card');
+              return card ? card.offsetWidth + 24 : 340;
+            }
+            document.getElementById('blogPrevEN').addEventListener('click',()=>track.scrollBy({left:-getCardWidth(),behavior:'smooth'}));
+            document.getElementById('blogNextEN').addEventListener('click',()=>track.scrollBy({left:getCardWidth(),behavior:'smooth'}));
+            track.addEventListener('scroll',()=>{
+              const idx = Math.round(track.scrollLeft / getCardWidth());
+              dots.forEach((d,i)=>d.classList.toggle('active',i===idx));
+            },{passive:true});
+            dots.forEach((d,i)=>d.addEventListener('click',()=>track.scrollTo({left:i*getCardWidth(),behavior:'smooth'})));
+          })();
+        </script>
+
         <div style="text-align:center;margin-top:32px;" data-aos="fade-up" data-aos-delay="150">
           <a href="/blog" style="display:inline-block;padding:12px 28px;border-radius:10px;background:#111827;color:#fff;font-weight:700;text-decoration:none;font-size:15px;">View All Articles</a>
         </div>
