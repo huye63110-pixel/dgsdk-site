@@ -20,7 +20,16 @@
   <url><loc>https://www.dg-sdk.com/guides/what-is-an-ionizing-bar</loc><lastmod>2026-05-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- ===== BLOG (EN) ===== -->
-  <url><loc>https://www.dg-sdk.com/blog</loc><lastmod>2026-05-17</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.dg-sdk.com/blog</loc><lastmod>2026-05-18</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url>
+    <loc>https://www.dg-sdk.com/blog/lithium-battery-ionizing-bar-guide</loc>
+    <lastmod>2026-05-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-f.jpg</image:loc>
+      <image:title>Ionizing Bar Selection Guide for Lithium Battery Production</image:title>
+      <image:caption>FAQ covering ionizing bar selection, installation, and fault troubleshooting for LiB slitting, winding, and electrolyte injection stations</image:caption>
+    </image:image>
+  </url>
   <url>
     <loc>https://www.dg-sdk.com/blog/photovoltaic-ionizing-bar-guide</loc>
     <lastmod>2026-05-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
@@ -408,7 +417,16 @@
   <url><loc>https://www.dg-sdk.com/zh/guides/what-is-an-ionizing-bar</loc><lastmod>2026-05-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- BLOG (ZH) -->
-  <url><loc>https://www.dg-sdk.com/zh/blog</loc><lastmod>2026-05-17</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.dg-sdk.com/zh/blog</loc><lastmod>2026-05-18</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url>
+    <loc>https://www.dg-sdk.com/zh/blog/lithium-battery-ionizing-bar-guide</loc>
+    <lastmod>2026-05-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-f.jpg</image:loc>
+      <image:title>锂电池生产静电消除棒选型与应用FAQ</image:title>
+      <image:caption>涵盖极片分切、卷绕、注液环节的静电消除棒选型策略、安装优化与故障排查全攻略</image:caption>
+    </image:image>
+  </url>
   <url>
     <loc>https://www.dg-sdk.com/zh/blog/photovoltaic-ionizing-bar-guide</loc>
     <lastmod>2026-05-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
