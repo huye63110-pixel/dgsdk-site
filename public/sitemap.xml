@@ -20,7 +20,16 @@
   <url><loc>https://www.dg-sdk.com/guides/what-is-an-ionizing-bar</loc><lastmod>2026-05-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- ===== BLOG (EN) ===== -->
-  <url><loc>https://www.dg-sdk.com/blog</loc><lastmod>2026-05-16</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.dg-sdk.com/blog</loc><lastmod>2026-05-17</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url>
+    <loc>https://www.dg-sdk.com/blog/photovoltaic-ionizing-bar-guide</loc>
+    <lastmod>2026-05-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-g-series.jpg</image:loc>
+      <image:title>Smart Ionizing Bar for Photovoltaic Manufacturing — Selection & Optimization Guide</image:title>
+      <image:caption>Complete Q&amp;A guide for smart ionizing bars in PV module production — PERC/TOPCon compatibility, PLC integration, and yield optimization</image:caption>
+    </image:image>
+  </url>
   <url>
     <loc>https://www.dg-sdk.com/blog/semiconductor-cleaner-selection-guide</loc>
     <lastmod>2026-05-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
@@ -399,7 +408,16 @@
   <url><loc>https://www.dg-sdk.com/zh/guides/what-is-an-ionizing-bar</loc><lastmod>2026-05-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- BLOG (ZH) -->
-  <url><loc>https://www.dg-sdk.com/zh/blog</loc><lastmod>2026-05-16</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.dg-sdk.com/zh/blog</loc><lastmod>2026-05-17</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url>
+    <loc>https://www.dg-sdk.com/zh/blog/photovoltaic-ionizing-bar-guide</loc>
+    <lastmod>2026-05-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-g-series.jpg</image:loc>
+      <image:title>光伏组件智能静电棒全攻略 | 史帝克DGSDK</image:title>
+      <image:caption>光伏组件智能静电棒选型与优化指南，涵盖PERC/TOPCon兼容性、PLC集成与良率提升</image:caption>
+    </image:image>
+  </url>
   <url>
     <loc>https://www.dg-sdk.com/zh/blog/semiconductor-cleaner-selection-guide</loc>
     <lastmod>2026-05-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
