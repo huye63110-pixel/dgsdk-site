@@ -20,7 +20,16 @@
   <url><loc>https://www.dg-sdk.com/guides/what-is-an-ionizing-bar</loc><lastmod>2026-05-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- ===== BLOG (EN) ===== -->
-  <url><loc>https://www.dg-sdk.com/blog</loc><lastmod>2026-05-18</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.dg-sdk.com/blog</loc><lastmod>2026-05-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url>
+    <loc>https://www.dg-sdk.com/blog/rubber-molding-ionizing-bar-guide</loc>
+    <lastmod>2026-05-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-e.jpg</image:loc>
+      <image:title>Rubber Molding Static Elimination — 5-Dimension Ionizing Bar Selection Guide</image:title>
+      <image:caption>Five-dimension framework for selecting ionizing bars in rubber vulcanization, extrusion, and compression molding — scene fit, discharge effectiveness, process compatibility, reliability, and cleaning integration</image:caption>
+    </image:image>
+  </url>
   <url>
     <loc>https://www.dg-sdk.com/blog/lithium-battery-ionizing-bar-guide</loc>
     <lastmod>2026-05-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
@@ -417,7 +426,16 @@
   <url><loc>https://www.dg-sdk.com/zh/guides/what-is-an-ionizing-bar</loc><lastmod>2026-05-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- BLOG (ZH) -->
-  <url><loc>https://www.dg-sdk.com/zh/blog</loc><lastmod>2026-05-18</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.dg-sdk.com/zh/blog</loc><lastmod>2026-05-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url>
+    <loc>https://www.dg-sdk.com/zh/blog/rubber-molding-ionizing-bar-guide</loc>
+    <lastmod>2026-05-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-e.jpg</image:loc>
+      <image:title>橡胶成型静电消除棒选型指南：五维度深度解析与效能提升策略</image:title>
+      <image:caption>从场景适配、消电效能、工艺兼容性、稳定可靠性、清洁一体化五大维度，系统解析橡胶成型静电消除棒选型策略</image:caption>
+    </image:image>
+  </url>
   <url>
     <loc>https://www.dg-sdk.com/zh/blog/lithium-battery-ionizing-bar-guide</loc>
     <lastmod>2026-05-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
