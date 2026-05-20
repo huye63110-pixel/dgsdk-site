@@ -20,7 +20,16 @@
   <url><loc>https://www.dg-sdk.com/guides/what-is-an-ionizing-bar</loc><lastmod>2026-05-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- ===== BLOG (EN) ===== -->
-  <url><loc>https://www.dg-sdk.com/blog</loc><lastmod>2026-05-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.dg-sdk.com/blog</loc><lastmod>2026-05-20</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url>
+    <loc>https://www.dg-sdk.com/blog/fpc-roller-cleaner-guide</loc>
+    <lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/roll-chip-cleaner.jpg</image:loc>
+      <image:title>FPC Roller Adhesive Cleaner Selection Guide: Key Criteria for Manufacturing Decision Makers</image:title>
+      <image:caption>Technical framework for selecting roller adhesive cleaning machines for FPC manufacturing — cleaning precision, static elimination, substrate handling, process-stage fit for pre-plating and coverlay lamination</image:caption>
+    </image:image>
+  </url>
   <url>
     <loc>https://www.dg-sdk.com/blog/rubber-molding-ionizing-bar-guide</loc>
     <lastmod>2026-05-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
@@ -426,7 +435,16 @@
   <url><loc>https://www.dg-sdk.com/zh/guides/what-is-an-ionizing-bar</loc><lastmod>2026-05-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- BLOG (ZH) -->
-  <url><loc>https://www.dg-sdk.com/zh/blog</loc><lastmod>2026-05-19</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.dg-sdk.com/zh/blog</loc><lastmod>2026-05-20</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url>
+    <loc>https://www.dg-sdk.com/zh/blog/fpc-roller-cleaner-guide</loc>
+    <lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/roll-chip-cleaner.jpg</image:loc>
+      <image:title>FPC柔性板滚筒粘尘机选型指南：制造决策者的关键维度解析</image:title>
+      <image:caption>从清洁精度、静电消除、基材传输、工艺阶段适配与总拥有成本五大维度，系统解析FPC滚筒粘尘机选型策略</image:caption>
+    </image:image>
+  </url>
   <url>
     <loc>https://www.dg-sdk.com/zh/blog/rubber-molding-ionizing-bar-guide</loc>
     <lastmod>2026-05-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
