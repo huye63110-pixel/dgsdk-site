@@ -22,6 +22,15 @@
   <!-- ===== BLOG (EN) ===== -->
   <url><loc>https://www.dg-sdk.com/blog</loc><lastmod>2026-05-20</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url>
+    <loc>https://www.dg-sdk.com/blog/polarizer-cleaner-manufacturer-guide</loc>
+    <lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/polarizer-cleaner2.jpg</image:loc>
+      <image:title>Flat Panel Display Polarizer Cleaner: Manufacturer Differentiation Guide — High-Warp, OLED &amp; AOI Inline Q&amp;A</image:title>
+      <image:caption>Technical Q&amp;A for polarizer manufacturers on high-warp jamming, OLED damage prevention, AOI false-reject reduction, and full-process static elimination</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.dg-sdk.com/blog/fpc-roller-cleaner-guide</loc>
     <lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
     <image:image>
@@ -436,6 +445,15 @@
 
   <!-- BLOG (ZH) -->
   <url><loc>https://www.dg-sdk.com/zh/blog</loc><lastmod>2026-05-20</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url>
+    <loc>https://www.dg-sdk.com/zh/blog/polarizer-cleaner-manufacturer-guide</loc>
+    <lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/polarizer-cleaner2.jpg</image:loc>
+      <image:title>平板显示偏光片清洁机：厂商竞争力提升全攻略——高翘曲、OLED与AOI连线核心疑问解答</image:title>
+      <image:caption>系统解答偏光片厂商高翘曲卡料消除、OLED无损清洁、AOI误判降低与全流程静电防控的核心技术疑问</image:caption>
+    </image:image>
+  </url>
   <url>
     <loc>https://www.dg-sdk.com/zh/blog/fpc-roller-cleaner-guide</loc>
     <lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
