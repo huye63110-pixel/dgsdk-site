@@ -253,15 +253,32 @@ const canonical = _segments.length > 1 ? _rawCanonical.replace(/\/$/, '') : _raw
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
     <script defer src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script is:inline>
-      document.addEventListener('DOMContentLoaded', function() {
-        if (typeof AOS !== 'undefined') {
-          AOS.init({ duration: 700, once: true, offset: 80 });
-        } else {
-          window.addEventListener('load', function() {
-            if (typeof AOS !== 'undefined') AOS.init({ duration: 700, once: true, offset: 80 });
+      (function() {
+        function showAllAosElements() {
+          document.querySelectorAll('[data-aos]').forEach(function(el) {
+            el.classList.add('aos-animate');
           });
         }
-      });
+        function initAOS() {
+          if (typeof AOS !== 'undefined') {
+            AOS.init({ duration: 700, once: true, offset: 80 });
+          } else {
+            showAllAosElements();
+          }
+        }
+        var aosTimer = setTimeout(showAllAosElements, 2000);
+        document.addEventListener('DOMContentLoaded', function() {
+          if (typeof AOS !== 'undefined') {
+            clearTimeout(aosTimer);
+            initAOS();
+          } else {
+            window.addEventListener('load', function() {
+              clearTimeout(aosTimer);
+              initAOS();
+            });
+          }
+        });
+      })();
     </script>
 
     <script is:inline>
