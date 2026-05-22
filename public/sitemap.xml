@@ -22,6 +22,15 @@
   <!-- ===== BLOG (EN) ===== -->
   <url><loc>https://www.dg-sdk.com/blog</loc><lastmod>2026-05-20</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url>
+    <loc>https://www.dg-sdk.com/blog/ccl-multilayer-roller-cleaner-guide</loc>
+    <lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/ccl-cleaner.jpg</image:loc>
+      <image:title>CCL Multi-Layer Board Roller Cleaner: Selection Guide &amp; Efficiency Optimization</image:title>
+      <image:caption>Technical Q&amp;A covering core value, selection criteria, efficiency strategies, and fault diagnosis for CCL and PCB manufacturers choosing roller adhesive cleaning machines</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.dg-sdk.com/blog/polarizer-cleaner-manufacturer-guide</loc>
     <lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
     <image:image>
@@ -445,6 +454,15 @@
 
   <!-- BLOG (ZH) -->
   <url><loc>https://www.dg-sdk.com/zh/blog</loc><lastmod>2026-05-20</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url>
+    <loc>https://www.dg-sdk.com/zh/blog/ccl-multilayer-roller-cleaner-guide</loc>
+    <lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/ccl-cleaner.jpg</image:loc>
+      <image:title>覆铜板多层板粘轮机：选型策略与效率提升全攻略——企业高频疑问专业解答</image:title>
+      <image:caption>系统解析CCL多层板粘轮机核心价值、选型维度、效率优化策略与常见故障诊断方法，助力企业降本增效</image:caption>
+    </image:image>
+  </url>
   <url>
     <loc>https://www.dg-sdk.com/zh/blog/polarizer-cleaner-manufacturer-guide</loc>
     <lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
