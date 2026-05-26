@@ -50,8 +50,8 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
        <div class="about-image-stack" data-aos="fade-left" data-aos-duration="700">
-  <picture><source srcset="/assets/img/about/about-lobby.webp" type="image/webp" /><img src="/assets/img/about/about-lobby.jpg" alt="DGSDK company lobby" class="about-main-image" loading="lazy" /></picture>
-  <picture><source srcset="/assets/img/about/about-workshop-1.webp" type="image/webp" /><img src="/assets/img/about/about-workshop-1.jpg" alt="DGSDK factory floor with cleaning machines" class="about-float-image" loading="lazy" /></picture>
+  <picture><source srcset="/assets/img/about/about-lobby.webp" type="image/webp" /><img src="/assets/img/about/about-lobby.jpg" alt="DGSDK company lobby" class="about-main-image" width="1400" height="840" loading="eager" decoding="async" fetchpriority="high" /></picture>
+  <picture><source srcset="/assets/img/about/about-workshop-1.webp" type="image/webp" /><img src="/assets/img/about/about-workshop-1.jpg" alt="DGSDK factory floor with cleaning machines" class="about-float-image" width="1400" height="840" loading="lazy" decoding="async" /></picture>
 </div>
         </div>
       </div>
@@ -155,16 +155,16 @@ import Layout from '../layouts/Layout.astro';
 
       <div class="about-gallery-grid">
         <div class="about-gallery-item" data-aos="zoom-in" data-aos-delay="0" data-aos-duration="600">
-          <picture><source srcset="/assets/img/about/about-workshop-1.webp" type="image/webp" /><img src="/assets/img/about/about-workshop-1.jpg" alt="DGSDK cleaning machine showroom — finished products" loading="lazy" /></picture>
+          <picture><source srcset="/assets/img/about/about-workshop-1.webp" type="image/webp" /><img src="/assets/img/about/about-workshop-1.jpg" alt="DGSDK cleaning machine showroom — finished products" width="1400" height="840" loading="lazy" decoding="async" /></picture>
         </div>
         <div class="about-gallery-item" data-aos="zoom-in" data-aos-delay="80" data-aos-duration="600">
-          <picture><source srcset="/assets/img/about/about-workshop-2.webp" type="image/webp" /><img src="/assets/img/about/about-workshop-2.jpg" alt="DGSDK factory assembly line" loading="lazy" /></picture>
+          <picture><source srcset="/assets/img/about/about-workshop-2.webp" type="image/webp" /><img src="/assets/img/about/about-workshop-2.jpg" alt="DGSDK factory assembly line" width="1400" height="840" loading="lazy" decoding="async" /></picture>
         </div>
         <div class="about-gallery-item" data-aos="zoom-in" data-aos-delay="160" data-aos-duration="600">
-          <picture><source srcset="/assets/img/about/about-workshop-3.webp" type="image/webp" /><img src="/assets/img/about/about-workshop-3.jpg" alt="DGSDK technicians assembling cleaning machines" loading="lazy" /></picture>
+          <picture><source srcset="/assets/img/about/about-workshop-3.webp" type="image/webp" /><img src="/assets/img/about/about-workshop-3.jpg" alt="DGSDK technicians assembling cleaning machines" width="1400" height="840" loading="lazy" decoding="async" /></picture>
         </div>
         <div class="about-gallery-item" data-aos="zoom-in" data-aos-delay="240" data-aos-duration="600">
-          <picture><source srcset="/assets/img/about/about-training.webp" type="image/webp" /><img src="/assets/img/about/about-training.jpg" alt="DGSDK training and meeting room" loading="lazy" /></picture>
+          <picture><source srcset="/assets/img/about/about-training.webp" type="image/webp" /><img src="/assets/img/about/about-training.jpg" alt="DGSDK training and meeting room" width="1400" height="840" loading="lazy" decoding="async" /></picture>
         </div>
       </div>
     </div>
@@ -205,11 +205,26 @@ import Layout from '../layouts/Layout.astro';
       box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
     }
 
+    .about-image-stack picture,
+    .about-gallery-item picture {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .about-main-image,
+    .about-float-image,
     .about-gallery-item img {
       width: 100%;
-      height: 320px;
       object-fit: cover;
       display: block;
+      image-rendering: auto;
+      transform: translateZ(0);
+      backface-visibility: hidden;
+    }
+
+    .about-gallery-item img {
+      height: 320px;
       border-radius: 18px;
     }
 
@@ -220,9 +235,19 @@ import Layout from '../layouts/Layout.astro';
     }
 
     @media (max-width: 768px) {
+      .about-hero {
+        background-attachment: scroll !important;
+        background-position: center top !important;
+      }
+
       .about-values-grid,
       .about-gallery-grid {
         grid-template-columns: 1fr;
+      }
+
+      .about-main-image {
+        height: 300px;
+        object-position: center center;
       }
 
       .about-value-icon {
@@ -231,7 +256,7 @@ import Layout from '../layouts/Layout.astro';
       }
 
       .about-gallery-item img {
-        height: 240px;
+        height: 280px;
       }
     }
   </style>
