@@ -150,15 +150,32 @@ const path = new URL(canonical).pathname;
           color: #fff !important;
         }
 
+        body:has(.products-overview-section) main {
+          padding-top: 82px !important;
+        }
+
         .products-hero {
           height: auto !important;
           min-height: 320px !important;
           padding: 88px 0 46px !important;
+          background-attachment: scroll !important;
+          background-position: center 40% !important;
+          background-size: cover !important;
+        }
+
+        .products-hero::before {
+          background: linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.52) 0%,
+            rgba(0, 0, 0, 0.3) 50%,
+            rgba(0, 0, 0, 0.12) 100%
+          ) !important;
         }
 
         .products-hero-inner {
           padding-left: 18px !important;
           padding-right: 18px !important;
+          text-align: left !important;
         }
 
         .products-hero h1 {
@@ -172,6 +189,8 @@ const path = new URL(canonical).pathname;
           max-width: 30em;
           font-size: 0.93rem !important;
           line-height: 1.65 !important;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
         }
 
         .apple-product-section {
