@@ -1,8 +1,6 @@
 {
   "redirects": [
     { "source": "/contact/", "destination": "/contact", "permanent": true },
-    { "source": "/zh/contact/", "destination": "/zh/contact", "permanent": true },
-    { "source": "/applications/electronics", "destination": "/applications", "permanent": true },
-    { "source": "/applications/smt", "destination": "/applications", "permanent": true }
+    { "source": "/zh/contact/", "destination": "/zh/contact", "permanent": true }
   ]
 }
