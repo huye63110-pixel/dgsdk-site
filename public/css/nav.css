@@ -427,6 +427,15 @@ body:has(.inner-hero) > main {
   padding-top: 100px !important;
   padding-bottom: 60px !important;
 }
+
+/* Exception: product-detail pages keep a compact banner so the SKU
+   name, breadcrumb, and specs are visible without an extra scroll.
+   Image still bleeds to the top behind the pill — just shorter. */
+.inner-hero {
+  min-height: 56vh !important;
+  padding-top: 110px !important;
+  padding-bottom: 48px !important;
+}
 .inner-hero .inner-hero-overlay {
   background: linear-gradient(
     rgba(0, 0, 0, 0.30),
@@ -443,11 +452,15 @@ body:has(.inner-hero) > main {
   .products-hero,
   .applications-hero,
   .about-hero,
-  .inner-hero,
   .category-hero,
   .contact-hero,
   .faq-hero {
     min-height: 92vh !important;
     padding-top: 90px !important;
+  }
+  /* Product detail stays compact on mobile too */
+  .inner-hero {
+    min-height: 48vh !important;
+    padding-top: 96px !important;
   }
 }
