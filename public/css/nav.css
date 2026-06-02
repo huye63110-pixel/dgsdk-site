@@ -1,0 +1,430 @@
+/* ============================================================
+   DGSDK — Relats-style capsule ("pill") navigation
+   ------------------------------------------------------------
+   Restyles the legacy Bootstrap "Agency" #mainNav into a
+   floating, semi-transparent warm-white pill that sits over
+   the page. Loaded AFTER /css/styles.css so it wins the
+   cascade. Scoped to #mainNav.pill-nav for high specificity;
+   !important is used only where the legacy minified rules
+   force a value.
+   Shared by EN (Layout.astro) and ZH (ZhLayout.astro).
+   ============================================================ */
+
+:root {
+  --pill-bg:           rgba(247, 244, 238, 0.82); /* warm off-white, translucent */
+  --pill-bg-compact:   rgba(247, 244, 238, 0.93);
+  --pill-ink:          #16130d;                   /* near-black warm ink         */
+  --pill-ink-soft:     #5c564c;
+  --pill-hover:        rgba(255, 255, 255, 0.85); /* hover pill background       */
+  --pill-line:         rgba(20, 17, 12, 0.08);
+  --pill-cta:          #16130d;                   /* black CTA (brand-yellow alt) */
+  --pill-cta-hover:    #000;
+  --pill-cta-ink:      #ffffff;
+  --pill-radius:       999px;
+  --pill-shadow:       0 12px 40px rgba(0, 0, 0, 0.12);
+  --pill-shadow-soft:  0 8px 26px rgba(0, 0, 0, 0.10);
+  --pill-menu-bg:      rgba(255, 255, 255, 0.98);
+}
+
+/* ---------- Shell ---------- */
+#mainNav.pill-nav {
+  top: 18px;
+  left: 22px;
+  right: 22px;
+  width: auto;
+  margin: 0;
+  padding: 12px 14px;                 /* spec: 12px 14px */
+  border-radius: var(--pill-radius);
+  background: var(--pill-bg) !important;
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--pill-shadow);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  transition: top .32s ease, padding .32s ease, background .32s ease,
+              box-shadow .32s ease, transform .32s ease;
+}
+
+/* Compact state — toggled as .navbar-shrink by scripts.js after 80px scroll */
+#mainNav.pill-nav.navbar-shrink {
+  top: 12px;
+  padding: 8px 12px !important;        /* spec: 8px 12px */
+  background: var(--pill-bg-compact) !important;
+  box-shadow: var(--pill-shadow-soft);
+}
+
+#mainNav.pill-nav .container {
+  max-width: none;
+  width: 100%;
+  padding-left: 6px;
+  padding-right: 6px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ---------- Brand ---------- */
+#mainNav.pill-nav .navbar-brand {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0 6px;
+  display: flex;
+  align-items: center;
+}
+#mainNav.pill-nav .navbar-brand img {
+  display: block;
+  width: 142px !important;
+  height: auto !important;
+  max-height: none !important;
+  filter: none !important;             /* drop the legacy dark-hero brighten */
+  transition: width .32s ease;
+}
+#mainNav.pill-nav.navbar-shrink .navbar-brand img { width: 124px !important; }
+
+/* ---------- Center + utility groups ---------- */
+#mainNav.pill-nav .navbar-nav {
+  flex-direction: row;
+  align-items: center;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- Nav links ---------- */
+#mainNav.pill-nav .navbar-nav .nav-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--pill-ink) !important;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 12px !important;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  text-shadow: none !important;
+  white-space: nowrap;
+  padding: 9px 13px !important;
+  border-radius: 999px;
+  transition: background .2s ease, color .2s ease;
+}
+#mainNav.pill-nav .navbar-nav .nav-link:hover,
+#mainNav.pill-nav .navbar-nav .nav-link:focus,
+#mainNav.pill-nav .navbar-nav .nav-link.active,
+#mainNav.pill-nav .navbar-nav .nav-item.show > .nav-link {
+  color: var(--pill-ink) !important;
+  background: var(--pill-hover);
+}
+
+/* Focus: clean for mouse, visible ring for keyboard (a11y) */
+#mainNav.pill-nav .nav-link:focus,
+#mainNav.pill-nav .lang-btn:focus,
+#mainNav.pill-nav .nav-icon-btn:focus,
+#mainNav.pill-nav .nav-cta:focus,
+#mainNav.pill-nav .navbar-toggler:focus {
+  outline: none;
+  box-shadow: none !important;
+}
+#mainNav.pill-nav .nav-link:focus-visible,
+#mainNav.pill-nav .lang-btn:focus-visible,
+#mainNav.pill-nav .nav-icon-btn:focus-visible,
+#mainNav.pill-nav .nav-cta:focus-visible,
+#mainNav.pill-nav .navbar-toggler:focus-visible {
+  outline: 2px solid var(--pill-ink);
+  outline-offset: 2px;
+}
+
+/* Dropdown caret */
+#mainNav.pill-nav .dropdown-toggle::after {
+  margin-left: .35em;
+  border-top-color: currentColor;
+  opacity: .55;
+}
+
+/* ---------- Dropdown menus (Products / Guides) ---------- */
+#mainNav.pill-nav .dropdown-menu {
+  margin-top: 12px !important;
+  padding: 8px !important;
+  background: var(--pill-menu-bg) !important;
+  border: 1px solid var(--pill-line) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.16) !important;
+}
+#mainNav.pill-nav .dropdown-item {
+  color: #2a2620 !important;
+  padding: 9px 14px !important;
+  border-radius: 10px !important;
+  font-size: 13px !important;
+  font-weight: 600;
+  white-space: nowrap;
+}
+#mainNav.pill-nav .dropdown-item:hover,
+#mainNav.pill-nav .dropdown-item:focus {
+  background: #f2ede3 !important;
+  color: var(--pill-ink) !important;
+}
+
+/* ---------- Language + search (utility cluster) ---------- */
+#mainNav.pill-nav .nav-utilities { gap: 0; }
+#mainNav.pill-nav .lang-btn,
+#mainNav.pill-nav .nav-icon-btn {
+  color: var(--pill-ink) !important;
+  text-shadow: none !important;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 9px 11px !important;
+  border-radius: 999px;
+  line-height: 1;
+  transition: background .2s ease;
+}
+#mainNav.pill-nav .lang-btn:hover,
+#mainNav.pill-nav .nav-icon-btn:hover { background: var(--pill-hover); }
+#mainNav.pill-nav .lang-btn i { font-size: 9px; opacity: .6; }
+#mainNav.pill-nav .nav-icon-btn { font-size: 13px; }
+
+/* Light dropdowns for lang menu + search box */
+#mainNav.pill-nav .lang-menu,
+#mainNav.pill-nav .search-box {
+  background: var(--pill-menu-bg) !important;
+  border: 1px solid var(--pill-line);
+  border-radius: 14px !important;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.16) !important;
+  top: calc(100% + 12px) !important;
+}
+#mainNav.pill-nav .lang-menu li a { color: #2a2620 !important; border-radius: 8px; }
+#mainNav.pill-nav .lang-menu li a:hover { background: #f2ede3 !important; color: var(--pill-ink) !important; }
+#mainNav.pill-nav .search-box input {
+  background: #f5f1e8;
+  color: #16130d;
+}
+#mainNav.pill-nav .search-results { border-top-color: var(--pill-line); }
+#mainNav.pill-nav .sr-name { color: #2a2620; }
+#mainNav.pill-nav .sr-cat  { color: #9a7400; }
+
+/* ---------- Right actions (CTA + toggler) ---------- */
+#mainNav.pill-nav .nav-actions {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+#mainNav.pill-nav .nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 20px;
+  border-radius: 999px;
+  background: var(--pill-cta);
+  color: var(--pill-cta-ink) !important;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: transform .2s ease, background .2s ease, box-shadow .2s ease, padding .32s ease;
+}
+#mainNav.pill-nav .nav-cta:hover {
+  background: var(--pill-cta-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+}
+#mainNav.pill-nav.navbar-shrink .nav-cta { padding: 9px 16px; }
+
+/* ---------- Mobile toggler ---------- */
+#mainNav.pill-nav .navbar-toggler {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  padding: 0 !important;
+  border: 0;
+  border-radius: 12px !important;
+  background: transparent;
+  color: var(--pill-ink);
+  font-size: 17px;
+  box-shadow: none !important;
+  transition: background .2s ease;
+}
+#mainNav.pill-nav .navbar-toggler:hover { background: var(--pill-hover); }
+#mainNav.pill-nav .navbar-toggler:focus { box-shadow: none !important; outline: none; }
+
+/* ============================================================
+   Desktop (>= 992px) — horizontal pill, links centered
+   ============================================================ */
+@media (min-width: 992px) {
+  #mainNav.pill-nav .navbar-collapse {
+    display: grid !important;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    flex-basis: auto;
+  }
+  #mainNav.pill-nav .nav-center {
+    grid-column: 2;
+    justify-content: center;
+  }
+  #mainNav.pill-nav .nav-utilities {
+    grid-column: 3;
+    justify-self: end;
+  }
+  #mainNav.pill-nav .navbar-toggler { display: none !important; }
+}
+
+/* ============================================================
+   Mobile / tablet (< 992px) — logo + CTA + menu button,
+   links drop into a floating panel below the pill
+   ============================================================ */
+@media (max-width: 991.98px) {
+  #mainNav.pill-nav {
+    top: 14px;
+    left: 14px;
+    right: 14px;
+    padding: 8px 8px 8px 12px !important;
+  }
+  #mainNav.pill-nav.navbar-shrink { top: 10px; padding: 6px 6px 6px 12px !important; }
+  #mainNav.pill-nav .navbar-brand img { width: 122px !important; }
+  #mainNav.pill-nav.navbar-shrink .navbar-brand img { width: 112px !important; }
+  #mainNav.pill-nav .nav-cta { padding: 9px 14px; font-size: 11px; }
+
+  /* The collapsible panel */
+  #mainNav.pill-nav .navbar-collapse {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+    background: rgba(247, 244, 238, 0.97) !important;
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 22px !important;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18) !important;
+    padding: 10px !important;
+    margin-top: 0 !important;
+  }
+  #mainNav.pill-nav .nav-center,
+  #mainNav.pill-nav .nav-utilities {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 2px;
+    margin: 0;
+  }
+  #mainNav.pill-nav .nav-utilities {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--pill-line);
+  }
+  #mainNav.pill-nav .navbar-nav .nav-link {
+    padding: 12px 16px !important;
+    font-size: 13px !important;
+    border-radius: 12px;
+  }
+  /* Dropdowns render inline inside the panel */
+  #mainNav.pill-nav .dropdown-menu {
+    margin: 2px 0 4px !important;
+    padding: 2px 0 2px 10px !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+  #mainNav.pill-nav .dropdown-item { padding: 9px 14px !important; }
+  #mainNav.pill-nav .lang-dropdown,
+  #mainNav.pill-nav .nav-icon-item { margin: 0; }
+  #mainNav.pill-nav .lang-btn,
+  #mainNav.pill-nav .nav-icon-btn {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 12px 16px !important;
+    border-radius: 12px;
+  }
+  #mainNav.pill-nav .lang-menu,
+  #mainNav.pill-nav .search-box {
+    position: static !important;
+    margin: 4px 0 0 !important;
+    width: 100%;
+    min-width: 0 !important;
+    box-shadow: none !important;
+  }
+}
+
+/* ============================================================
+   FULL-BLEED HERO BANNERS
+   ------------------------------------------------------------
+   Let the top banner image rise to the very top of the
+   viewport, behind the floating pill (kills the white strip).
+   Pages WITHOUT a banner keep <main>'s top padding so their
+   content still clears the nav — targeted via :has().
+   ============================================================ */
+
+/* 1. Drop the layout "white strip" only on pages that have a banner */
+body:has(.parallax-hero-1) > main,
+body:has(.products-hero) > main,
+body:has(.applications-hero) > main,
+body:has(.about-hero) > main,
+body:has(.contact-hero) > main,
+body:has(.faq-hero) > main,
+body:has(.category-hero) > main,
+body:has(.inner-hero) > main {
+  padding-top: 0 !important;
+}
+
+/* 2. Tier 1 — big landing heroes: near-full-screen, content centred */
+.parallax-hero.parallax-hero-1 {
+  min-height: 90vh !important;
+}
+/* darker overlay so white hero text stays readable over the lighter
+   top of the image now visible behind the pill */
+.parallax-hero-1 .parallax-overlay {
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.22) 0%,
+    rgba(0, 0, 0, 0.44) 48%,
+    rgba(0, 0, 0, 0.56) 100%
+  ) !important;
+}
+
+.products-hero,
+.applications-hero,
+.about-hero {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 88vh !important;
+  padding-top: 116px !important;   /* clear the pill */
+  padding-bottom: 72px !important;
+}
+
+/* 3. Tier 2 — content banners: full-bleed but kept shorter so the
+   form / specs / list stay reachable */
+.inner-hero {
+  min-height: 62vh !important;
+  padding-top: 84px;
+}
+.inner-hero .inner-hero-overlay {
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.30),
+    rgba(0, 0, 0, 0.48)
+  ) !important;
+}
+.category-hero {
+  min-height: 56vh !important;
+  padding-top: 88px;
+}
+.contact-hero,
+.faq-hero {
+  padding-top: 124px !important;
+}
+
+/* 4. Mobile — a touch shorter so it isn't an endless scroll */
+@media (max-width: 991.98px) {
+  .parallax-hero.parallax-hero-1 { min-height: 82vh !important; }
+  .products-hero,
+  .applications-hero,
+  .about-hero {
+    min-height: 80vh !important;
+    padding-top: 100px !important;
+  }
+  .inner-hero { min-height: 50vh !important; }
+  .category-hero { min-height: 48vh !important; }
+}
