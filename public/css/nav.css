@@ -370,36 +370,62 @@ body:has(.inner-hero) > main {
   padding-top: 0 !important;
 }
 
-/* 2. Tier 1 — big landing heroes: near-full-screen, content centred */
-.parallax-hero.parallax-hero-1 {
-  min-height: 90vh !important;
+/* 2. Tier 1 — big landing heroes: TRUE full-screen, content centred */
+.parallax-hero.parallax-hero-1,
+.parallax-hero.parallax-hero-2,
+.parallax-hero.parallax-hero-3 {
+  min-height: 100vh !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
-/* darker overlay so white hero text stays readable over the lighter
-   top of the image now visible behind the pill */
+/* Lighter overlay — keep enough darkness around the heading without
+   muddying the gear image now visible at the top */
 .parallax-hero-1 .parallax-overlay {
   background: linear-gradient(
-    rgba(0, 0, 0, 0.22) 0%,
-    rgba(0, 0, 0, 0.44) 48%,
-    rgba(0, 0, 0, 0.56) 100%
+    rgba(0, 0, 0, 0.10) 0%,
+    rgba(0, 0, 0, 0.24) 55%,
+    rgba(0, 0, 0, 0.40) 100%
   ) !important;
 }
+
+/* Borrow the *vibe* of .parallax-banner-text — weight 900, tighter
+   tracking — without forcing the long product title to match its
+   short-word scale (which forced ugly wraps). Size stays close to
+   the original ceiling so it fits one line on desktop. */
+.parallax-hero-1 .parallax-heading {
+  font-size: clamp(1.7rem, 3.8vw, 3rem) !important;
+  font-weight: 900 !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* parallax-hero-2 and parallax-hero-3 share the rule above. */
 
 .products-hero,
 .applications-hero,
 .about-hero {
   display: flex !important;
   flex-direction: column;
-  justify-content: center;
-  min-height: 88vh !important;
+  justify-content: center !important;
+  align-items: center !important;
+  min-height: 100vh !important;
   padding-top: 116px !important;   /* clear the pill */
   padding-bottom: 72px !important;
 }
 
-/* 3. Tier 2 — content banners: full-bleed but kept shorter so the
-   form / specs / list stay reachable */
-.inner-hero {
-  min-height: 62vh !important;
-  padding-top: 84px;
+/* 3. Tier 2 — content banners: also full-screen, centred. The form
+   / specs / list now live just below the fold — a deliberate scroll. */
+.inner-hero,
+.category-hero,
+.contact-hero,
+.faq-hero {
+  min-height: 100vh !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding-top: 100px !important;
+  padding-bottom: 60px !important;
 }
 .inner-hero .inner-hero-overlay {
   background: linear-gradient(
@@ -407,24 +433,21 @@ body:has(.inner-hero) > main {
     rgba(0, 0, 0, 0.48)
   ) !important;
 }
-.category-hero {
-  min-height: 56vh !important;
-  padding-top: 88px;
-}
-.contact-hero,
-.faq-hero {
-  padding-top: 124px !important;
-}
 
 /* 4. Mobile — a touch shorter so it isn't an endless scroll */
 @media (max-width: 991.98px) {
-  .parallax-hero.parallax-hero-1 { min-height: 82vh !important; }
+  /* Mobile keeps slightly under 100vh to avoid address-bar jumps */
+  .parallax-hero.parallax-hero-1,
+  .parallax-hero.parallax-hero-2,
+  .parallax-hero.parallax-hero-3 { min-height: 92vh !important; }
   .products-hero,
   .applications-hero,
-  .about-hero {
-    min-height: 80vh !important;
-    padding-top: 100px !important;
+  .about-hero,
+  .inner-hero,
+  .category-hero,
+  .contact-hero,
+  .faq-hero {
+    min-height: 92vh !important;
+    padding-top: 90px !important;
   }
-  .inner-hero { min-height: 50vh !important; }
-  .category-hero { min-height: 48vh !important; }
 }
