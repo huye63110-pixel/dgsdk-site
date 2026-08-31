@@ -379,14 +379,51 @@ body:has(.inner-hero) > main {
   align-items: center !important;
   justify-content: center !important;
 }
-/* Lighter overlay — keep enough darkness around the heading without
-   muddying the gear image now visible at the top */
-.parallax-hero-1 .parallax-overlay {
+/* ============================================================
+   HOMEPAGE HERO — light studio render (ST-G ionizing bar)
+   The banner is a light-grey product shot with the bar on the
+   RIGHT, so the copy sits LEFT in dark ink. A dark scrim would
+   grey out the white background, so the overlay is a WHITE
+   left-to-right wash that only protects the text column.
+   ============================================================ */
+.parallax-hero.parallax-hero-1.hero-light {
+  background-image: url('/assets/img/static-eliminator/hero-ionizing-bar.webp') !important;
+  background-position: right center !important;
+  background-size: cover !important;
+  background-attachment: scroll !important;
+  background-color: #eef1f5 !important;
+}
+.parallax-hero-1.hero-light .parallax-overlay {
   background: linear-gradient(
-    rgba(0, 0, 0, 0.10) 0%,
-    rgba(0, 0, 0, 0.24) 55%,
-    rgba(0, 0, 0, 0.40) 100%
+    90deg,
+    rgba(243, 246, 249, 0.95) 0%,
+    rgba(243, 246, 249, 0.82) 32%,
+    rgba(243, 246, 249, 0.34) 54%,
+    rgba(243, 246, 249, 0) 72%
   ) !important;
+}
+.parallax-hero-1.hero-light .parallax-content {
+  text-align: left !important;
+  width: 100% !important;
+  color: #0b2239 !important;
+}
+.parallax-hero-1.hero-light .parallax-sub {
+  color: #0069c0 !important;
+  font-weight: 700 !important;
+  text-shadow: none !important;
+}
+.parallax-hero-1.hero-light .parallax-heading {
+  color: #0b2239 !important;
+  text-shadow: none !important;
+  max-width: 15ch !important;
+}
+.parallax-hero-1.hero-light .parallax-desc {
+  color: #3a5169 !important;
+  max-width: 480px !important;
+  margin: 0 0 30px 0 !important;
+}
+.parallax-hero-1.hero-light .parallax-btn {
+  box-shadow: 0 6px 18px rgba(11, 34, 57, 0.14) !important;
 }
 
 /* Borrow the *vibe* of .parallax-banner-text — weight 900, tighter
@@ -449,6 +486,33 @@ body:has(.inner-hero) > main {
   .parallax-hero.parallax-hero-1,
   .parallax-hero.parallax-hero-2,
   .parallax-hero.parallax-hero-3 { min-height: 92vh !important; }
+
+  /* Light homepage hero: portrait screens can't hold the wide
+     studio frame, so use the tighter crop, anchor it to the
+     bottom, and let the copy sit above it. */
+  .parallax-hero.parallax-hero-1.hero-light {
+    background-image: url('/assets/img/static-eliminator/hero-ionizing-bar-mobile.webp') !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    align-items: flex-start !important;
+  }
+  .parallax-hero-1.hero-light .parallax-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(243, 246, 249, 0.96) 0%,
+      rgba(243, 246, 249, 0.88) 40%,
+      rgba(243, 246, 249, 0.20) 68%,
+      rgba(243, 246, 249, 0) 100%
+    ) !important;
+  }
+  .parallax-hero-1.hero-light .parallax-content {
+    padding-top: 128px !important;
+  }
+  .parallax-hero-1.hero-light .parallax-heading,
+  .parallax-hero-1.hero-light .parallax-desc {
+    max-width: 100% !important;
+  }
   .products-hero,
   .applications-hero,
   .about-hero,
