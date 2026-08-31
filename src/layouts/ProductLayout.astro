@@ -3,7 +3,7 @@ import Layout from './Layout.astro';
 
 const {
   title,
-  description = "Industrial product by DGSDK – Dongguan Shidike Automation Equipment Co., Ltd.",
+  description = "Industrial static control and surface cleaning equipment by Shidike.",
   image = "/assets/img/header-bg.jpg",
   sku = "",
   category = "Industrial Equipment",
@@ -52,41 +52,15 @@ const breadcrumbItems = [
     "category": category,
     "brand": {
       "@type": "Brand",
-      "name": "DGSDK"
+      "name": "Shidike"
     },
     "manufacturer": {
       "@type": "Organization",
-      "name": "Dongguan Shidike Automation Equipment Co., Ltd.",
+      "name": "Shidike",
+      "legalName": "Dongguan Shidike Intelligent Equipment Co., Ltd.",
       "url": "https://www.dg-sdk.com"
-    },
-    "offers": {
-      "@type": "Offer",
-      "url": canonical,
-      "priceCurrency": "USD",
-      "price": "0",
-      "priceValidUntil": "2027-12-31",
-      "availability": "https://schema.org/InStock",
-      "itemCondition": "https://schema.org/NewCondition",
-      "seller": {
-        "@type": "Organization",
-        "name": "DGSDK",
-        "url": "https://www.dg-sdk.com"
-      },
-      "areaServed": "Worldwide"
     }
   })} />
-
-  <!-- HERO（统一背景） -->
- <section 
-  class="inner-hero"
-  style="background-image: url('/assets/img/static-eliminator/banner-bg.jpg');"
->
-    <div class="inner-hero-overlay"></div>
-    <div class="container inner-hero-content">
-      <p class="inner-hero-label">PRODUCT DETAILS</p>
-      <p>Professional Industrial Solutions</p>
-    </div>
-  </section>
 
   <!-- 内容 -->
   <main class="product-main">
@@ -122,7 +96,7 @@ const breadcrumbItems = [
     <div class="image-lightbox-overlay" id="closeImageLightbox"></div>
     <div class="image-lightbox-content">
       <button class="image-lightbox-close" id="closeImageLightboxBtn" type="button">×</button>
-      <img id="lightboxImage" src="" alt="Zoomed product image" loading="lazy" />
+      <img id="lightboxImage" alt="Zoomed product image" loading="lazy" />
     </div>
   </div>
 
@@ -165,10 +139,32 @@ const breadcrumbItems = [
 
         let currentIndex = 0;
 
+        // The main image sits inside a <picture>. A matching <source> outranks
+        // the <img>, so setting mainImage.src alone changed nothing — the
+        // browser kept painting the first <source>. Update (or drop) the
+        // source too, and fall back to the raw file if the .webp is absent.
+        const mainPicture = mainImage.closest('picture');
+        function setMainSource(url) {
+          if (!mainPicture) { mainImage.src = url; return; }
+          const source = mainPicture.querySelector('source');
+          const webp = url.replace(/\.(jpe?g|png)$/i, '.webp');
+          if (source && webp !== url) {
+            source.srcset = webp;
+            mainImage.onerror = () => {
+              mainImage.onerror = null;
+              source.remove();
+              mainImage.src = url;
+            };
+          } else if (source) {
+            source.remove();
+          }
+          mainImage.src = url;
+        }
+
         function updateMainImage(index) {
           if (!imageList.length) return;
           currentIndex = index;
-          mainImage.src = imageList[index];
+          setMainSource(imageList[index]);
 
           thumbs.forEach((thumb, i) => {
             if (i === index) {

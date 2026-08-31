@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 540" width="1000" height="540" role="img"
+     aria-label="Typical mounting positions for an ionizing bar on a web line: at the unwind, ahead of the cleaning station, overhead on a gantry, and at the stacker.">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f1f5f8"/>
+    </linearGradient>
+    <linearGradient id="roll" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e3eaf0"/><stop offset="1" stop-color="#b9c7d3"/>
+    </linearGradient>
+    <marker id="tip" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#0278A1"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="540" fill="url(#bg)"/>
+
+  <!-- direction label sits clear above the web -->
+  <text x="500" y="198" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12.5"
+        font-weight="700" letter-spacing=".08em" fill="#93a3b1">WEB DIRECTION →</text>
+
+  <!-- web path -->
+  <path d="M118 246 H882" stroke="#c8d4de" stroke-width="15" fill="none"/>
+  <path d="M118 246 H882" stroke="#8fa3b4" stroke-width="1.5" fill="none" stroke-dasharray="7 6"/>
+
+  <!-- unwind roll -->
+  <circle cx="118" cy="246" r="44" fill="url(#roll)" stroke="#94a7b6" stroke-width="2"/>
+  <circle cx="118" cy="246" r="14" fill="#fff" stroke="#94a7b6" stroke-width="2"/>
+  <text x="118" y="326" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#5f6f7c">Unwind</text>
+
+  <!-- cleaning station -->
+  <rect x="404" y="204" width="112" height="84" rx="7" fill="#fff" stroke="#94a7b6" stroke-width="2"/>
+  <circle cx="432" cy="228" r="12" fill="#dde6ed" stroke="#94a7b6"/>
+  <circle cx="432" cy="264" r="12" fill="#dde6ed" stroke="#94a7b6"/>
+  <circle cx="488" cy="228" r="12" fill="#dde6ed" stroke="#94a7b6"/>
+  <circle cx="488" cy="264" r="12" fill="#dde6ed" stroke="#94a7b6"/>
+  <text x="460" y="326" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#5f6f7c">Cleaning station</text>
+
+  <!-- stacker -->
+  <rect x="792" y="266" width="120" height="12" fill="#c2ced8"/>
+  <rect x="812" y="252" width="80" height="12" fill="#d3dde5" stroke="#a9b9c6"/>
+  <rect x="816" y="240" width="72" height="12" fill="#d3dde5" stroke="#a9b9c6"/>
+  <rect x="820" y="228" width="64" height="12" fill="#d3dde5" stroke="#a9b9c6"/>
+  <text x="852" y="326" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#5f6f7c">Stacker</text>
+
+  <!-- ===== bars ===== -->
+  <!-- 1 unwind -->
+  <rect x="150" y="128" width="92" height="17" rx="3" fill="#0B2239"/>
+  <rect x="150" y="128" width="92" height="6" rx="3" fill="#12314f"/>
+  <g fill="#ffc800"><rect x="166" y="145" width="3" height="8"/><rect x="186" y="145" width="3" height="8"/><rect x="206" y="145" width="3" height="8"/><rect x="226" y="145" width="3" height="8"/></g>
+  <g stroke="#0278A1" stroke-width="1.1" opacity=".5">
+    <path d="M168 155 L162 226"/><path d="M188 155 L186 226"/><path d="M208 155 L210 226"/><path d="M228 155 L234 226"/>
+  </g>
+  <circle cx="196" cy="112" r="13" fill="#0278A1"/>
+  <text x="196" y="117" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#fff">1</text>
+
+  <!-- 2 ahead of the cleaner -->
+  <rect x="312" y="128" width="80" height="17" rx="3" fill="#0B2239"/>
+  <rect x="312" y="128" width="80" height="6" rx="3" fill="#12314f"/>
+  <g fill="#ffc800"><rect x="326" y="145" width="3" height="8"/><rect x="346" y="145" width="3" height="8"/><rect x="366" y="145" width="3" height="8"/></g>
+  <g stroke="#0278A1" stroke-width="1.1" opacity=".5">
+    <path d="M328 155 L324 226"/><path d="M348 155 L348 226"/><path d="M368 155 L372 226"/>
+  </g>
+  <circle cx="352" cy="112" r="13" fill="#0278A1"/>
+  <text x="352" y="117" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#fff">2</text>
+
+  <!-- 3 gantry -->
+  <path d="M600 66 H700 M650 66 V106" stroke="#a9b9c6" stroke-width="4" fill="none"/>
+  <rect x="606" y="106" width="88" height="17" rx="3" fill="#0B2239"/>
+  <rect x="606" y="106" width="88" height="6" rx="3" fill="#12314f"/>
+  <g fill="#ffc800"><rect x="622" y="123" width="3" height="8"/><rect x="646" y="123" width="3" height="8"/><rect x="670" y="123" width="3" height="8"/></g>
+  <g stroke="#0278A1" stroke-width="1.1" opacity=".45">
+    <path d="M624 133 L612 226"/><path d="M648 133 L648 226"/><path d="M672 133 L684 226"/>
+  </g>
+  <circle cx="650" cy="48" r="13" fill="#0278A1"/>
+  <text x="650" y="53" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#fff">3</text>
+
+  <!-- 4 stacker -->
+  <rect x="812" y="140" width="80" height="17" rx="3" fill="#0B2239"/>
+  <rect x="812" y="140" width="80" height="6" rx="3" fill="#12314f"/>
+  <g fill="#ffc800"><rect x="826" y="157" width="3" height="8"/><rect x="846" y="157" width="3" height="8"/><rect x="866" y="157" width="3" height="8"/></g>
+  <g stroke="#0278A1" stroke-width="1.1" opacity=".5">
+    <path d="M828 167 L824 216"/><path d="M848 167 L848 216"/><path d="M868 167 L872 216"/>
+  </g>
+  <circle cx="852" cy="124" r="13" fill="#0278A1"/>
+  <text x="852" y="129" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#fff">4</text>
+
+  <!-- working-distance callout, clear of every bar -->
+  <path d="M272 155 V226" stroke="#0278A1" stroke-width="1.4" marker-start="url(#tip)" marker-end="url(#tip)"/>
+  <text x="272" y="278" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="12.5" font-weight="700" fill="#0278A1">30–1000 mm</text>
+  <text x="272" y="295" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11.5" fill="#7b8b98">working distance</text>
+
+  <!-- legend: one column, no collisions -->
+  <g font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="14" fill="#33424f">
+    <text x="60" y="386" font-weight="700" fill="#0278A1">1</text>
+    <text x="82" y="386">At the unwind — take the charge off as the web separates from the roll</text>
+    <text x="60" y="414" font-weight="700" fill="#0278A1">2</text>
+    <text x="82" y="414">Ahead of the cleaning station — neutralize first, or the dust comes straight back</text>
+    <text x="60" y="442" font-weight="700" fill="#0278A1">3</text>
+    <text x="82" y="442">Overhead on a gantry — the 1 m upper working distance still reaches</text>
+    <text x="60" y="470" font-weight="700" fill="#0278A1">4</text>
+    <text x="82" y="470">At the stacker — charged sheets repel each other and will not register</text>
+  </g>
+  <text x="60" y="506" font-family="system-ui,sans-serif" font-size="12.5" fill="#8a97a2">Bars face the material. Closer is faster; below 30 mm gains nothing and risks mechanical contact.</text>
+</svg>

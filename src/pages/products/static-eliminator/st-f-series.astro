@@ -2,8 +2,8 @@
 import ProductLayout from '../../../layouts/ProductLayout.astro';
 ---
 
-<ProductLayout title="ST-F Series Long-Range Ionizing Bar | Static Eliminator | DGSDK"
-  description="ST-F Series long-range ionizing bar and static eliminator for wide-area ESD control in film, optical, and electronics manufacturing applications."
+<ProductLayout title="ST-F Pulsed DC Ionizing Bar | 2.5× Faster Neutralizing | Shidike"
+  description="ST-F intelligent ionizing bar with the Hibweer L.C.C. system. Neutralizes 2.5 times faster than a conventional bar, ion balance ±100 V, 30–1000 mm working range. For high-speed lines. Made to length from 300 mm."
   image="/assets/img/static-eliminator/st-f-series.jpg">
   <section class="product-detail-page">
     <div class="container">
@@ -38,11 +38,9 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
         </div>
 
         <div class="product-summary">
-          <h1>ST-F Series Intelligent Ion Bar</h1>
+          <h1>ST-F Intelligent Ionizing Bar</h1>
           <p class="product-short-desc">
-            ST-F Series intelligent ion rod — DC high voltage ±5kV, up to 400mm elimination
-            distance, ±10V ion balance, fast response for continuous production lines,
-            CE certified.
+            The speed model. Pulsed DC with the Hibweer L.C.C. system, which stops generating negative ions while it makes positive ones and vice versa — neutralizing 2.5 times faster than a conventional bar. Choose it when the material moves too fast for a standard bar to keep up. Ion balance ±100 V, 6.5 kV DC pulse from DC 24 V, 12 W.
           </p>
 
           <div class="product-actions">
@@ -50,147 +48,237 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
             <a href="https://wa.me/61436605126" target="_blank" class="whatsapp-btn">WhatsApp</a>
           </div>
 
-          <div class="product-highlights">
-            <div class="highlight-item">
-              <h4>Up to 400mm Range</h4>
-              <p>Long elimination distance with powerful airflow for larger coverage areas.</p>
-            </div>
-            <div class="highlight-item">
-              <h4>Fast Response</h4>
-              <p>Ideal for continuous production lines requiring rapid static neutralization.</p>
-            </div>
-            <div class="highlight-item">
-              <h4>DC High Voltage ±5kV</h4>
-              <p>Excellent static elimination performance with ±10V ion balance accuracy.</p>
-            </div>
-          </div>
+          <dl class="key-specs">
+            <div><dt>Neutralizing speed</dt><dd><strong>2.5× a conventional bar</strong></dd></div>
+            <div><dt>Ion balance</dt><dd><strong>±100 V</strong> — the trade for the speed</dd></div>
+            <div><dt>Control</dt><dd><strong>Hibweer L.C.C.</strong> · pulse width varies with frequency</dd></div>
+            <div><dt>Working distance</dt><dd><strong>30–1000 mm</strong></dd></div>
+            <div><dt>Output</dt><dd><strong>6.5 kV DC pulse</strong> · pulsed DC · DC 24 V, 12 W</dd></div>
+          </dl>
+          <p class="key-specs-note">The model for lines that move faster than a standard ionizer can follow. Speed is the specification; balance is what you trade for it.</p>
         </div>
       </div>
 
-      <section class="detail-block">
-        <h2>Product Description</h2>
-        <p>
-          The ST-F Series intelligent ion rod produces positive and negative ions through a DC high
-          voltage (±5kV) generation device, delivering long-distance static elimination with powerful
-          airflow — up to 400mm effective range. Its fast response makes it ideal for continuous
-          production lines requiring rapid static neutralization.
-        </p>
-        <p>
-          The self-diagnostic circuit continuously monitors operation with overcurrent protection
-          for safe, reliable long-term use. With ±10V or better ion balance and CE certification,
-          the ST-F Series is suited for electronics manufacturing, printing, optical film processing,
-          SMT production, and high-speed production lines.
-        </p>
+      <section class="detail-block pd-section">
+        <h2>What the ST-F Fixes</h2>
+        <p class="pd-lede">If any of these is happening on your line, the cause is usually a surface charge nobody is measuring.</p>
+        <div class="pd-fix">
+          <div class="pd-fix-item">
+            <h3>Charge clears at low speed but not at full rate</h3>
+            <p>The symptom is intermittent — the line runs clean during setup and starts producing rejects once it is up to speed.</p>
+            <span class="sol">2.5× faster neutralizing</span>
+          </div>
+          <div class="pd-fix-item">
+            <h3>Material is only in front of the bar for a fraction of a second</h3>
+            <p>On fast indexing or pick-and-place, decay time is the binding constraint, not ion balance.</p>
+            <span class="sol">Pulsed DC with phase separation</span>
+          </div>
+          <div class="pd-fix-item">
+            <h3>A bar that worked before a line upgrade stopped working after it</h3>
+            <p>Nothing failed — the line simply got faster than the ionizer. The bar is doing exactly what it always did.</p>
+            <span class="sol">Swap to the ST-F, same mounting and 24 V supply</span>
+          </div>
+        </div>
       </section>
 
-      <section class="detail-block">
-        <h2>Product Features</h2>
+      <section class="detail-block pd-section">
+        <h2>How It Works</h2>
+        <p class="pd-lede">Pulsed DC with the Hibweer L.C.C. system: while the bar generates positive ions it stops generating negative ones, and vice versa.</p>
+        <figure class="pd-figure wide">
+          <picture>
+            <source srcset="/assets/img/static-eliminator/mode-pulsed-dc.webp" type="image/webp" />
+            <img src="/assets/img/static-eliminator/mode-pulsed-dc.jpg"
+                 alt="Pulsed DC waveform of the ST-F ionizing bar: a positive phase of high-voltage pulses followed by a negative phase, with pulse width Ton, pulse interval Toff, phase durations T+ and T−, and cycle time T marked"
+                 loading="lazy" decoding="async" width="1672" height="941" />
+          </picture>
+          <figcaption>
+            The positive and negative phases are separated rather than interleaved, and polarity
+            never flips inside a pulse. Committing a whole phase to one polarity is what puts
+            more of each ion species onto the surface per cycle — and what makes it 2.5× faster.
+          </figcaption>
+        </figure>
+        <p>Separating the two phases in time rather than overlapping them is what produces the speed — neutralization 2.5 times faster than a conventional bar. Where a standard bar needs the material to dwell in front of it, the ST-F clears the charge in the time the material is actually there.</p>
+        <p>The Hibweer L.C.C. system also adjusts pulse width according to frequency, so ion generation is matched to the line rather than run flat out.</p>
+        <p>Ion balance is ±100 V — the loosest of the three bar series, and the trade you make for the speed. If speed is not your constraint, the ST-G at ±50 V is the better default.</p>
         <ul class="feature-list">
-          <li>Produces positive and negative ions via DC high voltage to eliminate surface static</li>
-          <li>Long elimination distance with powerful airflow</li>
-          <li>DC high voltage generation device with excellent static elimination performance</li>
-          <li>Self-diagnostic circuit with overcurrent protection</li>
-          <li>Fast response — ideal for continuous production lines requiring rapid static neutralization</li>
+          <li>Neutralizes twice as fast as a conventional bar, using a supersonic structure that increases air intake</li>
+          <li>Up to 100 Hz pulse rate for high-speed moving targets, with 150 % more ion generation than a conventional design</li>
+          <li>Hibweer L.C.C. system adjusts pulse width with frequency for flexible control of ion generation</li>
+          <li>Detects abnormal discharge, raises an alarm and cuts the high voltage automatically</li>
+          <li>Broadband network port for line-level monitoring and industrial networking</li>
+          <li>High voltage generated inside the bar — no external power supply box, no fixed HV cable</li>
         </ul>
       </section>
 
-      <section class="detail-block">
-        <h2>Technical Advantages</h2>
-        <div class="advantage-grid">
-          <div class="advantage-card blue">
-            <h3>400mm Range</h3>
-            <p>Long elimination distance with powerful airflow covers larger production areas.</p>
-          </div>
-          <div class="advantage-card yellow">
-            <h3>Fast Response</h3>
-            <p>Rapid neutralization supports high-speed continuous production line requirements.</p>
-          </div>
-          <div class="advantage-card green">
-            <h3>±10V Balance</h3>
-            <p>Precise ion balance prevents surface over-charging for consistent product quality.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="detail-block">
-        <h2>Technical Specifications</h2>
+      <section class="detail-block pd-section">
+        <h2>Specifications &amp; Dimensions</h2>
         <div class="spec-table-wrap">
           <table class="spec-table">
-            <tr><td>Model</td><td>ST-F Series (multiple variants)</td></tr>
-            <tr><td>Power Supply</td><td>DC 24V</td></tr>
-            <tr><td>Output Voltage</td><td>±5kV (DC high voltage)</td></tr>
-            <tr><td>Ion Balance</td><td>±10V or better</td></tr>
-            <tr><td>Static Elimination Distance</td><td>Up to 400mm</td></tr>
-            <tr><td>Working Temperature</td><td>0~50°C</td></tr>
-            <tr><td>Working Humidity</td><td>35~85% RH</td></tr>
-            <tr><td>Protection</td><td>Self-diagnostic circuit, overcurrent protection</td></tr>
-            <tr><td>Certification</td><td>CE certified</td></tr>
+            <tr><td>Model</td><td>ST-F series intelligent ionizing bar</td></tr>
+            <tr><td>Input voltage</td><td>DC 24 V</td></tr>
+            <tr><td>Power</td><td>12 W</td></tr>
+            <tr><td>Ion generation</td><td>Corona discharge</td></tr>
+            <tr><td>Output</td><td>6.5 kV DC pulse (pulsed DC, Hibweer L.C.C.)</td></tr>
+            <tr><td>Ion balance</td><td>±100 V</td></tr>
+            <tr><td>Static decay time</td><td>1 s</td></tr>
+            <tr><td>Working distance</td><td>30–1000 mm</td></tr>
+            <tr><td>Operating temperature</td><td>0–45 °C, no condensation</td></tr>
+            <tr><td>Operating humidity</td><td>15–75 % RH, no condensation</td></tr>
+            <tr><td>Cross-section</td><td>30 × 82 mm</td></tr>
+            <tr><td>Length</td><td>Made to order from 300 mm, up to 3 m</td></tr>
+            <tr><td>Protection</td><td>Abnormal-discharge alarm with automatic high-voltage cutoff</td></tr>
+            <tr><td>Connectivity</td><td>Broadband network port</td></tr>
           </table>
         </div>
-      </section>
+        <figure class="pd-figure wide">
+          <picture>
+            <source srcset="/assets/img/static-eliminator/installation-dimensions.webp" type="image/webp" />
+            <img src="/assets/img/static-eliminator/installation-dimensions.jpg"
+                 alt="ST-F ionizing bar installation dimensions: 82 by 30 mm cross-section, overall view with mounting hole pitch, and mounting bracket detail with an 8 by 20 mm adjustment slot"
+                 loading="lazy" decoding="async" width="1536" height="1024" />
+          </picture>
+          <figcaption>
+            The ST-F shares the bar profile and mounting hardware with the rest of the series:
+            a 30 × 82 mm section, two brackets, and an 8 × 20 mm slot so the bar can be shifted
+            after the holes are drilled.
+          </figcaption>
+        </figure>
 
-      <section class="detail-block">
-        <h2>Industry Applications</h2>
-        <div class="application-tags">
-          <span>Electronics Manufacturing</span>
-          <span>Printing</span>
-          <span>Optical Film</span>
-          <span>SMT Production</span>
-          <span>High-Speed Production Lines</span>
+        <h3>Mounting hole pitch by bar length</h3>
+        <p>
+          Every bar takes two mounting holes, and the pitch is always the bar length less
+          120 mm — so you can work out the drilling for any made-to-order length.
+        </p>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <tr><th>Bar length (L)</th><th>Mounting hole pitch (P)</th><th>Holes</th></tr>
+            <tr><td>300 mm</td><td>180 mm</td><td>2</td></tr>
+            <tr><td>600 mm</td><td>480 mm</td><td>2</td></tr>
+            <tr><td>900 mm</td><td>780 mm</td><td>2</td></tr>
+            <tr><td>1200 mm</td><td>1080 mm</td><td>2</td></tr>
+            <tr><td>1500 mm</td><td>1380 mm</td><td>2</td></tr>
+            <tr><td>1800 mm</td><td>1680 mm</td><td>2</td></tr>
+            <tr><td>2100 mm</td><td>1980 mm</td><td>2</td></tr>
+            <tr><td>2400 mm</td><td>2280 mm</td><td>2</td></tr>
+            <tr><td>2700 mm</td><td>2580 mm</td><td>2</td></tr>
+          </table>
+        </div>
+        <div class="pd-trust">
+          <span>Built in our own Dongguan factory since 2013</span>
+          <span>·</span>
+          <span>ISO 9001 quality management</span>
+          <span>·</span>
+          <span>5 granted patents</span>
+          <a href="/about">About Shidike →</a>
         </div>
       </section>
 
+      <div class="pd-mid-cta">
+        <p>
+          <strong>Not sure the ST-F is the right bar?</strong>
+          Send the material, line speed, working distance and measured surface voltage —
+          we will come back with a model, a length and a mounting position.
+        </p>
+        <button class="quote-btn" type="button">Ask an Engineer</button>
+      </div>
 
-      <section class="detail-block">
-        <h2>Application Scenarios</h2>
+      <section class="detail-block pd-section">
+        <h2>Where It Goes</h2>
+        <p class="pd-lede">The bar mounts across the material, facing it, anywhere from 30 mm to 1 m away. Choosing the ST-F for its speed does not cost you mounting flexibility.</p>
+        <figure class="pd-figure wide">
+          <img src="/assets/img/static-eliminator/install-positions.svg"
+               alt="Four typical mounting positions for an ionizing bar on a web line: at the unwind, ahead of the cleaning station, overhead on a gantry, and at the stacker"
+               loading="lazy" decoding="async" width="1000" height="540" />
+          <figcaption>
+            Four positions, one line. Which one you need depends on where the charge is created
+            rather than where the defect shows up.
+          </figcaption>
+        </figure>
         <div class="scenario-list">
           <div class="scenario-item">
-            <h3>Wide-Gap Conveyor Installations</h3>
-            <p>Some production lines cannot position an ion bar within the standard 30–200 mm range due to mechanical constraints — product height variation, safety guarding, or tooling clearance. The ST-F Series solves this with an effective elimination distance of up to 400 mm, allowing the bar to be installed at a safe distance while still delivering effective static neutralization across the full material width.</p>
+            <h3>High-speed web and converting lines</h3>
+            <p>When line speed rises past what a standard bar can neutralize, the symptom is intermittent — charge cleared at low speed, not at full rate. The ST-F is the model for that.</p>
           </div>
           <div class="scenario-item">
-            <h3>Optical Film and Display Panel Lines</h3>
-            <p>Optical films, polarizer sheets, and glass substrates in display manufacturing are highly sensitive to particulate contamination. Static charge builds up rapidly as these materials move at high speed. The ST-F Series provides long-distance ionization that neutralizes charge before the material reaches critical processing stations, without requiring the bar to be positioned uncomfortably close to delicate surfaces.</p>
+            <h3>Fast indexing and pick-and-place</h3>
+            <p>Where material is only in front of the bar for a fraction of a second, decay time is the binding constraint, not ion balance.</p>
           </div>
           <div class="scenario-item">
-            <h3>High-Speed Web and Printing Processes</h3>
-            <p>In web printing and coating, the bar must often be installed away from the substrate to avoid mechanical contact at high speeds. The ST-F Series' 400 mm reach means it can be mounted safely within the machine structure while still delivering full-width static control across the web.</p>
+            <h3>Retrofitting a line that got faster</h3>
+            <p>A bar that worked before a line upgrade often stops working after it. Swapping to the ST-F addresses the speed without changing the mounting or the 24 V supply.</p>
           </div>
+        </div>
+        <div class="application-tags">
+          <span>Electronics</span>
+          <span>Printing</span>
+          <span>Optoelectronics</span>
+          <span>Textile</span>
+          <span>SMT &amp; PCB</span>
+          <span>Film &amp; Converting</span>
         </div>
       </section>
 
-      <section class="detail-block">
-        <h2>How to Choose the Right Ion Bar</h2>
-        <p>Choose the ST-F Series when your installation gap exceeds the range of a standard ion bar or when mechanical constraints prevent close-proximity mounting. For standard distances (30–200 mm), the <a href="/products/static-eliminator/st-e-series">ST-E Series</a> is sufficient and more cost-effective. For applications requiring intelligent self-monitoring and auto-cleaning without production stops, upgrade to the <a href="/products/static-eliminator/st-g-series">ST-G Series</a>.</p>
+      <section class="detail-block pd-section">
+        <h2>Which Model, and What Length</h2>
+        <p class="pd-lede">
+          All three bar series run a 6.5 kV DC pulse from DC 24 V at 12 W over a 30–1000 mm
+          working range, and all three are made to length. They differ in how the ions are
+          generated, and that decides which one fits your line.
+        </p>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <tr><td><strong>ST-G</strong> — pulsed AC</td><td>Ion balance <strong>±50 V</strong>, the tightest of the three. Adjustable frequency to 100 Hz. The default choice unless something below applies.</td></tr>
+            <tr><td><strong>ST-E</strong> — high-frequency pulsed DC</td><td>Ion balance ±80 V, with 150 % higher ion generation. Fixed-polarity pins arranged alternately hold balance across a wide or long span, where an ordinary bar drifts.</td></tr>
+            <tr><td><strong>ST-F</strong> — pulsed DC, Hibweer L.C.C.</td><td>Ion balance ±100 V but <strong>2.5× faster</strong> neutralizing. Choose it when the material moves too fast for a standard bar to keep up.</td></tr>
+          </table>
+        </div>
+        <h3>Made to your width</h3>
+        <p>
+          Bars are not sold in fixed sizes. We cut the bar to the width of your material,
+          anywhere from 300 mm to 3 m, so you are not paying for length you do not use or
+          leaving an edge uncovered.
+        </p>
       </section>
 
-      <section class="detail-block faq-block">
+      <section class="detail-block faq-block pd-section">
         <h2>Frequently Asked Questions</h2>
         <div class="faq-list">
-          <div class="faq-item">
-            <h3 class="faq-question">What makes the ST-F Series different from other ion bars?</h3>
-            <p class="faq-answer">The ST-F Series is engineered for longer working distances, with effective static elimination up to 400 mm from the bar surface. This makes it the right choice when mechanical constraints prevent close-proximity mounting or when product clearance requires the bar to be set back from the material.</p>
-          </div>
-          <div class="faq-item">
-            <h3 class="faq-question">What power supply does the ST-F Series require?</h3>
-            <p class="faq-answer">The ST-F Series operates on DC 24V input and generates ±5kV output internally. A standard 24V DC power supply (typically included with the controller) is all that is needed — no specialized high-voltage supply is required at the installation point.</p>
-          </div>
-          <div class="faq-item">
-            <h3 class="faq-question">How often does the ST-F Series need maintenance?</h3>
-            <p class="faq-answer">Emitter tips require cleaning every 1–3 months to maintain ion balance within ±10V. The built-in self-diagnostic circuit alerts operators when performance degrades, so maintenance can be scheduled rather than reactive.</p>
-          </div>
-          <div class="faq-item">
-            <h3 class="faq-question">Can the ST-F Series be integrated with PLC systems?</h3>
-            <p class="faq-answer">Yes. The DC 24V interface is compatible with standard PLC-controlled production lines and automation systems, allowing the ion bar to be switched on or off in sync with machine operation.</p>
-          </div>
-          <div class="faq-item">
-            <h3 class="faq-question">Is the ST-F Series suitable for printing and film industries?</h3>
-            <p class="faq-answer">Yes. The ST-F Series is widely used in web printing, film coating, label manufacturing, and optical film lamination where high-speed material movement generates intense static charge and close-proximity installation is not always practical.</p>
-          </div>
-          <div class="faq-item">
-            <h3 class="faq-question">What is the ion balance of the ST-F Series?</h3>
-            <p class="faq-answer">The ST-F Series maintains an ion balance of ±10V or better, ensuring effective neutralization rather than creating a residual charge of the opposite polarity — a common issue with poorly balanced ionizers.</p>
-          </div>
+          <details class="faq-item">
+            <summary><h3 class="faq-question">How much faster is the ST-F?</h3></summary>
+            <p class="faq-answer">2.5 times faster than a conventional bar. That comes from the Hibweer L.C.C. system, which stops negative ion generation while producing positive ions and vice versa, rather than overlapping the two phases.</p>
+          </details>
+          <details class="faq-item">
+            <summary><h3 class="faq-question">What ion balance does the ST-F achieve?</h3></summary>
+            <p class="faq-answer">±100 V. That is the loosest of the three Shidike bar series — the ST-G is ±50 V and the ST-E is ±80 V — and it is the trade you make for the speed.</p>
+          </details>
+          <details class="faq-item">
+            <summary><h3 class="faq-question">When should I choose the ST-F over the ST-G?</h3></summary>
+            <p class="faq-answer">When the material moves too fast for a standard bar to neutralize in the time it is in front of the bar. If speed is not your constraint, the ST-G has tighter balance and is the better default.</p>
+          </details>
+          <details class="faq-item">
+            <summary><h3 class="faq-question">What is the Hibweer L.C.C. system?</h3></summary>
+            <p class="faq-answer">A control system that separates the two ion polarities in time — generating one while suppressing the other — and adjusts pulse width according to frequency. Separating the phases produces the 2.5× speed; varying the pulse width matches output to line speed.</p>
+          </details>
+          <details class="faq-item">
+            <summary><h3 class="faq-question">What is the ST-F's working distance?</h3></summary>
+            <p class="faq-answer">30 mm to 1000 mm, the same as the ST-G and ST-E.</p>
+          </details>
+          <details class="faq-item">
+            <summary><h3 class="faq-question">Does the ST-F need a separate high-voltage power supply?</h3></summary>
+            <p class="faq-answer">No. High voltage is generated inside the bar from a DC 24 V supply at 12 W — no external power supply box, no fixed-length high-voltage cable.</p>
+          </details>
+          <details class="faq-item">
+            <summary><h3 class="faq-question">How long can an ST-F bar be?</h3></summary>
+            <p class="faq-answer">Made to order from 300 mm up to 3 m, cut to the width of your material. The cross-section is 30 × 82 mm.</p>
+          </details>
+        </div>
+        <div class="pd-mid-cta" style="margin-top:30px;">
+          <p>
+            <strong>Request a quote for the ST-F</strong>
+            Give us the material, line speed, working distance and measured surface voltage,
+            and the length you need.
+          </p>
+          <button class="quote-btn" type="button">Request a Quote</button>
         </div>
       </section>
 
@@ -244,12 +332,62 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"What makes the ST-F Series different from other ion bars?","acceptedAnswer":{"@type":"Answer","text":"The ST-F Series is engineered for longer working distances, with effective static elimination up to 400 mm from the bar surface. This makes it the right choice when mechanical constraints prevent close-proximity mounting or when product clearance requires the bar to be set back from the material."}},
-    {"@type":"Question","name":"What power supply does the ST-F Series require?","acceptedAnswer":{"@type":"Answer","text":"The ST-F Series operates on DC 24V input and generates ±5kV output internally. A standard 24V DC power supply (typically included with the controller) is all that is needed — no specialized high-voltage supply is required at the installation point."}},
-    {"@type":"Question","name":"How often does the ST-F Series need maintenance?","acceptedAnswer":{"@type":"Answer","text":"Emitter tips require cleaning every 1–3 months to maintain ion balance within ±10V. The built-in self-diagnostic circuit alerts operators when performance degrades, so maintenance can be scheduled rather than reactive."}},
-    {"@type":"Question","name":"Can the ST-F Series be integrated with PLC systems?","acceptedAnswer":{"@type":"Answer","text":"Yes. The DC 24V interface is compatible with standard PLC-controlled production lines and automation systems, allowing the ion bar to be switched on or off in sync with machine operation."}},
-    {"@type":"Question","name":"Is the ST-F Series suitable for printing and film industries?","acceptedAnswer":{"@type":"Answer","text":"Yes. The ST-F Series is widely used in web printing, film coating, label manufacturing, and optical film lamination where high-speed material movement generates intense static charge and close-proximity installation is not always practical."}},
-    {"@type":"Question","name":"What is the ion balance of the ST-F Series?","acceptedAnswer":{"@type":"Answer","text":"The ST-F Series maintains an ion balance of ±10V or better, ensuring effective neutralization rather than creating a residual charge of the opposite polarity — a common issue with poorly balanced ionizers."}}
+    {
+      "@type": "Question",
+      "name": "How much faster is the ST-F?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "2.5 times faster than a conventional bar. That comes from the Hibweer L.C.C. system, which stops negative ion generation while producing positive ions and vice versa, rather than overlapping the two phases."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What ion balance does the ST-F achieve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "±100 V. That is the loosest of the three Shidike bar series — the ST-G is ±50 V and the ST-E is ±80 V — and it is the trade you make for the speed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When should I choose the ST-F over the ST-G?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When the material moves too fast for a standard bar to neutralize in the time it is in front of the bar. If speed is not your constraint, the ST-G has tighter balance and is the better default."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Hibweer L.C.C. system?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A control system that separates the two ion polarities in time — generating one while suppressing the other — and adjusts pulse width according to frequency. Separating the phases produces the 2.5× speed; varying the pulse width matches output to line speed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the ST-F's working distance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "30 mm to 1000 mm, the same as the ST-G and ST-E."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the ST-F need a separate high-voltage power supply?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. High voltage is generated inside the bar from a DC 24 V supply at 12 W — no external power supply box, no fixed-length high-voltage cable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long can an ST-F bar be?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Made to order from 300 mm up to 3 m, cut to the width of your material. The cross-section is 30 × 82 mm."
+      }
+    }
   ]
 }
 </script>
