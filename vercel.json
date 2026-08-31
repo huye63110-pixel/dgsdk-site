@@ -1,6 +1,10 @@
 {
   "redirects": [
     { "source": "/contact/", "destination": "/contact", "permanent": true },
-    { "source": "/zh/contact/", "destination": "/zh/contact", "permanent": true }
+    { "source": "/zh/contact/", "destination": "/zh/contact", "permanent": true },
+    { "source": "/products/precision-machined-parts", "destination": "/products", "permanent": true },
+    { "source": "/products/precision-machined-parts/:path*", "destination": "/products", "permanent": true },
+    { "source": "/zh/products/precision-machined-parts", "destination": "/zh/products", "permanent": true },
+    { "source": "/zh/products/precision-machined-parts/:path*", "destination": "/zh/products", "permanent": true }
   ]
 }

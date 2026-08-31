@@ -1,19 +1,19 @@
 # DGSDK - Dongguan Shidike Automation Equipment Co., Ltd.
 
-> DGSDK manufactures static elimination systems, industrial cleaning machines, precision CNC machined parts, and automation equipment for electronics, SMT, optical film, and display manufacturing industries.
+> DGSDK focuses on industrial static eliminators and ionizing bars first, followed by precision cleaning machines for production lines worldwide.
 
 ## Products
 
-- [Static Elimination Systems](https://www.dg-sdk.com/products/static-eliminator): Ionizing bars, ionizing air blowers, ionizing air guns, and static control equipment for ESD-sensitive manufacturing.
-- [Industrial Cleaning Machines](https://www.dg-sdk.com/products/cleaning-machine): Polarizer cleaners, optical film cleaners, PCB cleaners, FPC cleaners, SMT cleaners, backlight cleaners, and LCM cleaners.
-- [Precision Machined Parts](https://www.dg-sdk.com/products/precision-machined-parts): CNC milled components, lathe machined shafts, bearing brackets, and custom precision parts.
-- [Automation Equipment](https://www.dg-sdk.com/products/automation): Diffusion plate cleaning lines, robotic loading/unloading systems, and polarizer angle measurement instruments.
+- [Industrial Static Eliminators and Ionizing Bars](https://www.dg-sdk.com/products/static-eliminator): Primary product line covering ionizing bars, static eliminator bars, ionizer fans, and ionizing air blowers for ESD-sensitive manufacturing and moving-material processes.
+- [Industrial Cleaning Machines](https://www.dg-sdk.com/products/cleaning-machine): Second product line covering dry-contact cleaners for polarizer, optical film, PCB, FPC, SMT, backlight, LCM, and related precision substrates.
 
 ## Company
 
 - Founded: 2013
 - Location: Dongguan, Guangdong, China
-- Specialization: Industrial automation and static control solutions for global manufacturers
+- Market: Worldwide; English and Chinese sales support
+- Specialization: Industrial static control first, precision surface cleaning second
+- Integration support: Mounting, material handling, controls, and production-line interfaces for static control and cleaning projects
 - Contact: dgsdk2013@gmail.com | +86 13602342003
 
 ## Key Pages

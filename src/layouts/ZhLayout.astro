@@ -2,9 +2,9 @@
 import Analytics from '@vercel/analytics/astro';
 import SpeedInsights from '@vercel/speed-insights/astro';
 const {
-  title = "DGSDK | 工业自动化与静电消除解决方案",
-  description = "东莞史帝克自动化设备有限公司，专业生产静电消除器、工业清洁机、自动化设备和精密CNC零件。",
-  image = "/assets/img/header-bg.webp",
+  title = "DGSDK | 工业静电消除器与离子棒制造商",
+  description = "东莞史帝克面向全球生产工业静电消除器、离子棒、离子风机与精密工业清洁机。",
+  image = "/assets/img/static-eliminator/banner-bg2.webp",
   canonical: _rawCanonical = Astro.url.href
 } = Astro.props;
 const _segments = new URL(_rawCanonical).pathname.split('/').filter(Boolean);
@@ -43,7 +43,7 @@ const canonical = _segments.length > 1 ? _rawCanonical.replace(/\/$/, '') : _raw
     <!-- SEO -->
     <meta name="robots" content="index, follow" />
     <meta name="author" content="DGSDK - 东莞史帝克自动化设备有限公司" />
-    <meta name="keywords" content="静电消除器, 静电消除系统, 工业清洁机, 精密CNC零件, 自动化设备, 工业自动化, 东莞制造商, 史帝克" />
+    <meta name="keywords" content="静电消除器, 离子棒, 静电消除棒, 静电棒, 离子风机, 工业清洁机, 表面清洁系统, 史帝克" />
     <meta name="geo.region" content="CN-GD" />
     <meta name="geo.placename" content="Dongguan, Guangdong, China" />
 
@@ -74,7 +74,7 @@ const canonical = _segments.length > 1 ? _rawCanonical.replace(/\/$/, '') : _raw
         "width": 600,
         "height": 169
       },
-      "description": "专业生产静电消除系统、工业清洁机、自动化设备和精密CNC零件。",
+      "description": "面向全球生产工业静电消除器、离子棒、离子风机与精密工业清洁机。",
       "foundingDate": "2013",
       "address": {
         "@type": "PostalAddress",
@@ -115,10 +115,8 @@ const canonical = _segments.length > 1 ? _rawCanonical.replace(/\/$/, '') : _raw
               <a class="nav-link dropdown-toggle" href="/zh/products" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">产品</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="/zh/products">所有产品</a></li>
-                <li><a class="dropdown-item" href="/zh/products/static-eliminator">静电消除系统</a></li>
-                <li><a class="dropdown-item" href="/zh/products/cleaning-machine">清洁机</a></li>
-                <li><a class="dropdown-item" href="/zh/products/precision-machined-parts">精密加工零件</a></li>
-                <li><a class="dropdown-item" href="/zh/products/automation">自动化设备</a></li>
+                <li><a class="dropdown-item" href="/zh/products/static-eliminator">静电消除器与离子棒</a></li>
+                <li><a class="dropdown-item" href="/zh/products/cleaning-machine">工业清洁机</a></li>
               </ul>
             </li>
             <li class="nav-item"><a class="nav-link" href="/zh/applications">应用领域</a></li>
@@ -208,7 +206,7 @@ const canonical = _segments.length > 1 ? _rawCanonical.replace(/\/$/, '') : _raw
       <div class="footer-container">
         <div class="footer-col footer-brand">
           <img src="/logo.png" alt="DGSDK Logo" width="180" height="50" class="footer-logo" loading="lazy" />
-          <p>DGSDK（东莞史帝克自动化设备有限公司）是专业制造商，专注于静电消除系统、工业清洁机、自动化设备和精密CNC零件。</p>
+          <p>DGSDK（东莞史帝克）以工业静电消除器和离子棒为核心，并为全球生产线提供精密工业清洁机。</p>
         </div>
         <div class="footer-col">
           <p class="footer-col-title">快速链接</p>
@@ -220,10 +218,8 @@ const canonical = _segments.length > 1 ? _rawCanonical.replace(/\/$/, '') : _raw
         </div>
         <div class="footer-col">
           <p class="footer-col-title">产品</p>
-          <a href="/zh/products/static-eliminator">静电消除器</a>
-          <a href="/zh/products/cleaning-machine">清洁机</a>
-          <a href="/zh/products/precision-machined-parts">精密加工零件</a>
-          <a href="/zh/products/automation">自动化设备</a>
+          <a href="/zh/products/static-eliminator">静电消除器与离子棒</a>
+          <a href="/zh/products/cleaning-machine">工业清洁机</a>
         </div>
         <div class="footer-col">
           <p class="footer-col-title">联系方式</p>

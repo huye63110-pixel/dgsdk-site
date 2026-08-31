@@ -1,20 +1,104 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+
+const base = 'https://www.dg-sdk.com';
+const canonical = base + '/products/static-eliminator';
+const barProducts = [
+  { name: 'ST-G Intelligent Static Elimination Bar', url: canonical + '/st-g-series', image: base + '/assets/img/static-eliminator/st-g.jpg' },
+  { name: 'ST-E Intelligent Ionizing Bar', url: canonical + '/st-e-series', image: base + '/assets/img/static-eliminator/st-e.jpg' },
+  { name: 'ST-F Intelligent Ionizing Bar', url: canonical + '/st-f-series', image: base + '/assets/img/static-eliminator/st-f.jpg' },
+];
+const blowerProducts = [
+  { name: 'ST-S200 Mini Ionizer Fan', url: canonical + '/st-s200', image: base + '/assets/img/static-eliminator/st-s200.jpg' },
+  { name: 'ST101A Desktop Ionizing Air Blower', url: canonical + '/st-101a', image: base + '/assets/img/static-eliminator/st-101a.jpg' },
+  { name: 'ST104A Horizontal Ion Blower', url: canonical + '/st-104a', image: base + '/assets/img/static-eliminator/st-104a.jpg' },
+  { name: 'ST1200 Horizontal Ion Fan', url: canonical + '/st-1200', image: base + '/assets/img/static-eliminator/st-1200.jpg' },
+];
+const allStaticProducts = [...barProducts, ...blowerProducts];
+const faqItems = [
+  {
+    question: 'What is an industrial static eliminator?',
+    answer: 'An industrial static eliminator generates balanced positive and negative ions that neutralize electrostatic charge on insulating materials and production surfaces that cannot be grounded directly.'
+  },
+  {
+    question: 'When should I use an ionizing bar instead of an ion blower?',
+    answer: 'Use an ionizing bar for wide or continuously moving targets such as conveyors, films, sheets, and web lines. Use an ion blower or fan when ionized airflow must reach a workstation, enclosure, or target positioned farther away.'
+  },
+  {
+    question: 'What information is needed to select an ionizing bar?',
+    answer: 'Provide the material, charged area width, line speed, installation distance, measured voltage, available mounting space, environment, and required machine-control signals.'
+  },
+  {
+    question: 'How are ionizing bars maintained?',
+    answer: 'Inspect and clean emitter points at intervals based on the contamination level, confirm grounding, and verify neutralization performance with a suitable static field meter or charged plate monitor.'
+  }
+];
 ---
 
-<Layout title="Industrial Static Eliminator | Ionizing Bars & ESD Control | DGSDK"
-  description="DGSDK industrial static eliminator systems: ionizing bars, static eliminator bars, and ESD control products for electronics, SMT, optical film, and display manufacturing.">
+<Layout
+  title="Industrial Static Eliminators & Ionizing Bars | DGSDK"
+  description="DGSDK industrial static eliminators and ionizing bars for worldwide electronics, film, packaging, printing, plastics, textile, SMT, and display production lines."
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: base },
+      { '@type': 'ListItem', position: 2, name: 'Products', item: base + '/products' },
+      { '@type': 'ListItem', position: 3, name: 'Static Eliminators and Ionizing Bars', item: canonical }
+    ]
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Industrial Static Eliminators and Ionizing Bars',
+    url: canonical,
+    description: 'Industrial ionizing bars, static eliminator bars, ionizer fans, and ionizing blowers for electrostatic control on production lines worldwide.',
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: allStaticProducts.length,
+      itemListElement: allStaticProducts.map((product, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        item: {
+          '@type': 'Product',
+          name: product.name,
+          url: product.url,
+          image: product.image,
+          brand: { '@type': 'Brand', name: 'DGSDK' }
+        }
+      }))
+    }
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map(item => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer }
+    }))
+  })} />
+
   <section
     class="products-hero"
-    style="background: linear-gradient(rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.18)), url('/assets/img/static-eliminator/bg-2.jpg') center/cover no-repeat; background-attachment: fixed;"
+    style="background: linear-gradient(rgba(10, 25, 45, 0.46), rgba(10, 25, 45, 0.32)), url('/assets/img/static-eliminator/banner-bg2.webp') center/cover no-repeat; background-attachment: fixed;"
   >
     <div class="container products-hero-inner">
-      <span class="products-hero-kicker" data-aos="fade-down" data-aos-duration="600">DGSDK Product Portfolio</span>
-      <h1 data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">Static Elimination Systems</h1>
+      <span class="products-hero-kicker" data-aos="fade-down" data-aos-duration="600">Primary Product Line · Worldwide Supply</span>
+      <h1 data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">Industrial Static Eliminators &amp; Ionizing Bars</h1>
       <p data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
-        Professional electrostatic control solutions for electronics, SMT,
-        packaging, printing, textile, plastics, and automated industrial production lines.
+        Bar-type static eliminators for moving materials and machine integration, plus ionizing blowers and fans for workstations and enclosed process areas.
       </p>
+    </div>
+  </section>
+
+  <section class="category-info-block">
+    <div class="container" style="max-width:900px;">
+      <h2>Ionizing bars for industrial static control</h2>
+      <p><strong>An ionizing bar</strong>—also called an ionizer bar, static eliminator bar, anti-static bar, static control bar, or, in British English, an ionising bar—neutralizes electrostatic charge on material surfaces by delivering balanced positive and negative ions. DGSDK's bar-type static eliminators are the first and most important product group on this website.</p>
+      <p>Use these products above conveyors, sheets, films, plastic parts, packaging materials, printing substrates, PCB panels, polarizers, and other charged targets. The correct model depends on target width, line speed, working distance, measured charge, installation space, and required control interface.</p>
+      <p><a href="/contact">Send your application details</a> to receive a model and installation recommendation for your country or production site.</p>
     </div>
   </section>
 
@@ -24,63 +108,74 @@ import Layout from '../../../layouts/Layout.astro';
         <div class="products-sidebar-box">
           <h3>Browse Categories</h3>
           <a href="/products">All Products</a>
-          <a href="/products/static-eliminator" class="active-category">Static Elimination Systems</a>
-          <a href="/products/cleaning-machine">Cleaning Machine</a>
-          <a href="/products/precision-machined-parts">Precision Machined Parts</a>
-          <a href="/products/automation">Automation Equipment</a>
+          <a href="/products/static-eliminator" class="active-category">Static Eliminators &amp; Ionizing Bars</a>
+          <a href="/products/cleaning-machine">Industrial Cleaning Machines</a>
         </div>
       </aside>
 
       <div class="products-main">
         <section class="apple-product-section">
+          <div class="products-category-header">
+            <div>
+              <span class="apple-product-label">Bar Type · Primary Focus</span>
+              <h2>Ionizing Bars &amp; Static Eliminator Bars</h2>
+              <p>For wide, moving, or machine-integrated targets where static must be neutralized across a defined span.</p>
+            </div>
+          </div>
           <div class="apple-card-grid">
             <a href="/products/static-eliminator/st-g-series" class="apple-product-card" data-aos="fade-up" data-aos-delay="0" data-aos-duration="600">
-              <picture><source srcset="/assets/img/static-eliminator/st-g.webp" type="image/webp" /><img src="/assets/img/static-eliminator/st-g.jpg" alt="ST-G Intelligent Static Elimination Bar" loading="lazy" /></picture>
-              <span class="apple-card-tag">Static Elimination</span>
+              <picture><source srcset="/assets/img/static-eliminator/st-g.webp" type="image/webp" /><img src="/assets/img/static-eliminator/st-g.jpg" alt="ST-G industrial static eliminator and ionizing bar" loading="lazy" /></picture>
+              <span class="apple-card-tag">Ionizing Bar</span>
               <h3>ST-G Intelligent Static Elimination Bar</h3>
-              <p>High-performance ion bar for stable and efficient static removal.</p>
+              <p>Bar-type ionizer for production-line static neutralization.</p>
             </a>
-
             <a href="/products/static-eliminator/st-e-series" class="apple-product-card" data-aos="fade-up" data-aos-delay="80" data-aos-duration="600">
-              <picture><source srcset="/assets/img/static-eliminator/st-e.webp" type="image/webp" /><img src="/assets/img/static-eliminator/st-e.jpg" alt="ST-E Intelligent Ion Rod" loading="lazy" /></picture>
-              <span class="apple-card-tag">Static Elimination</span>
-              <h3>ST-E Intelligent Ion Rod</h3>
-              <p>Reliable electrostatic control for compact industrial integration.</p>
+              <picture><source srcset="/assets/img/static-eliminator/st-e.webp" type="image/webp" /><img src="/assets/img/static-eliminator/st-e.jpg" alt="ST-E industrial ionizing bar" loading="lazy" /></picture>
+              <span class="apple-card-tag">Ionizing Bar</span>
+              <h3>ST-E Intelligent Ionizing Bar</h3>
+              <p>Compact static control bar for machine integration.</p>
             </a>
-
             <a href="/products/static-eliminator/st-f-series" class="apple-product-card" data-aos="fade-up" data-aos-delay="160" data-aos-duration="600">
-              <picture><source srcset="/assets/img/static-eliminator/st-f.webp" type="image/webp" /><img src="/assets/img/static-eliminator/st-f.jpg" alt="ST-F Intelligent Ion Rod" loading="lazy" /></picture>
-              <span class="apple-card-tag">Static Elimination</span>
-              <h3>ST-F Intelligent Ion Rod</h3>
-              <p>Fast-response ionizing solution for continuous production lines.</p>
+              <picture><source srcset="/assets/img/static-eliminator/st-f.webp" type="image/webp" /><img src="/assets/img/static-eliminator/st-f.jpg" alt="ST-F fast-response static eliminator bar" loading="lazy" /></picture>
+              <span class="apple-card-tag">Ionizing Bar</span>
+              <h3>ST-F Intelligent Ionizing Bar</h3>
+              <p>Fast-response ionizing bar for continuous lines.</p>
             </a>
+          </div>
+        </section>
 
-            <a href="/products/static-eliminator/st-s200" class="apple-product-card" data-aos="fade-up" data-aos-delay="240" data-aos-duration="600">
-              <picture><source srcset="/assets/img/static-eliminator/st-s200.webp" type="image/webp" /><img src="/assets/img/static-eliminator/st-s200.jpg" alt="ST-S200 Mini Ionizer Fan" loading="lazy" /></picture>
-              <span class="apple-card-tag">Static Elimination</span>
+        <section class="apple-product-section">
+          <div class="products-category-header">
+            <div>
+              <span class="apple-product-label">Airflow Type</span>
+              <h2>Ionizing Air Blowers &amp; Ionizer Fans</h2>
+              <p>For workstations, enclosures, and targets that need ionized airflow over a longer working distance.</p>
+            </div>
+          </div>
+          <div class="apple-card-grid">
+            <a href="/products/static-eliminator/st-s200" class="apple-product-card" data-aos="fade-up" data-aos-delay="0" data-aos-duration="600">
+              <picture><source srcset="/assets/img/static-eliminator/st-s200.webp" type="image/webp" /><img src="/assets/img/static-eliminator/st-s200.jpg" alt="ST-S200 mini ionizer fan" loading="lazy" /></picture>
+              <span class="apple-card-tag">Ionizer Fan</span>
               <h3>ST-S200 Mini Ionizer Fan</h3>
-              <p>Compact anti-static fan for workstations and sensitive applications.</p>
+              <p>Compact ionized-air coverage for sensitive work areas.</p>
             </a>
-
-            <a href="/products/static-eliminator/st-101a" class="apple-product-card" data-aos="fade-up" data-aos-delay="320" data-aos-duration="600">
-              <picture><source srcset="/assets/img/static-eliminator/st-101a.webp" type="image/webp" /><img src="/assets/img/static-eliminator/st-101a.jpg" alt="ST101A Desktop Ion Fan" loading="lazy" /></picture>
-              <span class="apple-card-tag">Static Elimination</span>
-              <h3>ST101A Desktop Ion Fan</h3>
-              <p>Desktop anti-static fan solution for stable workstation performance.</p>
+            <a href="/products/static-eliminator/st-101a" class="apple-product-card" data-aos="fade-up" data-aos-delay="70" data-aos-duration="600">
+              <picture><source srcset="/assets/img/static-eliminator/st-101a.webp" type="image/webp" /><img src="/assets/img/static-eliminator/st-101a.jpg" alt="ST101A desktop ionizing air blower" loading="lazy" /></picture>
+              <span class="apple-card-tag">Ionizing Blower</span>
+              <h3>ST101A Desktop Ionizing Air Blower</h3>
+              <p>Directed static-neutralizing airflow for workstations.</p>
             </a>
-
-            <a href="/products/static-eliminator/st-104a" class="apple-product-card" data-aos="fade-up" data-aos-delay="400" data-aos-duration="600">
-              <picture><source srcset="/assets/img/static-eliminator/st-104a.webp" type="image/webp" /><img src="/assets/img/static-eliminator/st-104a.jpg" alt="ST104A Horizontal Ion Blower" loading="lazy" /></picture>
-              <span class="apple-card-tag">Static Elimination</span>
+            <a href="/products/static-eliminator/st-104a" class="apple-product-card" data-aos="fade-up" data-aos-delay="140" data-aos-duration="600">
+              <picture><source srcset="/assets/img/static-eliminator/st-104a.webp" type="image/webp" /><img src="/assets/img/static-eliminator/st-104a.jpg" alt="ST104A horizontal ionizing blower" loading="lazy" /></picture>
+              <span class="apple-card-tag">Ionizing Blower</span>
               <h3>ST104A Horizontal Ion Blower</h3>
-              <p>Horizontal ion blowing support for larger anti-static coverage zones.</p>
+              <p>Horizontal ionized airflow for wider coverage zones.</p>
             </a>
-
-            <a href="/products/static-eliminator/st-1200" class="apple-product-card" data-aos="fade-up" data-aos-delay="480" data-aos-duration="600">
-              <img src="/assets/img/static-eliminator/st-1200.jpg" alt="ST1200 Horizontal Ion Fan" loading="lazy" />
-              <span class="apple-card-tag">Static Elimination</span>
+            <a href="/products/static-eliminator/st-1200" class="apple-product-card" data-aos="fade-up" data-aos-delay="210" data-aos-duration="600">
+              <img src="/assets/img/static-eliminator/st-1200.jpg" alt="ST1200 horizontal ionizer fan" loading="lazy" />
+              <span class="apple-card-tag">Ionizer Fan</span>
               <h3>ST1200 Horizontal Ion Fan</h3>
-              <p>Wide-area electrostatic control for industrial workstations and lines.</p>
+              <p>Wide-area static control for workstations and lines.</p>
             </a>
           </div>
         </section>
@@ -90,95 +185,76 @@ import Layout from '../../../layouts/Layout.astro';
 
   <section class="category-info-block">
     <div class="container" style="max-width:900px;">
-      <h2 data-aos="fade-up" data-aos-duration="700">What Is a Static Eliminator and How Does It Work?</h2>
-      <p>
-        A <strong>static eliminator</strong> (also called an ionizing bar or static eliminator bar) is a device that generates positive and negative ions to neutralize static charges on surfaces and in the air. When a high voltage is applied to the emitter points, it ionizes the surrounding air. These ions migrate toward any charged surface — whether positively charged or negatively charged — and neutralize the electrostatic charge, a process known as static neutralizing or electrostatic discharge (ESD) control.
-      </p>
-      <p>
-        DGSDK manufactures a full range of industrial static control solutions, from compact <strong>ionizing bars</strong> mounted above conveyor lines to freestanding ion blowers for workstations. Each product is engineered to neutralize static electricity reliably across high-speed production environments.
-      </p>
+      <h2>How does a static eliminator work?</h2>
+      <p>A static eliminator applies high voltage to emitter points to ionize nearby air. Positive and negative ions move toward the oppositely charged target and reduce its net electrostatic charge. Grounding can drain charge from conductors, but active ionization is used for insulating films, plastic parts, coated surfaces, PCB materials, and other targets that cannot be grounded directly.</p>
 
-      <h3>Types of Static Elimination Equipment</h3>
-      <p>
-        Different production environments require different static control approaches. DGSDK's product line covers the most common configurations:
-      </p>
+      <h2>Ionizing bar or ion blower?</h2>
       <ul>
-        <li><strong>Ionizing bars (static eliminator bars)</strong> — mounted over conveyors or web lines to neutralize static charges across a wide surface area. Available in AC, pulse DC, and steady-state DC configurations.</li>
-        <li><strong>Ion blowers and ion fans</strong> — provide a directed airflow of ionized air to neutralize static on workpieces, PCBs, or optical components at workstations.</li>
-        <li><strong>Air knife static eliminators</strong> — combine compressed air with ionization for high-speed web and film lines where rapid static removal is critical.</li>
+        <li><strong>Choose an ionizing bar</strong> for wide or moving targets, conveyor lines, films, sheets, packaging, printing, plastics, textiles, and roll-to-roll or web processes.</li>
+        <li><strong>Choose an ionizing blower or fan</strong> for manual workstations, enclosed machines, irregular parts, or targets beyond the effective reach of a bar without assisted airflow.</li>
       </ul>
 
-      <h3>Industrial Static Control Applications</h3>
-      <p>
-        Uncontrolled static charge causes dust attraction, material jamming, product defects, and ESD damage to sensitive components. Every type of <strong>charged material</strong> — from plastic films to PCB panels to optical substrates — requires active neutralization to prevent these failures. Our <strong>industrial static control</strong> systems protect every type of electronic device and substrate:
-      </p>
+      <h2>Application sectors</h2>
       <ul>
-        <li>Electronics and PCB manufacturing — prevent ESD damage to components during assembly and testing</li>
-        <li>Optical film and display (LCD/OLED) production — eliminate static on polarizer films to prevent particle adhesion</li>
-        <li>Printing and packaging — neutralize static charges that cause sheet misfeeds and ink adhesion issues</li>
-        <li>Plastics and injection molding — remove static from plastic parts that attract airborne dust</li>
-        <li>Textile and nonwoven manufacturing — reduce static buildup in high-speed fabric processing</li>
+        <li>Electronics, PCB, SMT, and component assembly</li>
+        <li>Optical film, polarizer, LCD, OLED, and display manufacturing</li>
+        <li>Packaging, printing, labeling, converting, and moving web lines</li>
+        <li>Plastics, injection molding, rubber, and composite processing</li>
+        <li>Textile, nonwoven, battery, photovoltaic, and other automated lines</li>
       </ul>
 
-      <h3>Choosing the Right Static Control Solution</h3>
-      <p>
-        The right static control system depends on line speed, the distance between the eliminator and the target surface, ambient conditions, and whether compressed air is available. Our technical team can recommend the optimal <strong>static control solution</strong> for your production process — whether that's a bar-type ionizer, an ion blower, or an integrated anti-static system. <a href="/contact">Contact us</a> for a free consultation.
-      </p>
+      <h2>Information to provide for product selection</h2>
+      <p>For an application recommendation, provide the material and target dimensions, measured charge or observed problem, line speed, ionizer-to-target distance, available mounting length, ambient conditions, power supply, and required PLC or alarm signals. This allows the model, bar length, mounting position, and number of units to be reviewed against the real process.</p>
 
-      <h3>AC vs DC vs Pulse DC Ionizing Technology</h3>
-      <p>Industrial static eliminators use three main ionizing technologies, each suited to different production requirements:</p>
-      <ul>
-        <li><strong>AC ionizing bars</strong> — alternating current drives emitter points to produce equal volumes of positive and negative ions simultaneously. Simple, robust, and cost-effective for general-purpose static control on conveyor lines and film webs. Response speed is moderate.</li>
-        <li><strong>Steady-state DC ionizing bars</strong> — separate emitter points produce positive and negative ions independently using DC voltage. This allows ion balance adjustment and produces a cleaner ion output with lower ozone generation than AC designs. Suited for sensitive optical and cleanroom applications.</li>
-        <li><strong>Pulse DC ionizing bars</strong> — DC voltage is applied in rapid pulses alternating between positive and negative polarity. This delivers a highly balanced ion stream with fast response and very low residual voltage. Pulse DC is the preferred technology for high-speed electronics and display manufacturing where tight ESD control is required.</li>
-      </ul>
-      <p>DGSDK's ST-G and ST-E series use intelligent ionizing technology with built-in balance monitoring and alarm output. This allows continuous verification of ionizer performance without manual testing, which is important for production environments where undetected ESD failures cause costly scrap or field returns.</p>
+      <h2>Maintenance and verification</h2>
+      <p>Emitter contamination reduces ion output and can affect balance. Inspection and cleaning intervals should be based on the actual environment. Confirm grounding after installation and verify neutralization performance with an appropriate static field meter or charged plate monitor. Product-specific procedures and electrical limits should follow the model documentation.</p>
 
-      <h3>Static Charge in High-Speed Production Environments</h3>
-      <p>Static charge builds up rapidly on moving materials. At conveyor speeds above 10 m/min, the static generating process on film, PCB panels, or polarizer sheets can reach levels that cause serious production problems: particle adhesion that survives downstream cleaning, ESD discharge that damages CMOS components, sheet stacking jams in printing and packaging lines, and ink or coating adhesion failures on non-wettable plastic surfaces.</p>
-      <p>The neutralization distance — the gap between the ionizing bar and the target surface — directly affects performance. Ionizing bars placed too far from the target lose effectiveness as ions recombine before reaching the charged surface. As a general guide, static eliminator bars should be positioned within 25–100mm of the target for optimal neutralization at production line speeds. Where physical clearance prevents close mounting, ion blowers delivering directed airflow can bridge the distance gap while maintaining effective static control coverage.</p>
-
-      <h3>ESD Protection Zones and Sensitive Component Handling</h3>
-      <p>For electronics manufacturers, static elimination is one part of a broader ESD protection strategy. ESD sensitive components — including CMOS ICs, MOSFETs, and optoelectronic devices — can be damaged by discharge events too small to feel. The <strong>Human Body Model (HBM)</strong> and <strong>Charged Device Model (CDM)</strong> define how these discharge events occur. <strong>Human body model hbm</strong> events arise when charged personnel touch components; <strong>charged device model cdm</strong> events occur when a charged component itself discharges on contact. An <strong>effective esd control program</strong> addresses both models. A properly established ESD protected area (EPA) combines ionizing equipment, grounded workstations, <strong>wrist straps</strong> for personnel, and controlled access to minimize all discharge risks.</p>
-      <p>Within an EPA, ionizing bars and ion blowers neutralize charge on insulators and non-conductive substrates that cannot be grounded directly. This is the role where static eliminators are essential: grounding handles conductors, but only ionization neutralizes charge on films, PCB surfaces, optical components, and other ESD sensitive materials. Human bodies moving through the production environment are a common source of incidental static charge — ionized air zones reduce the risk of charge transfer from operators to sensitive assemblies at every stage of handling.</p>
-      <p>DGSDK's ion blowers and desktop ionizing fans are suited for workstation-level ESD protection, providing a continuous ionized air field over the work area. Ionizing bars mounted above conveyor lines cover inline static control at process speed. Together, these products support a complete ESD management approach for electronics manufacturing environments that require compliance with ANSI/ESD standards.</p>
-
-      <h3>Maintenance and Emitter Point Service</h3>
-      <p>Ionizing bar performance degrades when emitter points accumulate contamination from airborne dust, oil vapor, or processing chemicals. Contaminated emitter points produce fewer ions, reduce balance quality, and increase residual voltage on the product surface. Regular emitter cleaning — typically every 4–12 weeks depending on the production environment — restores neutralization performance to specification.</p>
-      <p>DGSDK static eliminators are designed for straightforward field maintenance. Each unit runs from a standard line-powered <strong>power supply</strong>. Emitter assemblies are accessible without tools on most models, and replacement emitter sets are available as service parts. For production lines where unplanned downtime is costly, the intelligent monitoring function on the ST-G series provides an alarm output when emitter condition falls below threshold, allowing scheduled maintenance before performance degrades. Contact us for service parts availability and maintenance guidelines for your specific model.</p>
+      <h2>Static Eliminator FAQ</h2>
+      <div class="faq-list">
+        {faqItems.map(item => (
+          <article class="faq-item">
+            <h3>{item.question}</h3>
+            <p>{item.answer}</p>
+          </article>
+        ))}
+      </div>
     </div>
   </section>
 
   <section class="related-categories-section">
     <div class="container">
-      <h2 class="related-cat-title" data-aos="fade-up" data-aos-duration="700">Complete Your Production Line</h2>
-      <p class="related-cat-desc" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">Static eliminators work best alongside surface cleaning and automation solutions. Explore our related product categories:</p>
+      <h2 class="related-cat-title">Next: Industrial Cleaning Machines</h2>
+      <p class="related-cat-desc">After static control, DGSDK's second product line removes particles from PCB, FPC, optical film, polarizer, and display substrates.</p>
       <div class="related-cat-grid">
-        <a href="/products/cleaning-machine" class="related-cat-card" data-aos="fade-up" data-aos-delay="0" data-aos-duration="600">
-          <picture><source srcset="/assets/img/cleaning-machine/polarizer-cleaner.webp" type="image/webp" /><img src="/assets/img/cleaning-machine/polarizer-cleaner.jpg" alt="Industrial Cleaning Machines" loading="lazy" /></picture>
+        <a href="/products/cleaning-machine" class="related-cat-card">
+          <picture><source srcset="/assets/img/cleaning-machine/polarizer-cleaner.webp" type="image/webp" /><img src="/assets/img/cleaning-machine/polarizer-cleaner.jpg" alt="DGSDK industrial cleaning machines" loading="lazy" /></picture>
           <div class="related-cat-info">
-            <h3>Cleaning Machines</h3>
-            <p>Remove particles and contamination before static-sensitive processes.</p>
+            <h3>Industrial Cleaning Machines</h3>
+            <p>Compare dry-contact cleaners by substrate, line format, and process position.</p>
             <span class="related-cat-link">View Products →</span>
           </div>
         </a>
-        <a href="/products/automation" class="related-cat-card" data-aos="fade-up" data-aos-delay="100" data-aos-duration="600">
-          <img src="/assets/img/automation/product-a.jpg" alt="Industrial Automation Equipment" loading="lazy" />
+        <a href="/guides/what-is-an-ionizing-bar" class="related-cat-card">
+          <picture><source srcset="/assets/img/static-eliminator/st-e.webp" type="image/webp" /><img src="/assets/img/static-eliminator/st-e.jpg" alt="Guide to industrial ionizing bars" loading="lazy" /></picture>
           <div class="related-cat-info">
-            <h3>Automation Equipment</h3>
-            <p>Integrate static control into fully automated production lines.</p>
-            <span class="related-cat-link">View Products →</span>
-          </div>
-        </a>
-        <a href="/products/precision-machined-parts" class="related-cat-card" data-aos="fade-up" data-aos-delay="200" data-aos-duration="600">
-          <picture><source srcset="/assets/img/precision-machined-parts/precision-bearing-bracket-cnc-milled.webp" type="image/webp" /><img src="/assets/img/precision-machined-parts/precision-bearing-bracket-cnc-milled.jpg" alt="Precision Machined Parts" loading="lazy" /></picture>
-          <div class="related-cat-info">
-            <h3>Precision Machined Parts</h3>
-            <p>Custom CNC components for equipment integration and structural support.</p>
-            <span class="related-cat-link">View Products →</span>
+            <h3>What Is an Ionizing Bar?</h3>
+            <p>Learn operating principles, use cases, installation factors, and selection criteria.</p>
+            <span class="related-cat-link">Read Guide →</span>
           </div>
         </a>
       </div>
     </div>
   </section>
+
+  <style>
+    .products-hero h1,
+    .products-hero p { color: #fff !important; text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45); }
+    .products-category-header { margin-bottom: 24px; }
+    .products-category-header h2 { margin: 6px 0 8px; }
+    .products-category-header p { margin: 0; color: #5f6368; }
+    .faq-list { display: grid; gap: 18px; margin-top: 24px; }
+    .faq-item { padding: 20px 22px; border-radius: 16px; background: #fff; }
+    .faq-item h3 { margin-top: 0; }
+    .faq-item p { margin-bottom: 0; }
+  </style>
 </Layout>

@@ -113,7 +113,7 @@
   </url>
 
   <!-- ===== STATIC ELIMINATOR PRODUCTS (EN) ===== -->
-  <url><loc>https://www.dg-sdk.com/products/static-eliminator</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.dg-sdk.com/products/static-eliminator</loc><lastmod>2026-08-31</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
 
   <url>
     <loc>https://www.dg-sdk.com/products/static-eliminator/st-g-series</loc>
@@ -201,7 +201,7 @@
   </url>
 
   <!-- ===== CLEANING MACHINE PRODUCTS (EN) ===== -->
-  <url><loc>https://www.dg-sdk.com/products/cleaning-machine</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.dg-sdk.com/products/cleaning-machine</loc><lastmod>2026-08-31</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
 
   <url>
     <loc>https://www.dg-sdk.com/products/cleaning-machine/polarizer-cleaner</loc>
@@ -330,79 +330,6 @@
       <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/inspection-cleaner-2.jpg</image:loc>
       <image:title>Inspection Cleaning Machine — Application View</image:title>
       <image:caption>DGSDK inspection cleaner in operation for pre-AOI and pre-quality-inspection surface cleaning</image:caption>
-    </image:image>
-  </url>
-
-  <!-- ===== PRECISION MACHINED PARTS (EN) ===== -->
-  <url><loc>https://www.dg-sdk.com/products/precision-machined-parts</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-
-  <url>
-    <loc>https://www.dg-sdk.com/products/precision-machined-parts/cnc-milled-front-panel-rubber-roller-assembly</loc>
-    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/precision-machined-parts/cnc-milled-front-panel-rubber-roller-assembly.jpg</image:loc>
-      <image:title>CNC Milled Front Panel Rubber Roller Assembly | DGSDK Precision Parts</image:title>
-      <image:caption>Custom CNC milled front panel rubber roller assembly for industrial cleaning machine applications</image:caption>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://www.dg-sdk.com/products/precision-machined-parts/cnc-wing-connection-block</loc>
-    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/precision-machined-parts/cnc-milled-wing-connection-block.jpg</image:loc>
-      <image:title>CNC Wing Connection Block | DGSDK Precision Machined Parts</image:title>
-      <image:caption>Precision CNC milled wing connection block for industrial equipment assembly</image:caption>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://www.dg-sdk.com/products/precision-machined-parts/custom-precision-machined-parts</loc>
-    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/precision-machined-parts/precision-machined-parts.jpg</image:loc>
-      <image:title>Custom Precision Machined Parts | CNC Machining Services | DGSDK</image:title>
-      <image:caption>Custom CNC precision machined parts for industrial automation, cleaning machines and ESD control equipment</image:caption>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://www.dg-sdk.com/products/precision-machined-parts/lathe-machined-bearing-outer-retainer-plate</loc>
-    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/precision-machined-parts/lathe-machined-bearing-outer-retainer-plate.jpg</image:loc>
-      <image:title>Lathe Machined Bearing Outer Retainer Plate | DGSDK Precision Parts</image:title>
-      <image:caption>Precision lathe machined bearing outer retainer plate for industrial roller and cleaning machine assemblies</image:caption>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://www.dg-sdk.com/products/precision-machined-parts/lathe-machined-shaft-end-fixing-component</loc>
-    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/precision-machined-parts/lathe-machined-shaft-end-fixing-component.jpg</image:loc>
-      <image:title>Lathe Machined Shaft End Fixing Component | DGSDK Precision Parts</image:title>
-      <image:caption>Custom precision lathe machined shaft end fixing component for industrial machine assembly</image:caption>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://www.dg-sdk.com/products/precision-machined-parts/milled-front-inner-fixing-plate-paper-roll-guide-rail</loc>
-    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/precision-machined-parts/milled-front-inner-fixing-plate-paper-roll-guide-rail.jpg</image:loc>
-      <image:title>Milled Front Inner Fixing Plate Paper Roll Guide Rail | DGSDK</image:title>
-      <image:caption>CNC milled front inner fixing plate and paper roll guide rail for precision cleaning machine construction</image:caption>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://www.dg-sdk.com/products/precision-machined-parts/precision-bearing-bracket-cnc-milled</loc>
-    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/precision-machined-parts/precision-bearing-bracket-cnc-milled.jpg</image:loc>
-      <image:title>Precision Bearing Bracket CNC Milled | DGSDK Machined Parts</image:title>
-      <image:caption>Precision CNC milled bearing bracket for industrial cleaning machine and automation equipment</image:caption>
     </image:image>
   </url>
 
@@ -546,7 +473,7 @@
   </url>
 
   <!-- STATIC ELIMINATOR (ZH) -->
-  <url><loc>https://www.dg-sdk.com/zh/products/static-eliminator</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.dg-sdk.com/zh/products/static-eliminator</loc><lastmod>2026-08-31</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
 
   <url>
     <loc>https://www.dg-sdk.com/zh/products/static-eliminator/st-g-series</loc>
@@ -624,7 +551,7 @@
   </url>
 
   <!-- CLEANING MACHINE (ZH) -->
-  <url><loc>https://www.dg-sdk.com/zh/products/cleaning-machine</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.dg-sdk.com/zh/products/cleaning-machine</loc><lastmod>2026-08-31</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
 
   <url>
     <loc>https://www.dg-sdk.com/zh/products/cleaning-machine/polarizer-cleaner</loc>
@@ -745,16 +672,6 @@
       <image:caption>STXT系列检验台清洁机，显示屏和电子元件检验前表面清洁处理</image:caption>
     </image:image>
   </url>
-
-  <!-- PRECISION MACHINED PARTS (ZH) -->
-  <url><loc>https://www.dg-sdk.com/zh/products/precision-machined-parts</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/products/precision-machined-parts/cnc-milled-front-panel-rubber-roller-assembly</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/products/precision-machined-parts/cnc-wing-connection-block</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/products/precision-machined-parts/custom-precision-machined-parts</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/products/precision-machined-parts/lathe-machined-bearing-outer-retainer-plate</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/products/precision-machined-parts/lathe-machined-shaft-end-fixing-component</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/products/precision-machined-parts/milled-front-inner-fixing-plate-paper-roll-guide-rail</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/zh/products/precision-machined-parts/precision-bearing-bracket-cnc-milled</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- AUTOMATION (ZH) -->
   <url><loc>https://www.dg-sdk.com/zh/products/automation</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
