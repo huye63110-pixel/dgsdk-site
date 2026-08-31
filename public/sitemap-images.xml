@@ -201,32 +201,6 @@
   </url>
 
   <!-- ========== Automation Equipment ========== -->
-  <url>
-    <loc>https://www.dg-sdk.com/products/automation/product-a</loc>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/automation/product-a.jpg</image:loc>
-      <image:title>Diffusion Plate Cleaning and Inspection Production Line – Industrial Automation</image:title>
-      <image:caption>DGSDK automated diffusion plate cleaning and inspection production line — integrated automation solution for display component manufacturing and quality control</image:caption>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://www.dg-sdk.com/products/automation/product-b</loc>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/automation/product-b.jpg</image:loc>
-      <image:title>Robotic Automatic Loading and Unloading Cleaning Machine – Industrial Robot</image:title>
-      <image:caption>DGSDK robotic automatic loading and unloading cleaning machine — industrial automation system for hands-free substrate handling and surface cleaning in display manufacturing</image:caption>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://www.dg-sdk.com/products/automation/product-c</loc>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/automation/product-c.jpg</image:loc>
-      <image:title>Polarizer Absorption Axis Angle Measuring System – Optical Inspection Equipment</image:title>
-      <image:caption>DGSDK polarizer absorption axis angle measuring system — precision optical inspection equipment for polarizer film quality control in LCD and display panel manufacturing</image:caption>
-    </image:image>
-  </url>
 
   <!-- ========== Blog / Tutorial Pages ========== -->
   <url>

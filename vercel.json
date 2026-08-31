@@ -1,10 +1,64 @@
 {
   "redirects": [
-    { "source": "/contact/", "destination": "/contact", "permanent": true },
-    { "source": "/zh/contact/", "destination": "/zh/contact", "permanent": true },
-    { "source": "/products/precision-machined-parts", "destination": "/products", "permanent": true },
-    { "source": "/products/precision-machined-parts/:path*", "destination": "/products", "permanent": true },
-    { "source": "/zh/products/precision-machined-parts", "destination": "/zh/products", "permanent": true },
-    { "source": "/zh/products/precision-machined-parts/:path*", "destination": "/zh/products", "permanent": true }
+    {
+      "source": "/contact/",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/zh/contact/",
+      "destination": "/zh/contact",
+      "permanent": true
+    },
+    {
+      "source": "/products/precision-machined-parts",
+      "destination": "/products/static-eliminator",
+      "permanent": true
+    },
+    {
+      "source": "/products/precision-machined-parts/:path*",
+      "destination": "/products/static-eliminator",
+      "permanent": true
+    },
+    {
+      "source": "/zh/products/precision-machined-parts",
+      "destination": "/zh/products/static-eliminator",
+      "permanent": true
+    },
+    {
+      "source": "/zh/products/precision-machined-parts/:path*",
+      "destination": "/zh/products/static-eliminator",
+      "permanent": true
+    },
+    {
+      "source": "/products",
+      "destination": "/products/static-eliminator",
+      "permanent": true
+    },
+    {
+      "source": "/zh/products",
+      "destination": "/zh/products/static-eliminator",
+      "permanent": true
+    },
+    {
+      "source": "/products/automation",
+      "destination": "/products/cleaning-machine",
+      "permanent": true
+    },
+    {
+      "source": "/products/automation/:path*",
+      "destination": "/products/cleaning-machine",
+      "permanent": true
+    },
+    {
+      "source": "/zh/products/automation",
+      "destination": "/zh/products/cleaning-machine",
+      "permanent": true
+    },
+    {
+      "source": "/zh/products/automation/:path*",
+      "destination": "/zh/products/cleaning-machine",
+      "permanent": true
+    }
   ]
 }

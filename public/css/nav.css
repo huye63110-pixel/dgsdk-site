@@ -371,10 +371,11 @@ body:has(.inner-hero) > main {
 }
 
 /* 2. Tier 1 — big landing heroes: TRUE full-screen, content centred */
+/* Hero is deliberately under a full screen so the first product section
+   peeks above the fold — a full-screen hero hides that anything follows. */
 .parallax-hero.parallax-hero-1,
-.parallax-hero.parallax-hero-2,
 .parallax-hero.parallax-hero-3 {
-  min-height: 100vh !important;
+  min-height: 78vh !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -484,8 +485,7 @@ body:has(.inner-hero) > main {
 @media (max-width: 991.98px) {
   /* Mobile keeps slightly under 100vh to avoid address-bar jumps */
   .parallax-hero.parallax-hero-1,
-  .parallax-hero.parallax-hero-2,
-  .parallax-hero.parallax-hero-3 { min-height: 92vh !important; }
+  .parallax-hero.parallax-hero-3 { min-height: 76vh !important; }
 
   /* Light homepage hero: portrait screens can't hold the wide
      studio frame, so use the tighter crop, anchor it to the

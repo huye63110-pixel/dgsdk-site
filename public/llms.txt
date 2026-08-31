@@ -19,7 +19,6 @@
 ## Key Pages
 
 - [Homepage](https://www.dg-sdk.com/)
-- [All Products](https://www.dg-sdk.com/products)
 - [Applications](https://www.dg-sdk.com/applications)
 - [About Us](https://www.dg-sdk.com/about)
 - [Contact](https://www.dg-sdk.com/contact)
