@@ -213,11 +213,66 @@
   </url>
 
   <url>
-    <loc>https://www.dg-sdk.com/blog/polarizer-cleaner-tutorial</loc>
+    <loc>https://www.dg-sdk.com/applications</loc>
     <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/polarizer-cleaner.jpg</image:loc>
-      <image:title>Polarizer Cleaning Machine Operating Guide – Step-by-Step Tutorial</image:title>
-      <image:caption>Complete operating guide for DGSDK polarizer precision cleaning machine — setup, parameters, troubleshooting and maintenance for LCD display panel manufacturing</image:caption>
+      <image:loc>https://www.dg-sdk.com/assets/img/homepage/static-costs/film-jam.jpg</image:loc>
+      <image:title>Ionizing bars at the unwind of a roll-to-roll film converting line</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/homepage/static-costs/stack-misregister.jpg</image:loc>
+      <image:title>Charged sheets fanning apart on a press delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/homepage/static-costs/operator-shock.jpg</image:loc>
+      <image:title>Static discharge when handling plastic film</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/homepage/static-costs/component-failure.jpg</image:loc>
+      <image:title>SMT placement head over a PCB on an assembly line</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/applications/pcb-fpc-ccl.jpg</image:loc>
+      <image:title>Shidike cleaning machine on a PCB production floor</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/applications/display-optical-film.jpg</image:loc>
+      <image:title>Shidike cleaning machine handling a large optical panel in a cleanroom</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/homepage/core-bars.jpg</image:loc>
+      <image:title>Shidike ST-G industrial ionizing bar</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/homepage/core-cleaning.jpg</image:loc>
+      <image:title>Shidike contact cleaning machine</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/applications/roll-to-roll-line.jpg</image:loc>
+      <image:title>Roll-to-roll film cleaning line with unwind and rewind</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/applications/smt-electronics.jpg</image:loc>
+      <image:title>Shidike ST 1200 ionizing air blower over an ESD assembly bench</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/blog/st-g-ionizing-bar-guide</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-g.jpg</image:loc>
+      <image:title>Shidike ST-G intelligent ionizing bar</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.dg-sdk.com/guides/ionizing-bar-voltage-output</loc>
+    <image:image>
+      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-g.jpg</image:loc>
+      <image:title>Shidike ST-G ionizing bar, 6.5 kV DC pulse output</image:title>
     </image:image>
   </url>
 
