@@ -26,3 +26,4 @@ pnpm-debug.log*
 .claude/worktrees/
 
 .claude/
+_image-briefs/

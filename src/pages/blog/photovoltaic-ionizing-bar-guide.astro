@@ -18,12 +18,12 @@ import Layout from '../../layouts/Layout.astro';
     "image": "https://www.dg-sdk.com/assets/img/static-eliminator/st-g-series.jpg",
     "author": {
       "@type": "Organization",
-      "name": "DGSDK – Dongguan Shidike Automation Equipment Co., Ltd.",
+      "name": "Shidike – Dongguan Shidike Intelligent Equipment Co., Ltd.",
       "url": "https://www.dg-sdk.com"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "DGSDK",
+      "name": "Shidike",
       "logo": {
         "@type": "ImageObject",
         "url": "https://www.dg-sdk.com/assets/img/dgsdk-logo.png"
@@ -56,7 +56,7 @@ import Layout from '../../layouts/Layout.astro';
 
       <div class="blog-post-info">
         <span><i class="fas fa-calendar-alt"></i> May 17, 2026</span>
-        <span><i class="fas fa-user"></i> DGSDK Technical Team</span>
+        <span><i class="fas fa-user"></i> Shidike Technical Team</span>
         <span><i class="fas fa-clock"></i> 12 min read</span>
       </div>
     </div>
@@ -85,14 +85,15 @@ import Layout from '../../layouts/Layout.astro';
           <div class="blog-featured-img">
             <picture><source srcset="/assets/img/static-eliminator/st-g-series.webp" type="image/webp" /><img
               src="/assets/img/static-eliminator/st-g-series.jpg"
-              alt="DGSDK smart ionizing bar for photovoltaic solar panel manufacturing lines"
+              alt="Shidike smart ionizing bar for photovoltaic solar panel manufacturing lines"
               loading="lazy"
             /></picture>
           </div>
 
           <!-- Section 1: Basic Knowledge -->
           <section id="section1">
-            <h2>Part 1: Basic Knowledge</h2>
+            <p style="margin:0 0 18px;color:#555;line-height:1.75;">Background: <a href="/guides/what-is-an-ionizing-bar">what is an ionizing bar</a> and <a href="/products/static-eliminator">the full range of industrial static eliminators</a>.</p>
+      <h2>Part 1: Basic Knowledge</h2>
 
             <h3>What is a smart ionizing bar and why is it used in photovoltaic module production?</h3>
             <p>
@@ -130,7 +131,7 @@ import Layout from '../../layouts/Layout.astro';
               A smart ionizing bar addresses all of these limitations. Integrated sensors monitor ion output continuously and adjust high-voltage drive parameters to compensate for electrode wear, maintaining consistent discharge performance throughout the electrode service life. Ion balance is actively controlled to stay within ±5 V of true neutral — meaning the residual charge on a discharged surface is less than 5 V, well below the threshold for particle attraction or ESD events. When performance cannot be maintained within specification — for example, when electrode wear has progressed beyond the compensation range — the bar generates a diagnostic alarm rather than silently underperforming.
             </p>
             <p>
-              Communication capability is a defining feature of the smart design. DGSDK smart ionizing bars support Modbus RTU and Profinet protocols, allowing PLC and SCADA integration that enables line-level monitoring of ionizer status, remote parameter adjustment, and logging of discharge performance data for process quality records.
+              Communication capability is a defining feature of the smart design. Shidike smart ionizing bars support Modbus RTU and Profinet protocols, allowing PLC and SCADA integration that enables line-level monitoring of ionizer status, remote parameter adjustment, and logging of discharge performance data for process quality records.
             </p>
 
             <h3>At which stages of photovoltaic module production should ionizing bars be deployed?</h3>
@@ -186,7 +187,7 @@ import Layout from '../../layouts/Layout.astro';
               Monthly grounding verification is a separate but equally critical maintenance task. Ground resistance should be measured at the ionizer chassis ground connection point and confirmed to be ≤1 Ω. Ground connections can degrade through corrosion at connector points, loosening of terminal hardware, or damage to the ground conductor — none of which are visible without measurement.
             </p>
             <p>
-              Smart ionizing bars with integrated performance monitoring simplify maintenance scheduling by tracking electrode performance and alerting when cleaning or replacement is indicated, rather than requiring fixed-calendar maintenance that may be premature or overdue depending on actual usage. DGSDK smart ionizing bars provide electrode service life alerts based on measured performance data, extending electrode life by avoiding unnecessary early replacement while preventing the silent performance degradation that occurs when replacement is delayed.
+              Smart ionizing bars with integrated performance monitoring simplify maintenance scheduling by tracking electrode performance and alerting when cleaning or replacement is indicated, rather than requiring fixed-calendar maintenance that may be premature or overdue depending on actual usage. Shidike smart ionizing bars provide electrode service life alerts based on measured performance data, extending electrode life by avoiding unnecessary early replacement while preventing the silent performance degradation that occurs when replacement is delayed.
             </p>
 
             <h3>How is a smart ionizing bar integrated with PLC systems on a PV production line?</h3>
@@ -194,7 +195,7 @@ import Layout from '../../layouts/Layout.astro';
               PLC integration transforms the smart ionizing bar from a standalone device into an active element of the production line control system — one that can be monitored, commanded, and logged alongside conveyors, laminators, and inspection systems.
             </p>
             <p>
-              DGSDK smart ionizing bars support two primary industrial communication protocols: Modbus RTU for lines using RS-485 serial fieldbus architectures, and Profinet for lines using Ethernet-based industrial networking. Both protocols provide the same functional capability: the PLC can read current ionizer status (operating, alarm, standby), read real-time performance data (ion balance offset, electrode voltage, discharge performance), write operating parameters (enable/disable, speed compensation mode), and receive alarm notifications (electrode wear alert, balance deviation, power fault).
+              Shidike smart ionizing bars support two primary industrial communication protocols: Modbus RTU for lines using RS-485 serial fieldbus architectures, and Profinet for lines using Ethernet-based industrial networking. Both protocols provide the same functional capability: the PLC can read current ionizer status (operating, alarm, standby), read real-time performance data (ion balance offset, electrode voltage, discharge performance), write operating parameters (enable/disable, speed compensation mode), and receive alarm notifications (electrode wear alert, balance deviation, power fault).
             </p>
             <p>
               Practical integration for PV production typically includes three operational elements. First, interlock logic that prevents line start if the ionizer is in alarm state — ensuring that production does not run without confirmed static elimination. Second, speed-linked parameter adjustment that sends the current line speed to the ionizer so it can automatically adjust discharge parameters to maintain performance as line speed changes during startup, normal production, and slowdown. Third, data logging of ionizer performance alongside production lot records, providing traceability for quality investigations and supporting the data-driven maintenance approach that modern PV manufacturing quality systems require.
@@ -222,7 +223,7 @@ import Layout from '../../layouts/Layout.astro';
               The correct configuration for high-speed lines uses higher output settings combined with speed compensation mode, where the ionizer's output level is dynamically linked to the reported line speed. When line speed increases, output level increases proportionally to maintain the same effective ion dose per unit area of substrate. This mode requires PLC integration to provide real-time speed signals to the ionizer — a further reason why communication capability is essential for high-speed PV line applications.
             </p>
             <p>
-              Physical configuration should also be reviewed for high-speed lines. Positioning the ionizer closer to the substrate surface — within the 10–15 cm range rather than 20–30 cm — concentrates ion delivery and reduces the effective discharge time needed. Multiple ionizing bars in series can provide additional coverage length when a single bar's zone length is insufficient at the operating speed. DGSDK technical engineers provide specific commissioning guidance for high-speed installations, including field verification of discharge performance at operational line speed using portable charge plate monitoring equipment.
+              Physical configuration should also be reviewed for high-speed lines. Positioning the ionizer closer to the substrate surface — within the 10–15 cm range rather than 20–30 cm — concentrates ion delivery and reduces the effective discharge time needed. Multiple ionizing bars in series can provide additional coverage length when a single bar's zone length is insufficient at the operating speed. Shidike technical engineers provide specific commissioning guidance for high-speed installations, including field verification of discharge performance at operational line speed using portable charge plate monitoring equipment.
             </p>
           </section>
 
@@ -241,7 +242,7 @@ import Layout from '../../layouts/Layout.astro';
               If electrode cleaning does not restore performance, check the grounding connection. Ground resistance should be measured immediately — a loose or corroded ground connection can cause sudden performance degradation without any visible change to the equipment. Restore ground contact resistance to ≤1 Ω and retest.
             </p>
             <p>
-              If neither electrode condition nor grounding explains the performance drop, check the high-voltage power supply output. Smart ionizing bars provide power supply status through their monitoring interface — an anomaly in supply voltage or current indicates an internal hardware issue that requires technical service. DGSDK smart ionizing bars generate specific diagnostic alarm codes for power supply faults, electrode faults, and balance faults, which accelerates the diagnostic process by directing investigation to the relevant system component.
+              If neither electrode condition nor grounding explains the performance drop, check the high-voltage power supply output. Smart ionizing bars provide power supply status through their monitoring interface — an anomaly in supply voltage or current indicates an internal hardware issue that requires technical service. Shidike smart ionizing bars generate specific diagnostic alarm codes for power supply faults, electrode faults, and balance faults, which accelerates the diagnostic process by directing investigation to the relevant system component.
             </p>
 
             <h3>Ion balance readings are outside the ±5 V specification — what are the causes and corrective actions?</h3>
@@ -255,7 +256,7 @@ import Layout from '../../layouts/Layout.astro';
               Asymmetric airflow across the bar is a secondary cause. In PV production environments where the ionizer is positioned near conveyor exhaust points or HVAC diffusers, directional airflow can deflect the ion plume from one polarity more than the other, creating an apparent balance offset that is position-dependent rather than device-dependent. Verifying that balance deviation persists when measured with airflow sources blocked or redirected confirms or eliminates this cause.
             </p>
             <p>
-              Power supply instability — variations in the drive waveform that affect positive and negative half-cycles differently — is a less common but possible cause, particularly after any electrical event (power interruption, nearby lightning, power surge) that may have affected the ionizer's internal electronics. DGSDK smart ionizing bars include surge protection, but after a significant electrical event, the internal electronics should be verified through the diagnostic interface before return to service.
+              Power supply instability — variations in the drive waveform that affect positive and negative half-cycles differently — is a less common but possible cause, particularly after any electrical event (power interruption, nearby lightning, power surge) that may have affected the ionizer's internal electronics. Shidike smart ionizing bars include surge protection, but after a significant electrical event, the internal electronics should be verified through the diagnostic interface before return to service.
             </p>
 
             <h3>The ionizing bar will not power on — what is the troubleshooting sequence?</h3>
@@ -263,13 +264,13 @@ import Layout from '../../layouts/Layout.astro';
               A complete failure to power on is usually traced to one of a small number of causes, and a systematic check sequence resolves most cases without requiring hardware service.
             </p>
             <p>
-              Start with power supply verification: confirm that mains voltage at the ionizer's power input is within the specified operating range (typically 100–240 V AC, ±10%). Use a multimeter to verify voltage directly at the terminal rather than relying on panel indicators that may show power availability at a different point in the circuit. Check the ionizer's internal fuse — accessible without tools in most DGSDK designs — and replace if blown. A blown fuse may indicate a transient overcurrent event that has passed, or may indicate an internal fault that will recur; note whether replacement fuses blow immediately upon power application.
+              Start with power supply verification: confirm that mains voltage at the ionizer's power input is within the specified operating range (typically 100–240 V AC, ±10%). Use a multimeter to verify voltage directly at the terminal rather than relying on panel indicators that may show power availability at a different point in the circuit. Check the ionizer's internal fuse — accessible without tools in most Shidike designs — and replace if blown. A blown fuse may indicate a transient overcurrent event that has passed, or may indicate an internal fault that will recur; note whether replacement fuses blow immediately upon power application.
             </p>
             <p>
               Next, verify the external interlock circuit. Many smart ionizing bar installations include interlock wiring that prevents the ionizer from powering on when other safety conditions are not met — emergency stop circuits, guard door contacts, or PLC enable signals. A de-energized interlock circuit will prevent power-on even when mains power is present. Check the interlock input status through the device interface or by temporarily bridging the interlock contacts in a controlled manner.
             </p>
             <p>
-              If power is confirmed at the input and interlocks are satisfied but the device still does not power on, the fault is internal and requires service. DGSDK provides remote technical support that can guide the on-site team through advanced diagnostic steps using the device's communication interface before dispatching service personnel — in many cases, a firmware reset or configuration recovery resolves the issue without requiring hardware replacement.
+              If power is confirmed at the input and interlocks are satisfied but the device still does not power on, the fault is internal and requires service. Shidike provides remote technical support that can guide the on-site team through advanced diagnostic steps using the device's communication interface before dispatching service personnel — in many cases, a firmware reset or configuration recovery resolves the issue without requiring hardware replacement.
             </p>
 
             <h3>An alarm is triggered during production — how should this be handled without stopping the line?</h3>
@@ -283,7 +284,7 @@ import Layout from '../../layouts/Layout.astro';
               Ion balance deviation alarms indicate that residual charge on processed substrates may be outside specification. This alarm type warrants a rapid assessment: use a portable fieldmeter to verify actual residual charge on substrates downstream of the ionizer. If measured residual charge is within ±50 V — the PV process tolerance — production can continue while the balance deviation is investigated at the next stop. If residual charge is outside this range, the decision to continue production should be made with awareness that affected substrates may have elevated contamination risk.
             </p>
             <p>
-              Power supply and high-voltage faults are more serious alarm categories that indicate the ionizer has reduced or ceased ion output. In these cases, production should be evaluated against the consequences of running without static elimination at that stage. For stages where static elimination is critical — cell stringing, pre-lamination — a power fault alarm should trigger a line hold until the fault is resolved. DGSDK smart ionizing bars provide alarm output signals that can be wired into line control logic to automatically trigger a line hold for critical fault categories.
+              Power supply and high-voltage faults are more serious alarm categories that indicate the ionizer has reduced or ceased ion output. In these cases, production should be evaluated against the consequences of running without static elimination at that stage. For stages where static elimination is critical — cell stringing, pre-lamination — a power fault alarm should trigger a line hold until the fault is resolved. Shidike smart ionizing bars provide alarm output signals that can be wired into line control logic to automatically trigger a line hold for critical fault categories.
             </p>
 
             <h3>Excessive ozone generation is detected near the ionizing bar — what corrective action is needed?</h3>
@@ -297,7 +298,7 @@ import Layout from '../../layouts/Layout.astro';
               Operating the ionizer at higher voltage than the installation requires is a second cause. If a conventional ionizer has been set to maximum output as a default and the actual discharge requirement could be met at a lower setting, the excess output appears as additional ozone rather than useful ion emission. Smart ionizing bars that automatically modulate output to meet discharge requirements — rather than running at fixed maximum — generate significantly less ozone because they operate at the minimum output needed to achieve the residual voltage target.
             </p>
             <p>
-              Ventilation in the ionizer vicinity should be reviewed if ozone readings are elevated despite correct electrode condition and output settings. Adequate airflow through and around the ionizer disperses generated ozone to safe ambient levels. Stagnant air near the ionizer allows ozone to accumulate even when generation rates are within normal parameters. DGSDK smart ionizing bar designs optimize electrode geometry and drive waveform specifically to minimize ozone co-production while maintaining discharge performance — verified to operate within OSHA and EU occupational exposure limits under normal installation conditions.
+              Ventilation in the ionizer vicinity should be reviewed if ozone readings are elevated despite correct electrode condition and output settings. Adequate airflow through and around the ionizer disperses generated ozone to safe ambient levels. Stagnant air near the ionizer allows ozone to accumulate even when generation rates are within normal parameters. Shidike smart ionizing bar designs optimize electrode geometry and drive waveform specifically to minimize ozone co-production while maintaining discharge performance — verified to operate within OSHA and EU occupational exposure limits under normal installation conditions.
             </p>
           </section>
 
@@ -310,7 +311,7 @@ import Layout from '../../layouts/Layout.astro';
               The yield impact of smart ionizing bar deployment in PV manufacturing is measurable and has been documented in production environments across multiple cell technologies. The mechanism is straightforward: contamination events caused by static-attracted particles contribute to defects at encapsulation inspection, electrical performance testing, and electroluminescence imaging; reducing those events directly reduces the defect rate.
             </p>
             <p>
-              A documented case from a 500 MW/year monocrystalline module facility showed a 3% reduction in defect rate at post-lamination EL inspection within 60 days of installing DGSDK smart ionizing bars at three key process positions: glass exit from washer, film unwind station, and pre-lamination inspection conveyor. The defect categories that declined most significantly were foreign inclusion defects — particles embedded in the encapsulant — and edge delamination in early production testing.
+              A documented case from a 500 MW/year monocrystalline module facility showed a 3% reduction in defect rate at post-lamination EL inspection within 60 days of installing Shidike smart ionizing bars at three key process positions: glass exit from washer, film unwind station, and pre-lamination inspection conveyor. The defect categories that declined most significantly were foreign inclusion defects — particles embedded in the encapsulant — and edge delamination in early production testing.
             </p>
             <p>
               The measurable yield improvement from ionizing bar optimization requires three conditions. First, the ionizer must be positioned correctly at each contamination-critical stage, not only at the stages where static problems are most visibly obvious. Second, the ionizer must maintain its performance specification consistently throughout the production period — which requires the maintenance discipline described in Part 2, and which is significantly more reliable with a smart ionizing bar that monitors and alerts on its own performance than with a conventional device that degrades silently. Third, discharge parameters must be verified at actual production line speeds, not at test-bench conditions — a verification step that is often skipped and that frequently reveals a significant gap between specified and actual discharge performance at speed.
@@ -327,7 +328,7 @@ import Layout from '../../layouts/Layout.astro';
               Positioning an ionizing bar immediately upstream of a cleaning machine — at 10–15 cm from the substrate surface, covering the full width — neutralizes surface charge before the substrate enters the cleaning zone. The cleaning machine then operates against only the mechanical holding forces, requiring less force to achieve the same removal rate and achieving better overall cleaning performance on sensitive PV substrates.
             </p>
             <p>
-              DGSDK offers integrated contamination control solutions that pair smart ionizing bars with compatible cleaning equipment for PV production environments, with engineering support to ensure correct positioning, coverage geometry, and system integration. The combination is particularly effective at pre-lamination inspection stages where both static-attracted particles and mechanical debris from cutting and tabbing operations must be addressed.
+              Shidike offers integrated contamination control solutions that pair smart ionizing bars with compatible cleaning equipment for PV production environments, with engineering support to ensure correct positioning, coverage geometry, and system integration. The combination is particularly effective at pre-lamination inspection stages where both static-attracted particles and mechanical debris from cutting and tabbing operations must be addressed.
             </p>
 
             <h3>How can production data from smart ionizing bars be used to optimize the manufacturing process?</h3>
@@ -341,7 +342,7 @@ import Layout from '../../layouts/Layout.astro';
               Seasonal and shift-based analysis of ionizer operating data — particularly the automatic output adjustments made by the ionizer to maintain discharge performance — reveals how ambient conditions (humidity, temperature) affect static generation levels at each process stage. This data can be used to define supplemental static management procedures for high-risk seasons or production conditions, and to verify that existing ionizer configurations remain adequate as production speed, module format, or material suppliers change.
             </p>
             <p>
-              DGSDK smart ionizing bars log all performance and alarm data through their communication interface, making this data available for integration with MES, quality management, and process analytics systems. The DGSDK technical team provides guidance on data integration architecture and analysis methodologies for facilities implementing data-driven static management programs.
+              Shidike smart ionizing bars log all performance and alarm data through their communication interface, making this data available for integration with MES, quality management, and process analytics systems. The Shidike technical team provides guidance on data integration architecture and analysis methodologies for facilities implementing data-driven static management programs.
             </p>
 
             <h3>What are the differences in ionizing bar requirements between PERC and TOPCon cell technologies?</h3>
@@ -355,7 +356,7 @@ import Layout from '../../layouts/Layout.astro';
               TOPCon cells include an ultra-thin tunnel oxide layer (typically 1–2 nm) through which carriers tunnel during operation. This layer is even more sensitive to ESD stress than the PERC passivation layer — a localized discharge event that would cause recoverable damage to a PERC cell may cause permanent tunnel oxide breakdown in a TOPCon cell. For TOPCon manufacturing, residual voltage specification should be ±10 V at cell and string handling stages, requiring a higher-performance ionizing bar and more careful verification of discharge performance at operating line speeds.
             </p>
             <p>
-              For both technologies, the encapsulant film handling stage carries static risk from film charging that is similar regardless of cell technology — the differences are concentrated at the cell handling and stringing stages where the cell's ESD sensitivity determines the required discharge performance specification. DGSDK's application engineering team provides cell-technology-specific deployment recommendations for both PERC and TOPCon production lines.
+              For both technologies, the encapsulant film handling stage carries static risk from film charging that is similar regardless of cell technology — the differences are concentrated at the cell handling and stringing stages where the cell's ESD sensitivity determines the required discharge performance specification. Shidike's application engineering team provides cell-technology-specific deployment recommendations for both PERC and TOPCon production lines.
             </p>
 
             <h3>How can equipment service life be extended and long-term operating costs minimized?</h3>
@@ -369,7 +370,7 @@ import Layout from '../../layouts/Layout.astro';
               Operating the ionizer at the minimum output level required to meet discharge specifications — rather than at maximum output as a default — also significantly reduces electrode erosion rate. Smart ionizing bars that automatically modulate output to meet residual voltage targets operate at lower average output than conventional bars set to fixed maximum, which extends electrode life while maintaining equivalent discharge performance. The additional benefit is reduced ozone generation, as noted in Part 3.
             </p>
             <p>
-              Longer-term, the total cost of ownership of a smart ionizing bar system is most favorably managed through a data-driven maintenance approach: using the performance data logged by the ionizer to schedule electrode replacement based on actual wear state rather than on a fixed calendar. DGSDK electrode service life monitoring provides advance notice of replacement need — typically 2–4 weeks before performance reaches the actionable threshold — allowing replacement to be scheduled at planned maintenance windows rather than as an emergency response. This approach reduces both consumable cost and unplanned downtime, improving the overall return on the ionizing bar investment.
+              Longer-term, the total cost of ownership of a smart ionizing bar system is most favorably managed through a data-driven maintenance approach: using the performance data logged by the ionizer to schedule electrode replacement based on actual wear state rather than on a fixed calendar. Shidike electrode service life monitoring provides advance notice of replacement need — typically 2–4 weeks before performance reaches the actionable threshold — allowing replacement to be scheduled at planned maintenance windows rather than as an emergency response. This approach reduces both consumable cost and unplanned downtime, improving the overall return on the ionizing bar investment.
             </p>
           </section>
 
@@ -390,7 +391,7 @@ import Layout from '../../layouts/Layout.astro';
           <!-- CTA -->
           <div class="blog-cta">
             <h3>Need a Smart Ionizing Bar for Your PV Production Line?</h3>
-            <p>DGSDK engineers work with photovoltaic module manufacturers to match ionizing bar specifications to cell technology, line speed, and process stage requirements. Share your production parameters and we will recommend the right configuration.</p>
+            <p>Shidike engineers work with photovoltaic module manufacturers to match ionizing bar specifications to cell technology, line speed, and process stage requirements. Share your production parameters and we will recommend the right configuration.</p>
             <div class="blog-cta-buttons">
               <a href="/products/static-eliminator" class="cta-btn primary">View Static Eliminators</a>
               <a href="/contact" class="cta-btn secondary">Talk to an Engineer</a>

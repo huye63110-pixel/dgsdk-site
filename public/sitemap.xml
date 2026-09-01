@@ -17,98 +17,44 @@
   <url><loc>https://www.dg-sdk.com/guides/esd-control-products</loc><lastmod>2026-05-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.dg-sdk.com/guides/industrial-static-eliminator</loc><lastmod>2026-05-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.dg-sdk.com/guides/what-is-an-ionizing-bar</loc><lastmod>2026-05-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url>
+    <loc>https://www.dg-sdk.com/guides/ionizing-bar-voltage-output</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
   <!-- ===== BLOG (EN) ===== -->
   <url><loc>https://www.dg-sdk.com/blog</loc><lastmod>2026-05-22</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url>
-    <loc>https://www.dg-sdk.com/blog/ccl-multilayer-roller-cleaner-guide</loc>
-    <lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/ccl-cleaner.jpg</image:loc>
-      <image:title>CCL Multi-Layer Board Roller Cleaner: Selection Guide &amp; Efficiency Optimization</image:title>
-      <image:caption>Technical Q&amp;A covering core value, selection criteria, efficiency strategies, and fault diagnosis for CCL and PCB manufacturers choosing roller adhesive cleaning machines</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.dg-sdk.com/blog/polarizer-cleaner-manufacturer-guide</loc>
-    <lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/polarizer-cleaner2.jpg</image:loc>
-      <image:title>Flat Panel Display Polarizer Cleaner: Manufacturer Differentiation Guide — High-Warp, OLED &amp; AOI Inline Q&amp;A</image:title>
-      <image:caption>Technical Q&amp;A for polarizer manufacturers on high-warp jamming, OLED damage prevention, AOI false-reject reduction, and full-process static elimination</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.dg-sdk.com/blog/fpc-roller-cleaner-guide</loc>
-    <lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/roll-chip-cleaner.jpg</image:loc>
-      <image:title>FPC Roller Adhesive Cleaner Selection Guide: Key Criteria for Manufacturing Decision Makers</image:title>
-      <image:caption>Technical framework for selecting roller adhesive cleaning machines for FPC manufacturing — cleaning precision, static elimination, substrate handling, process-stage fit for pre-plating and coverlay lamination</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.dg-sdk.com/blog/rubber-molding-ionizing-bar-guide</loc>
-    <lastmod>2026-05-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-e.jpg</image:loc>
-      <image:title>Rubber Molding Static Elimination — 5-Dimension Ionizing Bar Selection Guide</image:title>
-      <image:caption>Five-dimension framework for selecting ionizing bars in rubber vulcanization, extrusion, and compression molding — scene fit, discharge effectiveness, process compatibility, reliability, and cleaning integration</image:caption>
-    </image:image>
+    <loc>https://www.dg-sdk.com/blog/st-g-ionizing-bar-guide</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.dg-sdk.com/blog/lithium-battery-ionizing-bar-guide</loc>
-    <lastmod>2026-05-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-f.jpg</image:loc>
-      <image:title>Ionizing Bar Selection Guide for Lithium Battery Production</image:title>
-      <image:caption>FAQ covering ionizing bar selection, installation, and fault troubleshooting for LiB slitting, winding, and electrolyte injection stations</image:caption>
-    </image:image>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.dg-sdk.com/blog/photovoltaic-ionizing-bar-guide</loc>
-    <lastmod>2026-05-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-g-series.jpg</image:loc>
-      <image:title>Smart Ionizing Bar for Photovoltaic Manufacturing — Selection &amp; Optimization Guide</image:title>
-      <image:caption>Complete Q&amp;A guide for smart ionizing bars in PV module production — PERC/TOPCon compatibility, PLC integration, and yield optimization</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.dg-sdk.com/blog/semiconductor-cleaner-selection-guide</loc>
-    <lastmod>2026-05-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/smt-cleaner.jpg</image:loc>
-      <image:title>Semiconductor Cleanroom Dust Removal Machine Selection Guide</image:title>
-      <image:caption>Expert Q&amp;A guide for selecting cleaning machines in semiconductor cleanrooms — sub-micron precision, static elimination, Class 10 compatibility</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.dg-sdk.com/blog/polarizer-cleaner-selection-guide</loc>
-    <lastmod>2026-05-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/polarizer-cleaner.jpg</image:loc>
-      <image:title>Polarizer Cleaning Machine Buyer's Guide — Technical Selection Criteria</image:title>
-      <image:caption>Technical selection guide for polarizer cleaning machines covering OLED compatibility, high-warp handling, and AOI inline integration</image:caption>
-    </image:image>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.dg-sdk.com/blog/optical-film-cleaner-tutorial</loc>
-    <lastmod>2026-05-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/optical.jpg</image:loc>
-      <image:title>Large Size Optical Film Cleaning Machine — 9-Step Operating Guide</image:title>
-      <image:caption>Step-by-step guide for operating the DGSDK optical film dust removal cleaning machine in display manufacturing</image:caption>
-    </image:image>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.dg-sdk.com/blog/polarizer-cleaner-tutorial</loc>
-    <lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/polarizer-cleaner.jpg</image:loc>
-      <image:title>Polarizer Precision Cleaning Machine — Operating Guide</image:title>
-      <image:caption>Operating guide for DGSDK polarizer precision cleaning machine used in LCD and display panel manufacturing</image:caption>
-    </image:image>
+    <loc>https://www.dg-sdk.com/zh/blog/lithium-battery-ionizing-bar-guide</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 
   <!-- ===== STATIC ELIMINATOR PRODUCTS (EN) ===== -->
@@ -375,96 +321,6 @@
 
   <!-- BLOG (ZH) -->
   <url><loc>https://www.dg-sdk.com/zh/blog</loc><lastmod>2026-05-22</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url>
-    <loc>https://www.dg-sdk.com/zh/blog/ccl-multilayer-roller-cleaner-guide</loc>
-    <lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/ccl-cleaner.jpg</image:loc>
-      <image:title>覆铜板多层板粘轮机：选型策略与效率提升全攻略——企业高频疑问专业解答</image:title>
-      <image:caption>系统解析CCL多层板粘轮机核心价值、选型维度、效率优化策略与常见故障诊断方法，助力企业降本增效</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.dg-sdk.com/zh/blog/polarizer-cleaner-manufacturer-guide</loc>
-    <lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/polarizer-cleaner2.jpg</image:loc>
-      <image:title>平板显示偏光片清洁机：厂商竞争力提升全攻略——高翘曲、OLED与AOI连线核心疑问解答</image:title>
-      <image:caption>系统解答偏光片厂商高翘曲卡料消除、OLED无损清洁、AOI误判降低与全流程静电防控的核心技术疑问</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.dg-sdk.com/zh/blog/fpc-roller-cleaner-guide</loc>
-    <lastmod>2026-05-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/roll-chip-cleaner.jpg</image:loc>
-      <image:title>FPC柔性板滚筒粘尘机选型指南：制造决策者的关键维度解析</image:title>
-      <image:caption>从清洁精度、静电消除、基材传输、工艺阶段适配与总拥有成本五大维度，系统解析FPC滚筒粘尘机选型策略</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.dg-sdk.com/zh/blog/rubber-molding-ionizing-bar-guide</loc>
-    <lastmod>2026-05-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-e.jpg</image:loc>
-      <image:title>橡胶成型静电消除棒选型指南：五维度深度解析与效能提升策略</image:title>
-      <image:caption>从场景适配、消电效能、工艺兼容性、稳定可靠性、清洁一体化五大维度，系统解析橡胶成型静电消除棒选型策略</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.dg-sdk.com/zh/blog/lithium-battery-ionizing-bar-guide</loc>
-    <lastmod>2026-05-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-f.jpg</image:loc>
-      <image:title>锂电池生产静电消除棒选型与应用FAQ</image:title>
-      <image:caption>涵盖极片分切、卷绕、注液环节的静电消除棒选型策略、安装优化与故障排查全攻略</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.dg-sdk.com/zh/blog/photovoltaic-ionizing-bar-guide</loc>
-    <lastmod>2026-05-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-g-series.jpg</image:loc>
-      <image:title>光伏组件智能静电棒全攻略 | 史帝克DGSDK</image:title>
-      <image:caption>光伏组件智能静电棒选型与优化指南，涵盖PERC/TOPCon兼容性、PLC集成与良率提升</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.dg-sdk.com/zh/blog/semiconductor-cleaner-selection-guide</loc>
-    <lastmod>2026-05-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/smt-cleaner.jpg</image:loc>
-      <image:title>半导体车间粘尘机选型全攻略 | 史帝克DGSDK</image:title>
-      <image:caption>半导体车间粘尘机选型指南，涵盖清洁精度、静电消除、Class 10兼容性与长期成本评估</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.dg-sdk.com/zh/blog/polarizer-cleaner-selection-guide</loc>
-    <lastmod>2026-05-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/polarizer-cleaner.jpg</image:loc>
-      <image:title>偏光片清洁机选型指南：技术要点与产线适配 | 史帝克DGSDK</image:title>
-      <image:caption>偏光片清洁机选型技术指南，涵盖OLED兼容、高翘曲处理和AOI在线集成等场景</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.dg-sdk.com/zh/blog/optical-film-cleaner-tutorial</loc>
-    <lastmod>2026-05-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/optical.jpg</image:loc>
-      <image:title>大尺寸光学薄膜清洁机9步操作教程 | 史帝克DGSDK</image:title>
-      <image:caption>光学膜片粘尘机操作步骤详解，适用于显示屏贴合工序前的薄膜清洁处理</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.dg-sdk.com/zh/blog/polarizer-cleaner-tutorial</loc>
-    <lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/polarizer-cleaner.jpg</image:loc>
-      <image:title>偏光片精密清洁机操作指南 | 史帝克DGSDK</image:title>
-      <image:caption>偏光片清洁机使用教程，适用于LCD显示面板贴合前的偏光片表面清洁工序</image:caption>
-    </image:image>
-  </url>
 
   <!-- STATIC ELIMINATOR (ZH) -->
   <url><loc>https://www.dg-sdk.com/zh/products/static-eliminator</loc><lastmod>2026-08-31</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>

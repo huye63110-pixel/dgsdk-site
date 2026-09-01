@@ -11,7 +11,7 @@ import Layout from '../layouts/Layout.astro';
       <span class="about-hero-kicker" data-aos="fade-down" data-aos-duration="600">About DGSDK</span>
       <h1 data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">Industrial static control and surface cleaning solutions built for global production.</h1>
       <p>
-        Dongguan Shidike Automation Equipment Co., Ltd. focuses on industrial static eliminators and ionizing bars first, followed by precision cleaning machines for customers worldwide.
+        Dongguan Shidike Intelligent Equipment Co., Ltd. focuses on industrial static eliminators and ionizing bars first, followed by precision cleaning machines for customers worldwide.
       </p>
     </div>
   </section>
@@ -124,8 +124,6 @@ import Layout from '../layouts/Layout.astro';
           <h3>2. Industrial Cleaning Machines</h3>
           <p>Precision cleaning equipment for PCB, FPC, SMT, polarizer, LCM, backlight, and optical film applications.</p>
         </a>
-
-
       </div>
     </div>
   </section>
@@ -317,9 +315,23 @@ import Layout from '../layouts/Layout.astro';
 
         <div class="about-cta-actions">
           <a href="/contact" class="about-cta-btn primary">Contact Us</a>
-          <a href="/products/static-eliminator" class="about-cta-btn secondary">View Products</a>
+          <a href="/products/static-eliminator" class="about-cta-btn secondary">Industrial Static Eliminators</a>
         </div>
       </div>
     </div>
   </section>
+
+  <style>
+    /* styles.css still lays this out as a 4-column grid from when there were four
+       product lines. With two cards left they sat in columns 1-2 and the row read
+       as left-aligned with a hole on the right. */
+    .about-business-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      max-width: 780px;
+      margin-inline: auto;
+    }
+    @media (max-width: 640px) {
+      .about-business-grid { grid-template-columns: 1fr !important; max-width: 420px; }
+    }
+  </style>
 </Layout>

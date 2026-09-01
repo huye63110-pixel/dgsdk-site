@@ -1,135 +1,104 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
+const base = 'https://www.dg-sdk.com';
+const canonical = base + '/blog';
+
 const posts = [
   {
-    slug: 'mobile-cover-roller-dust-cleaner-guide',
-    title: 'Mobile Phone Cover Glass Roller Dust Cleaner FAQ: Implementation Steps & Adaptation Guide',
-    excerpt: 'A roller dust cleaner for mobile phone cover glass is a yield-critical process checkpoint. This FAQ covers equipment selection, commissioning, consumable management, material adaptation, and troubleshooting for real production lines.',
-    date: 'May 26, 2026',
-    tags: ['Cleaning Machine', 'Mobile Cover Glass', 'Implementation Guide'],
-    image: '/assets/img/cleaning-machine/inspection-cleaner.jpg',
-    readTime: '10 min read',
-  },
-  {
-    slug: 'ccl-multilayer-roller-cleaner-guide',
-    title: 'CCL Multi-Layer Board Roller Cleaner: Selection Guide & Efficiency Optimization — Technical Q&A',
-    excerpt: 'How to select and optimize a roller adhesive cleaner for copper-clad laminate multi-layer board production — covering core value, selection criteria, efficiency strategies, and fault diagnosis for CCL and PCB manufacturers.',
-    date: 'May 22, 2026',
-    tags: ['Cleaning Machine', 'CCL / PCB', 'Selection Guide'],
-    image: '/assets/img/cleaning-machine/ccl-cleaner.jpg',
-    readTime: '12 min read',
-  },
-  {
-    slug: 'polarizer-cleaner-manufacturer-guide',
-    title: 'Flat Panel Display Polarizer Cleaner: Manufacturer Differentiation Guide — High-Warp, OLED & AOI Inline Q&A',
-    excerpt: 'A polarizer cleaning machine is not a generic utility — it is a yield-rate guardian. This guide covers high-warp jamming solutions, OLED damage prevention, AOI false-reject reduction, and full-process static control for polarizer manufacturers.',
-    date: 'May 21, 2026',
-    tags: ['Cleaning Machine', 'Polarizer', 'Manufacturer Guide'],
-    image: '/assets/img/cleaning-machine/polarizer-cleaner2.jpg',
-    readTime: '12 min read',
-  },
-  {
-    slug: 'fpc-roller-cleaner-guide',
-    title: 'FPC Roller Adhesive Cleaner Selection Guide: Key Criteria for Manufacturing Decision Makers',
-    excerpt: 'Selecting a roller adhesive cleaning machine for FPC manufacturing is a process compatibility decision, not a price decision. This guide covers cleaning precision, static elimination, substrate handling, process-stage fit for pre-plating and coverlay lamination, and total cost of ownership.',
-    date: 'May 20, 2026',
-    tags: ['Cleaning Machine', 'FPC', 'Selection Guide'],
-    image: '/assets/img/cleaning-machine/roll-chip-cleaner.jpg',
-    readTime: '12 min read',
-  },
-  {
-    slug: 'rubber-molding-ionizing-bar-guide',
-    title: 'Rubber Molding Static Elimination: 5-Dimension Ionizing Bar Selection Guide',
-    excerpt: 'Static charge in rubber molding drives 3–5% yield loss through dust adhesion, mold sticking, and cavity contamination. This guide applies a five-dimension technical framework — scene fit, discharge effectiveness, process compatibility, reliability, and cleaning integration — to ionizing bar selection for vulcanization, extrusion, and compression molding.',
-    date: 'May 19, 2026',
-    tags: ['Static Eliminator', 'Rubber Molding', 'Selection Guide'],
-    image: '/assets/img/static-eliminator/st-e.jpg',
-    readTime: '12 min read',
+    slug: 'st-g-ionizing-bar-guide',
+    title: 'The ST-G Ionizing Bar: How to Specify, Mount and Verify an Anti Static Bar',
+    excerpt: 'What ±50 V ion balance actually means on your line, why the high voltage is generated inside the bar instead of in a separate box, how to work out the mounting pitch for any bar length, and how to check the bar is doing its job.',
+    date: 'September 1, 2026',
+    tags: ['Static Eliminator', 'ST-G', 'Selection Guide'],
+    image: '/assets/img/static-eliminator/st-g',
+    readTime: '9 min read',
   },
   {
     slug: 'lithium-battery-ionizing-bar-guide',
-    title: 'Ionizing Bar Selection Guide for Lithium Battery Production: Strategies & Optimization FAQ',
-    excerpt: 'Static discharge damages electrode sheets and separator films — costing yield points that add up fast. This FAQ covers everything LiB manufacturers need to know about selecting, positioning, and maintaining ionizing bars across slitting, winding, and electrolyte injection stations.',
+    title: 'Ionizing Bar Selection Guide for Lithium Battery Production',
+    excerpt: 'Electrode coating, slitting and winding all generate charge as the web separates from a roller. Which bar suits which step, and where to mount it.',
     date: 'May 18, 2026',
     tags: ['Static Eliminator', 'Lithium Battery', 'Selection Guide'],
-    image: '/assets/img/static-eliminator/st-f.jpg',
-    readTime: '12 min read',
+    image: '/assets/img/static-eliminator/st-e',
+    readTime: '11 min read',
   },
   {
     slug: 'photovoltaic-ionizing-bar-guide',
-    title: 'Smart Ionizing Bar for Photovoltaic Manufacturing: Full Selection & Optimization Guide',
-    excerpt: 'Static charge is one of the most underestimated yield killers in PV module production. This guide answers the most critical questions about smart ionizing bars — from installation and integration to fault response and yield optimization for PERC and TOPCon lines.',
+    title: 'Smart Ionizing Bars for Photovoltaic Manufacturing',
+    excerpt: 'Cell handling, backsheet lamination and glass loading are all static-critical. How to specify a bar for PV production lines.',
     date: 'May 17, 2026',
     tags: ['Static Eliminator', 'Photovoltaic', 'Selection Guide'],
-    image: '/assets/img/static-eliminator/st-g-series.jpg',
-    readTime: '12 min read',
-  },
-  {
-    slug: 'semiconductor-cleaner-selection-guide',
-    title: 'Semiconductor Cleanroom Dust Removal Machine Selection Guide: Expert Q&A for High-Yield Production',
-    excerpt: 'Selecting the right cleaning machine for semiconductor cleanrooms is a precision decision. This guide answers the most critical questions — from sub-micron particle removal and Class 10 compatibility to static elimination and long-term cost evaluation.',
-    date: 'May 16, 2026',
-    tags: ['Cleaning Machine', 'Selection Guide', 'Semiconductor'],
-    image: '/assets/img/cleaning-machine/smt-cleaner.jpg',
-    readTime: '12 min read',
-  },
-  {
-    slug: 'polarizer-cleaner-selection-guide',
-    title: "Polarizer Cleaning Machine Buyer's Guide: Technical Selection Criteria and Production Line Fit",
-    excerpt: "Not all polarizer cleaners are equal. Learn which parameters matter for OLED, high-warp, and AOI inline applications — and how to match equipment to your actual line pain points.",
-    date: 'May 15, 2026',
-    tags: ['Cleaning Machine', 'Selection Guide', 'Polarizer'],
-    image: '/assets/img/cleaning-machine/polarizer-cleaner.jpg',
+    image: '/assets/img/static-eliminator/st-f',
     readTime: '12 min read',
   },
   {
     slug: 'optical-film-cleaner-tutorial',
-    title: 'How to Operate an Optical Film Dust Removal Machine? 9 Core Steps for High Cleanliness',
-    excerpt: 'Master the full workflow for operating an optical film dust removal machine — from environment setup and parameter calibration to dual-side cleaning and shutdown maintenance. Suitable for polarizers, diffusers, and prism sheets.',
+    title: 'Optical Film Dust Removal: 9 Steps for High Cleanliness',
+    excerpt: 'A step-by-step operating procedure for optical film cleaning, from roller tack selection through static verification.',
     date: 'May 14, 2026',
-    tags: ['Cleaning Machine', 'Tutorial', 'Optical Film'],
-    image: '/assets/img/cleaning-machine/optical.jpg',
-    readTime: '12 min read',
-  },
-  {
-    slug: 'polarizer-cleaner-tutorial',
-    title: 'Polarizer Cleaning Machine: 8-Step Operating Guide for Zero-Defect Results',
-    excerpt: 'Learn how to operate a polarizer cleaning machine step by step — from parameter setup and consumable installation to troubleshooting jams, scratches, and static issues. Achieve 99%+ cleaning yield.',
-    date: 'May 13, 2026',
-    tags: ['Cleaning Machine', 'Tutorial', 'Polarizer'],
-    image: '/assets/img/cleaning-machine/polarizer-cleaner.jpg',
+    tags: ['Cleaning Machine', 'Optical Film', 'Tutorial'],
+    image: '/assets/img/cleaning-machine/optical',
     readTime: '10 min read',
   },
 ];
 ---
 
 <Layout
-  title="Blog | Industrial Cleaning & Automation Insights – DGSDK"
-  description="Practical guides, operation tutorials, and technical insights for polarizer cleaners, static eliminators, and industrial automation equipment from DGSDK."
+  title="Anti Static Bar & Web Cleaning Technical Blog | Shidike"
+  description="Practical guides on specifying, mounting and verifying anti static bars, ionizing air blowers and contact cleaning machines on real production lines."
 >
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: base },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: canonical }
+    ]
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'Shidike Technical Blog',
+    url: canonical,
+    description: 'Guides on specifying, mounting and verifying anti static bars, ionizing air blowers and contact cleaning machines.',
+    publisher: { '@type': 'Organization', name: 'Shidike', url: base },
+    blogPost: posts.map(p => ({
+      '@type': 'BlogPosting',
+      headline: p.title,
+      description: p.excerpt,
+      url: canonical + '/' + p.slug,
+      image: base + p.image + '.jpg',
+      datePublished: '2026-09-01'
+    }))
+  })} />
 
   <section
-    class="category-hero"
-    style="background: linear-gradient(rgba(10,20,50,0.6), rgba(10,20,50,0.5)), url('/assets/img/header-bg.webp') center/cover no-repeat;">
-    <div class="category-hero-overlay"></div>
-    <div class="container category-hero-content">
-      <h1>DGSDK Technical Blog</h1>
-      <p>Operation tutorials, parameter guides, and industry insights for industrial cleaning machines, static eliminators, and automation equipment.</p>
+    class="products-hero blog-hero-banner"
+    style="background: #edf4fb url('/assets/img/static-eliminator/static-eliminator-category-banner.webp') center/86% auto no-repeat; background-attachment: scroll;"
+  >
+    <div class="container products-hero-inner">
+      <span class="products-hero-kicker" data-aos="fade-down" data-aos-duration="600">Technical Blog</span>
+      <h1 data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">Anti Static Bars &amp; Web Cleaning, Explained</h1>
+      <p data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
+        How to specify, mount and verify the equipment — written for the engineer who has to make it work on a line
+        that is already running, not for a catalogue.
+      </p>
     </div>
   </section>
 
-  <section class="page-section" style="background:#f5f6f7;padding:60px 20px 80px;">
+  <section class="blog-list-section">
     <div class="container">
-      <div class="breadcrumb" style="margin-bottom:32px;">
-        <a href="/">Home</a><span>/</span><span>Blog</span>
-      </div>
+      <div class="breadcrumb"><a href="/">Home</a><span>/</span><span>Blog</span></div>
 
       <div class="blog-index-grid">
         {posts.map((post, i) => (
           <a href={`/blog/${post.slug}`} class="blog-index-card" data-aos="fade-up" data-aos-delay={i * 100} data-aos-duration="600">
             <div class="blog-index-img">
-              <img src={post.image} alt={post.title} loading="lazy" />
+              <picture>
+                <source srcset={`${post.image}.webp`} type="image/webp" />
+                <img src={`${post.image}.jpg`} alt={post.title} loading="lazy" decoding="async" />
+              </picture>
             </div>
             <div class="blog-index-content">
               <div class="blog-index-tags">
@@ -138,24 +107,67 @@ const posts = [
               <h2>{post.title}</h2>
               <p>{post.excerpt}</p>
               <div class="blog-index-meta">
-                <span><i class="fas fa-calendar-alt"></i> {post.date}</span>
-                <span><i class="fas fa-clock"></i> {post.readTime}</span>
+                <span>{post.date}</span>
+                <span>{post.readTime}</span>
               </div>
-              <span class="blog-read-more">Read Article <i class="fas fa-arrow-right"></i></span>
+              <span class="blog-read-more">Read article &rarr;</span>
             </div>
           </a>
         ))}
       </div>
-    </div>
-  </section>
 
-  <section class="category-info-block">
-    <div class="container">
-      <h2>Industrial Equipment Guides from DGSDK</h2>
-      <p>
-        DGSDK publishes practical, hands-on guides for operators, engineers, and procurement managers working with industrial cleaning machines, static elimination systems, and automation equipment. Our articles cover real production scenarios — parameter settings, maintenance schedules, troubleshooting, and yield optimization — drawn from manufacturing experience in display, optical film, PCB, and electronics industries.
+      <p class="blog-foot-note">
+        These guides describe equipment Shidike builds:
+        <a href="/products/static-eliminator">industrial static eliminators and ionizing bars</a> and
+        <a href="/products/cleaning-machine">contact cleaning machines</a>. Background on how the
+        technology works is in the <a href="/guides">static control guides</a>.
       </p>
     </div>
   </section>
 
+  <style>
+    /* Use the same banner as every product and application page (.products-hero,
+       520px) instead of .category-hero at 300px. */
+    .blog-hero-banner h1 { color: #111; }
+    .blog-list-section { padding: 44px 0 70px; background: #fff; }
+    .blog-list-section .breadcrumb { margin-bottom: 26px; font-size: 13.5px; color: #7d8d97; }
+    .blog-list-section .breadcrumb a { color: var(--brand-deep); text-decoration: none; }
+    .blog-list-section .breadcrumb span { margin: 0 8px; }
+
+    .blog-index-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+      max-width: 1000px; margin-inline: auto;
+    }
+    .blog-index-card {
+      display: flex; flex-direction: column; background: #fff;
+      border: 1px solid var(--hairline); border-radius: 10px; overflow: hidden;
+      text-decoration: none; color: inherit; transition: border-color .15s ease;
+    }
+    .blog-index-card:hover { border-color: var(--brand-deep); }
+    .blog-index-img img {
+      display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover;
+    }
+    .blog-index-content { padding: 18px 20px 20px; display: flex; flex-direction: column; flex: 1; }
+    .blog-index-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+    .blog-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      background: #eef4f8; color: #4a6373; padding: 4px 9px; border-radius: 999px;
+    }
+    .blog-index-content h2 {
+      font-size: 1.12rem; line-height: 1.35; font-weight: 700; color: var(--navy); margin: 0 0 8px;
+    }
+    .blog-index-content p { font-size: 14px; line-height: 1.6; color: var(--ink-muted); margin: 0 0 14px; }
+    .blog-index-meta {
+      display: flex; gap: 14px; font-size: 12.5px; color: #8a99a4; margin-bottom: 12px;
+    }
+    .blog-read-more { margin-top: auto; font-size: 13.5px; font-weight: 700; color: var(--brand-deep); }
+
+    .blog-foot-note {
+      max-width: 1000px; margin: 34px auto 0; padding-top: 24px;
+      border-top: 1px solid var(--hairline);
+      font-size: 14.5px; line-height: 1.75; color: var(--ink-muted); text-align: center;
+    }
+    @media (max-width: 1000px) { .blog-index-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px)  { .blog-index-grid { grid-template-columns: 1fr; } }
+  </style>
 </Layout>

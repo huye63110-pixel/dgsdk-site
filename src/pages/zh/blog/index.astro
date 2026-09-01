@@ -3,109 +3,19 @@ import ZhLayout from '../../../layouts/ZhLayout.astro';
 
 const posts = [
   {
-    slug: 'mobile-cover-roller-dust-cleaner-guide',
-    title: '手机盖板滚轮粘尘机技术落地FAQ：核心环节与适配要点全解析',
-    excerpt: '手机盖板滚轮粘尘机不是随便粘粘，而是影响镀膜、丝印和最终良率的关键制程关卡。本文从基础认知、选型调试、耗材运维、材质适配到故障排查，系统讲解技术落地要点。',
-    date: '2026年5月26日',
-    tags: ['清洁机', '手机盖板', '技术落地'],
-    image: '/assets/img/cleaning-machine/inspection-cleaner.jpg',
-    readTime: '约10分钟',
-  },
-  {
-    slug: 'ccl-multilayer-roller-cleaner-guide',
-    title: '覆铜板多层板粘轮机：选型策略与效率提升全攻略——企业高频疑问专业解答',
-    excerpt: '从清洁性能、超薄与翘曲板适配、静电防控、停机减少到故障诊断，系统解析CCL多层板粘轮机选型策略与效率提升方法，助力企业降本增效。',
-    date: '2026年5月22日',
-    tags: ['清洁机', '覆铜板 / PCB', '选型指南'],
-    image: '/assets/img/cleaning-machine/ccl-cleaner.jpg',
-    readTime: '约12分钟',
-  },
-  {
-    slug: 'polarizer-cleaner-manufacturer-guide',
-    title: '平板显示偏光片清洁机：厂商竞争力提升全攻略——高翘曲、OLED与AOI连线核心疑问解答',
-    excerpt: '偏光片清洁机不是通用工具，而是良率守护系统。本文系统解答高翘曲卡料、OLED无损清洁、AOI误判消除与全流程静电防控的核心技术疑问，助力偏光片厂商提升良率竞争力。',
-    date: '2026年5月21日',
-    tags: ['清洁机', '偏光片', '厂商指南'],
-    image: '/assets/img/cleaning-machine/polarizer-cleaner2.jpg',
-    readTime: '约12分钟',
-  },
-  {
-    slug: 'fpc-roller-cleaner-guide',
-    title: 'FPC柔性板滚筒粘尘机选型指南：制造决策者的关键维度解析',
-    excerpt: '为FPC制造选型滚筒粘尘机，是工艺兼容性决策而非价格决策。本文从清洁精度、静电消除、基材传输、电镀前及覆盖膜层压的工艺阶段适配与总拥有成本五大维度，系统解析FPC滚筒粘尘机选型策略。',
-    date: '2026年5月20日',
-    tags: ['清洁机', 'FPC', '选型指南'],
-    image: '/assets/img/cleaning-machine/roll-chip-cleaner.jpg',
-    readTime: '约12分钟',
-  },
-  {
-    slug: 'rubber-molding-ionizing-bar-guide',
-    title: '橡胶成型静电消除棒：五维度选型与效能提升深度解析',
-    excerpt: '静电吸附粉尘、产品粘模、型腔污染——橡胶成型的静电问题通常造成3%–5%的良率损失。本文从场景适配、消电效能、工艺兼容性、稳定可靠性、清洁一体化五大维度，系统解析静电消除棒的选型策略，助力企业做出基于技术逻辑的选型决策。',
-    date: '2026年5月19日',
-    tags: ['静电消除器', '橡胶成型', '选型指南'],
-    image: '/assets/img/static-eliminator/st-e.jpg',
-    readTime: '约12分钟',
-  },
-  {
     slug: 'lithium-battery-ionizing-bar-guide',
-    title: '锂电池生产静电消除棒选型与应用FAQ：企业必知的选型策略与优化方案',
-    excerpt: '静电击穿极片、隔膜吸附粉尘——这两类问题每年造成大量锂电良率损失。本文针对锂电产线的选型高频疑问，从基础认知、选型策略、安装优化到故障排查，系统解答，助力企业提升静电防护效果。',
+    title: '锂电池生产离子棒选型指南',
+    excerpt: '极片涂布、分切、卷绕过程中材料与辊分离持续起电。哪一步该用哪种棒，装在什么位置。',
     date: '2026年5月18日',
     tags: ['静电消除器', '锂电池', '选型指南'],
-    image: '/assets/img/static-eliminator/st-f.jpg',
-    readTime: '约12分钟',
-  },
-  {
-    slug: 'photovoltaic-ionizing-bar-guide',
-    title: '光伏组件智能静电棒全攻略：高频疑问解答，助力企业生产优化',
-    excerpt: '静电是光伏产线良率的隐形杀手。本文针对光伏组件智能静电棒的高频疑问，从基础认知、安装调试、故障处理到进阶优化，系统解答，助力企业提升良率与生产效率。',
-    date: '2026年5月17日',
-    tags: ['静电消除器', '光伏', '选型指南'],
-    image: '/assets/img/static-eliminator/st-g-series.jpg',
-    readTime: '约12分钟',
-  },
-  {
-    slug: 'semiconductor-cleaner-selection-guide',
-    title: '半导体车间粘尘机选型全攻略：高频疑问解答，助力洁净生产升级',
-    excerpt: '半导体车间对亚微米级颗粒和静电的容忍度极低。本文针对选型高频疑问，从清洁精度、静电消除、制程适配到长期成本，系统解答，助力洁净生产升级。',
-    date: '2026年5月16日',
-    tags: ['清洁机', '选型指南', '半导体'],
-    image: '/assets/img/cleaning-machine/smt-cleaner.jpg',
-    readTime: '约12分钟',
-  },
-  {
-    slug: 'polarizer-cleaner-selection-guide',
-    title: '偏光片清洁机选型指南：技术要点与产线适配逻辑',
-    excerpt: '选错偏光片清洁机代价高昂。本指南系统梳理真正影响性能的技术参数，涵盖OLED兼容、高翘曲处理、AOI在线集成等场景，帮助工厂做出正确采购决策。',
-    date: '2026年5月15日',
-    tags: ['清洁机', '选型指南', '偏光片'],
-    image: '/assets/img/cleaning-machine/polarizer-cleaner.jpg',
-    readTime: '约12分钟',
-  },
-  {
-    slug: 'optical-film-cleaner-tutorial',
-    title: '光学膜片粘尘机怎么操作？9个核心步骤保障膜片高洁净度',
-    excerpt: '适配偏光片、扩散片、棱镜片全场景的粘尘机操作教程，覆盖环境准备、参数设置、上料粘尘到停机保养全流程，新手可快速掌握。',
-    date: '2026年5月14日',
-    tags: ['清洁机', '操作教程', '光学膜片'],
-    image: '/assets/img/cleaning-machine/optical.jpg',
-    readTime: '约12分钟',
-  },
-  {
-    slug: 'polarizer-cleaner-tutorial',
-    title: '偏光片清洁机操作指南：8步实现零缺陷清洁效果',
-    excerpt: '逐步学习偏光片清洁机的操作方法——从参数设置和耗材安装到排除卡机、划伤和静电问题。实现99%以上清洁良率。',
-    date: '2026年5月13日',
-    tags: ['清洁机', '操作教程', '偏光片'],
-    image: '/assets/img/cleaning-machine/polarizer-cleaner.jpg',
-    readTime: '约10分钟',
+    image: '/assets/img/static-eliminator/st-e',
+    readTime: '11 分钟',
   },
 ];
 ---
 
 <ZhLayout
-  title="技术博客 | 工业清洁与自动化技术 – DGSDK 史帝克"
+  title="技术博客 | 工业静电消除与清洁技术 – 史帝克 Shidike"
   description="偏光片清洁机、静电消除器和工业自动化设备的实用操作指南、参数教程和技术资讯。"
   canonical="https://www.dg-sdk.com/zh/blog"
 >
@@ -126,6 +36,7 @@ const posts = [
         <a href="/zh/">首页</a><span>/</span><span>技术博客</span>
       </div>
 
+      {posts.length === 0 && <p class="zh-blog-empty">中文技术文章正在整理中，英文版请见 <a href="/blog">Blog</a>。</p>}
       <div class="blog-index-grid">
         {posts.map((post, i) => (
           <a href={`/zh/blog/${post.slug}`} class="blog-index-card" data-aos="fade-up" data-aos-delay={i * 100} data-aos-duration="600">

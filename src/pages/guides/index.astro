@@ -2,8 +2,9 @@
 import Layout from '../../layouts/Layout.astro';
 ---
 
-<Layout title="ESD & Static Control Guides | Industrial Knowledge Base | DGSDK"
+<Layout title="ESD & Static Control Guides | Industrial Knowledge Base | Shidike"
   description="ESD and static electricity guides for industrial manufacturing: what is ESD, how to prevent static shock, ESD control products, and industrial static eliminator solutions.">
+  <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.dg-sdk.com"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.dg-sdk.com/guides"}]})} />
   <section
     class="products-hero"
     style="background: linear-gradient(rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.18)), url('/assets/img/static-eliminator/bg-2.jpg') center/cover no-repeat; background-attachment: fixed;">
@@ -45,6 +46,12 @@ import Layout from '../../layouts/Layout.astro';
           <span style="display:inline-block; margin-top:16px; color:#2563eb; font-size:0.9rem; font-weight:500;">Read guide →</span>
         </a>
 
+        <a href="/guides/ionizing-bar-voltage-output" style="display:block; padding:32px; border:1px solid #e5e7eb; border-radius:12px; text-decoration:none; color:inherit; transition: box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 8px 24px rgba(0,0,0,0.10)'" onmouseout="this.style.boxShadow='none'">
+          <h2 style="font-size:1.2rem; margin:0 0 12px; color:#1a1a2e;">Ionizing Bar Voltage Output</h2>
+          <p style="margin:0; color:#555; font-size:0.95rem; line-height:1.6;">What the kV figure means, why 24&nbsp;V input and 6.5&nbsp;kV output are different things, and why higher voltage is not better.</p>
+          <span style="display:inline-block; margin-top:16px; color:#2563eb; font-size:0.9rem; font-weight:500;">Read guide →</span>
+        </a>
+
         <a href="/guides/what-is-an-ionizing-bar" data-aos="fade-up" data-aos-delay="320" data-aos-duration="600" style="display:block; padding:32px; border:1px solid #e5e7eb; border-radius:12px; text-decoration:none; color:inherit; transition: box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 8px 24px rgba(0,0,0,0.10)'" onmouseout="this.style.boxShadow='none'">
           <h2 style="font-size:1.2rem; margin:0 0 12px; color:#1a1a2e;">What Is an Ionizing Bar?</h2>
           <p style="margin:0; color:#555; font-size:0.95rem; line-height:1.6;">How ionizer bars work, AC vs DC vs intelligent types, applications in electronics and display manufacturing, and how to choose the right ionizing bar.</p>
@@ -52,6 +59,29 @@ import Layout from '../../layouts/Layout.astro';
         </a>
 
       </div>
+    </div>
+  </section>
+
+  <section class="page-section" style="background:#f7f8fa;">
+    <div class="container" style="max-width:900px;padding:44px 20px 56px;">
+      <h2 style="font-size:1.5rem;margin:0 0 10px;color:#1a1a2e;">Equipment covered in these guides</h2>
+      <p style="margin:0 0 18px;color:#555;line-height:1.7;">
+        Every method in these guides is implemented with one of two product lines. Shidike
+        <a href="/products/static-eliminator">industrial static eliminators and ionizing bars</a> run a
+        6.5&nbsp;kV DC pulse from a DC 24&nbsp;V supply, hold ion balance from &plusmn;50&nbsp;V over a
+        30&ndash;1000&nbsp;mm working range, and are made to length up to 3&nbsp;m &mdash; the
+        <a href="/products/static-eliminator/st-g-series">ST-G</a> for the tightest balance, the
+        <a href="/products/static-eliminator/st-e-series">ST-E</a> for wide spans, the
+        <a href="/products/static-eliminator/st-f-series">ST-F</a> for high line speed. For workstations and
+        enclosures, <a href="/products/static-eliminator/st-1200">ionizing air blowers</a> cover 45 to 360 CFM.
+        Where particles rather than charge are the problem,
+        <a href="/products/cleaning-machine">contact cleaning machines</a> handle 0.022 to 6&nbsp;mm material
+        up to 1500&nbsp;mm wide.
+      </p>
+      <p style="margin:0;color:#555;line-height:1.7;">
+        Not sure which applies to your line? <a href="/applications">See the applications by industry</a> or
+        <a href="/contact">send us the material and the line speed</a>.
+      </p>
     </div>
   </section>
 </Layout>

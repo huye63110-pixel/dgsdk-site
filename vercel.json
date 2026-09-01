@@ -59,6 +59,96 @@
       "source": "/zh/products/automation/:path*",
       "destination": "/zh/products/cleaning-machine",
       "permanent": true
+    },
+    {
+      "source": "/blog/ccl-multilayer-roller-cleaner-guide",
+      "destination": "/products/cleaning-machine",
+      "permanent": true
+    },
+    {
+      "source": "/zh/blog/ccl-multilayer-roller-cleaner-guide",
+      "destination": "/zh/products/cleaning-machine",
+      "permanent": true
+    },
+    {
+      "source": "/blog/fpc-roller-cleaner-guide",
+      "destination": "/products/cleaning-machine",
+      "permanent": true
+    },
+    {
+      "source": "/zh/blog/fpc-roller-cleaner-guide",
+      "destination": "/zh/products/cleaning-machine",
+      "permanent": true
+    },
+    {
+      "source": "/blog/mobile-cover-roller-dust-cleaner-guide",
+      "destination": "/products/cleaning-machine",
+      "permanent": true
+    },
+    {
+      "source": "/zh/blog/mobile-cover-roller-dust-cleaner-guide",
+      "destination": "/zh/products/cleaning-machine",
+      "permanent": true
+    },
+    {
+      "source": "/zh/blog/optical-film-cleaner-tutorial",
+      "destination": "/zh/products/cleaning-machine",
+      "permanent": true
+    },
+    {
+      "source": "/zh/blog/photovoltaic-ionizing-bar-guide",
+      "destination": "/zh/products/static-eliminator",
+      "permanent": true
+    },
+    {
+      "source": "/blog/polarizer-cleaner-manufacturer-guide",
+      "destination": "/products/cleaning-machine",
+      "permanent": true
+    },
+    {
+      "source": "/zh/blog/polarizer-cleaner-manufacturer-guide",
+      "destination": "/zh/products/cleaning-machine",
+      "permanent": true
+    },
+    {
+      "source": "/blog/polarizer-cleaner-selection-guide",
+      "destination": "/products/cleaning-machine",
+      "permanent": true
+    },
+    {
+      "source": "/zh/blog/polarizer-cleaner-selection-guide",
+      "destination": "/zh/products/cleaning-machine",
+      "permanent": true
+    },
+    {
+      "source": "/blog/polarizer-cleaner-tutorial",
+      "destination": "/products/cleaning-machine",
+      "permanent": true
+    },
+    {
+      "source": "/zh/blog/polarizer-cleaner-tutorial",
+      "destination": "/zh/products/cleaning-machine",
+      "permanent": true
+    },
+    {
+      "source": "/blog/rubber-molding-ionizing-bar-guide",
+      "destination": "/products/static-eliminator",
+      "permanent": true
+    },
+    {
+      "source": "/zh/blog/rubber-molding-ionizing-bar-guide",
+      "destination": "/zh/products/static-eliminator",
+      "permanent": true
+    },
+    {
+      "source": "/blog/semiconductor-cleaner-selection-guide",
+      "destination": "/products/cleaning-machine",
+      "permanent": true
+    },
+    {
+      "source": "/zh/blog/semiconductor-cleaner-selection-guide",
+      "destination": "/zh/products/cleaning-machine",
+      "permanent": true
     }
   ]
 }

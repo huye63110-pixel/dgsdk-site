@@ -1,0 +1,242 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const base = 'https://www.dg-sdk.com';
+const url = base + '/guides/ionizing-bar-voltage-output';
+const headline = 'Ionizing Bar Voltage Output: What the kV Number Actually Means';
+const description = 'Shidike ionizing bars output a 6.5 kV DC pulse from a DC 24 V supply at 12 W. What the output voltage figure means, why it is not the same as the input voltage, and why ion balance matters more than kV.';
+
+const faqItems = [
+  {
+    question: 'What is the voltage output of an ionizing bar?',
+    answer: 'Shidike ionizing bars output a 6.5 kV DC pulse. Industrial ionizing bars generally operate somewhere between 4 kV and 7 kV, because that is the range where corona discharge produces ions efficiently without excessive ozone. The output figure is the high voltage applied to the emitter pins, not the supply the bar runs on.'
+  },
+  {
+    question: 'Is the 24 V the output voltage?',
+    answer: 'No. DC 24 V is the input — the supply the bar runs on. The 6.5 kV output is generated inside the bar from that 24 V. This is the most common confusion with ionizing bar specifications: a bar quoted as "24 V" is describing what you wire to it, not what reaches the emitter pins.'
+  },
+  {
+    question: 'Does a higher kV output mean better static elimination?',
+    answer: 'No. Above roughly 4 kV the emitter is already producing ions freely, and more voltage mainly produces more ozone and faster emitter wear. What decides whether a bar actually works is ion balance — how close to zero it holds the surface — and whether it is mounted at the point where charge is generated. A 7 kV bar with ±300 V balance performs worse on precision work than a 6.5 kV bar holding ±50 V.'
+  },
+  {
+    question: 'What is the difference between AC and pulsed DC output?',
+    answer: 'An AC bar alternates polarity at mains frequency, which on a moving web can leave alternating over- and under-neutralized bands. Pulsed DC applies positive and negative high voltage in controlled pulses at an adjustable frequency, so the ion cloud can be matched to the line speed. Shidike bars use a 6.5 kV DC pulse for this reason.'
+  },
+  {
+    question: 'How much power does an ionizing bar consume?',
+    answer: 'A Shidike bar draws 12 W regardless of length. High voltage does not mean high power consumption — the current at the emitter pins is in the microamp range, so the kV figure and the wattage are unrelated.'
+  },
+  {
+    question: 'Is 6.5 kV dangerous to touch?',
+    answer: 'The emitter output is current-limited to the microamp range, which is what makes corona ionization safe in normal use, but the bar should still be treated as live equipment: isolate the supply before cleaning emitter pins. Shidike bars also monitor for abnormal discharge and cut the high voltage automatically while raising an alarm.'
+  }
+];
+---
+
+<Layout
+  title="Ionizing Bar Voltage Output: 6.5 kV DC Pulse Explained | Shidike"
+  description={description}
+  image="/assets/img/static-eliminator/st-g.jpg"
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context':'https://schema.org','@type':'BreadcrumbList',
+    itemListElement:[
+      {'@type':'ListItem',position:1,name:'Home',item:base},
+      {'@type':'ListItem',position:2,name:'Guides',item:base+'/guides'},
+      {'@type':'ListItem',position:3,name:'Ionizing Bar Voltage Output',item:url}]
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context':'https://schema.org','@type':'Article',
+    headline, description, url,
+    author:{'@type':'Organization',name:'Shidike',url:base},
+    publisher:{'@type':'Organization',name:'Shidike',
+      legalName:'Dongguan Shidike Intelligent Equipment Co., Ltd.'},
+    datePublished:'2026-09-01', dateModified:'2026-09-01',
+    mainEntityOfPage:url, inLanguage:'en'
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context':'https://schema.org','@type':'FAQPage',
+    mainEntity: faqItems.map(i=>({'@type':'Question',name:i.question,
+      acceptedAnswer:{'@type':'Answer',text:i.answer}}))
+  })} />
+
+  <section
+    class="products-hero"
+    style="background: #edf4fb url('/assets/img/static-eliminator/static-eliminator-category-banner.webp') center/86% auto no-repeat; background-attachment: scroll;">
+    <div class="container products-hero-inner">
+      <span class="products-hero-kicker">Technical Guide</span>
+      <h1>Ionizing Bar Voltage Output</h1>
+      <p>
+        What the kV figure on an ionizing bar spec sheet actually refers to, why it is not the voltage you
+        wire to the bar, and why it is the wrong number to compare suppliers on.
+      </p>
+    </div>
+  </section>
+
+  <section class="vg-body">
+    <div class="container vg-col">
+      <div class="breadcrumb">
+        <a href="/">Home</a><span>/</span><a href="/guides">Guides</a><span>/</span><span>Ionizing Bar Voltage Output</span>
+      </div>
+
+      <p class="vg-answer">
+        <strong>Shidike ionizing bars output a 6.5 kV DC pulse, generated inside the bar from a DC 24 V
+        supply, drawing 12 W.</strong> Industrial ionizing bars generally sit between 4 kV and 7 kV, because
+        that is the band where corona discharge produces ions efficiently without generating excessive ozone.
+      </p>
+
+      <h2>The 24 V and the 6.5 kV are different things</h2>
+      <p>
+        This is the confusion behind most searches for ionizing bar voltage. A bar has two voltage figures and
+        they describe opposite ends of the same device:
+      </p>
+      <div class="table-wrap">
+        <table>
+          <tbody>
+            <tr>
+              <th>Input voltage</th><td><strong>DC 24 V</strong></td>
+              <td>What you wire to the bar. The supply it runs on.</td>
+            </tr>
+            <tr>
+              <th>Output voltage</th><td><strong>6.5 kV DC pulse</strong></td>
+              <td>What is applied to the emitter pins to create corona discharge.</td>
+            </tr>
+            <tr>
+              <th>Power draw</th><td><strong>12 W</strong></td>
+              <td>Unrelated to the kV figure — emitter current is in the microamp range.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        On many bars the 6.5 kV comes from a separate high-voltage power supply box and travels to the bar
+        down a shielded high-voltage cable. On a Shidike bar the conversion happens
+        <strong>inside the bar housing</strong>, so there is no supply box to find panel space for and no
+        fixed high-voltage cable deciding where the bar can be mounted. On a retrofit into a machine that is
+        already running, that is usually what decides whether the installation is straightforward or a rebuild.
+      </p>
+
+      <h2>Why higher kV is not better</h2>
+      <p>
+        It is tempting to compare bars on the kV number, because it is the figure most prominently printed on
+        a spec sheet. It is close to meaningless as a comparison.
+      </p>
+      <p>
+        Above roughly 4 kV the emitter pin is already in full corona discharge and producing ions freely.
+        Pushing the voltage higher does not meaningfully increase useful ion output — it increases
+        <strong>ozone generation</strong> and <strong>emitter wear</strong>, which means more frequent cleaning
+        and shorter pin life. The voltage is a means to an end, and the end is ions reaching the surface.
+      </p>
+      <p>
+        The number that decides whether a bar works on your line is <strong>ion balance</strong>: how close to
+        zero the bar can hold the material surface once it has passed. A 7 kV bar holding ±300 V leaves a
+        surface charged enough to pull particles back out of the air within seconds. A 6.5 kV bar holding
+        ±50 V does not.
+      </p>
+
+      <h2>Output specifications across the range</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Model</th><th>Output</th><th>Input</th><th>Ion balance</th><th>Method</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="/products/static-eliminator/st-g-series">ST-G</a></td>
+              <td>6.5 kV DC pulse</td><td>DC 24 V · 12 W</td><td><strong>±50 V</strong></td>
+              <td>Pulsed AC, single emitter pin</td>
+            </tr>
+            <tr>
+              <td><a href="/products/static-eliminator/st-e-series">ST-E</a></td>
+              <td>6.5 kV DC pulse</td><td>DC 24 V · 12 W</td><td>±80 V</td>
+              <td>High-frequency pulsed DC, alternating pins</td>
+            </tr>
+            <tr>
+              <td><a href="/products/static-eliminator/st-f-series">ST-F</a></td>
+              <td>6.5 kV DC pulse</td><td>DC 24 V · 12 W</td><td>±100 V</td>
+              <td>Pulsed DC, Hibweer L.C.C.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        All three share a 30–1000 mm working range, a 1 s static decay time and a 30 × 82 mm housing, and are
+        made to length from 300 mm to 3 m. Mounting pitch follows the bar length directly:
+        <strong>P = L − 120 mm</strong>.
+      </p>
+
+      <h2>AC, DC and pulsed DC</h2>
+      <p>
+        How the voltage is applied matters more than its magnitude. An <strong>AC bar</strong> alternates
+        polarity at mains frequency; on a web moving at speed this can leave alternating over- and
+        under-neutralized bands, because the material passes through the field faster than the polarity
+        alternates. <strong>Pulsed DC</strong> applies positive and negative high voltage in controlled pulses
+        at an adjustable frequency, so the ion cloud can be tuned to the line speed — the same bar suits a fast
+        web and a stationary workspace.
+      </p>
+      <p>
+        The ST-G applies alternating positive and negative high voltage to a <em>single</em> emitter pin, so
+        both ion clouds originate at the same point. That is what removes the striping conventional AC bars are
+        known for, and it is why it reaches ±50 V rather than the few hundred volts a plain AC bar typically
+        holds.
+      </p>
+
+      <h2>Safety and the alarm</h2>
+      <p>
+        Corona ionization is current-limited: the emitter output is in the microamp range, which is what makes
+        it safe in normal industrial use. It is still live equipment — isolate the supply before cleaning
+        emitter pins. Shidike bars monitor their own discharge, and if it becomes abnormal (a damaged pin, heavy
+        contamination, a short) the bar raises an alarm and cuts the high voltage automatically rather than
+        continuing to run at reduced output.
+      </p>
+
+      <h2>Common questions</h2>
+      <div class="faq-list">
+        {faqItems.map(item => (
+          <details class="faq-item">
+            <summary>{item.question}</summary>
+            <p>{item.answer}</p>
+          </details>
+        ))}
+      </div>
+
+      <div class="vg-cta">
+        <p>
+          Related: <a href="/guides/what-is-an-ionizing-bar">what is an ionizing bar</a> ·
+          <a href="/guides/industrial-static-eliminator">industrial static eliminators by industry</a> ·
+          <a href="/products/static-eliminator">the full range of industrial static eliminators and ionizing bars</a>
+        </p>
+        <p><a class="send-cta" href="/contact">Send your material, width and line speed for a recommendation &rarr;</a></p>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .vg-body { padding: 40px 0 70px; }
+    .vg-col { max-width: 780px; }
+    .vg-body .breadcrumb { font-size: 13px; color: #7d8d97; margin-bottom: 22px; }
+    .vg-body .breadcrumb a { color: var(--brand-deep); text-decoration: none; }
+    .vg-body .breadcrumb span { margin: 0 8px; }
+    .vg-answer {
+      font-size: 17px; line-height: 1.75; color: #2e3a44;
+      background: #f2f6f9; border-left: 3px solid var(--brand-deep);
+      padding: 18px 20px; border-radius: 0 8px 8px 0; margin: 0 0 26px;
+    }
+    .vg-body h2 { font-size: 1.42rem; font-weight: 700; color: var(--navy); margin: 32px 0 12px; letter-spacing: -.01em; }
+    .vg-body p { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 15px; }
+    .vg-body a { color: var(--brand-deep); }
+    .table-wrap { overflow-x: auto; margin: 0 0 20px; }
+    .vg-body table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+    .vg-body th, .vg-body td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+    .vg-body thead th { background: #f2f6f9; font-weight: 700; color: var(--navy); }
+    .vg-body tbody th { width: 24%; font-weight: 700; color: var(--navy); background: #fafbfc; }
+    .faq-list { display: flex; flex-direction: column; margin-top: 6px; border-top: 1px solid var(--hairline); }
+    .faq-item { padding: 15px 4px; border-bottom: 1px solid var(--hairline); }
+    .faq-item summary { cursor: pointer; font-weight: 700; color: var(--navy); font-size: 15.5px; }
+    .faq-item p { margin: 10px 0 0; }
+    .vg-cta { margin-top: 36px; padding: 22px 24px; background: #f7f8fa; border: 1px solid var(--hairline); border-radius: 10px; }
+    .vg-cta p { font-size: 14.5px; margin-bottom: 10px; }
+    .send-cta { font-weight: 700; }
+  </style>
+</Layout>

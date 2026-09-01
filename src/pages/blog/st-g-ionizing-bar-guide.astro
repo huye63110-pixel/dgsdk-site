@@ -1,0 +1,306 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const base = 'https://www.dg-sdk.com';
+const url = base + '/blog/st-g-ionizing-bar-guide';
+const title = 'The ST-G Ionizing Bar: How to Specify, Mount and Verify an Anti Static Bar';
+const description = 'What ±50 V ion balance means on a real line, why the ST-G generates its high voltage inside the bar from 24 V DC, how to calculate the mounting pitch for any bar length, and how to verify the bar is working.';
+
+const faqItems = [
+  {
+    question: 'What ion balance does an anti static bar need?',
+    answer: 'It depends on what the material is worth. For general packaging, plastics and textile work, a few hundred volts of residual offset is harmless. For PCB, FPC, SMT and optical film work the target is under 100 V, because that is the range where residual charge stops attracting particles back onto a surface you have just cleaned. The ST-G holds ±50 V, the tightest of the three Shidike bar series.'
+  },
+  {
+    question: 'How far from the material should the bar be mounted?',
+    answer: 'Anywhere from 30 mm to 1000 mm. Closer is faster, so mount as close as the mechanics and the safety clearance allow. The 1 m upper limit is what lets a single bar cover a gantry or an overhead position where a closer mount is impossible.'
+  },
+  {
+    question: 'Does the ST-G need compressed air?',
+    answer: 'No. Within the 1 m working range the ions reach the surface without assistance. Air assistance is only specified when the target sits beyond that range.'
+  },
+  {
+    question: 'What length of bar should I order?',
+    answer: 'The bar should cover the full charged width of the material, not just the middle of it. Bars are made to order from 300 mm to 3 m, so give us the material width and we cut to it.'
+  },
+  {
+    question: 'How do I know the bar is actually working?',
+    answer: 'Measure. Take a surface voltage reading with a static field meter before the bar and after it, at the real line speed with the real material. A bar that has drifted, is mounted too far away, or has contaminated emitter pins will still look like it is running. The only proof is the reading.'
+  }
+];
+---
+
+<Layout
+  title={title + ' | Shidike'}
+  description={description}
+  image="/assets/img/static-eliminator/st-g.jpg"
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: base },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: base + '/blog' },
+      { '@type': 'ListItem', position: 3, name: 'The ST-G Ionizing Bar', item: url }
+    ]
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: title,
+    description: description,
+    image: base + '/assets/img/static-eliminator/st-g.jpg',
+    author: { '@type': 'Organization', name: 'Shidike', url: base },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Shidike',
+      legalName: 'Dongguan Shidike Intelligent Equipment Co., Ltd.'
+    },
+    datePublished: '2026-09-01',
+    dateModified: '2026-09-01',
+    mainEntityOfPage: url
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map(i => ({
+      '@type': 'Question',
+      name: i.question,
+      acceptedAnswer: { '@type': 'Answer', text: i.answer }
+    }))
+  })} />
+
+  <article class="post">
+    <header class="post-head">
+      <div class="container post-col">
+        <div class="breadcrumb">
+          <a href="/">Home</a><span>/</span><a href="/blog">Blog</a><span>/</span><span>ST-G Ionizing Bar</span>
+        </div>
+        <div class="post-tags">
+          <span class="blog-tag">Static Eliminator</span>
+          <span class="blog-tag">ST-G</span>
+          <span class="blog-tag">Selection Guide</span>
+        </div>
+        <h1>The ST-G Ionizing Bar: How to Specify, Mount and Verify an Anti Static Bar</h1>
+        <p class="post-lead">
+          Most anti static bars fail on a line for one of three reasons: the bar is mounted where the charge
+          <em>isn't</em>, the ion balance is too loose for the material, or nobody ever measured whether it worked.
+          None of those are catalogue problems. This is what the ST-G actually does, and the four decisions you
+          have to get right when you fit one.
+        </p>
+        <div class="post-info">
+          <span>September 1, 2026</span><span>Shidike Technical Team</span><span>9 min read</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="container post-col post-body">
+      <picture class="post-figure">
+        <source srcset="/assets/img/static-eliminator/st-g.webp" type="image/webp" />
+        <img src="/assets/img/static-eliminator/st-g.jpg" alt="Shidike ST-G intelligent ionizing bar" width="1180" height="885" decoding="async" />
+      </picture>
+
+      <h2>The charge is created where material separates</h2>
+      <p>
+        Static on a production line is not ambient. It is generated at a specific point, at the moment two surfaces
+        separate: film peeling off a roller, a sheet lifting off a stack, a moulded part releasing from a tool, a
+        panel coming off a belt. That separation is where the bar belongs.
+      </p>
+      <p>
+        This is the single most common installation mistake. A bar mounted after a cleaning station, downstream of
+        the separation point, is neutralizing a surface that will simply recharge at the next roller. The material
+        arrives at the customer's inspection step charged again, and the conclusion is that the bar does not work.
+        Put the bar at the separation point, and if the web separates at several points, expect to need more than one.
+      </p>
+
+      <h2>Ion balance is the number that decides whether it holds</h2>
+      <p>
+        An ionizing bar produces positive and negative ions by corona discharge, and the charged surface pulls
+        whichever polarity it needs until it reaches neutral. The process is self-limiting — once the surface is
+        neutral, ion uptake stops.
+      </p>
+      <p>
+        The mechanism is covered in more depth in <a href="/guides/what-is-an-ionizing-bar">what is an ionizing bar</a>. What matters here is how close to zero the bar can actually hold that surface. That is the ion balance figure,
+        and it is where the three Shidike bar series differ:
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Series</th><th>Ion balance</th><th>Method</th><th>Specified when</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="/products/static-eliminator/st-g-series">ST-G</a></td>
+              <td><strong>±50 V</strong></td>
+              <td>Pulsed AC, single emitter pin</td>
+              <td>The default. Tightest balance in the range.</td>
+            </tr>
+            <tr>
+              <td><a href="/products/static-eliminator/st-e-series">ST-E</a></td>
+              <td>±80 V</td>
+              <td>High-frequency pulsed DC, alternating fixed-polarity pins</td>
+              <td>Wide or long spans, where ordinary bars drift at the edges.</td>
+            </tr>
+            <tr>
+              <td><a href="/products/static-eliminator/st-f-series">ST-F</a></td>
+              <td>±100 V</td>
+              <td>Pulsed DC, Hibweer L.C.C.</td>
+              <td>High line speed — neutralizes 2.5&times; faster.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        The ST-G reaches ±50 V by applying alternating positive and negative high voltage to a <em>single</em>
+        emitter pin, rather than splitting the job across pins of fixed polarity. One pin producing both polarities
+        means both ion clouds originate at the same point, which is what removes the striping — the alternating
+        over- and under-neutralized bands along the web that conventional AC bars are known for. Pulse frequency is
+        adjustable, so the same bar suits a web moving at speed and a stationary workspace.
+      </p>
+      <p>
+        Under 100 V is the practical threshold for PCB, FPC, SMT, polarizer and optical film work. Above it,
+        residual charge is still strong enough to pull particles back out of the air onto a surface you have just
+        cleaned — which is why a cleaning machine without static control solves about half the problem.
+      </p>
+
+      <h2>The high voltage is generated inside the bar</h2>
+      <p>
+        A conventional ionizing bar is fed from a separate high-voltage power supply box, connected by a shielded
+        high-voltage cable. That box needs panel space, and the cable has a fixed length and a bend radius, which
+        together decide where the bar can physically go.
+      </p>
+      <p>
+        The ST-G takes a <strong>DC 24 V</strong> supply and generates its 6.5 kV DC pulse internally, drawing
+        12 W. There is no external supply box and no high-voltage cable to route, so the bar mounts where the
+        process needs it rather than where the cable reaches. On a retrofit into a machine that is already
+        running, this is usually the difference between a straightforward installation and a rebuild.
+      </p>
+      <p>
+        The full explanation of what that figure means, and why it is the wrong number to compare bars on, is in <a href="/guides/ionizing-bar-voltage-output">ionizing bar voltage output</a>. It also self-monitors: abnormal discharge raises an alarm and cuts the high voltage automatically, so a
+        contaminated or damaged bar announces itself instead of silently under-performing.
+      </p>
+
+      <h2>Specifications</h2>
+      <div class="table-wrap">
+        <table>
+          <tbody>
+            <tr><th>Input voltage</th><td>DC 24 V</td><th>Power</th><td>12 W</td></tr>
+            <tr><th>Output</th><td>6.5 kV DC pulse (pulsed AC)</td><th>Ion generation</th><td>Corona discharge</td></tr>
+            <tr><th>Ion balance</th><td>±50 V</td><th>Static decay time</th><td>1 s</td></tr>
+            <tr><th>Working distance</th><td>30–1000 mm</td><th>Bar length</th><td>300 mm – 3 m, made to order</td></tr>
+            <tr><th>Cross-section</th><td>30 × 82 mm</td><th>Compressed air</th><td>Not required</td></tr>
+            <tr><th>Temperature</th><td>0–45 °C, no condensation</td><th>Humidity</th><td>15–75 % RH</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Working out the mounting pitch</h2>
+      <p>
+        Because bars are cut to length, the mounting holes are not at a fixed catalogue spacing — but they are
+        predictable. The distance between the two mounting points is:
+      </p>
+      <p class="formula">P = L &minus; 120 mm</p>
+      <p>
+        where <strong>L</strong> is the ordered bar length and <strong>P</strong> is the mounting pitch. A 1500 mm
+        bar mounts on 1380 mm centres; a 2400 mm bar on 2280 mm centres. You can drill the machine frame from the
+        order confirmation, before the bar arrives, which takes the installation off the critical path.
+      </p>
+      <p>
+        Size the bar to the full charged width of the material, not the middle of it. Charge does not stop at the
+        edge of the useful area, and an undersized bar leaves charged margins that will still attract contamination.
+      </p>
+
+      <h2>Verify it, do not assume it</h2>
+      <p>
+        A running bar and a working bar are not the same thing. Emitter pins collect contamination, mounting gets
+        moved during maintenance, and line speed changes after commissioning. None of that shows on the front panel.
+      </p>
+      <p>
+        Take a surface voltage reading with a static field meter, at the real line speed with the real material,
+        at two points: immediately before the bar and immediately after it. Record both. That before-and-after pair
+        is the only evidence that the installation is doing its job, and it is what turns a static problem from an
+        argument into a number. Re-check it whenever the material, the speed or the mounting changes.
+      </p>
+
+      <h2>Common questions</h2>
+      <div class="faq-list">
+        {faqItems.map(item => (
+          <details class="faq-item">
+            <summary>{item.question}</summary>
+            <p>{item.answer}</p>
+          </details>
+        ))}
+      </div>
+
+      <div class="post-cta">
+        <h2>Send us the application</h2>
+        <p>
+          Give us the material, the charged width, the line speed, the mounting space and either a measured surface
+          voltage or the defect you are seeing. We will come back with a series, a bar length, a mounting position
+          and a unit count.
+        </p>
+        <p>
+          <a class="send-cta" href="/contact">Send your application details &rarr;</a>
+          <a class="send-alt" href="/products/static-eliminator/st-g-series">View ST-G specifications &rarr;</a>
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <style>
+    .post-col { max-width: 780px; }
+    .post-head { background: #f7f8fa; padding: 48px 0 34px; border-bottom: 1px solid var(--hairline); }
+    .post-head .breadcrumb { font-size: 13px; color: #7d8d97; margin-bottom: 18px; }
+    .post-head .breadcrumb a { color: var(--brand-deep); text-decoration: none; }
+    .post-head .breadcrumb span { margin: 0 8px; }
+    .post-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .blog-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      background: #eef4f8; color: #4a6373; padding: 4px 9px; border-radius: 999px;
+    }
+    .post-head h1 {
+      font-size: clamp(1.7rem, 3.4vw, 2.5rem); line-height: 1.2; font-weight: 800;
+      letter-spacing: -.02em; color: var(--navy); margin: 0 0 14px;
+    }
+    .post-lead { font-size: 1.05rem; line-height: 1.75; color: #46545f; margin: 0 0 18px; }
+    .post-info { display: flex; flex-wrap: wrap; gap: 16px; font-size: 12.5px; color: #8a99a4; }
+
+    .post-body { padding: 34px 0 70px; }
+    .post-figure { display: block; margin: 0 0 30px; }
+    .post-figure img {
+      display: block; width: 100%; height: auto; border: 1px solid var(--hairline); border-radius: 8px;
+    }
+    .post-body h2 {
+      font-size: 1.42rem; font-weight: 700; letter-spacing: -.01em; color: var(--navy);
+      margin: 34px 0 12px;
+    }
+    .post-body p { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 15px; }
+    .post-body a { color: var(--brand-deep); }
+    .formula {
+      font-size: 1.2rem !important; font-weight: 700; text-align: center; color: var(--navy) !important;
+      background: #f2f6f9; border: 1px solid var(--hairline); border-radius: 8px; padding: 14px;
+    }
+
+    .table-wrap { overflow-x: auto; margin: 0 0 20px; }
+    .post-body table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+    .post-body th, .post-body td {
+      text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--hairline); vertical-align: top;
+    }
+    .post-body thead th { background: #f2f6f9; font-weight: 700; color: var(--navy); }
+    .post-body tbody th { width: 22%; font-weight: 700; color: var(--navy); background: #fafbfc; }
+
+    .faq-list { display: flex; flex-direction: column; margin: 6px 0 0; border-top: 1px solid var(--hairline); }
+    .faq-item { padding: 15px 4px; border-bottom: 1px solid var(--hairline); }
+    .faq-item summary { cursor: pointer; font-weight: 700; color: var(--navy); font-size: 15.5px; }
+    .faq-item p { margin: 10px 0 0; }
+
+    .post-cta {
+      margin-top: 40px; padding: 26px 26px 22px; background: #f7f8fa;
+      border: 1px solid var(--hairline); border-radius: 10px;
+    }
+    .post-cta h2 { margin-top: 0; font-size: 1.25rem; }
+    .send-cta, .send-alt { display: inline-block; font-weight: 700; margin-right: 22px; }
+  </style>
+</Layout>

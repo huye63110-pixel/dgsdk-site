@@ -2,16 +2,16 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Contact DGSDK | Static Eliminator & Cleaning Machine Inquiry" description="Contact DGSDK for industrial static eliminators, ionizing bars, ionizing blowers, and precision cleaning machines. Worldwide sales support from Dongguan, China.">
+<Layout title="Contact Shidike | Anti Static Bar & Cleaning Machine Inquiry" description="Contact Shidike for anti static bars, ionizing air blowers and contact cleaning machines. Bar length made to order, machines built to your sample. Worldwide supply from Dongguan, China.">
   <section
-    class="contact-hero"
-    style="background: linear-gradient(rgba(113, 87, 87, 0.28), rgba(106, 56, 56, 0.18)), url('/assets/img/contact/contact.jpg') center/cover no-repeat;">
-    <div class="category-hero-overlay"></div>
-    <div class="container category-hero-content">
-      <h1>Contact Us</h1>
-      <p>
-        Get in touch with DGSDK for industrial static eliminators, ionizing bars,
-        ionizing blowers, and precision cleaning machines.
+    class="products-hero contact-hero-banner"
+    style="background: linear-gradient(rgba(12, 24, 38, 0.58), rgba(12, 24, 38, 0.5)), url('/assets/img/contact/contact.jpg') center/cover no-repeat; background-attachment: scroll;">
+    <div class="container products-hero-inner">
+      <span class="products-hero-kicker" data-aos="fade-down" data-aos-duration="600">Get in touch</span>
+      <h1 data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">Contact Shidike</h1>
+      <p data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
+        Send us the material, the line speed and the problem you are seeing. We will come back with a
+        model, a bar length or a machine configuration &mdash; not a catalogue.
       </p>
     </div>
   </section>
@@ -20,9 +20,9 @@ import Layout from '../layouts/Layout.astro';
     <div class="container">
       <div class="contact-grid">
         <div class="contact-left">
-          <h2>CONTACT US</h2>
+          <h2>Talk to the people who build it</h2>
 
-          <p class="company-name">Dongguan Shidike Automation Equipment Co., Ltd.</p>
+          <p class="company-name">Dongguan Shidike Intelligent Equipment Co., Ltd.</p>
 
           <p class="contact-desc">
             We focus on reliable static elimination systems and ionizing bars first,
@@ -35,7 +35,7 @@ import Layout from '../layouts/Layout.astro';
             <span>We respond to all inquiries within <strong>24 hours</strong> on business days.</span>
           </div>
 
-          <h3>DO YOU HAVE A QUESTION?</h3>
+          <h3>Direct contact</h3>
 
           <div class="contact-info-list">
             <div class="contact-info-item">
@@ -74,7 +74,18 @@ import Layout from '../layouts/Layout.astro';
               </div>
               <div>
                 <span class="contact-label">Address:</span>
-                <p>Binhai Road 33, Dongguan, Guangdong, China</p>
+                <p>Room 101, Building 1, No. 33 Binhe Road, Zhangmutou Town, Dongguan, Guangdong, China</p>
+              </div>
+            </div>
+
+            <div class="contact-social-block">
+              <span class="contact-label">Follow Us</span>
+              <div class="contact-social">
+              <a href="https://www.facebook.com/profile.php?id=61589304230341" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-btn facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://youtube.com/@dgsdk-2013" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="social-btn youtube"><i class="fab fa-youtube"></i></a>
+              <a href="https://www.tiktok.com/@machineforge?_r=1&_t=ZS-95scfOHz6Ea" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="social-btn tiktok"><i class="fab fa-tiktok"></i></a>
+              <a href="https://wa.me/61436605126" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="social-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+              <a href="mailto:dgsdk2013@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email" class="social-btn email"><i class="fas fa-envelope"></i></a>
               </div>
             </div>
           </div>
@@ -137,10 +148,10 @@ import Layout from '../layouts/Layout.astro';
 
   <section class="category-info-block">
     <div class="container">
-      <h2>Contact DGSDK for Industrial Equipment Inquiries</h2>
+      <h2>Contact Shidike for Industrial Equipment Inquiries</h2>
       <p>
-        DGSDK (Dongguan Shidike Automation Equipment Co., Ltd.) manufactures industrial static eliminators,
-        ionizing bars, ionizing blowers, and precision cleaning machines in Dongguan, Guangdong, China.
+        Shidike (Dongguan Shidike Intelligent Equipment Co., Ltd.) manufactures anti static bars, ionizing
+        air blowers and contact cleaning machines in Zhangmutou, Dongguan, Guangdong, China.
         We supply industrial customers worldwide and review both catalog-product and line-integration inquiries.
       </p>
 
@@ -174,4 +185,20 @@ import Layout from '../layouts/Layout.astro';
       </p>
     </div>
   </section>
+
+  <style>
+    /* Banner: use the same .products-hero as every product, application and blog
+       page (520px) instead of .contact-hero at 76vh. Photo background, so the
+       type is reversed out to white. */
+    .contact-hero-banner h1 { color: #fff !important; text-shadow: 0 2px 18px rgba(0,0,0,.4); }
+    .contact-hero-banner p  { color: rgba(255,255,255,.9) !important; text-shadow: 0 1px 12px rgba(0,0,0,.35); }
+
+    /* styles.css sized these at 56px and 48px -- larger than most H1s on the site,
+       for what is a heading inside a two-column info panel. */
+    .contact-left h2 { font-size: 1.75rem !important; margin-bottom: 12px !important; line-height: 1.25; }
+    .contact-left h3 { font-size: 1.15rem !important; margin: 30px 0 4px !important; line-height: 1.3;
+                       letter-spacing: .04em; text-transform: uppercase; color: #7d8d97 !important; }
+    .contact-left .company-name { font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+    .contact-left .contact-desc { font-size: 15px; line-height: 1.7; color: var(--ink-muted); }
+  </style>
 </Layout>

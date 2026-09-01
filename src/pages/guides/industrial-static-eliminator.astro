@@ -2,8 +2,11 @@
 import Layout from '../../layouts/Layout.astro';
 ---
 
-<Layout title="Industrial Static Eliminators: Manufacturing Guide | DGSDK"
+<Layout title="Industrial Static Eliminators: Manufacturing Guide | Shidike"
   description="Industrial static eliminator guide for electronics, display, printing, and plastics manufacturing. Ionizing bars, ion blowers, and inline ESD control for production lines.">
+  <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.dg-sdk.com"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.dg-sdk.com/guides"}, {"@type": "ListItem", "position": 3, "name": "Industrial Static Eliminators for Manufacturing", "item": "https://www.dg-sdk.com/guides/industrial-static-eliminator"}]})} />
+  <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "Article", "headline": "Industrial Static Eliminators for Manufacturing", "description": "What an industrial static eliminator does, where it is used by industry, and how to select one for a production line.", "url": "https://www.dg-sdk.com/guides/industrial-static-eliminator", "author": {"@type": "Organization", "name": "Shidike", "url": "https://www.dg-sdk.com"}, "publisher": {"@type": "Organization", "name": "Shidike", "legalName": "Dongguan Shidike Intelligent Equipment Co., Ltd."}, "mainEntityOfPage": "https://www.dg-sdk.com/guides/industrial-static-eliminator", "inLanguage": "en"})} />
+  <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the difference between an industrial static eliminator and an anti static mat?", "acceptedAnswer": {"@type": "Answer", "text": "An industrial static eliminator generates ions to neutralize static electricity on insulating surfaces that cannot be grounded. An anti static mat provides a dissipative surface that drains static electricity from conductive objects placed on it. Ionizers protect insulating materials on conveyor lines; anti static mats protect components and tools at grounded workstations."}}, {"@type": "Question", "name": "How do I know if my static eliminator is working correctly?", "acceptedAnswer": {"@type": "Answer", "text": "Measure residual charge on the material surface after the ionizer using a static field meter. A working installation holds the surface inside the sub-100 V window that electronics, PCB and optical work needs. Regular charged plate monitor testing verifies ion balance at defined intervals."}}, {"@type": "Question", "name": "How often do industrial static eliminators need maintenance?", "acceptedAnswer": {"@type": "Answer", "text": "Emitter needle cleaning is the main task. In standard factory conditions, monthly to quarterly cleaning maintains rated ion output. In dusty or oil-mist environments, weekly inspection is standard practice. In cleanrooms, three to six months between cleanings is typical."}}]})} />
   <section
     class="products-hero"
     style="background: linear-gradient(rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.18)), url('/assets/img/static-eliminator/bg-2.jpg') center/cover no-repeat; background-attachment: fixed;">
@@ -23,7 +26,7 @@ import Layout from '../../layouts/Layout.astro';
 
       <picture>
         <source srcset="/assets/img/guides/industrial-dust-removal.webp" type="image/webp" />
-        <img src="/assets/img/guides/industrial-dust-removal.jpg" alt="DGSDK ionizing bar removing dust particles from display panel on conveyor — before and after static elimination" style="width:100%;max-width:640px;border-radius:8px;margin:24px auto;display:block;" loading="lazy" />
+        <img src="/assets/img/guides/industrial-dust-removal.jpg" alt="Shidike ionizing bar removing dust particles from display panel on conveyor — before and after static elimination" style="width:100%;max-width:640px;border-radius:8px;margin:24px auto;display:block;" loading="lazy" />
       </picture>
 
       <h2>What Is an Industrial Static Eliminator?</h2>
@@ -60,7 +63,7 @@ import Layout from '../../layouts/Layout.astro';
 
       <h3>Electronics and PCB Manufacturing</h3>
       <p>
-        PCB manufacturing requires ESD control at every handling point from bare board entry through final inspection. Ionizing bars at conveyor infeed and outfeed positions neutralize static electricity on boards before screen printing, component placement, reflow, and automated optical inspection. For SMT assembly lines running at speed, inline ionizers provide continuous charge neutralization without stopping the production flow. DGSDK's <a href="/products/static-eliminator/st-g-series">ST-G series</a> intelligent ionizing bars include balance monitoring and alarm output for uninterrupted ESD control across the full line.
+        PCB manufacturing requires ESD control at every handling point from bare board entry through final inspection. Ionizing bars at conveyor infeed and outfeed positions neutralize static electricity on boards before screen printing, component placement, reflow, and automated optical inspection. For SMT assembly lines running at speed, inline ionizers provide continuous charge neutralization without stopping the production flow. Shidike's <a href="/products/static-eliminator/st-g-series">ST-G series</a> intelligent ionizing bars include balance monitoring and alarm output for uninterrupted ESD control across the full line.
       </p>
 
       <h3>Display and Optical Film Manufacturing</h3>
@@ -101,6 +104,62 @@ import Layout from '../../layouts/Layout.astro';
         Line speed determines whether a pulsed DC ionizer or an AC ionizer is the better choice. Pulsed DC systems switch rapidly between positive and negative ion generation, producing a balanced charge stream with a short response time. AC systems generate ions at power-line frequency, which is adequate for slower or intermittent processes. Cleanroom applications require low-ozone DC models. Harsh environments require sealed construction with chemical-resistant housings. Production-critical lines benefit from ionizers with built-in balance monitoring and alarm output.
       </p>
 
+
+      <h2>Shidike Static Eliminator Specifications</h2>
+      <p>
+        Ionizing bar performance is decided by four numbers: ion balance, output voltage, working range and
+        the length the bar can be built to. These are the figures for the three Shidike bar series, all of
+        which run from a DC 24 V supply at 12 W with the high voltage generated inside the bar.
+      </p>
+      <div style="overflow-x:auto;margin:0 0 22px;">
+        <table style="width:100%;border-collapse:collapse;font-size:14.5px;">
+          <thead>
+            <tr style="background:#f2f6f9;">
+              <th style="text-align:left;padding:10px 12px;border-bottom:1px solid #e5e7eb;">Model</th>
+              <th style="text-align:left;padding:10px 12px;border-bottom:1px solid #e5e7eb;">Ion balance</th>
+              <th style="text-align:left;padding:10px 12px;border-bottom:1px solid #e5e7eb;">Output</th>
+              <th style="text-align:left;padding:10px 12px;border-bottom:1px solid #e5e7eb;">Working range</th>
+              <th style="text-align:left;padding:10px 12px;border-bottom:1px solid #e5e7eb;">Specified for</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;"><a href="/products/static-eliminator/st-g-series">ST-G</a></td>
+              <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;"><strong>&plusmn;50 V</strong></td>
+              <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;">6.5 kV DC pulse</td>
+              <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;">30&ndash;1000 mm</td>
+              <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;">Default choice; tightest balance in the range</td>
+            </tr>
+            <tr>
+              <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;"><a href="/products/static-eliminator/st-e-series">ST-E</a></td>
+              <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;">&plusmn;80 V</td>
+              <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;">6.5 kV DC pulse</td>
+              <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;">30&ndash;1000 mm</td>
+              <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;">Wide or long spans, where ordinary bars drift</td>
+            </tr>
+            <tr>
+              <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;"><a href="/products/static-eliminator/st-f-series">ST-F</a></td>
+              <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;">&plusmn;100 V</td>
+              <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;">6.5 kV DC pulse</td>
+              <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;">30&ndash;1000 mm</td>
+              <td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;">High line speed; neutralizes 2.5&times; faster</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        For what the 6.5 kV figure means and why a higher number is not better, see <a href="/guides/ionizing-bar-voltage-output">ionizing bar voltage output</a>. Bar length is made to order from 300 mm to 3 m, and the mounting pitch follows the bar length directly:
+        <strong>P = L &minus; 120 mm</strong>, so a 1500 mm bar mounts on 1380 mm centres. Static decay time is
+        1 s, no compressed air is required inside the 1 m working range, and abnormal discharge raises an alarm
+        and cuts the high voltage automatically.
+      </p>
+      <p>
+        For workstations, benches and enclosed areas that a bar cannot reach, ionizing air blowers cover
+        45 to 360 CFM: the <a href="/products/static-eliminator/st-101a">ST101A</a> over 40 &times; 60 cm, the
+        <a href="/products/static-eliminator/st-104a">ST104A</a> over 60 &times; 120 cm, and the
+        <a href="/products/static-eliminator/st-1200">ST1200</a> over 140 &times; 120 cm across a full line.
+      </p>
+
       <h2>Frequently Asked Questions</h2>
 
       <h3>What is the difference between an industrial static eliminator and an anti static mat?</h3>
@@ -110,7 +169,7 @@ import Layout from '../../layouts/Layout.astro';
 
       <h3>How do I know if my static eliminator is working correctly?</h3>
       <p>
-        Measure residual charge on the material surface after the ionizer using a static field meter. A functioning static eliminator reduces static electricity to below ±100V for standard applications and below ±20V for precision display or semiconductor manufacturing. Intelligent ionizing bars include built-in ion balance indicators that alert operators when emitter performance drops. Regular charged plate monitor testing verifies ion balance at defined intervals.
+        Measure residual charge on the material surface after the ionizer using a static field meter. A functioning static eliminator holds the surface inside the sub-100 V window that electronics, PCB and optical work needs. Intelligent ionizing bars include built-in ion balance indicators that alert operators when emitter performance drops. Regular charged plate monitor testing verifies ion balance at defined intervals.
       </p>
 
       <h3>How often do industrial static eliminators need maintenance?</h3>
@@ -118,13 +177,13 @@ import Layout from '../../layouts/Layout.astro';
         Emitter needle cleaning is the main maintenance task. In standard factory conditions, monthly to quarterly cleaning maintains rated ion output. In dusty or oil-mist environments, weekly inspection and cleaning as needed is standard practice. In cleanroom environments, three to six months between cleanings is typical. Intelligent ionizers with contamination indicators alert operators when cleaning is due, removing guesswork from maintenance scheduling.
       </p>
 
-      <h2>DGSDK Industrial Static Eliminator Products</h2>
+      <h2>Shidike Industrial Static Eliminator Products</h2>
 
       <p>
-        DGSDK manufactures a complete range of <a href="/products/static-eliminator">industrial static eliminators</a> covering the full spectrum of production ESD control applications. The <a href="/products/static-eliminator/st-g-series">ST-G Intelligent Static Elimination Bar</a> is a high-performance ionizing bar with built-in balance monitoring designed for inline production use on electronics and display lines. The <a href="/products/static-eliminator/st-e-series">ST-E Intelligent Ion Rod</a> provides a compact machine-integrated ionizing solution for tight-clearance applications inside automated equipment. The <a href="/products/static-eliminator/st-f-series">ST-F Intelligent Ion Rod</a> is a fast-response ionizing bar suited for continuous high-speed production lines where static electricity accumulates rapidly.
+        Shidike manufactures a complete range of <a href="/products/static-eliminator">industrial static eliminators</a> covering the full spectrum of production ESD control applications. The <a href="/products/static-eliminator/st-g-series">ST-G Intelligent Static Elimination Bar</a> is a high-performance ionizing bar with built-in balance monitoring designed for inline production use on electronics and display lines. The <a href="/products/static-eliminator/st-e-series">ST-E Intelligent Ionizing Bar</a> holds ion balance at ±80 V across a wide or long span, which is the case that defeats an ordinary bar. The <a href="/products/static-eliminator/st-f-series">ST-F Intelligent Ionizing Bar</a> neutralizes 2.5 times faster at ±100 V, for lines running too quickly for a standard bar to keep up.
       </p>
       <p>
-        For workstation and enclosure applications, the <a href="/products/static-eliminator/st-104a">ST104A Horizontal Ion Blower</a> delivers directed ionized airflow across a controlled work area, making it effective for manual assembly stations, inspection benches, and small machine enclosures. The <a href="/products/static-eliminator/st-1200">ST1200 Horizontal Ion Fan</a> provides wide-area ESD control for open production areas and larger workstations where a broader coverage zone is required. All DGSDK static eliminators are designed for continuous industrial operation with field-serviceable emitter assemblies.
+        For workstation and enclosure applications, the <a href="/products/static-eliminator/st-104a">ST104A Horizontal Ion Blower</a> delivers directed ionized airflow across a controlled work area, making it effective for manual assembly stations, inspection benches, and small machine enclosures. The <a href="/products/static-eliminator/st-1200">ST1200 Horizontal Ion Fan</a> provides wide-area ESD control for open production areas and larger workstations where a broader coverage zone is required. All Shidike static eliminators are designed for continuous industrial operation with field-serviceable emitter assemblies.
       </p>
       <p>
         <a href="/contact">Contact us</a> with your application details — charged material type, conveyor width, line speed, and operating environment — to receive a product recommendation from our ESD control specialists.

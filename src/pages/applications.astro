@@ -1,29 +1,50 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const applicationItems = [
+const base = 'https://www.dg-sdk.com';
+const canonical = base + '/applications';
+
+const industries = [
   {
-    title: 'Electronics Manufacturing',
-    image: '/assets/img/static-white-bg.png',
-    desc: 'Static control and precision cleaning solutions for PCB, FPC, SMT, and electronics production lines.',
+    title: 'Roll-to-Roll Film & Web Converting',
+    image: '/assets/img/homepage/static-costs/film-jam',
+    problem: 'Film separating from a roller generates charge continuously, so the web clings to itself and to the machine, tracks off centre, and pulls contamination back on before it reaches the rewind. This is the textbook case for a bar, and the one where an undersized or badly placed bar fails most visibly.',
+    answer: 'Ionizing bars at the unwind and the infeed, made to the web width up to 3 m. The ST-E holds balance across a wide span; the ST-F is 2.5 times faster for high line speeds. No compressed air needed inside the 1 m working range.',
     href: '/products/static-eliminator'
   },
   {
-    title: 'SMT Production',
-    image: '/assets/img/cleaning-machine/smt-cleaner.jpg',
-    desc: 'Reliable cleaning and process support for SMT assembly, inspection, and stable inline production.',
+    title: 'Packaging, Printing & Labelling',
+    image: '/assets/img/homepage/static-costs/stack-misregister',
+    problem: 'Charged sheets repel or cling as they drop, so stacks fan out, automatic counting drifts, labels sit crooked and sheets double-feed at speed. Operators get shocks at the delivery, which is a real hazard around solvent-based inks.',
+    answer: 'ST-G bars at the delivery and the feeder, cut to the sheet width. Ion balance ±50 V, the tightest in the range, from a DC 24 V supply at 12 W — no external power supply box and no fixed high-voltage cable to route.',
+    href: '/products/static-eliminator'
+  },
+  {
+    title: 'Plastics, Moulding, Textile & Nonwoven',
+    image: '/assets/img/homepage/static-costs/operator-shock',
+    problem: 'Moulded parts come out of the tool charged and attract dust before they are packed. On textile and nonwoven lines the charge builds through every roller, the web will not lay flat, and the operators feel it all shift.',
+    answer: 'Bar-type eliminators along the line and ionizing air blowers at the operator and packing positions — from the ST-S200 built into a machine, up to the ST1200 covering 140 × 120 cm across a full line.',
+    href: '/products/static-eliminator'
+  },
+  {
+    title: 'SMT & Electronics Assembly',
+    image: '/assets/img/homepage/static-costs/component-failure',
+    problem: 'Electrostatic discharge damages components without leaving a mark, so the defect only appears at test or in the field. Particles trapped under a placed component cause the same failure with a different root cause.',
+    answer: 'Ionizing air blowers over the workstations and bars at the handling points, with an inline cleaner at the board infeed where particles are the issue. Surface voltage verified with a field meter rather than assumed.',
+    href: '/products/static-eliminator'
+  },
+  {
+    title: 'PCB, FPC & CCL',
+    image: '/assets/img/applications/pcb-fpc-ccl',
+    problem: 'Laminate and flexible circuit surfaces hold a charge through cutting, lamination and handling, so dust settles back onto a board that was clean a minute ago and shows up later as an open, a short or a rejected joint.',
+    answer: 'Contact cleaners with the roller tack matched to the laminate, and ST-G bars ahead of the cleaning station so the surface is neutral before it is cleaned. Cleaning a charged board does not hold.',
     href: '/products/cleaning-machine'
   },
   {
-    title: 'Display & Optical Film',
-    image: '/assets/img/cleaning-machine/optical.jpg',
-    desc: 'Industrial cleaning equipment for optical film, polarizer, backlight, and LCM manufacturing environments.',
-    href: '/products/cleaning-machine'
-  },
-    {
-    title: 'Industrial Packaging & Handling',
-    image: '/assets/img/cleaning-machine/roll-chip-cleaner.jpg',
-    desc: 'Production support equipment for material handling, surface cleaning, and practical industrial process improvement.',
+    title: 'Display, Optical Film & Polarizer',
+    image: '/assets/img/applications/display-optical-film',
+    problem: 'On an optical stack a single particle is a visible defect. The surfaces are soft, coated, and cannot take an aggressive roller or a hard transport.',
+    answer: 'Precision cleaners for polarizer, backlight and LCM work, with roller tack graded down for coated layers and ion balance held inside the sub-100 V window optical work needs.',
     href: '/products/cleaning-machine'
   }
 ];
@@ -31,51 +52,106 @@ const applicationItems = [
 const supportBlocks = [
   {
     label: 'Static Control',
-    title: 'Reduce electrostatic risk in sensitive production areas.',
-    desc: 'Ion bars, ion fans, and anti-static systems help improve quality stability in electronics, packaging, textile, and automated production lines.',
+    icon: `<svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="19" width="36" height="7" rx="1"/><path d="M13 26v5M21 26v5M27 26v5M35 26v5"/><path d="M17 38h14M20 42h8"/><path d="M24 6v9"/></svg>`,
+    title: 'Neutralize the charge before it costs you yield',
+    desc: 'Bar-type static eliminators on a 6.5 kV DC pulse, ion balance from ±50 V, a 30–1000 mm working range and bar length made to order up to 3 m, plus ionizing air blowers from 45 to 360 CFM for workstations and enclosed areas.',
     href: '/products/static-eliminator'
   },
   {
-    label: 'Cleaning Solutions',
-    title: 'Keep surfaces clean for precision manufacturing.',
-    desc: 'Cleaning machines support PCB, FPC, polarizer, optical film, SMT, and backlight workflows where contamination directly affects product quality.',
+    label: 'Surface Cleaning',
+    icon: `<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="19" r="8"/><path d="M4 34h40"/><path d="M11 34c0-3 2-5 5-5h16c3 0 5 2 5 5"/><path d="M9 12l2 2M39 12l-2 2"/></svg>`,
+    title: 'Remove particles instead of moving them around',
+    desc: 'Contact cleaning machines for boards, sheets and continuous web: 0.022 to 6 mm thick, to 1500 mm wide, with the belt, roller tack and roller gap chosen from your sample rather than from a catalogue.',
     href: '/products/cleaning-machine'
   },
   {
-    label: 'Integration Support',
-    title: 'Fit static control and cleaning equipment into real lines.',
-    desc: 'DGSDK reviews mounting, handling, control signals, and process interfaces for static elimination and cleaning projects.',
+    label: 'Line Integration',
+    icon: `<svg viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="16" width="14" height="16" rx="2"/><rect x="29" y="16" width="14" height="16" rx="2"/><path d="M19 24h10"/><path d="M24 20v-8M24 28v8"/></svg>`,
+    title: 'Fit the equipment into the line you already run',
+    desc: 'Shidike matches conveyor height to the upstream and downstream equipment, works out mounting positions and bar pitch, and specifies the PLC, alarm and machine-control signals the line needs.',
     href: '/contact'
+  }
+];
+
+const faqItems = [
+  {
+    question: 'Do I need static control, surface cleaning, or both?',
+    answer: 'Almost always both, and the order matters. A charged surface pulls particles back out of the air within seconds, so cleaning a charged material solves half the problem and the contamination returns before the next station. Neutralize first, then clean. If your only symptom is a shock or a jam and there is no particle requirement, static control alone is enough.'
+  },
+  {
+    question: 'My line already has ionizing bars and dust still comes back. What is wrong?',
+    answer: 'Usually one of three things: the bar is outside its working range, the ion balance is too loose for the material, or the bar is mounted after the point where the charge is generated instead of before it. Charge is created where material separates — off a roller, out of a tool, off a stack — so the bar has to sit at that point. Measure the surface voltage with a field meter before and after; guessing is what makes this problem persist.'
+  },
+  {
+    question: 'Can this equipment be fitted into a line that is already running?',
+    answer: 'Bars are the straightforward case: 30 to 1000 mm working range and length made to order, so there is usually a mounting position that works without moving anything. Cleaning machines need the conveyor height matched to the equipment on either side, which is why we ask for it before quoting rather than after.'
+  },
+  {
+    question: 'Is every cleaning machine non-standard?',
+    answer: 'Yes. There is no catalogue model that fits a line as-is. The belt type, the roller tack grade, the roller gap and the static package are all chosen from the sample you send, because those four decisions are what make the machine work on your material rather than on someone else\'s.'
+  },
+  {
+    question: 'Which ionizing bar suits which application?',
+    answer: 'The ST-G is the default and has the tightest ion balance in the range at ±50 V. The ST-E is specified where balance has to hold across a wide or long span, which is the case that defeats ordinary bars. The ST-F is the speed model, for material moving faster than a standard bar can keep up with. All three run a 6.5 kV DC pulse from a DC 24 V supply over the same 30 to 1000 mm working range.'
+  },
+  {
+    question: 'What do you need to know before recommending equipment?',
+    answer: 'The material and its thickness, the working width, the line speed, the mounting space available, and either a measured surface voltage or a clear description of the defect you are seeing. For a cleaning machine, a physical sample of the material as well — that is what decides the belt and the roller tack.'
   }
 ];
 ---
 
-<Layout title="Industrial Applications | DGSDK Static Control & Cleaning" description="Industrial applications for DGSDK static eliminators, ionizing bars, and cleaning machines in electronics, SMT, film, packaging, PCB, textile, plastics, and display production.">
- <section
+<Layout
+  title="Static Control &amp; Surface Cleaning by Industry | Shidike"
+  description="Where Shidike anti static bars, ionizing air blowers and contact cleaning machines are used: PCB, FPC, SMT, display and optical film, roll-to-roll converting, packaging and printing, plastics and textile production."
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: base },
+      { '@type': 'ListItem', position: 2, name: 'Applications', item: canonical }
+    ]
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Static Control and Surface Cleaning Applications by Industry',
+    url: canonical,
+    description: 'Industrial applications for Shidike static eliminators, ionizing bars, ionizing air blowers and contact cleaning machines.',
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: industries.length,
+      itemListElement: industries.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        item: { '@type': 'Thing', name: item.title, description: item.problem, url: base + item.href }
+      }))
+    }
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map(item => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer }
+    }))
+  })} />
+
+  <section
     class="applications-hero"
-    style="background: linear-gradient(rgba(113, 87, 87, 0.28), rgba(106, 56, 56, 0.18)), url('/assets/img/static-eliminator/banner-bg2.webp') center/cover no-repeat;">
+    style="background: linear-gradient(rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0.2)), url('/assets/img/static-eliminator/banner-bg2.webp') center/cover no-repeat;">
     <div class="applications-hero-overlay"></div>
     <div class="container applications-hero-content">
-      <span class="applications-hero-kicker" data-aos="fade-down" data-aos-duration="600">Application Solutions</span>
-      <h1 data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">Industrial applications built around efficiency, cleanliness, and production reliability.</h1>
+      <span class="applications-hero-kicker" data-aos="fade-down" data-aos-duration="600">Applications</span>
+      <h1 data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">Static Control and Surface Cleaning, by Industry</h1>
       <p>
-        DGSDK solutions are used across electronics manufacturing, SMT production,
-        display processing, optical film, packaging, plastics, textile, and other production environments worldwide.
+        Every line that handles an insulating material at speed builds a charge nobody is measuring, and that
+        charge is what pulls particles back onto a surface seconds after it was cleaned. What changes between
+        industries is where the charge is generated, how tight the ion balance has to be, and how much
+        contamination the product can tolerate.
       </p>
-    </div>
-  </section>
-
-  <section class="applications-intro-section">
-    <div class="container">
-      <div class="applications-intro-box" data-aos="fade-up" data-aos-duration="700">
-        <span class="applications-section-label">Where We Create Value</span>
-        <h2>Built for real industrial workflows, not just product display.</h2>
-        <p>
-          Our solutions are designed for manufacturing environments where static,
-          contamination, manual handling, and unstable component quality directly affect
-          efficiency, yield, and long-term production reliability.
-        </p>
-      </div>
     </div>
   </section>
 
@@ -83,28 +159,37 @@ const supportBlocks = [
     <div class="container">
       <div class="applications-section-heading text-center">
         <span class="applications-section-label">Application Areas</span>
-        <h2 data-aos="fade-up" data-aos-duration="700">Where our solutions are used.</h2>
+        <h2 data-aos="fade-up" data-aos-duration="700">Industries We Supply</h2>
         <p>
-          Practical industrial support for production lines that need stable performance,
-          cleaner surfaces, lower static risk, and reliable process integration.
+          Six areas where Shidike anti static bars, ionizing air blowers and contact cleaning machines are
+          specified, and the production problem each one is bought to solve.
         </p>
       </div>
 
       <div class="applications-grid">
-        {applicationItems.map((item, i) => (
-          <a href={item.href} class="application-card" data-aos="fade-up" data-aos-delay={i * 80} data-aos-duration="600">
+        {industries.map((item, i) => (
+          <a href={item.href} class="application-card" data-aos="fade-up" data-aos-delay={i * 60} data-aos-duration="600">
             <div class="application-card-image-wrap">
-              <img src={item.image} alt={item.title} class="application-card-image" loading="lazy" />
+              <picture>
+                <source srcset={`${item.image}.webp`} type="image/webp" />
+                <img src={`${item.image}.jpg`} alt={item.title} class="application-card-image" width="960" height="540" loading="lazy" decoding="async" />
+              </picture>
             </div>
-
             <div class="application-card-body">
               <h3>{item.title}</h3>
-              <p>{item.desc}</p>
+              <p class="app-problem">{item.problem}</p>
+              <p class="app-answer"><strong>What we supply:</strong> {item.answer}</p>
               <span class="application-card-link">View related products</span>
             </div>
           </a>
         ))}
       </div>
+
+      <p class="applications-also">
+        Bar-type static eliminators are also used in lithium battery electrode handling, photovoltaic
+        production, nonwoven converting, injection moulding and automated assembly &mdash; any process
+        where an insulating material separates from a roller, a tool or a stack. If you are new to the technology, start with <a href="/guides/what-is-an-ionizing-bar">what is an ionizing bar</a>.
+      </p>
     </div>
   </section>
 
@@ -112,16 +197,17 @@ const supportBlocks = [
     <div class="container">
       <div class="applications-section-heading text-center">
         <span class="applications-section-label">Core Solution Support</span>
-        <h2 data-aos="fade-up" data-aos-duration="700">Three practical directions that support production quality.</h2>
+        <h2 data-aos="fade-up" data-aos-duration="700">The Two Product Lines Behind Every Application</h2>
         <p>
-          Our application capability is built around electrostatic control first, precision cleaning second,
-          and practical line-integration support for industrial customers.
+          Static control first, surface cleaning second, and the integration work that decides whether either
+          of them actually holds on your line.
         </p>
       </div>
 
       <div class="applications-support-grid">
         {supportBlocks.map((item, i) => (
           <a href={item.href} class="applications-support-card" data-aos="fade-up" data-aos-delay={i * 100} data-aos-duration="600">
+            <span class="applications-support-icon" set:html={item.icon} />
             <span class="applications-support-label">{item.label}</span>
             <h3>{item.title}</h3>
             <p>{item.desc}</p>
@@ -132,55 +218,28 @@ const supportBlocks = [
     </div>
   </section>
 
-  <section class="applications-highlight-section">
+  <section class="faq-tail">
     <div class="container">
-      <div class="applications-highlight-panel">
-        <div class="applications-highlight-copy">
-          <span class="applications-section-label dark">Integrated Manufacturing Value</span>
-          <h2>From process problems to practical industrial solutions.</h2>
-          <p>
-            Whether your production line needs static elimination, ionizing bars, or precision surface cleaning, DGSDK helps connect the product configuration with real manufacturing needs.
-          </p>
-          <div class="applications-highlight-actions">
-            <a href="/products/static-eliminator" class="applications-primary-btn">Explore Products</a>
-            <a href="/contact" class="applications-secondary-btn">Contact Us</a>
-          </div>
-        </div>
+      <h2>What to send for an application review</h2>
+      <p>Every line is different, so a useful recommendation needs the real process rather than the industry name. Send these and Shidike will return a configuration, a mounting position and a unit count:</p>
+      <ul class="send-list">
+        <li>The material, its thickness, and a physical sample if a cleaning machine is involved</li>
+        <li>Working width, and whether length is fixed or continuous</li>
+        <li>Line speed</li>
+        <li>Measured surface voltage, or the defect you are seeing</li>
+        <li>Available mounting space, and the conveyor height to match</li>
+        <li>Required PLC, alarm, or machine-control signals</li>
+      </ul>
+      <p><a class="send-cta" href="/contact">Send your application details &rarr;</a></p>
 
-        <div class="applications-highlight-visual">
-          <div class="applications-highlight-card">
-            <strong>Applications</strong>
-            <span>Electronics, SMT, film, packaging, printing, plastics, textile, battery, photovoltaic, and display manufacturing</span>
-          </div>
-          <div class="applications-highlight-card">
-            <strong>Focus</strong>
-            <span>Cleaner surfaces, less static risk, stable workflow, efficient production</span>
-          </div>
-          <div class="applications-highlight-card">
-            <strong>Support</strong>
-            <span>Product matching, practical communication, long-term industrial cooperation</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="applications-cta-section">
-    <div class="container">
-      <div class="applications-cta-box">
-        <div class="applications-cta-copy">
-          <span class="applications-section-label">Discuss Your Project</span>
-          <h2>Need a solution for your production line?</h2>
-          <p>
-            Talk with DGSDK about your application scenario, production process,
-            or customized industrial equipment requirements.
-          </p>
-        </div>
-
-        <div class="applications-cta-actions">
-          <a href="/contact" class="applications-primary-btn">Contact Us</a>
-          <a href="/about" class="applications-secondary-btn dark-outline">About DGSDK</a>
-        </div>
+      <h2>Common questions</h2>
+      <div class="faq-list">
+        {faqItems.map(item => (
+          <details class="faq-item">
+            <summary>{item.question}</summary>
+            <p>{item.answer}</p>
+          </details>
+        ))}
       </div>
     </div>
   </section>
@@ -251,17 +310,6 @@ const supportBlocks = [
       color: rgba(17, 17, 17, 0.72);
     }
 
-    .applications-intro-section {
-      padding: 70px 0 30px;
-      background: #fff;
-    }
-
-    .applications-intro-box {
-      max-width: 880px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
     .applications-intro-box h2,
     .applications-section-heading h2,
     .applications-highlight-copy h2,
@@ -318,24 +366,23 @@ const supportBlocks = [
       box-shadow: 0 28px 60px rgba(15, 23, 42, 0.12);
     }
 
+    /* Full-bleed scene photography, not a product cut-out on a gradient. */
     .application-card-image-wrap {
       position: relative;
-      background: linear-gradient(180deg, #f7f8fa 0%, #ffffff 100%);
-      padding: 24px;
-      min-height: 250px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: #eef1f4;
+      padding: 0;
+      overflow: hidden;
     }
 
     .application-card-image {
-      width: 100%;
-      max-width: 280px;
-      max-height: 200px;
-      object-fit: contain;
       display: block;
-      filter: drop-shadow(0 18px 28px rgba(15, 23, 42, 0.10));
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      transition: transform .35s ease;
     }
+    .application-card:hover .application-card-image { transform: scale(1.03); }
 
     .application-card-body {
       padding: 24px 24px 26px;
@@ -366,31 +413,42 @@ const supportBlocks = [
     }
 
     .applications-support-section {
-      padding: 95px 0;
+      padding: 34px 0 44px;
       background: #f7f8fa;
     }
 
     .applications-support-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 24px;
+      gap: 18px;
+      max-width: 1000px;
+      margin-inline: auto;
     }
 
     .applications-support-card {
       display: block;
       text-decoration: none;
       color: inherit;
-      background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
-      border-radius: 30px;
-      padding: 30px;
-      box-shadow: 0 20px 46px rgba(15, 23, 42, 0.06);
-      border: 1px solid #ececec;
+      background: #fff;
+      border-radius: 4px;
+      padding: 20px 20px 18px;
+      box-shadow: none;
+      border: 1px solid var(--hairline);
       transition: transform 0.35s ease, box-shadow 0.35s ease;
     }
 
     .applications-support-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 28px 60px rgba(15, 23, 42, 0.12);
+      transform: none;
+      border-color: var(--brand-deep);
+    }
+    /* The SVG arrives through set:html, so Astro never stamps it with this
+       component's scope attribute -- an unscoped rule would not match it and the
+       icons rendered as full-width black fills. :global() is required here. */
+    .applications-support-icon { display: block; line-height: 0; margin-bottom: 14px; }
+    .applications-support-icon :global(svg) {
+      width: 32px; height: 32px; display: block;
+      fill: none; stroke: var(--brand-deep); stroke-width: 2;
+      stroke-linecap: round; stroke-linejoin: round;
     }
 
     .applications-support-label {
@@ -407,8 +465,8 @@ const supportBlocks = [
     }
 
     .applications-support-card h3 {
-      margin-bottom: 14px;
-      font-size: 1.5rem;
+      margin-bottom: 10px;
+      font-size: 1.12rem;
       line-height: 1.25;
       font-weight: 800;
       color: #111;
@@ -427,70 +485,6 @@ const supportBlocks = [
       font-size: 0.95rem;
     }
 
-    .applications-highlight-section {
-      padding: 95px 0;
-      background: #fff;
-    }
-
-    .applications-highlight-panel {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 28px;
-      align-items: stretch;
-      border-radius: 34px;
-      padding: 42px;
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      box-shadow: 0 28px 70px rgba(15, 23, 42, 0.16);
-    }
-
-    .applications-highlight-copy h2 {
-      color: #fff;
-    }
-
-    .applications-highlight-copy p {
-      color: rgba(255,255,255,0.82);
-      margin: 0 0 24px;
-    }
-
-    .applications-highlight-actions,
-    .applications-cta-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .applications-primary-btn,
-    .applications-secondary-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 152px;
-      padding: 14px 22px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 700;
-      transition: all 0.28s ease;
-    }
-
-    .applications-primary-btn {
-      background: #ffcc00;
-      color: #111;
-    }
-
-    .applications-primary-btn:hover {
-      background: #ffd633;
-    }
-
-    .applications-secondary-btn {
-      background: rgba(255,255,255,0.10);
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.18);
-    }
-
-    .applications-secondary-btn:hover {
-      background: rgba(255,255,255,0.16);
-    }
-
     .applications-secondary-btn.dark-outline {
       background: transparent;
       color: #111;
@@ -501,63 +495,10 @@ const supportBlocks = [
       background: #f7f8fa;
     }
 
-    .applications-highlight-visual {
-      display: grid;
-      gap: 16px;
-      align-content: center;
-    }
-
-    .applications-highlight-card {
-      padding: 20px 22px;
-      border-radius: 22px;
-      background: rgba(255,255,255,0.10);
-      border: 1px solid rgba(255,255,255,0.08);
-      backdrop-filter: blur(8px);
-    }
-
-    .applications-highlight-card strong {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 1rem;
-      color: #fff;
-    }
-
-    .applications-highlight-card span {
-      display: block;
-      font-size: 0.94rem;
-      line-height: 1.75;
-      color: rgba(255,255,255,0.80);
-    }
-
-    .applications-cta-section {
-      padding: 0 0 95px;
-      background: #fff;
-    }
-
-    .applications-cta-box {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 28px;
-      padding: 38px 40px;
-      border-radius: 30px;
-      background: linear-gradient(180deg, #f7f8fa 0%, #ffffff 100%);
-      border: 1px solid #ececec;
-      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.06);
-    }
-
-    .applications-cta-copy {
-      max-width: 720px;
-    }
-
     @media (max-width: 1200px) {
       .applications-grid,
       .applications-support-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .applications-highlight-panel {
-        grid-template-columns: 1fr;
       }
     }
 
@@ -565,11 +506,6 @@ const supportBlocks = [
       .applications-hero {
         min-height: 500px;
         padding: 135px 0 80px;
-      }
-
-      .applications-cta-box {
-        flex-direction: column;
-        align-items: flex-start;
       }
     }
 
@@ -600,20 +536,36 @@ const supportBlocks = [
         font-size: clamp(2.1rem, 8vw, 3rem);
       }
 
-      .applications-highlight-panel,
-      .applications-cta-box {
-        padding: 28px 22px;
-        border-radius: 24px;
-      }
-
       .application-card,
       .applications-support-card {
         border-radius: 24px;
       }
 
-      .application-card-image-wrap {
-        min-height: 220px;
-      }
+      .application-card-image-wrap { min-height: 0; }
     }
+
+    /* --- rebuilt applications page --- */
+    .applications-grid-section { padding: 40px 0 26px !important; }
+    .application-card-body .app-problem { margin-bottom: 10px; }
+    .application-card-body .app-answer { color: var(--ink-muted); font-size: 14.2px; line-height: 1.6; }
+    .application-card-body .app-answer strong { color: var(--navy); }
+    .applications-also {
+      max-width: 78ch; margin: 34px auto 0; text-align: center;
+      font-size: 14.6px; line-height: 1.75; color: var(--ink-muted);
+      padding-top: 24px; border-top: 1px solid var(--hairline);
+    }
+    .applications-support-section { padding: 34px 0 44px !important; }
+
+    .faq-tail { background: #f7f8fa; padding: 56px 0 84px !important; }
+    .faq-tail .container { max-width: 820px; }
+    .faq-tail h2 { text-align: center; font-size: 1.85rem; letter-spacing: -0.015em; margin: 0 0 8px; }
+    .faq-tail h2 + p { text-align: center; color: var(--ink-muted); margin: 0 auto 22px; max-width: 62ch; }
+    .faq-tail .send-list { max-width: 52ch; margin: 0 auto 20px; }
+    .faq-tail p:has(.send-cta) { text-align: center; }
+    .faq-tail h2 ~ h2 { margin-top: 56px; }
+    .faq-list { display: flex; flex-direction: column; margin-top: 18px; border-top: 1px solid var(--hairline); }
+    .faq-item { padding: 16px 4px; border-bottom: 1px solid var(--hairline); }
+    .faq-item h3 { margin-top: 0; }
+    .faq-item p { margin-bottom: 0; }
   </style>
 </Layout>
