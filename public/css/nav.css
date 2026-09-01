@@ -976,3 +976,24 @@ details.faq-item .faq-answer { font-size: 15.5px !important; }
 @media (max-width: 900px) {
   .cm-two, .cm-three { grid-template-columns: 1fr; }
 }
+
+/* --- Category pages: intro block spacing ------------------------------
+   Same cause as the product pages: the theme's global `section { padding:
+   9rem 0 }` gave this intro 144px above and below, so a 180px block of text
+   occupied 485px. Scoped down, and the gap to the products below is set
+   deliberately rather than inherited. */
+.category-info-block {
+  padding-top: 40px !important;
+  padding-bottom: 34px !important;
+}
+.category-info-block h2 {
+  margin: 0 0 12px !important;
+  font-size: clamp(1.3rem, 2.1vw, 1.65rem);
+  font-weight: 800; letter-spacing: -0.02em; color: var(--navy); line-height: 1.3;
+}
+.category-info-block p {
+  margin: 0 0 12px !important;
+  font-size: 15.5px !important; line-height: 1.72 !important; color: var(--ink-muted);
+}
+.category-info-block p:last-child { margin-bottom: 0 !important; }
+.products-overview-section { padding-top: 8px !important; }

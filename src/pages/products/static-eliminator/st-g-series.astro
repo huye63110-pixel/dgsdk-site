@@ -80,20 +80,53 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
           nobody is measuring.
         </p>
         <div class="pd-fix">
-          <div class="pd-fix-item">
-            <h3>Dust comes back right after cleaning</h3>
-            <p>A charged surface pulls particles out of the air again within seconds, so cleaning alone never holds.</p>
-            <span class="sol">Neutralize first — bar ahead of the cleaning station</span>
+          <div class="pd-fix-item st-g-fix-card">
+            <img
+              class="st-g-fix-image"
+              src="/assets/img/static-eliminator/st-g-fix-dust-returns.webp"
+              alt="Dust returning to a charged film surface beneath an industrial roller"
+              loading="lazy"
+              decoding="async"
+              width="960"
+              height="640"
+            />
+            <div class="st-g-fix-copy">
+              <h3>Dust comes back right after cleaning</h3>
+              <p>A charged surface pulls particles out of the air again within seconds, so cleaning alone never holds.</p>
+              <span class="sol">Neutralize first — bar ahead of the cleaning station</span>
+            </div>
           </div>
-          <div class="pd-fix-item">
-            <h3>Film and sheets cling, jam or misfeed</h3>
-            <p>Charged material sticks to itself and to the machine: sheets double-feed, labels sit crooked, the web tracks off centre.</p>
-            <span class="sol">Bar at the unwind or infeed</span>
+          <div class="pd-fix-item st-g-fix-card">
+            <img
+              class="st-g-fix-image"
+              src="/assets/img/static-eliminator/st-g-fix-film-cling.webp"
+              alt="Plastic film clinging and folding at the unwind rollers"
+              loading="lazy"
+              decoding="async"
+              width="960"
+              height="640"
+            />
+            <div class="st-g-fix-copy">
+              <h3>Film and sheets cling, jam or misfeed</h3>
+              <p>Charged material sticks to itself and to the machine: sheets double-feed, labels sit crooked, the web tracks off centre.</p>
+              <span class="sol">Bar at the unwind or infeed</span>
+            </div>
           </div>
-          <div class="pd-fix-item">
-            <h3>One end of the web is clean, the other is not</h3>
-            <p>Conventional AC bars neutralize unevenly across a mains cycle, leaving alternating over- and under-charged patches.</p>
-            <span class="sol">Pulsed AC removes the unevenness</span>
+          <div class="pd-fix-item st-g-fix-card">
+            <img
+              class="st-g-fix-image"
+              src="/assets/img/static-eliminator/st-g-fix-uneven-neutralization.webp"
+              alt="Film web showing a clean side and a dust-covered side after uneven static neutralization"
+              loading="lazy"
+              decoding="async"
+              width="960"
+              height="640"
+            />
+            <div class="st-g-fix-copy">
+              <h3>One end of the web is clean, the other is not</h3>
+              <p>Conventional AC bars neutralize unevenly across a mains cycle, leaving alternating over- and under-charged patches.</p>
+              <span class="sol">Pulsed AC removes the unevenness</span>
+            </div>
           </div>
         </div>
       </section>
@@ -387,6 +420,39 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
       </section>
     </div>
   </section>
+
+  <style>
+    .pd-fix-item.st-g-fix-card {
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .st-g-fix-image {
+      display: block;
+      width: 100%;
+      height: clamp(180px, 15vw, 220px);
+      object-fit: cover;
+    }
+
+    .st-g-fix-copy {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 18px 19px;
+    }
+
+    .st-g-fix-copy .sol {
+      margin-top: auto;
+    }
+
+    @media (max-width: 900px) {
+      .st-g-fix-image {
+        height: clamp(210px, 56vw, 320px);
+      }
+    }
+  </style>
 
 <script type="application/ld+json">
 {

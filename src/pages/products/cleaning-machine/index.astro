@@ -1,9 +1,160 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+
+const base = 'https://www.dg-sdk.com';
+const canonical = base + '/products/cleaning-machine';
+const sheetProducts = [
+  {
+    name: 'LCM Module Cleaner', slug: 'lcm-cleaner', cat: 'Sheet & Board', code: 'LCM',
+    url: canonical + '/lcm-cleaner', image: base + '/assets/img/cleaning-machine/lcm-cleaner.jpg',
+    img: '/assets/img/cleaning-machine/lcm-cleaner',
+    specs: ['0.022–0.34 mm', 'Breakage <0.02 %', '0–50 m/min', 'Static <100 V']
+  },
+  {
+    name: 'CCL Cleaning Machine', slug: 'ccl-cleaner', cat: 'Sheet & Board', code: 'ST-DT1340',
+    url: canonical + '/ccl-cleaner', image: base + '/assets/img/cleaning-machine/ccl-cleaner.jpg',
+    img: '/assets/img/cleaning-machine/ccl-cleaner',
+    specs: ['0.05–3 mm', '99.9 % removal', '0–70 m/min', '350 W']
+  },
+  {
+    name: 'SMT Inline Cleaner', slug: 'smt-cleaner', cat: 'Sheet & Board', code: 'SMT600',
+    url: canonical + '/smt-cleaner', image: base + '/assets/img/cleaning-machine/smt-cleaner.jpg',
+    img: '/assets/img/cleaning-machine/smt-cleaner',
+    specs: ['50–600 mm width', 'Static to <30 V', '0–45 m/min', 'By-pass mode']
+  },
+  {
+    name: 'PCB Surface Cleaner', slug: 'pcb-cleaner', cat: 'Sheet & Board', code: 'STXF',
+    url: canonical + '/pcb-cleaner', image: base + '/assets/img/cleaning-machine/pcb-cleaner.jpg',
+    img: '/assets/img/cleaning-machine/pcb-cleaner',
+    specs: ['0.05–2 mm', '99.9 % removal', '0–20 m/min', 'Static <50 V']
+  },
+  {
+    name: 'PCB Vertical Cleaner', slug: 'pcb-vertical-cleaner', cat: 'Sheet & Board', code: 'STC-640',
+    url: canonical + '/pcb-vertical-cleaner', image: base + '/assets/img/cleaning-machine/stick-pcb-vertical-cleaning-machine.jpg',
+    img: '/assets/img/cleaning-machine/stick-pcb-vertical-cleaning-machine',
+    specs: ['W620 × L510 mm max', '0.1–2 mm', '~6 s per board', 'Static <50 V']
+  },
+  {
+    name: 'FPC 4-Axis Cleaner', slug: 'fpc-4-axis-cleaner', cat: 'Sheet & Board', code: 'STXT',
+    url: canonical + '/fpc-4-axis-cleaner', image: base + '/assets/img/cleaning-machine/fpc-4-axis-cleaner.jpg',
+    img: '/assets/img/cleaning-machine/fpc-4-axis-cleaner',
+    specs: ['0.022–0.34 mm', '4 tacky rollers', '0–50 m/min', 'Static <200 V']
+  },
+  {
+    name: 'FPC 8-Axis Cleaner', slug: 'fpc-8-axis-cleaner', cat: 'Sheet & Board', code: 'STXS',
+    url: canonical + '/fpc-8-axis-cleaner', image: base + '/assets/img/cleaning-machine/fpc-8-axis-cleaner.jpg',
+    img: '/assets/img/cleaning-machine/fpc-8-axis-cleaner',
+    specs: ['0.028–2 mm', '8 tacky rollers', '0–35 m/min', 'Static <200 V']
+  },
+  {
+    name: 'Stamp Inspection Cleaner', slug: 'inspection-cleaner', cat: 'Sheet & Board', code: 'ST-XT',
+    url: canonical + '/inspection-cleaner', image: base + '/assets/img/cleaning-machine/inspection-cleaner.jpg',
+    img: '/assets/img/cleaning-machine/inspection-cleaner',
+    specs: ['0.05–0.65 mm', '2 MP colour CCD', '0–50 m/min', 'Backlight 20 000 LUX']
+  },
+  {
+    name: 'Polarizer Precision Cleaner', slug: 'polarizer-cleaner', cat: 'Sheet & Board', code: null,
+    note: 'Model code to confirm',
+    url: canonical + '/polarizer-cleaner', image: base + '/assets/img/cleaning-machine/polarizer-cleaner.jpg',
+    img: '/assets/img/cleaning-machine/polarizer-cleaner'
+  },
+  {
+    name: 'Backlight Panel Cleaner', slug: 'backlight-cleaner', cat: 'Sheet & Board', code: null,
+    note: 'Model code to confirm',
+    url: canonical + '/backlight-cleaner', image: base + '/assets/img/cleaning-machine/backlight-cleaner.jpg',
+    img: '/assets/img/cleaning-machine/backlight-cleaner'
+  },
+];
+const webProducts = [
+  {
+    name: 'Large-Size Optical Film Cleaner', slug: 'optical-film-cleaner', cat: 'Roll-to-Roll', code: 'STFK',
+    url: canonical + '/optical-film-cleaner', image: base + '/assets/img/cleaning-machine/optical.jpg',
+    img: '/assets/img/cleaning-machine/optical',
+    specs: ['0.065–0.68 mm', '99.9 % removal', '0–40 m/min', 'Static <100 V']
+  },
+  {
+    name: 'Roll-to-Roll Cleaner', slug: 'roll-chip-cleaner', cat: 'Roll-to-Roll', code: 'Coil Universal',
+    url: canonical + '/roll-chip-cleaner', image: base + '/assets/img/cleaning-machine/roll-chip-cleaner.jpg',
+    img: '/assets/img/cleaning-machine/roll-chip-cleaner',
+    specs: ['0.05–2 mm', 'Surface static <50 V', '0–20 m/min', 'Unwind + rewind']
+  },
+];
+const allCleaningProducts = [...sheetProducts, ...webProducts];
+const faqItems = [
+  {
+    question: 'How does contact cleaning actually work?',
+    answer: 'An elastomer roller runs against the surface and lifts loose particles off it. Those particles transfer onto an adhesive paper roll, which winds them away permanently rather than redistributing them. That is the difference from an air knife or a brush: both move contamination around, and a contact cleaner removes it from the line.'
+  },
+  {
+    question: 'Which belt will my material need?',
+    answer: 'The belt is chosen from your sample, and thickness usually decides it. A flat belt gives full support underneath and is the default where the back face is not critical. A ribbed belt puts the material on narrow strips instead of a continuous surface, so there is less contact underneath — that matters when the back side has to stay unmarked. A slat conveyor is used for rigid boards and light guide plates, where a belt would flex the material or leave an impression.'
+  },
+  {
+    question: 'How is the cleaning roller chosen?',
+    answer: 'Rollers are Korean-imported RTV liquid silicone, and they are graded by tack. That grade is the single most important choice on the machine: too little tack and fine particles stay on your material; too much and the roller pulls at the surface, which on thin film or a soft coating causes its own defects. We match the grade to your sample rather than picking one from a datasheet.'
+  },
+  {
+    question: 'What are the consumables and how often do they change?',
+    answer: 'Two per machine: the elastomer cleaning roller, and the adhesive paper roll that takes particles off it. The paper is supplied as two rolls — one upper, one lower — with a 3.0 inch core, 20 m per roll, 800 D tack and knife-free changeover. Rollers and rolls pull out on a drawer mechanism, so a change does not mean dismantling the machine.'
+  },
+  {
+    question: 'What material thickness and width can be cleaned?',
+    answer: 'Thickness from 0.022 mm up to 6 mm depending on configuration, effective width to 1500 mm, and length unrestricted on continuous material. The roller gap is adjustable from 0.1 to 6.0 mm with a one-touch mechanism and a digital readout, so one machine covers a range of thicknesses rather than a single one.'
+  },
+  {
+    question: 'Do I need static control as well as cleaning?',
+    answer: 'Yes, on almost every application. A charged surface pulls particles back out of the air within seconds of leaving the machine, so cleaning without neutralizing solves half the problem. The standard build is two ST-G ionizing bars made to the width of the machine. The ST-E is specified on wide machines where balance has to hold across the full span, and the ST-F where line speed is high. Some machines are also built with ST104A blowers mounted low on both sides.',
+    answerHtml: 'Yes, on almost every application. A charged surface pulls particles back out of the air within seconds of leaving the machine, so cleaning without neutralizing solves half the problem. The standard build is two <a href="/products/static-eliminator/st-g-series">ST-G ionizing bars</a> made to the width of the machine. The <a href="/products/static-eliminator/st-e-series">ST-E</a> is specified on wide machines where balance has to hold across the full span, and the <a href="/products/static-eliminator/st-f-series">ST-F</a> where line speed is high. Some machines are also built with <a href="/products/static-eliminator/st-104a">ST104A blowers</a> mounted low on both sides.'
+  },
+  {
+    question: 'What is the difference between contact and non-contact?',
+    answer: 'Contact cleaning runs an elastomer roller against the surface — it takes off what is stuck, not just what is loose, and it is what most board and sheet applications use. Non-contact refers to the transport: a magnetic levitation drive moves the material without mechanical contact on the working face, used where the surface cannot take roller pressure at all, such as ultra-thin film or coated optical layers.'
+  }
+];
 ---
 
-<Layout title="Industrial Cleaning Machines & Surface Cleaning Systems | DGSDK"
-  description="DGSDK industrial cleaning machines for PCB, FPC, SMT, optical film, polarizer, display, and precision sheet surfaces. Compare dry-contact cleaning systems.">
+<Layout title="Web Cleaning Systems &amp; Contact Cleaners | Shidike"
+  description="Contact cleaning machines and web cleaning systems built to your sample. Belt, roller tack, roller gap and the static package are chosen from your material — 0.022 to 6 mm thick, to 1500 mm wide.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: base },
+      { '@type': 'ListItem', position: 2, name: 'Web Cleaning Systems and Contact Cleaners', item: canonical }
+    ]
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Web Cleaning Systems and Contact Cleaning Machines',
+    url: canonical,
+    description: 'Contact cleaning machines and web cleaning systems for PCB, FPC, CCL, polarizer, backlight, optical film and roll-to-roll production, built to the customer sample.',
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: allCleaningProducts.length,
+      itemListElement: allCleaningProducts.map((product, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        item: {
+          '@type': 'Product',
+          name: product.name,
+          url: product.url,
+          image: product.image,
+          brand: { '@type': 'Brand', name: 'Shidike' }
+        }
+      }))
+    }
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map(item => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer }
+    }))
+  })} />
   <section
     class="products-hero"
     style="background: linear-gradient(rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.18)), url('/assets/img/cleaning-machine/web-cleaning-line.jpg') center/cover no-repeat; background-attachment: fixed;"
@@ -18,177 +169,24 @@ import Layout from '../../../layouts/Layout.astro';
     </div>
   </section>
 
-  <section class="category-info-block">
-    <div class="container" style="max-width:900px;">
-      <h2>Two ways to clean a surface, and everything else is built to your sample</h2>
-      <p>
-        A contact cleaner runs an elastomer roller against the surface. The roller lifts loose
-        particles off, then transfers them onto an adhesive paper roll that winds them away
-        permanently. It removes what an air knife or a brush leaves behind, down to particles
-        too small to see.
-      </p>
-      <p>
-        Every machine we build is <strong>made to the sample you send us</strong>. There is no
-        catalogue model that fits your line — the belt, the roller, the gap and the static
-        package are all chosen from your material. What follows is how those four choices are
-        actually made.
-      </p>
-    </div>
-  </section>
-
-  <section class="page-section cm-block">
-    <div class="container" style="max-width:1080px;">
-      <h2 class="cm-h2">1 — Contact or non-contact</h2>
-      <p class="cm-lede">The first question is whether the working surface can be touched at all.</p>
-      <div class="cm-two">
-        <div class="cm-card">
-          <span class="cm-tag">Contact cleaning</span>
-          <h3>The roller touches the surface</h3>
-          <p>
-            An elastomer roller runs against the material and lifts particles off it. This is the
-            more thorough of the two — it takes off what is stuck, not just what is loose — and it
-            is what most PCB, FPC, CCL and sheet applications use.
-          </p>
-          <ul>
-            <li>Double-sided, double-pass: 4 cleaning rollers plus 2 collection rollers</li>
-            <li>Particle removal to 99.9 %</li>
-            <li>Roller gap adjustable 0.1–6.0 mm, one-touch, with a digital readout</li>
-          </ul>
-        </div>
-        <div class="cm-card">
-          <span class="cm-tag">Non-contact transport</span>
-          <h3>Nothing touches the effective area</h3>
-          <p>
-            Magnetic levitation drive moves the material without mechanical contact on the
-            working face. Used where the surface cannot take roller pressure at all — ultra-thin
-            film, coated optical layers, or material that marks under any load.
-          </p>
-          <ul>
-            <li>Frictionless transport, no drive marks on the surface</li>
-            <li>Handles ultra-thin and warped material without curling or creasing the corners</li>
-            <li>Cleaning still happens; the contact is managed rather than eliminated</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="page-section cm-block">
-    <div class="container" style="max-width:1080px;">
-      <h2 class="cm-h2">2 — The belt</h2>
-      <p class="cm-lede">
-        The belt is chosen from your sample, and thickness is what usually decides it. Send us
-        the material and we will tell you which one your line needs.
-      </p>
-      <div class="cm-three">
-        <div class="cm-card">
-          <h3>Flat belt</h3>
-          <p>The general-purpose transport surface. Full contact underneath, even support across the whole sheet — the default where the back face is not critical.</p>
-        </div>
-        <div class="cm-card">
-          <h3>Ribbed belt</h3>
-          <p>Narrow strips instead of a continuous surface, so the material rests on lines rather than a full face. Less contact area underneath, which matters when the back side has to stay unmarked.</p>
-        </div>
-        <div class="cm-card">
-          <h3>Slat conveyor</h3>
-          <p>A slatted transport structure rather than a belt. Used for rigid boards and for light guide plates, where a belt would flex the material or leave an impression.</p>
-        </div>
-      </div>
-      <p class="cm-note">
-        Effective cleaning width runs to 1500 mm and length is unrestricted; material thickness
-        from 0.022 mm up to 6 mm depending on configuration. The belt and the gap are set
-        together — that pairing is what your sample determines.
-      </p>
-    </div>
-  </section>
-
-  <section class="page-section cm-block">
-    <div class="container" style="max-width:1080px;">
-      <h2 class="cm-h2">3 — Rollers and consumables</h2>
-      <p class="cm-lede">
-        Two consumables do the actual work: the elastomer roller that lifts particles off your
-        material, and the adhesive paper roll that takes them off the roller.
-      </p>
-      <div class="cm-two">
-        <div class="cm-card">
-          <h3>Elastomer cleaning roller</h3>
-          <p>
-            Korean-imported RTV liquid silicone. <strong>Rollers are graded by tack</strong> — that
-            grade is the single most important choice on the machine.
-          </p>
-          <p class="cm-small">
-            Too little tack and fine particles stay on your material. Too much and the roller
-            pulls at the surface, which on thin film or a soft coating causes its own defects.
-            Send a sample and we match the grade to it rather than guessing from a datasheet.
-          </p>
-        </div>
-        <div class="cm-card">
-          <h3>Adhesive paper roll</h3>
-          <p>
-            Paper, two rolls per machine — one upper, one lower. <strong>3.0 inch core, 20 m per
-            roll, 800 D tack, knife-free changeover.</strong>
-          </p>
-          <p class="cm-small">
-            The roll is what makes removal permanent: particles go from your surface to the
-            roller to the paper, and wind away. Rollers and rolls pull out on a drawer mechanism,
-            so a change does not mean dismantling the machine.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="page-section cm-block">
-    <div class="container" style="max-width:1080px;">
-      <h2 class="cm-h2">4 — The static package</h2>
-      <p class="cm-lede">
-        Cleaning a charged surface does not hold. The charge pulls particles back out of the air
-        within seconds of the material leaving the machine, so a cleaner without static control
-        is solving half the problem.
-      </p>
-      <div class="cm-two">
-        <div class="cm-card">
-          <h3>Standard: two ST-G bars</h3>
-          <p>
-            The usual build is <strong>two <a href="/products/static-eliminator/st-g-series">ST-G ionizing bars</a></strong>,
-            neutralizing the material as it passes. Ion balance ±50 V, 6.5 kV DC pulse, DC 24 V —
-            the bars are made to the width of your machine.
-          </p>
-          <p class="cm-small">
-            The <a href="/products/static-eliminator/st-e-series">ST-E</a> is specified instead on
-            wide machines where balance has to hold across the full span, and the
-            <a href="/products/static-eliminator/st-f-series">ST-F</a> where line speed is high
-            enough that a standard bar cannot neutralize in time.
-          </p>
-        </div>
-        <div class="cm-card">
-          <h3>Optional: ionizing blowers</h3>
-          <p>
-            Some machines are built with <a href="/products/static-eliminator/st-104a">ST104A blowers</a>
-            mounted low on both sides in addition to the bars.
-          </p>
-          <p class="cm-small">
-            A bar neutralizes along a line; a blower moves ionized air across an area, including
-            the underside and the exit zone. Tell us if your material charges again after it
-            leaves the machine and we will quote the arrangement that covers it.
-          </p>
-        </div>
-      </div>
-      <div class="cm-cta">
-        <p>
-          <strong>What to send for a quote</strong>
-          A sample of your material, its thickness, the working width, your line speed, and the
-          conveyor height you need to match. That is enough for us to specify the belt, the
-          roller grade, the gap and the static package — and to quote a machine rather than a
-          model number.
-        </p>
-        <a href="/contact" class="btn btn-warning text-uppercase px-4 py-2">Send Your Sample</a>
-      </div>
-    </div>
-  </section>
-
   <section class="products-overview-section">
     <div class="container products-overview-layout">
+      <div class="finder">
+        <div class="finder-lead"><span>Help me find a<br />cleaning machine for:</span></div>
+        <div class="finder-opts">
+          <a class="finder-opt" href="#sheet">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="18" width="36" height="12" rx="2"/><path d="M12 30v5M36 30v5M6 24h36"/></svg>
+            <span class="finder-opt-title">Boards and sheets fed through a line</span>
+            <span class="finder-opt-sub">PCB, FPC, CCL, polarizer, backlight, LCM</span>
+          </a>
+          <a class="finder-opt" href="#web">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="12" cy="24" r="8"/><circle cx="36" cy="24" r="8"/><path d="M12 16h24M12 32h24"/></svg>
+            <span class="finder-opt-title">Film or material on a roll</span>
+            <span class="finder-opt-sub">Roll-to-roll and optical film</span>
+          </a>
+        </div>
+      </div>
+
       <aside class="products-sidebar">
         <div class="products-sidebar-box">
           <h3>Browse Categories</h3>
@@ -198,152 +196,255 @@ import Layout from '../../../layouts/Layout.astro';
       </aside>
 
       <div class="products-main">
-        <section class="apple-product-section">
-          <div class="apple-card-grid">
-            <a href="/products/cleaning-machine/polarizer-cleaner" class="apple-product-card" data-aos="fade-up" data-aos-delay="0" data-aos-duration="600">
-              <picture><source srcset="/assets/img/cleaning-machine/polarizer-cleaner.webp" type="image/webp" /><img src="/assets/img/cleaning-machine/polarizer-cleaner.jpg" alt="Polarizer Precision Cleaning Machine" loading="lazy" /></picture>
-              <span class="apple-card-tag">Cleaning Machine</span>
-              <h3>Polarizer Precision Cleaning Machine</h3>
-              <p>Designed for clean, stable handling of sensitive polarizer surfaces.</p>
-            </a>
+        <p class="pl-count">Showing all {allCleaningProducts.length} machines</p>
 
-            <a href="/products/cleaning-machine/fpc-4-axis-cleaner" class="apple-product-card" data-aos="fade-up" data-aos-delay="60" data-aos-duration="600">
-              <picture><source srcset="/assets/img/cleaning-machine/fpc-4-axis-cleaner.webp" type="image/webp" /><img src="/assets/img/cleaning-machine/fpc-4-axis-cleaner.jpg" alt="FPC 4-Axis High Precision Cleaning Machine" loading="lazy" /></picture>
-              <span class="apple-card-tag">Cleaning Machine</span>
-              <h3>FPC 4-Axis High Precision Cleaning Machine</h3>
-              <p>High-precision cleaning system for flexible printed circuit applications.</p>
-            </a>
+        <section class="pl-group" id="sheet">
+          <div class="pl-group-head">
+            <h2>Sheet &amp; Board Cleaning Machines</h2>
+            <p>Material is fed through as discrete boards or sheets. Belt, roller gap and roller tack are set from your sample.</p>
+          </div>
+          <div class="pcard-grid">
+            {sheetProducts.map(item => (
+              <a href={`/products/cleaning-machine/${item.slug}`} class="pcard">
+                <picture class="pcard-media">
+                  <source srcset={`${item.img}.webp`} type="image/webp" />
+                  <img src={`${item.img}.jpg`} alt={item.name} loading="lazy" />
+                </picture>
+                <div class="pcard-body">
+                  <span class="pcard-cat">{item.cat}</span>
+                  <h3>{item.code || item.name}</h3>
+                  <p class="pcard-name">{item.code ? item.name : item.note}</p>
+                  {item.specs && <ul class="pcard-specs">{item.specs.map(v => <li>{v}</li>)}</ul>}
+                  <span class="pcard-cta"><span class="pcard-arrow">&rarr;</span>View product</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
 
-            <a href="/products/cleaning-machine/fpc-8-axis-cleaner" class="apple-product-card" data-aos="fade-up" data-aos-delay="120" data-aos-duration="600">
-              <img src="/assets/img/cleaning-machine/fpc-8-axis-cleaner.jpg" alt="FPC 8-Axis Advanced Cleaning Machine" loading="lazy" />
-              <span class="apple-card-tag">Cleaning Machine</span>
-              <h3>FPC 8-Axis Advanced Cleaning Machine</h3>
-              <p>Advanced multi-axis cleaning platform for demanding production workflows.</p>
-            </a>
-
-            <a href="/products/cleaning-machine/optical-film-cleaner" class="apple-product-card" data-aos="fade-up" data-aos-delay="180" data-aos-duration="600">
-              <picture><source srcset="/assets/img/cleaning-machine/optical.webp" type="image/webp" /><img src="/assets/img/cleaning-machine/optical.jpg" alt="Large Size Optical Film Cleaning Machine" loading="lazy" /></picture>
-              <span class="apple-card-tag">Cleaning Machine</span>
-              <h3>Large Size Optical Film Cleaning Machine</h3>
-              <p>Industrial surface cleaning for large optical film applications.</p>
-            </a>
-
-            <a href="/products/cleaning-machine/lcm-cleaner" class="apple-product-card" data-aos="fade-up" data-aos-delay="240" data-aos-duration="600">
-              <img src="/assets/img/cleaning-machine/lcm-cleaner.jpg" alt="LCM Module Industrial Cleaning Machine" loading="lazy" />
-              <span class="apple-card-tag">Cleaning Machine</span>
-              <h3>LCM Module Industrial Cleaning Machine</h3>
-              <p>Industrial cleaning system for module handling and display assembly lines.</p>
-            </a>
-
-            <a href="/products/cleaning-machine/pcb-cleaner" class="apple-product-card" data-aos="fade-up" data-aos-delay="300" data-aos-duration="600">
-              <img src="/assets/img/cleaning-machine/pcb-cleaner.jpg" alt="PCB Surface Cleaning Machine" loading="lazy" />
-              <span class="apple-card-tag">Cleaning Machine</span>
-              <h3>PCB Surface Cleaning Machine</h3>
-              <p>Stable surface cleaning for PCB manufacturing and inspection stages.</p>
-            </a>
-
-            <a href="/products/cleaning-machine/pcb-vertical-cleaner" class="apple-product-card" data-aos="fade-up" data-aos-delay="360" data-aos-duration="600">
-              <img src="/assets/img/cleaning-machine/stick-pcb-vertical-cleaning-machine.jpg" alt="PCB Vertical Cleaning System" loading="lazy" />
-              <span class="apple-card-tag">Cleaning Machine</span>
-              <h3>PCB Vertical Cleaning System</h3>
-              <p>Vertical cleaning design for efficient PCB process support.</p>
-            </a>
-
-            <a href="/products/cleaning-machine/roll-chip-cleaner" class="apple-product-card" data-aos="fade-up" data-aos-delay="420" data-aos-duration="600">
-              <img src="/assets/img/cleaning-machine/roll-chip-cleaner.jpg" alt="Roll Chip Universal Cleaning Machine" loading="lazy" />
-              <span class="apple-card-tag">Cleaning Machine</span>
-              <h3>Roll Chip Universal Cleaning Machine</h3>
-              <p>Universal cleaning solution for roll chip and precision material handling.</p>
-            </a>
-
-            <a href="/products/cleaning-machine/smt-cleaner" class="apple-product-card" data-aos="fade-up" data-aos-delay="480" data-aos-duration="600">
-              <picture><source srcset="/assets/img/cleaning-machine/smt-cleaner.webp" type="image/webp" /><img src="/assets/img/cleaning-machine/smt-cleaner.jpg" alt="SMT Inline Cleaning Machine" loading="lazy" /></picture>
-              <span class="apple-card-tag">Cleaning Machine</span>
-              <h3>SMT Inline Cleaning Machine</h3>
-              <p>Inline cleaning support for SMT processes and precision assembly lines.</p>
-            </a>
-
-            <a href="/products/cleaning-machine/backlight-cleaner" class="apple-product-card" data-aos="fade-up" data-aos-delay="540" data-aos-duration="600">
-              <img src="/assets/img/cleaning-machine/backlight-cleaner.jpg" alt="Backlight Panel Cleaning Machine" loading="lazy" />
-              <span class="apple-card-tag">Cleaning Machine</span>
-              <h3>Backlight Panel Cleaning Machine</h3>
-              <p>Precision cleaning for backlight panel production environments.</p>
-            </a>
-
-            <a href="/products/cleaning-machine/ccl-cleaner" class="apple-product-card" data-aos="fade-up" data-aos-delay="600" data-aos-duration="600">
-              <img src="/assets/img/cleaning-machine/ccl-cleaner.jpg" alt="Stick CCL Cleaning Machine ST DT1340" loading="lazy" />
-              <span class="apple-card-tag">Cleaning Machine</span>
-              <h3>Stick CCL Cleaning Machine ST DT1340</h3>
-              <p>Stable cleaning support for CCL-related industrial manufacturing lines.</p>
-            </a>
-
-            <a href="/products/cleaning-machine/inspection-cleaner" class="apple-product-card" data-aos="fade-up" data-aos-delay="660" data-aos-duration="600">
-              <img src="/assets/img/cleaning-machine/inspection-cleaner.jpg" alt="Inspection Stage Cleaning Machine (STXT Series)" loading="lazy" />
-              <span class="apple-card-tag">Cleaning Machine</span>
-              <h3>Inspection Stage Cleaning Machine (STXT Series)</h3>
-              <p>Integrated inspection and cleaning support for precision production workflows.</p>
-            </a>
+        <section class="pl-group" id="web">
+          <div class="pl-group-head">
+            <h2>Roll-to-Roll &amp; Film Cleaning</h2>
+            <p>Continuous material off a roll, cleaned in line between unwind and rewind.</p>
+          </div>
+          <div class="pcard-grid">
+            {webProducts.map(item => (
+              <a href={`/products/cleaning-machine/${item.slug}`} class="pcard">
+                <picture class="pcard-media">
+                  <source srcset={`${item.img}.webp`} type="image/webp" />
+                  <img src={`${item.img}.jpg`} alt={item.name} loading="lazy" />
+                </picture>
+                <div class="pcard-body">
+                  <span class="pcard-cat">{item.cat}</span>
+                  <h3>{item.code || item.name}</h3>
+                  <p class="pcard-name">{item.code ? item.name : item.note}</p>
+                  {item.specs && <ul class="pcard-specs">{item.specs.map(v => <li>{v}</li>)}</ul>}
+                  <span class="pcard-cta"><span class="pcard-arrow">&rarr;</span>View product</span>
+                </div>
+              </a>
+            ))}
           </div>
         </section>
       </div>
     </div>
   </section>
 
-  <section class="category-info-block">
+  <section class="related-categories-section">
     <div class="container">
-      <h2 data-aos="fade-up" data-aos-duration="700">PCB Cleaning Machines &amp; Industrial Cleaners</h2>
-      <p>A PCB cleaning machine removes surface particles from circuit boards before critical process steps. Dust, fibers, and static-bonded debris cause defects throughout production. Surface particles cause solder paste to adhere poorly during screen printing. Components shift during pick-and-place when the board surface is not clean. A well-specified circuit board cleaning machine removes these problems at the source. This improves yield and reduces rework costs long term.</p>
-
-      <h3>Types of Industrial Cleaning Machines</h3>
-      <p>DGSDK manufactures industrial cleaning machines for specific substrate types and production environments. Small to medium production lines and high-volume automated lines use different cleaning methods. The right machine depends on your substrate, line speed, and particle profile:</p>
-      <ul>
-        <li><strong>PCB Cleaning Machines</strong> — Adhesive roller-based circuit board cleaners that remove surface particles from both sides of PCBs without chemicals or water. These are the most common cleaning methods for SMT pre-print and pre-placement positions.</li>
-        <li><strong>SMT Inline Cleaning Machines</strong> — Fully automatic inline machines with PLC control, matching conveyor speeds in continuous SMT production. The SMT600 Series uses dual upper and lower rollers with integrated static removal.</li>
-        <li><strong>FPC Cleaning Machines</strong> — Multi-axis precision cleaning systems for flexible printed circuits. Available in 4-axis and 8-axis configurations for different throughput requirements.</li>
-        <li><strong>Optical Film Cleaning Machines</strong> — Large-format cleaning systems for optical films, polarizer sheets, and display substrates. Handles wide film widths without deformation or surface marking.</li>
-        <li><strong>LCM Module Cleaning Machines</strong> — Industrial cleaning for liquid crystal modules before bonding, inspection, and packaging. Removes particles that cause optical defects in finished display units.</li>
-        <li><strong>Backlight Panel Cleaning Machines</strong> — Precision cleaning for backlight units before assembly. Removes dust that causes bright spots and non-uniformity in finished panels.</li>
-        <li><strong>CCL Cleaning Machines</strong> — Surface preparation cleaning for copper clad laminate boards before PCB manufacturing processes.</li>
-        <li><strong>Inspection Stage Cleaning Machines</strong> — Positioned immediately before automated optical inspection (AOI) or manual inspection, reducing false rejects from surface debris.</li>
-      </ul>
-
-      <h3>Adhesive Roller Cleaning Methods</h3>
-      <p>Most DGSDK industrial cleaning machines use adhesive roller cleaning methods. Precision silicone or specialized adhesive rollers contact the substrate surface and lift particles by adhesion. This approach does not require compressed air, water treatment, or chemical waste management.</p>
-      <p>The cleaning action is mechanical and consistent across every substrate that passes through the machine. Adhesive rollers transfer particles to a secondary paper roll or cleaning tape. Quick-change window structures allow roller and paper roll replacement in minutes. This minimizes line downtime and keeps cleaning performance stable long term, even in high-volume production environments.</p>
-      <p>Adhesive roller cleaning is a dry process. It does not add moisture or chemicals to the substrate. This makes it safe for PCBs, optical films, polarizers, and other sensitive surfaces. The method works at production line speeds without slowing output.</p>
-
-      <h3>Cleaning Solutions for Different Substrates</h3>
-      <p>Different substrates need different cleaning approaches. Hard, rigid boards like PCBs and CCL can handle standard roller pressure. Flexible substrates like FPC boards need gentler contact to avoid deformation. Optical films and polarizer sheets need light, uniform contact to avoid surface marking.</p>
-      <p>DGSDK designs cleaning solutions for each substrate type. PCB cleaning machines use rollers set for rigid board surfaces. FPC cleaning machines use multi-axis systems that hold the substrate flat during cleaning. Optical film cleaning machines use wide rollers with low contact pressure to clean the film without distortion.</p>
-      <p>Choosing the right cleaning solution for your substrate type prevents damage and ensures effective particle removal. Our team can help match the right machine to your process.</p>
-
-      <h3>Web Cleaning System vs. Sheet Cleaning Machine</h3>
-      <p>A web cleaning system treats a continuous moving roll, while a sheet cleaning machine handles discrete boards, panels, or cut sheets. Selection criteria overlap—material sensitivity, width, speed, particle size, contact method, and static control—but the transport and tension requirements are different. Confirm whether your material is continuous or sheet-fed before choosing equipment.</p>
-
-      <h3>Circuit Board Cleaning Machine vs. Manual Cleaning</h3>
-      <p>Manual cleaning of circuit boards introduces variation. Human contact with board surfaces adds dirt from skin oils, static discharge, and uneven cleaning pressure. Manual cleaning also slows production throughput and increases labor costs.</p>
-      <p>An automated circuit board cleaning machine delivers consistent performance at line speed. It removes the quality variation that manual cleaning introduces. The machine applies the same cleaning force and roller contact across every board.</p>
-      <p>For production environments where yield and consistency matter, automated cleaning solutions replace manual cleaning at every critical process point. Automated cleaning also supports traceability and process control.</p>
-
-      <h3>Cleaning Machines for Tight Spaces and Compact Layouts</h3>
-      <p>Factory floor space is often limited. Not every production line has room for a large inline cleaning system.</p>
-      <p>DGSDK offers compact cleaning machine designs that fit into tight spaces between existing process equipment. The <a href="/products/cleaning-machine/pcb-vertical-cleaner">PCB Vertical Cleaning System</a> uses a vertical substrate path to minimize the horizontal footprint. This makes it practical to install a circuit board cleaning machine in tight spaces where conventional horizontal machines would not fit.</p>
-      <p>Compact cleaning solutions reduce the barrier to adding automated cleaning at any point in the production line.</p>
-
-      <h3>Cleaning Machine Integration with Production Lines</h3>
-      <p>DGSDK industrial cleaning machines integrate with existing production lines. Each machine matches the conveyor speed and height of the upstream and downstream equipment. This allows cleaning to be added at any point without stopping the production flow.</p>
-      <p>Standard electrical and mechanical interfaces simplify installation. Most machines operate on standard power supplies. Control signals connect to existing PLC systems for synchronized operation. Line operators can monitor cleaning performance from the existing control panel.</p>
-      <p>Cleaning machines can be positioned at multiple points in a line. Common positions include before screen printing, before pick-and-place, before optical inspection, and before final assembly. Adding a cleaning machine at each of these points gives the greatest improvement in yield.</p>
-
-      <h3>Industrial Cleaning Machine Maintenance</h3>
-      <p>Keeping industrial cleaning machines in good condition is simple. The main maintenance task is replacing adhesive rollers and paper rolls. Most machines use quick-change designs that allow replacement in minutes. Line downtime for roller changes is short.</p>
-      <p>Roller replacement frequency depends on the particle load and production volume. High-volume lines with heavy particle loads require more frequent changes. Low-volume or low-particle environments need fewer changes.</p>
-      <p>DGSDK provides replacement rollers, paper rolls, and spare parts for all cleaning machine models. Our service team supports customers with maintenance schedules, part availability, and on-site assistance when needed.</p>
-
-      <h3>Choosing the Right Circuit Board Cleaning Machine</h3>
-      <p>The correct circuit board cleaning machine depends on your substrate type, line layout, throughput, and particle profile. Different production environments need different cleaning solutions.</p>
-      <p>For SMT production lines, the <a href="/products/cleaning-machine/smt-cleaner">SMT600 Series inline cleaner</a> integrates directly into the conveyor flow. For small to medium line layouts where floor space is limited, the <a href="/products/cleaning-machine/pcb-vertical-cleaner">PCB Vertical Cleaning Machine</a> offers a compact footprint. For FPC and film substrates requiring high-precision handling, the multi-axis <a href="/products/cleaning-machine/fpc-4-axis-cleaner">FPC 4-Axis</a> and <a href="/products/cleaning-machine/fpc-8-axis-cleaner">FPC 8-Axis cleaning machines</a> provide the substrate control needed to avoid deformation.</p>
-      <p>Contact us with your substrate dimensions, line speed, and particle requirements for a configuration recommendation.</p>
+      <h2 class="related-cat-title">Next: Static Eliminators &amp; Ionizing Bars</h2>
+      <p class="related-cat-desc">Cleaning a charged surface does not hold — the charge pulls particles back out of the air within seconds. Most machines ship with two ST-G bars fitted.</p>
+      <div class="related-cat-grid">
+        <a href="/products/static-eliminator" class="related-cat-card">
+          <picture><source srcset="/assets/img/static-eliminator/st-g.webp" type="image/webp" /><img src="/assets/img/static-eliminator/st-g.jpg" alt="Shidike anti static bars and ionizing air blowers" loading="lazy" /></picture>
+          <h3>Anti Static Bars &amp; Ionizing Air Blowers</h3>
+          <span>View the range &rarr;</span>
+        </a>
+      </div>
     </div>
   </section>
+
+  <section class="faq-tail">
+    <div class="container">
+      <h2>What to send for a machine recommendation</h2>
+      <p>
+        There is no catalogue model that fits a line. Every machine is <strong>built to the sample
+        you send us</strong> — the belt, the roller tack, the gap and the static package are all
+        chosen from your material. Send these and we will specify all four:
+      </p>
+      <ul class="send-list">
+        <li>A sample of your material, and its thickness</li>
+        <li>Working width, and whether length is fixed or continuous</li>
+        <li>Line speed</li>
+        <li>Conveyor height you need to match on the upstream and downstream equipment</li>
+        <li>Whether the back face can take contact, or must stay unmarked</li>
+      </ul>
+      <p><a class="send-cta" href="/contact">Send your sample details &rarr;</a></p>
+
+      <h2>Common questions</h2>
+      <div class="faq-list">
+        {faqItems.map(item => (
+          <details class="faq-item">
+            <summary>{item.question}</summary>
+            <p set:html={item.answerHtml || item.answer} />
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <style>
+    .products-hero h1,
+    .products-hero p { color: #fff !important; text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45); }
+    .products-category-header { margin-bottom: 24px; }
+    .products-category-header h2 { margin: 6px 0 8px; }
+    .products-category-header p { margin: 0; color: #5f6368; }
+    /* The lower half was grey -> white -> grey with three different container
+       widths. Make it one continuous surface on a single left edge. */
+    /* "Next" block: same surface, no seam, and no rounded floating cards */
+    .related-categories-section { padding: 64px 0 !important; background: #f7f8fa !important; }
+    .related-cat-title { margin-bottom: 6px; }
+    .related-cat-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 20px !important; max-width: 900px; }
+    .related-cat-card {
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      border: 1px solid var(--hairline) !important;
+      background: #fff !important;
+      transition: border-color .15s ease !important;
+    }
+    .related-cat-card:hover { transform: none !important; border-color: var(--brand-deep) !important; }
+    .related-cat-info h3 { font-size: 1.05rem; }
+    .related-cat-link { color: var(--brand-deep); font-weight: 700; }
+
+    /* Sidebar: flatten the rounded floating card so it reads as one block
+       with the product list beside it, sharing the same top rule. */
+    .products-sidebar-box {
+      background: transparent !important;
+      border: 0 !important;
+      border-top: 1px solid var(--hairline) !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      padding: 12px 0 0 !important;
+    }
+    .products-sidebar-box h3 {
+      font-size: 12.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      color: #7d8d97; margin: 0 0 10px;
+    }
+    .products-sidebar-box a {
+      display: block; padding: 9px 0; font-size: 15px; color: #3d4f5c;
+      text-decoration: none; border-bottom: 1px solid var(--hairline);
+    }
+    .products-sidebar-box a:hover { color: var(--brand-deep); }
+    .products-sidebar-box a.active-category {
+      background: transparent !important; color: var(--navy) !important; font-weight: 700;
+      box-shadow: inset 3px 0 0 var(--brand); padding-left: 12px;
+    }
+
+    /* The theme applies `section { padding: 9rem 0 }` to every <section>, which put
+       144px of dead space above and below each product group. Reset it here. */
+    .pl-group { padding: 0 !important; scroll-margin-top: 110px; }
+
+    /* ---------- finder: spans the same two columns as the sidebar + grid below,
+       so the navy block and "Browse Categories" share one left edge ---------- */
+    .finder {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: subgrid;
+      margin-bottom: 34px;
+    }
+    @supports not (grid-template-columns: subgrid) {
+      .finder { grid-template-columns: 280px minmax(0, 1fr); gap: 34px; }
+    }
+    .finder-lead {
+      background: var(--navy); color: #fff; display: flex; align-items: center;
+      padding: 30px 26px; font-size: 1.32rem; font-weight: 700; line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+    .finder-opts { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--hairline); background: #fff; }
+    .finder-opt {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 9px; padding: 26px 24px; text-align: center; text-decoration: none; color: inherit;
+      transition: background .18s ease;
+    }
+    .finder-opt + .finder-opt { border-left: 1px solid var(--hairline); }
+    .finder-opt:hover { background: #f6fafd; }
+    .finder-opt svg {
+      width: 38px; height: 38px; fill: none; stroke: var(--brand-deep); stroke-width: 2;
+      stroke-linecap: round; stroke-linejoin: round;
+    }
+    .finder-opt-title { font-size: 1.1rem; font-weight: 600; color: var(--navy); letter-spacing: -0.01em; }
+    .finder-opt-sub { font-size: 12.5px; font-weight: 700; color: #6b7b88; }
+
+    /* ---------- product card grid ---------- */
+    .products-overview-layout { row-gap: 0 !important; }
+    .pl-count { font-size: 13.5px; color: #6b7b88; text-align: right; margin: 0 0 6px; }
+    .pl-group { padding: 0 !important; scroll-margin-top: 110px; }
+    .pl-group + .pl-group { margin-top: 56px; }
+    .pl-group-head { padding-bottom: 16px; border-bottom: 1px solid var(--hairline); }
+    .pl-group-head h2 { margin: 0 0 8px; font-size: 1.85rem; letter-spacing: -0.015em; }
+    .pl-group-head p { margin: 0; font-size: 16px; color: var(--ink-muted); max-width: 66ch; }
+
+    .pcard-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 26px; }
+    .pcard {
+      display: flex; flex-direction: column; background: #fff; border: 1px solid var(--hairline);
+      text-decoration: none; color: inherit;
+      transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease;
+    }
+    .pcard:hover {
+      border-color: var(--brand-deep);
+      box-shadow: 0 10px 26px rgba(11, 34, 57, .10);
+      transform: translateY(-3px);
+    }
+    .pcard-media { display: block; padding: 26px; background: #fff; border-bottom: 1px solid #eef2f5; }
+    .pcard-media img { width: 100%; height: 168px; object-fit: contain; display: block; transition: transform .25s ease; }
+    .pcard:hover .pcard-media img { transform: scale(1.04); }
+    .pcard-body { display: flex; flex-direction: column; flex: 1; padding: 20px 22px 22px; }
+    .pcard-cat {
+      font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      color: #8a97a2; margin-bottom: 8px;
+    }
+    .pcard-body h3 { margin: 0 0 4px; font-size: 1.3rem; font-weight: 700; color: var(--navy); letter-spacing: -0.01em; }
+    .pcard-name { margin: 0 0 14px; font-size: 14.5px; color: var(--ink-muted); line-height: 1.5; }
+    .pcard-specs { list-style: none; margin: 0 0 18px; padding: 0; display: flex; flex-direction: column; gap: 5px; }
+    .pcard-specs li {
+      font-size: 13px; font-weight: 600; color: #33495e; font-variant-numeric: tabular-nums;
+      padding-left: 14px; position: relative;
+    }
+    .pcard-specs li::before {
+      content: ""; position: absolute; left: 0; top: 8px;
+      width: 5px; height: 5px; border-radius: 50%; background: var(--brand);
+    }
+    .pcard-cta {
+      margin-top: auto; display: flex; align-items: center; gap: 12px;
+      font-size: 14.5px; font-weight: 700; color: var(--navy);
+    }
+    .pcard-arrow {
+      width: 34px; height: 34px; flex: 0 0 34px; border: 1.5px solid var(--navy); border-radius: 50%;
+      display: grid; place-items: center; font-size: 15px;
+      transition: background .18s ease, color .18s ease, border-color .18s ease;
+    }
+    .pcard:hover .pcard-arrow { background: var(--brand-deep); border-color: var(--brand-deep); color: #fff; }
+
+    @media (max-width: 1100px) { .pcard-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 900px) {
+      .finder-inner { grid-template-columns: 1fr; }
+      .finder-lead { padding: 26px 24px; font-size: 1.3rem; }
+      .finder-lead::after { display: none; }
+      .finder-opt { border-left: 0; border-top: 1px solid var(--hairline); padding: 30px 24px; }
+    }
+    @media (max-width: 620px) { .pcard-grid { grid-template-columns: 1fr; } }
+
+    .faq-tail { background: #f7f8fa; padding: 56px 0 84px; }
+    .faq-tail .container { max-width: 820px; }
+    .faq-tail h2 { text-align: center; font-size: 1.85rem; letter-spacing: -0.015em; margin: 0 0 8px; }
+    .faq-tail h2 + p { text-align: center; color: var(--ink-muted); margin: 0 auto 22px; max-width: 62ch; }
+    .faq-tail .send-list { max-width: 46ch; margin: 0 auto 20px; }
+    .faq-tail p:has(.send-cta) { text-align: center; }
+    .faq-tail h2 ~ h2 { margin-top: 56px; }
+    .faq-list { display: flex; flex-direction: column; margin-top: 18px; border-top: 1px solid var(--hairline); }
+    .faq-item { padding: 16px 4px; border-bottom: 1px solid var(--hairline); }
+    .faq-item h3 { margin-top: 0; }
+    .faq-item p { margin-bottom: 0; }
+  </style>
+
 </Layout>

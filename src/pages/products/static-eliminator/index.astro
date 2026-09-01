@@ -168,8 +168,8 @@ const faqItems = [
   })} />
 
   <section
-    class="products-hero"
-    style="background: linear-gradient(rgba(10, 25, 45, 0.46), rgba(10, 25, 45, 0.32)), url('/assets/img/static-eliminator/banner-bg2.webp') center/cover no-repeat; background-attachment: fixed;"
+    class="products-hero static-products-hero"
+    style="background: #edf4fb url('/assets/img/static-eliminator/static-eliminator-category-banner.webp') center/86% auto no-repeat; background-attachment: scroll;"
   >
     <div class="container products-hero-inner">
       <span class="products-hero-kicker" data-aos="fade-down" data-aos-duration="600">Primary Product Line · Worldwide Supply</span>
@@ -311,6 +311,7 @@ const faqItems = [
   </section>
 
   <style>
+    .products-hero.static-products-hero::before { content: none !important; background: none !important; }
     .products-hero h1,
     .products-hero p { color: #fff !important; text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45); }
     .products-category-header { margin-bottom: 24px; }

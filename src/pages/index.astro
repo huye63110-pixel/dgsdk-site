@@ -78,34 +78,52 @@ import Layout from '../layouts/Layout.astro';
 
         <div class="fix-grid">
           <div class="fix-item" data-aos="fade-up" data-aos-delay="0">
-            <h3>Dust comes back the moment you clean it</h3>
-            <p>A charged surface pulls particles out of the air again within seconds. Cleaning alone never holds. Neutralize the charge first, then clean.</p>
-            <span class="fix-fix">Anti static bar ahead of the cleaning station</span>
+            <img class="fix-image" src="/assets/img/homepage/static-costs/dust-returns.webp" alt="Dust particles returning to a charged material surface" width="483" height="366" loading="lazy" decoding="async" />
+            <div class="fix-body">
+              <h3>Dust comes back the moment you clean it</h3>
+              <p>A charged surface pulls particles out of the air again within seconds. Cleaning alone never holds. Neutralize the charge first, then clean.</p>
+              <span class="fix-fix">Anti static bar ahead of the cleaning station</span>
+            </div>
           </div>
           <div class="fix-item" data-aos="fade-up" data-aos-delay="60">
-            <h3>Film and sheets stick, jam or misfeed</h3>
-            <p>Charged material clings to itself and to the machine, so sheets double-feed, labels sit crooked and the web tracks off centre.</p>
-            <span class="fix-fix">Ionizing bar at the unwind or infeed</span>
+            <img class="fix-image" src="/assets/img/homepage/static-costs/film-jam.webp" alt="Plastic film sticking and wrinkling around production rollers" width="960" height="540" loading="lazy" decoding="async" />
+            <div class="fix-body">
+              <h3>Film and sheets stick, jam or misfeed</h3>
+              <p>Charged material clings to itself and to the machine, so sheets double-feed, labels sit crooked and the web tracks off centre.</p>
+              <span class="fix-fix">Ionizing bar at the unwind or infeed</span>
+            </div>
           </div>
           <div class="fix-item" data-aos="fade-up" data-aos-delay="120">
-            <h3>Operators get shocks at the line</h3>
-            <p>Charge builds on the material and discharges through whoever handles it. Unpleasant at best, and a real hazard around solvents.</p>
-            <span class="fix-fix">Ionizing air blower at the workstation</span>
+            <img class="fix-image" src="/assets/img/homepage/static-costs/operator-shock.webp" alt="Operator receiving a static discharge from plastic film" width="960" height="540" loading="lazy" decoding="async" />
+            <div class="fix-body">
+              <h3>Operators get shocks at the line</h3>
+              <p>Charge builds on the material and discharges through whoever handles it. Unpleasant at best, and a real hazard around solvents.</p>
+              <span class="fix-fix">Ionizing air blower at the workstation</span>
+            </div>
           </div>
           <div class="fix-item" data-aos="fade-up" data-aos-delay="180">
-            <h3>Components fail after assembly, not before</h3>
-            <p>Electrostatic discharge damages parts on SMT and PCB lines without leaving a mark, so the defect only shows up at final test.</p>
-            <span class="fix-fix">Static control across the handling path</span>
+            <img class="fix-image" src="/assets/img/homepage/static-costs/component-failure.webp" alt="Electronic components being assembled on a PCB production line" width="960" height="540" loading="lazy" decoding="async" />
+            <div class="fix-body">
+              <h3>Components fail after assembly, not before</h3>
+              <p>Electrostatic discharge damages parts on SMT and PCB lines without leaving a mark, so the defect only shows up at final test.</p>
+              <span class="fix-fix">Static control across the handling path</span>
+            </div>
           </div>
           <div class="fix-item" data-aos="fade-up" data-aos-delay="240">
-            <h3>Stacks will not register or count correctly</h3>
-            <p>Charged sheets repel or cling as they drop, so the stack fans out and automatic counting drifts at high speed.</p>
-            <span class="fix-fix">Bar at the stacker, blower over the pile</span>
+            <img class="fix-image" src="/assets/img/homepage/static-costs/stack-misregister.webp" alt="Misaligned stack of charged sheets on industrial rollers" width="960" height="540" loading="lazy" decoding="async" />
+            <div class="fix-body">
+              <h3>Stacks will not register or count correctly</h3>
+              <p>Charged sheets repel or cling as they drop, so the stack fans out and automatic counting drifts at high speed.</p>
+              <span class="fix-fix">Bar at the stacker, blower over the pile</span>
+            </div>
           </div>
           <div class="fix-item" data-aos="fade-up" data-aos-delay="300">
-            <h3>You cannot tell whether it is fixed</h3>
-            <p>Static problems get blamed on humidity, operators or the material supplier. A measured surface voltage before and after settles it.</p>
-            <span class="fix-fix">Ion balance from ±50 V, measurable</span>
+            <img class="fix-image" src="/assets/img/homepage/static-costs/surface-voltage-measurement.webp" alt="Surface voltage meter measuring static charge on moving film" width="960" height="540" loading="lazy" decoding="async" />
+            <div class="fix-body">
+              <h3>You cannot tell whether it is fixed</h3>
+              <p>Static problems get blamed on humidity, operators or the material supplier. A measured surface voltage before and after settles it.</p>
+              <span class="fix-fix">Ion balance from ±50 V, measurable</span>
+            </div>
           </div>
         </div>
 
@@ -288,12 +306,14 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <style>
-    .fix-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 34px; }
-    .fix-item { background: #fff; border: 1px solid var(--hairline); padding: 24px 24px 22px; display: flex; flex-direction: column; }
+    .fix-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 34px; align-items: start; }
+    .fix-item { background: #fff; border: 1px solid var(--hairline); padding: 0 !important; overflow: hidden; display: flex; flex-direction: column; }
+    .fix-image { display: block; width: 100%; height: clamp(220px, 28vw, 366px); object-fit: cover; }
+    .fix-body { padding: 22px 24px 20px; display: flex; flex-direction: column; }
     .fix-item h3 { margin: 0 0 10px; font-size: 1.08rem; font-weight: 700; color: var(--navy); line-height: 1.35; }
     .fix-item p { margin: 0 0 16px; font-size: 14.5px; line-height: 1.6; color: var(--ink-muted); }
     .fix-fix {
-      margin-top: auto; padding-top: 14px; border-top: 1px solid #eef2f5;
+      margin-top: 0; padding-top: 14px; border-top: 1px solid #eef2f5;
       font-size: 13px; font-weight: 700; color: var(--brand-deep);
     }
     @media (max-width: 991px) { .fix-grid { grid-template-columns: repeat(2, 1fr); } }
