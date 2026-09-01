@@ -1,0 +1,210 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const base = 'https://www.dg-sdk.com';
+const url = base + '/static-eliminator-manufacturer';
+const description = 'Shidike is a static eliminator and ionizing bar manufacturer in Dongguan, China. Bars made to order from 300 mm to 3 m, cleaning machines built to your sample. Direct from the factory, no distributor layer.';
+
+const faqItems = [
+  {
+    question: 'Are you a manufacturer or a trading company?',
+    answer: 'Shidike is the manufacturer. Dongguan Shidike Intelligent Equipment Co., Ltd. builds the bars, the blowers and the cleaning machines at its own facility in Zhangmutou, Dongguan, Guangdong, China. You are quoting with the factory, not a reseller adding a margin on someone else’s product.'
+  },
+  {
+    question: 'What can be customised?',
+    answer: 'Bar length is made to order from 300 mm to 3 m, cut to the charged width of your material rather than to a catalogue size. On cleaning machines the belt type, the roller tack grade, the roller gap and the static package are all specified from the sample you send. There is no standard machine that is simply resized.'
+  },
+  {
+    question: 'What do you need in order to quote?',
+    answer: 'For a bar: the material, the charged width, the line speed, the mounting distance available, and either a measured surface voltage or a description of the defect. For a cleaning machine: the same, plus a physical sample of the material and the conveyor height you need to match on the upstream and downstream equipment.'
+  },
+  {
+    question: 'Can you supply to our own drawing or specification?',
+    answer: 'Yes. Non-standard is the normal case rather than the exception, particularly on the cleaning machines, which are built around the customer sample. Send the drawing or the specification and we will tell you plainly what is straightforward, what needs changing and what is not sensible to build.'
+  },
+  {
+    question: 'Do you supply the consumables as well?',
+    answer: 'Yes. The two consumables on a contact cleaning machine are the elastomer cleaning roller and the adhesive paper roll. Paper is supplied as two rolls, upper and lower, with a 3.0 inch core, 20 m per roll and 800 D tack, with knife-free changeover.'
+  },
+  {
+    question: 'Who will I be talking to?',
+    answer: 'The person who specifies the machine, in English, directly. There is no distributor layer and no account manager relaying questions to an engineer — which is the practical reason a small factory is often faster to quote a non-standard job than a large one.'
+  }
+];
+---
+
+<Layout
+  title="Static Eliminator & Ionizing Bar Manufacturer | Shidike, Dongguan"
+  description={description}
+  image="/assets/img/static-eliminator/st-g.jpg"
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context':'https://schema.org','@type':'BreadcrumbList',
+    itemListElement:[
+      {'@type':'ListItem',position:1,name:'Home',item:base},
+      {'@type':'ListItem',position:2,name:'Static Eliminator Manufacturer',item:url}]
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context':'https://schema.org','@type':'Organization',
+    name:'Shidike',
+    legalName:'Dongguan Shidike Intelligent Equipment Co., Ltd.',
+    alternateName:['东莞史帝克智能装备有限公司','DGSDK'],
+    url: base, foundingDate:'2013',
+    description:'Manufacturer of industrial static eliminators, ionizing bars, ionizing air blowers and contact cleaning machines.',
+    address:{'@type':'PostalAddress',
+      streetAddress:'Room 101, Building 1, No. 33 Binhe Road',
+      addressLocality:'Zhangmutou Town, Dongguan',
+      addressRegion:'Guangdong', addressCountry:'CN'},
+    makesOffer:[
+      {'@type':'Offer',itemOffered:{'@type':'Product',name:'Industrial ionizing bars and static eliminators',url:base+'/products/static-eliminator'}},
+      {'@type':'Offer',itemOffered:{'@type':'Product',name:'Contact cleaning machines and web cleaning systems',url:base+'/products/cleaning-machine'}}
+    ]
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context':'https://schema.org','@type':'FAQPage',
+    mainEntity: faqItems.map(i=>({'@type':'Question',name:i.question,
+      acceptedAnswer:{'@type':'Answer',text:i.answer}}))
+  })} />
+
+  <section
+    class="products-hero"
+    style="background: #edf4fb url('/assets/img/static-eliminator/static-eliminator-category-banner.webp') center/86% auto no-repeat; background-attachment: scroll;">
+    <div class="container products-hero-inner">
+      <span class="products-hero-kicker">Manufacturer · Dongguan, China</span>
+      <h1>Static Eliminator &amp; Ionizing Bar Manufacturer</h1>
+      <p>
+        We build the bars, not resell them. Length made to order from 300&nbsp;mm to 3&nbsp;m, cleaning
+        machines built to the sample you send, and a direct line to the person who specifies the job.
+      </p>
+    </div>
+  </section>
+
+  <section class="mf-body">
+    <div class="container mf-col">
+      <div class="breadcrumb"><a href="/">Home</a><span>/</span><span>Manufacturer</span></div>
+
+      <p class="mf-answer">
+        <strong>Shidike — Dongguan Shidike Intelligent Equipment Co., Ltd. — manufactures industrial static
+        eliminators, ionizing bars, ionizing air blowers and contact cleaning machines in Zhangmutou, Dongguan,
+        Guangdong, China.</strong> Founded in 2013, around 50 staff. You quote with the factory directly.
+      </p>
+
+      <h2>What we actually make</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Line</th><th>Range</th><th>Made to order</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><a href="/products/static-eliminator">Static eliminators &amp; ionizing bars</a></td>
+              <td>6.5 kV DC pulse · DC 24 V · 12 W · ion balance from ±50 V · 30–1000 mm working range</td>
+              <td><strong>Length 300 mm – 3 m</strong>, cut to the charged width of your material</td>
+            </tr>
+            <tr>
+              <td><a href="/products/static-eliminator/st-1200">Ionizing air blowers</a></td>
+              <td>45–360 CFM, covering 40 × 60 cm up to 140 × 120 cm</td>
+              <td>Model selected to the bench or enclosure</td>
+            </tr>
+            <tr>
+              <td><a href="/products/cleaning-machine">Contact cleaning machines</a></td>
+              <td>0.022–6 mm material, to 1500 mm wide, roller gap 0.1–6.0 mm</td>
+              <td><strong>Belt, roller tack, gap and static package</strong> all set from your sample</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Why "made to order" is not a sales line here</h2>
+      <p>
+        On a bar it is literal: the emitter housing is cut to the length you need, and the mounting pitch
+        follows from it directly — <strong>P = L − 120 mm</strong>, so a 1500 mm bar mounts on 1380 mm centres.
+        You can drill the machine frame from the order confirmation, before the bar arrives.
+      </p>
+      <p>
+        On a cleaning machine there is no catalogue model that fits a line as it stands. Four decisions are
+        made from the sample you send, and they are what make the machine work on your material rather than on
+        someone else's: the <strong>belt</strong> (flat for full support, ribbed where the back face must stay
+        unmarked, slat for rigid boards), the <strong>roller tack grade</strong> (too little and fine particles
+        stay on; too much and the roller pulls at a thin film), the <strong>roller gap</strong>, and the
+        <strong>static package</strong> — usually two ST-G bars cut to the machine width.
+      </p>
+
+      <h2>What to send for a quotation</h2>
+      <ul class="mf-list">
+        <li>The material and its thickness — and for a cleaning machine, a physical sample</li>
+        <li>Working width, and whether length is fixed or continuous</li>
+        <li>Line speed</li>
+        <li>Measured surface voltage, or a description of the defect you are seeing</li>
+        <li>Mounting space available, and the conveyor height to match upstream and downstream</li>
+        <li>Any PLC, alarm or machine-control signals the line needs</li>
+      </ul>
+      <p>
+        With those, we return a model, a length or a machine configuration, a mounting position and a unit
+        count. Without them, any number is a guess — which is why we ask before quoting rather than after.
+      </p>
+
+      <h2>Buying from a small factory</h2>
+      <p>
+        We are not the largest static control manufacturer, and on a standard catalogue item a large supplier
+        with a local distributor may well serve you better. Where a small factory is the better choice is the
+        non-standard job: a bar at an awkward length, a machine built around an unusual substrate, a retrofit
+        into equipment that is already running. Those are quoted here by the person who will specify them, in
+        English, without a sales layer in between.
+      </p>
+      <p>
+        It also means we will tell you when something is not worth building, or when the problem is a mounting
+        position rather than a product. A supplier who agrees to everything is not being helpful.
+      </p>
+
+      <h2>Common questions</h2>
+      <div class="faq-list">
+        {faqItems.map(item => (
+          <details class="faq-item">
+            <summary>{item.question}</summary>
+            <p>{item.answer}</p>
+          </details>
+        ))}
+      </div>
+
+      <div class="mf-cta">
+        <h2>Send us the application</h2>
+        <p>
+          Material, width, line speed and the problem you are seeing. We will come back with a specification,
+          not a catalogue.
+        </p>
+        <p>
+          <a class="send-cta" href="/contact">Request a quotation &rarr;</a>
+          <a class="send-alt" href="/products/static-eliminator">See the bar range &rarr;</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .mf-body { padding: 40px 0 70px; }
+    .mf-col { max-width: 800px; }
+    .mf-body .breadcrumb { font-size: 13px; color: #7d8d97; margin-bottom: 22px; }
+    .mf-body .breadcrumb a { color: var(--brand-deep); text-decoration: none; }
+    .mf-body .breadcrumb span { margin: 0 8px; }
+    .mf-answer {
+      font-size: 17px; line-height: 1.75; color: #2e3a44;
+      background: #f2f6f9; border-left: 3px solid var(--brand-deep);
+      padding: 18px 20px; border-radius: 0 8px 8px 0; margin: 0 0 26px;
+    }
+    .mf-body h2 { font-size: 1.42rem; font-weight: 700; color: var(--navy); margin: 32px 0 12px; letter-spacing: -.01em; }
+    .mf-body p { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 15px; }
+    .mf-body a { color: var(--brand-deep); }
+    .mf-list { margin: 0 0 16px; padding-left: 20px; }
+    .mf-list li { font-size: 15.5px; line-height: 1.7; color: #3d4a54; margin-bottom: 7px; }
+    .table-wrap { overflow-x: auto; margin: 0 0 20px; }
+    .mf-body table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+    .mf-body th, .mf-body td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+    .mf-body thead th { background: #f2f6f9; font-weight: 700; color: var(--navy); }
+    .faq-list { display: flex; flex-direction: column; margin-top: 6px; border-top: 1px solid var(--hairline); }
+    .faq-item { padding: 15px 4px; border-bottom: 1px solid var(--hairline); }
+    .faq-item summary { cursor: pointer; font-weight: 700; color: var(--navy); font-size: 15.5px; }
+    .faq-item p { margin: 10px 0 0; }
+    .mf-cta { margin-top: 36px; padding: 24px; background: #f7f8fa; border: 1px solid var(--hairline); border-radius: 10px; }
+    .mf-cta h2 { margin-top: 0; font-size: 1.25rem; }
+    .send-cta, .send-alt { display: inline-block; font-weight: 700; margin-right: 22px; }
+  </style>
+</Layout>
