@@ -279,30 +279,6 @@
   </url>
 
   <!-- ===== AUTOMATION PRODUCTS (EN) ===== -->
-  <url>
-    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/automation/product-a.jpg</image:loc>
-      <image:title>Industrial Automation Product | DGSDK</image:title>
-      <image:caption>DGSDK industrial automation equipment for precision electronics manufacturing</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/automation/product-b.jpg</image:loc>
-      <image:title>Industrial Automation Equipment | DGSDK</image:title>
-      <image:caption>DGSDK automation system for display and electronics manufacturing production lines</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.dg-sdk.com/assets/img/automation/product-c.jpg</image:loc>
-      <image:title>Industrial Automation Solution | DGSDK</image:title>
-      <image:caption>DGSDK precision automation solution for industrial cleaning and ESD control applications</image:caption>
-    </image:image>
-  </url>
 
   <!-- ===== CHINESE PAGES ===== -->
   <url><loc>https://www.dg-sdk.com/zh</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
