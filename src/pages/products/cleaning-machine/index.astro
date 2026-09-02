@@ -363,8 +363,8 @@ const faqItems = [
       <div class="faq-list">
         {faqItems.map(item => (
           <details class="faq-item">
-            <summary>{item.question}</summary>
-            <p set:html={item.answerHtml || item.answer} />
+            <summary><h3 class="faq-question">{item.question}</h3></summary>
+            <p class="faq-answer" set:html={item.answerHtml || item.answer} />
           </details>
         ))}
       </div>
