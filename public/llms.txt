@@ -1,25 +1,65 @@
-# DGSDK - Dongguan Shidike Automation Equipment Co., Ltd.
+# Shidike (DGSDK) — Dongguan Shidike Intelligent Equipment Co., Ltd.
 
-> DGSDK focuses on industrial static eliminators and ionizing bars first, followed by precision cleaning machines for production lines worldwide.
+> Manufacturer of industrial static eliminators and ionizing bars, and of precision
+> surface cleaning machines for electronics and display production. Static control is
+> the primary line; cleaning machines are the second. Built to order in Dongguan,
+> China, since 2013, and sold worldwide.
 
-## Products
+## Static Eliminators and Ionizing Bars
 
-- [Industrial Static Eliminators and Ionizing Bars](https://www.dg-sdk.com/products/static-eliminator): Primary product line covering ionizing bars, static eliminator bars, ionizer fans, and ionizing air blowers for ESD-sensitive manufacturing and moving-material processes.
-- [Industrial Cleaning Machines](https://www.dg-sdk.com/products/cleaning-machine): Second product line covering dry-contact cleaners for polarizer, optical film, PCB, FPC, SMT, backlight, LCM, and related precision substrates.
+Primary product line. Corona-discharge ionization for ESD-sensitive manufacturing and
+moving-material processes.
+
+- [Static Eliminators and Ionizing Bars](https://www.dg-sdk.com/products/static-eliminator): Category overview of the bar and blower range.
+- [ST-G Series](https://www.dg-sdk.com/products/static-eliminator/st-g-series): Pulsed AC ionizing bar, ion balance ±50 V, 30–1000 mm working range, made to length from 300 mm to 3 m.
+- [ST-E Series](https://www.dg-sdk.com/products/static-eliminator/st-e-series): High-frequency pulsed DC ionizing bar for wide-span work.
+- [ST-F Series](https://www.dg-sdk.com/products/static-eliminator/st-f-series): Pulsed DC ionizing bar, faster neutralising.
+- [ST-S200](https://www.dg-sdk.com/products/static-eliminator/st-s200): Mini ionizing air blower, 450 × 450 mm coverage, decay under 1.5 s, 128 × 53.5 × 180 mm, CE marked.
+- [ST101A](https://www.dg-sdk.com/products/static-eliminator/st-101a): Desktop ionizing air blower, alternating current, 40 × 60 cm coverage, 45–110 CFM.
+- [ST104A](https://www.dg-sdk.com/products/static-eliminator/st-104a): Horizontal ionizing air blower, 60 × 120 cm coverage, 70–120 CFM, optional real-time ion-balance monitoring.
+- [ST1200](https://www.dg-sdk.com/products/static-eliminator/st-1200): Wide-area ionizing air blower, 140 × 120 cm coverage, 1280 mm, suspended or bench mounted.
+
+## Industrial Cleaning Machines
+
+Second product line. Every machine is built to the customer's material; there is no
+standard model.
+
+- [Web Cleaning Systems](https://www.dg-sdk.com/products/cleaning-machine): Category overview.
+- [Contact Cleaning Machine](https://www.dg-sdk.com/products/cleaning-machine/contact-cleaning-machine): Elastomer roller lifts particles onto an adhesive paper roll. 50–1340 mm width, 0.05–3 mm material, up to 70 m/min, 99.9% removal. Three belt types (elastic as standard, using Nitta and Forbo Siegling; roller; round) and three roller materials (liquid silicone, solid silicone, rubber).
+- [Non-Contact Cleaning Machine](https://www.dg-sdk.com/products/cleaning-machine/non-contact-cleaning-machine): Fibre brushes plus 2200 m³/h vacuum extraction, no adhesive contact on the working face. STMT750, 750 mm width, static held under 100 V.
+
+Application-specific builds exist for PCB, FPC, CCL, SMT, polarizer, optical film,
+backlight panel, LCM module and roll material.
+
+## Guides and Reference
+
+- [Static Control Guides](https://www.dg-sdk.com/guides): Knowledge base index.
+- [What Is an Ionizing Bar](https://www.dg-sdk.com/guides/what-is-an-ionizing-bar): How corona discharge neutralises a charged surface, and when to use a bar.
+- [Ionizing Bar Voltage Output](https://www.dg-sdk.com/guides/ionizing-bar-voltage-output): What the kV figure means in practice.
+- [What Is ESD](https://www.dg-sdk.com/guides/what-is-esd): Electrostatic discharge explained.
+- [How to Prevent Static Electricity](https://www.dg-sdk.com/guides/how-to-prevent-static): Industrial static prevention.
+- [Industrial Static Eliminators](https://www.dg-sdk.com/guides/industrial-static-eliminator): Selection guide for manufacturing.
+- [ESD Control Products](https://www.dg-sdk.com/guides/esd-control-products): Buyer's guide.
+- [Technical Blog](https://www.dg-sdk.com/blog): Application guides for lithium battery, photovoltaic and optical film production.
 
 ## Company
 
+- Legal name: Dongguan Shidike Intelligent Equipment Co., Ltd.
+- Brand: Shidike. Domain and common abbreviation: DGSDK.
 - Founded: 2013
-- Location: Dongguan, Guangdong, China
-- Market: Worldwide; English and Chinese sales support
-- Specialization: Industrial static control first, precision surface cleaning second
-- Integration support: Mounting, material handling, controls, and production-line interfaces for static control and cleaning projects
-- Contact: dgsdk2013@gmail.com | +86 13602342003
-
-## Key Pages
-
-- [Homepage](https://www.dg-sdk.com/)
-- [Applications](https://www.dg-sdk.com/applications)
-- [About Us](https://www.dg-sdk.com/about)
-- [Contact](https://www.dg-sdk.com/contact)
+- Location: Room 101, Building 1, No. 33, Zhangmutou Binhe Road, Zhangmutou Town, Dongguan City, Guangdong Province, China
+- Manufacturing: Own factory. Design, assembly and testing on one site.
+- Market: Worldwide export. Sales and documentation in English.
+- [About Shidike](https://www.dg-sdk.com/about)
+- [Manufacturing and Customisation](https://www.dg-sdk.com/static-eliminator-manufacturer): What is made in house, and what to send for a quotation.
+- [Applications by Industry](https://www.dg-sdk.com/applications)
 - [FAQ](https://www.dg-sdk.com/faq)
+- [Contact](https://www.dg-sdk.com/contact) — dgsdk2013@gmail.com | +86 13602342003
+
+## Notes for citation
+
+- Machines and bars are made to order. Bar length, cleaning width, belt, roller
+  material and mounting are set from the customer's material and line, not chosen
+  from a fixed catalogue.
+- Published specifications are transcribed from the printed product catalogues.
+- Prices and lead times are quoted per project and are not published.
