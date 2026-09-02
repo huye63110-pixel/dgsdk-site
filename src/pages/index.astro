@@ -190,9 +190,6 @@ import Layout from '../layouts/Layout.astro';
             </a>
           </div>
         </div>
-        <div class="text-center mt-4" data-aos="fade-up">
-          <a href="/contact" class="btn btn-warning text-uppercase px-4 py-2">Discuss Your Application</a>
-        </div>
       </div>
     </section>
 
@@ -284,28 +281,21 @@ import Layout from '../layouts/Layout.astro';
       <div class="container quote-content">
         <div class="text-center" data-aos="fade-up">
           <h2 class="quote-title">GET A FREE QUOTE</h2>
-          <p class="quote-desc">If you are searching for information about our products, please submit your inquiry by filling out the form below.</p>
+          <p class="quote-desc">Tell us the material, the width and the problem you are seeing. With those we can come back with a model and a mounting position instead of another round of questions.</p>
         </div>
         <form action="https://formspree.io/f/mvzlpdwy" method="POST" class="quote-form" data-aos="fade-up" data-aos-delay="100">
           <input type="text" name="name" placeholder="Your name (Required)" required />
           <input type="email" name="email" placeholder="Your email address (Required)" required />
           <input type="text" name="phone" placeholder="Your phone number" />
-          <textarea name="message" rows="5" placeholder="Please enter your message information" required></textarea>
+          <input type="text" name="material" placeholder="Material and width — e.g. PET film, 1200 mm" />
+          <input type="text" name="line speed" placeholder="Line speed — e.g. 30 m/min" />
+          <textarea name="message" rows="5" placeholder="What are you seeing? Dust settling back after cleaning, operator shocks, film jamming, a measured surface voltage — whatever the problem is." required></textarea>
           <button type="submit">Send message</button>
         </form>
       </div>
     </section>
 
   </main>
-
-  <!-- Footer CTA -->
-  <section class="home-bottom-cta">
-    <div class="container" data-aos="fade-up">
-      <h2>Ready to Start Your Project?</h2>
-      <p>Contact Shidike for industrial static eliminators, ionizing bars, and precision cleaning machines for production lines worldwide.</p>
-      <a href="/contact" class="home-bottom-btn">Get a Free Quote</a>
-    </div>
-  </section>
 
   <style>
     /* Core-products pair. styles.css builds these for a 180px cut-out inside a
