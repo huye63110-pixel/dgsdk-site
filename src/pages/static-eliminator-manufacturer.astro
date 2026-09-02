@@ -113,6 +113,16 @@ const faqItems = [
         </table>
       </div>
 
+      <figure class="mf-figure">
+        <picture>
+          <source srcset="/assets/img/about/engineering-bench.webp" type="image/webp" />
+          <img src="/assets/img/about/engineering-bench.jpg"
+               alt="Electronics bench with oscilloscope, bench supply and a controller board under test"
+               width="1200" height="800" loading="lazy" decoding="async" />
+        </picture>
+        <figcaption>Control boards are developed and tested in house, which is what makes a changed output, timing or interface a design change rather than a sourcing problem.</figcaption>
+      </figure>
+
       <h2>Why "made to order" is not a sales line here</h2>
       <p>
         On a bar it is literal: the emitter housing is cut to the length you need, and the mounting pitch
@@ -206,5 +216,13 @@ const faqItems = [
     .mf-cta { margin-top: 36px; padding: 24px; background: #f7f8fa; border: 1px solid var(--hairline); border-radius: 10px; }
     .mf-cta h2 { margin-top: 0; font-size: 1.25rem; }
     .send-cta, .send-alt { display: inline-block; font-weight: 700; margin-right: 22px; }
+    .mf-figure { margin: 26px 0; }
+    .mf-figure img {
+      display: block; width: 100%; height: auto;
+      border: 1px solid rgba(0,0,0,.08); border-radius: 10px;
+    }
+    .mf-figure figcaption {
+      margin-top: 9px; font-size: 13.5px; line-height: 1.6; color: #6b7780;
+    }
   </style>
 </Layout>

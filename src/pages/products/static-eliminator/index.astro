@@ -238,6 +238,12 @@ const faqItems = [
           <div class="pl-group-head">
             <h2>Ionizing Air Blowers &amp; Anti Static Blowers</h2>
             <p>Ions carried to the target on moving air, reaching farther than a bar. For workstations, enclosures, and irregular parts.</p>
+            <picture class="pl-group-figure">
+              <source srcset="/assets/img/static-eliminator/ionization-in-action.webp" type="image/webp" />
+              <img src="/assets/img/static-eliminator/ionization-in-action.jpg"
+                   alt="Shidike ionizing air blower neutralizing static charge on a circuit board, positive and negative ions carried on the airflow"
+                   width="1400" height="815" loading="lazy" decoding="async" />
+            </picture>
           </div>
           <div class="pcard-grid">
             {blowerProducts.map(item => (
@@ -464,5 +470,10 @@ const faqItems = [
     .faq-item { padding: 16px 4px; border-bottom: 1px solid var(--hairline); }
     .faq-item h3 { margin-top: 0; }
     .faq-item p { margin-bottom: 0; }
-  </style>
+    .pl-group-figure { display: block; margin: 18px 0 4px; }
+  .pl-group-figure img {
+    display: block; width: 100%; height: auto; max-width: 760px;
+    border: 1px solid rgba(0,0,0,.08); border-radius: 10px;
+  }
+</style>
 </Layout>
