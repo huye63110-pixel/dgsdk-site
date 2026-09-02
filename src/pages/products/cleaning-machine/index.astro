@@ -87,12 +87,14 @@ const faqItems = [
   },
   {
     question: 'Which belt will my material need?',
-    answer: 'The belt is chosen from your sample, and thickness usually decides it. A flat belt gives full support underneath and is the default where the back face is not critical. A ribbed belt puts the material on narrow strips instead of a continuous surface, so there is less contact underneath — that matters when the back side has to stay unmarked. A slat conveyor is used for rigid boards and light guide plates, where a belt would flex the material or leave an impression.'
+    answer: 'Three belt types are available. An elastic belt is the standard and is what almost every machine ships with — we use Nitta and Forbo Siegling belts. A roller belt and a round belt are also available, but they are specified only occasionally, for materials the standard belt does not suit. The belt is chosen from your sample: thickness, and whether the back face can take contact, are usually what decide it.'
   },
+
   {
     question: 'How is the cleaning roller chosen?',
-    answer: 'Rollers are Korean-imported RTV liquid silicone, and they are graded by tack. That grade is the single most important choice on the machine: too little tack and fine particles stay on your material; too much and the roller pulls at the surface, which on thin film or a soft coating causes its own defects. We match the grade to your sample rather than picking one from a datasheet.'
+    answer: 'Three roller materials are available: liquid silicone, solid silicone and rubber. Which one you need is decided from your sample, and it is the most important choice on the machine. Too little tack and fine particles stay on your material; too much and the roller pulls at the surface, which on thin film or a soft coating causes its own defects. We match the material and the grade to the sample you send rather than picking one from a datasheet.'
   },
+
   {
     question: 'What are the consumables and how often do they change?',
     answer: 'Two per machine: the elastomer cleaning roller, and the adhesive paper roll that takes particles off it. The paper is supplied as two rolls — one upper, one lower — with a 3.0 inch core, 20 m per roll, 800 D tack and knife-free changeover. Rollers and rolls pull out on a drawer mechanism, so a change does not mean dismantling the machine.'
@@ -249,6 +251,38 @@ const faqItems = [
     </div>
   </section>
 
+  <section class="config-section">
+    <div class="container">
+      <h2>How a machine is configured</h2>
+      <p class="config-intro">
+        Every machine is built to the sample you send. Two choices do most of the work &mdash;
+        what carries your material through, and what lifts the particles off it.
+      </p>
+      <div class="config-grid">
+        <div class="config-card">
+          <h3>Transport belt</h3>
+          <ul>
+            <li><strong>Elastic belt</strong> &mdash; the standard, and what almost every machine
+              ships with. We use <strong>Nitta</strong> and <strong>Forbo Siegling</strong> belts.</li>
+            <li><strong>Roller belt</strong> &mdash; specified occasionally.</li>
+            <li><strong>Round belt</strong> &mdash; specified occasionally.</li>
+          </ul>
+          <p class="config-note">Thickness, and whether the back face can take contact, usually decide it.</p>
+        </div>
+        <div class="config-card">
+          <h3>Cleaning roller</h3>
+          <ul>
+            <li><strong>Liquid silicone</strong></li>
+            <li><strong>Solid silicone</strong></li>
+            <li><strong>Rubber</strong></li>
+          </ul>
+          <p class="config-note">Graded by tack. Too little and fine particles stay on the material;
+            too much and the roller pulls at the surface. Matched to your sample, not to a datasheet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="related-categories-section">
     <div class="container">
       <h2 class="related-cat-title">Next: Static Eliminators &amp; Ionizing Bars</h2>
@@ -294,6 +328,18 @@ const faqItems = [
 
 
   <style>
+    .config-section { padding: 56px 0; }
+    .config-section .container { max-width: 900px; }
+    .config-section h2 { text-align: center; font-size: 1.85rem; letter-spacing: -0.015em; margin: 0 0 8px; }
+    .config-intro { text-align: center; color: var(--ink-muted); max-width: 62ch; margin: 0 auto 30px; }
+    .config-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .config-card { border: 1px solid var(--hairline); border-radius: 10px; padding: 24px; background: #fff; }
+    .config-card h3 { margin: 0 0 14px; font-size: 1.1rem; }
+    .config-card ul { margin: 0 0 14px; padding-left: 20px; }
+    .config-card li { margin-bottom: 8px; line-height: 1.6; }
+    .config-note { margin: 0; font-size: 14px; color: var(--ink-muted); line-height: 1.65; }
+    @media (max-width: 720px) { .config-grid { grid-template-columns: 1fr; } }
+
     .products-hero h1,
     .products-hero p { color: #fff !important; text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45); }
     .products-category-header { margin-bottom: 24px; }
