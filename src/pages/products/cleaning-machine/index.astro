@@ -174,17 +174,17 @@ const faqItems = [
   <section class="products-overview-section">
     <div class="container products-overview-layout">
       <div class="finder">
-        <div class="finder-lead"><span>Help me find a<br />cleaning machine for:</span></div>
+        <div class="finder-lead"><span>Two ways to clean<br />a surface:</span></div>
         <div class="finder-opts">
-          <a class="finder-opt" href="#sheet">
+          <a class="finder-opt" href="/products/cleaning-machine/contact-cleaning-machine">
             <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="18" width="36" height="12" rx="2"/><path d="M12 30v5M36 30v5M6 24h36"/></svg>
-            <span class="finder-opt-title">Boards and sheets fed through a line</span>
-            <span class="finder-opt-sub">PCB, FPC, CCL, polarizer, backlight, LCM</span>
+            <span class="finder-opt-title">Contact &mdash; adhesive roller</span>
+            <span class="finder-opt-sub">Most board, sheet and film work</span>
           </a>
-          <a class="finder-opt" href="#web">
+          <a class="finder-opt" href="/products/cleaning-machine/non-contact-cleaning-machine">
             <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="12" cy="24" r="8"/><circle cx="36" cy="24" r="8"/><path d="M12 16h24M12 32h24"/></svg>
-            <span class="finder-opt-title">Film or material on a roll</span>
-            <span class="finder-opt-sub">Roll-to-roll and optical film</span>
+            <span class="finder-opt-title">Non-contact &mdash; brush and vacuum</span>
+            <span class="finder-opt-sub">Surfaces that cannot take tack</span>
           </a>
         </div>
       </div>
@@ -198,12 +198,57 @@ const faqItems = [
       </aside>
 
       <div class="products-main">
-        <p class="pl-count">Showing all {allCleaningProducts.length} machines</p>
+        <section class="pl-group" id="types">
+          <div class="pl-group-head">
+            <h2>Start Here: Contact or Non-Contact</h2>
+            <p>Every machine we build is one of these two, configured to your material. There is no standard model to order from &mdash; width, belt, roller, gap and single or double sided are all set from your sample.</p>
+          </div>
+          <div class="pcard-grid">
+            <a href="/products/cleaning-machine/contact-cleaning-machine" class="pcard">
+              <picture class="pcard-media">
+                <source srcset="/assets/img/cleaning-machine/ccl-cleaner.webp" type="image/webp" />
+                <img src="/assets/img/cleaning-machine/ccl-cleaner.jpg" alt="Contact cleaning machine with adhesive rollers" loading="lazy" />
+              </picture>
+              <div class="pcard-body">
+                <span class="pcard-cat">Adhesive roller</span>
+                <h3>Contact Cleaning Machine</h3>
+                <p class="pcard-name">An elastomer roller lifts particles off the surface onto an adhesive paper roll. What most board, sheet and film work uses.</p>
+                <ul class="pcard-specs">
+                  <li>50&ndash;1340 mm, built to material</li>
+                  <li>0.05&ndash;3 mm thickness</li>
+                  <li>Up to 70 m/min &middot; 99.9 % removal</li>
+                  <li>3 belt types &middot; 3 roller materials</li>
+                </ul>
+                <span class="pcard-cta"><span class="pcard-arrow">&rarr;</span>View product</span>
+              </div>
+            </a>
+            <a href="/products/cleaning-machine/non-contact-cleaning-machine" class="pcard">
+              <picture class="pcard-media">
+                <source srcset="/assets/img/cleaning-machine/vacuum-brush-cleaner.webp" type="image/webp" />
+                <img src="/assets/img/cleaning-machine/vacuum-brush-cleaner.jpg" alt="Non-contact vacuum brush cleaning machine with dust collector" loading="lazy" />
+              </picture>
+              <div class="pcard-body">
+                <span class="pcard-cat">Brush and vacuum</span>
+                <h3>Non-Contact Cleaning Machine</h3>
+                <p class="pcard-name">Fibre brushes free the particles and a 2200 m&sup3;/h vacuum carries them away. Nothing tacky touches the working face.</p>
+                <ul class="pcard-specs">
+                  <li>750 mm cleaning width</li>
+                  <li>Static held under 100 V</li>
+                  <li>0&ndash;45 m/min &middot; 99.9 % removal</li>
+                  <li>Separate Toray-cartridge collector</li>
+                </ul>
+                <span class="pcard-cta"><span class="pcard-arrow">&rarr;</span>View product</span>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <p class="pl-count">Configurations we have built &mdash; {allCleaningProducts.length} machines</p>
 
         <section class="pl-group" id="sheet">
           <div class="pl-group-head">
-            <h2>Sheet &amp; Board Cleaning Machines</h2>
-            <p>Material is fed through as discrete boards or sheets. Belt, roller gap and roller tack are set from your sample.</p>
+            <h2>Built for Sheet &amp; Board</h2>
+            <p>Contact machines we have built for discrete boards and sheets. Each is the same process configured differently &mdash; belt, roller gap and roller tack set from the sample.</p>
           </div>
           <div class="pcard-grid">
             {sheetProducts.map(item => (
@@ -226,8 +271,8 @@ const faqItems = [
 
         <section class="pl-group" id="web">
           <div class="pl-group-head">
-            <h2>Roll-to-Roll &amp; Film Cleaning</h2>
-            <p>Continuous material off a roll, cleaned in line between unwind and rewind.</p>
+            <h2>Built for Roll-to-Roll &amp; Film</h2>
+            <p>Contact machines we have built for continuous material off a roll, cleaned in line between unwind and rewind.</p>
           </div>
           <div class="pcard-grid">
             {webProducts.map(item => (

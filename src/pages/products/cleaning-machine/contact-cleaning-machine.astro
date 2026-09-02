@@ -1,0 +1,233 @@
+---
+import ProductLayout from '../../../layouts/ProductLayout.astro';
+
+const faqItems = [
+  {
+    question: 'Which belt will my material need?',
+    answer: 'Three belt types are available. An elastic belt is the standard and is what almost every machine ships with, using Nitta and Forbo Siegling belting. A roller belt and a round belt are also available but are specified only occasionally, for materials the standard belt does not suit. The belt is chosen from your sample: thickness, and whether the back face can take contact, are usually what decide it.'
+  },
+  {
+    question: 'How is the cleaning roller chosen?',
+    answer: 'Three roller materials are available: liquid silicone, solid silicone and rubber. They are graded by tack. Too little tack and fine particles stay on the material; too much and the roller pulls at the surface or lifts a coating. The roller is matched to your sample rather than picked from a datasheet, which is why we ask for material before quoting.'
+  },
+  {
+    question: 'Is there a standard machine I can order?',
+    answer: 'No. Every machine is built to the material it will run. Cleaning width, belt type, roller material, roller gap, single or double sided, and whether it is inline or standalone are all set from your sample and your line. What is fixed is the process: an elastomer roller lifts the particle off the surface and an adhesive paper roll winds it away permanently.'
+  },
+  {
+    question: 'How thick a material can it handle?',
+    answer: 'From 0.05 mm to 3 mm on the CCL configuration. Thin and warped material is the harder case, and the machines are built with a magnetic levitation drive so that ultra-thin and curled board runs through without rolling up or folding a corner.'
+  },
+  {
+    question: 'How fast does it run?',
+    answer: 'Up to 70 m/min on the CCL machine and up to 45 m/min on the SMT and PCB configurations, both inverter controlled from zero. Speed is set against the defect you are trying to remove rather than run flat out.'
+  },
+  {
+    question: 'What happens to the dust?',
+    answer: 'It transfers from the surface to the elastomer roller, and from the roller onto an adhesive paper roll that winds it out of the machine. That is the difference from an air knife or a brush without extraction: those move contamination around, and a contact cleaner removes it from the line.'
+  },
+  {
+    question: 'Does it control static as well?',
+    answer: 'Yes. Pulse-type intelligent static eliminators sit at the inlet and outlet, holding the material under 200 V. Without them a cleaned surface simply attracts the dust back within seconds.'
+  }
+];
+---
+
+<ProductLayout
+  title="Contact Cleaning Machine | Adhesive Roller Dust Removal | Shidike"
+  description="Contact cleaning machines built to your material. Elastomer roller lifts particles onto an adhesive paper roll: 99.9% removal, 0.05-3 mm thickness, up to 70 m/min, static under 200 V. Three belt types and three roller materials, chosen from your sample."
+  image="/assets/img/cleaning-machine/ccl-cleaner.jpg"
+  category="Industrial Cleaning Machine">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map(i => ({
+      '@type': 'Question',
+      name: i.question,
+      acceptedAnswer: { '@type': 'Answer', text: i.answer }
+    }))
+  })} />
+
+  <section class="product-detail-page">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <a href="/products/cleaning-machine">Cleaning Machine</a>
+        <span>/</span>
+        <span>Contact</span>
+      </div>
+
+      <div class="product-top">
+        <div class="product-gallery">
+          <div class="product-main-image slider-wrapper">
+            <button class="slider-arrow left" id="prevImage">&lsaquo;</button>
+            <picture><source srcset="/assets/img/cleaning-machine/ccl-cleaner.webp" type="image/webp" /><img
+              id="mainProductImage"
+              src="/assets/img/cleaning-machine/ccl-cleaner.jpg"
+              alt="Contact cleaning machine with adhesive rollers and magnetic levitation drive"
+            /></picture>
+            <button class="slider-arrow right" id="nextImage">&rsaquo;</button>
+          </div>
+          <div class="product-thumbs">
+            <picture><source srcset="/assets/img/cleaning-machine/ccl-cleaner.webp" type="image/webp" /><img
+              class="thumb-image active-thumb"
+              src="/assets/img/cleaning-machine/ccl-cleaner.jpg"
+              alt="Contact cleaning machine thumbnail"
+              data-full="/assets/img/cleaning-machine/ccl-cleaner.jpg"
+            /></picture>
+          </div>
+          <div class="product-thumbs">
+            <picture><source srcset="/assets/img/cleaning-machine/smt-cleaner.webp" type="image/webp" /><img
+              class="thumb-image"
+              src="/assets/img/cleaning-machine/smt-cleaner.jpg"
+              alt="SMT inline contact cleaning machine thumbnail"
+              data-full="/assets/img/cleaning-machine/smt-cleaner.jpg"
+            /></picture>
+          </div>
+        </div>
+
+        <div class="product-summary">
+          <h1>Contact Cleaning Machine</h1>
+          <p class="product-short-desc">
+            An elastomer roller runs against the surface and lifts the loose particles off it.
+            Those particles transfer onto an adhesive paper roll, which winds them out of the
+            machine rather than redistributing them. This is what most board, sheet and film
+            work uses. Every machine is built to the material &mdash; there is no standard size
+            to order from.
+          </p>
+
+          <div class="product-actions">
+            <button class="quote-btn" type="button">Get a Quote</button>
+            <a href="https://wa.me/61436605126" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">WhatsApp</a>
+          </div>
+
+          <dl class="key-specs">
+            <div><dt>Cleaning method</dt><dd><strong>Adhesive roller</strong> + paper roll take-up</dd></div>
+            <div><dt>Cleaning width</dt><dd><strong>50&ndash;1340 mm</strong>, built to your material</dd></div>
+            <div><dt>Material thickness</dt><dd><strong>0.05&ndash;3 mm</strong></dd></div>
+            <div><dt>Removal rate</dt><dd><strong>99.9 %</strong></dd></div>
+            <div><dt>Line speed</dt><dd><strong>Up to 70 m/min</strong>, inverter controlled</dd></div>
+          </dl>
+          <p class="key-specs-note">Single or double sided, inline or standalone. Magnetic levitation drive so ultra-thin and warped material runs through without curling or folding a corner.</p>
+        </div>
+      </div>
+
+      <section class="detail-block pd-section">
+        <h2>How a Machine Is Configured</h2>
+        <p class="pd-lede">Every machine is built to the sample you send. Two choices do most of the work &mdash; what carries your material through, and what lifts the particles off it.</p>
+
+        <h3>Transport belt</h3>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <tr><th>Elastic belt</th><td><strong>The standard</strong>, and what almost every machine ships with. We use <strong>Nitta</strong> and <strong>Forbo Siegling</strong> belting.</td></tr>
+            <tr><th>Roller belt</th><td>Specified occasionally, where the standard belt does not suit the material.</td></tr>
+            <tr><th>Round belt</th><td>Specified occasionally, for the same reason.</td></tr>
+          </table>
+        </div>
+        <p>Thickness, and whether the back face can take contact, are usually what decide it.</p>
+
+        <h3>Cleaning roller</h3>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <tr><th>Liquid silicone</th><td>The most commonly specified, and what the CCL and SMT machines ship with.</td></tr>
+            <tr><th>Solid silicone</th><td>Specified where a firmer roller face is wanted.</td></tr>
+            <tr><th>Rubber</th><td>Specified where silicone is unsuitable for the material.</td></tr>
+          </table>
+        </div>
+        <p>Rollers are graded by tack. Too little and fine particles stay on the material; too much and the roller pulls at the surface or lifts a coating. The roller is matched to your sample, not to a datasheet &mdash; which is why we ask for material before quoting.</p>
+      </section>
+
+      <div class="pd-mid-cta">
+        <p>Send the material, the width, the line speed and the defect you are seeing. We come back with a belt, a roller, a width and a configuration.</p>
+        <a href="/contact">Send your material details &rarr;</a>
+      </div>
+
+      <section class="detail-block pd-section">
+        <h2>How It Works</h2>
+        <p>The material runs between elastomer rollers under a controlled gap. Loose particles transfer from the surface onto the roller face, and from there onto an adhesive paper roll that winds them permanently out of the machine. Machines can be built single sided or double sided; the CCL configuration uses a double-sided, double-pass arrangement with four adhesive rollers and two paper rolls.</p>
+        <p>Pulse-type intelligent static eliminators sit at the inlet and the outlet. Without them a cleaned surface attracts dust back within seconds, so the static stage is not an accessory &mdash; it is what makes the cleaning hold. Material is held under 200 V.</p>
+        <p>The drive is a magnetic levitation design, which is what lets ultra-thin and warped board run through without rolling up or folding a corner. Roller gap adjusts for material thickness, and roller and paper-roll modules pull out on drawer mechanisms so a change does not need the machine stripped down.</p>
+      </section>
+
+      <section class="detail-block pd-section">
+        <h2>Specifications</h2>
+        <p class="pd-lede">Figures below are from two representative builds. Your machine is configured to your material, so treat these as the range rather than a fixed sheet.</p>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <thead>
+              <tr><th>Parameter</th><th>ST-DT1340 (CCL)</th><th>SMT600 (SMT inline)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Cleaning arrangement</td><td>Double sided, double pass; 4 adhesive rollers + 2 paper rolls</td><td>Single or double sided</td></tr>
+              <tr><td>Cleaning width</td><td>Built to material</td><td>50&ndash;600 mm</td></tr>
+              <tr><td>Material thickness</td><td>0.05&ndash;3 mm</td><td>Set from sample</td></tr>
+              <tr><td>Cleaning roller</td><td>Liquid silicone, imported from Korea</td><td>Liquid silicone, imported from Korea</td></tr>
+              <tr><td>Adhesive paper roll</td><td>3.0 in core, 20 m, knife-free, 800 D tack</td><td>Low-static paper roll</td></tr>
+              <tr><td>Removal rate</td><td>99.9 %</td><td>&mdash;</td></tr>
+              <tr><td>Static control</td><td>Material under 200 V</td><td>System to within 30 V; material under 200 V</td></tr>
+              <tr><td>Line speed</td><td>0&ndash;70 m/min, inverter controlled</td><td>0&ndash;45 m/min, inverter controlled</td></tr>
+              <tr><td>Control</td><td colspan="2">Touchscreen panel, counter and digital alarm; forward/reverse, continuous and emergency stop modes</td></tr>
+              <tr><td>Power</td><td colspan="2">220 V / 50 Hz, 350 W</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pd-trust">
+          <span>Built in our own Dongguan factory since 2013</span>
+          <a href="/about">About Shidike &rarr;</a>
+        </div>
+      </section>
+
+      <section class="detail-block pd-section">
+        <h2>Where It Goes</h2>
+        <p class="pd-lede">These are lines we have built contact cleaners for. Each is a configuration of the same process, not a different product.</p>
+        <div class="scenario-list">
+          <div class="scenario-item">
+            <h3>Copper clad laminate and PCB</h3>
+            <p>Surface cleaning before cutting, drilling, assembly, vision inspection and packing. See <a href="/products/cleaning-machine/ccl-cleaner">CCL</a>, <a href="/products/cleaning-machine/pcb-cleaner">PCB</a> and <a href="/products/cleaning-machine/pcb-vertical-cleaner">vertical PCB</a> builds.</p>
+          </div>
+          <div class="scenario-item">
+            <h3>Flexible circuit</h3>
+            <p>Four-axis and eight-axis configurations for FPC, where the material is thin enough that transport matters as much as cleaning. See <a href="/products/cleaning-machine/fpc-4-axis-cleaner">FPC 4-axis</a> and <a href="/products/cleaning-machine/fpc-8-axis-cleaner">FPC 8-axis</a>.</p>
+          </div>
+          <div class="scenario-item">
+            <h3>SMT before print</h3>
+            <p>Removing board debris, fibre, hair and metal particles from pads before solder paste printing or adhesive coating. See the <a href="/products/cleaning-machine/smt-cleaner">SMT inline</a> build.</p>
+          </div>
+          <div class="scenario-item">
+            <h3>Optical film, polarizer and display</h3>
+            <p>Large-format film, light guide plate, backlight panel and LCM module work, where a single particle is a visible defect. See <a href="/products/cleaning-machine/optical-film-cleaner">optical film</a>, <a href="/products/cleaning-machine/polarizer-cleaner">polarizer</a>, <a href="/products/cleaning-machine/backlight-cleaner">backlight</a> and <a href="/products/cleaning-machine/lcm-cleaner">LCM</a>.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-block pd-section">
+        <h2>Contact or Non-Contact</h2>
+        <p>A contact cleaner takes off what is stuck, not just what is loose, and it does that with fewer moving parts and a lower purchase cost than a vacuum machine. It is the right answer for most board and sheet work.</p>
+        <p>Specify the <a href="/products/cleaning-machine/non-contact-cleaning-machine">non-contact machine</a> instead when the surface cannot take tack or roller pressure at all, when the contamination is drill swarf or fibre rather than settled dust, or when a paper roll running out mid-shift is a production problem.</p>
+      </section>
+
+      <section class="detail-block faq-block pd-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          {faqItems.map(item => (
+            <details class="faq-item">
+              <summary class="faq-question">{item.question}</summary>
+              <p class="faq-answer">{item.answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <section class="pd-further">
+        <p>
+          The alternative is the <a href="/products/cleaning-machine/non-contact-cleaning-machine">non-contact cleaning machine</a>,
+          which brushes and vacuums instead of using tack. To see every
+          <a href="/products/cleaning-machine">industrial cleaning machine</a> we build, or the
+          <a href="/products/static-eliminator">static eliminators</a> that keep a cleaned surface clean, start there.
+        </p>
+      </section>
+    </div>
+  </section>
+</ProductLayout>
