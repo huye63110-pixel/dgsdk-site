@@ -29,7 +29,6 @@ const path = new URL(canonical).pathname;
 
     <!-- hreflang for multilingual versions -->
     <link rel="alternate" hreflang="en" href={`${base}${path}`} />
-    {!noLangAlternates && <link rel="alternate" hreflang="zh" href={`${base}/zh${path === '/' ? '/' : path}`} />}
     <link rel="alternate" hreflang="x-default" href={`${base}${path}`} />
 
     <!-- Open Graph (Facebook, LinkedIn) -->
@@ -450,15 +449,6 @@ const path = new URL(canonical).pathname;
           </ul>
 
           <ul class="navbar-nav nav-utilities">
-            <li class="nav-item lang-dropdown" id="langDropdown">
-              <button class="nav-link lang-btn" type="button" id="langToggle" aria-label="Select language" aria-expanded="false">
-                EN <i class="fas fa-chevron-down" aria-hidden="true"></i>
-              </button>
-              <ul class="lang-menu" id="langMenu">
-                <li><a href="/">English</a></li>
-                <li><a href="/zh/">中文</a></li>
-              </ul>
-            </li>
 
             <li class="nav-item nav-icon-item search-dropdown" id="searchDropdown">
               <button class="nav-link nav-icon-btn" type="button" id="searchToggle" aria-label="Search products" aria-expanded="false">
@@ -546,27 +536,10 @@ const path = new URL(canonical).pathname;
     <script defer src="/js/scripts.js"></script>
 
     <script is:inline>
-      const langToggle = document.getElementById('langToggle');
-      const langMenu = document.getElementById('langMenu');
       const searchToggle = document.getElementById('searchToggle');
       const searchBox = document.getElementById('searchBox');
 
-      if (langToggle && langMenu) {
-        langToggle.addEventListener('click', function(e) {
-          e.stopPropagation();
-          langMenu.classList.toggle('show');
-          if (searchBox) searchBox.classList.remove('show');
-        });
-      }
-      if (searchToggle && searchBox) {
-        searchToggle.addEventListener('click', function(e) {
-          e.stopPropagation();
-          searchBox.classList.toggle('show');
-          if (langMenu) langMenu.classList.remove('show');
-        });
-      }
       document.addEventListener('click', function() {
-        if (langMenu) langMenu.classList.remove('show');
         if (searchBox) searchBox.classList.remove('show');
       });
     </script>

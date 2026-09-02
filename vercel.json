@@ -1,13 +1,8 @@
 {
   "redirects": [
     {
-      "source": "/contact/",
-      "destination": "/contact",
-      "permanent": true
-    },
-    {
       "source": "/zh/contact/",
-      "destination": "/zh/contact",
+      "destination": "/contact",
       "permanent": true
     },
     {
@@ -22,12 +17,12 @@
     },
     {
       "source": "/zh/products/precision-machined-parts",
-      "destination": "/zh/products/static-eliminator",
+      "destination": "/products/static-eliminator",
       "permanent": true
     },
     {
       "source": "/zh/products/precision-machined-parts/:path*",
-      "destination": "/zh/products/static-eliminator",
+      "destination": "/products/static-eliminator",
       "permanent": true
     },
     {
@@ -37,7 +32,7 @@
     },
     {
       "source": "/zh/products",
-      "destination": "/zh/products/static-eliminator",
+      "destination": "/products/static-eliminator",
       "permanent": true
     },
     {
@@ -52,12 +47,12 @@
     },
     {
       "source": "/zh/products/automation",
-      "destination": "/zh/products/cleaning-machine",
+      "destination": "/products/cleaning-machine",
       "permanent": true
     },
     {
       "source": "/zh/products/automation/:path*",
-      "destination": "/zh/products/cleaning-machine",
+      "destination": "/products/cleaning-machine",
       "permanent": true
     },
     {
@@ -67,7 +62,7 @@
     },
     {
       "source": "/zh/blog/ccl-multilayer-roller-cleaner-guide",
-      "destination": "/zh/products/cleaning-machine",
+      "destination": "/products/cleaning-machine",
       "permanent": true
     },
     {
@@ -77,7 +72,7 @@
     },
     {
       "source": "/zh/blog/fpc-roller-cleaner-guide",
-      "destination": "/zh/products/cleaning-machine",
+      "destination": "/products/cleaning-machine",
       "permanent": true
     },
     {
@@ -87,17 +82,17 @@
     },
     {
       "source": "/zh/blog/mobile-cover-roller-dust-cleaner-guide",
-      "destination": "/zh/products/cleaning-machine",
+      "destination": "/products/cleaning-machine",
       "permanent": true
     },
     {
       "source": "/zh/blog/optical-film-cleaner-tutorial",
-      "destination": "/zh/products/cleaning-machine",
+      "destination": "/products/cleaning-machine",
       "permanent": true
     },
     {
       "source": "/zh/blog/photovoltaic-ionizing-bar-guide",
-      "destination": "/zh/products/static-eliminator",
+      "destination": "/products/static-eliminator",
       "permanent": true
     },
     {
@@ -107,7 +102,7 @@
     },
     {
       "source": "/zh/blog/polarizer-cleaner-manufacturer-guide",
-      "destination": "/zh/products/cleaning-machine",
+      "destination": "/products/cleaning-machine",
       "permanent": true
     },
     {
@@ -117,7 +112,7 @@
     },
     {
       "source": "/zh/blog/polarizer-cleaner-selection-guide",
-      "destination": "/zh/products/cleaning-machine",
+      "destination": "/products/cleaning-machine",
       "permanent": true
     },
     {
@@ -127,7 +122,7 @@
     },
     {
       "source": "/zh/blog/polarizer-cleaner-tutorial",
-      "destination": "/zh/products/cleaning-machine",
+      "destination": "/products/cleaning-machine",
       "permanent": true
     },
     {
@@ -137,7 +132,7 @@
     },
     {
       "source": "/zh/blog/rubber-molding-ionizing-bar-guide",
-      "destination": "/zh/products/static-eliminator",
+      "destination": "/products/static-eliminator",
       "permanent": true
     },
     {
@@ -147,7 +142,182 @@
     },
     {
       "source": "/zh/blog/semiconductor-cleaner-selection-guide",
-      "destination": "/zh/products/cleaning-machine",
+      "destination": "/products/cleaning-machine",
+      "permanent": true
+    },
+    {
+      "source": "/zh",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/zh/about",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/zh/applications",
+      "destination": "/applications",
+      "permanent": true
+    },
+    {
+      "source": "/zh/blog",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/zh/blog/lithium-battery-ionizing-bar-guide",
+      "destination": "/blog/lithium-battery-ionizing-bar-guide",
+      "permanent": true
+    },
+    {
+      "source": "/zh/contact",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/zh/faq",
+      "destination": "/faq",
+      "permanent": true
+    },
+    {
+      "source": "/zh/guides",
+      "destination": "/guides",
+      "permanent": true
+    },
+    {
+      "source": "/zh/guides/esd-control-products",
+      "destination": "/guides/esd-control-products",
+      "permanent": true
+    },
+    {
+      "source": "/zh/guides/how-to-prevent-static",
+      "destination": "/guides/how-to-prevent-static",
+      "permanent": true
+    },
+    {
+      "source": "/zh/guides/industrial-static-eliminator",
+      "destination": "/guides/industrial-static-eliminator",
+      "permanent": true
+    },
+    {
+      "source": "/zh/guides/what-is-an-ionizing-bar",
+      "destination": "/guides/what-is-an-ionizing-bar",
+      "permanent": true
+    },
+    {
+      "source": "/zh/guides/what-is-esd",
+      "destination": "/guides/what-is-esd",
+      "permanent": true
+    },
+    {
+      "source": "/zh/products/cleaning-machine",
+      "destination": "/products/cleaning-machine",
+      "permanent": true
+    },
+    {
+      "source": "/zh/products/cleaning-machine/backlight-cleaner",
+      "destination": "/products/cleaning-machine/backlight-cleaner",
+      "permanent": true
+    },
+    {
+      "source": "/zh/products/cleaning-machine/ccl-cleaner",
+      "destination": "/products/cleaning-machine/ccl-cleaner",
+      "permanent": true
+    },
+    {
+      "source": "/zh/products/cleaning-machine/fpc-4-axis-cleaner",
+      "destination": "/products/cleaning-machine/fpc-4-axis-cleaner",
+      "permanent": true
+    },
+    {
+      "source": "/zh/products/cleaning-machine/fpc-8-axis-cleaner",
+      "destination": "/products/cleaning-machine/fpc-8-axis-cleaner",
+      "permanent": true
+    },
+    {
+      "source": "/zh/products/cleaning-machine/inspection-cleaner",
+      "destination": "/products/cleaning-machine/inspection-cleaner",
+      "permanent": true
+    },
+    {
+      "source": "/zh/products/cleaning-machine/lcm-cleaner",
+      "destination": "/products/cleaning-machine/lcm-cleaner",
+      "permanent": true
+    },
+    {
+      "source": "/zh/products/cleaning-machine/optical-film-cleaner",
+      "destination": "/products/cleaning-machine/optical-film-cleaner",
+      "permanent": true
+    },
+    {
+      "source": "/zh/products/cleaning-machine/pcb-cleaner",
+      "destination": "/products/cleaning-machine/pcb-cleaner",
+      "permanent": true
+    },
+    {
+      "source": "/zh/products/cleaning-machine/pcb-vertical-cleaner",
+      "destination": "/products/cleaning-machine/pcb-vertical-cleaner",
+      "permanent": true
+    },
+    {
+      "source": "/zh/products/cleaning-machine/polarizer-cleaner",
+      "destination": "/products/cleaning-machine/polarizer-cleaner",
+      "permanent": true
+    },
+    {
+      "source": "/zh/products/cleaning-machine/roll-chip-cleaner",
+      "destination": "/products/cleaning-machine/roll-chip-cleaner",
+      "permanent": true
+    },
+    {
+      "source": "/zh/products/cleaning-machine/smt-cleaner",
+      "destination": "/products/cleaning-machine/smt-cleaner",
+      "permanent": true
+    },
+    {
+      "source": "/zh/products/static-eliminator",
+      "destination": "/products/static-eliminator",
+      "permanent": true
+    },
+    {
+      "source": "/zh/products/static-eliminator/st-101a",
+      "destination": "/products/static-eliminator/st-101a",
+      "permanent": true
+    },
+    {
+      "source": "/zh/products/static-eliminator/st-104a",
+      "destination": "/products/static-eliminator/st-104a",
+      "permanent": true
+    },
+    {
+      "source": "/zh/products/static-eliminator/st-1200",
+      "destination": "/products/static-eliminator/st-1200",
+      "permanent": true
+    },
+    {
+      "source": "/zh/products/static-eliminator/st-e-series",
+      "destination": "/products/static-eliminator/st-e-series",
+      "permanent": true
+    },
+    {
+      "source": "/zh/products/static-eliminator/st-f-series",
+      "destination": "/products/static-eliminator/st-f-series",
+      "permanent": true
+    },
+    {
+      "source": "/zh/products/static-eliminator/st-g-series",
+      "destination": "/products/static-eliminator/st-g-series",
+      "permanent": true
+    },
+    {
+      "source": "/zh/products/static-eliminator/st-s200",
+      "destination": "/products/static-eliminator/st-s200",
+      "permanent": true
+    },
+    {
+      "source": "/zh/:path*",
+      "destination": "/",
       "permanent": true
     }
   ]
