@@ -750,8 +750,8 @@ details.faq-item > summary {
   padding: 15px 46px 15px 18px; user-select: none;
 }
 details.faq-item > summary::-webkit-details-marker { display: none; }
-details.faq-item > summary:hover .faq-question { color: var(--brand-deep); }
-details.faq-item .faq-question {
+details.faq-item > summary:hover h3.faq-question { color: var(--brand-deep); }
+details.faq-item h3.faq-question {
   margin: 0 !important; font-size: 15.5px !important; font-weight: 700;
   color: var(--navy); line-height: 1.45; display: inline;
 }
@@ -837,7 +837,7 @@ details.faq-item > summary:focus-visible {
 
 .product-detail-page .scenario-item p { font-size: 15.2px !important; }
 .product-detail-page .pd-fix-item p { font-size: 15.2px; }
-details.faq-item .faq-question { font-size: 16px !important; }
+details.faq-item h3.faq-question { font-size: 16px !important; }
 details.faq-item .faq-answer { font-size: 15.5px !important; }
 
 @media (max-width: 960px) {
