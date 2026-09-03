@@ -502,9 +502,9 @@ body:has(.inner-hero) > main {
     background: linear-gradient(
       180deg,
       rgba(243, 246, 249, 0.96) 0%,
-      rgba(243, 246, 249, 0.88) 40%,
-      rgba(243, 246, 249, 0.20) 68%,
-      rgba(243, 246, 249, 0) 100%
+      rgba(243, 246, 249, 0.94) 58%,
+      rgba(243, 246, 249, 0.86) 82%,
+      rgba(243, 246, 249, 0.30) 100%
     ) !important;
   }
   .parallax-hero-1.hero-light .parallax-content {
@@ -1030,3 +1030,90 @@ details.faq-item .faq-answer { font-size: 15.5px !important; }
 .contact-social .social-btn.whatsapp { background: #25d366; }
 .contact-social .social-btn.email    { background: var(--brand-deep, #0b6b8f); }
 .contact-social .social-btn:hover { transform: translateY(-2px); filter: brightness(1.08); }
+
+/* ============================================================
+   MOBILE TOUCH TARGETS AND LEGIBILITY
+   ------------------------------------------------------------
+   Measured at 375 px: footer links were 25 px tall, the floating
+   and social buttons 38 px, and two text styles sat under 13 px.
+   Google's mobile usability guidance wants roughly 44 px of tap
+   area and body text at 13 px or more. Layout is otherwise sound
+   -- no page overflows horizontally at 375 px.
+   ============================================================ */
+@media (max-width: 767.98px) {
+
+  /* Footer navigation was the worst of it: a column of 25 px
+     targets stacked 10 px apart. Padding brings each to ~44 px;
+     the margin comes off so the column does not grow as much. */
+  .footer-col a {
+    padding: 9px 0;
+    margin-bottom: 0;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Modal close button was 33 px wide. */
+  .quote-modal-close,
+  .image-lightbox-close {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* iOS Safari zooms the whole page in when a focused field is under 16 px,
+     and the user has to pinch back out. The contact form was already 16 px;
+     the homepage form and the quote modal were 15 px, so every product page
+     zoomed on the first tap into the form. */
+  input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]),
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+
+  /* Give the fields a full touch row while we are here. */
+  input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),
+  select {
+    min-height: 44px;
+  }
+
+  /* Standalone block-level links sit at 20-24 px. Give them a 40 px touch
+     line. Inline links inside a sentence are deliberately left alone —
+     padding those would overlap the line above and WCAG 2.5.8 exempts them. */
+  .breadcrumb { display: flex; flex-wrap: wrap; align-items: center; gap: 0 4px; }
+  .breadcrumb a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    padding-inline: 6px;
+    margin-inline: -6px;
+  }
+  .pd-mid-cta a,
+  .pd-trust a,
+  .advantage-card h3 a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+  }
+
+  /* .social-btn only — .float-btn is sized at source in Layout.astro,
+     where the scoped rule outranks anything set from here. */
+  .social-btn { width: 44px !important; height: 44px !important; }
+
+  /* Nav CTA sat at 37 px. Taken to about 41 px rather than a full
+     44 -- the pill is a fixed overlay and every pixel of its height
+     is taken off the page. */
+  #mainNav.pill-nav .nav-cta { padding: 11px 15px; font-size: 12px; }
+
+  /* The logo link is 134 px wide but only 34 px tall. Match the CTA's
+     height so both sit on the same 40 px touch line; the pill does not
+     grow, because the CTA already sets its height. */
+  #mainNav.pill-nav .navbar-brand {
+    display: flex;
+    align-items: center;
+    min-height: 40px;
+  }
+
+  /* Text under 13 px on a phone. .fix-fix is raised at source in
+     index.astro for the same specificity reason. */
+  .about-card-sub { font-size: 13.5px !important; }
+}
