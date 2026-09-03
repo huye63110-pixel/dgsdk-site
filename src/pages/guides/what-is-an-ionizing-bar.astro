@@ -6,7 +6,7 @@ import Layout from '../../layouts/Layout.astro';
   description="An ionizing bar (ion bar) emits positive and negative ions to neutralize static electricity on surfaces. Learn how ionizing bars work, types, applications, and how to choose the right static elimination bar for your production line.">
   <section
     class="products-hero"
-    style="background: linear-gradient(rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.18)), url('/assets/img/static-eliminator/banner-bg.jpg') center/cover no-repeat; background-attachment: fixed;">
+    style="background: linear-gradient(rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.18)), url('/assets/img/static-eliminator/banner-bg.jpg') center/cover no-repeat; background-attachment: fixed; background-image: linear-gradient(rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.18)), image-set(url('/assets/img/static-eliminator/banner-bg.webp') type('image/webp'), url('/assets/img/static-eliminator/banner-bg.jpg') type('image/jpeg'));">
     <div class="container products-hero-inner">
       <span class="products-hero-kicker" data-aos="fade-down" data-aos-duration="600">Static Elimination Guide</span>
       <h1 data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">What Is an Ionizing Bar? How It Works & When to Use One</h1>
@@ -230,6 +230,14 @@ import Layout from '../../layouts/Layout.astro';
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Most ionization bars work at 25–150mm from the surface. Standard DC pulsed models achieve ±20–50V residual at 50–100mm. Long-range static eliminators operate at up to 300–400mm where close mounting is not possible."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is a static elimination bar safe to touch?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The ion cloud emitted from the unit is safe to touch. The housing is grounded and ion current at the surface is extremely low (microamps). Industrial static eliminators automatically disconnect high voltage if the housing is opened."
         }
       },
       {

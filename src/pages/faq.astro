@@ -113,7 +113,7 @@ const faqItems = [
             {faqItems.map((item, index) => (
               <details class="faq-item" open={index === 0}>
                 <summary class="faq-question">
-                  <span>{item.question}</span>
+                  <h3>{item.question}</h3>
                   <span class="faq-icon"></span>
                 </summary>
                 <div class="faq-answer">
@@ -355,6 +355,17 @@ const faqItems = [
     .faq-item:hover {
       transform: translateY(-3px);
       box-shadow: 0 22px 50px rgba(15, 23, 42, 0.10);
+    }
+
+    /* The question is a heading now, for the document outline and for
+       screen-reader heading navigation. It must still look and lay out
+       exactly as the span it replaced. */
+    .faq-question h3 {
+      display: inline;
+      margin: 0;
+      font: inherit;
+      color: inherit;
+      letter-spacing: inherit;
     }
 
     .faq-question {
