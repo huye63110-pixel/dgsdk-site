@@ -6,7 +6,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "sync-search": "node scripts/sync-search.js",
+    "check-search": "node scripts/sync-search.js --check"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
