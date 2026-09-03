@@ -116,7 +116,6 @@
 
 /* Focus: clean for mouse, visible ring for keyboard (a11y) */
 #mainNav.pill-nav .nav-link:focus,
-#mainNav.pill-nav .lang-btn:focus,
 #mainNav.pill-nav .nav-icon-btn:focus,
 #mainNav.pill-nav .nav-cta:focus,
 #mainNav.pill-nav .navbar-toggler:focus {
@@ -124,7 +123,6 @@
   box-shadow: none !important;
 }
 #mainNav.pill-nav .nav-link:focus-visible,
-#mainNav.pill-nav .lang-btn:focus-visible,
 #mainNav.pill-nav .nav-icon-btn:focus-visible,
 #mainNav.pill-nav .nav-cta:focus-visible,
 #mainNav.pill-nav .navbar-toggler:focus-visible {
@@ -164,7 +162,6 @@
 
 /* ---------- Language + search (utility cluster) ---------- */
 #mainNav.pill-nav .nav-utilities { gap: 0; }
-#mainNav.pill-nav .lang-btn,
 #mainNav.pill-nav .nav-icon-btn {
   color: var(--pill-ink) !important;
   text-shadow: none !important;
@@ -177,13 +174,10 @@
   line-height: 1;
   transition: background .2s ease;
 }
-#mainNav.pill-nav .lang-btn:hover,
 #mainNav.pill-nav .nav-icon-btn:hover { background: var(--pill-hover); }
-#mainNav.pill-nav .lang-btn i { font-size: 9px; opacity: .6; }
 #mainNav.pill-nav .nav-icon-btn { font-size: 13px; }
 
 /* Light dropdowns for lang menu + search box */
-#mainNav.pill-nav .lang-menu,
 #mainNav.pill-nav .search-box {
   background: var(--pill-menu-bg) !important;
   border: 1px solid var(--pill-line);
@@ -191,8 +185,6 @@
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.16) !important;
   top: calc(100% + 12px) !important;
 }
-#mainNav.pill-nav .lang-menu li a { color: #2a2620 !important; border-radius: 8px; }
-#mainNav.pill-nav .lang-menu li a:hover { background: #f2ede3 !important; color: var(--pill-ink) !important; }
 #mainNav.pill-nav .search-box input {
   background: #f5f1e8;
   color: #16130d;
@@ -330,16 +322,13 @@
     box-shadow: none !important;
   }
   #mainNav.pill-nav .dropdown-item { padding: 9px 14px !important; }
-  #mainNav.pill-nav .lang-dropdown,
   #mainNav.pill-nav .nav-icon-item { margin: 0; }
-  #mainNav.pill-nav .lang-btn,
   #mainNav.pill-nav .nav-icon-btn {
     width: 100%;
     justify-content: flex-start;
     padding: 12px 16px !important;
     border-radius: 12px;
   }
-  #mainNav.pill-nav .lang-menu,
   #mainNav.pill-nav .search-box {
     position: static !important;
     margin: 4px 0 0 !important;
@@ -364,17 +353,14 @@ body:has(.products-hero) > main,
 body:has(.applications-hero) > main,
 body:has(.about-hero) > main,
 body:has(.contact-hero) > main,
-body:has(.faq-hero) > main,
-body:has(.category-hero) > main,
-body:has(.inner-hero) > main {
+body:has(.faq-hero) > main {
   padding-top: 0 !important;
 }
 
 /* 2. Tier 1 — big landing heroes: TRUE full-screen, content centred */
 /* Hero is deliberately under a full screen so the first product section
    peeks above the fold — a full-screen hero hides that anything follows. */
-.parallax-hero.parallax-hero-1,
-.parallax-hero.parallax-hero-3 {
+.parallax-hero.parallax-hero-1 {
   min-height: 78vh !important;
   display: flex !important;
   align-items: center !important;
@@ -423,9 +409,6 @@ body:has(.inner-hero) > main {
   max-width: 480px !important;
   margin: 0 0 30px 0 !important;
 }
-.parallax-hero-1.hero-light .parallax-btn {
-  box-shadow: 0 6px 18px rgba(11, 34, 57, 0.14) !important;
-}
 
 /* Hero heading. The display face is condensed, so it carries at a lighter
    weight than the old Inter setting needed, and it wants POSITIVE tracking
@@ -455,8 +438,6 @@ body:has(.inner-hero) > main {
 
 /* 3. Tier 2 — content banners: also full-screen, centred. The form
    / specs / list now live just below the fold — a deliberate scroll. */
-.inner-hero,
-.category-hero,
 .contact-hero,
 .faq-hero {
   min-height: 100vh !important;
@@ -470,23 +451,11 @@ body:has(.inner-hero) > main {
 /* Exception: product-detail pages keep a compact banner so the SKU
    name, breadcrumb, and specs are visible without an extra scroll.
    Image still bleeds to the top behind the pill — just shorter. */
-.inner-hero {
-  min-height: 56vh !important;
-  padding-top: 110px !important;
-  padding-bottom: 48px !important;
-}
-.inner-hero .inner-hero-overlay {
-  background: linear-gradient(
-    rgba(0, 0, 0, 0.30),
-    rgba(0, 0, 0, 0.48)
-  ) !important;
-}
 
 /* 4. Mobile — a touch shorter so it isn't an endless scroll */
 @media (max-width: 991.98px) {
   /* Mobile keeps slightly under 100vh to avoid address-bar jumps */
-  .parallax-hero.parallax-hero-1,
-  .parallax-hero.parallax-hero-3 { min-height: 76vh !important; }
+  .parallax-hero.parallax-hero-1 { min-height: 76vh !important; }
 
   /* Light homepage hero: portrait screens can't hold the wide
      studio frame, so use the tighter crop, anchor it to the
@@ -517,16 +486,10 @@ body:has(.inner-hero) > main {
   .products-hero,
   .applications-hero,
   .about-hero,
-  .category-hero,
   .contact-hero,
   .faq-hero {
     min-height: 76vh !important;
     padding-top: 88px !important;
-  }
-  /* Product detail stays compact on mobile too */
-  .inner-hero {
-    min-height: 48vh !important;
-    padding-top: 96px !important;
   }
 }
 
@@ -613,7 +576,6 @@ body:has(.inner-hero) > main {
   border-color: var(--brand-ink) !important;
   color: #fff !important;
 }
-.text-primary, .fa-stack .text-primary { color: var(--brand-deep) !important; }
 
 /* Accent colours used by the homepage sections. */
 .fix-fix { color: var(--brand-deep) !important; }
@@ -622,21 +584,10 @@ body:has(.inner-hero) > main {
 .about-card, .fix-item { border-color: var(--hairline); }
 
 /* Logo blue reads well on the dark hero, so the kicker uses it directly. */
-.parallax-sub, .parallax-label { color: var(--brand) !important; }
+.parallax-sub { color: var(--brand) !important; }
 
 
 /* Product-page hero: the product's own name, not a generic "PRODUCT DETAILS". */
-.inner-hero-label {
-  margin: 0 0 10px;
-  font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
-  color: var(--brand);
-}
-.inner-hero-name {
-  margin: 0;
-  font-size: clamp(1.7rem, 3.6vw, 2.6rem);
-  font-weight: 800; line-height: 1.15; letter-spacing: -0.02em;
-  color: #fff;
-}
 
 /* Product pages open straight on the product now (no hero banner), so the
    breadcrumb needs clearance from the fixed nav. */
@@ -665,12 +616,6 @@ body:has(.inner-hero) > main {
 .pd-lede { margin: 0 0 24px; font-size: 16px; line-height: 1.65; color: var(--ink-muted); max-width: 70ch; }
 
 /* image placeholder — remove once a real image is dropped in */
-.pd-imgslot {
-  border: 2px dashed #c3d3de; border-radius: 14px; background: #f4f9fc;
-  padding: 30px 24px; text-align: center; margin: 0 0 22px;
-}
-.pd-imgslot b { display: block; font-size: 14.5px; color: #0278A1; margin-bottom: 6px; }
-.pd-imgslot span { display: block; font-size: 13px; color: #7b8b98; line-height: 1.6; }
 
 .pd-fix { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .pd-fix-item { background: #fff; border: 1px solid var(--hairline); border-radius: 14px; padding: 22px; }
@@ -939,43 +884,6 @@ details.faq-item .faq-answer { font-size: 15.5px !important; }
 .product-main-image img, #mainProductImage { max-height: 400px !important; }
 
 /* --- Cleaning-machine selection guide -------------------------------- */
-.cm-block { padding: 0 0 8px !important; }
-.cm-h2 {
-  margin: 0 0 8px; font-size: clamp(1.35rem, 2.2vw, 1.75rem);
-  font-weight: 800; letter-spacing: -0.02em; color: var(--navy);
-}
-.cm-lede { margin: 0 0 22px; font-size: 16px; line-height: 1.7; color: var(--ink-muted); max-width: 78ch; }
-.cm-two   { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-.cm-three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-.cm-card {
-  background: #fff; border: 1px solid var(--hairline); border-radius: 16px; padding: 24px;
-  box-shadow: 0 1px 2px rgba(11,34,57,.04), 0 8px 24px rgba(11,34,57,.05);
-}
-.cm-tag {
-  display: inline-block; margin-bottom: 10px; padding: 5px 12px; border-radius: 999px;
-  background: #eef7fc; color: var(--brand-deep);
-  font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
-}
-.cm-card h3 { margin: 0 0 10px; font-size: 1.12rem; font-weight: 700; color: var(--navy); line-height: 1.35; }
-.cm-card p  { margin: 0 0 12px; font-size: 15.2px; line-height: 1.7; color: var(--ink-muted); }
-.cm-card p:last-child { margin-bottom: 0; }
-.cm-card .cm-small { font-size: 14.5px; color: #6d7d8a; }
-.cm-card ul { margin: 12px 0 0; padding-left: 18px; }
-.cm-card li { font-size: 14.8px; line-height: 1.65; color: var(--ink-muted); margin-bottom: 6px; }
-.cm-card a { color: var(--brand-deep); font-weight: 600; }
-.cm-note {
-  margin: 20px 0 0; padding: 14px 18px; background: #f4f9fc; border: 1px solid #dfeaf1;
-  border-radius: 12px; font-size: 14.8px; line-height: 1.7; color: #4a5c6a;
-}
-.cm-cta {
-  margin-top: 26px; background: var(--navy); border-radius: 16px; padding: 26px 28px;
-  display: flex; align-items: center; justify-content: space-between; gap: 22px; flex-wrap: wrap;
-}
-.cm-cta p { margin: 0; color: #cfe0ec; font-size: 15px; line-height: 1.65; max-width: 62ch; }
-.cm-cta strong { display: block; color: #fff; font-size: 1.12rem; margin-bottom: 6px; }
-@media (max-width: 900px) {
-  .cm-two, .cm-three { grid-template-columns: 1fr; }
-}
 
 /* --- Category pages: intro block spacing ------------------------------
    Same cause as the product pages: the theme's global `section { padding:
