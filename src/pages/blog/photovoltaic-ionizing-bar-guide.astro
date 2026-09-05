@@ -4,6 +4,9 @@ import Layout from '../../layouts/Layout.astro';
 const base = 'https://www.dg-sdk.com';
 const url = base + '/blog/photovoltaic-ionizing-bar-guide';
 const title = "Smart Ionizing Bar for Photovoltaic Manufacturing: Complete Q&A Guide";
+// Shorter than `title` so the <title> tag stays inside the 75-character
+// limit; `title` still carries the full headline into the Article markup.
+const seoTitle = "Smart Ionizing Bars for Photovoltaic Manufacturing";
 const description = "Everything PV engineers and procurement teams need to know about smart ionizing bars for solar panel production \u2014 from technical parameters to fault diagnosis and process optimization.";
 
 const faqItems = [
@@ -95,7 +98,7 @@ const faqItems = [
 ---
 
 <Layout
-  title={title + ' | Shidike'}
+  title={seoTitle + ' | Shidike'}
   description={description}
   image="/assets/img/static-eliminator/st-g-series.jpg"
 >
