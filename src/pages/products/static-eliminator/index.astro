@@ -147,13 +147,9 @@ const faqItems = [
       itemListElement: allStaticProducts.map((product, index) => ({
         '@type': 'ListItem',
         position: index + 1,
-        item: {
-          '@type': 'Product',
-          name: product.name,
-          url: product.url,
-          image: product.image,
-          brand: { '@type': 'Brand', name: 'Shidike' }
-        }
+        name: product.name,
+        url: product.url,
+        image: product.image
       }))
     }
   })} />
