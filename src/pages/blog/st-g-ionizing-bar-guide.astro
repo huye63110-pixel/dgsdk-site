@@ -4,6 +4,9 @@ import Layout from '../../layouts/Layout.astro';
 const base = 'https://www.dg-sdk.com';
 const url = base + '/blog/st-g-ionizing-bar-guide';
 const title = 'The ST-G Ionizing Bar: How to Specify, Mount and Verify an Anti Static Bar';
+// Shorter than `title` so the <title> tag stays inside the 75-character
+// limit; `title` still carries the full headline into the Article markup.
+const seoTitle = 'ST-G Ionizing Bar: How to Specify, Mount and Verify';
 const description = 'What ±50 V ion balance means on a real line, why the ST-G generates its high voltage inside the bar from 24 V DC, how to calculate the mounting pitch for any bar length, and how to verify the bar is working.';
 
 const faqItems = [
@@ -31,7 +34,7 @@ const faqItems = [
 ---
 
 <Layout
-  title={title + ' | Shidike'}
+  title={seoTitle + ' | Shidike'}
   description={description}
   image="/assets/img/static-eliminator/st-g.jpg"
 >

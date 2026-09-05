@@ -46,6 +46,7 @@ const faqItems = [
   })} />
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context':'https://schema.org','@type':'Organization',
+    '@id': base+'/#organization',
     name:'Shidike',
     legalName:'Dongguan Shidike Intelligent Equipment Co., Ltd.',
     alternateName:['东莞史帝克智能装备有限公司','DGSDK'],
@@ -55,10 +56,8 @@ const faqItems = [
       streetAddress:'Room 101, Building 1, No. 33 Binhe Road',
       addressLocality:'Zhangmutou Town, Dongguan',
       addressRegion:'Guangdong', addressCountry:'CN'},
-    makesOffer:[
-      {'@type':'Offer',itemOffered:{'@type':'Product',name:'Industrial ionizing bars and static eliminators',url:base+'/products/static-eliminator'}},
-      {'@type':'Offer',itemOffered:{'@type':'Product',name:'Contact cleaning machines and web cleaning systems',url:base+'/products/cleaning-machine'}}
-    ]
+    knowsAbout:['Industrial ionizing bars and static eliminators',
+      'Contact cleaning machines and web cleaning systems']
   })} />
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context':'https://schema.org','@type':'FAQPage',

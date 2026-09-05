@@ -44,22 +44,19 @@ const breadcrumbItems = [
   })} />
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "Product",
+    "@type": "ItemPage",
+    "@id": canonical,
+    "url": canonical,
     "name": productName,
     "description": description,
-    "image": `https://www.dg-sdk.com${image}`,
-    "sku": sku || productName.replace(/\s+/g, '-').toLowerCase(),
-    "category": category,
-    "brand": {
-      "@type": "Brand",
-      "name": "Shidike"
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": `https://www.dg-sdk.com${image}`
     },
-    "manufacturer": {
-      "@type": "Organization",
-      "name": "Shidike",
-      "legalName": "Dongguan Shidike Intelligent Equipment Co., Ltd.",
-      "url": "https://www.dg-sdk.com"
-    }
+    "keywords": category,
+    "identifier": sku || productName.replace(/\s+/g, '-').toLowerCase(),
+    "inLanguage": "en",
+    "publisher": { "@id": "https://www.dg-sdk.com/#organization" }
   })} />
 
   <!-- 内容 -->

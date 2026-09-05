@@ -4,6 +4,9 @@ import Layout from '../../layouts/Layout.astro';
 const base = 'https://www.dg-sdk.com';
 const url = base + '/blog/lithium-battery-ionizing-bar-guide';
 const title = "Ionizing Bar Selection Guide for Lithium Battery Production: Complete Q&A";
+// Shorter than `title` so the <title> tag stays inside the 75-character
+// limit; `title` still carries the full headline into the Article markup.
+const seoTitle = "Ionizing Bar Selection for Lithium Battery Production";
 const description = "Technical Q&A guide for selecting, installing, and troubleshooting ionizing bars in lithium battery manufacturing \u2014 electrode slitting, winding, electrolyte injection, and formation stages.";
 
 const faqItems = [
@@ -95,7 +98,7 @@ const faqItems = [
 ---
 
 <Layout
-  title={title + ' | Shidike'}
+  title={seoTitle + ' | Shidike'}
   description={description}
   image="/assets/img/static-eliminator/st-f.jpg"
 >

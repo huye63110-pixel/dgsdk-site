@@ -339,20 +339,22 @@ const path = new URL(canonical).pathname;
     {
       "@context": "https://schema.org",
       "@type": ["Organization", "LocalBusiness"],
+      "@id": "https://www.dg-sdk.com/#organization",
       "name": "Shidike",
       "legalName": "Dongguan Shidike Intelligent Equipment Co., Ltd.",
       "alternateName": ["东莞史帝克智能装备有限公司", "DGSDK"],
       "url": "https://www.dg-sdk.com",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.dg-sdk.com/logo.png",
-        "width": 600,
-        "height": 169
-      },
+      "logo": "https://www.dg-sdk.com/logo.png",
       "image": "https://www.dg-sdk.com/assets/img/static-eliminator/banner-bg2.webp",
       "description": "Manufacturer of industrial static eliminators, ionizing bars, ionizing blowers, and precision cleaning machines for global production lines.",
       "foundingDate": "2013",
+      "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "value": 50
+      },
       "priceRange": "$$",
+      "telephone": "+86-13602342003",
+      "email": "dgsdk2013@gmail.com",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Room 101, Building 1, No. 33 Binhe Road",
@@ -378,19 +380,10 @@ const path = new URL(canonical).pathname;
           "@type": "ContactPoint",
           "telephone": "+61-436605126",
           "contactType": "customer support",
-          "contactOption": "WhatsApp",
-          "availableLanguage": ["English", "Chinese"]
+          "availableLanguage": ["English", "Chinese"],
+          "areaServed": "Worldwide"
         }
       ],
-      "email": "dgsdk2013@gmail.com",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Static Control and Cleaning Products",
-        "itemListElement": [
-          {"@type": "OfferCatalog", "name": "Industrial Static Eliminators and Ionizing Bars"},
-          {"@type": "OfferCatalog", "name": "Industrial Cleaning Machines"}
-        ]
-      },
       "sameAs": [
         "https://www.facebook.com/profile.php?id=61589304230341",
         "https://www.tiktok.com/@machineforge?_r=1&_t=ZS-95scfOHz6Ea"
