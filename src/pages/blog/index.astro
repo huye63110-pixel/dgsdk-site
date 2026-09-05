@@ -91,6 +91,31 @@ const posts = [
     <div class="container">
       <div class="breadcrumb"><a href="/">Home</a><span>/</span><span>Blog</span></div>
 
+      <div class="blog-intro">
+        <p>
+          Every article here starts in the same place: a line that is already built, already running, and
+          that now has a static or contamination problem to solve without stopping production. So the
+          guides deal in figures you can check against your own process &mdash; ion balance in volts, decay
+          time in seconds, mounting distance in millimetres, air volume in CFM &mdash; rather than in feature
+          lists.
+        </p>
+        <p>
+          The static control articles cover how a pulsed AC and a pulsed DC bar behave at different
+          distances from the web, why a bar that generates its high voltage internally from 24 V DC mounts
+          differently from one fed by an external supply box, how to work out mounting pitch for a given
+          bar length, and how to verify with a field meter or a charged plate monitor that the bar is
+          still doing its job six months later. The industry pieces run the same problem for lithium
+          battery electrode coating, slitting and winding, and for photovoltaic cell handling, backsheet
+          lamination and glass loading, where the material and the line speed change the answer.
+        </p>
+        <p>
+          The cleaning articles take the other half of the same problem. Charge attracts particles, and on
+          optical film, polarizer, PCB and CCL surfaces it is the particle that causes the reject. Those
+          guides work through tack values, belt against roller contact, single or double sided cleaning,
+          and what a given cleanliness target asks of the machine.
+        </p>
+      </div>
+
       <div class="blog-index-grid">
         {posts.map((post, i) => (
           <a href={`/blog/${post.slug}`} class="blog-index-card" data-aos="fade-up" data-aos-delay={i * 100} data-aos-duration="600">
@@ -133,6 +158,13 @@ const posts = [
     .blog-list-section .breadcrumb { margin-bottom: 26px; font-size: 13.5px; color: #7d8d97; }
     .blog-list-section .breadcrumb a { color: var(--brand-deep); text-decoration: none; }
     .blog-list-section .breadcrumb span { margin: 0 8px; }
+
+    .blog-intro {
+      max-width: 1000px; margin: 0 auto 34px; color: var(--ink-muted, #55636d);
+      font-size: 15.5px; line-height: 1.72;
+    }
+    .blog-intro p { margin: 0 0 14px; }
+    .blog-intro p:last-child { margin-bottom: 0; }
 
     .blog-index-grid {
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
