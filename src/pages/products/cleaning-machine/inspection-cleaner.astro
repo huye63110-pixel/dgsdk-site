@@ -152,7 +152,7 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
         <div class="scenario-list">
           <div class="scenario-item">
             <h3>Pre-AOI Cleaning to Reduce False Rejects</h3>
-            <p>Automated optical inspection (AOI) systems cannot distinguish between a genuine surface defect and a loose particle resting on the substrate surface. In high-throughput lines, this causes false rejection rates that increase rework costs and reduce effective yield. Positioning the STXT Series inspection cleaner immediately before the AOI station removes transient surface particles, so the AOI system only flags genuine defects.</p>
+            <p>An automated optical inspection (AOI) system reads a loose particle resting on the substrate the same way it reads a defect in the substrate itself, unless it has been set up to tell the two apart. In high-throughput lines, this causes false rejection rates that increase rework costs and reduce effective yield. Positioning the STXT Series inspection cleaner immediately before the AOI station removes transient surface particles, so the AOI system only flags genuine defects.</p>
           </div>
           <div class="scenario-item">
             <h3>Pre-Bonding Inspection Stage Cleaning</h3>
@@ -167,7 +167,7 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
 
       <section class="detail-block">
         <h2>The Cost of Skipping Pre-Inspection Cleaning</h2>
-        <p>Without a cleaning step before inspection, AOI false rejection rates typically run 3–8% in display and electronics manufacturing environments. At high production volumes, this translates directly into wasted rework hours on panels that have no genuine defects. More seriously, particles that are missed and passed through inspection become permanent assembly defects. The STXT Series pre-inspection cleaner addresses both problems — reducing false rejects and preventing genuine contamination from reaching final assembly.</p>
+        <p>Without a cleaning step before inspection, loose particles are read as defects and panels with nothing wrong with them go to rework. How often that happens depends on your particle load, optical setup and defect thresholds, so measure it on your own line rather than working from an industry figure. At high production volumes it translates directly into wasted rework hours on panels that have no genuine defects. More seriously, particles that are missed and passed through inspection become permanent assembly defects. The STXT Series pre-inspection cleaner addresses both problems — reducing false rejects and preventing genuine contamination from reaching final assembly.</p>
       </section>
 
       <section class="detail-block faq-block">
@@ -175,7 +175,7 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
         <div class="faq-list">
           <details class="faq-item">
             <summary><h3 class="faq-question">Why is cleaning needed before optical inspection?</h3></summary>
-            <p class="faq-answer">Automated optical inspection systems detect surface anomalies — they cannot distinguish a genuine defect from a loose dust particle. Without pre-inspection cleaning, transient particles cause false rejections that increase rework costs and waste production capacity. Cleaning immediately before inspection ensures the AOI only flags genuine defects.</p>
+            <p class="faq-answer">Automated optical inspection systems detect surface anomalies, and a loose dust particle registers as one unless the system is set up to tell it from a defect. Without pre-inspection cleaning, transient particles cause false rejections that increase rework costs and waste production capacity. Cleaning immediately before inspection ensures the AOI only flags genuine defects.</p>
           </details>
           <details class="faq-item">
             <summary><h3 class="faq-question">What does the anti-static RPP0 grade DK system do?</h3></summary>
@@ -234,7 +234,7 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"Why is cleaning needed before optical inspection?","acceptedAnswer":{"@type":"Answer","text":"Automated optical inspection systems detect surface anomalies — they cannot distinguish a genuine defect from a loose dust particle. Without pre-inspection cleaning, transient particles cause false rejections that increase rework costs and waste production capacity. Cleaning immediately before inspection ensures the AOI only flags genuine defects."}},
+    {"@type":"Question","name":"Why is cleaning needed before optical inspection?","acceptedAnswer":{"@type":"Answer","text":"Automated optical inspection systems detect surface anomalies, and a loose dust particle registers as one unless the system is set up to tell it from a defect. Without pre-inspection cleaning, transient particles cause false rejections that increase rework costs and waste production capacity. Cleaning immediately before inspection ensures the AOI only flags genuine defects."}},
     {"@type":"Question","name":"What does the anti-static RPP0 grade DK system do?","acceptedAnswer":{"@type":"Answer","text":"The RPP0 grade DK anti-static system provides high-performance static charge neutralization on the substrate surface before inspection. Substrates carrying electrostatic charge actively attract airborne dust after cleaning. Neutralizing the charge immediately before inspection prevents re-contamination during the transit from the cleaner to the inspection camera."}},
     {"@type":"Question","name":"Can the STXT Series be installed directly before an existing AOI machine?","acceptedAnswer":{"@type":"Answer","text":"Yes. The STXT Series is designed for inline installation immediately upstream of inspection equipment. It can be configured to match the conveyor speed, board width, and transport height of your existing inspection line. Contact us with your AOI machine model and line specifications."}},
     {"@type":"Question","name":"How does the machine handle substrates of different thicknesses?","acceptedAnswer":{"@type":"Answer","text":"The adhesive roller and transport system are adjustable to accommodate substrates of varying thickness. Specific thickness ranges are confirmed during the application specification review before order."}},
