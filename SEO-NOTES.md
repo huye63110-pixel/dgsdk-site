@@ -236,3 +236,87 @@ keyence.com    8K
 **一条核验记录**：CCL 这条我第一次读漏了 —— 只看到场景段把 oil residue 列进污染物，
 判为「暗示性」过度声明；实际后文明确写着 `removes these contaminants`，是字面断言。
 **引用行号的证据要把整段读完，不能只读被引的那一行。**
+
+---
+
+## 13. Codex 验收后补修（2026-09-12，第三批）
+
+Codex 在已合并的 `4a1e1ee` 上逐字核验 7 个产品页 41 条 FAQ / JSON-LD，
+确认 §12 的改动已落地，但发现**前半句加了条件、后半句仍在保证**的残留，以及
+**从「磁悬浮」这个名称反推出来的结果性承诺**。
+第一轮改完后 Codex 再核，发现**改得不够**：见下面「第二轮复核」。
+
+### 逐项结果
+
+| # | Codex 指出 | 处理 | 保留的依据 |
+|---|---|---|---|
+| 1 | `inspection` 155/178/237 仍有 `only flags genuine defects` | 删掉绝对结论。改为「清掉浮尘这一类干扰；之后 AOI 怎么判，取决于它的 recipe 与阈值，不取决于清洁机」 | 浮尘会被读成缺陷 —— 机理，可留 |
+| 2 | `optical-film` 157/215 `safe for all standard optical film surfaces` 与 165 的样品确认冲突 | 统一到 165 的口径：是否耐受取决于涂层 / 表面 / 胶辊黏性 / 传输压力，**样品确认后才上生产卷** | 无研磨、无溶剂、无 UV —— 工艺事实，可留 |
+| 3 | `polarizer` 166/220 `safe for functional layers` 与 72–73 的样品验证冲突 | 改为「功能层是否耐受由你自己材料上的样品试验判定，不由规格书判定」 | 同上 |
+| 4 | `backlight` 76–77/91、`ccl` 76–77/90/153/180/233 的 `no damage` / 永不变形 / 零振动 / 防微裂纹 | 这些句子改了，但**换成了另一个推导**（「不走接触轴承」）—— 见第二轮复核第 3 条。微裂纹与振动已写**未发布实测数据** | 磁悬浮驱动本身、薄清洁层降低接触压力 —— 结构事实，可留 |
+| 5 | `lcm` 115 把 detection 放在 Throughput 字段；154/170/222 的零颗粒 / 无轴承 / 显著延寿 | 规格表字段改为 **Detection & Recording**；颗粒数与寿命对比已写未发布。但「磁力承载、不走接触轴承」仍是推导 —— 见第二轮复核第 3 条 | 密封外壳隔离生产环境 —— 结构事实，可留。已改好的「1 片/秒检测」表述**未再改动** |
+| 6 | `pcb-vertical` 152/160/218 的 60%：加前提不能证明数字 | 数字撤下了，但换成了 `well below`（**仍是无证据的大小比较**）—— 见第二轮复核第 1 条。同时不再从产品名反推刚性规则 —— 改为「板需在竖直传输中自持平整，**未发布最小刚度**，报板厚与材质来确认」 | 竖直 vs 卧式的占地差是布置决定的 —— 方向可留，数字不可留 |
+| 7 | `applications` 47 的 `commonly under 100 V` 无来源，且混了设备 ion balance 与材料 residual | 删掉通用数值。改为「静电控制按**你自己零件能容忍的残余表面电压**设定 —— 这是与消静电器 ion balance **不同的指标**，由你的工艺定义」 | 光学面软、带涂层、不能受重压 —— 可留 |
+
+### 同类残留：Codex 未审的 5 个页面也有
+
+同一句式不止在那 7 页。全站搜索后，`pcb-cleaner`、`smt-cleaner`、
+`fpc-4-axis-cleaner`、`fpc-8-axis-cleaner`、`roll-chip-cleaner` 同样带
+`no noise, no vibration` / `safe for…` / `never deformed` / `generates no secondary particles`。
+**本轮一并改了**，口径与上表一致（收敛到 `polarizer-cleaner:81` 本来就有的窄写法
+`smooth, stable operation`）。只改 7 页会留 5 页线上继续保证，下一轮还得再来一次 ——
+§12 的方法记录（全站性表述要全文搜索）就是为此。
+
+### 顺带修掉的 body / schema 漂移
+
+`guides/what-is-an-ionizing-bar.astro` 的 FAQPage **11 条里有 6 条**
+schema 文本仍是合并前的旧版（正文已经是收窄后的版本）。
+这不是本轮改出来的，`4a1e1ee` 上就有。已把 schema 同步到正文逐字一致。
+建立了机械校验：解析 `dist/` 全部 FAQPage，与正文 `.faq-answer` 逐条比对。
+
+### 仍缺原始资料（写了边界，不阻塞）
+
+| 缺什么 | 影响的页面 | 没有它就不能说 |
+|---|---|---|
+| STC-640 实际占地 + 对照卧式机型号 | `pcb-vertical-cleaner` | 任何占地百分比 |
+| STC-640 最小板刚度 / 板厚下限（需图纸） | `pcb-vertical-cleaner` | 「适合标准厚度、不适合超薄」这条规则 |
+| 磁悬浮驱动实测颗粒数、振动值 | `ccl`、`lcm`、`optical-film` 等 | 零颗粒 / 零振动 / 防微裂纹 / 延寿 |
+| ST-G 臭氧 / 颗粒数据 | `st-g-series` | §11 已记 |
+| SMT600 原始尺寸 | `smt-cleaner` | §11 已记 |
+
+### 收录状态 ≠ 生产 200
+
+GSC 显示风机页当前**未索引 / URL unknown**，但实时测试**可抓取、可索引**。
+这是两件事：**生产环境返回 200 不等于已被收录**。
+不要因为 GSC 显示 unknown 就去重建页面，也不要因为线上 200 就当已收录。
+
+### 第二轮复核（Codex 复核 PR #7 head `c4a4899`）
+
+结构通过（14 页标签/属性序列无改，82 条 FAQ 与 schema 一致），但内容仍有同类残留。
+**我上一轮犯的错：把一个推导换成了另一个推导。**
+
+| # | 仍然残留 | 本轮改法 |
+|---|---|---|
+| 1 | `pcb-vertical` 152/160/218：60% 换成 `well below` —— **仍是无尺寸、无对照机型的大小比较** | **删掉全部大小比较**（含 46/50/62/80/137/145/152/160/218）。只说明**布置**：板在清洁路径上竖着走、卧式机是平放，所以占位方式不同。是否放得下请客户用**实际设备外形图 + 进出料间隙 + 辊子维修空间**确认 |
+| 2 | `lcm` 143 `without generating particles`；`backlight` 166/182/235 `no friction particles` / `free of friction particles and vibration`；`ccl` 102 `eliminates noise and vibration`、112 `prevents deformation` | 全部改成**可证实的机构 + 用途 + 需验证的实际影响**。例：磁悬浮只说「传输设计 / specified for」，颗粒与振动一律写未发布实测值，实际影响请在自己材料上确认 |
+| 3 | **`lcm` 154/170/222、`ccl` 57/181/234 断言无 contact bearings** —— 仓库里没有结构图或 BOM 能证明轴承构造 | 删掉轴承事实。**只保留产品资料确实给出的东西：磁悬浮驱动这个名称**（`lcm` 另有密封 + 专利，资料有，保留）。内部构造明确写未发布 |
+
+**补充定位（同一次复核）**：`polarizer` 158「without stressing the polarizer's optical layers」、
+`pcb-vertical` 50「without deforming PCB substrates」、`smt` 79「prevents deformation or creasing」、
+`ccl` 112 —— 同一类保证，已一并收窄。
+
+**语义同类搜索（不只匹配原句）** 又查出 Codex 未点到的同类：
+`fpc-8-axis` 142/169/221（`eliminates all mechanical vibration`、`without mechanical stress`）、
+`fpc-4-axis` 92/169/221（`frictionless`、`vibration-free`、`does not stress or deform`）、
+`pcb-cleaner` 93/147（`frictionless`、`vibration-free`、`without compromising the foil integrity`）、
+`polarizer` 93、`optical-film` 93/165/169/217/218、`roll-chip` 49/73/83/99/100、
+`ccl` 124 规格表 `Magnetic Levitation (frictionless)`、`ccl`/`roll-chip` 的 `Material Safe` 卡片标题。
+全部按同一口径改完。
+
+### 这一类的统一口径（以后照这个写）
+
+1. **只写产品资料给出的东西**：驱动叫「磁悬浮」可以写；由这个名字推出「无接触轴承」「frictionless」**不行** —— 那是结构图和 BOM 才能证明的。
+2. **机构可以写，结果不能保证**：写「specified for 平稳传输」，不写「消除振动」。
+3. **没有实测值就明说没有**：「我们未发布该驱动的实测颗粒数 / 振动值」，然后给出验证路径（样品试跑 / 索取图纸）。
+4. **不变形 / 不损伤 / 不受应力**一律改成「压力与胶辊黏性按材料设定，样品确认」。
+5. **大小比较必须有本机尺寸 + 对照机型**；两者缺一，就只描述布置方式，让客户拿外形图自己核。
