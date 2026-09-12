@@ -9,6 +9,21 @@
 
 ---
 
+## 0. 生产状态（2026-09-12）
+
+写清楚以免把中途状态当结论 —— 这一条每次部署后都要更新，或者直接实测。
+
+- `79a5927` 于 **11:58:15Z** 合并入 main（PR #5，squash）。
+- **12:07:24Z 公网实测**：`/products/static-eliminator/ionizing-air-blowers` 与
+  `/guides/what-is-web-cleaning` 均返回 **200**，title / H1 / canonical 正确。
+  这两个 URL 在合并前是 404，**合并后已上线**。
+- 无 www 的 `dg-sdk.com`（首页与深层 URL）均 **307 → www**。详见 §11。
+
+实测由 Codex 执行。Claude 所在的云端环境出口代理屏蔽 `www.dg-sdk.com`，
+**无法自行验证线上状态** —— 线上结论一律需外部实测，不要从仓库或构建产物推断。
+
+---
+
 ## 1. 核心词
 
 `ionizing bar` / `ionizing bars` 是核心词，这是站点结构本身的事实，不是选择：
@@ -181,9 +196,36 @@ keyence.com    8K
 
 ## 11. 未处理的待办
 
-- `dg-sdk.com`（无 www）**没有 301 到 `www.dg-sdk.com`**，而全站 canonical 都写 www。
-  整站在两个域名下各有一份。应在 Vercel 域名设置里配 301，不要写进 `vercel.json`。
+- **无 www 的重定向是 307，不是「没有重定向」。** 2026-09-12 12:07 公网实测：
+  `dg-sdk.com` 首页与深层 URL 均 **307 → www**（由 Vercel 域名设置处理，所以 `vercel.json` 里查不到规则 ——
+  早前「没有 301」的记录是从 `vercel.json` 反推的，结论错了）。
+  307 是临时重定向，长期主域可评估换成 301/308，但**不紧急，也未改设置**。
 - `package-lock.json` 里 **325/327 条 `resolved` 指向 `registry.npmmirror.com`**。
   Vercel 能构建，但海外 CI 环境会 403。要改就用官方源重新生成。
+- **`public/js/inquiry.js` 未交付云端。** `79a5927` 的 `public/js/` 只有 `scripts.js`（已核实）。
+  事件开关为 false，**不能称询盘统计已上线**。
 - Codex 本地有两份草稿曾未交付云端（已于 2026-09-12 交付并整合）。
   **交接时请标注该事实在云端还是本地** —— 这个区分不清曾各花一轮核验。
+
+---
+
+## 12. 下一批：要按资料边界收窄的过度声明
+
+2026-09-12 由 Codex 在已合并的 `79a5927` 源码中定位，我逐条核验行号无误。
+**全部是已上线内容，不是未交付草稿。** 改的时候要同步可见正文与 FAQ / JSON-LD，模板不变。
+
+| 页面:行 | 现状 | 问题 |
+|---|---|---|
+| `ccl-cleaner:149` | 场景段把 **oil residue** 列进「表面必须清除的污染物」 | 干式胶辊清不掉油。页面没有字面说「全部清除」，但把油列进本机服务的场景即构成暗示。应按 `what-is-web-cleaning` 已有的口径划界：干颗粒归本机，油/助焊剂/固化涂层需另一种工艺 |
+| `lcm-cleaner:115` vs `143/166/182` + FAQ schema | 规格写 **`Up to 1 piece/second detection`** | 下游三处与 FAQ schema 把 `detection` 去掉，变成 throughput/产能。**检测速率被扩大成清洁产能** |
+| `inspection-cleaner:155/178/237` | 「AOI **无法**区分真缺陷与浮尘」 | 对所有 AOI 系统的绝对断言 |
+| `inspection-cleaner:170` | 「AOI 误剔率**通常 3–8%**」 | 行业统计，**无出处** |
+| `optical-film-cleaner:157/165` | 列举全部膜种 + 「不会损伤」 | 无条件安全保证 |
+| `polarizer-cleaner:71` | 「去除亚微米颗粒**而不损伤**」 | 无条件 |
+| `backlight-cleaner:165/181` | 「不划伤膜面」「传输机构本身不产生颗粒」 | 无条件 |
+| `pcb-vertical-cleaner:152` | 「占地减少约 60%，**对比同等清洁能力的卧式机**」并写了取舍 | 相对可接受，但**全站没有实际占地尺寸** |
+| `pcb-vertical-cleaner:160/218` | 同一个 60%，**但丢掉了「同等清洁能力」这个前提** | 比 152 更弱，需补回前提或给尺寸 |
+| `applications.astro:47` | 「ion balance 保持在**光学作业所需的** sub-100 V 窗口」 | **与 §5 第一条同一个断言。上一轮只修了 `industrial-static-eliminator.astro`，这里漏了** |
+
+最后一条是我自己上一轮的疏漏：sub-100V 在指南页改了两处（可见正文 + FAQ JSON-LD），
+但同一句话在 `applications.astro` 还在。**改这类全站性表述时要全文搜一遍，不能只改发现它的那个文件。**
