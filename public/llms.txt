@@ -34,6 +34,7 @@ backlight panel, LCM module and roll material.
 ## Guides and Reference
 
 - [Static Control Guides](https://www.dg-sdk.com/guides): Knowledge base index.
+- [5 Benefits of an Ionizing Bar](https://www.dg-sdk.com/guides/benefits-of-ionizing-bars): Practical benefits for material handling, quality, ESD control, and process costs, with selection and verification guidance.
 - [What Is an Ionizing Bar](https://www.dg-sdk.com/guides/what-is-an-ionizing-bar): How corona discharge neutralises a charged surface, and when to use a bar.
 - [Ionizing Bar Voltage Output](https://www.dg-sdk.com/guides/ionizing-bar-voltage-output): What the kV figure means in practice.
 - [What Is ESD](https://www.dg-sdk.com/guides/what-is-esd): Electrostatic discharge explained.
