@@ -1,0 +1,137 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'What Is Web Cleaning? Methods & Equipment Selection | DGSDK';
+const description = 'Learn how web cleaning removes dry particles from continuous material. Compare contact and non-contact methods, sheet cleaning, integration, consumables, and testing.';
+const canonical = 'https://www.dg-sdk.com/guides/what-is-web-cleaning';
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'Article', '@id': `${canonical}#article`, headline: 'What Is Web Cleaning? Methods and Equipment Selection', description, url: canonical, mainEntityOfPage: canonical, datePublished: '2026-09-12', dateModified: '2026-09-12', inLanguage: 'en-US', image: 'https://www.dg-sdk.com/assets/img/cleaning-machine/roll-chip-cleaner.jpg', author: { '@type': 'Organization', name: 'DGSDK / Shidike', url: 'https://www.dg-sdk.com' }, publisher: { '@type': 'Organization', name: 'Shidike', url: 'https://www.dg-sdk.com' } },
+    { '@type': 'BreadcrumbList', itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.dg-sdk.com' },
+      { '@type': 'ListItem', position: 2, name: 'Guides', item: 'https://www.dg-sdk.com/guides' },
+      { '@type': 'ListItem', position: 3, name: 'What Is Web Cleaning?', item: canonical },
+    ] },
+  ],
+};
+---
+
+<Layout title={title} description={description} canonical={canonical} image="/assets/img/cleaning-machine/roll-chip-cleaner.jpg">
+  <section
+    class="products-hero"
+    style="background: linear-gradient(rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.18)), url('/assets/img/static-eliminator/banner-bg.jpg') center/cover no-repeat; background-attachment: fixed; background-image: linear-gradient(rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.18)), image-set(url('/assets/img/static-eliminator/banner-bg.webp') type('image/webp'), url('/assets/img/static-eliminator/banner-bg.jpg') type('image/jpeg'));">
+    <div class="container products-hero-inner">
+      <span class="products-hero-kicker" data-aos="fade-down" data-aos-duration="600">Surface Cleaning Guide</span>
+      <h1 data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">What Is Web Cleaning? Methods, equipment, and line selection</h1>
+      <p>Understand how to remove dry particles from moving material, when surface contact is suitable, and what to specify before adding a cleaner to your production line.</p>
+    </div>
+  </section>
+
+  <section class="category-info-block">
+    <div class="container" style="max-width:900px;">
+
+      <h2 id="definition">What is web cleaning?</h2>
+      <p><strong>Web cleaning removes surface contamination from a continuous length of material as it moves through a production line.</strong> In manufacturing, a <em>web</em> is roll-fed material such as film, foil, paper, or a laminate. Dry web cleaning typically combines particle removal, collection, and static control before printing, coating, or lamination.</p>
+      <p><strong>Sheet cleaning handles individual pieces.</strong> A cut film sheet, bare PCB, or panel may use a similar cleaning principle, but it needs a transport arrangement suited to separate leading and trailing edges. A machine suitable for sheets is not automatically a continuous-web cleaning system.</p>
+
+      <picture>
+        <source srcset="/assets/img/cleaning-machine/roll-chip-cleaner.webp" type="image/webp" />
+        <img src="/assets/img/cleaning-machine/roll-chip-cleaner.jpg" alt="DGSDK roll and sheet cleaning machine with enclosed roller access" style="width:100%;max-width:640px;border-radius:8px;margin:24px auto;display:block;" loading="lazy" />
+      </picture>
+
+      <h2 id="methods">Contact and non-contact web cleaning</h2>
+      <p>Classify a cleaner by what touches the material during cleaning. The drive type, presence of a vacuum, or absence of adhesive does not determine whether the cleaning process is non-contact.</p>
+      <div class="spec-table-wrap table-responsive" style="margin:24px 0;" role="region" aria-label="Web cleaning method comparison" tabindex="0">
+        <table class="spec-table">
+          <caption>Particle removal and collection are separate functions</caption>
+          <thead><tr style="background:#f5c400;color:#111;"><th scope="col" style="text-align:left;padding:10px 14px;">Method</th><th scope="col" style="text-align:left;padding:10px 14px;">Surface contact</th><th scope="col" style="text-align:left;padding:10px 14px;">How particles are handled</th><th scope="col" style="text-align:left;padding:10px 14px;">What to evaluate</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Elastomer roller contact cleaning</strong></td><td>Cleaning roller touches the material.</td><td>Particles transfer to the cleaning roller, then to an adhesive collection roll.</td><td>Surface compatibility, roller material, contact settings, and collection-roll use.</td></tr>
+            <tr><td><strong>Brush and vacuum cleaning</strong></td><td>Contact where the brush touches the material.</td><td>Brush action loosens debris; extraction carries it to a collector.</td><td>Brush marks, wear, particle loading, and extraction capacity.</td></tr>
+            <tr><td><strong>Non-contact air and vacuum cleaning</strong></td><td>Cleaning head operates with clearance from the surface.</td><td>Airflow dislodges particles and extraction captures them; ionization can assist.</td><td>Head clearance, web stability, airflow, ducting, and filtration.</td></tr>
+            <tr><td><strong>Ionization alone</strong></td><td>No mechanical surface contact.</td><td>Reduces charge and electrostatic attraction; does not collect the particles.</td><td>Neutralization at the working distance and line speed, plus a removal method.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>A brush cleaner remains a contact process even if it has no sticky rollers. Likewise, a magnetic drive does not make its cleaning rollers non-contact. Inspect the actual cleaning interface, including any optional brushes or supporting surfaces.</p>
+      <h3>Dry particles are the starting point.</h3>
+      <p>Loose dust, fibers, and process debris need a different cleaning approach from oil, flux, cured coatings, or ionic residues. Identify the contaminant before specifying equipment. A dry roller cleaner is not an aqueous or solvent washing process.</p>
+
+      <h2 id="selection">How to choose web cleaning equipment</h2>
+      <p>Start with the material, contamination, and acceptable surface condition. Use the following checks to narrow the method before comparing machine widths or transport speeds.</p>
+      <ul>
+        <li><strong>Smooth material that tolerates roller contact.</strong> Evaluate elastomer cleaning for loose particles on film, foil, or laminates. Check both particle pickup and the surface after contact.</li>
+        <li><strong>A surface that must remain untouched.</strong> Evaluate a non-contact cleaning head with controlled clearance and extraction. Establish how the web will be supported through the cleaning zone.</li>
+        <li><strong>A material that sheds a large volume of debris.</strong> Assess extraction or a combination of bulk-particle removal and a finishing cleaner. A heavily loaded adhesive collection roll may need frequent renewal.</li>
+        <li><strong>Thin, flexible, or low-tension material.</strong> Review roller adhesion, wrap risk, stretch, and support. Increasing tack is not automatically a better solution; compare sample results using suitable rollers.</li>
+        <li><strong>Individual boards or sheets.</strong> Select a board or sheet transport system. For PCBs, supply overall thickness, copper specification, surface finish, and any raised features separately.</li>
+      </ul>
+      <h3>Web tension matters even with non-contact cleaning</h3>
+      <p>Head clearance must remain controlled while the material moves. Record the operating tension, unsupported spans, support rollers, and proposed web path when requesting a recommendation. Verify stable transport and clearance at the intended line speed during the cleaning trial.</p>
+
+      <h2 id="integration">A cleaning head is one part of a web cleaning system</h2>
+      <p>A typical process sequence is <strong>unwind → clean and collect particles → print, coat, or laminate → rewind or cut</strong>. This describes a production line; it does not mean a cleaning-machine quotation includes unwinders, rewinders, tension control, or the downstream process.</p>
+      <ol>
+        <li><strong>Material and production range.</strong> Specify material and coating, minimum and maximum width, thickness, normal and maximum speed, operating tension, and the number of faces to clean.</li>
+        <li><strong>Web path and mechanical access.</strong> Share a drawing showing direction, free spans, support rollers, mounting space, threading access, and splices. Include the opening needed for cleaning and consumable changes.</li>
+        <li><strong>Utilities and particle collection.</strong> Define power and any air requirements. For extraction, include the head, duct route, filter or collector, and service access in the equipment scope.</li>
+        <li><strong>Controls and delivery scope.</strong> Agree start and stop behavior, speed coordination, fault signals, and line interfaces. List which frames, guards, transport components, and commissioning services are included.</li>
+      </ol>
+      <p>Locate cleaning close to the operation that needs the clean surface, then review downstream rollers and handling for possible recontamination. If static is part of the problem, select ionization for its position in the process. See our <a href="/guides/what-is-an-ionizing-bar">ionizing bar guide</a>.</p>
+
+      <h2 id="validation">How to test and maintain cleaning performance</h2>
+      <p>A removal percentage is only useful alongside a defined test. Agree the particle size bands, sampling area, inspection method, and acceptable surface condition before a sample trial. Use equivalent before-and-after samples and include checks across the working width.</p>
+      <div class="spec-table-wrap table-responsive" style="margin:24px 0;" role="region" aria-label="Cleaning trial record" tabindex="0">
+        <table class="spec-table">
+          <caption>Information to include in a cleaning trial record</caption>
+          <thead><tr style="background:#f5c400;color:#111;"><th scope="col" style="text-align:left;padding:10px 14px;">Record</th><th scope="col" style="text-align:left;padding:10px 14px;">Why it matters</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Substrate, coating, and contamination</strong></td><td>Connects the result to a defined material and particle population.</td></tr>
+            <tr><td><strong>Speed, tension, support, and settings</strong></td><td>Shows whether the test represents normal production conditions.</td></tr>
+            <tr><td><strong>Particle counts and inspection method</strong></td><td>Makes before-and-after comparisons repeatable within the stated detection limits.</td></tr>
+            <tr><td><strong>Surface and handling observations</strong></td><td>Checks for marks, coating transfer, wrinkles, or unstable transport as well as particle removal.</td></tr>
+            <tr><td><strong>Roller or filter condition</strong></td><td>Distinguishes a fresh-consumable result from performance during a production run.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Measure residual material charge separately, with a consistent instrument position and geometry. Particle removal and charge reduction are different results. Repeat the trial after relevant changes to material, speed, cleaning settings, or consumables.</p>
+      <h3>Include consumables in the operating plan</h3>
+      <p>For contact rollers, specify the cleaning-roller material and compatible adhesive collection rolls, then plan how the collection surface is renewed. For brush or extraction systems, include brush inspection and filter servicing. Follow the selected machine's maintenance instructions and adjust inspection frequency to actual contamination and performance.</p>
+      <p>Compare operating cost using measured roll consumption, service time, filter use, and required utilities. A universal replacement interval or assumed defect-reduction percentage will not describe every line.</p>
+
+      <h2 id="equipment">Explore DGSDK cleaning equipment</h2>
+      <p>Choose the handling format first, then review the product configuration. For continuous roll-fed work, include the web path and tension requirements with your inquiry.</p>
+      <div class="advantage-grid" style="margin:28px 0;">
+        <div class="advantage-card blue">
+          <h3><a href="/products/cleaning-machine/contact-cleaning-machine" style="color:inherit;text-decoration:none;">Roller Cleaning</a></h3>
+          <p>Compare the cleaning principle, named machine ranges, consumables, and integration requirements.</p>
+        </div>
+        <div class="advantage-card yellow">
+          <h3><a href="/products/cleaning-machine/roll-chip-cleaner" style="color:inherit;text-decoration:none;">Roll &amp; Sheet Cleaner</a></h3>
+          <p>Review adhesive cleaning and static control, then discuss the transport arrangement for your material.</p>
+        </div>
+        <div class="advantage-card green">
+          <h3><a href="/products/cleaning-machine/pcb-cleaner" style="color:inherit;text-decoration:none;">PCB Cleaning</a></h3>
+          <p>Dry particle removal from accessible board surfaces, with board-handling and line-interface checks.</p>
+        </div>
+      </div>
+      <p>For optical materials, also see the <a href="/products/cleaning-machine/optical-film-cleaner">optical film cleaner</a> and <a href="/blog/optical-film-cleaner-tutorial">nine-step cleaning trial guide</a>. Browse the full <a href="/products/cleaning-machine">cleaning equipment range</a> to compare board, sheet, and film applications.</p>
+
+      <h2 id="sources">Technical sources</h2>
+      <p>The EOS/ESD Association is the primary reference for the role of ionization in static control. It does not verify any Shidike machine's cleaning performance &mdash; that comes from the trial record described above, run on your own material.</p>
+      <ul>
+        <li><a href="https://www.esda.org/esd-overview/esd-fundamentals/part-3-basic-esd-control-procedures-and-materials/">EOS/ESD Association &mdash; Basic ESD Control Procedures and Materials</a></li>
+      </ul>
+
+      <h2>Specify the material. Define the result.</h2>
+      <p>Send the substrate, contamination, width, speed, handling format, and a line drawing. Include a sample or inspection images where available.</p>
+      <div style="text-align:center;margin:32px 0;">
+        <a href="/products/cleaning-machine" style="display:inline-block;padding:13px 32px;background:#f5c400;color:#111;font-weight:700;border-radius:8px;text-decoration:none;font-size:16px;margin-right:12px;">View All Cleaning Equipment</a>
+        <a href="/contact" style="display:inline-block;padding:13px 32px;background:#111827;color:#fff;font-weight:700;border-radius:8px;text-decoration:none;font-size:16px;">Discuss Your Application</a>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+</Layout>

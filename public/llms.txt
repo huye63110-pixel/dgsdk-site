@@ -18,6 +18,7 @@ moving-material processes.
 - [ST101A](https://www.dg-sdk.com/products/static-eliminator/st-101a): Desktop ionizing air blower, alternating current, 40 × 60 cm coverage, 45–110 CFM.
 - [ST104A](https://www.dg-sdk.com/products/static-eliminator/st-104a): Horizontal ionizing air blower, 60 × 120 cm coverage, 70–120 CFM, optional real-time ion-balance monitoring.
 - [ST1200](https://www.dg-sdk.com/products/static-eliminator/st-1200): Wide-area ionizing air blower, 140 × 120 cm coverage, 1280 mm, suspended or bench mounted.
+- [Ionizing Air Blowers](https://www.dg-sdk.com/products/static-eliminator/ionizing-air-blowers): The four blowers compared, with each reported decay figure shown against its own test conditions.
 
 ## Industrial Cleaning Machines
 
@@ -34,13 +35,13 @@ backlight panel, LCM module and roll material.
 ## Guides and Reference
 
 - [Static Control Guides](https://www.dg-sdk.com/guides): Knowledge base index.
-- [5 Benefits of an Ionizing Bar](https://www.dg-sdk.com/guides/benefits-of-ionizing-bars): Practical benefits for material handling, quality, ESD control, and process costs, with selection and verification guidance.
 - [What Is an Ionizing Bar](https://www.dg-sdk.com/guides/what-is-an-ionizing-bar): How corona discharge neutralises a charged surface, and when to use a bar.
 - [Ionizing Bar Voltage Output](https://www.dg-sdk.com/guides/ionizing-bar-voltage-output): What the kV figure means in practice.
 - [What Is ESD](https://www.dg-sdk.com/guides/what-is-esd): Electrostatic discharge explained.
 - [How to Prevent Static Electricity](https://www.dg-sdk.com/guides/how-to-prevent-static): Industrial static prevention.
 - [Industrial Static Eliminators](https://www.dg-sdk.com/guides/industrial-static-eliminator): Selection guide for manufacturing.
 - [ESD Control Products](https://www.dg-sdk.com/guides/esd-control-products): Buyer's guide.
+- [What Is Web Cleaning](https://www.dg-sdk.com/guides/what-is-web-cleaning): Contact against non-contact dry particle removal, and what a cleaning trial has to record.
 - [Technical Blog](https://www.dg-sdk.com/blog): Application guides for lithium battery, photovoltaic and optical film production.
 
 ## Company

@@ -1,0 +1,335 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const base = 'https://www.dg-sdk.com';
+const category = '/products/static-eliminator';
+const canonical = `${base}${category}/ionizing-air-blowers`;
+const title = 'Industrial Ionizing Air Blowers & ESD Ionizer Fans | Shidike';
+const description = 'Compare four Shidike ionizing air blowers for benches and machine integration. Check airflow, dimensions, coverage, test conditions and mounting requirements.';
+const models = [
+  { name: 'ST-S200', slug: 'st-s200', type: 'Mini ionizer fan', imageWidth: 1180, imageHeight: 885,
+    use: 'A compact machine installation or a small work area with limited mounting space.',
+    area: '450 × 450 mm', airflow: '≤48.2 CFM; three speeds', dimensions: '128 × 53.5 × 180 mm',
+    weight: '400 g net', supply: 'DC 24 V', power: 'Fan 12 W + ion generator 5 W',
+    balance: 'Offset voltage not specified; confirm before selection' },
+  { name: 'ST101A', slug: 'st-101a', type: 'Desktop ionizing air blower', imageWidth: 1136, imageHeight: 855,
+    use: 'One operator position, an inspection table or a rework bench.',
+    area: '40 × 60 cm', airflow: '45–110 CFM; adjustable', dimensions: '90 × 170 × 260 mm',
+    weight: '3.3 kg', supply: '110 V / 60 Hz or 220 V / 50 Hz', power: '7.5–25 W', balance: '0 V ±10 V' },
+  { name: 'ST104A', slug: 'st-104a', type: 'Horizontal ionizing blower', imageWidth: 1180, imageHeight: 885,
+    use: 'A wider bench, a packing station or the accessible side of a conveyor.',
+    area: '60 × 120 cm', airflow: '70–120 CFM; adjustable', dimensions: '400 × 220 × 190 mm',
+    weight: '5.8 kg', supply: '110 V / 60 Hz or 220 V / 50 Hz', power: '16–34 W', balance: '0 V ±10 V' },
+  { name: 'ST1200', slug: 'st-1200', type: 'Wide horizontal ion fan', imageWidth: 1180, imageHeight: 885,
+    use: 'A broad process area with room for a 1280 mm body, overhead or on a bench.',
+    area: '140 × 120 cm', airflow: '150–360 CFM; adjustable', dimensions: '1280 × 215 × 190 mm',
+    weight: '14.5 kg', supply: '110 V / 60 Hz or 220 V / 50 Hz', power: '40–80 W', balance: '0 V ±10 V' },
+];
+const rows = [
+  { label: 'Listed air coverage', key: 'area' },
+  { label: 'Airflow', key: 'airflow' },
+  { label: 'Body size (L × W × H)', key: 'dimensions' },
+  { label: 'Weight', key: 'weight' },
+  { label: 'Supply', key: 'supply' },
+  { label: 'Power', key: 'power' },
+  { label: 'Listed ion balance', key: 'balance' },
+] as const;
+const faqs = [
+  { question: 'What is an ionizing air blower?', answer: 'An ionizing air blower uses a fan to deliver positive and negative ions to charged surfaces. It is used for static control at workstations and inside equipment, especially where insulating parts cannot be discharged by grounding.' },
+  { question: 'Is an ESD ionizer fan the same as an ordinary fan?', answer: 'No. An ESD ionizer fan includes an ion generator as well as a fan. Air movement alone does not provide a controlled source of both ion polarities. Select and verify the ionizer as part of the workplace ESD control program.' },
+  { question: 'Does the coverage area specify the working distance?', answer: 'No. Coverage describes an area; working distance is the gap between the outlet and the target. The listed area does not guarantee the same decay time or ion balance at every point. Check the actual distance, airflow path and acceptance limits.' },
+  { question: 'Do these blowers require a compressed air line?', answer: 'These four models use an electric fan to move air. Select the correct electrical supply and allow room for the inlet and outlet. A compressed-air gun or nozzle is a different type of equipment.' },
+  { question: 'Can I replace an ionizing bar with a blower?', answer: 'A blower is useful when air can reach a work area or irregular part. A bar is often easier to integrate across a moving web at a defined process point. Compare access, target width, available treatment time and airflow tolerance before changing the installation.' },
+  { question: 'What should I send for a model recommendation?', answer: 'Send the material, working area, outlet-to-target distance, a photo or layout, surface voltage if measured, cycle time or line speed, available power, and any airflow, cleanliness or monitoring requirements. Include your required charge-decay and ion-balance limits if known.' },
+];
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'CollectionPage', '@id': `${canonical}#page`, name: title, description, url: canonical,
+      mainEntity: { '@type': 'ItemList', numberOfItems: models.length,
+        itemListElement: models.map((model, index) => ({ '@type': 'ListItem', position: index + 1,
+          item: { '@type': 'WebPage', name: `${model.name} ${model.type}`, url: `${base}${category}/${model.slug}` } })) } },
+    { '@type': 'BreadcrumbList', itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: base },
+      { '@type': 'ListItem', position: 2, name: 'Static Eliminators', item: `${base}${category}` },
+      { '@type': 'ListItem', position: 3, name: 'Ionizing Air Blowers', item: canonical },
+    ] },
+    { '@type': 'FAQPage', mainEntity: faqs.map(faq => ({ '@type': 'Question', name: faq.question,
+      acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) },
+  ],
+};
+---
+
+<Layout {title} {description} {canonical} image="/assets/img/static-eliminator/st-104a.webp">
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <section
+    class="products-hero static-products-hero"
+    style="background: #edf4fb url('/assets/img/static-eliminator/static-eliminator-category-banner.webp') center/86% auto no-repeat; background-attachment: scroll;"
+  >
+    <div class="container products-hero-inner">
+      <span class="products-hero-kicker" data-aos="fade-down" data-aos-duration="600">Workstations · Machine integration</span>
+      <h1 data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">Industrial Ionizing Air Blowers &amp; ESD Ionizer Fans</h1>
+      <p data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">Bring ionized airflow to the work. Compare four Shidike blowers for component handling, inspection, packing and enclosed process areas, from a 400 g mini fan to a 1280 mm horizontal unit.</p>
+    </div>
+  </section>
+
+  <section class="products-overview-section">
+    <div class="container products-overview-layout">
+      <div class="finder">
+        <div class="finder-lead"><span>Help me choose an<br />ionizing air blower:</span></div>
+        <div class="finder-opts">
+          <a class="finder-opt" href="#compare">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="10" y="12" width="28" height="20" rx="2"/><path d="M16 36v4M32 36v4M24 36v6"/><path d="M18 20h12M18 25h8"/></svg>
+            <span class="finder-opt-title">Compare the four models</span>
+            <span class="finder-opt-sub">Dimensions, airflow and test conditions</span>
+          </a>
+          <a class="finder-opt" href="#installation">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="20" width="36" height="8" rx="1"/><path d="M12 28v6M20 28v6M28 28v6M36 28v6"/><path d="M4 40h40"/></svg>
+            <span class="finder-opt-title">Plan the installation</span>
+            <span class="finder-opt-sub">Work area, airflow path and verification</span>
+          </a>
+        </div>
+      </div>
+
+      <aside class="products-sidebar">
+        <div class="products-sidebar-box">
+          <h3>Browse Categories</h3>
+          <a href="/products/static-eliminator">Static Eliminators &amp; Ionizing Bars</a>
+          <a href="/products/static-eliminator/ionizing-air-blowers" class="active-category">Ionizing Air Blowers</a>
+          <a href="/products/cleaning-machine">Industrial Cleaning Machines</a>
+          <a href="/static-eliminator-manufacturer">About the Manufacturer</a>
+        </div>
+      </aside>
+
+      <div class="products-main">
+        <p class="pl-count">Showing all {models.length} products</p>
+        <section class="pl-group" id="blowers">
+          <div class="pl-group-head">
+            <h2>Choose the blower around the work area</h2>
+            <p>An ionizing blower carries ions to the charged surface using a fan. Start with physical access and airflow tolerance, then verify charge decay and balance at the places where parts are handled.</p>
+          </div>
+          <div class="pcard-grid">
+            {models.map(model => (
+              <a href={`${category}/${model.slug}`} class="pcard">
+                <picture class="pcard-media">
+                  <source srcset={`/assets/img/static-eliminator/${model.slug}.webp`} type="image/webp" />
+                  <img src={`/assets/img/static-eliminator/${model.slug}.jpg`} alt={`Shidike ${model.name} ${model.type}`} width={model.imageWidth} height={model.imageHeight} loading="lazy" />
+                </picture>
+                <div class="pcard-body">
+                  <span class="pcard-cat">Ionizing Blowers</span>
+                  <h3>{model.name}</h3>
+                  <p class="pcard-name">{model.type}</p>
+                  <p class="pcard-name">{model.use}</p>
+                  <ul class="pcard-specs"><li>{model.dimensions}</li><li>{model.airflow}</li></ul>
+                  <span class="pcard-cta"><span class="pcard-arrow">&rarr;</span>View product</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <section class="pl-group" id="compare" aria-labelledby="compare-heading">
+
+        <div class="pl-group-head"><h2 id="compare-heading">Compare the four models</h2>
+        <p id="coverage-note">These figures come from the linked product specifications. <strong>Air coverage is an initial sizing reference, not a working distance or a guarantee of uniform performance.</strong> Confirm the test layout and required limits for your installation.</p></div>
+        <p class="small">Scroll horizontally to compare all four models.</p>
+        <div class="spec-table-wrap table-responsive" role="region" aria-label="Ionizing blower specifications" tabindex="0">
+          <table class="spec-table" aria-describedby="coverage-note">
+            <caption>Published model specifications</caption>
+            <thead><tr><th scope="col">Specification</th>{models.map(model => <th scope="col"><a href={`${category}/${model.slug}`}>{model.name}</a></th>)}</tr></thead>
+            <tbody>{rows.map(row => <tr><th scope="row">{row.label}</th>{models.map(model => <td>{model[row.key]}</td>)}</tr>)}</tbody>
+          </table>
+        </div>
+        <p class="small">ST104A lists ion-balance monitoring and an alarm as an option. Confirm the supplied configuration. ST-S200 does not publish an offset-voltage value in volts on its current specification page.</p>
+
+        <h3>Read decay time together with the test conditions</h3>
+        <p class="small">Scroll horizontally to read the test conditions.</p>
+        <div class="spec-table-wrap table-responsive" role="region" aria-label="Reported charge decay and test conditions" tabindex="0">
+          <table class="spec-table">
+            <caption>Selected reported results — different test setups</caption>
+            <thead><tr><th scope="col">Model</th><th scope="col">Reported decay</th><th scope="col">Conditions and limits of comparison</th></tr></thead>
+            <tbody>
+              <tr><th scope="row"><a href={`${category}/st-s200`}>ST-S200</a></th><td>≤1.5 s at 150 mm</td><td>Measured in front of the outlet. Start/end voltage, fan setting and ambient test conditions are not specified. Request them before comparing with other models.</td></tr>
+              <tr><th scope="row"><a href={`${category}/st-101a`}>ST101A</a></th><td>1.2 s positive / 1.3 s negative at 300 mm</td><td>Directly in front; 1 kV to 100 V; 110/220 V supply; 22 °C, 75% RH. Reported fan setting is not specified.</td></tr>
+              <tr><th scope="row"><a href={`${category}/st-104a`}>ST104A</a></th><td>1.1 s at 300 mm, centre</td><td>1 kV to 100 V; 110/220 V supply; 22 °C, 75% RH. The table does not identify polarity or fan setting.</td></tr>
+              <tr><th scope="row"><a href={`${category}/st-1200`}>ST1200</a></th><td>0.9 s positive / 1.1 s negative at 300 mm, centre</td><td>1 kV to 100 V; 110/220 V supply; 22 °C. Humidity and fan setting are not specified.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small">These are selected points from the product pages, not a controlled comparison between models. Use the complete distance tables and confirm repeatable measurements across your target area.</p>
+        </section>
+
+        <section class="pl-group" id="installation" aria-labelledby="installation-heading">
+
+        <div class="pl-group-head"><h2 id="installation-heading">Plan the airflow path and installation</h2></div>
+        <ol>
+          <li><strong>Find the charged work.</strong> Record material, measured surface voltage and the point where handling, peeling or friction creates the problem. Include the available treatment time.</li>
+          <li><strong>Check the path from outlet to target.</strong> Fixtures, guards and stacked parts can block ion delivery. Check the nearest, farthest and obstructed positions with the machine in its normal configuration.</li>
+          <li><strong>Allow for the operator and the process.</strong> Test whether airflow moves light parts, disturbs inspection or conflicts with extraction and cleanroom flow. Leave access to the inlet and emitter points for maintenance.</li>
+          <li><strong>Confirm mounting and power.</strong> Check the body dimensions, support load and supply voltage. ST-S200 uses DC 24 V; the three larger units list 110 V / 60 Hz or 220 V / 50 Hz versions.</li>
+        </ol>
+        <h3>Verify an ESD ionizer fan at the point of use</h3>
+        <p>Use a charged plate monitor to evaluate positive and negative decay time and offset voltage. Record the distance, fan setting, test positions, plate setup, temperature and humidity so later checks use the same conditions. Confirm actual material charge separately using a suitable field meter and its specified measurement geometry.</p>
+        <p>Set acceptance limits for the components and process being protected. A blower complements grounding, wrist straps and other controls; it does not establish a complete ESD control program by itself.</p>
+        <p class="small">Technical background: <a href="https://www.esda.org/esd-overview/esd-fundamentals/part-3-basic-esd-control-procedures-and-materials/">EOS/ESD Association — ionization and ESD controls</a>. For a practical test checklist, see <a href="/guides/what-is-an-ionizing-bar">the ionizing bar guide</a>.</p>
+
+        <h3>When an ionizing bar or a cleaner is the better fit</h3>
+        <p>For a moving film or sheet passing a fixed point, compare <a href={`${category}#bars`}>ST-G, ST-E and ST-F ionizing bars</a>. A bar can follow the substrate width without adding a bench fan to the machine. Choose by mounting space, line speed and the available time to neutralize charge.</p>
+        <p>Ionization can reduce electrostatic particle attraction, but it does not collect the particles. If the process needs controlled removal and collection, compare <a href="/products/cleaning-machine">industrial substrate cleaning machines</a> alongside static control.</p>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-tail">
+    <div class="container">
+      <h2>Match a blower to your process</h2>
+      <p>Send a photo or layout, target area, material, outlet-to-target distance, cycle time and power supply. Include measured charge and required decay or balance limits when available.</p>
+      <p><a class="send-cta" href="/contact">Request a model recommendation →</a></p>
+      <h2>Ionizing blower questions</h2>
+      <div class="faq-list">
+        {faqs.map(faq => (
+          <details class="faq-item">
+            <summary><h3 class="faq-question">{faq.question}</h3></summary>
+            <p class="faq-answer">{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .products-hero.static-products-hero::before { content: none !important; background: none !important; }
+    .products-hero h1,
+    .products-hero p { color: #fff !important; text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45); }
+
+    /* Sidebar: flatten the rounded floating card so it reads as one block
+       with the product list beside it, sharing the same top rule. */
+    .products-sidebar-box {
+      background: transparent !important;
+      border: 0 !important;
+      border-top: 1px solid var(--hairline) !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      padding: 12px 0 0 !important;
+    }
+    .products-sidebar-box h3 {
+      font-size: 12.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      color: #7d8d97; margin: 0 0 10px;
+    }
+    .products-sidebar-box a {
+      display: block; padding: 9px 0; font-size: 15px; color: #3d4f5c;
+      text-decoration: none; border-bottom: 1px solid var(--hairline);
+    }
+    .products-sidebar-box a:hover { color: var(--brand-deep); }
+    .products-sidebar-box a.active-category {
+      background: transparent !important; color: var(--navy) !important; font-weight: 700;
+      box-shadow: inset 3px 0 0 var(--brand); padding-left: 12px;
+    }
+
+    /* The theme applies `section { padding: 9rem 0 }` to every <section>, which put
+       144px of dead space above and below each product group. Reset it here. */
+    .pl-group { padding: 0 !important; scroll-margin-top: 110px; }
+
+    /* ---------- finder: spans the same two columns as the sidebar + grid below,
+       so the navy block and "Browse Categories" share one left edge ---------- */
+    .finder {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: subgrid;
+      margin-bottom: 34px;
+    }
+    @supports not (grid-template-columns: subgrid) {
+      .finder { grid-template-columns: 280px minmax(0, 1fr); gap: 34px; }
+    }
+    .finder-lead {
+      background: var(--navy); color: #fff; display: flex; align-items: center;
+      padding: 30px 26px; font-size: 1.32rem; font-weight: 700; line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+    .finder-opts { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--hairline); background: #fff; }
+    .finder-opt {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 9px; padding: 26px 24px; text-align: center; text-decoration: none; color: inherit;
+      transition: background .18s ease;
+    }
+    .finder-opt + .finder-opt { border-left: 1px solid var(--hairline); }
+    .finder-opt:hover { background: #f6fafd; }
+    .finder-opt svg {
+      width: 38px; height: 38px; fill: none; stroke: var(--brand-deep); stroke-width: 2;
+      stroke-linecap: round; stroke-linejoin: round;
+    }
+    .finder-opt-title { font-size: 1.1rem; font-weight: 600; color: var(--navy); letter-spacing: -0.01em; }
+    .finder-opt-sub { font-size: 12.5px; font-weight: 700; color: #6b7b88; }
+
+    /* ---------- product card grid ---------- */
+    .products-overview-layout { row-gap: 0 !important; }
+    .pl-count { font-size: 13.5px; color: #6b7b88; text-align: right; margin: 0 0 6px; }
+    .pl-group + .pl-group { margin-top: 56px; }
+    .pl-group-head { padding-bottom: 16px; border-bottom: 1px solid var(--hairline); }
+    .pl-group-head h2 { margin: 0 0 8px; font-size: 1.85rem; letter-spacing: -0.015em; }
+    .pl-group-head p { margin: 0; font-size: 16px; color: var(--ink-muted); max-width: 66ch; }
+
+    .pcard-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 26px; }
+    .pcard {
+      display: flex; flex-direction: column; background: #fff; border: 1px solid var(--hairline);
+      text-decoration: none; color: inherit;
+      transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease;
+    }
+    .pcard:hover {
+      border-color: var(--brand-deep);
+      box-shadow: 0 10px 26px rgba(11, 34, 57, .10);
+      transform: translateY(-3px);
+    }
+    .pcard-media { display: block; padding: 26px; background: #fff; border-bottom: 1px solid #eef2f5; }
+    .pcard-media img { width: 100%; height: 168px; object-fit: contain; display: block; transition: transform .25s ease; }
+    .pcard:hover .pcard-media img { transform: scale(1.04); }
+    .pcard-body { display: flex; flex-direction: column; flex: 1; padding: 20px 22px 22px; }
+    .pcard-cat {
+      font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      color: #8a97a2; margin-bottom: 8px;
+    }
+    .pcard-body h3 { margin: 0 0 4px; font-size: 1.3rem; font-weight: 700; color: var(--navy); letter-spacing: -0.01em; }
+    .pcard-name { margin: 0 0 14px; font-size: 14.5px; color: var(--ink-muted); line-height: 1.5; }
+    .pcard-specs { list-style: none; margin: 0 0 18px; padding: 0; display: flex; flex-direction: column; gap: 5px; }
+    .pcard-specs li {
+      font-size: 13px; font-weight: 600; color: #33495e; font-variant-numeric: tabular-nums;
+      padding-left: 14px; position: relative;
+    }
+    .pcard-specs li::before {
+      content: ""; position: absolute; left: 0; top: 8px;
+      width: 5px; height: 5px; border-radius: 50%; background: var(--brand);
+    }
+    .pcard-cta {
+      margin-top: auto; display: flex; align-items: center; gap: 12px;
+      font-size: 14.5px; font-weight: 700; color: var(--navy);
+    }
+    .pcard-arrow {
+      width: 34px; height: 34px; flex: 0 0 34px; border: 1.5px solid var(--navy); border-radius: 50%;
+      display: grid; place-items: center; font-size: 15px;
+      transition: background .18s ease, color .18s ease, border-color .18s ease;
+    }
+    .pcard:hover .pcard-arrow { background: var(--brand-deep); border-color: var(--brand-deep); color: #fff; }
+
+    @media (max-width: 1100px) { .pcard-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 900px) {
+      .finder-lead { padding: 26px 24px; font-size: 1.3rem; }
+      .finder-lead::after { display: none; }
+      .finder-opt { border-left: 0; border-top: 1px solid var(--hairline); padding: 30px 24px; }
+    }
+    @media (max-width: 620px) { .pcard-grid { grid-template-columns: 1fr; } }
+
+    .faq-tail { background: #f7f8fa; padding: 56px 0 84px; }
+    .faq-tail .container { max-width: 820px; }
+    .faq-tail h2 { text-align: center; font-size: 1.85rem; letter-spacing: -0.015em; margin: 0 0 8px; }
+    .faq-tail h2 + p { text-align: center; color: var(--ink-muted); margin: 0 auto 22px; max-width: 62ch; }
+    .faq-tail .send-list { max-width: 46ch; margin: 0 auto 20px; }
+    .faq-tail p:has(.send-cta) { text-align: center; }
+    .faq-tail h2 ~ h2 { margin-top: 56px; }
+    .faq-list { display: flex; flex-direction: column; margin-top: 18px; border-top: 1px solid var(--hairline); }
+    .faq-item { padding: 16px 4px; border-bottom: 1px solid var(--hairline); }
+    .faq-item h3 { margin-top: 0; }
+    .faq-item p { margin-bottom: 0; }
+  </style>
+</Layout>
