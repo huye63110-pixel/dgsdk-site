@@ -209,23 +209,30 @@ keyence.com    8K
 
 ---
 
-## 12. 下一批：要按资料边界收窄的过度声明
+## 12. 已按资料边界收窄的过度声明（2026-09-12 完成）
 
-2026-09-12 由 Codex 在已合并的 `79a5927` 源码中定位，我逐条核验行号无误。
-**全部是已上线内容，不是未交付草稿。** 改的时候要同步可见正文与 FAQ / JSON-LD，模板不变。
+由 Codex 在已合并的 `79a5927` 中定位，Claude 逐条核验行号后改写。
+**原则：给条件边界，不换成另一个保证。** 可见正文与 FAQ / JSON-LD 同步，模板未动。
 
-| 页面:行 | 现状 | 问题 |
+| 页面 | 原表述 | 改成 |
 |---|---|---|
-| `ccl-cleaner:149` | 场景段把 **oil residue** 列进「表面必须清除的污染物」 | 干式胶辊清不掉油。页面没有字面说「全部清除」，但把油列进本机服务的场景即构成暗示。应按 `what-is-web-cleaning` 已有的口径划界：干颗粒归本机，油/助焊剂/固化涂层需另一种工艺 |
-| `lcm-cleaner:115` vs `143/166/182` + FAQ schema | 规格写 **`Up to 1 piece/second detection`** | 下游三处与 FAQ schema 把 `detection` 去掉，变成 throughput/产能。**检测速率被扩大成清洁产能** |
-| `inspection-cleaner:155/178/237` | 「AOI **无法**区分真缺陷与浮尘」 | 对所有 AOI 系统的绝对断言 |
-| `inspection-cleaner:170` | 「AOI 误剔率**通常 3–8%**」 | 行业统计，**无出处** |
-| `optical-film-cleaner:157/165` | 列举全部膜种 + 「不会损伤」 | 无条件安全保证 |
-| `polarizer-cleaner:71` | 「去除亚微米颗粒**而不损伤**」 | 无条件 |
-| `backlight-cleaner:165/181` | 「不划伤膜面」「传输机构本身不产生颗粒」 | 无条件 |
-| `pcb-vertical-cleaner:152` | 「占地减少约 60%，**对比同等清洁能力的卧式机**」并写了取舍 | 相对可接受，但**全站没有实际占地尺寸** |
-| `pcb-vertical-cleaner:160/218` | 同一个 60%，**但丢掉了「同等清洁能力」这个前提** | 比 152 更弱，需补回前提或给尺寸 |
-| `applications.astro:47` | 「ion balance 保持在**光学作业所需的** sub-100 V 窗口」 | **与 §5 第一条同一个断言。上一轮只修了 `industrial-static-eliminator.astro`，这里漏了** |
+| `applications.astro` | 「ion balance 保持在**光学作业所需的** sub-100 V 窗口」 | 由你的光学工艺设定，常见低于 100 V，但以自己零件要求的数字为准 |
+| `ccl-cleaner` | 要求「清除 dust、**oil residue**、颗粒」+「ST-DT1340 **removes these contaminants**」 | 要求只列 dust 与颗粒；机器改为 **lifts dry particles**。干式胶辊清不掉油 |
+| `lcm-cleaner` | 3 处（含 JSON-LD）把 `1 piece/second` **检测速率**写成 throughput / 产能 | 统一为 inspection and recording at up to 1 piece per second，并注明清洁速率跟随设定线速 |
+| `inspection-cleaner` | 「AOI **无法**区分真缺陷与浮尘」 | 浮尘会被读成缺陷，**除非系统被设置为可区分** |
+| `inspection-cleaner` | 「误剔率**通常 3–8%**」（无出处） | 删除数字，改为「取决于你的颗粒负载、光学配置与判废阈值，**在自己线上测**，不要用行业数字」 |
+| `optical-film-cleaner` | 「不会损伤」（答「No.」） | 「Not by design」+ 是否耐受取决于涂层与胶辊黏性，**按膜分级黏性并样品确认** |
+| `polarizer-cleaner` | 「去除亚微米颗粒**而不损伤**敏感膜面」 | 黏性按膜而非按颗粒分级；**是否耐受由样品试验判定，不由规格书判定** |
+| `backlight-cleaner` | 「**不划伤**膜面」「传输机构**不产生**颗粒或振动」 | 无化学品、无二次污染保留（有依据）；划伤与否改为按涂层与黏性、样品确认 |
+| `pcb-vertical-cleaner` | 160/218 的 60% **丢了「同等清洁能力」前提**（152 行有） | 三处一致带回前提 |
 
-最后一条是我自己上一轮的疏漏：sub-100V 在指南页改了两处（可见正文 + FAQ JSON-LD），
-但同一句话在 `applications.astro` 还在。**改这类全站性表述时要全文搜一遍，不能只改发现它的那个文件。**
+**仍缺的数据**：`pcb-vertical-cleaner` 的 60% 占地节省**全站没有实际尺寸**。
+补上实测占地（本机 vs 同等能力卧式机）才能从「约 60%」变成可核验的对比。
+
+**一条方法记录**：`applications.astro` 的 sub-100V 与 §5 第一条是同一个断言，
+上一轮只改了发现它的 `industrial-static-eliminator.astro`。
+**改全站性表述要全文搜索一遍**，不能只改发现它的那个文件。
+
+**一条核验记录**：CCL 这条我第一次读漏了 —— 只看到场景段把 oil residue 列进污染物，
+判为「暗示性」过度声明；实际后文明确写着 `removes these contaminants`，是字面断言。
+**引用行号的证据要把整段读完，不能只读被引的那一行。**
