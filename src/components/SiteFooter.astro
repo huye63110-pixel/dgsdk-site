@@ -1,0 +1,89 @@
+---
+// Shared site footer — one copy, rendered by Layout.astro for every page.
+//
+// White ground, matching the header. Social icons are inline SVG rather than
+// icon-font glyphs so the row survives a Font Awesome failure.
+//
+// Contact details here are the ones from PR #9 and #10 and must stay in step
+// with the Organization/LocalBusiness JSON-LD in Layout.astro.
+const WHATSAPP = 'https://api.whatsapp.com/message/5GGUQ62VROSIC1?autoload=1&app_absent=0';
+
+const quickLinks = [
+  ['/', 'Home'],
+  ['/applications', 'Applications'],
+  ['/guides', 'Guides'],
+  ['/blog', 'Blog'],
+  ['/about', 'About Us'],
+  ['/contact', 'Contact Us'],
+  ['/faq', 'FAQ'],
+];
+
+const productLinks = [
+  ['/products/static-eliminator', 'Static Eliminators & Ionizing Bars'],
+  ['/products/cleaning-machine', 'Industrial Cleaning Machines'],
+];
+
+const social = [
+  ['Facebook', 'https://www.facebook.com/profile.php?id=61589304230341',
+   'M14 21v-8h2.8l.5-3H14V8.1c0-.9.3-1.6 1.6-1.6h1.9V3.8c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.5V10h-3v3h3v8Z'],
+  ['YouTube', 'https://youtube.com/@dgsdk-2013',
+   'M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2a32 32 0 0 0-.5 3.8 32 32 0 0 0 .5 3.8 3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1 32 32 0 0 0 .5-3.8 32 32 0 0 0-.5-3.8ZM10 15.3V8.7l5.7 3.3Z'],
+  ['TikTok', 'https://www.tiktok.com/@machineforge?_r=1&_t=ZS-95scfOHz6Ea',
+   'M16 3c.4 2.3 1.7 3.7 4 4v3a9 9 0 0 1-4-1.1v7.2a5.5 5.5 0 1 1-5.5-5.5h.8v3.1a2.5 2.5 0 1 0 1.7 2.4V3Z'],
+  ['LinkedIn', 'https://www.linkedin.com/in/james-hu-765b05406/',
+   'M5.2 3.2a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM3.5 9h3.4v12H3.5Zm5.6 0h3.2v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.2 2.3 4.2 5.3v7h-3.4v-6.2c0-1.5 0-3.3-2-3.3s-2.2 1.6-2.2 3.2V21H9.1Z'],
+  ['WhatsApp', WHATSAPP,
+   'M20.4 3.6A11 11 0 0 0 3.1 16.8L1.5 22.5l5.9-1.6A11 11 0 0 0 20.4 3.6ZM12.6 20a9 9 0 0 1-4.6-1.3l-.3-.2-3.5.9.9-3.4-.2-.4A9 9 0 1 1 12.6 20Z'],
+  ['Email', 'mailto:dgsdk2013@gmail.com',
+   'M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm9 8 8-5V7l-8 5-8-5v1Z'],
+];
+---
+
+<footer class="homepage-footer" id="site-footer">
+  <div class="container hf-content">
+    <div class="hf-grid">
+      <div class="hf-brand">
+        <a href="/" aria-label="Shidike home">
+          <img src="/logo.png" alt="Shidike" width="600" height="168" loading="lazy" />
+        </a>
+        <p>Shidike builds industrial static eliminators and ionizing bars as its primary line, supported by precision contact cleaning machines for production lines worldwide.</p>
+      </div>
+
+      <nav class="hf-column" aria-labelledby="hf-quick-title">
+        <h2 id="hf-quick-title">Quick Links</h2>
+        <ul>{quickLinks.map(([href, label]) => <li><a href={href}>{label}</a></li>)}</ul>
+      </nav>
+
+      <nav class="hf-column" aria-labelledby="hf-products-title">
+        <h2 id="hf-products-title">Products</h2>
+        <ul>{productLinks.map(([href, label]) => <li><a href={href}>{label}</a></li>)}</ul>
+      </nav>
+
+      <div class="hf-column hf-contact">
+        <h2>Contact</h2>
+        <address>
+          <p><span>Phone:</span> <a href="tel:+8613602342003">+86 13602342003</a></p>
+          <p><span>WhatsApp:</span> <a href={WHATSAPP} target="_blank" rel="noopener noreferrer">+61 403454968</a></p>
+          <p><span>Email:</span> <a href="mailto:dgsdk2013@gmail.com">dgsdk2013@gmail.com</a></p>
+          <p><span>Address:</span> Room 101, Building 1, No. 33 Binhe Road, Zhangmutou Town, Dongguan, Guangdong, China</p>
+        </address>
+      </div>
+    </div>
+
+    <div class="hf-follow" aria-labelledby="hf-follow-title">
+      <h2 id="hf-follow-title">Follow Us</h2>
+      <div class="hf-social">
+        {social.map(([label, href, d]) => (
+          <a href={href} target="_blank" rel="noopener noreferrer" aria-label={label} title={label} class="hf-social-link">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d={d} /></svg>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <div class="hf-bottom">
+      <p>© 2026 Dongguan Shidike Intelligent Equipment Co., Ltd. All rights reserved.</p>
+      <a href="/privacy">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
