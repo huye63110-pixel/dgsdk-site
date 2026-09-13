@@ -45,24 +45,23 @@ import Layout from '../layouts/Layout.astro';
 // STILL MISSING - the owner does not have it: factory floor area. Not written
 // anywhere rather than estimated.
 
-// Company background, from the owner. NOT for the rendered page - this block is a
-// frontmatter comment on purpose, because HTML comments in the template are served
-// to the browser and this must not be.
+// About Shidike copy supplied by the owner verbatim. Two things it does on
+// purpose, and one thing to watch:
 //
-// The earlier companies are deliberately unnamed in the copy. The predecessor is
-// still on the register and has proceedings against it, and the owner was its
-// shareholder and legal representative, so naming it publicly would hand anyone
-// running a background check a direct route from Shidike to those proceedings. It
-// buys nothing either: a buyer wants the years in the trade, not a former name.
+//  - It states "more than 20 years" in prose and attributes it to "predecessor
+//    businesses". That is what backs the 20+ Years stat card, which until now
+//    asserted a figure the page never explained.
+//  - Those businesses stay unnamed. The predecessor is still on the register and
+//    has proceedings against it, and the owner was its shareholder and legal
+//    representative, so naming it publicly would hand anyone running a
+//    background check a route from Shidike to those proceedings. None of that
+//    company's assets - trademark, association memberships, certification
+//    firsts - appear anywhere on this site either; they belong to it, not here.
+//  - The export markets (Singapore, Malaysia, Thailand, Vietnam, India, the
+//    Middle East) left the homepage with this rewrite. They are still on /about.
+//    The "10+ Countries" stat card therefore has no support on this page.
 //
-// For the same reason none of that company's assets appear anywhere on this site -
-// its trademark, its industry-association memberships and its certification firsts
-// belong to it, not to Shidike.
-//
-// "since 2005" is anchored on the year the owner became a shareholder and legal
-// representative of a company in this same trade. That is what supports the "20+
-// Years" figure in the stat cards (2005-2026 = 21). It is not a founding date for
-// Shidike, which is 2013.
+// STILL MISSING, the owner does not have it: factory floor area. Not estimated.
 
 const base = 'https://www.dg-sdk.com';
 ---
@@ -208,9 +207,9 @@ const base = 'https://www.dg-sdk.com';
       <div class="company-introduction">
         <p class="company-eyebrow">Our company</p>
         <h2 id="company-heading">About Shidike</h2>
-        <p>Shidike manufactures industrial static eliminators and surface-cleaning equipment in Dongguan, Guangdong. Anti static bars and ionizing air blowers are our core product line, followed by web cleaning systems.</p>
-        <p class="company-history">Shidike was founded in 2013, continuing work its team has been doing in Dongguan since 2005 &mdash; static control and surface cleaning equipment, the same trade throughout. Design, product selection and testing have stayed with the same people.</p>
-        <p>Design, assembly and testing happen under one roof, with a team of about 50. Equipment ships to Singapore, Malaysia, Thailand, Vietnam, India and the Middle East. Discuss bar length, mounting and control requirements with the team that builds your equipment.</p>
+        <p>Shidike is a Dongguan-based manufacturer specializing in industrial static control and surface cleaning. Our core products include ionizing bars, ionizing air blowers and web cleaning systems for industrial production lines.</p>
+        <p class="company-history">Our experience in static control and industrial cleaning spans more than 20 years, built on the technical expertise and manufacturing know-how developed through our predecessor businesses. Today, Shidike continues this experience with independently developed equipment for modern manufacturing applications.</p>
+        <p>Design, assembly and testing are carried out in-house. From product selection and custom dimensions to mounting and control requirements, customers work directly with the team responsible for building and testing their equipment.</p>
         <div class="company-milestones">
           <div><strong>2013</strong><span>Shidike established</span></div>
           <div><strong>50 <small>people</small></strong><span>Design, assembly &amp; testing in Dongguan</span></div>
