@@ -921,6 +921,7 @@ details.faq-item .faq-answer { font-size: 15.5px !important; }
 .footer-social .social-btn.facebook:hover { background: #1877f2; }
 .footer-social .social-btn.youtube:hover  { background: #ff0000; }
 .footer-social .social-btn.tiktok:hover   { background: #000; }
+.footer-social .social-btn.linkedin:hover { background: #0a66c2; }
 .footer-social .social-btn.whatsapp:hover { background: #25d366; }
 .footer-social .social-btn.email:hover    { background: var(--brand-deep, #0b6b8f); }
 
@@ -935,6 +936,7 @@ details.faq-item .faq-answer { font-size: 15.5px !important; }
 .contact-social .social-btn.facebook { background: #1877f2; }
 .contact-social .social-btn.youtube  { background: #ff0000; }
 .contact-social .social-btn.tiktok   { background: #111; }
+.contact-social .social-btn.linkedin { background: #0a66c2; }
 .contact-social .social-btn.whatsapp { background: #25d366; }
 .contact-social .social-btn.email    { background: var(--brand-deep, #0b6b8f); }
 .contact-social .social-btn:hover { transform: translateY(-2px); filter: brightness(1.08); }
