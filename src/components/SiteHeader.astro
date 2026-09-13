@@ -1,0 +1,136 @@
+---
+// Shared site header. Rendered once, by Layout.astro, so every page that goes
+// through the layout — product, category, guide, blog, contact — gets the same
+// navigation. There is no second copy on the homepage.
+//
+// The search IDs below (#searchDropdown, #searchToggle, #searchBox) are the
+// contract public/js/scripts.js binds to; renaming them silently kills site
+// search, so they stay verbatim.
+const { path = '/' } = Astro.props;
+
+// Anchors that only exist on the homepage are written absolute, so the same
+// header works from /products/cleaning-machine/ccl-cleaner as from /.
+const isHome = path === '/';
+
+const guides = [
+  ['/guides/what-is-esd', 'What Is ESD?'],
+  ['/guides/how-to-prevent-static', 'How to Prevent Static'],
+  ['/guides/esd-control-products', 'ESD Control Products'],
+  ['/guides/industrial-static-eliminator', 'Industrial Static Eliminators'],
+  ['/guides/what-is-an-ionizing-bar', 'What Is an Ionizing Bar?'],
+  ['/faq', 'FAQ'],
+];
+---
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Shidike home">
+      <picture>
+        <source srcset="/logo-300.webp 300w, /logo.webp 600w" sizes="168px" type="image/webp" />
+        <img src="/logo.png" alt="Shidike" width="600" height="168" loading="eager" fetchpriority="high" />
+      </picture>
+    </a>
+
+    <button id="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false">
+      Menu <span aria-hidden="true">☰</span>
+    </button>
+
+    <nav id="main-nav" aria-label="Main navigation">
+      <a href="/" class={isHome ? 'nav-home' : undefined} aria-current={isHome ? 'page' : undefined}>Home</a>
+
+      <details class="nav-dropdown" id="products-nav">
+        <summary>Products <span aria-hidden="true">⌄</span></summary>
+        <div class="product-menu">
+          <a href="/products/static-eliminator">Anti Static Bars &amp; Ionizing Air Blowers</a>
+          <a href="/products/cleaning-machine">Industrial Cleaning Machines</a>
+        </div>
+      </details>
+
+      <a href="/applications">Applications</a>
+
+      <details class="nav-dropdown" id="guides-nav">
+        <summary>Guides <span aria-hidden="true">⌄</span></summary>
+        <div class="product-menu">
+          {guides.map(([href, label]) => <a href={href}>{label}</a>)}
+        </div>
+      </details>
+
+      <a href="/blog">Blog</a>
+      <a href={isHome ? '#company' : '/about'}>About</a>
+      <a href="/contact">Contact</a>
+
+      <div class="nav-search search-dropdown" id="searchDropdown">
+        <button class="nav-icon-btn" type="button" id="searchToggle" aria-label="Search products" aria-expanded="false">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" />
+          </svg>
+        </button>
+        <div class="search-box" id="searchBox" role="search">
+          <input type="text" placeholder="Search products..." aria-label="Search products" />
+        </div>
+      </div>
+
+      <a class="quote-button" href="/contact">Get a Quote <span aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
+</header>
+
+<script is:inline>
+  // One controller for the whole header. The old build bound the mobile menu
+  // through Bootstrap's collapse plugin *and* a hand-rolled listener in
+  // scripts.js; that double-binding is gone with the Bootstrap bundle.
+  (function () {
+    var toggle = document.getElementById('menu-toggle');
+    var nav = document.getElementById('main-nav');
+    if (!toggle || !nav) return;
+
+    function setOpen(open) {
+      nav.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+
+    toggle.addEventListener('click', function () {
+      setOpen(!nav.classList.contains('is-open'));
+    });
+
+    // Following a link should close the panel, but tapping a dropdown's own
+    // summary must not — that is how you reach the links inside it.
+    nav.addEventListener('click', function (e) {
+      if (e.target.closest('a')) setOpen(false);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Escape') return;
+      if (nav.classList.contains('is-open')) {
+        setOpen(false);
+        toggle.focus();
+      }
+      document.querySelectorAll('#main-nav details[open]').forEach(function (d) {
+        d.open = false;
+      });
+    });
+
+    // Only one dropdown open at a time, and clicking outside closes them.
+    var dropdowns = Array.prototype.slice.call(document.querySelectorAll('#main-nav details'));
+    dropdowns.forEach(function (d) {
+      d.addEventListener('toggle', function () {
+        if (!d.open) return;
+        dropdowns.forEach(function (other) { if (other !== d) other.open = false; });
+      });
+    });
+    document.addEventListener('click', function (e) {
+      if (e.target.closest('#main-nav details')) return;
+      dropdowns.forEach(function (d) { d.open = false; });
+    });
+
+    // Reset the mobile panel when the viewport goes back to desktop, so the
+    // desktop row is never left in the collapsed state.
+    var wide = window.matchMedia('(min-width: 801px)');
+    var onWide = function (e) { if (e.matches) setOpen(false); };
+    if (wide.addEventListener) wide.addEventListener('change', onWide);
+    else if (wide.addListener) wide.addListener(onWide);
+  })();
+</script>

@@ -1,6 +1,8 @@
 ---
 import Analytics from '@vercel/analytics/astro';
 import SpeedInsights from '@vercel/speed-insights/astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 const {
   title = "Shidike | Industrial Static Eliminators & Ionizing Bars",
   description = "Shidike manufactures industrial static eliminators, ionizing bars, ionizing blowers, and precision cleaning machines for production lines worldwide.",
@@ -67,6 +69,9 @@ const path = new URL(canonical).pathname;
     <!-- Critical CSS -->
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/nav.css" />
+    <!-- Shared header/footer chrome. Selector-scoped; adds no bare element rules. -->
+    <link rel="stylesheet" href="/css/site-chrome.css" />
+    <slot name="head" />
     <style is:global>
       @media (max-width: 767px) {
         html,
@@ -393,88 +398,9 @@ const path = new URL(canonical).pathname;
   </head>
 
   <body id="page-top">
-    <!-- NAV -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top pill-nav" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand" href="/" aria-label="Shidike homepage">
-          <picture>
-            <source srcset="/logo-300.webp 300w, /logo.webp 600w" sizes="150px" type="image/webp" />
-            <img src="/logo.png" alt="Shidike" width="200" height="56" loading="eager" fetchpriority="high" />
-          </picture>
-        </a>
+    <SiteHeader path={path} />
 
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav nav-center text-uppercase">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Products
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/products/static-eliminator">Anti Static Bars &amp; Ionizing Air Blowers</a></li>
-                <li><a class="dropdown-item" href="/products/cleaning-machine">Industrial Cleaning Machines</a></li>
-              </ul>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="/applications">Applications</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="/blog">Blog</a>
-            </li>
-
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="/guides" id="navbarGuidesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Guides
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/guides/what-is-esd">What Is ESD?</a></li>
-                <li><a class="dropdown-item" href="/guides/how-to-prevent-static">How to Prevent Static</a></li>
-                <li><a class="dropdown-item" href="/guides/esd-control-products">ESD Control Products</a></li>
-                <li><a class="dropdown-item" href="/guides/industrial-static-eliminator">Industrial Static Eliminators</a></li>
-                <li><a class="dropdown-item" href="/guides/what-is-an-ionizing-bar">What Is an Ionizing Bar?</a></li>
-                <li><a class="dropdown-item" href="/faq">FAQ</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/contact">Contact</a>
-            </li>
-          </ul>
-
-          <ul class="navbar-nav nav-utilities">
-
-            <li class="nav-item nav-icon-item search-dropdown" id="searchDropdown">
-              <button class="nav-link nav-icon-btn" type="button" id="searchToggle" aria-label="Search products" aria-expanded="false">
-                <i class="fas fa-search" aria-hidden="true"></i>
-              </button>
-              <div class="search-box" id="searchBox" role="search">
-                <input type="text" placeholder="Search products..." aria-label="Search products" />
-              </div>
-            </li>
-          </ul>
-        </div>
-
-        <div class="nav-actions">
-          <a class="nav-cta" href="/contact">Get a Quote</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarResponsive"
-            aria-controls="navbarResponsive"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <i class="fas fa-bars" aria-hidden="true"></i>
-          </button>
-        </div>
-      </div>
-    </nav>
-
-    <main style="padding-top: clamp(80px, 20vw, 110px);">
+    <main id="main">
       <slot />
     </main>
 
@@ -485,61 +411,9 @@ const path = new URL(canonical).pathname;
       </a>
     </div>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <div class="footer-container">
-        <div class="footer-col footer-brand">
-          <a href="/" aria-label="Shidike homepage"><img src="/logo.png" alt="Shidike" width="180" height="50" class="footer-logo" loading="lazy" /></a>
-          <p>Shidike builds industrial static eliminators and ionizing bars as its primary line, supported by precision contact cleaning machines for production lines worldwide.</p>
-        </div>
-        <div class="footer-col">
-          <p class="footer-col-title">Quick Links</p>
-          <a href="/">Home</a>
-          <a href="/applications">Applications</a>
-          <a href="/about">About Us</a>
-          <a href="/contact">Contact Us</a>
-          <a href="/faq">FAQ</a>
-        </div>
-        <div class="footer-col">
-          <p class="footer-col-title">Products</p>
-          <a href="/products/static-eliminator">Static Eliminators &amp; Ionizing Bars</a>
-          <a href="/products/cleaning-machine">Industrial Cleaning Machines</a>
-        </div>
-        <div class="footer-col">
-          <p class="footer-col-title">Contact</p>
-          <p>Phone: +86 13602342003</p>
-          <p>WhatsApp: +61 403454968</p>
-          <p>Email: dgsdk2013@gmail.com</p>
-          <p>Address: Room 101, Building 1, No. 33 Binhe Road, Zhangmutou Town, Dongguan, Guangdong, China</p>
-        </div>
-        <div class="footer-col footer-social-col">
-          <p class="footer-col-title">Follow Us</p>
-          <div class="footer-social">
-            <a href="https://www.facebook.com/profile.php?id=61589304230341" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-btn facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://youtube.com/@dgsdk-2013" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="social-btn youtube"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.tiktok.com/@machineforge?_r=1&_t=ZS-95scfOHz6Ea" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="social-btn tiktok"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.linkedin.com/in/james-hu-765b05406/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://api.whatsapp.com/message/5GGUQ62VROSIC1?autoload=1&app_absent=0" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="social-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
-            <a href="mailto:dgsdk2013@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email" class="social-btn email"><i class="fas fa-envelope"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2026 Dongguan Shidike Intelligent Equipment Co., Ltd. All rights reserved. <a href="/privacy" style="color:rgba(255,255,255,0.5);text-decoration:none;margin-left:12px;display:inline-block;padding:11px 6px;">Privacy Policy</a></p>
-      </div>
-    </footer>
+    <SiteFooter />
 
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script defer src="/js/scripts.js"></script>
-
-    <script is:inline>
-      const searchToggle = document.getElementById('searchToggle');
-      const searchBox = document.getElementById('searchBox');
-
-      document.addEventListener('click', function() {
-        if (searchBox) searchBox.classList.remove('show');
-      });
-    </script>
 
     <!-- GLOBAL QUOTE MODAL -->
     <div class="quote-modal" id="quoteModal">
