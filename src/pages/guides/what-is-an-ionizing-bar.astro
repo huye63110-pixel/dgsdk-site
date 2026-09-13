@@ -60,6 +60,31 @@ import Layout from '../../layouts/Layout.astro';
         Residual charge levels after treatment: typically <strong>±10–100V</strong> depending on bar type, working distance, and line speed.
       </p>
 
+      <figure class="video-embed">
+        <button type="button" class="video-embed-trigger" data-youtube-id="ozDDssVFxzs" aria-label="Play video">
+          <img
+            class="video-embed-poster"
+            src="https://i.ytimg.com/vi/ozDDssVFxzs/maxresdefault.jpg"
+            data-fallback="https://i.ytimg.com/vi/ozDDssVFxzs/hqdefault.jpg"
+            alt=""
+            width="1280"
+            height="720"
+            loading="lazy"
+            decoding="async"
+          />
+          <span class="video-embed-icon" aria-hidden="true">
+            <svg viewBox="0 0 68 48" width="68" height="48" focusable="false">
+              <path class="video-embed-icon-bg" d="M66.5 7.7a8.6 8.6 0 0 0-6-6C55.2 0 34 0 34 0S12.8 0 7.5 1.6a8.6 8.6 0 0 0-6 6A90 90 0 0 0 0 24a90 90 0 0 0 1.5 16.3 8.6 8.6 0 0 0 6 6C12.8 48 34 48 34 48s21.2 0 26.5-1.7a8.6 8.6 0 0 0 6-6A90 90 0 0 0 68 24a90 90 0 0 0-1.5-16.3z" />
+              <path d="M45 24 27 14v20z" fill="#fff" />
+            </svg>
+          </span>
+        </button>
+        <figcaption>
+          Hosted on YouTube. Nothing loads from YouTube until you press play.
+          <a href="https://youtu.be/ozDDssVFxzs" target="_blank" rel="noopener noreferrer">Open on YouTube</a>
+        </figcaption>
+      </figure>
+
       <h3>Key Components of an Ionizer Bar</h3>
       <ul>
         <li><strong>Emitter needles</strong> — tungsten, stainless steel, or carbon-tipped pins that ionize the surrounding air</li>
@@ -253,6 +278,67 @@ import Layout from '../../layouts/Layout.astro';
 
     </div>
   </section>
+
+<style>
+  /* Click-to-play video. A bare YouTube iframe pulls roughly a megabyte of
+     third-party script on page load and sets cookies before the reader has done
+     anything; this ships a poster image instead and only builds the iframe when
+     the reader asks for it. */
+  .video-embed { margin: 26px 0; }
+  .video-embed-trigger {
+    position: relative; display: block; width: 100%; padding: 0;
+    border: 0; border-radius: 12px; overflow: hidden; cursor: pointer;
+    background: #0f1e29; aspect-ratio: 16 / 9; line-height: 0;
+  }
+  .video-embed-poster { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .video-embed-icon {
+    position: absolute; inset: 0; display: grid; place-items: center;
+    transition: transform .2s ease;
+  }
+  .video-embed-icon-bg { fill: #212121; fill-opacity: .8; transition: fill-opacity .2s ease; }
+  .video-embed-trigger:hover .video-embed-icon-bg,
+  .video-embed-trigger:focus-visible .video-embed-icon-bg { fill: #f00; fill-opacity: 1; }
+  .video-embed-trigger:focus-visible { outline: 3px solid var(--brand, #03b1ee); outline-offset: 3px; }
+  .video-embed iframe {
+    width: 100%; aspect-ratio: 16 / 9; height: auto;
+    border: 0; border-radius: 12px; display: block;
+  }
+  .video-embed figcaption {
+    margin-top: 10px; font-size: .875rem; line-height: 1.6; color: #6b7784;
+  }
+  .video-embed figcaption a { color: var(--brand, #03b1ee); }
+  @media (prefers-reduced-motion: reduce) {
+    .video-embed-icon, .video-embed-icon-bg { transition: none; }
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    document.querySelectorAll('.video-embed-poster[data-fallback]').forEach(function (img) {
+      // maxresdefault does not exist for every video; hqdefault always does.
+      img.addEventListener('error', function handle() {
+        img.removeEventListener('error', handle);
+        img.src = img.dataset.fallback;
+      });
+    });
+
+    document.querySelectorAll('.video-embed-trigger').forEach(function (button) {
+      button.addEventListener('click', function () {
+        var id = button.dataset.youtubeId;
+        if (!id) return;
+        var frame = document.createElement('iframe');
+        // nocookie host, and autoplay because the reader just asked for it.
+        frame.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+        frame.title = button.getAttribute('aria-label') || 'Video';
+        frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        frame.referrerPolicy = 'strict-origin-when-cross-origin';
+        frame.allowFullscreen = true;
+        button.replaceWith(frame);
+        frame.focus({ preventScroll: true });
+      });
+    });
+  })();
+</script>
 
   <script type="application/ld+json">
   {
