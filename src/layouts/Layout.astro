@@ -9,6 +9,12 @@ const {
   image = "/assets/img/static-eliminator/banner-bg2.webp",
   canonical: _rawCanonical = Astro.url.href,
   noLangAlternates = false,
+  // The v12 homepage ships a complete stylesheet of its own. Loading the
+  // legacy Bootstrap sheet underneath it put back everything the prototype
+  // deliberately left at browser defaults - line-height, section padding,
+  // text-align, input sizing - and `.product-card` collided outright. Pages
+  // that still depend on the legacy sheet keep it; the homepage opts out.
+  legacyCss = true,
 } = Astro.props;
 
 const base = "https://www.dg-sdk.com";
@@ -67,8 +73,8 @@ const path = new URL(canonical).pathname;
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
     <!-- Critical CSS -->
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/css/nav.css" />
+    {legacyCss && <link rel="stylesheet" href="/css/styles.css" />}
+    {legacyCss && <link rel="stylesheet" href="/css/nav.css" />}
     <!-- Shared header/footer chrome. Selector-scoped; adds no bare element rules. -->
     <link rel="stylesheet" href="/css/site-chrome.css" />
     <slot name="head" />

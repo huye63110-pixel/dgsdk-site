@@ -921,7 +921,7 @@
 .home-v12 #applications .applications-row-hint{display: block; margin-top: 10px; color: var(--muted); font-size: 11px;}}
 
 /* === section-gray-surfaces.css === */
-.home-v12,.home-v12 #main,.home-v12 #main > section:not(.hero),.home-v12 #certifications.certificate-showcase{background: var(--pale, #f5f6f7);}
+.home-v12,.home-v12,.home-v12 > section:not(.hero),.home-v12 #certifications.certificate-showcase{background: var(--pale, #f5f6f7);}
 .home-v12 #contact{color: var(--ink); border-block: 1px solid var(--line);}
 .home-v12 #contact .eyebrow,.home-v12 #contact .contact-reference{color: var(--blue);}
 .home-v12 #contact .contact-inner > div > p,.home-v12 #contact .form-bottom p{color: var(--muted);}
@@ -936,3 +936,24 @@
 .home-v12 .hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
 .home-v12 #form-status[data-state="error"] { color: #b3261e; }
 .home-v12 #form-status[data-state="ok"] { color: var(--muted); }
+
+/* The site's Bootstrap stylesheet also owns `.container`, and adds a gutter
+   (--bs-gutter-x) plus max-width:1320px that the prototype never had. Left in,
+   it shaved ~12px off every column on the page. The prototype's .container is
+   width + centring only. */
+.home-v12 .container { padding-inline: 0; max-width: none; }
+
+/* The site's stylesheet sets font-family directly on h1-h6 (and on form
+   controls), and a direct declaration beats inheritance from .home-v12 no
+   matter how specific the wrapper is — which is why headings rendered in Inter
+   while the prototype used Geist. Restoring inheritance reproduces the
+   prototype's model exactly: rules here that name a family explicitly are at
+   least (0,2,0) and still win over this (0,1,0). */
+.home-v12 * { font-family: inherit; }
+
+/* section-gray-surfaces.css scoped its rule with #main. That ID outweighed
+   .refined-services.services-section (0,2,0) in the prototype; re-prefixing it
+   as a class dropped it to (0,2,1) and it started losing, so #services kept its
+   own background instead of the shared pale grey. Repeating the wrapper
+   restores the original ordering — this is the same declaration, not a new one. */
+.home-v12.home-v12 > section:not(.hero) { background: var(--pale, #f5f6f7); }
