@@ -2,7 +2,7 @@
    Selector-scoped on purpose - no bare element rules, so product and guide
    body copy is untouched. Custom properties are renamed --v12-* because the
    prototype and the existing site both define --navy. */
-:root{--v12-blue:#087bbd;--v12-blue-deep:#075581;--v12-navy:#103651;--v12-ink:#183348;--v12-muted:#637789;--v12-line:#dce6ed;--v12-pale:#f3f7fa;--v12-width:1200px;--brand-hover:#22bdf3}
+:root{--v12-blue:#087bbd;--v12-blue-deep:#075581;--v12-navy:#103651;--v12-ink:#183348;--v12-muted:#637789;--v12-line:#dce6ed;--v12-pale:#f3f7fa;--v12-width:1200px;--brand:#03b1ee;--brand-hover:#22bdf3}
 html{scroll-behavior:smooth;scroll-padding-top:96px}
 @media(max-width:800px){html{scroll-padding-top:83px}}
 .site-header .container,#site-footer .container{width:min(calc(100% - 80px),var(--v12-width));margin-inline:auto;padding-inline:0;max-width:none}

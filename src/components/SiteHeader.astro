@@ -8,8 +8,10 @@
 // search, so they stay verbatim.
 const { path = '/' } = Astro.props;
 
-// Anchors that only exist on the homepage are written absolute, so the same
-// header works from /products/cleaning-machine/ccl-cleaner as from /.
+// Every nav item points at a page. About used to jump to the homepage's own
+// #company section when you were already on the homepage, which meant the item
+// behaved differently there than everywhere else - and did nothing at all if you
+// were already looking at that section. It links to /about from every page now.
 const isHome = path === '/';
 
 const guides = [
@@ -58,7 +60,7 @@ const guides = [
       </details>
 
       <a href="/blog">Blog</a>
-      <a href={isHome ? '#company' : '/about'}>About</a>
+      <a href="/about">About</a>
       <a href="/contact">Contact</a>
 
       <div class="nav-search search-dropdown" id="searchDropdown">

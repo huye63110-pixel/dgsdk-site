@@ -299,7 +299,10 @@ import Layout from '../../layouts/Layout.astro';
   .video-embed-trigger:hover .video-embed-icon-bg,
   .video-embed-trigger:focus-visible .video-embed-icon-bg { fill: #f00; fill-opacity: 1; }
   .video-embed-trigger:focus-visible { outline: 3px solid var(--brand, #03b1ee); outline-offset: 3px; }
-  .video-embed iframe {
+  /* :global because this element is created by the script below, so it never
+     carries Astro's scoping attribute and a scoped selector would not match it -
+     which left the player at the browser default 300x150. */
+  .video-embed :global(iframe) {
     width: 100%; aspect-ratio: 16 / 9; height: auto;
     border: 0; border-radius: 12px; display: block;
   }
