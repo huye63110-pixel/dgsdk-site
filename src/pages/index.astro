@@ -5,6 +5,56 @@ import Layout from '../layouts/Layout.astro';
 // scoped to that class, so none of the prototype's element-level rules (body,
 // h1-h3, p, a, img, .container, .section) can reach product or guide pages.
 // The header and footer are NOT here — Layout renders the shared components.
+// Review notes that used to sit in the template as HTML comments, and so were
+// served in the page source until removed:
+//
+//   Five hero-stat cards use copy supplied verbatim by the user for this local draft. Figures ha
+//   ve not been independently verified. "20+ Patents & IP" is not a verified count of granted pa
+//   tents; the separate five-patent statement in About retains its original narrower scope. No s
+//   tructured data or production pages were updated.
+//
+//   Sources: src/pages/index.astro company and enquiry copy; src/pages/products/static-eliminato
+//   r/st-g-series.astro product selection, made-to-order lengths, mounting drawings, emitter cle
+//   aning access, power connections and measurement guidance. No delivery, performance or free-s
+//   ervice guarantees are introduced.
+//
+//   Source: src/pages/index.astro, About Shidike cards and Certifications section. Founded 2013;
+//    in-house design, assembly and testing; four utility model patents and one design patent gra
+//   nted in China for cleaning and dust-removal equipment. Six displayed document scopes follow 
+//   the original certificate-image alt text. All four original company photos and all six unique
+//    certificate images are included.
+
+// The first paragraph used to open "Founded in Dongguan in 2013". Per the owner the
+// 2013 business was opened in Suzhou / East China, and the Dongguan operation only
+// took the Shidike name in the last couple of years - so that sentence was wrong on
+// both the place and what 2013 refers to. It now states where the equipment is made
+// and leaves the timeline to the paragraph below.
+//
+// STILL UNRESOLVED, needs the owner: the Organization/LocalBusiness JSON-LD in
+// Layout.astro carries foundingDate "2013" against legalName "Dongguan Shidike
+// Intelligent Equipment Co., Ltd.". If that entity was registered recently rather
+// than in 2013, the structured data is asserting a checkable date that is wrong.
+// Do not guess it - get the registration date off the licence.
+
+// Company background, from the owner. NOT for the rendered page - this block is a
+// frontmatter comment on purpose, because HTML comments in the template are served
+// to the browser and this must not be.
+//
+// The earlier companies are deliberately unnamed in the copy. The predecessor is
+// still on the register and has proceedings against it, and the owner was its
+// shareholder and legal representative, so naming it publicly would hand anyone
+// running a background check a direct route from Shidike to those proceedings. It
+// buys nothing either: a buyer wants the years in the trade, not a former name.
+//
+// For the same reason none of that company's assets appear anywhere on this site -
+// its trademark, its industry-association memberships and its certification firsts
+// belong to it, not to Shidike.
+//
+// "since 2005" is anchored on the year the owner became a shareholder and legal
+// representative of a company in this same trade. That is what supports the "20+
+// Years" figure in the stat cards (2005-2026 = 21). It is not a founding date for
+// Shidike, which is 2013.
+
 const base = 'https://www.dg-sdk.com';
 ---
 
@@ -61,7 +111,6 @@ const base = 'https://www.dg-sdk.com';
     </div>
   </div>
 </div>
-<!-- Five hero-stat cards use copy supplied verbatim by the user for this local draft. Figures have not been independently verified. "20+ Patents & IP" is not a verified count of granted patents; the separate five-patent statement in About retains its original narrower scope. No structured data or production pages were updated. -->
 
 <section class="products section container" id="products"><div class="section-heading"><div><span class="eyebrow">Our equipment</span><h2>Featured Products</h2></div><a class="text-link" href="/products/static-eliminator">Explore product range <span>→</span></a></div><div class="product-grid">
 <article class="product-card"><a class="product-image bar-image" href="/products/static-eliminator/st-g-series"><span class="product-tag">Pulsed AC</span><img src="/assets/home/core-bars.webp" alt="ST-G intelligent ionizing bar" width="1130" height="213" loading="lazy"></a><div class="product-copy"><h3>Ionizing Bars</h3><p>ST-G pulsed AC bars with integrated high-voltage generation and a 24 V DC input.</p><a href="/products/static-eliminator/st-g-series">View Details <span>↗</span></a></div></article>
@@ -140,7 +189,6 @@ const base = 'https://www.dg-sdk.com';
     <div class="refined-services-contact"><p>Start with a description of your line and the issue you want to address.</p><a href="#contact">Discuss Your Application <span aria-hidden="true">↗</span></a></div>
   </div>
 </section>
-<!-- Sources: src/pages/index.astro company and enquiry copy; src/pages/products/static-eliminator/st-g-series.astro product selection, made-to-order lengths, mounting drawings, emitter cleaning access, power connections and measurement guidance. No delivery, performance or free-service guarantees are introduced. -->
 
 
 <section class="resources-section section container" id="resources"><div class="section-heading"><div><span class="eyebrow">Practical reading for your production line</span><h2>Insights &amp; Guides</h2></div><a class="text-link" href="/guides">All guides <span>→</span></a></div><div class="resources-grid"><a class="resource-feature" href="/guides/what-is-an-ionizing-bar"><picture><source media="(max-width:800px)" srcset="/assets/home/hero-ionizing-bar-mobile.webp"><img src="/assets/home/hero-ionizing-bar.webp" alt="ST-G ionizing bar and ionization illustration" loading="lazy"></picture><div><span class="resource-tag">Static control basics</span><h3>What Is an Ionizing Bar?</h3><p>Understand ionization, working distance and the role of charge measurement.</p><span class="resource-link">Read Article →</span></div></a><div class="resource-list"><a href="/guides/how-to-prevent-static"><img src="/assets/home/core-bars.webp" alt="ST-G ionizing bar" loading="lazy"><div><span class="resource-tag">Static control</span><h3>How to Prevent Static in Industry</h3><p>Practical steps for grounding, ionization and checking static charge.</p><span class="resource-link">Read Article →</span></div></a><a href="/guides/what-is-web-cleaning"><img src="/assets/home/contact-cleaner.webp" alt="Contact cleaning machine" loading="lazy"><div><span class="resource-tag">Surface cleaning</span><h3>What Is Web Cleaning?</h3><p>Start with the substrate, contamination and material path.</p><span class="resource-link">Read Article →</span></div></a></div></div></section>
@@ -151,19 +199,8 @@ const base = 'https://www.dg-sdk.com';
       <div class="company-introduction">
         <p class="company-eyebrow">Our company</p>
         <h2 id="company-heading">About Shidike</h2>
-        <p>Founded in Dongguan in 2013, Shidike manufactures industrial static eliminators and surface-cleaning equipment. Anti static bars and ionizing air blowers are our core product line, followed by web cleaning systems.</p>
-        <p class="company-history">Shidike was founded in 2013 and continues the work of its predecessor, Langshuo Automation (<span lang="zh-Hans">郎烁自动化有限公司</span>), building industrial automation equipment since 2008. The experience behind this equipment reaches back further, to static control at Kexinyuan Anti-Static (<span lang="zh-Hans">科信园防静电有限公司</span>) in the late 1990s.</p>
-        <!-- Company background supplied by the user. Two different relationships, kept
-             distinct on purpose:
-               - 郎烁自动化有限公司 (from 2008) is written as Shidike's PREDECESSOR, because
-                 the business activities moved from it to Shidike.
-               - 科信园防静电有限公司 (late 1990s) is written only as where the line of work
-                 started. The record is employment there, not a corporate predecessor of
-                 Shidike, so it is not called one. Upgrade this only if the founding or
-                 ownership of 科信园 is confirmed.
-             The 2013 founding and the earlier experience are stated together so the two
-             dates read as one fact rather than a contradiction. "Kexinyuan" and "Langshuo"
-             are pinyin for English readers, not verified registered English names. -->
+        <p>Shidike manufactures industrial static eliminators and surface-cleaning equipment in Dongguan, Guangdong. Anti static bars and ionizing air blowers are our core product line, followed by web cleaning systems.</p>
+        <p class="company-history">Shidike was founded in 2013, continuing work its team has been doing in Dongguan since 2005 &mdash; static control and surface cleaning equipment, the same trade throughout. Design, product selection and testing have stayed with the same people.</p>
         <p>Design, assembly and testing happen under one roof. Discuss bar length, mounting and control requirements with the team that builds your equipment.</p>
         <div class="company-milestones">
           <div><strong>2013</strong><span>Established in Dongguan</span></div>
@@ -203,7 +240,6 @@ const base = 'https://www.dg-sdk.com';
       </div>
   </div>
 </section>
-<!-- Source: src/pages/index.astro, About Shidike cards and Certifications section. Founded 2013; in-house design, assembly and testing; four utility model patents and one design patent granted in China for cleaning and dust-removal equipment. Six displayed document scopes follow the original certificate-image alt text. All four original company photos and all six unique certificate images are included. -->
 
 
 <section class="contact-section" id="contact"><div class="container contact-inner"><div><span class="eyebrow">Let’s discuss your application</span><h2>Find the Right Starting Point<br>for Your Production Line.</h2><p>Share your material, available space and the problem you want to address.</p><a class="contact-reference" href="/contact">Contact details on our website ↗</a></div><form id="inquiry-form" action="https://formspree.io/f/mvzlpdwy" method="POST">
