@@ -957,3 +957,6 @@
    own background instead of the shared pale grey. Repeating the wrapper
    restores the original ordering — this is the same declaration, not a new one. */
 .home-v12.home-v12 > section:not(.hero) { background: var(--pale, #f5f6f7); }
+
+/* Three milestones now instead of two — wrap rather than overflow on narrow screens. */
+.home-v12 .company-milestones { flex-wrap: wrap; row-gap: 18px; }
