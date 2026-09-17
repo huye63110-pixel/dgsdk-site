@@ -302,12 +302,23 @@ const menuGuides = guides.slice(0, 3);
       // so a CSS fix would also behave differently there than everywhere else.
       // Below 800px every category is expanded at once by removing the
       // attribute outright, which is what the phone layout actually means.
+      // The panel's desktop DOM is three columns: every category, then every
+      // model list. Stacked on a phone that reads as three headings followed by
+      // 19 models, so the bars appear to sit under "Cleaning Machines". Each
+      // list is moved inside its own category's <li> below 800px, and back into
+      // the middle column above it.
+      var modelsHost = mega.querySelector('.mega-models');
       function syncViewport() {
         if (desktop.matches) {
+          panels.forEach(function (panel) { modelsHost.appendChild(panel); });
           var active = mega.querySelector('.mega-cat.is-active') || cats[0];
           showCat(active.getAttribute('data-cat'));
         } else {
-          panels.forEach(function (panel) { panel.hidden = false; });
+          panels.forEach(function (panel) {
+            panel.hidden = false;
+            var cat = mega.querySelector('.mega-cat[data-cat="' + panel.getAttribute('data-cat-panel') + '"]');
+            if (cat && cat.parentNode) cat.parentNode.appendChild(panel);
+          });
         }
       }
       syncViewport();

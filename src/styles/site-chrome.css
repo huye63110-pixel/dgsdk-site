@@ -454,7 +454,9 @@ body { margin: 0; }
   .site-header .mega-models { max-height: none; overflow: visible; padding: 0; }
   /* the lists are un-hidden by the controller, not here: the legacy sheet's
      [hidden]{display:none!important} outranks any rule this file can write */
-  .site-header .mega-model { padding: 10px 0 10px 14px; min-height: 40px; align-items: center; }
+  .site-header .mega-cats li > .mega-model-list { padding-bottom: 6px; }
+  .site-header .mega-model { gap: 12px; padding: 10px 0 10px 14px; min-height: 40px; align-items: center; }
+  .site-header .mega-model-name { min-width: 0; }
   .site-header .mega-model:hover, .site-header .mega-model.is-active { background: none; }
   .site-header .mega-model-all a { padding: 10px 0 10px 14px; }
   .site-header .mega-preview { display: none; }
