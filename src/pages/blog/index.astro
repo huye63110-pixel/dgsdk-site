@@ -1,16 +1,33 @@
 ---
+// Blog index, rebuilt to the confirmed resource-page layout.
+//
+// The title, meta description, canonical and both JSON-LD blocks are the ones
+// this page already published and are unchanged. The H1 also keeps its existing
+// wording — the design shows a short "Blog", but this page is indexed on the
+// longer heading, so the layout is adopted and the words are not.
+//
+// Every post is listed. The filter chips only hide cards that are already in
+// the HTML; nothing here is built by script.
 import Layout from '../../layouts/Layout.astro';
-import { posts } from '../../data/resources.js';
+import ResourceIndex from '../../components/ResourceIndex.astro';
+import ResourceFeature from '../../components/ResourceFeature.astro';
+import ResourceGrid from '../../components/ResourceGrid.astro';
+import { posts, featuredPost, categoriesOf } from '../../data/resources.js';
 
 const base = 'https://www.dg-sdk.com';
 const canonical = base + '/blog';
 
+const items = posts.map((p) => ({ ...p, href: '/blog/' + p.slug }));
+const featured = items.find((p) => p.slug === featuredPost) || items[0];
+const rail = items.filter((p) => p !== featured).slice(0, 3);
 ---
 
 <Layout
   title="Static Eliminator & Web Cleaning Technical Blog | Shidike"
   description="Practical guides on specifying, mounting and verifying anti static bars, ionizing air blowers and contact cleaning machines on real production lines."
 >
+  <link slot="head" rel="stylesheet" href="/css/resource-pages.css" />
+
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -36,133 +53,35 @@ const canonical = base + '/blog';
     }))
   })} />
 
-  <section
-    class="products-hero blog-hero-banner"
-    style="background: #edf4fb url('/assets/img/static-eliminator/static-eliminator-category-banner.webp') center/86% auto no-repeat; background-attachment: scroll;"
+  <ResourceIndex
+    eyebrow="Resources · Blog"
+    heading="Static Eliminators & Web Cleaning, Explained"
+    lead="Application articles on selecting, installing and verifying static-control and cleaning equipment for a production line."
+    crumb="Blog"
+    active="blog"
+    cta={{
+      heading: 'Looking for the fundamentals?',
+      text: 'Our Guides explain ionizing bars, static prevention and web-cleaning methods.',
+      label: 'Browse Guides',
+      href: '/guides',
+    }}
   >
-    <div class="container products-hero-inner">
-      <span class="products-hero-kicker" data-aos="fade-down" data-aos-duration="600">Technical Blog</span>
-      <h1 data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">Static Eliminators &amp; Web Cleaning, Explained</h1>
-      <p data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
-        How to specify, mount and verify the equipment — written for the engineer who has to make it work on a line
-        that is already running, not for a catalogue.
-      </p>
-    </div>
-  </section>
+    <ResourceFeature
+      featured={featured}
+      rail={rail}
+      image="/assets/img/guides/ionizing-bar-action"
+      kicker="Featured blog article"
+      caption="Ionizing-bar application illustration from our technical guide."
+      ctaLabel="Read the ST-G article"
+    />
 
-  <section class="blog-list-section">
-    <div class="container">
-      <div class="breadcrumb"><a href="/">Home</a><span>/</span><span>Blog</span></div>
-
-      <div class="blog-intro">
-        <p>
-          Every article here starts in the same place: a line that is already built, already running, and
-          that now has a static or contamination problem to solve without stopping production. So the
-          guides deal in figures you can check against your own process &mdash; ion balance in volts, decay
-          time in seconds, mounting distance in millimetres, air volume in CFM &mdash; rather than in feature
-          lists.
-        </p>
-        <p>
-          The static control articles cover how a pulsed AC and a pulsed DC bar behave at different
-          distances from the web, why a bar that generates its high voltage internally from 24 V DC mounts
-          differently from one fed by an external supply box, how to work out mounting pitch for a given
-          bar length, and how to verify with a field meter or a charged plate monitor that the bar is
-          still doing its job six months later. The industry pieces run the same problem for lithium
-          battery electrode coating, slitting and winding, and for photovoltaic cell handling, backsheet
-          lamination and glass loading, where the material and the line speed change the answer.
-        </p>
-        <p>
-          The cleaning articles take the other half of the same problem. Charge attracts particles, and on
-          optical film, polarizer, PCB and CCL surfaces it is the particle that causes the reject. Those
-          guides work through tack values, belt against roller contact, single or double sided cleaning,
-          and what a given cleanliness target asks of the machine.
-        </p>
-      </div>
-
-      <div class="blog-index-grid">
-        {posts.map((post, i) => (
-          <a href={`/blog/${post.slug}`} class="blog-index-card" data-aos="fade-up" data-aos-delay={i * 100} data-aos-duration="600">
-            <div class="blog-index-img">
-              <picture>
-                <source srcset={`${post.image}.webp`} type="image/webp" />
-                <img src={`${post.image}.jpg`} alt={post.title} loading="lazy" decoding="async" />
-              </picture>
-            </div>
-            <div class="blog-index-content">
-              <div class="blog-index-tags">
-                {post.tags.map(tag => <span class="blog-tag">{tag}</span>)}
-              </div>
-              <h2>{post.title}</h2>
-              <p>{post.excerpt}</p>
-              <div class="blog-index-meta">
-                <span>{post.date}</span>
-                <span>{post.readTime}</span>
-              </div>
-              <span class="blog-read-more">Read article &rarr;</span>
-            </div>
-          </a>
-        ))}
-      </div>
-
-      <p class="blog-foot-note">
-        These guides describe equipment Shidike builds:
-        <a href="/products/static-eliminator">industrial static eliminators and ionizing bars</a> and
-        <a href="/products/cleaning-machine">contact cleaning machines</a>. Background on how the
-        technology works is in the <a href="/guides">static control guides</a>.
-      </p>
-    </div>
-  </section>
-
-  <style>
-    /* Use the same banner as every product and application page (.products-hero,
-       520px) instead of .category-hero at 300px. */
-    .blog-hero-banner h1 { color: #111; }
-    .blog-list-section { padding: 44px 0 70px; background: #fff; }
-    .blog-list-section .breadcrumb { margin-bottom: 26px; font-size: 13.5px; color: #7d8d97; }
-    .blog-list-section .breadcrumb a { color: var(--brand-deep); text-decoration: none; }
-    .blog-list-section .breadcrumb span { margin: 0 8px; }
-
-    .blog-intro {
-      max-width: 1000px; margin: 0 auto 34px; color: var(--ink-muted, #55636d);
-      font-size: 15.5px; line-height: 1.72;
-    }
-    .blog-intro p { margin: 0 0 14px; }
-    .blog-intro p:last-child { margin-bottom: 0; }
-
-    .blog-index-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
-      max-width: 1000px; margin-inline: auto;
-    }
-    .blog-index-card {
-      display: flex; flex-direction: column; background: #fff;
-      border: 1px solid var(--hairline); border-radius: 10px; overflow: hidden;
-      text-decoration: none; color: inherit; transition: border-color .15s ease;
-    }
-    .blog-index-card:hover { border-color: var(--brand-deep); }
-    .blog-index-img img {
-      display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover;
-    }
-    .blog-index-content { padding: 18px 20px 20px; display: flex; flex-direction: column; flex: 1; }
-    .blog-index-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
-    .blog-tag {
-      font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
-      background: #eef4f8; color: #4a6373; padding: 4px 9px; border-radius: 999px;
-    }
-    .blog-index-content h2 {
-      font-size: 1.12rem; line-height: 1.35; font-weight: 700; color: var(--navy); margin: 0 0 8px;
-    }
-    .blog-index-content p { font-size: 14px; line-height: 1.6; color: var(--ink-muted); margin: 0 0 14px; }
-    .blog-index-meta {
-      display: flex; gap: 14px; font-size: 12.5px; color: #8a99a4; margin-bottom: 12px;
-    }
-    .blog-read-more { margin-top: auto; font-size: 13.5px; font-weight: 700; color: var(--brand-deep); }
-
-    .blog-foot-note {
-      max-width: 1000px; margin: 34px auto 0; padding-top: 24px;
-      border-top: 1px solid var(--hairline);
-      font-size: 14.5px; line-height: 1.75; color: var(--ink-muted); text-align: center;
-    }
-    @media (max-width: 1000px) { .blog-index-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 640px)  { .blog-index-grid { grid-template-columns: 1fr; } }
-  </style>
+    <ResourceGrid
+      eyebrow="Explore by topic"
+      heading="All Blog articles."
+      lead={`Explore equipment selection and application planning in these ${items.length} articles.`}
+      items={items}
+      categories={categoriesOf(items)}
+      kind="Blog"
+    />
+  </ResourceIndex>
 </Layout>

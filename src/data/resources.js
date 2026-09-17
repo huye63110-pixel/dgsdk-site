@@ -11,6 +11,7 @@
 export const posts = [
   {
     slug: 'st-g-ionizing-bar-guide',
+    category: 'Static Control',
     title: 'The ST-G Ionizing Bar: How to Specify, Mount and Verify an Anti Static Bar',
     excerpt: 'What ±50 V ion balance actually means on your line, why the high voltage is generated inside the bar instead of in a separate box, how to work out the mounting pitch for any bar length, and how to check the bar is doing its job.',
     date: 'September 1, 2026',
@@ -20,6 +21,7 @@ export const posts = [
   },
   {
     slug: 'lithium-battery-ionizing-bar-guide',
+    category: 'Static Control',
     title: 'Ionizing Bar Selection Guide for Lithium Battery Production',
     excerpt: 'Electrode coating, slitting and winding all generate charge as the web separates from a roller. Which bar suits which step, and where to mount it.',
     date: 'May 18, 2026',
@@ -29,6 +31,7 @@ export const posts = [
   },
   {
     slug: 'photovoltaic-ionizing-bar-guide',
+    category: 'Static Control',
     title: 'Smart Ionizing Bars for Photovoltaic Manufacturing',
     excerpt: 'Cell handling, backsheet lamination and glass loading are all static-critical. How to specify a bar for PV production lines.',
     date: 'May 17, 2026',
@@ -38,6 +41,7 @@ export const posts = [
   },
   {
     slug: 'optical-film-cleaner-tutorial',
+    category: 'Web Cleaning',
     title: 'Optical Film Dust Removal: 9 Steps for High Cleanliness',
     excerpt: 'A step-by-step operating procedure for optical film cleaning, from roller tack selection through static verification.',
     date: 'May 14, 2026',
@@ -50,44 +54,61 @@ export const posts = [
 export const guides = [
   {
     href: '/guides/what-is-esd',
+    category: 'Static Control',
     title: 'What Is ESD?',
     blurb: 'Electrostatic discharge explained — definition, causes, how ESD damages electronics, and industry standards for ESD control.',
     image: '/assets/img/guides/what-is-esd',
   },
   {
     href: '/guides/how-to-prevent-static',
+    category: 'Static Control',
     title: 'How to Prevent Static Electricity',
     blurb: 'Practical static electricity prevention methods: grounding, ionization, humidity control, ESD-safe materials, and operator procedures.',
     image: '/assets/img/guides/how-to-prevent-static',
   },
   {
     href: '/guides/esd-control-products',
+    category: 'Static Control',
     title: 'ESD Control Products Guide',
     blurb: "Buyer's guide to ESD control products — ionizing bars, ion blowers, ion rods, and how to select the right anti-static equipment for your application.",
     image: '/assets/img/guides/esd-products-fan',
   },
   {
     href: '/guides/industrial-static-eliminator',
+    category: 'Static Control',
     title: 'Industrial Static Eliminator Solutions',
     blurb: 'Static eliminator applications by industry — electronics, display, printing, plastics, and cleanroom manufacturing, with product selection guidance.',
     image: '/assets/img/guides/industrial-dust-removal',
   },
   {
     href: '/guides/what-is-an-ionizing-bar',
+    category: 'Static Control',
     title: 'What Is an Ionizing Bar?',
     blurb: 'Understand ionization, working distance and the role of charge measurement.',
     image: '/assets/img/guides/ionizing-bar-action',
   },
   {
     href: '/guides/ionizing-bar-voltage-output',
+    category: 'Static Control',
     title: 'Ionizing Bar Voltage Output',
     blurb: 'What the kV figure means, why 24 V input and 6.5 kV output are different things, and why higher voltage is not better.',
     image: '/assets/img/guides/ionizing-bar-st-g-closeup',
   },
   {
     href: '/guides/what-is-web-cleaning',
+    category: 'Web Cleaning',
     title: 'What Is Web Cleaning?',
     blurb: 'Contact and non-contact methods for removing dry particles from moving material, how to choose between them, and what to record in a cleaning trial.',
     image: '/assets/img/cleaning-machine/roll-chip-cleaner',
   },
 ];
+
+// The article each index page leads with, and the three it puts in the rail
+// beside it. Slugs/hrefs only — the entries themselves stay single-source above.
+export const featuredPost = 'st-g-ionizing-bar-guide';
+export const featuredGuide = '/guides/what-is-an-ionizing-bar';
+
+/** All categories present in a list, for the filter chips, "All" first. */
+export function categoriesOf(items) {
+  return ['All', ...[...new Set(items.map((i) => i.category))].filter(Boolean)];
+}
