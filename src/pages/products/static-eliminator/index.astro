@@ -1,61 +1,9 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import { barProducts, blowerProducts } from '../../../data/products.js';
 
 const base = 'https://www.dg-sdk.com';
 const canonical = base + '/products/static-eliminator';
-const barProducts = [
-  {
-    name: 'ST-G Intelligent Ionizing Bar', slug: 'st-g-series', cat: 'Ionizing Bars', code: 'ST-G',
-    url: canonical + '/st-g-series', image: base + '/assets/img/static-eliminator/st-g.jpg',
-    img: '/assets/img/static-eliminator/st-g',
-    desc: 'The all-round bar, with the tightest ion balance of the three bar series at ±50 V (ST-E ±80 V, ST-F ±100 V). Pulsed AC applies alternating positive and negative high voltage to a single emitter pin, which produces more ions than conventional AC and avoids the uneven neutralization AC bars are known for. Pulse frequency is adjustable, so the same bar handles a fast-moving web or a still workspace. 6.5 kV DC pulse from a DC 24 V supply, 12 W.',
-    specs: ['Ion balance ±50 V', '6.5 kV DC pulse', '30–1000 mm', 'DC 24 V · 12 W']
-  },
-  {
-    name: 'ST-E Intelligent Ionizing Bar', slug: 'st-e-series', cat: 'Ionizing Bars', code: 'ST-E',
-    url: canonical + '/st-e-series', image: base + '/assets/img/static-eliminator/st-e.jpg',
-    img: '/assets/img/static-eliminator/st-e',
-    desc: 'High-frequency pulsed DC with fixed-polarity emitter pins arranged alternately along the bar — each pin holds one polarity instead of alternating, which is the design reason this is the bar positioned for wide or long spans. The 150 % ion-generation figure is rated for the intelligent bar series against a conventional design, not for the ST-E alone, and is published without a comparison model or test conditions. Built for large-area, high-speed lines. Ion balance ±80 V, 6.5 kV DC pulse, 12 W.',
-    specs: ['Ion balance ±80 V', '6.5 kV DC pulse', '30–1000 mm', 'Alternating fixed-polarity pins']
-  },
-  {
-    name: 'ST-F Intelligent Ionizing Bar', slug: 'st-f-series', cat: 'Ionizing Bars', code: 'ST-F',
-    url: canonical + '/st-f-series', image: base + '/assets/img/static-eliminator/st-f.jpg',
-    img: '/assets/img/static-eliminator/st-f',
-    desc: 'The speed model. Pulsed DC with the Hibweer L.C.C. system, which stops generating negative ions while it makes positive ones and vice versa — giving very strong balance control and neutralizing 2.5 times faster than a conventional bar. Choose it when the material moves too fast for a standard bar to keep up. Ion balance ±100 V, 6.5 kV DC pulse.',
-    specs: ['2.5× a conventional bar', 'Ion balance ±100 V', '6.5 kV DC pulse', '30–1000 mm']
-  },
-];
-const blowerProducts = [
-  {
-    name: 'ST-S200 Mini Ionizer Fan', slug: 'st-s200', cat: 'Ionizing Blowers', code: 'ST-S200',
-    url: canonical + '/st-s200', image: base + '/assets/img/static-eliminator/st-s200.jpg',
-    img: '/assets/img/static-eliminator/st-s200',
-    desc: 'The smallest unit in the range, small enough to build into a machine. Synchronous positive and negative emitters at ±5000 V with tungsten-alloy tips and a decoupled discharge barrel. Clears a 450 × 450 mm area in under 1.5 s measured 150 mm in front of the outlet, at under 38.9 dB and 0.05 ppm ozone. 128 × 53.5 × 180 mm, 400 g, CE marked, one-year warranty.',
-    specs: ['450 × 450 mm coverage', '≤1.5 s decay', '≤48.2 CFM', 'CE · 1-year warranty']
-  },
-  {
-    name: 'ST101A Desktop Ionizing Air Blower', slug: 'st-101a', cat: 'Ionizing Blowers', code: 'ST101A',
-    url: canonical + '/st-101a', image: base + '/assets/img/static-eliminator/st-101a.jpg',
-    img: '/assets/img/static-eliminator/st-101a',
-    desc: 'A desktop blower for one operator position or inspection table. Airflow is adjustable from 45 to 110 CFM over a 40 × 60 cm area, with ion balance held at 0 V ±10 V. At 3.3 kg and 90 × 170 × 260 mm it sits beside a microscope or rework station without taking the bench.',
-    specs: ['45–110 CFM', 'Ion balance 0 V ±10 V', '40 × 60 cm', '3.3 kg']
-  },
-  {
-    name: 'ST104A Horizontal Ion Blower', slug: 'st-104a', cat: 'Ionizing Blowers', code: 'ST104A',
-    url: canonical + '/st-104a', image: base + '/assets/img/static-eliminator/st-104a.jpg',
-    img: '/assets/img/static-eliminator/st-104a',
-    desc: 'The ST104A pushes air horizontally across a 60 × 120 cm zone at 70 to 120 CFM, roughly double the coverage of the desktop unit, with ion balance held at 0 V ±10 V. Suited to a two-operator bench, a packing station, or the open side of a conveyor.',
-    specs: ['70–120 CFM', 'Ion balance 0 V ±10 V', '60 × 120 cm', '5.8 kg']
-  },
-  {
-    name: 'ST1200 Horizontal Ion Fan', slug: 'st-1200', cat: 'Ionizing Blowers', code: 'ST1200',
-    url: canonical + '/st-1200', image: base + '/assets/img/static-eliminator/st-1200.jpg',
-    img: '/assets/img/static-eliminator/st-1200',
-    desc: 'The widest coverage in the range: 140 × 120 cm at 150 to 360 CFM. At 1280 mm long the ST1200 spans a full line rather than a single station and draws 40 to 80 W. Ion balance is held at 0 V ±10 V.',
-    specs: ['150–360 CFM', 'Ion balance 0 V ±10 V', '140 × 120 cm', '40–80 W']
-  },
-];
 const allStaticProducts = [...barProducts, ...blowerProducts];
 const faqItems = [
   {

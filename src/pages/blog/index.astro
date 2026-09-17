@@ -1,47 +1,10 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { posts } from '../../data/resources.js';
 
 const base = 'https://www.dg-sdk.com';
 const canonical = base + '/blog';
 
-const posts = [
-  {
-    slug: 'st-g-ionizing-bar-guide',
-    title: 'The ST-G Ionizing Bar: How to Specify, Mount and Verify an Anti Static Bar',
-    excerpt: 'What ±50 V ion balance actually means on your line, why the high voltage is generated inside the bar instead of in a separate box, how to work out the mounting pitch for any bar length, and how to check the bar is doing its job.',
-    date: 'September 1, 2026',
-    tags: ['Static Eliminator', 'ST-G', 'Selection Guide'],
-    image: '/assets/img/static-eliminator/st-g',
-    readTime: '9 min read',
-  },
-  {
-    slug: 'lithium-battery-ionizing-bar-guide',
-    title: 'Ionizing Bar Selection Guide for Lithium Battery Production',
-    excerpt: 'Electrode coating, slitting and winding all generate charge as the web separates from a roller. Which bar suits which step, and where to mount it.',
-    date: 'May 18, 2026',
-    tags: ['Static Eliminator', 'Lithium Battery', 'Selection Guide'],
-    image: '/assets/img/static-eliminator/st-e',
-    readTime: '11 min read',
-  },
-  {
-    slug: 'photovoltaic-ionizing-bar-guide',
-    title: 'Smart Ionizing Bars for Photovoltaic Manufacturing',
-    excerpt: 'Cell handling, backsheet lamination and glass loading are all static-critical. How to specify a bar for PV production lines.',
-    date: 'May 17, 2026',
-    tags: ['Static Eliminator', 'Photovoltaic', 'Selection Guide'],
-    image: '/assets/img/static-eliminator/st-f',
-    readTime: '12 min read',
-  },
-  {
-    slug: 'optical-film-cleaner-tutorial',
-    title: 'Optical Film Dust Removal: 9 Steps for High Cleanliness',
-    excerpt: 'A step-by-step operating procedure for optical film cleaning, from roller tack selection through static verification.',
-    date: 'May 14, 2026',
-    tags: ['Cleaning Machine', 'Optical Film', 'Tutorial'],
-    image: '/assets/img/cleaning-machine/optical',
-    readTime: '10 min read',
-  },
-];
 ---
 
 <Layout

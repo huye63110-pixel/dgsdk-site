@@ -1,0 +1,170 @@
+---
+// All Resources — the page the Resources nav item links to.
+//
+// This is an index, not new editorial: every entry here already exists at its
+// own URL, and the titles and blurbs are the ones those pages publish. /blog
+// and /guides keep their own listings and their own URLs; this page sits above
+// both so the nav item has somewhere to point.
+import Layout from '../layouts/Layout.astro';
+import { posts, guides } from '../data/resources.js';
+
+const base = 'https://www.dg-sdk.com';
+const canonical = base + '/resources';
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: base },
+    { '@type': 'ListItem', position: 2, name: 'Resources', item: canonical },
+  ],
+};
+---
+
+<Layout
+  title="Resources | Static Control & Surface Cleaning Knowledge Base | Shidike"
+  description="Technical guides and articles on static control and industrial surface cleaning: ESD basics, ionizing bar selection and mounting, web cleaning methods, and application notes by industry."
+  canonical={canonical}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
+
+  <section
+    class="products-hero"
+    style="background: linear-gradient(rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.18)), url('/assets/img/static-eliminator/bg-2.jpg') center/cover no-repeat;">
+    <div class="container products-hero-inner">
+      <span class="products-hero-kicker">Knowledge Base</span>
+      <h1>Resources</h1>
+      <p>
+        Everything we have written on static control and industrial surface cleaning, in one place:
+        technical guides on how the equipment works and how to specify it, and articles applying it to
+        specific production lines.
+      </p>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="container res-wrap">
+
+      <section class="res-block" aria-labelledby="res-guides">
+        <div class="res-block-head">
+          <div>
+            <h2 id="res-guides">Guides</h2>
+            <p>How static control and surface cleaning work, and what to check before you specify a machine.</p>
+          </div>
+          <a class="res-block-all" href="/guides">Guides index <span aria-hidden="true">&rarr;</span></a>
+        </div>
+
+        <div class="res-grid">
+          {guides.map((guide) => (
+            <a class="res-card" href={guide.href}>
+              <picture class="res-card-media">
+                <source srcset={`${guide.image}.webp`} type="image/webp" />
+                <img src={`${guide.image}.jpg`} alt="" loading="lazy" decoding="async" width="480" height="270" />
+              </picture>
+              <div class="res-card-body">
+                <h3>{guide.title}</h3>
+                <p>{guide.blurb}</p>
+                <span class="res-card-cta">Read guide <span aria-hidden="true">&rarr;</span></span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section class="res-block" aria-labelledby="res-blog">
+        <div class="res-block-head">
+          <div>
+            <h2 id="res-blog">Blog</h2>
+            <p>Selection and application notes for specific industries and processes.</p>
+          </div>
+          <a class="res-block-all" href="/blog">Blog index <span aria-hidden="true">&rarr;</span></a>
+        </div>
+
+        <div class="res-grid">
+          {posts.map((post) => (
+            <a class="res-card" href={`/blog/${post.slug}`}>
+              <picture class="res-card-media">
+                <source srcset={`${post.image}.webp`} type="image/webp" />
+                <img src={`${post.image}.jpg`} alt="" loading="lazy" decoding="async" width="480" height="270" />
+              </picture>
+              <div class="res-card-body">
+                <span class="res-card-meta">{post.date} &middot; {post.readTime}</span>
+                <h3>{post.title}</h3>
+                <p>{post.excerpt}</p>
+                <span class="res-card-cta">Read article <span aria-hidden="true">&rarr;</span></span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section class="res-more" aria-labelledby="res-more-title">
+        <h2 id="res-more-title">Also on the site</h2>
+        <div class="res-more-grid">
+          <a class="res-more-card" href="/faq">
+            <h3>FAQ</h3>
+            <p>Short answers on static eliminators, ionizing bars, cleaning machines, lead times and ordering.</p>
+          </a>
+          <a class="res-more-card" href="/applications">
+            <h3>Applications by industry</h3>
+            <p>Where the charge is generated on six kinds of production line, and what is specified to deal with it.</p>
+          </a>
+          <a class="res-more-card" href="/contact">
+            <h3>Ask an engineer</h3>
+            <p>Send your material, line speed and mounting constraints and we will come back with a specification.</p>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .res-wrap { max-width: 1120px; padding: 60px 20px 72px; }
+  .res-block + .res-block { margin-top: 64px; }
+
+  .res-block-head {
+    display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;
+    gap: 14px; margin-bottom: 26px;
+    padding-bottom: 16px; border-bottom: 1px solid #e5e7eb;
+  }
+  .res-block-head h2 { margin: 0 0 6px; font-size: 1.55rem; color: #1a1a2e; }
+  .res-block-head p { margin: 0; max-width: 60ch; color: #555; font-size: 0.95rem; line-height: 1.6; }
+  .res-block-all { flex-shrink: 0; color: #2563eb; font-size: 0.9rem; font-weight: 600; text-decoration: none; }
+  .res-block-all:hover { text-decoration: underline; }
+
+  .res-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+
+  .res-card {
+    display: flex; flex-direction: column;
+    border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden;
+    color: inherit; text-decoration: none; background: #fff;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .res-card:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10); transform: translateY(-2px); }
+  .res-card-media { display: block; background: #f3f7fa; }
+  .res-card-media img { display: block; width: 100%; height: 178px; object-fit: cover; }
+  .res-card-body { padding: 22px 24px 26px; }
+  .res-card-meta { display: block; margin-bottom: 8px; font-size: 0.78rem; color: #6b7280; }
+  .res-card-body h3 { margin: 0 0 10px; font-size: 1.1rem; line-height: 1.4; color: #1a1a2e; }
+  .res-card-body p { margin: 0; color: #555; font-size: 0.92rem; line-height: 1.65; }
+  .res-card-cta { display: inline-block; margin-top: 16px; color: #2563eb; font-size: 0.88rem; font-weight: 500; }
+
+  .res-more { margin-top: 64px; padding-top: 34px; border-top: 1px solid #e5e7eb; }
+  .res-more h2 { margin: 0 0 22px; font-size: 1.3rem; color: #1a1a2e; }
+  .res-more-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+  .res-more-card {
+    display: block; padding: 24px; border: 1px solid #e5e7eb; border-radius: 12px;
+    color: inherit; text-decoration: none; transition: box-shadow 0.2s ease;
+  }
+  .res-more-card:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); }
+  .res-more-card h3 { margin: 0 0 8px; font-size: 1.02rem; color: #1a1a2e; }
+  .res-more-card p { margin: 0; color: #555; font-size: 0.9rem; line-height: 1.6; }
+
+  @media (max-width: 640px) {
+    .res-wrap { padding: 40px 16px 52px; }
+    .res-block + .res-block { margin-top: 46px; }
+    .res-grid { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  }
+</style>

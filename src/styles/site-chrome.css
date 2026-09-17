@@ -19,16 +19,11 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}
 .brand{display:block;width:168px;flex-shrink:0}
 .brand img{width:100%;height:auto}
 #main-nav{display:flex;align-items:center;gap:27px;font-size:11px;font-weight:500}
-#main-nav>a:not(.quote-button){padding-block:12px;position:relative}
+#main-nav>a:not(.quote-button),#main-nav .nav-link{padding-block:12px;position:relative}
 #main-nav a:hover{color:var(--v12-blue)}
 .nav-home::after{content:'';position:absolute;bottom:6px;left:0;right:0;height:2px;background:var(--v12-blue)}
 .quote-button{padding:12px 18px;background:var(--v12-blue);color:#fff!important;border-radius:23px;display:flex;gap:17px;align-items:center;box-shadow:0 4px 12px #087bbd2c}
 .quote-button:hover{background:var(--v12-blue-deep)}
-#products-nav{position:relative}
-#products-nav summary{display:flex;gap:6px;align-items:center;padding-block:20px}
-.product-menu{position:absolute;left:-20px;top:100%;width:240px;padding:6px 18px;background:#fff;border:1px solid var(--v12-line);border-radius:6px;box-shadow:0 10px 25px #163b4d1c}
-.product-menu a{display:block;padding-block:15px}
-.product-menu a+a{border-top:1px solid var(--v12-line)}
 #menu-toggle{display:none}
 @media(max-width:1200px){#main-nav{gap:18px;font-size:10px}
 .header-inner{gap:25px}
@@ -40,10 +35,8 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}
 #menu-toggle span{font-size:18px}
 #main-nav{display:none;position:absolute;top:68px;left:0;right:0;padding:10px 20px 23px;background:white;border-bottom:1px solid var(--v12-line);box-shadow:0 12px 22px #1d3a541a;font-size:13px}
 #main-nav.is-open{display:flex;flex-direction:column;align-items:stretch;gap:0}
-#main-nav>a:not(.quote-button),#products-nav summary{padding-block:16px;border-bottom:1px solid #e7eef4}
+#main-nav>a:not(.quote-button),#main-nav .nav-item-head{padding-block:16px;border-bottom:1px solid #e7eef4}
 .nav-home::after{display:none}
-#products-nav summary{justify-content:space-between}
-.product-menu{position:static;box-shadow:none;width:100%;border:0;background:#f2f7fa;margin:0;padding:0 15px;font-size:11px}
 #main-nav .quote-button{margin-top:20px;justify-content:space-between;padding:13px 17px}
 .footer-main .brand{width:140px}}
 
@@ -52,10 +45,8 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}
 .nav-home::after{background:var(--brand)}
 .quote-button{background:var(--brand);color:#202629!important;box-shadow:0 4px 12px #03b1ee20;}
 .quote-button:hover{background:var(--brand-hover)}
-.product-menu{border-color:var(--v12-line);box-shadow:0 10px 25px #00000014}
 @media(max-width:800px){#main-nav{border-color:var(--v12-line);box-shadow:0 12px 22px #00000012}
-#main-nav>a:not(.quote-button),#products-nav summary{border-color:#e7eaec}
-.product-menu{background:#f2f5f6}}
+#main-nav>a:not(.quote-button),#main-nav .nav-item-head{border-color:#e7eaec}}
 
 /* === homepage-footer.css === */
 #site-footer{background: #fff;
@@ -116,22 +107,13 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}
 #site-footer .hf-bottom{flex-direction: column; gap: 0;}}
 
 /* ---------------------------------------------------------------------------
-   Additions for the shared header: a second dropdown, and the product search.
+   Additions for the shared header: the product search.
 
-   The prototype only had one dropdown (#products-nav) and no search. The live
+   The prototype had no search. The live
    site has both, and search is wired to #searchDropdown / #searchToggle /
    #searchBox in public/js/scripts.js, so those hooks are kept and restyled for
    the white header instead of the old pill nav's cream palette.
 --------------------------------------------------------------------------- */
-.nav-dropdown { position: relative; }
-.nav-dropdown > summary {
-  display: flex; gap: 6px; align-items: center; padding-block: 20px;
-  list-style: none; cursor: pointer;
-}
-.nav-dropdown > summary::-webkit-details-marker { display: none; }
-.nav-dropdown > summary:hover { color: var(--v12-blue); }
-#guides-nav .product-menu { width: 260px; }
-
 .site-header .nav-search { position: relative; display: flex; align-items: center; }
 .site-header .nav-icon-btn {
   display: grid; place-items: center; width: 32px; height: 32px;
@@ -178,13 +160,6 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}
     border: 0; box-shadow: none;
   }
   .site-header .search-dropdown .search-box { display: block; }
-  #main-nav .nav-dropdown > summary { padding-block: 16px; border-bottom: 1px solid #e7eef4; }
-  #main-nav .product-menu {
-    position: static; width: auto; padding: 4px 0 10px 14px;
-    border: 0; box-shadow: none;
-  }
-  #main-nav .product-menu a { padding-block: 11px; }
-  #main-nav .product-menu a + a { border-top: 0; }
 }
 
 /* The global Bootstrap stylesheet sets `a { text-decoration: underline }`.
@@ -292,4 +267,199 @@ body { margin: 0; }
 }
 @media (max-width: 767.98px) {
   .quote-modal-close { min-width: 44px; min-height: 44px; }
+}
+
+/* ---------------------------------------------------------------------------
+   Products / Resources mega menus.
+
+   The panel is absolutely positioned against .site-header (sticky counts as a
+   containing block), not against the nav item, so it can span the full header
+   width while the trigger stays where it is. .nav-item is therefore left
+   static on purpose - giving it position:relative would pin the panel to the
+   width of the word "Products".
+
+   Visibility is driven by .is-open, set by the controller in SiteHeader.astro.
+   Hover alone is deliberately not enough: the same class has to work for tap
+   and for keyboard focus, and CSS :hover cannot serve those.
+--------------------------------------------------------------------------- */
+#main-nav .nav-item { position: static; }
+#main-nav .nav-item-head { display: flex; align-items: center; gap: 2px; }
+#main-nav .nav-item .nav-link { position: relative; }
+#main-nav .nav-expand {
+  display: flex; align-items: center; padding: 6px 2px;
+  color: inherit; font-size: 13px; line-height: 1; cursor: pointer;
+  background: none; border: 0;
+  transition: transform .18s ease, color .18s ease;
+}
+#main-nav .nav-expand:hover { color: var(--v12-blue); }
+#main-nav .nav-item.is-open .nav-expand { transform: rotate(180deg); color: var(--v12-blue); }
+#main-nav .nav-item.is-open > .nav-item-head > .nav-link { color: var(--v12-blue); }
+#main-nav .nav-expand:focus-visible { outline: 2px solid var(--v12-blue); outline-offset: 2px; border-radius: 4px; }
+
+.site-header .mega {
+  display: none;
+  /* Pinned, not inherited: the legacy sheet sets line-height 1.5 on body and
+     the homepage does not load it, so an inherited value renders the same
+     menu 8px taller on 44 pages than on the homepage. */
+  line-height: 1.5;
+  position: absolute; left: 0; right: 0; top: 100%;
+  background: #fff;
+  border-top: 1px solid var(--v12-line);
+  box-shadow: 0 18px 38px #163b4d1f;
+  z-index: 40;
+}
+.site-header .nav-item.is-open > .mega { display: block; }
+.site-header .mega-inner { padding-block: 26px 28px; }
+.site-header .mega ul { list-style: none; margin: 0; padding: 0; }
+.site-header .mega-model-list[hidden],
+.site-header .mega-card[hidden] { display: none; }
+
+/* Products: categories | models | preview */
+.site-header .mega-inner-products {
+  display: grid;
+  grid-template-columns: minmax(0, 232px) minmax(0, 268px) minmax(0, 1fr);
+  gap: 0 30px;
+  align-items: start;
+}
+.site-header .mega-cats { border-right: 1px solid var(--v12-line); padding-right: 18px; }
+.site-header .mega-cat {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  padding: 12px 12px 12px 13px; border-radius: 8px;
+  font-size: 12.5px; font-weight: 600; color: var(--v12-ink); line-height: 1.4;
+  transition: background .15s ease, color .15s ease;
+}
+.site-header .mega-cat:hover,
+.site-header .mega-cat.is-active { background: var(--v12-pale); color: var(--v12-blue); }
+.site-header .mega-cat-count {
+  flex-shrink: 0; min-width: 22px; padding: 2px 6px; border-radius: 999px;
+  background: #eaf1f6; color: var(--v12-muted);
+  font-size: 10px; font-weight: 600; text-align: center;
+}
+.site-header .mega-cat.is-active .mega-cat-count { background: #d8ebf6; color: var(--v12-blue-deep); }
+
+.site-header .mega-models { max-height: 330px; overflow-y: auto; padding-right: 6px; }
+.site-header .mega-model {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 10px;
+  padding: 9px 11px; border-radius: 7px;
+  font-size: 12px; color: var(--v12-ink); line-height: 1.45;
+  transition: background .15s ease, color .15s ease;
+}
+.site-header .mega-model:hover,
+.site-header .mega-model.is-active { background: var(--v12-pale); color: var(--v12-blue); }
+.site-header .mega-model-code {
+  flex-shrink: 0; font-size: 10px; font-weight: 600; color: var(--v12-muted); letter-spacing: .02em;
+}
+.site-header .mega-model-all { margin-top: 6px; border-top: 1px solid var(--v12-line); padding-top: 6px; }
+.site-header .mega-model-all a {
+  display: block; padding: 9px 11px; font-size: 11.5px; font-weight: 600; color: var(--v12-blue);
+}
+
+.site-header .mega-card { max-width: 420px; }
+.site-header .mega-card-media {
+  display: block; margin-bottom: 14px; border-radius: 10px; overflow: hidden;
+  background: var(--v12-pale); border: 1px solid var(--v12-line);
+}
+.site-header .mega-card-media img {
+  display: block; width: 100%; height: 168px; object-fit: cover;
+}
+.site-header .mega-card-cat {
+  margin: 0 0 4px; font-size: 10px; font-weight: 600; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--v12-muted); line-height: 1.5;
+}
+.site-header .mega-card-name { margin: 0 0 7px; font-size: 14.5px; font-weight: 650; color: var(--v12-ink); line-height: 1.35; }
+.site-header .mega-card-desc {
+  margin: 0 0 11px; font-size: 11.5px; line-height: 1.65; color: var(--v12-muted);
+  display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;
+}
+.site-header .mega-card-specs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px !important; }
+.site-header .mega-card-specs li {
+  padding: 4px 9px; border-radius: 999px; background: var(--v12-pale);
+  border: 1px solid var(--v12-line); font-size: 10.5px; color: var(--v12-ink);
+}
+.site-header .mega-card-cta { font-size: 11.5px; font-weight: 650; color: var(--v12-blue); }
+
+/* Resources: two labelled sections plus the footer row.
+   The panel uses <section> so each column's heading is announced as a
+   landmark - but the legacy sheet styles bare <section> with 144px of page
+   padding, which made the menu 288px taller on every page that loads it and
+   correct only on the homepage, which does not. Neutralised here. */
+.site-header .mega section { padding: 0; margin: 0; }
+.site-header .mega-inner-resources {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 44px;
+}
+.site-header .mega-res-col h3 {
+  margin: 0 0 4px; padding-bottom: 10px; border-bottom: 1px solid var(--v12-line);
+  font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--v12-muted);
+  line-height: 1.4;
+}
+.site-header .mega-res-item {
+  display: flex; gap: 13px; align-items: flex-start;
+  padding: 11px 9px; margin-inline: -9px; border-radius: 9px;
+  transition: background .15s ease;
+}
+.site-header .mega-res-item:hover { background: var(--v12-pale); }
+.site-header .mega-res-media {
+  flex-shrink: 0; width: 74px; border-radius: 7px; overflow: hidden;
+  background: var(--v12-pale); border: 1px solid var(--v12-line);
+}
+.site-header .mega-res-media img { display: block; width: 100%; height: 52px; object-fit: cover; }
+.site-header .mega-res-title {
+  display: block; font-size: 12px; font-weight: 600; color: var(--v12-ink); line-height: 1.45;
+}
+.site-header .mega-res-meta { display: block; margin-top: 3px; font-size: 10.5px; color: var(--v12-muted); }
+.site-header .mega-res-all {
+  display: inline-block; margin-top: 8px; font-size: 11.5px; font-weight: 650; color: var(--v12-blue);
+}
+.site-header .mega-foot {
+  grid-column: 1 / -1;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;
+  margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--v12-line);
+}
+.site-header .mega-foot-link { font-size: 12px; font-weight: 650; color: var(--v12-ink); }
+.site-header .mega-foot-link:hover { color: var(--v12-blue); }
+.site-header .mega-foot-cta {
+  padding: 9px 17px; border-radius: 999px;
+  background: var(--brand); color: #202629 !important;
+  font-size: 11.5px; font-weight: 650;
+}
+.site-header .mega-foot-cta:hover { background: var(--brand-hover); color: #202629 !important; }
+
+@media (max-width: 1080px) {
+  .site-header .mega-inner-products { grid-template-columns: minmax(0, 200px) minmax(0, 230px) minmax(0, 1fr); gap: 0 20px; }
+  .site-header .mega-card-media img { height: 140px; }
+}
+
+@media (max-width: 800px) {
+  /* Collapsed panel: the mega becomes a plain indented list. There is no
+     hover on a phone, so every category's models are shown at once and the
+     preview column - image, blurb, specs - is dropped rather than stacked. */
+  #main-nav .nav-item { border-bottom: 1px solid #e7eef4; }
+  #main-nav .nav-item-head { justify-content: space-between; padding-block: 16px; }
+  #main-nav .nav-item-head .nav-link { flex: 1; }
+  #main-nav .nav-expand { padding: 10px 4px 10px 16px; font-size: 16px; }
+  .site-header .mega {
+    position: static; border-top: 0; box-shadow: none;
+    background: #f2f5f6; border-radius: 8px; margin-bottom: 14px;
+  }
+  .site-header .mega-inner,
+  .site-header .mega-inner-products,
+  .site-header .mega-inner-resources {
+    display: block; width: auto; padding: 6px 14px 12px;
+  }
+  .site-header .mega-cats { border-right: 0; padding-right: 0; }
+  .site-header .mega-cat { padding: 12px 0; font-size: 12.5px; }
+  .site-header .mega-cat:hover, .site-header .mega-cat.is-active { background: none; }
+  .site-header .mega-models { max-height: none; overflow: visible; padding: 0; }
+  /* the lists are un-hidden by the controller, not here: the legacy sheet's
+     [hidden]{display:none!important} outranks any rule this file can write */
+  .site-header .mega-model { padding: 10px 0 10px 14px; min-height: 40px; align-items: center; }
+  .site-header .mega-model:hover, .site-header .mega-model.is-active { background: none; }
+  .site-header .mega-model-all a { padding: 10px 0 10px 14px; }
+  .site-header .mega-preview { display: none; }
+  .site-header .mega-res-col + .mega-res-col { margin-top: 16px; }
+  .site-header .mega-res-item { padding: 9px 0; margin-inline: 0; }
+  .site-header .mega-res-item:hover { background: none; }
+  .site-header .mega-foot { margin-top: 16px; }
 }
