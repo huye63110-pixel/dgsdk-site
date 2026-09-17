@@ -335,6 +335,14 @@ const faqs = [
     /* Scoped to .ct-*. Each rule sets its own colour, size and line-height
        rather than inheriting: this page loads the legacy stylesheet, which puts
        line-height on body/p/h3 and 144px of padding on a bare <section>. */
+    /* The banner's own rules, carried over from the page this replaced. They
+       are not decoration: the legacy sheet sets .products-hero h1 { color: #111 }
+       and this banner is a dark photograph, so without them the title and lead
+       render near-black on a dark image. Dropping them while rewriting the
+       style block is what made the type unreadable in the first preview. */
+    .contact-hero-banner h1 { color: #fff !important; text-shadow: 0 2px 18px rgba(0,0,0,.4); }
+    .contact-hero-banner p  { color: rgba(255,255,255,.9) !important; text-shadow: 0 1px 12px rgba(0,0,0,.35); }
+
     .ct-wrap { width: min(calc(100% - 80px), 1280px); max-width: none; margin-inline: auto; padding-inline: 0; }
 
     .ct-main, .ct-services, .ct-visit, .ct-next, .ct-faq { padding-block: 0; }
