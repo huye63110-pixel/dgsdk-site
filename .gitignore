@@ -27,3 +27,6 @@ pnpm-debug.log*
 
 .claude/
 _image-briefs/
+
+# screenshots captured by local verification scripts; never committed
+shots/
