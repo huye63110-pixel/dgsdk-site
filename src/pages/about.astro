@@ -1,361 +1,471 @@
 ---
+// About, rebuilt to the v2 design.
+//
+// This round's direction supersedes two earlier standing rules, for this page
+// only: the old About body copy is replaced, and the predecessor businesses are
+// named. Nothing outside /about changes — the homepage figures, its certificate
+// carousel, the shared header and footer, search, SEO and the enquiry flow are
+// all untouched.
+//
+// IMPLEMENTATION NOTES (frontmatter comments are compiled away; HTML comments
+// are served to the browser, so notes never go in the markup)
+//
+// 1. Company names. "Kexinyuan Anti-Static Co., Ltd." and "Langshuo Automation
+//    Co., Ltd." are working translations of the spellings supplied for this
+//    round. They are NOT verified official registered English names, and this
+//    page is the only place they appear — they do not touch the Organization /
+//    LocalBusiness legal entity in Layout.astro.
+//
+// 2. "25+ years" is industry experience across the team's business history. It
+//    is not a company age: Shidike was established in 2013, which the same row
+//    states separately.
+//
+// 3. CEO portrait. The design calls for a real photograph beside the dark
+//    panel. No portrait of James Hu exists anywhere in this repository (checked
+//    public/assets/** for james/ceo/portrait). Rather than invent one or pass a
+//    workshop employee off as the CEO, CEO_PORTRAIT is null and the module
+//    renders as the text panel alone. Drop the file in and set the constant —
+//    the two-column layout is already written and will light up.
+//
+// 4. Title, meta description and the /about URL are the ones this page already
+//    published, kept deliberately: the page is indexed on them.
 import Layout from '../layouts/Layout.astro';
+
+// Set to e.g. '/assets/img/about/james-hu-ceo-shidike' (no extension) once the
+// real portrait is in the repo. See note 3.
+const CEO_PORTRAIT = null;
+
+const facts = [
+  ['25+ years', "Industry experience across our team's business history"],
+  ['2013', 'Shidike established in Dongguan'],
+  ['Own brand', 'Static control & surface-cleaning equipment'],
+];
+
+const categories = [
+  ['Ionizing bars', '/products/static-eliminator'],
+  ['Ionizing air blowers', '/products/static-eliminator/ionizing-air-blowers'],
+  ['Surface-cleaning systems', '/products/cleaning-machine'],
+];
+
+const timeline = [
+  {
+    period: 'Late 1990s',
+    title: 'Experience in static control',
+    body: 'Our industry experience began at Kexinyuan Anti-Static Co., Ltd., working in static-control equipment.',
+  },
+  {
+    period: '2008',
+    title: 'The next business chapter',
+    body: "The business continued through Langshuo Automation Co., Ltd., building on the team's earlier experience.",
+  },
+  {
+    period: '2013',
+    title: 'Shidike established',
+    body: 'Shidike was established in Dongguan, China, as a manufacturer of industrial equipment.',
+  },
+  {
+    period: 'Today',
+    title: 'Continuity in people and production',
+    body: 'Employees from the earlier businesses continue working at Shidike, manufacturing equipment under our own brand.',
+  },
+];
+
+const steps = [
+  ['Understand the application', 'Start with your material, line speed, available space and the problem you see.'],
+  ['Review the configuration', 'Discuss dimensions, mounting and control requirements before the equipment is specified.'],
+  ['Build and check in-house', 'Design, assembly and testing are part of our manufacturing process.'],
+  ['Support the installation', 'Review access, material handling and the checks appropriate to the supplied equipment.'],
+];
+
+const explore = [
+  ['Equipment', 'Ionizing bars, air blowers and surface-cleaning systems.', '/products/static-eliminator'],
+  ['Applications', 'Where charge is generated, by industry and process.', '/applications'],
+  ['Resources', 'Guides and articles on static control and cleaning.', '/resources'],
+];
 ---
 
-<Layout title="About Shidike | China Static Eliminator & Cleaning Machine Manufacturer" description="About Shidike, a China manufacturer focused on industrial static eliminators and ionizing bars, followed by precision cleaning machines for global production lines.">
+<Layout
+  title="About Shidike | China Static Eliminator & Cleaning Machine Manufacturer"
+  description="About Shidike, a China manufacturer focused on industrial static eliminators and ionizing bars, followed by precision cleaning machines for global production lines."
+>
   <section
-    class="about-hero"
-    style="background: linear-gradient(rgba(2, 1, 1, 0.35), rgba(10, 20, 40, 0.25)), url('/assets/img/about/about-building.webp') center/cover no-repeat;">
-    <div class="about-hero-overlay"></div>
-    <div class="container about-hero-content">
-      <span class="about-hero-kicker" data-aos="fade-down" data-aos-duration="600">About Shidike</span>
-      <h1 data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">Industrial static control and surface cleaning solutions built for global production.</h1>
-      <p>
-        Dongguan Shidike Intelligent Equipment Co., Ltd. focuses on industrial static eliminators and ionizing bars first, followed by precision cleaning machines for customers worldwide.
-      </p>
+    class="page-banner ab-banner"
+    style="background-image: linear-gradient(rgba(8, 18, 26, 0.62), rgba(8, 18, 26, 0.46)), url('/assets/img/about/about-workshop-3.webp');">
+    <div class="container ab-banner-inner">
+      <p class="ab-eyebrow">About Shidike &middot; Dongguan, China</p>
+      <h1>The team behind your equipment.</h1>
+      <p class="ab-banner-lead">Static control and web cleaning equipment. Our own brand. Manufactured in China.</p>
+      <a class="ab-btn" href="#our-story">Discover our story <span aria-hidden="true">&#8595;</span></a>
     </div>
   </section>
 
-  <section class="about-intro-section">
+  <section class="ab-facts" aria-label="Company facts">
+    <div class="container ab-facts-inner">
+      {facts.map(([value, label]) => (
+        <div class="ab-fact">
+          <p class="ab-fact-value">{value}</p>
+          <p class="ab-fact-label">{label}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="ab-intro">
+    <div class="container ab-intro-grid">
+      <h2>Built in Dongguan.<br />Built around your process.</h2>
+      <div class="ab-intro-copy">
+        <p>Shidike is a manufacturer of ionizing bars, ionizing air blowers and surface-cleaning systems in Dongguan, China.</p>
+        <p>We manufacture equipment under our own brand, with design, assembly and testing as part of our work. Our products support static control and particle removal in film, sheet and electronics production.</p>
+        <p>From the material you handle to the space on your line, we discuss the application before recommending a configuration.</p>
+
+        <ul class="ab-cats">
+          {categories.map(([label, href]) => (
+            <li><a href={href}>{label} <span aria-hidden="true">&#8594;</span></a></li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="ab-story" id="our-story">
     <div class="container">
-      <div class="about-intro-grid">
-        <div class="about-intro-copy" data-aos="fade-right" data-aos-duration="700">
-          <span class="about-section-label">Who We Are</span>
-          <h2>A professional manufacturer focused on quality, engineering, and practical industrial solutions.</h2>
-          <p>
-            Shidike is based in Dongguan, China, and is committed to providing reliable products and customized
-            solutions for customers in electronics, SMT, display manufacturing, film processing, packaging, and related production.
-          </p>
-          <p>
-            Our primary business is industrial static elimination, especially ionizing bars for machine and line integration. Industrial cleaning machines are our second product line, with automation integration retained as a supporting engineering capability. We focus on stable performance and long-term cooperation with global customers.
-          </p>
-
-          <div class="about-intro-points">
-            <div class="about-point">
-              <strong>Core Products</strong>
-              <span>Static eliminators and ionizing bars first; industrial cleaning machines second</span>
-            </div>
-            <div class="about-point">
-              <strong>Manufacturing Focus</strong>
-              <span>Quality control, practical engineering, stable industrial performance</span>
-            </div>
-            <div class="about-point">
-              <strong>Service Goal</strong>
-              <span>Reliable support for long-term industrial cooperation</span>
-            </div>
-            <div class="about-point">
-              <strong>Team &amp; Markets</strong>
-              <span>About 50 people in Dongguan; equipment ships to Singapore, Malaysia, Thailand, Vietnam, India and the Middle East</span>
-            </div>
-          </div>
-        </div>
-
-       <div class="about-image-stack" data-aos="fade-left" data-aos-duration="700">
-  <picture><source srcset="/assets/img/about/about-lobby.webp" type="image/webp" /><img src="/assets/img/about/about-lobby.jpg" alt="Reception lobby at the Shidike factory in Dongguan, Guangdong" class="about-main-image" width="1400" height="840" loading="eager" decoding="async" fetchpriority="high" /></picture>
-  <picture><source srcset="/assets/img/about/about-workshop-1.webp" type="image/webp" /><img src="/assets/img/about/about-workshop-1.jpg" alt="Shidike factory floor with cleaning machines" class="about-float-image" width="1400" height="840" loading="lazy" decoding="async" /></picture>
-</div>
-        </div>
+      <div class="ab-story-head">
+        <h2>A continuing team.<br />A business built over time.</h2>
+        <p>Shidike was established in 2013. Our industry experience began earlier, and employees from those earlier businesses continue working with us today.</p>
       </div>
     </div>
-  </section>
 
-  <section class="about-values-section">
     <div class="container">
-      <div class="about-section-heading text-center">
-        <span class="about-section-label">Why Choose Us</span>
-        <h2 data-aos="fade-up" data-aos-duration="700">Built around industrial reliability.</h2>
-        <p>
-          We focus on what matters most in manufacturing environments: consistency, efficiency,
-          quality control, responsive support, and practical cooperation.
-        </p>
-      </div>
-
-      <div class="about-values-grid">
-        <div class="about-value-card" data-aos="fade-up" data-aos-delay="0" data-aos-duration="600">
-          <img src="/assets/img/about/about-support.png" alt="Technical support icon" class="about-value-icon" loading="lazy" />
-          <h3>Professional Support</h3>
-          <p>
-            We provide responsive communication and practical technical support for product selection and project discussion.
-          </p>
-        </div>
-
-        <div class="about-value-card" data-aos="fade-up" data-aos-delay="80" data-aos-duration="600">
-          <img src="/assets/img/about/icon-delivery.png" alt="Delivery and shipping support icon" class="about-value-icon" loading="lazy" />
-          <h3>Lead Time</h3>
-          <p>
-            Standard configurations typically ship within 3&ndash;10 days. Bars are made to
-            length and cleaning machines to width, so the date for your build is confirmed
-            with the quotation rather than assumed from this range.
-          </p>
-        </div>
-
-        <div class="about-value-card" data-aos="fade-up" data-aos-delay="160" data-aos-duration="600">
-          <img src="/assets/img/about/icon-guarantee.png" alt="Quality assurance icon" class="about-value-icon" loading="lazy" />
-          <h3>Tested Before It Ships</h3>
-          <p>
-            Every unit is powered up and run before it leaves the factory &mdash; output voltage
-            and the control settings among the things checked. Ask if your process needs a
-            specific test recorded and we will tell you what we can document.
-          </p>
-        </div>
-
-        <div class="about-value-card" data-aos="fade-up" data-aos-delay="240" data-aos-duration="600">
-          <img src="/assets/img/about/icon-support.png" alt="Cooperation and after-sales service icon" class="about-value-icon" loading="lazy" />
-          <h3>Long-Term Cooperation</h3>
-          <p>
-            Our goal is to build stable and lasting partnerships with global industrial customers.
-          </p>
-        </div>
-      </div>
+      <ol class="ab-timeline" tabindex="0" role="group" aria-label="Company timeline, scrollable horizontally">
+        {timeline.map((node) => (
+          <li class="ab-node">
+            <p class="ab-node-period">{node.period}</p>
+            <h3>{node.title}</h3>
+            <p class="ab-node-body">{node.body}</p>
+          </li>
+        ))}
+      </ol>
+      <p class="ab-scroll-hint" aria-hidden="true">Scroll for more &#8594;</p>
     </div>
   </section>
 
-  <section class="about-products-section">
+  <section class="ab-ceo" aria-labelledby="ab-ceo-title">
     <div class="container">
-      <div class="about-section-heading text-center">
-        <span class="about-section-label">Our Business</span>
-        <h2 data-aos="fade-up" data-aos-duration="700">Two core product lines, with integration support.</h2>
-        <p>
-          Industrial static control is our primary direction, cleaning machines are second, and line integration supports both.
-        </p>
-      </div>
+      <div class:list={['ab-ceo-grid', !CEO_PORTRAIT && 'is-textonly']}>
+        {CEO_PORTRAIT && (
+          <picture class="ab-ceo-photo">
+            <source srcset={`${CEO_PORTRAIT}.webp`} type="image/webp" />
+            <img src={`${CEO_PORTRAIT}.jpg`} alt="James Hu, CEO of Shidike" width="720" height="900" loading="lazy" decoding="async" />
+          </picture>
+        )}
 
-      <div class="about-business-grid">
-        <a href="/products/static-eliminator" class="about-business-card" data-aos="fade-up" data-aos-delay="0" data-aos-duration="600">
-          <picture><source srcset="/assets/img/static-white-bg.webp" type="image/webp" /><img src="/assets/img/static-white-bg.png" alt="Shidike static elimination product range, ionizing bars and air blowers" loading="lazy" /></picture>
-          <h3>1. Static Eliminators &amp; Ionizing Bars</h3>
-          <p>Ion bars, ion fans, and electrostatic control solutions for sensitive industrial environments.</p>
-        </a>
-
-        <a href="/products/cleaning-machine" class="about-business-card" data-aos="fade-up" data-aos-delay="80" data-aos-duration="600">
-          <picture><source srcset="/assets/img/cleaning-machine/polarizer-cleaner.webp" type="image/webp" /><img src="/assets/img/cleaning-machine/polarizer-cleaner.jpg" alt="Shidike polarizer precision cleaning machine for optical film" loading="lazy" /></picture>
-          <h3>2. Industrial Cleaning Machines</h3>
-          <p>Precision cleaning equipment for PCB, FPC, SMT, polarizer, LCM, backlight, and optical film applications.</p>
-        </a>
+        <div class="ab-ceo-panel">
+          <p class="ab-ceo-name">James Hu</p>
+          <p class="ab-ceo-role">CEO</p>
+          <h2 id="ab-ceo-title">Practical engineering.<br />From product to production.</h2>
+          <p>James Hu leads Shidike's work in static control, surface cleaning and industrial automation. His background spans product development, engineering and manufacturing operations, with a focus on equipment for practical production needs.</p>
+          <p>His work supports manufacturers in electronics, display manufacturing, printing, plastics and packaging. He also works to build relationships with distributors, system integrators and industrial partners.</p>
+          <a class="ab-ceo-link" href="https://www.linkedin.com/in/james-hu-765b05406/" target="_blank" rel="noopener noreferrer">View LinkedIn profile <span aria-hidden="true">&#8594;</span></a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="about-gallery-section">
+  <section class="ab-gallery">
     <div class="container">
-      <div class="about-section-heading text-center">
-        <span class="about-section-label">Factory Gallery</span>
-        <h2 data-aos="fade-up" data-aos-duration="700">Inside our production environment.</h2>
-        <p>
-          Real equipment, real manufacturing, and real industrial working conditions.
-        </p>
+      <div class="ab-gallery-head">
+        <h2>Where your equipment comes together.</h2>
+        <p>Our existing factory, equipment and assembly work in Dongguan, Guangdong, China.</p>
       </div>
 
-      <div class="about-gallery-grid">
-        <div class="about-gallery-item" data-aos="zoom-in" data-aos-delay="0" data-aos-duration="600">
-          <picture><source srcset="/assets/img/about/about-workshop-1.webp" type="image/webp" /><img src="/assets/img/about/about-workshop-1.jpg" alt="Shidike cleaning machine showroom — finished products" width="1400" height="840" loading="lazy" decoding="async" /></picture>
-        </div>
-        <div class="about-gallery-item" data-aos="zoom-in" data-aos-delay="80" data-aos-duration="600">
-          <picture><source srcset="/assets/img/about/about-workshop-2.webp" type="image/webp" /><img src="/assets/img/about/about-workshop-2.jpg" alt="Shidike factory assembly line" width="1400" height="840" loading="lazy" decoding="async" /></picture>
-        </div>
-        <div class="about-gallery-item" data-aos="zoom-in" data-aos-delay="160" data-aos-duration="600">
-          <picture><source srcset="/assets/img/about/about-workshop-3.webp" type="image/webp" /><img src="/assets/img/about/about-workshop-3.jpg" alt="Shidike technicians assembling cleaning machines" width="1400" height="840" loading="lazy" decoding="async" /></picture>
-        </div>
-        <div class="about-gallery-item" data-aos="zoom-in" data-aos-delay="240" data-aos-duration="600">
-          <picture><source srcset="/assets/img/about/about-training.webp" type="image/webp" /><img src="/assets/img/about/about-training.jpg" alt="Shidike training and meeting room" width="1400" height="840" loading="lazy" decoding="async" /></picture>
-        </div>
+      <div class="ab-gallery-grid">
+        <picture class="ab-shot ab-shot-lead">
+          <source srcset="/assets/img/about/about-workshop-1.webp" type="image/webp" />
+          <img src="/assets/img/about/about-workshop-1.jpg" alt="Assembly work on the Shidike production floor in Dongguan" width="1400" height="840" loading="lazy" decoding="async" />
+        </picture>
+        <picture class="ab-shot">
+          <source srcset="/assets/img/about/about-workshop-2.webp" type="image/webp" />
+          <img src="/assets/img/about/about-workshop-2.jpg" alt="Equipment being assembled at the Shidike production facility" width="1400" height="840" loading="lazy" decoding="async" />
+        </picture>
+        <picture class="ab-shot">
+          <source srcset="/assets/img/about/about-building.webp" type="image/webp" />
+          <img src="/assets/img/about/about-building.jpg" alt="The Shidike site in Dongguan, Guangdong, China" width="1400" height="840" loading="lazy" decoding="async" />
+        </picture>
       </div>
     </div>
   </section>
-  <style>
-    .about-values-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 22px;
-    }
 
-    .about-value-card {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
-    }
-
-    .about-value-icon {
-      width: 84px;
-      height: 84px;
-      object-fit: contain;
-      display: block;
-      margin: 0 0 18px;
-      opacity: 0.92;
-    }
-
-    .about-gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
-    }
-
-    .about-gallery-item {
-      overflow: hidden;
-      border-radius: 18px;
-      background: #f7f8fa;
-      box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
-    }
-
-    .about-image-stack picture,
-    .about-gallery-item picture {
-      display: block;
-      width: 100%;
-      height: 100%;
-    }
-
-    .about-main-image,
-    .about-float-image,
-    .about-gallery-item img {
-      width: 100%;
-      object-fit: cover;
-      display: block;
-      image-rendering: auto;
-      transform: translateZ(0);
-      backface-visibility: hidden;
-    }
-
-    .about-gallery-item img {
-      height: 320px;
-      border-radius: 18px;
-    }
-
-    @media (max-width: 991px) {
-      .about-values-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 768px) {
-      .about-hero {
-        background-attachment: scroll !important;
-        background-position: center top !important;
-      }
-
-      .about-values-grid,
-      .about-gallery-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .about-main-image {
-        height: 300px;
-        object-position: center center;
-      }
-
-      .about-value-icon {
-        width: 72px;
-        height: 72px;
-      }
-
-      .about-gallery-item img {
-        height: 280px;
-      }
-    }
-  </style>
-
-  <section class="about-timeline-section">
+  <section class="ab-process">
     <div class="container">
-      <div class="about-section-heading text-center">
-        <span class="about-section-label">Our Development</span>
-        <h2>Growing with industrial customers.</h2>
-        <p>
-          A development path focused on engineering capability, manufacturing reliability, and long-term service value.
-        </p>
-      </div>
-
-      <div class="about-timeline">
-        <div class="about-timeline-line"></div>
-
-        <div class="about-timeline-item left" data-aos="fade-right" data-aos-duration="700">
-          <div class="about-timeline-dot">01</div>
-          <div class="about-timeline-card">
-            <h3>Where the work began</h3>
-            <p>
-              The team has been in static control and surface cleaning in Dongguan since
-              2005, building the same class of equipment for the same industries. Shidike
-              was incorporated in 2013 to carry that work forward; the engineering and the
-              people came with it.
-            </p>
-          </div>
-        </div>
-
-        <div class="about-timeline-item right" data-aos="fade-left" data-aos-duration="700">
-          <div class="about-timeline-dot">02</div>
-          <div class="about-timeline-card">
-            <h3>Company Foundation, 2013</h3>
-            <p>
-              Dongguan Shidike Intelligent Equipment Co., Ltd. was established in Dongguan to develop
-              practical industrial equipment for manufacturing customers. The company dates from 2013;
-              the experience behind it is older.
-            </p>
-          </div>
-        </div>
-
-        <div class="about-timeline-item left" data-aos="fade-right" data-aos-duration="700">
-          <div class="about-timeline-dot">03</div>
-          <div class="about-timeline-card">
-            <h3>Product Expansion</h3>
-            <p>
-              Expanded into static elimination systems and precision cleaning equipment for electronics and display industries.
-            </p>
-          </div>
-        </div>
-
-        <div class="about-timeline-item right" data-aos="fade-left" data-aos-duration="700">
-          <div class="about-timeline-dot">04</div>
-          <div class="about-timeline-card">
-            <h3>Manufacturing Capability</h3>
-            <p>
-              Focused the product strategy on static eliminators and ionizing bars first, cleaning machines second, and integration support where needed.
-            </p>
-          </div>
-        </div>
-
-        <div class="about-timeline-item left" data-aos="fade-right" data-aos-duration="700">
-          <div class="about-timeline-dot">05</div>
-          <div class="about-timeline-card">
-            <h3>Global Cooperation</h3>
-            <p>
-              Serving customers with stable quality, engineering support, and long-term cooperation for overseas markets.
-            </p>
-          </div>
-        </div>
-      </div>
+      <h2>How we work with you.</h2>
+      <ol class="ab-steps">
+        {steps.map(([title, body], i) => (
+          <li class="ab-step">
+            <p class="ab-step-num">{String(i + 1).padStart(2, '0')}</p>
+            <h3>{title}</h3>
+            <p>{body}</p>
+          </li>
+        ))}
+      </ol>
     </div>
   </section>
 
-  <section class="about-cta-section">
+  <section class="ab-explore">
     <div class="container">
-      <div class="about-cta-box" data-aos="fade-up" data-aos-duration="700">
-        <div class="about-cta-copy">
-          <span class="about-section-label">Work With Us</span>
-          <h2>Looking for a reliable industrial manufacturing partner?</h2>
-          <p>
-            Contact Shidike to discuss your project, product requirements, or customized industrial solution.
-          </p>
-        </div>
-
-        <div class="about-cta-actions">
-          <a href="/contact" class="about-cta-btn primary">Contact Us</a>
-          <a href="/products/static-eliminator" class="about-cta-btn secondary">Industrial Static Eliminators</a>
-          <a href="/static-eliminator-manufacturer" class="about-cta-btn secondary">Manufacturing &amp; Customisation</a>
-        </div>
+      <div class="ab-explore-grid">
+        {explore.map(([title, body, href]) => (
+          <a class="ab-explore-card" href={href}>
+            <h3>{title}</h3>
+            <p>{body}</p>
+            <span class="ab-textlink">Open <span aria-hidden="true">&#8594;</span></span>
+          </a>
+        ))}
       </div>
     </div>
   </section>
 
-  <style>
-    /* styles.css still lays this out as a 4-column grid from when there were four
-       product lines. With two cards left they sat in columns 1-2 and the row read
-       as left-aligned with a hole on the right. */
-    .about-business-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-      max-width: 780px;
-      margin-inline: auto;
-    }
-    @media (max-width: 640px) {
-      .about-business-grid { grid-template-columns: 1fr !important; max-width: 420px; }
-    }
-  </style>
+  <section class="ab-cta">
+    <div class="container ab-cta-inner">
+      <div>
+        <h2>Let's look at your production line.</h2>
+        <p>Tell us about your material, working width and installation requirements.</p>
+      </div>
+      <a class="ab-btn ab-btn-solid" href="/contact">Contact us <span aria-hidden="true">&#8599;</span></a>
+    </div>
+  </section>
 </Layout>
+
+<style>
+  /* Everything is prefixed .ab-* and declares its own font-size, colour and
+     line-height rather than inheriting: this page loads the legacy stylesheet,
+     which sets line-height on body/p/h3 and 144px of padding on bare <section>. */
+  .ab-banner :global(.container),
+  .ab-facts :global(.container),
+  .ab-intro :global(.container),
+  .ab-story :global(.container),
+  .ab-ceo :global(.container),
+  .ab-gallery :global(.container),
+  .ab-process :global(.container),
+  .ab-explore :global(.container),
+  .ab-cta :global(.container) {
+    width: min(calc(100% - 80px), 1280px);
+    max-width: none;
+    margin-inline: auto;
+    padding-inline: 0;
+  }
+
+  .ab-eyebrow {
+    margin: 0 0 18px; font-size: 11px; font-weight: 700; line-height: 1.4;
+    letter-spacing: .14em; text-transform: uppercase; color: #7fd6f6;
+  }
+
+  /* A — banner. Height comes from the shared .page-banner rule. */
+  .ab-banner {
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    text-align: left;
+  }
+  .ab-banner-inner { position: relative; z-index: 1; }
+  .ab-banner h1 {
+    margin: 0 0 20px; max-width: 16ch;
+    font-size: clamp(2.3rem, 5vw, 3.6rem); line-height: 1.08;
+    letter-spacing: -.028em; font-weight: 700; color: #fff;
+  }
+  .ab-banner-lead {
+    margin: 0 0 32px; max-width: 46ch;
+    font-size: 15px; line-height: 1.75; color: #d5e4ed;
+  }
+  .ab-btn {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 14px 24px; border-radius: 4px;
+    background: #03b1ee; color: #0d2129 !important;
+    font-size: 13px; font-weight: 650; line-height: 1.4; text-decoration: none;
+  }
+  .ab-btn:hover { background: #22bdf3; }
+
+  /* B — facts */
+  .ab-facts { padding-block: 0; background: #0f1d26; }
+  .ab-facts-inner {
+    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+  }
+  .ab-fact { padding: 30px 34px 32px; border-left: 1px solid #ffffff1c; }
+  .ab-fact:first-child { border-left: 0; padding-left: 0; }
+  .ab-fact-value {
+    margin: 0 0 8px; font-size: clamp(1.4rem, 2.4vw, 1.9rem); font-weight: 700;
+    line-height: 1.15; letter-spacing: -.02em; color: #fff;
+  }
+  .ab-fact-label { margin: 0; font-size: 12.5px; line-height: 1.65; color: #9db4c2; }
+
+  /* C — intro */
+  .ab-intro { padding-block: 86px 88px; background: #fff; }
+  .ab-intro-grid {
+    display: grid; grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
+    gap: 30px 88px; align-items: start;
+  }
+  .ab-intro h2, .ab-story h2, .ab-gallery h2, .ab-process h2, .ab-cta h2 {
+    margin: 0; font-size: clamp(1.7rem, 3.2vw, 2.4rem); line-height: 1.16;
+    letter-spacing: -.028em; font-weight: 700; color: #12212b;
+  }
+  .ab-intro-copy p { margin: 0 0 18px; font-size: 14.5px; line-height: 1.8; color: #4d5f6b; }
+  .ab-intro-copy p:last-of-type { margin-bottom: 30px; }
+  .ab-cats { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+  .ab-cats a {
+    display: inline-flex; align-items: center; gap: 9px;
+    padding: 11px 18px; border: 1px solid #dde4e9; border-radius: 4px;
+    font-size: 12.5px; font-weight: 600; line-height: 1.4; color: #12212b; text-decoration: none;
+    transition: border-color .15s ease, color .15s ease;
+  }
+  .ab-cats a:hover { border-color: #03b1ee; color: #0a7ca6; }
+
+  /* D — timeline */
+  .ab-story { padding-block: 78px 84px; background: #f3f5f6; }
+  .ab-story-head {
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 20px 88px; align-items: end; margin-bottom: 40px;
+  }
+  .ab-story-head p { margin: 0; font-size: 14px; line-height: 1.8; color: #4d5f6b; }
+  .ab-timeline {
+    list-style: none; margin: 0; padding: 0 0 6px;
+    display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+  .ab-timeline:focus-visible { outline: 2px solid #03b1ee; outline-offset: 6px; border-radius: 6px; }
+  .ab-node { padding-top: 22px; border-top: 2px solid #cfd9df; }
+  .ab-node:first-child { border-top-color: #03b1ee; }
+  .ab-node-period {
+    margin: 0 0 12px; font-size: 11px; font-weight: 700; line-height: 1.4;
+    letter-spacing: .1em; text-transform: uppercase; color: #0a7ca6;
+  }
+  .ab-node h3 { margin: 0 0 10px; font-size: 15px; font-weight: 650; line-height: 1.35; color: #12212b; }
+  .ab-node-body { margin: 0; font-size: 13px; line-height: 1.75; color: #4d5f6b; }
+  .ab-scroll-hint { display: none; margin: 14px 0 0; font-size: 11.5px; color: #7b8992; }
+
+  /* E — CEO */
+  .ab-ceo { padding-block: 84px; background: #fff; }
+  .ab-ceo-grid {
+    display: grid; grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
+    gap: 44px; align-items: stretch;
+  }
+  .ab-ceo-grid.is-textonly { grid-template-columns: minmax(0, 1fr); }
+  .ab-ceo-photo { display: block; border-radius: 4px; overflow: hidden; background: #eef2f4; }
+  /* object-position top: never crop the head */
+  .ab-ceo-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+  .ab-ceo-panel { padding: 46px 48px 48px; border-radius: 4px; background: #27333a; }
+  .ab-ceo-name { margin: 0 0 4px; font-size: 16px; font-weight: 700; line-height: 1.3; color: #fff; }
+  .ab-ceo-role {
+    margin: 0 0 26px; font-size: 11px; font-weight: 600; line-height: 1.4;
+    letter-spacing: .12em; text-transform: uppercase; color: #8fb9cc;
+  }
+  .ab-ceo-panel h2 {
+    margin: 0 0 22px; font-size: clamp(1.4rem, 2.6vw, 1.95rem); line-height: 1.2;
+    letter-spacing: -.024em; font-weight: 700; color: #fff;
+  }
+  .ab-ceo-panel p { margin: 0 0 18px; max-width: 62ch; font-size: 14px; line-height: 1.8; color: #c2d2db; }
+  .ab-ceo-link {
+    display: inline-flex; align-items: center; gap: 9px; margin-top: 8px;
+    font-size: 12.5px; font-weight: 650; line-height: 1.4; color: #5fd0f5; text-decoration: none;
+  }
+  .ab-ceo-link:hover { color: #8adcf8; }
+
+  /* F — gallery */
+  .ab-gallery { padding-block: 78px 84px; background: #f3f5f6; }
+  .ab-gallery-head { max-width: 56ch; margin-bottom: 34px; }
+  .ab-gallery-head p { margin: 14px 0 0; font-size: 14px; line-height: 1.8; color: #4d5f6b; }
+  .ab-gallery-grid {
+    display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 20px;
+  }
+  .ab-shot { display: block; border-radius: 4px; overflow: hidden; background: #e6ebee; }
+  .ab-shot img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .ab-shot-lead { grid-row: span 2; }
+  .ab-gallery-grid .ab-shot:not(.ab-shot-lead) img { height: 218px; }
+  .ab-shot-lead img { min-height: 456px; }
+
+  /* G — process */
+  .ab-process { padding-block: 84px; background: #fff; }
+  .ab-steps {
+    list-style: none; margin: 38px 0 0; padding: 0;
+    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 26px;
+  }
+  .ab-step { padding-top: 22px; border-top: 1px solid #dde4e9; }
+  .ab-step-num {
+    margin: 0 0 14px; font-size: 12px; font-weight: 700; line-height: 1.4;
+    letter-spacing: .08em; color: #03b1ee;
+  }
+  .ab-step h3 { margin: 0 0 10px; font-size: 14.5px; font-weight: 650; line-height: 1.35; color: #12212b; }
+  .ab-step p { margin: 0; font-size: 13px; line-height: 1.75; color: #4d5f6b; }
+
+  /* H — explore + CTA */
+  .ab-explore { padding-block: 0 84px; background: #fff; }
+  .ab-explore-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+  .ab-explore-card {
+    display: block; padding: 28px 30px 30px; border: 1px solid #dde4e9; border-radius: 4px;
+    color: inherit; text-decoration: none; transition: border-color .15s ease, box-shadow .2s ease;
+  }
+  .ab-explore-card:hover { border-color: #03b1ee; box-shadow: 0 10px 26px #12212b12; }
+  .ab-explore-card h3 { margin: 0 0 10px; font-size: 16px; font-weight: 650; line-height: 1.3; color: #12212b; }
+  .ab-explore-card p { margin: 0 0 18px; font-size: 13px; line-height: 1.75; color: #4d5f6b; }
+  .ab-textlink {
+    display: inline-flex; align-items: center; gap: 9px;
+    font-size: 12.5px; font-weight: 650; line-height: 1.4; color: #0a7ca6;
+  }
+
+  .ab-cta { padding-block: 46px; background: #e8f5fc; }
+  .ab-cta-inner {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 40px;
+  }
+  .ab-cta p { margin: 10px 0 0; font-size: 14px; line-height: 1.75; color: #46565f; }
+  .ab-btn-solid { background: #12212b; color: #fff !important; }
+  .ab-btn-solid:hover { background: #1d3340; }
+
+  @media (max-width: 1000px) {
+    .ab-intro-grid, .ab-story-head, .ab-ceo-grid { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+    .ab-ceo-grid { gap: 22px; }
+    .ab-ceo-photo img { height: auto; aspect-ratio: 4 / 5; }
+    .ab-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 22px; }
+    .ab-explore-grid { grid-template-columns: minmax(0, 1fr); }
+    .ab-gallery-grid { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; }
+    .ab-shot-lead { grid-row: auto; }
+    .ab-shot-lead img, .ab-gallery-grid .ab-shot:not(.ab-shot-lead) img { min-height: 0; height: 240px; }
+  }
+
+  @media (max-width: 800px) {
+    .ab-banner :global(.container),
+    .ab-facts :global(.container),
+    .ab-intro :global(.container),
+    .ab-story :global(.container),
+    .ab-ceo :global(.container),
+    .ab-gallery :global(.container),
+    .ab-process :global(.container),
+    .ab-explore :global(.container),
+    .ab-cta :global(.container) { width: calc(100% - 40px); }
+
+    .ab-intro, .ab-ceo, .ab-process { padding-block: 52px; }
+    .ab-story, .ab-gallery { padding-block: 50px 56px; }
+    .ab-explore { padding-block: 0 56px; }
+
+    .ab-facts-inner { grid-template-columns: minmax(0, 1fr); }
+    .ab-fact { padding: 22px 0; border-left: 0; border-top: 1px solid #ffffff1c; }
+    .ab-fact:first-child { border-top: 0; }
+
+    .ab-ceo-panel { padding: 30px 24px 32px; }
+    .ab-steps { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+
+    /* the timeline becomes a horizontal scroller; the <ol> is focusable so the
+       arrow keys scroll it without a pointer */
+    .ab-timeline {
+      grid-auto-columns: min(74vw, 300px);
+      gap: 16px;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    .ab-node { scroll-snap-align: start; }
+    .ab-scroll-hint { display: block; }
+  }
+</style>

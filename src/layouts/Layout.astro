@@ -75,6 +75,10 @@ const path = new URL(canonical).pathname;
     <!-- Critical CSS -->
     {legacyCss && <link rel="stylesheet" href="/css/styles.css" />}
     {legacyCss && <link rel="stylesheet" href="/css/nav.css" />}
+    {/* Shared banner proportions, after nav.css so it can replace the 78vh
+        and 100vh hero heights that live there. Opt-in per template via the
+        `page-banner` class - it matches nothing on its own. */}
+    {legacyCss && <link rel="stylesheet" href="/css/page-banner.css" />}
     <!-- Shared header/footer chrome. Selector-scoped; adds no bare element rules. -->
     <link rel="stylesheet" href="/css/site-chrome.css" />
     <slot name="head" />
