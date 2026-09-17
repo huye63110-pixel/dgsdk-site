@@ -16,6 +16,16 @@
       "permanent": true
     },
     {
+      "source": "/products/precision-machined parts/:path*",
+      "destination": "/products/static-eliminator",
+      "permanent": true
+    },
+    {
+      "source": "/products/precision-machined parts",
+      "destination": "/products/static-eliminator",
+      "permanent": true
+    },
+    {
       "source": "/zh/products/precision-machined-parts",
       "destination": "/products/static-eliminator",
       "permanent": true
@@ -317,6 +327,181 @@
     },
     {
       "source": "/zh/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/es/products/automation/:path*",
+      "destination": "/products/cleaning-machine",
+      "permanent": true
+    },
+    {
+      "source": "/es/products/automation",
+      "destination": "/products/cleaning-machine",
+      "permanent": true
+    },
+    {
+      "source": "/es/products/precision-machined-parts/:path*",
+      "destination": "/products/static-eliminator",
+      "permanent": true
+    },
+    {
+      "source": "/es/products/precision-machined-parts",
+      "destination": "/products/static-eliminator",
+      "permanent": true
+    },
+    {
+      "source": "/es/products",
+      "destination": "/products/static-eliminator",
+      "permanent": true
+    },
+    {
+      "source": "/es/:path*",
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/es",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ja/products/automation/:path*",
+      "destination": "/products/cleaning-machine",
+      "permanent": true
+    },
+    {
+      "source": "/ja/products/automation",
+      "destination": "/products/cleaning-machine",
+      "permanent": true
+    },
+    {
+      "source": "/ja/products/precision-machined-parts/:path*",
+      "destination": "/products/static-eliminator",
+      "permanent": true
+    },
+    {
+      "source": "/ja/products/precision-machined-parts",
+      "destination": "/products/static-eliminator",
+      "permanent": true
+    },
+    {
+      "source": "/ja/products",
+      "destination": "/products/static-eliminator",
+      "permanent": true
+    },
+    {
+      "source": "/ja/:path*",
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/ja",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ko/products/automation/:path*",
+      "destination": "/products/cleaning-machine",
+      "permanent": true
+    },
+    {
+      "source": "/ko/products/automation",
+      "destination": "/products/cleaning-machine",
+      "permanent": true
+    },
+    {
+      "source": "/ko/products/precision-machined-parts/:path*",
+      "destination": "/products/static-eliminator",
+      "permanent": true
+    },
+    {
+      "source": "/ko/products/precision-machined-parts",
+      "destination": "/products/static-eliminator",
+      "permanent": true
+    },
+    {
+      "source": "/ko/products",
+      "destination": "/products/static-eliminator",
+      "permanent": true
+    },
+    {
+      "source": "/ko/:path*",
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/ko",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ar/products/automation/:path*",
+      "destination": "/products/cleaning-machine",
+      "permanent": true
+    },
+    {
+      "source": "/ar/products/automation",
+      "destination": "/products/cleaning-machine",
+      "permanent": true
+    },
+    {
+      "source": "/ar/products/precision-machined-parts/:path*",
+      "destination": "/products/static-eliminator",
+      "permanent": true
+    },
+    {
+      "source": "/ar/products/precision-machined-parts",
+      "destination": "/products/static-eliminator",
+      "permanent": true
+    },
+    {
+      "source": "/ar/products",
+      "destination": "/products/static-eliminator",
+      "permanent": true
+    },
+    {
+      "source": "/ar/:path*",
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/ar",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/vi/products/automation/:path*",
+      "destination": "/products/cleaning-machine",
+      "permanent": true
+    },
+    {
+      "source": "/vi/products/automation",
+      "destination": "/products/cleaning-machine",
+      "permanent": true
+    },
+    {
+      "source": "/vi/products/precision-machined-parts/:path*",
+      "destination": "/products/static-eliminator",
+      "permanent": true
+    },
+    {
+      "source": "/vi/products/precision-machined-parts",
+      "destination": "/products/static-eliminator",
+      "permanent": true
+    },
+    {
+      "source": "/vi/products",
+      "destination": "/products/static-eliminator",
+      "permanent": true
+    },
+    {
+      "source": "/vi/:path*",
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/vi",
       "destination": "/",
       "permanent": true
     },
