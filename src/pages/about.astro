@@ -89,8 +89,8 @@ const explore = [
   description="About Shidike, a China manufacturer focused on industrial static eliminators and ionizing bars, followed by precision cleaning machines for global production lines."
 >
   <section
-    class="page-banner ab-banner"
-    style="background-image: linear-gradient(95deg, rgba(8, 18, 26, 0.80) 0%, rgba(8, 18, 26, 0.62) 30%, rgba(8, 18, 26, 0.28) 62%, rgba(8, 18, 26, 0.12) 100%), url('/assets/img/about/about-workshop-3.webp');">
+    class="ab-banner"
+    style="background-image: linear-gradient(95deg, rgba(8, 18, 26, 0.58) 0%, rgba(8, 18, 26, 0.38) 34%, rgba(8, 18, 26, 0.12) 68%, rgba(8, 18, 26, 0.02) 100%), url('/assets/img/about/about-workshop-3.webp');">
     <div class="container ab-banner-inner">
       <p class="ab-eyebrow">About Shidike &middot; Dongguan, China</p>
       <h1>The team behind your equipment.</h1>
@@ -258,25 +258,44 @@ const explore = [
     margin: 0 0 18px; font-size: 11px; font-weight: 700; line-height: 1.4;
     letter-spacing: .14em; text-transform: uppercase; color: #7fd6f6;
   }
+  .ab-banner .ab-eyebrow { text-shadow: 0 1px 3px rgba(6, 16, 24, .7), 0 3px 14px rgba(6, 16, 24, .6); }
 
-  /* A — banner. Height comes from the shared .page-banner rule. */
+  /* A — banner.
+     The site-wide banner height experiment was withdrawn, so this carries its
+     own height: 78vh with the same padding /about used before the rebuild,
+     which is what every other banner on the site is back to. */
   .ab-banner {
     position: relative;
+    min-height: 78vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 104px;
+    padding-bottom: 56px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     color: #fff;
     text-align: left;
   }
+  @media (max-width: 991.98px) {
+    .ab-banner { min-height: 76vh; padding-top: 88px; }
+  }
   .ab-banner-inner { position: relative; z-index: 1; }
+  /* The workshop photo is bright and clean, and burying it under a heavy
+     scrim defeats the point of using a real photograph. The wash is light now;
+     the type carries its own shadow so it stays readable against the white
+     ceiling and the lit machines behind it. */
   .ab-banner h1 {
     margin: 0 0 20px; max-width: 16ch;
     font-size: clamp(2.3rem, 5vw, 3.6rem); line-height: 1.08;
     letter-spacing: -.028em; font-weight: 700; color: #fff;
+    text-shadow: 0 2px 4px rgba(6, 16, 24, .55), 0 6px 26px rgba(6, 16, 24, .72);
   }
   .ab-banner-lead {
     margin: 0 0 32px; max-width: 46ch;
-    font-size: 15px; line-height: 1.75; color: #d5e4ed;
+    font-size: 15px; line-height: 1.75; color: #e6eff5;
+    text-shadow: 0 1px 3px rgba(6, 16, 24, .6), 0 3px 16px rgba(6, 16, 24, .7);
   }
   .ab-btn {
     display: inline-flex; align-items: center; gap: 12px;
