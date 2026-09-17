@@ -20,20 +20,20 @@
 //    is not a company age: Shidike was established in 2013, which the same row
 //    states separately.
 //
-// 3. CEO portrait. The design calls for a real photograph beside the dark
-//    panel. No portrait of James Hu exists anywhere in this repository (checked
-//    public/assets/** for james/ceo/portrait). Rather than invent one or pass a
-//    workshop employee off as the CEO, CEO_PORTRAIT is null and the module
-//    renders as the text panel alone. Drop the file in and set the constant —
-//    the two-column layout is already written and will light up.
+// 3. CEO portrait. 904x1282, so it is taller than the 4:5 frame it sits in.
+//    object-position is top center on purpose: any crop takes it off the
+//    bottom of the jacket, never off the head. Setting CEO_PORTRAIT back to
+//    null returns the module to the single dark panel it rendered as while
+//    no photograph existed.
 //
 // 4. Title, meta description and the /about URL are the ones this page already
 //    published, kept deliberately: the page is indexed on them.
 import Layout from '../layouts/Layout.astro';
 
-// Set to e.g. '/assets/img/about/james-hu-ceo-shidike' (no extension) once the
-// real portrait is in the repo. See note 3.
-const CEO_PORTRAIT = null;
+// The portrait the owner supplied, renamed off "CEO James Hu.jpg" - spaces in
+// an asset filename have to be percent-encoded in every reference, and one
+// missed escape is a silent 404. See note 3.
+const CEO_PORTRAIT = '/assets/img/about/james-hu-ceo-shidike';
 
 const facts = [
   ['25+ years', "Industry experience across our team's business history"],
@@ -372,7 +372,7 @@ const explore = [
   .ab-ceo-grid.is-textonly { grid-template-columns: minmax(0, 1fr); }
   .ab-ceo-photo { display: block; border-radius: 4px; overflow: hidden; background: #eef2f4; }
   /* object-position top: never crop the head */
-  .ab-ceo-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+  .ab-ceo-photo img { display: block; width: 100%; height: 100%; min-height: 430px; object-fit: cover; object-position: top center; }
   .ab-ceo-panel { padding: 46px 48px 48px; border-radius: 4px; background: #27333a; }
   .ab-ceo-name { margin: 0 0 4px; font-size: 16px; font-weight: 700; line-height: 1.3; color: #fff; }
   .ab-ceo-role {
