@@ -1,5 +1,102 @@
 ---
+// Contact, rebuilt below the banner.
+//
+// IMPLEMENTATION NOTES (frontmatter comments are compiled away; HTML comments
+// are served, so notes never go in the markup)
+//
+// 1. The banner is untouched - same classes, same inline background, same
+//    kicker, H1 and lead, so its image and height are exactly what they were.
+//    Only what follows it changed.
+//
+// 2. WhatsApp is +61 403454968, which is what the footer, the Layout JSON-LD
+//    and this page already carried. The handoff named +61 436605126 as the
+//    live number; that is the OLD one, replaced in 2015665 "move WhatsApp to
+//    the new number and chat link". It survives in the repo only as a line in
+//    SEO-NOTES.md recording that wa.me/61436605126 used to 429, and nowhere as
+//    a live link. Nothing here changes the number.
+//
+// 3. The form posts to the same Formspree endpoint the site already uses
+//    (mvzlpdwy - the quote modals in Layout.astro and ProductLayout.astro post
+//    there too) with the same `website` honeypot. It used to be a plain POST,
+//    which navigated away to Formspree's own page; it now submits by fetch so
+//    success and failure render in place and a failure keeps everything typed.
+//
+// 4. Conditional fields are DISABLED, not just hidden. A disabled field is
+//    neither validated nor submitted, so a hidden block can never block the
+//    submit, and it keeps its value, so switching category and back does not
+//    lose what was typed.
+//
+// 5. No file upload. There is no verified upload path on this endpoint, and a
+//    picker that silently drops the file is worse than none - the form asks for
+//    drawings and photos by email instead.
+//
+// 6. Removed from the old page and worth naming: the three "within 24 hours"
+//    response guarantees, which this round's direction says not to state, and
+//    the long "Contact Shidike for Industrial Equipment Inquiries" prose block.
+//    Its substance survives in the FAQ answers and the factory section; title,
+//    meta description and the /contact URL are unchanged.
 import Layout from '../layouts/Layout.astro';
+import { WHATSAPP, EMAIL, social } from '../data/social.js';
+
+const PHONE = '+86 13602342003';
+const PHONE_HREF = 'tel:+8613602342003';
+const WHATSAPP_NUMBER = '+61 403454968';
+const ADDRESS = 'Room 101, Building 1, No. 33 Binhe Road, Zhangmutou Town, Dongguan, Guangdong, China';
+const MAP_SRC = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3678.478825294075!2d113.76762507613407!3d22.784714925161143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34039625f048b6f7%3A0x20abebbe17b92cf2!2z5Lit5Zu95bm_5Lic55yB5Lic6I6e5biC5ruo5rKz6LevMzPlj7cg6YKu5pS_57yW56CBOiA1MjM4NTA!5e0!3m2!1szh-CN!2sus!4v1745226418103!5m2!1szh-CN!2sus';
+
+// Line icons drawn at the same weight as each other. Decorative here - every
+// one sits beside its own text label, so they are aria-hidden throughout.
+const icon = {
+  quote: '<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Zm0 0v5h5"/><path d="M9 13h6M9 17h4"/>',
+  selection: '<circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/><path d="M11 8v6M8 11h6"/>',
+  support: '<path d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-5 5a2 2 0 0 0 2.8 2.8l5-5a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.2-2.2Z"/>',
+  general: '<path d="M21 12a8 8 0 0 1-11.5 7.2L4 21l1.8-5.5A8 8 0 1 1 21 12Z"/>',
+  mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/>',
+  whatsapp: '<path d="M20.5 3.5A10 10 0 0 0 3.2 16.7L2 22l5.4-1.4A10 10 0 1 0 20.5 3.5Z"/><path d="M8.6 8.2c.4-.9 1-.8 1.4-.8s.9.2 1.2.9c.3.7.7 1.6.5 2-.2.4-.7.7-.5 1.2.3.7 1.5 2 2.7 2.6.5.2.8.1 1.1-.2.3-.4.7-.9 1.1-.8.5.1 1.9.9 2 1.2.2.3 0 1.2-.6 1.7-.6.5-1.6.9-2.9.5-2.4-.7-5-3.1-5.9-5.4-.5-1.2-.4-2.3-.1-2.9Z"/>',
+  phone: '<path d="M6 3h3l2 5-2.4 1.4a13 13 0 0 0 6 6L16 13l5 2v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4 5.2 2 2 0 0 1 6 3Z"/>',
+  pin: '<path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/>',
+  review: '<path d="M4 5h16M4 10h10M4 15h7"/><circle cx="17" cy="16" r="4"/><path d="m20.2 19.2 2 2"/>',
+  confirm: '<rect x="4" y="4" width="16" height="16" rx="2"/><path d="m8.5 12.4 2.4 2.4 4.6-5"/>',
+  quotation: '<path d="M13 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9Zm0 0v6h6"/><path d="M12 12v6M10.4 13.4h3M10.4 16.4h3"/>',
+};
+
+// The four categories. `fields` names the block each one reveals.
+const types = [
+  { id: 'quote', label: 'Request a Quote', icon: icon.quote, button: 'Request a Quote' },
+  { id: 'selection', label: 'Help Me Choose Equipment', icon: icon.selection, button: 'Send Inquiry' },
+  { id: 'support', label: 'After-sales Support', icon: icon.support, button: 'Request Support' },
+  { id: 'general', label: 'General Inquiry', icon: icon.general, button: 'Send Inquiry' },
+];
+
+// Reuses the four icons the old About page used, at the same weight and the
+// same object-fit: contain, so nothing is stretched.
+const services = [
+  ['/assets/img/about/about-support.png', 'Application Support', 'Discuss the material, installation space and problem before choosing equipment.'],
+  ['/assets/img/about/icon-delivery.png', 'Delivery Planning', 'Confirm the configuration, quantity and required timing before agreeing a lead time.'],
+  ['/assets/img/about/icon-guarantee.png', 'Manufacturing & Checks', 'Design, assembly and testing are part of our manufacturing process.'],
+  ['/assets/img/about/icon-support.png', 'Ongoing Cooperation', 'Contact us about equipment questions, support or distribution opportunities.'],
+];
+
+const steps = [
+  [icon.review, 'Review Your Requirements', 'We read what you send and come back on the material, the working width and the problem you described.'],
+  [icon.confirm, 'Confirm the Configuration', 'We agree the model, dimensions, mounting and control requirements before anything is specified.'],
+  [icon.quotation, 'Provide a Quotation', 'Once the configuration is settled we provide pricing and the lead time that goes with it.'],
+];
+
+const faqs = [
+  {
+    q: 'Can you help if I do not know which model I need?',
+    a: 'Yes. Tell us the material, the working width and the problem you are seeing, and we will work from that. If it helps to read first, <a href="/guides/esd-control-products">ESD Control Products</a> explains how bars, blowers and rods differ, and <a href="/guides/what-is-an-ionizing-bar">What Is an Ionizing Bar?</a> covers working distance and ion balance.',
+  },
+  {
+    q: 'Can the equipment be configured for my production line?',
+    a: 'Bar length is made to order from 300 mm to 3 m, and cleaning machines are built around the substrate, width and thickness you work with. Mounting position, working distance and machine-control signals are part of that discussion. Which options apply depends on the model — see <a href="/products/static-eliminator">static eliminators</a> and <a href="/products/cleaning-machine">cleaning machines</a>, and send us your line details so we can confirm what fits.',
+  },
+  {
+    q: 'What information should I include in your inquiry?',
+    a: 'Product name or category, the substrate and its width and thickness, line speed, the space you have for mounting, and the environment the equipment runs in. If you have drawings or photos of the installation, email them to <a href="mailto:dgsdk2013@gmail.com">dgsdk2013@gmail.com</a> — this form does not take attachments.',
+  },
+];
 ---
 
 <Layout title="Contact Shidike | Static Eliminator & Cleaning Machine Inquiry" description="Contact Shidike for anti static bars, ionizing air blowers and contact cleaning machines. Bar length made to order, machines built to your sample. Worldwide supply from Dongguan, China.">
@@ -16,190 +113,486 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <section class="page-section contact-modern">
-    <div class="container">
-      <div class="contact-grid">
-        <div class="contact-left">
-          <h2>Talk to the people who build it</h2>
+  <section class="ct-main">
+    <div class="container ct-wrap ct-grid">
+      <div class="ct-form-col">
+        <h2>How Can We Help You?</h2>
+        <p class="ct-lead">Tell us what you need, and share the details you already have.</p>
 
-          <p class="company-name">Dongguan Shidike Intelligent Equipment Co., Ltd.</p>
+        <form id="ct-form" class="ct-form" action="https://formspree.io/f/mvzlpdwy" method="POST" novalidate>
+          <input type="hidden" name="inquiry_type" id="ct-type-field" value="Request a Quote" />
+          <input type="text" name="website" tabindex="-1" autocomplete="off" class="ct-hp" aria-hidden="true" />
 
-          <p class="contact-desc">
-            We focus on reliable static elimination systems and ionizing bars first,
-            followed by precision cleaning machines for global customers. Please contact us for product
-            information and cooperation opportunities.
-          </p>
+          <fieldset class="ct-types">
+            <legend>What is this about?</legend>
+            <div class="ct-type-row" role="radiogroup" aria-label="Inquiry type">
+              {types.map((t, i) => (
+                <label class:list={['ct-type', i === 0 && 'is-active']} data-type={t.id}>
+                  <input type="radio" name="ct_type" value={t.id} checked={i === 0} />
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" set:html={t.icon} />
+                  <span>{t.label}</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
 
-          <div class="response-guarantee">
-            <i class="fas fa-clock"></i>
-            <span>We respond to all inquiries within <strong>24 hours</strong> on business days.</span>
+          <div class="ct-row">
+            <label class="ct-field">
+              <span>Name <b aria-hidden="true">*</b></span>
+              <input type="text" name="name" required autocomplete="name" />
+            </label>
+            <label class="ct-field">
+              <span>Email <b aria-hidden="true">*</b></span>
+              <input type="email" name="email" required autocomplete="email" />
+            </label>
           </div>
 
-          <h3>Direct contact</h3>
+          <div class="ct-row ct-row-3">
+            <label class="ct-field">
+              <span>Company</span>
+              <input type="text" name="company" autocomplete="organization" />
+            </label>
+            <label class="ct-field">
+              <span>Country / region</span>
+              <input type="text" name="country" autocomplete="country-name" />
+            </label>
+            <label class="ct-field">
+              <span>Phone</span>
+              <input type="tel" name="phone" autocomplete="tel" />
+            </label>
+          </div>
 
-          <div class="contact-info-list">
-            <div class="contact-info-item">
-              <div class="contact-icon">
-                <i class="fas fa-phone-alt"></i>
-              </div>
-              <div>
-                <span class="contact-label">Cellphone:</span>
-                <p>+86 13602342003</p>
-              </div>
-            </div>
-
-            <div class="contact-info-item">
-              <div class="contact-icon">
-                <i class="fab fa-whatsapp"></i>
-              </div>
-              <div>
-                <span class="contact-label">WhatsApp:</span>
-                <p>+61 403454968</p>
-              </div>
-            </div>
-
-            <div class="contact-info-item">
-              <div class="contact-icon">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <div>
-                <span class="contact-label">E-mail:</span>
-                <p>dgsdk2013@gmail.com</p>
-              </div>
-            </div>
-
-            <div class="contact-info-item">
-              <div class="contact-icon">
-                <i class="fas fa-map-marker-alt"></i>
-              </div>
-              <div>
-                <span class="contact-label">Address:</span>
-                <p>Room 101, Building 1, No. 33 Binhe Road, Zhangmutou Town, Dongguan, Guangdong, China</p>
-              </div>
-            </div>
-
-            <div class="contact-social-block">
-              <span class="contact-label">Follow Us</span>
-              <div class="contact-social">
-              <a href="https://www.facebook.com/profile.php?id=61589304230341" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-btn facebook"><i class="fab fa-facebook-f"></i></a>
-              <a href="https://youtube.com/@dgsdk-2013" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="social-btn youtube"><i class="fab fa-youtube"></i></a>
-              <a href="https://www.tiktok.com/@machineforge?_r=1&_t=ZS-95scfOHz6Ea" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="social-btn tiktok"><i class="fab fa-tiktok"></i></a>
-              <a href="https://www.linkedin.com/in/james-hu-765b05406/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
-              <a href="https://api.whatsapp.com/message/5GGUQ62VROSIC1?autoload=1&app_absent=0" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="social-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
-              <a href="mailto:dgsdk2013@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email" class="social-btn email"><i class="fas fa-envelope"></i></a>
-              </div>
+          <div class="ct-panel" data-panel="quote">
+            <div class="ct-row ct-row-3">
+              <label class="ct-field"><span>Product or model</span><input type="text" name="product" /></label>
+              <label class="ct-field"><span>Quantity</span><input type="text" name="quantity" /></label>
+              <label class="ct-field"><span>Required delivery</span><input type="text" name="required_delivery" /></label>
             </div>
           </div>
+
+          <div class="ct-panel" data-panel="selection" hidden>
+            <div class="ct-row">
+              <label class="ct-field"><span>Material</span><input type="text" name="material" /></label>
+              <label class="ct-field"><span>Problem you want to solve</span><input type="text" name="problem" /></label>
+            </div>
+            <details class="ct-more">
+              <summary>Additional application details</summary>
+              <div class="ct-row ct-row-3">
+                <label class="ct-field"><span>Working width</span><input type="text" name="working_width" /></label>
+                <label class="ct-field"><span>Line speed</span><input type="text" name="line_speed" /></label>
+                <label class="ct-field"><span>Installation distance / space</span><input type="text" name="installation_space" /></label>
+              </div>
+              <p class="ct-hint">All optional. Send the inquiry even if the model is not decided yet.</p>
+            </details>
+          </div>
+
+          <div class="ct-panel" data-panel="support" hidden>
+            <div class="ct-row ct-row-3">
+              <label class="ct-field"><span>Equipment model</span><input type="text" name="equipment_model" /></label>
+              <label class="ct-field"><span>Order or serial number</span><input type="text" name="order_number" /></label>
+              <label class="ct-field"><span>When it happens</span><input type="text" name="fault_conditions" /></label>
+            </div>
+            <p class="ct-hint">If you do not have the model to hand, describe the machine in your message and we will identify it.</p>
+          </div>
+
+          <div class="ct-panel" data-panel="general" hidden>
+            <label class="ct-field">
+              <span>Topic</span>
+              <select name="topic">
+                <option value="">Select a topic</option>
+                <option>General question</option>
+                <option>Product information</option>
+                <option>Distribution</option>
+                <option>Business cooperation</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="ct-field">
+            <span>Message <b aria-hidden="true">*</b></span>
+            <textarea name="message" rows="6" required></textarea>
+          </label>
+
+          <p class="ct-hint ct-hint-files">Have drawings or photos? Email them to <a href={`mailto:${EMAIL}`}>{EMAIL}</a> &mdash; this form does not take attachments.</p>
+
+          <button class="ct-submit" type="submit" id="ct-submit">Request a Quote</button>
+
+          <p class="ct-status" id="ct-status" role="status" aria-live="polite" hidden></p>
+        </form>
+      </div>
+
+      <aside class="ct-direct" aria-labelledby="ct-direct-title">
+        <h2 id="ct-direct-title">Direct Contact</h2>
+        <p class="ct-company">Dongguan Shidike Intelligent Equipment Co., Ltd.</p>
+
+        <ul class="ct-direct-list">
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" set:html={icon.mail} />
+            <div><span>Email</span><a href={`mailto:${EMAIL}`}>{EMAIL}</a></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" set:html={icon.whatsapp} />
+            <div><span>WhatsApp</span><a href={WHATSAPP} target="_blank" rel="noopener noreferrer">{WHATSAPP_NUMBER}</a></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" set:html={icon.phone} />
+            <div><span>Phone</span><a href={PHONE_HREF}>{PHONE}</a></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" set:html={icon.pin} />
+            <div><span>Address</span><address>{ADDRESS}</address></div>
+          </li>
+        </ul>
+
+        <div class="ct-social">
+          <span>Follow us</span>
+          <div class="ct-social-row">
+            {social.map(([label, href, d]) => (
+              <a href={href} target={href.startsWith('mailto:') ? undefined : '_blank'}
+                 rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
+                 aria-label={label} title={label} class="ct-social-link">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d={d} /></svg>
+              </a>
+            ))}
         </div>
+      </aside>
+    </div>
+  </section>
 
-        <div class="contact-right">
-          <div class="map-box">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3678.478825294075!2d113.76762507613407!3d22.784714925161143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34039625f048b6f7%3A0x20abebbe17b92cf2!2z5Lit5Zu95bm_5Lic55yB5Lic6I6e5biC5ruo5rKz6LevMzPlj7cg6YKu5pS_57yW56CBOiA1MjM4NTA!5e0!3m2!1szh-CN!2sus!4v1745226418103!5m2!1szh-CN!2sus"
-              width="100%"
-              height="100%"
-              style="border:0;"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <section class="ct-services" aria-label="How we work with you">
+    <div class="container ct-wrap">
+      <div class="ct-services-row">
+        {services.map(([src, title, body]) => (
+          <div class="ct-service">
+            <img src={src} alt="" aria-hidden="true" loading="lazy" decoding="async" />
+            <h3>{title}</h3>
+            <p>{body}</p>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <section class="page-section bg-light">
-    <div class="container">
-      <div class="text-center">
-        <h2 class="section-heading text-uppercase">Send Inquiry</h2>
-        <h3 class="section-subheading text-muted">
-          Leave your message and we will reply within 24 hours on business days.
-        </h3>
+  <section class="ct-visit">
+    <div class="container ct-wrap ct-visit-grid">
+      <div class="ct-visit-copy">
+        <h2>Visit Our Factory in Dongguan, China</h2>
+        <p>Equipment is designed, assembled and tested at our site in Zhangmutou, Dongguan. You are welcome to see the machines being built.</p>
+        <p class="ct-visit-address"><strong>Address</strong><br />{ADDRESS}</p>
+        <a class="ct-visit-cta" href={`mailto:${EMAIL}?subject=Factory%20visit`}>Arrange a visit <span aria-hidden="true">&#8594;</span></a>
+
+        <picture class="ct-visit-photo">
+          <source srcset="/assets/img/about/about-building.webp" type="image/webp" />
+          <img src="/assets/img/about/about-building.jpg" alt="The Shidike site in Dongguan, Guangdong, China" width="1400" height="840" loading="lazy" decoding="async" />
+        </picture>
       </div>
 
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <form action="https://formspree.io/f/mvzlpdwy" method="POST">
-            <div class="form-group mb-3">
-              <input class="form-control" type="text" name="name" placeholder="Your Name *" required />
-            </div>
-
-            <div class="form-group mb-3">
-              <input class="form-control" type="email" name="email" placeholder="Your Email *" required />
-            </div>
-
-            <div class="form-group mb-3">
-              <input class="form-control" type="text" name="company" placeholder="Company Name" />
-            </div>
-
-            <div class="form-group mb-3">
-              <textarea class="form-control" name="message" rows="6" placeholder="Your Message *" required></textarea>
-            </div>
-
-            <div class="text-center">
-              <button class="btn btn-primary btn-xl text-uppercase" type="submit">
-                Send Message
-              </button>
-            </div>
-          </form>
-        </div>
+      <div class="ct-map">
+        <iframe
+          src={MAP_SRC}
+          title="Shidike location in Zhangmutou, Dongguan, Guangdong, China"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </section>
 
-  <section class="category-info-block">
-    <div class="container">
-      <h2>Contact Shidike for Industrial Equipment Inquiries</h2>
-      <p>
-        Shidike (Dongguan Shidike Intelligent Equipment Co., Ltd.) manufactures anti static bars, ionizing
-        air blowers and contact cleaning machines in Zhangmutou, Dongguan, Guangdong, China.
-        We supply industrial customers worldwide and review both catalog-product and line-integration inquiries.
-      </p>
+  <section class="ct-next">
+    <div class="container ct-wrap">
+      <h2>What Happens Next</h2>
+      <ol class="ct-steps">
+        {steps.map(([svg, title, body], i) => (
+          <li class="ct-step">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" set:html={svg} />
+            <p class="ct-step-num">Step {i + 1}</p>
+            <h3>{title}</h3>
+            <p>{body}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
 
-      <h3>What We Can Help With</h3>
-      <p>Our technical and sales team can assist with the following types of inquiries:</p>
-      <ul>
-        <li><strong>Static eliminators and ionizing bars</strong> — product selection, bar length, mounting distance, line speed, and control-interface review for specific production environments</li>
-        <li><strong>PCB cleaning machines</strong> — circuit board cleaning machine specifications, model selection, and integration advice for SMT, FPC, and display manufacturing lines</li>
-        <li><strong>Industrial cleaning machines</strong> — optical film, polarizer, LCM, backlight, and CCL cleaning solutions for display and electronics manufacturing</li>
-        <li><strong>Line integration support</strong> — mounting, material handling, PLC signals, and interface review for static control and cleaning equipment</li>
-      </ul>
-
-      <h3>What to Include in Your Inquiry</h3>
-      <p>
-        To help us respond quickly and accurately, please include the following in your message:
-      </p>
-      <ul>
-        <li>Product name or category you are interested in</li>
-        <li>Substrate type, target width, dimensions, and material specifications</li>
-        <li>Production volume or throughput requirements</li>
-        <li>Application environment (SMT line, cleanroom, optical coating, etc.)</li>
-        <li>Any layout drawings, photos, or technical files relevant to installation</li>
-      </ul>
-
-      <h3>Response and Lead Time</h3>
-      <p>
-        We respond to all inquiries within 24 hours on business days. For standard catalog products,
-        we can provide pricing and lead time after confirming the model. For line-integration projects,
-        we will review your requirements and provide a detailed proposal.
-        Contact us by phone, WhatsApp, or email — or use the form above to send your inquiry directly.
-      </p>
+  <section class="ct-faq">
+    <div class="container ct-wrap">
+      <h2>Common Questions</h2>
+      <div class="ct-faq-list">
+        {faqs.map((f) => (
+          <details class="ct-faq-item">
+            <summary><span>{f.q}</span></summary>
+            <p set:html={f.a} />
+          </details>
+        ))}
+      </div>
     </div>
   </section>
 
   <style>
-    /* Banner: use the same .products-hero as every product, application and blog
-       page (520px) instead of .contact-hero at 76vh. Photo background, so the
-       type is reversed out to white. */
-    .contact-hero-banner h1 { color: #fff !important; text-shadow: 0 2px 18px rgba(0,0,0,.4); }
-    .contact-hero-banner p  { color: rgba(255,255,255,.9) !important; text-shadow: 0 1px 12px rgba(0,0,0,.35); }
+    /* Scoped to .ct-*. Each rule sets its own colour, size and line-height
+       rather than inheriting: this page loads the legacy stylesheet, which puts
+       line-height on body/p/h3 and 144px of padding on a bare <section>. */
+    .ct-wrap { width: min(calc(100% - 80px), 1280px); max-width: none; margin-inline: auto; padding-inline: 0; }
 
-    /* styles.css sized these at 56px and 48px -- larger than most H1s on the site,
-       for what is a heading inside a two-column info panel. */
-    .contact-left h2 { font-size: 1.75rem !important; margin-bottom: 12px !important; line-height: 1.25; }
-    .contact-left h3 { font-size: 1.15rem !important; margin: 30px 0 4px !important; line-height: 1.3;
-                       letter-spacing: .04em; text-transform: uppercase; color: #7d8d97 !important; }
-    .contact-left .company-name { font-weight: 700; color: var(--navy); margin-bottom: 12px; }
-    .contact-left .contact-desc { font-size: 15px; line-height: 1.7; color: var(--ink-muted); }
+    .ct-main, .ct-services, .ct-visit, .ct-next, .ct-faq { padding-block: 0; }
+    .ct-main { padding-block: 72px 76px; background: #f3f5f6; }
+    .ct-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 372px); gap: 34px; align-items: start; }
+
+    .ct-form-col { padding: 38px 40px 40px; background: #fff; border: 1px solid #e3e8eb; border-radius: 4px; }
+    .ct-form-col h2 { margin: 0 0 10px; font-size: clamp(1.45rem, 2.6vw, 1.95rem); line-height: 1.2; letter-spacing: -.022em; color: #12212b; }
+    .ct-lead { margin: 0 0 26px; font-size: 14px; line-height: 1.7; color: #53636f; }
+
+    .ct-types { margin: 0 0 24px; padding: 0; border: 0; }
+    .ct-types legend { padding: 0; margin: 0 0 12px; font-size: 11px; font-weight: 700; line-height: 1.4; letter-spacing: .1em; text-transform: uppercase; color: #7b8992; }
+    .ct-type-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+    .ct-type {
+      display: flex; flex-direction: column; align-items: flex-start; gap: 9px;
+      padding: 14px 14px 15px; border: 1px solid #dde4e9; border-radius: 4px;
+      background: #fff; cursor: pointer; transition: border-color .15s ease, background .15s ease;
+    }
+    .ct-type input { position: absolute; opacity: 0; width: 0; height: 0; }
+    .ct-type svg { width: 22px; height: 22px; flex: none; fill: none; stroke: #55707f; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+    .ct-type span { font-size: 12.5px; font-weight: 600; line-height: 1.35; color: #12212b; }
+    .ct-type:hover { border-color: #b9c9d2; }
+    .ct-type.is-active { border-color: #03b1ee; background: #f0fbff; }
+    .ct-type.is-active svg { stroke: #0a7ca6; }
+    .ct-type:focus-within { outline: 2px solid #03b1ee; outline-offset: 2px; }
+
+    .ct-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-bottom: 14px; }
+    .ct-row-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .ct-field { display: block; margin-bottom: 14px; }
+    .ct-row .ct-field { margin-bottom: 0; }
+    .ct-field > span { display: block; margin-bottom: 6px; font-size: 12px; font-weight: 600; line-height: 1.4; color: #3b4a55; }
+    .ct-field b { color: #d0463b; font-weight: 600; }
+    .ct-field input, .ct-field textarea, .ct-field select {
+      display: block; width: 100%; padding: 11px 13px;
+      border: 1px solid #dde4e9; border-radius: 4px; background: #fff;
+      font: inherit; font-size: 13.5px; line-height: 1.5; color: #12212b;
+    }
+    .ct-field textarea { resize: vertical; min-height: 120px; }
+    .ct-field input:focus, .ct-field textarea:focus, .ct-field select:focus { outline: 2px solid #03b1ee; outline-offset: 1px; border-color: #03b1ee; }
+    .ct-field input:user-invalid, .ct-field textarea:user-invalid { border-color: #d0463b; }
+
+    .ct-panel[hidden] { display: none; }
+    .ct-more { margin-top: 14px; border: 1px solid #e3e8eb; border-radius: 4px; }
+    .ct-more > summary { padding: 11px 14px; font-size: 12.5px; font-weight: 600; line-height: 1.4; color: #0a7ca6; cursor: pointer; }
+    .ct-more[open] > summary { border-bottom: 1px solid #e3e8eb; }
+    .ct-more > .ct-row, .ct-more > .ct-hint { margin: 14px; }
+    .ct-hint { margin: 8px 0 0; font-size: 12px; line-height: 1.65; color: #7b8992; }
+    .ct-hint a { color: #0a7ca6; }
+    .ct-hint-files { margin: 14px 0 20px; }
+    .ct-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+
+    .ct-submit {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 14px 30px; border: 0; border-radius: 4px;
+      background: #03b1ee; color: #0d2129;
+      font: inherit; font-size: 13.5px; font-weight: 700; line-height: 1.4; cursor: pointer;
+    }
+    .ct-submit:hover { background: #22bdf3; }
+    .ct-submit:disabled { opacity: .6; cursor: default; }
+    .ct-status { margin: 16px 0 0; padding: 12px 14px; border-radius: 4px; font-size: 13px; line-height: 1.6; }
+    .ct-status.is-ok { background: #e7f8ee; border: 1px solid #b6e3c8; color: #1c6b3e; }
+    .ct-status.is-err { background: #fdecea; border: 1px solid #f3c2bd; color: #97372c; }
+
+    /* Direct contact card */
+    .ct-direct { padding: 32px 30px 34px; background: #27333a; border-radius: 4px; }
+    .ct-direct h2 { margin: 0 0 6px; font-size: 1.1rem; font-weight: 650; line-height: 1.3; color: #fff; }
+    .ct-company { margin: 0 0 24px; font-size: 12.5px; line-height: 1.6; color: #9db4c2; }
+    .ct-direct-list { list-style: none; margin: 0; padding: 0; }
+    .ct-direct-list li { display: flex; gap: 13px; padding: 15px 0; border-top: 1px solid #ffffff1c; }
+    .ct-direct-list li:first-child { border-top: 0; padding-top: 0; }
+    .ct-direct-list svg { width: 19px; height: 19px; flex: none; margin-top: 2px; fill: none; stroke: #7fd6f6; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+    .ct-direct-list span { display: block; margin-bottom: 3px; font-size: 10.5px; font-weight: 600; line-height: 1.4; letter-spacing: .1em; text-transform: uppercase; color: #8fa8b6; }
+    .ct-direct-list a, .ct-direct-list address {
+      font-size: 13px; line-height: 1.65; color: #eaf2f6; font-style: normal; text-decoration: none; overflow-wrap: anywhere;
+    }
+    .ct-direct-list a:hover { color: #7fd6f6; text-decoration: underline; }
+    .ct-social { margin-top: 24px; padding-top: 20px; border-top: 1px solid #ffffff1c; }
+    .ct-social > span { display: block; margin-bottom: 12px; font-size: 10.5px; font-weight: 600; line-height: 1.4; letter-spacing: .1em; text-transform: uppercase; color: #8fa8b6; }
+    .ct-social-row { display: flex; flex-wrap: wrap; gap: 9px; }
+    .ct-social-link {
+      display: grid; place-items: center; width: 34px; height: 34px;
+      border: 1px solid #ffffff2e; border-radius: 999px; color: #cfe0ea;
+      transition: color .15s ease, border-color .15s ease;
+    }
+    .ct-social-link:hover { color: #7fd6f6; border-color: #7fd6f6; }
+    .ct-social-link svg { display: block; width: 16px; height: 16px; fill: currentColor; }
+
+    /* Service strip - compact, never a full screen of cards */
+    .ct-services { padding-block: 56px; background: #fff; }
+    .ct-services-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; }
+    .ct-service img { display: block; width: 56px; height: 56px; object-fit: contain; margin-bottom: 14px; }
+    .ct-service h3 { margin: 0 0 8px; font-size: 14px; font-weight: 650; line-height: 1.35; color: #12212b; }
+    .ct-service p { margin: 0; font-size: 12.5px; line-height: 1.7; color: #53636f; }
+
+    /* Factory */
+    .ct-visit { padding-block: 62px 66px; background: #f3f5f6; }
+    .ct-visit-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 34px; align-items: stretch; }
+    .ct-visit h2 { margin: 0 0 14px; font-size: clamp(1.45rem, 2.8vw, 2rem); line-height: 1.2; letter-spacing: -.024em; color: #12212b; }
+    .ct-visit-copy > p { margin: 0 0 16px; font-size: 14px; line-height: 1.75; color: #53636f; }
+    .ct-visit-address { font-size: 13px !important; }
+    .ct-visit-address strong { color: #12212b; }
+    .ct-visit-cta { display: inline-flex; align-items: center; gap: 9px; font-size: 12.5px; font-weight: 650; line-height: 1.4; color: #0a7ca6; text-decoration: none; }
+    .ct-visit-cta:hover { text-decoration: underline; }
+    .ct-visit-photo { display: block; margin-top: 24px; border-radius: 4px; overflow: hidden; background: #e6ebee; }
+    .ct-visit-photo img { display: block; width: 100%; height: 260px; object-fit: cover; }
+    .ct-map { min-height: 420px; border-radius: 4px; overflow: hidden; background: #e6ebee; }
+    .ct-map iframe { display: block; width: 100%; height: 100%; min-height: 420px; }
+
+    /* What happens next */
+    .ct-next { padding-block: 62px 66px; background: #fff; }
+    .ct-next h2 { margin: 0 0 32px; font-size: clamp(1.45rem, 2.8vw, 2rem); line-height: 1.2; letter-spacing: -.024em; color: #12212b; }
+    .ct-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; counter-reset: none; }
+    .ct-step { padding-top: 22px; border-top: 2px solid #dde4e9; }
+    .ct-step:first-child { border-top-color: #03b1ee; }
+    .ct-step svg { width: 26px; height: 26px; margin-bottom: 14px; fill: none; stroke: #0a7ca6; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+    .ct-step-num { margin: 0 0 8px; font-size: 10.5px; font-weight: 700; line-height: 1.4; letter-spacing: .1em; text-transform: uppercase; color: #7b8992; }
+    .ct-step h3 { margin: 0 0 10px; font-size: 14.5px; font-weight: 650; line-height: 1.35; color: #12212b; }
+    .ct-step p { margin: 0; font-size: 13px; line-height: 1.75; color: #53636f; }
+
+    /* FAQ */
+    .ct-faq { padding-block: 0 72px; background: #fff; }
+    .ct-faq h2 { margin: 0 0 22px; font-size: clamp(1.35rem, 2.4vw, 1.7rem); line-height: 1.2; letter-spacing: -.02em; color: #12212b; }
+    .ct-faq-list { max-width: 900px; border-top: 1px solid #e3e8eb; }
+    .ct-faq-item { border-bottom: 1px solid #e3e8eb; }
+    .ct-faq-item > summary {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 18px 2px; font-size: 14.5px; font-weight: 650; line-height: 1.45; color: #12212b; cursor: pointer;
+    }
+    .ct-faq-item > summary::after { content: '+'; flex: none; font-size: 18px; font-weight: 400; color: #7b8992; }
+    .ct-faq-item[open] > summary::after { content: '\2212'; }
+    .ct-faq-item > p { margin: 0 0 20px; max-width: 78ch; font-size: 13.5px; line-height: 1.8; color: #53636f; }
+    .ct-faq-item a { color: #0a7ca6; }
+
+    @media (max-width: 1000px) {
+      .ct-grid, .ct-visit-grid { grid-template-columns: minmax(0, 1fr); }
+      .ct-services-row { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 24px; }
+      .ct-steps { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+      .ct-map { min-height: 320px; }
+      .ct-map iframe { min-height: 320px; }
+    }
+
+    @media (max-width: 800px) {
+      .ct-wrap { width: calc(100% - 40px); }
+      .ct-main { padding-block: 44px 48px; }
+      .ct-services { padding-block: 40px; }
+      .ct-visit, .ct-next { padding-block: 42px 46px; }
+      .ct-faq { padding-block: 0 48px; }
+      .ct-form-col { padding: 26px 20px 28px; }
+      .ct-type-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .ct-row, .ct-row-3 { grid-template-columns: minmax(0, 1fr); gap: 0; }
+      .ct-row .ct-field { margin-bottom: 14px; }
+      .ct-direct { padding: 26px 20px 28px; }
+    }
+
+    @media (max-width: 540px) {
+      .ct-services-row { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+    }
   </style>
+
+  <script is:inline>
+    (function () {
+      var form = document.getElementById('ct-form');
+      if (!form) return;
+      var typeField = document.getElementById('ct-type-field');
+      var submit = document.getElementById('ct-submit');
+      var status = document.getElementById('ct-status');
+      var labels = Array.prototype.slice.call(form.querySelectorAll('.ct-type'));
+      var panels = Array.prototype.slice.call(form.querySelectorAll('.ct-panel'));
+
+      var BUTTON = { quote: 'Request a Quote', selection: 'Send Inquiry', support: 'Request Support', general: 'Send Inquiry' };
+      var TITLE = { quote: 'Request a Quote', selection: 'Help Me Choose Equipment', support: 'After-sales Support', general: 'General Inquiry' };
+
+      // A hidden panel's inputs are disabled, not merely hidden: a disabled
+      // field is neither validated nor submitted, so a panel the visitor never
+      // opened can never block the submit or add empty noise to the email. The
+      // values stay put, so switching category and back loses nothing.
+      function select(id, focusLabel) {
+        if (!BUTTON[id]) id = 'quote';
+        labels.forEach(function (l) {
+          var on = l.getAttribute('data-type') === id;
+          l.classList.toggle('is-active', on);
+          var radio = l.querySelector('input[type="radio"]');
+          if (radio) radio.checked = on;
+        });
+        panels.forEach(function (p) {
+          var on = p.getAttribute('data-panel') === id;
+          p.hidden = !on;
+          Array.prototype.forEach.call(p.querySelectorAll('input, select, textarea'), function (f) { f.disabled = !on; });
+        });
+        typeField.value = TITLE[id];
+        submit.textContent = BUTTON[id];
+        if (focusLabel) {
+          var active = form.querySelector('.ct-type.is-active input');
+          if (active) active.focus();
+        }
+      }
+
+      labels.forEach(function (l) {
+        var radio = l.querySelector('input[type="radio"]');
+        if (radio) radio.addEventListener('change', function () { select(l.getAttribute('data-type')); });
+      });
+
+      // Prefill from the query string: ?type=selection|support|general|quote
+      // and ?product=... , which drops the model straight into the quote panel.
+      var params = new URLSearchParams(window.location.search);
+      var wanted = (params.get('type') || '').toLowerCase();
+      var product = params.get('product');
+      select(BUTTON[wanted] ? wanted : 'quote');
+      if (product) {
+        var productField = form.querySelector('input[name="product"]');
+        if (productField && !productField.disabled) productField.value = product;
+        else {
+          var msg = form.querySelector('textarea[name="message"]');
+          if (msg && !msg.value) msg.value = 'Regarding: ' + product + '\n\n';
+        }
+      }
+
+      function show(kind, text) {
+        status.hidden = false;
+        status.className = 'ct-status ' + (kind === 'ok' ? 'is-ok' : 'is-err');
+        status.textContent = text;
+      }
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        var honeypot = form.querySelector('input[name="website"]');
+        if (honeypot && honeypot.value !== '') return;
+
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          show('err', 'Please fill in your name, a valid email address and a message.');
+          return;
+        }
+
+        submit.disabled = true;
+        var original = submit.textContent;
+        submit.textContent = 'Sending...';
+        try {
+          var res = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { Accept: 'application/json' }
+          });
+          if (res.ok) {
+            form.reset();
+            select('quote');
+            show('ok', 'Thank you - your inquiry has been sent. We will come back to you by email.');
+          } else {
+            // everything typed is still in the form; nothing is cleared
+            show('err', 'Your inquiry could not be sent. Please try again, or email dgsdk2013@gmail.com directly.');
+          }
+        } catch (err) {
+          show('err', 'Your inquiry could not be sent. Please check your connection and try again, or email dgsdk2013@gmail.com directly.');
+        } finally {
+          submit.disabled = false;
+          submit.textContent = original;
+        }
+      });
+    })();
+  </script>
 </Layout>
