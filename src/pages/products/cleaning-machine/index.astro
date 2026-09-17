@@ -1,84 +1,9 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import { sheetProducts, webProducts } from '../../../data/products.js';
 
 const base = 'https://www.dg-sdk.com';
 const canonical = base + '/products/cleaning-machine';
-const sheetProducts = [
-  {
-    name: 'LCM Module Cleaner', slug: 'lcm-cleaner', cat: 'Sheet & Board', code: 'LCM',
-    url: canonical + '/lcm-cleaner', image: base + '/assets/img/cleaning-machine/lcm-cleaner.jpg',
-    img: '/assets/img/cleaning-machine/lcm-cleaner',
-    specs: ['0.022–0.34 mm', 'Breakage <0.02 %', '0–50 m/min', 'Static <100 V']
-  },
-  {
-    name: 'CCL Cleaning Machine', slug: 'ccl-cleaner', cat: 'Sheet & Board', code: 'ST-DT1340',
-    url: canonical + '/ccl-cleaner', image: base + '/assets/img/cleaning-machine/ccl-cleaner.jpg',
-    img: '/assets/img/cleaning-machine/ccl-cleaner',
-    specs: ['0.05–3 mm', '99.9 % removal', '0–70 m/min', '350 W']
-  },
-  {
-    name: 'SMT Inline Cleaner', slug: 'smt-cleaner', cat: 'Sheet & Board', code: 'SMT600',
-    url: canonical + '/smt-cleaner', image: base + '/assets/img/cleaning-machine/smt-cleaner.jpg',
-    img: '/assets/img/cleaning-machine/smt-cleaner',
-    specs: ['Dual-sided rollers', 'Integrated static elimination', 'Quick-change window', '220 V / 50 Hz']
-  },
-  {
-    name: 'PCB Surface Cleaner', slug: 'pcb-cleaner', cat: 'Sheet & Board', code: 'STXF',
-    url: canonical + '/pcb-cleaner', image: base + '/assets/img/cleaning-machine/pcb-cleaner.jpg',
-    img: '/assets/img/cleaning-machine/pcb-cleaner',
-    specs: ['0.05–2 mm', '99.9 % removal', '0–20 m/min', 'Static <50 V']
-  },
-  {
-    name: 'PCB Vertical Cleaner', slug: 'pcb-vertical-cleaner', cat: 'Sheet & Board', code: 'STC-640',
-    url: canonical + '/pcb-vertical-cleaner', image: base + '/assets/img/cleaning-machine/stick-pcb-vertical-cleaning-machine.jpg',
-    img: '/assets/img/cleaning-machine/stick-pcb-vertical-cleaning-machine',
-    specs: ['W620 × L510 mm max', '0.1–2 mm', '~6 s per board', 'Static <50 V']
-  },
-  {
-    name: 'FPC 4-Axis Cleaner', slug: 'fpc-4-axis-cleaner', cat: 'Sheet & Board', code: 'STXT',
-    url: canonical + '/fpc-4-axis-cleaner', image: base + '/assets/img/cleaning-machine/fpc-4-axis-cleaner.jpg',
-    img: '/assets/img/cleaning-machine/fpc-4-axis-cleaner',
-    specs: ['0.022–0.34 mm', '4 tacky rollers', '0–50 m/min', 'Static <200 V']
-  },
-  {
-    name: 'FPC 8-Axis Cleaner', slug: 'fpc-8-axis-cleaner', cat: 'Sheet & Board', code: 'STXS',
-    url: canonical + '/fpc-8-axis-cleaner', image: base + '/assets/img/cleaning-machine/fpc-8-axis-cleaner.jpg',
-    img: '/assets/img/cleaning-machine/fpc-8-axis-cleaner',
-    specs: ['0.028–2 mm', '8 tacky rollers', '0–35 m/min', 'Static <200 V']
-  },
-  {
-    name: 'Stamp Inspection Cleaner', slug: 'inspection-cleaner', cat: 'Sheet & Board', code: 'ST-XT',
-    url: canonical + '/inspection-cleaner', image: base + '/assets/img/cleaning-machine/inspection-cleaner.jpg',
-    img: '/assets/img/cleaning-machine/inspection-cleaner',
-    specs: ['0.05–0.65 mm', '2 MP colour CCD', '0–50 m/min', 'Backlight 20 000 LUX']
-  },
-  {
-    name: 'Polarizer Precision Cleaner', slug: 'polarizer-cleaner', cat: 'Sheet & Board', code: null,
-    note: 'Model code to confirm',
-    url: canonical + '/polarizer-cleaner', image: base + '/assets/img/cleaning-machine/polarizer-cleaner.jpg',
-    img: '/assets/img/cleaning-machine/polarizer-cleaner'
-  },
-  {
-    name: 'Backlight Panel Cleaner', slug: 'backlight-cleaner', cat: 'Sheet & Board', code: null,
-    note: 'Model code to confirm',
-    url: canonical + '/backlight-cleaner', image: base + '/assets/img/cleaning-machine/backlight-cleaner.jpg',
-    img: '/assets/img/cleaning-machine/backlight-cleaner'
-  },
-];
-const webProducts = [
-  {
-    name: 'Large-Size Optical Film Cleaner', slug: 'optical-film-cleaner', cat: 'Roll-to-Roll', code: 'STFK',
-    url: canonical + '/optical-film-cleaner', image: base + '/assets/img/cleaning-machine/optical.jpg',
-    img: '/assets/img/cleaning-machine/optical',
-    specs: ['0.065–0.68 mm', '99.9 % removal', '0–40 m/min', 'Static <100 V']
-  },
-  {
-    name: 'Roll-to-Roll Cleaner', slug: 'roll-chip-cleaner', cat: 'Roll-to-Roll', code: 'Coil Universal',
-    url: canonical + '/roll-chip-cleaner', image: base + '/assets/img/cleaning-machine/roll-chip-cleaner.jpg',
-    img: '/assets/img/cleaning-machine/roll-chip-cleaner',
-    specs: ['0.05–2 mm', 'Surface static <50 V', '0–20 m/min', 'Unwind + rewind']
-  },
-];
 const allCleaningProducts = [...sheetProducts, ...webProducts];
 const faqItems = [
   {

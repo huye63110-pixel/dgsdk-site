@@ -1,0 +1,140 @@
+---
+// All Resources — the page the Resources nav item links to.
+//
+// This is an index, not new editorial: every entry here already exists at its
+// own URL, and the titles and blurbs are the ones those pages publish. /blog
+// and /guides keep their own listings and their own URLs; this page sits above
+// both so the nav item has somewhere to point.
+import Layout from '../layouts/Layout.astro';
+import ResourceIndex from '../components/ResourceIndex.astro';
+import { posts, guides, featuredPost, featuredGuide } from '../data/resources.js';
+
+const base = 'https://www.dg-sdk.com';
+const canonical = base + '/resources';
+
+const leadPost = posts.find((p) => p.slug === featuredPost) || posts[0];
+const leadGuide = guides.find((g) => g.href === featuredGuide) || guides[0];
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: base },
+    { '@type': 'ListItem', position: 2, name: 'Resources', item: canonical },
+  ],
+};
+---
+
+<Layout
+  title="Resources | Static Control & Surface Cleaning Knowledge Base | Shidike"
+  description="Technical guides and articles on static control and industrial surface cleaning: ESD basics, ionizing bar selection and mounting, web cleaning methods, and application notes by industry."
+  canonical={canonical}
+>
+  <link slot="head" rel="stylesheet" href="/css/resource-pages.css" />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
+
+  <ResourceIndex
+    eyebrow="Resources"
+    heading="Insights for the production line."
+    lead="Read application-focused articles in the Blog, or explore the methods and fundamentals in Guides. Start with the material and the process you need to understand."
+    active="all"
+    cta={{
+      heading: 'Need documentation for a specific model?',
+      text: 'Tell us the model and your installation requirements. Ask about the product documentation for your application.',
+      label: 'Ask About Documentation',
+      href: '/contact',
+    }}
+  >
+    <section class="rx-grid-section">
+      <div class="container rx-wrap">
+        <div class="rx-grid-head">
+          <div>
+            <p class="rx-eyebrow">Choose your reading</p>
+            <h2>Blog and Guides.</h2>
+          </div>
+          <p class="rx-grid-lead">Two distinct collections for equipment research and production planning.</p>
+        </div>
+
+        <div class="rx-pair">
+          <article class="rx-pair-card">
+            <picture class="rx-pair-media">
+              <source srcset={`${leadPost.image}.webp`} type="image/webp" />
+              <img src={`${leadPost.image}.jpg`} alt="" loading="lazy" decoding="async" width="640" height="360" />
+            </picture>
+            <div class="rx-pair-body">
+              <p class="rx-pair-count">{posts.length} articles</p>
+              <h3>Blog</h3>
+              <p class="rx-pair-desc">Application articles on selecting, mounting and verifying equipment. Read about ST-G installation, battery production, photovoltaic manufacturing and optical-film cleaning.</p>
+              <a class="rx-textlink" href="/blog">Explore the Blog <span aria-hidden="true">&#8594;</span></a>
+            </div>
+          </article>
+
+          <article class="rx-pair-card">
+            <picture class="rx-pair-media">
+              <source srcset="/assets/img/guides/how-to-prevent-static.webp" type="image/webp" />
+              <img src="/assets/img/guides/how-to-prevent-static.jpg" alt="" loading="lazy" decoding="async" width="640" height="360" />
+            </picture>
+            <div class="rx-pair-body">
+              <p class="rx-pair-count">{guides.length} guides</p>
+              <h3>Guides</h3>
+              <p class="rx-pair-desc">Understand ionizing bars, static prevention and web cleaning. Use the fundamentals to frame the questions and checks for your production process.</p>
+              <a class="rx-textlink" href="/guides">Browse Guides <span aria-hidden="true">&#8594;</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="rx-feature">
+      <div class="container rx-wrap rx-all">
+        <div class="rx-all-col">
+          <p class="rx-eyebrow">From the Blog</p>
+          <ul class="rx-rail">
+            {posts.map((post) => (
+              <li>
+                <p class="rx-rail-cat">{post.category}</p>
+                <h3><a href={`/blog/${post.slug}`}>{post.title}</a></h3>
+                <a class="rx-textlink" href={`/blog/${post.slug}`}>Read the article <span aria-hidden="true">&#8594;</span></a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="rx-all-col">
+          <p class="rx-eyebrow">Start with a Guide</p>
+          <ul class="rx-rail">
+            {guides.map((guide) => (
+              <li>
+                <p class="rx-rail-cat">{guide.category}</p>
+                <h3><a href={guide.href}>{guide.title}</a></h3>
+                <a class="rx-textlink" href={guide.href}>Read the guide <span aria-hidden="true">&#8594;</span></a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="rx-all-col">
+          <p class="rx-eyebrow">Also on the site</p>
+          <ul class="rx-rail">
+            <li>
+              <h3><a href="/faq">FAQ</a></h3>
+              <p class="rx-card-desc">Short answers on static eliminators, ionizing bars, cleaning machines, lead times and ordering.</p>
+            </li>
+            <li>
+              <h3><a href="/applications">Applications by industry</a></h3>
+              <p class="rx-card-desc">Where the charge is generated on six kinds of production line, and what is specified to deal with it.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </ResourceIndex>
+</Layout>
+
+<style>
+  .rx-all { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px 56px; align-items: start; }
+  .rx-all-col :global(.rx-rail li:first-child) { padding-top: 0; border-top: 0; }
+  @media (max-width: 900px) {
+    .rx-all { gap: 30px; }
+  }
+</style>

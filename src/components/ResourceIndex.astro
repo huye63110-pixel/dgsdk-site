@@ -1,0 +1,59 @@
+---
+// Shared chrome for the three resource index pages: /resources, /blog, /guides.
+//
+// The design gives all three the same head — breadcrumb, eyebrow, heading, lead —
+// the same All Resources / Blog / Guides tab row, and the same CTA band at the
+// bottom. Only the middle differs, so that comes in through the default slot.
+//
+// `heading` is passed in rather than hard-coded: /blog and /guides are indexed
+// pages whose H1s carry keywords, and the design's short "Blog" / "Guides"
+// would drop them. Each page keeps the H1 it already publishes.
+const {
+  eyebrow,
+  heading,
+  lead,
+  crumb,
+  active = 'all',
+  cta,
+} = Astro.props;
+
+const tabs = [
+  ['all', '/resources', 'All Resources'],
+  ['blog', '/blog', 'Blog'],
+  ['guides', '/guides', 'Guides'],
+];
+---
+
+<section class="rx-hero">
+  <div class="container rx-wrap">
+    <nav class="rx-crumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span aria-hidden="true">/</span>
+      <a href="/resources">Resources</a>
+      {crumb && <><span aria-hidden="true">/</span><span aria-current="page">{crumb}</span></>}
+    </nav>
+    <p class="rx-eyebrow">{eyebrow}</p>
+    <h1>{heading}</h1>
+    <p class="rx-lead">{lead}</p>
+  </div>
+</section>
+
+<nav class="rx-tabs" aria-label="Resource sections">
+  <div class="container rx-wrap rx-tabs-inner">
+    {tabs.map(([id, href, label]) => (
+      <a href={href} class:list={['rx-tab', active === id && 'is-active']} aria-current={active === id ? 'page' : undefined}>{label}</a>
+    ))}
+  </div>
+</nav>
+
+<slot />
+
+<section class="rx-cta">
+  <div class="container rx-wrap rx-cta-inner">
+    <div>
+      <h2>{cta.heading}</h2>
+      <p>{cta.text}</p>
+    </div>
+    <a class="rx-btn" href={cta.href}>{cta.label} <span aria-hidden="true">&#8599;</span></a>
+  </div>
+</section>

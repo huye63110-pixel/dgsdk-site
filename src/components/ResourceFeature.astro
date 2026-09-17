@@ -1,0 +1,40 @@
+---
+// The featured block: one lead article with its illustration, and a rail of
+// three more beside it. Used by /blog and /guides.
+const { featured, rail, kicker, caption, ctaLabel, image } = Astro.props;
+// The lead illustration is overridable: the card thumbnails are product
+// cutouts on white, but the featured slot wants the application photo the
+// caption describes.
+const hero = image || featured.image;
+---
+
+<section class="rx-feature">
+  <div class="container rx-wrap rx-feature-grid">
+    <div class="rx-feature-main">
+      <picture class="rx-feature-media">
+        <source srcset={`${hero}.webp`} type="image/webp" />
+        <img src={`${hero}.jpg`} alt="" loading="lazy" decoding="async" width="960" height="540" />
+      </picture>
+      {caption && <p class="rx-caption">{caption}</p>}
+
+      <p class="rx-feature-tags">
+        <span>{kicker}</span>
+        <span class="rx-sep" aria-hidden="true"></span>
+        <span>{featured.category}</span>
+      </p>
+      <h2><a href={featured.href}>{featured.title}</a></h2>
+      <p class="rx-feature-desc">{featured.excerpt}</p>
+      <a class="rx-btn" href={featured.href}>{ctaLabel} <span aria-hidden="true">&#8599;</span></a>
+    </div>
+
+    <ul class="rx-rail">
+      {rail.map((item) => (
+        <li>
+          <p class="rx-rail-cat">{item.category}</p>
+          <h3><a href={item.href}>{item.title}</a></h3>
+          <a class="rx-textlink" href={item.href}>Read the article <span aria-hidden="true">&#8594;</span></a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

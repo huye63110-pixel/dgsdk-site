@@ -6,6 +6,14 @@
 // The search IDs below (#searchDropdown, #searchToggle, #searchBox) are the
 // contract public/js/scripts.js binds to; renaming them silently kills site
 // search, so they stay verbatim.
+//
+// Products and Resources are each a real link *beside* a disclosure button,
+// not a <summary>. That is what lets the text navigate to the page while the
+// panel still opens on hover, on tap and from the keyboard — a <summary>
+// cannot be a link, which is why the old two-item dropdown could not do both.
+import { productCategories, menuBlurb } from '../data/products.js';
+import { posts, guides } from '../data/resources.js';
+
 const { path = '/' } = Astro.props;
 
 // Every nav item points at a page. About used to jump to the homepage's own
@@ -14,14 +22,15 @@ const { path = '/' } = Astro.props;
 // were already looking at that section. It links to /about from every page now.
 const isHome = path === '/';
 
-const guides = [
-  ['/guides/what-is-esd', 'What Is ESD?'],
-  ['/guides/how-to-prevent-static', 'How to Prevent Static'],
-  ['/guides/esd-control-products', 'ESD Control Products'],
-  ['/guides/industrial-static-eliminator', 'Industrial Static Eliminators'],
-  ['/guides/what-is-an-ionizing-bar', 'What Is an Ionizing Bar?'],
-  ['/faq', 'FAQ'],
-];
+// Flattened once so the preview panel and the model lists agree on the key.
+const previews = productCategories.flatMap((cat) =>
+  cat.items.map((item) => ({ ...item, cat_id: cat.id, key: `${cat.id}:${item.slug}`, href: `${cat.base}/${item.slug}` }))
+);
+
+// The menu shows a representative few, not the whole archive: the full lists
+// live on /blog, /guides and /resources.
+const menuPosts = posts.slice(0, 3);
+const menuGuides = guides.slice(0, 3);
 ---
 
 <a class="skip" href="#main">Skip to content</a>
@@ -40,28 +49,147 @@ const guides = [
     </button>
 
     <nav id="main-nav" aria-label="Main navigation">
-      <a href="/" class={isHome ? 'nav-home' : undefined} aria-current={isHome ? 'page' : undefined}>Home</a>
+      <a href="/" class:list={['nav-link', isHome && 'nav-home']} aria-current={isHome ? 'page' : undefined}>Home</a>
 
-      <details class="nav-dropdown" id="products-nav">
-        <summary>Products <span aria-hidden="true">⌄</span></summary>
-        <div class="product-menu">
-          <a href="/products/static-eliminator">Anti Static Bars &amp; Ionizing Air Blowers</a>
-          <a href="/products/cleaning-machine">Industrial Cleaning Machines</a>
+      <div class="nav-item" data-menu="products">
+        <div class="nav-item-head">
+          <a href="/products/static-eliminator" class="nav-link">Products</a>
+          <button class="nav-expand" type="button" aria-controls="mega-products" aria-expanded="false" aria-label="Open the Products menu">
+            <span aria-hidden="true">⌄</span>
+          </button>
         </div>
-      </details>
 
-      <a href="/applications">Applications</a>
+        <div class="mega" id="mega-products">
+          <div class="mega-body">
+            <div class="container mega-inner mega-inner-products">
+              <div class="mega-col">
+                <p class="mega-eyebrow">Our Equipment</p>
+                <ul class="mega-cats">
+                  {productCategories.map((cat, i) => (
+                    <li>
+                      <a href={cat.href} class:list={['mega-cat', i === 0 && 'is-active']} data-cat={cat.id}>
+                        <span class="mega-cat-label">{cat.label}</span>
+                        <span class="mega-cat-go" aria-hidden="true">→</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+                <p class="mega-note">Equipment for your production process.</p>
+              </div>
 
-      <details class="nav-dropdown" id="guides-nav">
-        <summary>Guides <span aria-hidden="true">⌄</span></summary>
-        <div class="product-menu">
-          {guides.map(([href, label]) => <a href={href}>{label}</a>)}
+              <div class="mega-models">
+                {productCategories.map((cat, i) => (
+                  <div class="mega-model-list" data-cat-panel={cat.id} hidden={i !== 0}>
+                    <a class="mega-group-head" href={cat.href}>
+                      <span>{cat.heading}</span>
+                      <span class="mega-arrow" aria-hidden="true">↗</span>
+                    </a>
+                    <ul>
+                      {cat.items.map((item) => (
+                        <li>
+                          <a href={`${cat.base}/${item.slug}`} class="mega-model" data-preview-key={`${cat.id}:${item.slug}`}>
+                            <span class="mega-model-name">{item.name}</span>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+
+              <div class="mega-preview">
+                {previews.map((item, i) => (
+                  <div class="mega-card" data-preview={item.key} hidden={i !== 0}>
+                    <picture class="mega-card-media">
+                      <source srcset={`${item.img}.webp`} type="image/webp" />
+                      <img src={`${item.img}.jpg`} alt={item.name} loading="lazy" decoding="async" />
+                    </picture>
+                    <h3 class="mega-card-name">{item.name}</h3>
+                    {menuBlurb(item.desc) && <p class="mega-card-desc">{menuBlurb(item.desc)}</p>}
+                    <a class="mega-card-cta" href={item.href}>View equipment <span aria-hidden="true">↗</span></a>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div class="mega-bar">
+            <div class="container mega-bar-inner">
+              <div class="mega-bar-links">
+                <a href="/products/static-eliminator">Browse static control <span aria-hidden="true">→</span></a>
+                <a href="/products/cleaning-machine">Browse cleaning machines <span aria-hidden="true">→</span></a>
+              </div>
+              <a class="mega-bar-cta" href="/contact">Get a Quote <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
         </div>
-      </details>
+      </div>
 
-      <a href="/blog">Blog</a>
-      <a href="/about">About</a>
-      <a href="/contact">Contact</a>
+      <a href="/applications" class="nav-link">Applications</a>
+
+      <div class="nav-item" data-menu="resources">
+        <div class="nav-item-head">
+          <a href="/resources" class="nav-link">Resources</a>
+          <button class="nav-expand" type="button" aria-controls="mega-resources" aria-expanded="false" aria-label="Open the Resources menu">
+            <span aria-hidden="true">⌄</span>
+          </button>
+        </div>
+
+        <div class="mega" id="mega-resources">
+          <div class="mega-body">
+            <div class="container mega-inner mega-inner-resources">
+              <section class="mega-res-col" aria-labelledby="mega-res-blog">
+                <p class="mega-eyebrow">Articles &amp; Perspectives</p>
+                <a class="mega-group-head" href="/blog" id="mega-res-blog">
+                  <span>Blog</span><span class="mega-arrow" aria-hidden="true">↗</span>
+                </a>
+                <p class="mega-res-lead">Product insights, application articles and practical advice from Shidike.</p>
+                <ul>
+                  {menuPosts.map((post) => (
+                    <li><a href={`/blog/${post.slug}`} class="mega-res-item">{post.title}</a></li>
+                  ))}
+                </ul>
+                <a class="mega-res-all" href="/blog">Browse blog articles <span aria-hidden="true">→</span></a>
+              </section>
+
+              <section class="mega-res-col" aria-labelledby="mega-res-guides">
+                <p class="mega-eyebrow">Learn the Fundamentals</p>
+                <a class="mega-group-head" href="/guides" id="mega-res-guides">
+                  <span>Guides</span><span class="mega-arrow" aria-hidden="true">↗</span>
+                </a>
+                <p class="mega-res-lead">Explanations of static control, web cleaning and equipment selection.</p>
+                <ul>
+                  {menuGuides.map((guide) => (
+                    <li><a href={guide.href} class="mega-res-item">{guide.title}</a></li>
+                  ))}
+                </ul>
+                <a class="mega-res-all" href="/guides">Explore all guides <span aria-hidden="true">→</span></a>
+              </section>
+
+              <div class="mega-res-aside">
+                <picture class="mega-res-media">
+                  <source srcset="/assets/img/guides/ionizing-bar-action.webp" type="image/webp" />
+                  <img src="/assets/img/guides/ionizing-bar-action.jpg" alt="" loading="lazy" decoding="async" />
+                </picture>
+                <h3>Understand your process.</h3>
+                <p>Find a useful starting point before selecting equipment.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mega-bar">
+            <div class="container mega-bar-inner">
+              <div class="mega-bar-links">
+                <a href="/resources">Browse all resources <span aria-hidden="true">→</span></a>
+              </div>
+              <a class="mega-bar-cta" href="/contact">Ask about your application <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/about" class="nav-link">About Us</a>
+      <a href="/contact" class="nav-link">Contact</a>
 
       <div class="nav-search search-dropdown" id="searchDropdown">
         <button class="nav-icon-btn" type="button" id="searchToggle" aria-label="Search products" aria-expanded="false">
@@ -89,50 +217,193 @@ const guides = [
     var nav = document.getElementById('main-nav');
     if (!toggle || !nav) return;
 
+    var desktop = window.matchMedia('(min-width: 801px)');
+    var items = Array.prototype.slice.call(nav.querySelectorAll('.nav-item'));
+
+    // Opening is delayed slightly so brushing past an item on the way to
+    // another does not flash its panel; closing is delayed much longer so the
+    // pointer can cross the gap under the trigger, and travel diagonally from
+    // a category across to the model list, without the menu vanishing.
+    var HOVER_IN = 90;
+    var HOVER_OUT = 280;
+    var openTimer = null;
+    var closeTimer = null;
+    // Escape closes the panel and then returns focus to the disclosure button,
+    // which fires focusin on the item - and focusin is one of the things that
+    // opens it. This suppresses that one re-entry.
+    var suppressFocusOpen = false;
+
     function setOpen(open) {
       nav.classList.toggle('is-open', open);
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+
+    function setItem(item, open) {
+      item.classList.toggle('is-open', open);
+      var btn = item.querySelector('.nav-expand');
+      if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+
+    function closeItems(except) {
+      items.forEach(function (i) { if (i !== except) setItem(i, false); });
+    }
+
+    function openItem(item) {
+      window.clearTimeout(closeTimer);
+      closeItems(item);
+      setItem(item, true);
+    }
+
+    items.forEach(function (item) {
+      item.addEventListener('mouseenter', function () {
+        if (!desktop.matches) return;
+        window.clearTimeout(closeTimer);
+        window.clearTimeout(openTimer);
+        openTimer = window.setTimeout(function () { openItem(item); }, HOVER_IN);
+      });
+
+      item.addEventListener('mouseleave', function () {
+        if (!desktop.matches) return;
+        window.clearTimeout(openTimer);
+        closeTimer = window.setTimeout(function () { setItem(item, false); }, HOVER_OUT);
+      });
+
+      // The chevron is the touch path, and a second keyboard path. The text
+      // next to it is a real link to the category page, so it cannot double as
+      // the disclosure control the way a <summary> did.
+      var btn = item.querySelector('.nav-expand');
+      if (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var wasOpen = item.classList.contains('is-open');
+          closeItems();
+          if (!wasOpen) openItem(item);
+        });
+      }
+
+      // Tabbing into the item opens it; tabbing past the last link inside
+      // closes it again.
+      item.addEventListener('focusin', function () {
+        if (desktop.matches && !suppressFocusOpen) openItem(item);
+      });
+      item.addEventListener('focusout', function (e) {
+        if (!desktop.matches) return;
+        if (!item.contains(e.relatedTarget)) setItem(item, false);
+      });
+    });
+
+    // Products panel: hovering or focusing a category swaps the model column,
+    // and a model swaps the preview on the right.
+    var mega = document.getElementById('mega-products');
+    if (mega) {
+      var cats = Array.prototype.slice.call(mega.querySelectorAll('.mega-cat'));
+      var panels = Array.prototype.slice.call(mega.querySelectorAll('.mega-model-list'));
+      var models = Array.prototype.slice.call(mega.querySelectorAll('.mega-model'));
+      var cards = Array.prototype.slice.call(mega.querySelectorAll('.mega-card'));
+
+      function showCard(key) {
+        cards.forEach(function (c) { c.hidden = c.getAttribute('data-preview') !== key; });
+        models.forEach(function (m) {
+          m.classList.toggle('is-active', m.getAttribute('data-preview-key') === key);
+        });
+      }
+
+      function showCat(id) {
+        cats.forEach(function (c) { c.classList.toggle('is-active', c.getAttribute('data-cat') === id); });
+        panels.forEach(function (p) { p.hidden = p.getAttribute('data-cat-panel') !== id; });
+        var first = mega.querySelector('.mega-model-list:not([hidden]) .mega-model');
+        if (first) showCard(first.getAttribute('data-preview-key'));
+      }
+
+      // public/css/styles.css (the legacy Bootstrap-derived sheet) declares
+      // [hidden]{display:none!important}, so no media query can un-hide these
+      // for the mobile accordion - and the homepage does not load that sheet,
+      // so a CSS fix would also behave differently there than everywhere else.
+      // Below 800px every category is expanded at once by removing the
+      // attribute outright, which is what the phone layout actually means.
+      // The panel's desktop DOM is three columns: every category, then every
+      // model list. Stacked on a phone that reads as three headings followed by
+      // 19 models, so the bars appear to sit under "Cleaning Machines". Each
+      // list is moved inside its own category's <li> below 800px, and back into
+      // the middle column above it.
+      var modelsHost = mega.querySelector('.mega-models');
+      function syncViewport() {
+        if (desktop.matches) {
+          panels.forEach(function (panel) { modelsHost.appendChild(panel); });
+          var active = mega.querySelector('.mega-cat.is-active') || cats[0];
+          showCat(active.getAttribute('data-cat'));
+        } else {
+          panels.forEach(function (panel) {
+            panel.hidden = false;
+            var cat = mega.querySelector('.mega-cat[data-cat="' + panel.getAttribute('data-cat-panel') + '"]');
+            if (cat && cat.parentNode) cat.parentNode.appendChild(panel);
+          });
+        }
+      }
+      syncViewport();
+      if (desktop.addEventListener) desktop.addEventListener('change', syncViewport);
+      else if (desktop.addListener) desktop.addListener(syncViewport);
+
+      cats.forEach(function (c) {
+        var id = c.getAttribute('data-cat');
+        c.addEventListener('mouseenter', function () { if (desktop.matches) showCat(id); });
+        c.addEventListener('focus', function () { if (desktop.matches) showCat(id); });
+      });
+
+      models.forEach(function (m) {
+        var key = m.getAttribute('data-preview-key');
+        m.addEventListener('mouseenter', function () { if (desktop.matches) showCard(key); });
+        m.addEventListener('focus', function () { if (desktop.matches) showCard(key); });
+      });
     }
 
     toggle.addEventListener('click', function () {
       setOpen(!nav.classList.contains('is-open'));
     });
 
-    // Following a link should close the panel, but tapping a dropdown's own
-    // summary must not — that is how you reach the links inside it.
+    // Following a link should close the panel, but tapping a disclosure button
+    // must not — that is how you reach the links inside it.
     nav.addEventListener('click', function (e) {
-      if (e.target.closest('a')) setOpen(false);
+      if (e.target.closest('.nav-expand')) return;
+      if (e.target.closest('a')) {
+        setOpen(false);
+        closeItems();
+      }
     });
 
     document.addEventListener('keydown', function (e) {
       if (e.key !== 'Escape') return;
+      var openItemEl = nav.querySelector('.nav-item.is-open');
+      if (openItemEl) {
+        var btn = openItemEl.querySelector('.nav-expand');
+        suppressFocusOpen = true;
+        setItem(openItemEl, false);
+        if (btn) btn.focus();
+        window.setTimeout(function () { suppressFocusOpen = false; }, 0);
+        return;
+      }
       if (nav.classList.contains('is-open')) {
         setOpen(false);
         toggle.focus();
       }
-      document.querySelectorAll('#main-nav details[open]').forEach(function (d) {
-        d.open = false;
-      });
     });
 
-    // Only one dropdown open at a time, and clicking outside closes them.
-    var dropdowns = Array.prototype.slice.call(document.querySelectorAll('#main-nav details'));
-    dropdowns.forEach(function (d) {
-      d.addEventListener('toggle', function () {
-        if (!d.open) return;
-        dropdowns.forEach(function (other) { if (other !== d) other.open = false; });
-      });
-    });
+    // Clicking outside closes any open panel.
     document.addEventListener('click', function (e) {
-      if (e.target.closest('#main-nav details')) return;
-      dropdowns.forEach(function (d) { d.open = false; });
+      if (e.target.closest('.nav-item')) return;
+      closeItems();
     });
 
     // Reset the mobile panel when the viewport goes back to desktop, so the
     // desktop row is never left in the collapsed state.
-    var wide = window.matchMedia('(min-width: 801px)');
-    var onWide = function (e) { if (e.matches) setOpen(false); };
-    if (wide.addEventListener) wide.addEventListener('change', onWide);
-    else if (wide.addListener) wide.addListener(onWide);
+    var onWide = function (e) {
+      if (e.matches) {
+        setOpen(false);
+        closeItems();
+      }
+    };
+    if (desktop.addEventListener) desktop.addEventListener('change', onWide);
+    else if (desktop.addListener) desktop.addListener(onWide);
   })();
 </script>
