@@ -3,69 +3,69 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <!-- ===== CORE PAGES ===== -->
-  <url><loc>https://www.dg-sdk.com/</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://www.dg-sdk.com/about</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.dg-sdk.com/applications</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.dg-sdk.com/contact</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.dg-sdk.com/</loc><lastmod>2026-09-14</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.dg-sdk.com/about</loc><lastmod>2026-09-17</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.dg-sdk.com/applications</loc><lastmod>2026-09-17</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.dg-sdk.com/contact</loc><lastmod>2026-09-17</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url>
     <loc>https://www.dg-sdk.com/static-eliminator-manufacturer</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  <url><loc>https://www.dg-sdk.com/faq</loc><lastmod>2026-04-28</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.dg-sdk.com/privacy</loc><lastmod>2026-04-28</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.dg-sdk.com/faq</loc><lastmod>2026-09-17</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.dg-sdk.com/privacy</loc><lastmod>2026-09-12</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
 
   <!-- ===== GUIDES (EN) ===== -->
   <url><loc>https://www.dg-sdk.com/resources</loc><lastmod>2026-09-17</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.dg-sdk.com/guides</loc><lastmod>2026-05-04</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.dg-sdk.com/products/static-eliminator/ionizing-air-blowers</loc><lastmod>2026-09-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.dg-sdk.com/guides/what-is-web-cleaning</loc><lastmod>2026-09-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/guides/what-is-esd</loc><lastmod>2026-09-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/guides/how-to-prevent-static</loc><lastmod>2026-05-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/guides/esd-control-products</loc><lastmod>2026-05-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/guides/industrial-static-eliminator</loc><lastmod>2026-05-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.dg-sdk.com/guides/what-is-an-ionizing-bar</loc><lastmod>2026-05-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dg-sdk.com/guides</loc><lastmod>2026-09-17</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.dg-sdk.com/products/static-eliminator/ionizing-air-blowers</loc><lastmod>2026-09-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.dg-sdk.com/guides/what-is-web-cleaning</loc><lastmod>2026-09-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dg-sdk.com/guides/what-is-esd</loc><lastmod>2026-09-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dg-sdk.com/guides/how-to-prevent-static</loc><lastmod>2026-09-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dg-sdk.com/guides/esd-control-products</loc><lastmod>2026-09-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dg-sdk.com/guides/industrial-static-eliminator</loc><lastmod>2026-09-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dg-sdk.com/guides/what-is-an-ionizing-bar</loc><lastmod>2026-09-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url>
     <loc>https://www.dg-sdk.com/guides/ionizing-bar-voltage-output</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- ===== BLOG (EN) ===== -->
-  <url><loc>https://www.dg-sdk.com/blog</loc><lastmod>2026-05-22</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.dg-sdk.com/blog</loc><lastmod>2026-09-17</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url>
     <loc>https://www.dg-sdk.com/blog/st-g-ionizing-bar-guide</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.dg-sdk.com/blog/lithium-battery-ionizing-bar-guide</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.dg-sdk.com/blog/photovoltaic-ionizing-bar-guide</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.dg-sdk.com/blog/optical-film-cleaner-tutorial</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <!-- ===== STATIC ELIMINATOR PRODUCTS (EN) ===== -->
-  <url><loc>https://www.dg-sdk.com/products/static-eliminator</loc><lastmod>2026-08-31</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.dg-sdk.com/products/static-eliminator</loc><lastmod>2026-09-17</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
 
   <url>
     <loc>https://www.dg-sdk.com/products/static-eliminator/st-g-series</loc>
-    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-g.jpg</image:loc>
       <image:title>ST-G Series Intelligent Static Elimination Rod | DGSDK Ionizing Bar</image:title>
@@ -80,7 +80,7 @@
 
   <url>
     <loc>https://www.dg-sdk.com/products/static-eliminator/st-e-series</loc>
-    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-e.jpg</image:loc>
       <image:title>ST-E Series Intelligent Ion Rod | Static Eliminator Bar | DGSDK</image:title>
@@ -90,7 +90,7 @@
 
   <url>
     <loc>https://www.dg-sdk.com/products/static-eliminator/st-f-series</loc>
-    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-f.jpg</image:loc>
       <image:title>ST-F Series Long-Range Ionizing Bar | Static Eliminator | DGSDK</image:title>
@@ -100,7 +100,7 @@
 
   <url>
     <loc>https://www.dg-sdk.com/products/static-eliminator/st-101a</loc>
-    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-101a.jpg</image:loc>
       <image:title>ST101A Desktop Static Eliminator Blower | ESD Ionizing Fan | DGSDK</image:title>
@@ -120,7 +120,7 @@
 
   <url>
     <loc>https://www.dg-sdk.com/products/static-eliminator/st-104a</loc>
-    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-104a.jpg</image:loc>
       <image:title>ST104A Horizontal Static Eliminator Blower | ESD Control | DGSDK</image:title>
@@ -130,7 +130,7 @@
 
   <url>
     <loc>https://www.dg-sdk.com/products/static-eliminator/st-1200</loc>
-    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-1200.jpg</image:loc>
       <image:title>ST1200 Industrial Static Eliminator Fan | Wide-Area ESD Control | DGSDK</image:title>
@@ -140,7 +140,7 @@
 
   <url>
     <loc>https://www.dg-sdk.com/products/static-eliminator/st-s200</loc>
-    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-s200.jpg</image:loc>
       <image:title>ST-S200 Mini Static Eliminator Fan | Compact Ionizing Blower | DGSDK</image:title>
@@ -149,11 +149,11 @@
   </url>
 
   <!-- ===== CLEANING MACHINE PRODUCTS (EN) ===== -->
-  <url><loc>https://www.dg-sdk.com/products/cleaning-machine</loc><lastmod>2026-08-31</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.dg-sdk.com/products/cleaning-machine</loc><lastmod>2026-09-17</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
 
   <url>
     <loc>https://www.dg-sdk.com/products/cleaning-machine/polarizer-cleaner</loc>
-    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/polarizer-cleaner.jpg</image:loc>
       <image:title>Polarizer Precision Cleaning Machine | DGSDK Industrial Cleaner</image:title>
@@ -168,7 +168,7 @@
 
   <url>
     <loc>https://www.dg-sdk.com/products/cleaning-machine/fpc-4-axis-cleaner</loc>
-    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/fpc-4-axis-cleaner.jpg</image:loc>
       <image:title>FPC 4-Axis High Precision Cleaning Machine | DGSDK</image:title>
@@ -178,7 +178,7 @@
 
   <url>
     <loc>https://www.dg-sdk.com/products/cleaning-machine/fpc-8-axis-cleaner</loc>
-    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/fpc-8-axis-cleaner.jpg</image:loc>
       <image:title>FPC 8-Axis Advanced Cleaning Machine | DGSDK</image:title>
@@ -188,7 +188,7 @@
 
   <url>
     <loc>https://www.dg-sdk.com/products/cleaning-machine/optical-film-cleaner</loc>
-    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/optical.jpg</image:loc>
       <image:title>Large Size Optical Film Cleaning Machine | DGSDK Industrial Cleaner</image:title>
@@ -198,7 +198,7 @@
 
   <url>
     <loc>https://www.dg-sdk.com/products/cleaning-machine/lcm-cleaner</loc>
-    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/lcm-cleaner.jpg</image:loc>
       <image:title>LCM Module Industrial Cleaning Machine | Liquid Crystal Module Cleaner | DGSDK</image:title>
@@ -208,7 +208,7 @@
 
   <url>
     <loc>https://www.dg-sdk.com/products/cleaning-machine/pcb-cleaner</loc>
-    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/pcb-cleaner.jpg</image:loc>
       <image:title>PCB Surface Cleaning Machine | STKF Series | DGSDK</image:title>
@@ -218,7 +218,7 @@
 
   <url>
     <loc>https://www.dg-sdk.com/products/cleaning-machine/pcb-vertical-cleaner</loc>
-    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/stick-pcb-vertical-cleaning-machine.jpg</image:loc>
       <image:title>PCB Vertical Cleaning System | DGSDK Industrial Cleaner</image:title>
@@ -228,7 +228,7 @@
 
   <url>
     <loc>https://www.dg-sdk.com/products/cleaning-machine/roll-chip-cleaner</loc>
-    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/roll-chip-cleaner.jpg</image:loc>
       <image:title>Roll Chip Universal Cleaning Machine | DGSDK</image:title>
@@ -238,7 +238,7 @@
 
   <url>
     <loc>https://www.dg-sdk.com/products/cleaning-machine/smt-cleaner</loc>
-    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/smt-cleaner.jpg</image:loc>
       <image:title>SMT Inline Cleaning Machine SMT600 Series | DGSDK</image:title>
@@ -248,7 +248,7 @@
 
   <url>
     <loc>https://www.dg-sdk.com/products/cleaning-machine/backlight-cleaner</loc>
-    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/backlight-cleaner.jpg</image:loc>
       <image:title>Backlight Panel Cleaning Machine | DGSDK Industrial Cleaner</image:title>
@@ -258,15 +258,15 @@
 
   <url>
     <loc>https://www.dg-sdk.com/products/cleaning-machine/contact-cleaning-machine</loc>
-    <lastmod>2026-09-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.dg-sdk.com/products/cleaning-machine/non-contact-cleaning-machine</loc>
-    <lastmod>2026-09-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.dg-sdk.com/products/cleaning-machine/ccl-cleaner</loc>
-    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/ccl-cleaner.jpg</image:loc>
       <image:title>CCL Cleaning Machine ST DT1340 | Copper Clad Laminate Cleaner | DGSDK</image:title>
@@ -276,7 +276,7 @@
 
   <url>
     <loc>https://www.dg-sdk.com/products/cleaning-machine/inspection-cleaner</loc>
-    <lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/inspection-cleaner.jpg</image:loc>
       <image:title>Inspection Stage Cleaning Machine STXT Series | DGSDK</image:title>
