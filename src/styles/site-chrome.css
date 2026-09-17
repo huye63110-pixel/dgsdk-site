@@ -268,9 +268,8 @@ body { margin: 0; }
 @media (max-width: 767.98px) {
   .quote-modal-close { min-width: 44px; min-height: 44px; }
 }
-
 /* ---------------------------------------------------------------------------
-   Products / Resources mega menus.
+   Products / Resources mega menus — the dark panel from the confirmed design.
 
    The panel is absolutely positioned against .site-header (sticky counts as a
    containing block), not against the nav item, so it can span the full header
@@ -281,6 +280,12 @@ body { margin: 0; }
    Visibility is driven by .is-open, set by the controller in SiteHeader.astro.
    Hover alone is deliberately not enough: the same class has to work for tap
    and for keyboard focus, and CSS :hover cannot serve those.
+
+   Everything inside declares its own colour, font-size and line-height rather
+   than inheriting: the legacy stylesheet that every page except the homepage
+   loads sets line-height on body, p and h3 and 144px of padding on bare
+   <section>, which otherwise renders this same menu at a different size on the
+   homepage than everywhere else.
 --------------------------------------------------------------------------- */
 #main-nav .nav-item { position: static; }
 #main-nav .nav-item-head { display: flex; align-items: center; gap: 2px; }
@@ -298,170 +303,171 @@ body { margin: 0; }
 
 .site-header .mega {
   display: none;
-  /* Pinned, not inherited: the legacy sheet sets line-height 1.5 on body and
-     the homepage does not load it, so an inherited value renders the same
-     menu 8px taller on 44 pages than on the homepage. */
-  line-height: 1.5;
   position: absolute; left: 0; right: 0; top: 100%;
-  background: #fff;
-  border-top: 1px solid var(--v12-line);
-  box-shadow: 0 18px 38px #163b4d1f;
+  background: var(--mega-bg);
+  box-shadow: 0 24px 46px #0b1a2433;
+  line-height: 1.5;
   z-index: 40;
 }
+.site-header { --mega-bg: #17242c; --mega-bar: #111d25; --mega-line: #ffffff1f;
+               --mega-ink: #f2f6f8; --mega-muted: #9fb2bf; }
 .site-header .nav-item.is-open > .mega { display: block; }
-.site-header .mega-inner { padding-block: 26px 28px; }
+.site-header .mega a { color: var(--mega-ink); }
+.site-header .mega a:hover { color: var(--brand); }
+.site-header .mega a:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; border-radius: 4px; }
 .site-header .mega ul { list-style: none; margin: 0; padding: 0; }
+.site-header .mega section { padding: 0; margin: 0; }
+.site-header .mega-inner { padding-block: 34px 38px; }
 .site-header .mega-model-list[hidden],
 .site-header .mega-card[hidden] { display: none; }
+
+.site-header .mega-eyebrow {
+  margin: 0 0 22px; font-size: 10.5px; font-weight: 600; line-height: 1.4;
+  letter-spacing: .13em; text-transform: uppercase; color: var(--mega-muted);
+}
+.site-header .mega-arrow { flex-shrink: 0; font-size: 13px; }
 
 /* Products: categories | models | preview */
 .site-header .mega-inner-products {
   display: grid;
-  grid-template-columns: minmax(0, 232px) minmax(0, 268px) minmax(0, 1fr);
-  gap: 0 30px;
+  grid-template-columns: minmax(0, 252px) minmax(0, 1fr) minmax(0, 310px);
+  gap: 0 48px;
   align-items: start;
 }
-.site-header .mega-cats { border-right: 1px solid var(--v12-line); padding-right: 18px; }
+.site-header .mega-col { border-right: 1px solid var(--mega-line); padding-right: 40px; }
 .site-header .mega-cat {
-  display: flex; align-items: center; justify-content: space-between; gap: 10px;
-  padding: 12px 12px 12px 13px; border-radius: 8px;
-  font-size: 12.5px; font-weight: 600; color: var(--v12-ink); line-height: 1.4;
-  transition: background .15s ease, color .15s ease;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 15px 16px; border: 1px solid transparent; border-radius: 4px;
+  font-size: 14px; font-weight: 600; line-height: 1.4; color: var(--mega-ink);
+  transition: background .15s ease, border-color .15s ease;
 }
-.site-header .mega-cat:hover,
-.site-header .mega-cat.is-active { background: var(--v12-pale); color: var(--v12-blue); }
-.site-header .mega-cat-count {
-  flex-shrink: 0; min-width: 22px; padding: 2px 6px; border-radius: 999px;
-  background: #eaf1f6; color: var(--v12-muted);
-  font-size: 10px; font-weight: 600; text-align: center;
+.site-header .mega-cats li + li { margin-top: 2px; }
+.site-header .mega-cat-go { flex-shrink: 0; font-size: 14px; color: var(--mega-muted); }
+.site-header .mega-cat:hover { background: #ffffff0d; }
+.site-header .mega-cat.is-active { background: #24343f; border-color: var(--mega-line); }
+.site-header .mega-cat.is-active .mega-cat-go { color: var(--mega-ink); }
+.site-header .mega-note {
+  margin: 30px 0 0; padding-left: 16px; max-width: 200px;
+  font-size: 12.5px; line-height: 1.6; color: var(--mega-muted);
 }
-.site-header .mega-cat.is-active .mega-cat-count { background: #d8ebf6; color: var(--v12-blue-deep); }
 
-.site-header .mega-models { max-height: 330px; overflow-y: auto; padding-right: 6px; }
+.site-header .mega-group-head {
+  display: flex; align-items: center; justify-content: space-between; gap: 14px;
+  padding-bottom: 16px; margin-bottom: 4px; border-bottom: 1px solid var(--mega-line);
+  font-size: 17px; font-weight: 650; line-height: 1.3; color: var(--mega-ink);
+}
+.site-header .mega-models { max-height: 340px; overflow-y: auto; }
 .site-header .mega-model {
-  display: flex; align-items: baseline; justify-content: space-between; gap: 10px;
-  padding: 9px 11px; border-radius: 7px;
-  font-size: 12px; color: var(--v12-ink); line-height: 1.45;
-  transition: background .15s ease, color .15s ease;
+  display: block; padding: 15px 2px;
+  border-bottom: 1px solid var(--mega-line);
+  font-size: 13.5px; line-height: 1.45; color: var(--mega-ink);
+  transition: color .15s ease;
 }
-.site-header .mega-model:hover,
-.site-header .mega-model.is-active { background: var(--v12-pale); color: var(--v12-blue); }
-.site-header .mega-model-code {
-  flex-shrink: 0; font-size: 10px; font-weight: 600; color: var(--v12-muted); letter-spacing: .02em;
-}
-.site-header .mega-model-all { margin-top: 6px; border-top: 1px solid var(--v12-line); padding-top: 6px; }
-.site-header .mega-model-all a {
-  display: block; padding: 9px 11px; font-size: 11.5px; font-weight: 600; color: var(--v12-blue);
-}
+.site-header .mega-model.is-active { color: var(--brand); }
 
-.site-header .mega-card { max-width: 420px; }
 .site-header .mega-card-media {
-  display: block; margin-bottom: 14px; border-radius: 10px; overflow: hidden;
-  background: var(--v12-pale); border: 1px solid var(--v12-line);
+  display: block; margin-bottom: 18px; border-radius: 4px; overflow: hidden;
+  background: #eef2f4;
 }
-.site-header .mega-card-media img {
-  display: block; width: 100%; height: 168px; object-fit: cover;
+.site-header .mega-card-media img { display: block; width: 100%; height: 176px; object-fit: contain; }
+.site-header .mega-card-name {
+  margin: 0 0 10px; font-size: 15px; font-weight: 650; line-height: 1.35; color: var(--mega-ink);
 }
-.site-header .mega-card-cat {
-  margin: 0 0 4px; font-size: 10px; font-weight: 600; letter-spacing: .08em;
-  text-transform: uppercase; color: var(--v12-muted); line-height: 1.5;
-}
-.site-header .mega-card-name { margin: 0 0 7px; font-size: 14.5px; font-weight: 650; color: var(--v12-ink); line-height: 1.35; }
 .site-header .mega-card-desc {
-  margin: 0 0 11px; font-size: 11.5px; line-height: 1.65; color: var(--v12-muted);
-  display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;
+  margin: 0 0 20px; font-size: 12.5px; line-height: 1.7; color: var(--mega-muted);
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
 }
-.site-header .mega-card-specs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px !important; }
-.site-header .mega-card-specs li {
-  padding: 4px 9px; border-radius: 999px; background: var(--v12-pale);
-  border: 1px solid var(--v12-line); font-size: 10.5px; color: var(--v12-ink);
+.site-header .mega-card-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12.5px; font-weight: 600; color: var(--brand);
 }
-.site-header .mega-card-cta { font-size: 11.5px; font-weight: 650; color: var(--v12-blue); }
 
-/* Resources: two labelled sections plus the footer row.
-   The panel uses <section> so each column's heading is announced as a
-   landmark - but the legacy sheet styles bare <section> with 144px of page
-   padding, which made the menu 288px taller on every page that loads it and
-   correct only on the homepage, which does not. Neutralised here. */
-.site-header .mega section { padding: 0; margin: 0; }
+/* Resources: two sections plus the aside */
 .site-header .mega-inner-resources {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0 44px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 300px);
+  gap: 0 56px;
 }
-.site-header .mega-res-col h3 {
-  margin: 0 0 4px; padding-bottom: 10px; border-bottom: 1px solid var(--v12-line);
-  font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--v12-muted);
-  line-height: 1.4;
+.site-header .mega-res-col + .mega-res-col { border-left: 0; }
+.site-header .mega-res-lead {
+  margin: 12px 0 26px; max-width: 42ch;
+  font-size: 13px; line-height: 1.7; color: var(--mega-muted);
 }
+.site-header .mega-res-col .mega-group-head { font-size: 25px; border-bottom: 0; padding-bottom: 0; margin-bottom: 0; justify-content: flex-start; gap: 10px; }
+.site-header .mega-res-col .mega-group-head .mega-arrow { color: var(--brand); font-size: 16px; }
+.site-header .mega-res-col ul { border-top: 1px solid var(--mega-line); }
 .site-header .mega-res-item {
-  display: flex; gap: 13px; align-items: flex-start;
-  padding: 11px 9px; margin-inline: -9px; border-radius: 9px;
-  transition: background .15s ease;
+  display: block; padding: 15px 2px; border-bottom: 1px solid var(--mega-line);
+  font-size: 13.5px; line-height: 1.5; color: var(--mega-ink);
 }
-.site-header .mega-res-item:hover { background: var(--v12-pale); }
-.site-header .mega-res-media {
-  flex-shrink: 0; width: 74px; border-radius: 7px; overflow: hidden;
-  background: var(--v12-pale); border: 1px solid var(--v12-line);
-}
-.site-header .mega-res-media img { display: block; width: 100%; height: 52px; object-fit: cover; }
-.site-header .mega-res-title {
-  display: block; font-size: 12px; font-weight: 600; color: var(--v12-ink); line-height: 1.45;
-}
-.site-header .mega-res-meta { display: block; margin-top: 3px; font-size: 10.5px; color: var(--v12-muted); }
 .site-header .mega-res-all {
-  display: inline-block; margin-top: 8px; font-size: 11.5px; font-weight: 650; color: var(--v12-blue);
+  display: inline-flex; align-items: center; gap: 8px; margin-top: 18px;
+  font-size: 12.5px; font-weight: 600; color: var(--brand);
 }
-.site-header .mega-foot {
-  grid-column: 1 / -1;
-  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;
-  margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--v12-line);
+.site-header .mega-res-aside { border-left: 1px solid var(--mega-line); padding-left: 40px; }
+.site-header .mega-res-media {
+  display: block; margin-bottom: 18px; border-radius: 4px; overflow: hidden; background: #eef2f4;
 }
-.site-header .mega-foot-link { font-size: 12px; font-weight: 650; color: var(--v12-ink); }
-.site-header .mega-foot-link:hover { color: var(--v12-blue); }
-.site-header .mega-foot-cta {
-  padding: 9px 17px; border-radius: 999px;
-  background: var(--brand); color: #202629 !important;
-  font-size: 11.5px; font-weight: 650;
+.site-header .mega-res-media img { display: block; width: 100%; height: 150px; object-fit: cover; }
+.site-header .mega-res-aside h3 {
+  margin: 0 0 10px; font-size: 15px; font-weight: 650; line-height: 1.35; color: var(--mega-ink);
 }
-.site-header .mega-foot-cta:hover { background: var(--brand-hover); color: #202629 !important; }
+.site-header .mega-res-aside p { margin: 0; font-size: 12.5px; line-height: 1.7; color: var(--mega-muted); }
+
+/* The bar across the bottom of both panels */
+.site-header .mega-bar { background: var(--mega-bar); border-top: 1px solid var(--mega-line); }
+.site-header .mega-bar-inner {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 14px 40px; padding-block: 21px;
+}
+.site-header .mega-bar-links { display: flex; flex-wrap: wrap; gap: 14px 42px; }
+.site-header .mega-bar-links a,
+.site-header .mega-bar-cta {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-size: 13px; font-weight: 600; line-height: 1.4;
+}
+.site-header .mega-bar-links a span { color: var(--mega-muted); }
+.site-header .mega-bar-cta { color: var(--brand); }
+.site-header .mega-bar-cta:hover { color: var(--brand-hover); }
 
 @media (max-width: 1080px) {
-  .site-header .mega-inner-products { grid-template-columns: minmax(0, 200px) minmax(0, 230px) minmax(0, 1fr); gap: 0 20px; }
-  .site-header .mega-card-media img { height: 140px; }
+  .site-header .mega-inner-products { grid-template-columns: minmax(0, 210px) minmax(0, 1fr) minmax(0, 250px); gap: 0 28px; }
+  .site-header .mega-col { padding-right: 24px; }
+  .site-header .mega-inner-resources { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 230px); gap: 0 32px; }
+  .site-header .mega-res-aside { padding-left: 24px; }
+  .site-header .mega-card-media img { height: 148px; }
 }
 
 @media (max-width: 800px) {
   /* Collapsed panel: the mega becomes a plain indented list. There is no
-     hover on a phone, so every category's models are shown at once and the
-     preview column - image, blurb, specs - is dropped rather than stacked. */
+     hover on a phone, so every category's models are shown at once - the
+     controller moves each list under its own category - and the preview
+     column, image and blurb are dropped rather than stacked. */
   #main-nav .nav-item { border-bottom: 1px solid #e7eef4; }
   #main-nav .nav-item-head { justify-content: space-between; padding-block: 16px; }
   #main-nav .nav-item-head .nav-link { flex: 1; }
   #main-nav .nav-expand { padding: 10px 4px 10px 16px; font-size: 16px; }
   .site-header .mega {
-    position: static; border-top: 0; box-shadow: none;
-    background: #f2f5f6; border-radius: 8px; margin-bottom: 14px;
+    position: static; box-shadow: none;
+    border-radius: 6px; margin-bottom: 14px; overflow: hidden;
   }
   .site-header .mega-inner,
   .site-header .mega-inner-products,
-  .site-header .mega-inner-resources {
-    display: block; width: auto; padding: 6px 14px 12px;
-  }
-  .site-header .mega-cats { border-right: 0; padding-right: 0; }
-  .site-header .mega-cat { padding: 12px 0; font-size: 12.5px; }
-  .site-header .mega-cat:hover, .site-header .mega-cat.is-active { background: none; }
-  .site-header .mega-models { max-height: none; overflow: visible; padding: 0; }
-  /* the lists are un-hidden by the controller, not here: the legacy sheet's
-     [hidden]{display:none!important} outranks any rule this file can write */
-  .site-header .mega-cats li > .mega-model-list { padding-bottom: 6px; }
-  .site-header .mega-model { gap: 12px; padding: 10px 0 10px 14px; min-height: 40px; align-items: center; }
-  .site-header .mega-model-name { min-width: 0; }
-  .site-header .mega-model:hover, .site-header .mega-model.is-active { background: none; }
-  .site-header .mega-model-all a { padding: 10px 0 10px 14px; }
+  .site-header .mega-inner-resources { display: block; width: auto; padding: 14px 16px 16px; }
+  .site-header .mega-col { border-right: 0; padding-right: 0; }
+  .site-header .mega-eyebrow { margin-bottom: 12px; }
+  .site-header .mega-note { display: none; }
+  .site-header .mega-cat { padding: 13px 0; font-size: 13.5px; }
+  .site-header .mega-cat:hover, .site-header .mega-cat.is-active { background: none; border-color: transparent; }
+  .site-header .mega-models { max-height: none; overflow: visible; }
+  .site-header .mega-cats li > .mega-model-list { padding: 0 0 8px 14px; }
+  .site-header .mega-group-head { display: none; }
+  .site-header .mega-model { padding: 11px 0; min-height: 40px; font-size: 13px; }
   .site-header .mega-preview { display: none; }
-  .site-header .mega-res-col + .mega-res-col { margin-top: 16px; }
-  .site-header .mega-res-item { padding: 9px 0; margin-inline: 0; }
-  .site-header .mega-res-item:hover { background: none; }
-  .site-header .mega-foot { margin-top: 16px; }
+  .site-header .mega-res-aside { display: none; }
+  .site-header .mega-res-col + .mega-res-col { margin-top: 22px; }
+  .site-header .mega-res-col .mega-group-head { display: flex; font-size: 20px; }
+  .site-header .mega-res-lead { margin: 8px 0 14px; }
+  .site-header .mega-bar-inner { flex-direction: column; align-items: flex-start; gap: 14px; padding: 16px; }
+  .site-header .mega-bar-links { flex-direction: column; gap: 14px; }
 }

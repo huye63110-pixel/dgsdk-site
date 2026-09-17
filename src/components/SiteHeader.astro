@@ -60,48 +60,66 @@ const menuGuides = guides.slice(0, 3);
         </div>
 
         <div class="mega" id="mega-products">
-          <div class="container mega-inner mega-inner-products">
-            <ul class="mega-cats">
-              {productCategories.map((cat, i) => (
-                <li>
-                  <a href={cat.href} class:list={['mega-cat', i === 0 && 'is-active']} data-cat={cat.id}>
-                    <span class="mega-cat-label">{cat.label}</span>
-                    <span class="mega-cat-count">{cat.items.length}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-
-            <div class="mega-models">
-              {productCategories.map((cat, i) => (
-                <ul class="mega-model-list" data-cat-panel={cat.id} hidden={i !== 0}>
-                  {cat.items.map((item) => (
+          <div class="mega-body">
+            <div class="container mega-inner mega-inner-products">
+              <div class="mega-col">
+                <p class="mega-eyebrow">Our Equipment</p>
+                <ul class="mega-cats">
+                  {productCategories.map((cat, i) => (
                     <li>
-                      <a href={`${cat.base}/${item.slug}`} class="mega-model" data-preview-key={`${cat.id}:${item.slug}`}>
-                        <span class="mega-model-name">{item.name}</span>
-                        {item.code && <span class="mega-model-code">{item.code}</span>}
+                      <a href={cat.href} class:list={['mega-cat', i === 0 && 'is-active']} data-cat={cat.id}>
+                        <span class="mega-cat-label">{cat.label}</span>
+                        <span class="mega-cat-go" aria-hidden="true">→</span>
                       </a>
                     </li>
                   ))}
-                  <li class="mega-model-all"><a href={cat.href}>All {cat.label} <span aria-hidden="true">→</span></a></li>
                 </ul>
-              ))}
-            </div>
+                <p class="mega-note">Equipment for your production process.</p>
+              </div>
 
-            <div class="mega-preview">
-              {previews.map((item, i) => (
-                <div class="mega-card" data-preview={item.key} hidden={i !== 0}>
-                  <picture class="mega-card-media">
-                    <source srcset={`${item.img}.webp`} type="image/webp" />
-                    <img src={`${item.img}.jpg`} alt={item.name} loading="lazy" decoding="async" />
-                  </picture>
-                  <p class="mega-card-cat">{item.cat}</p>
-                  <h3 class="mega-card-name">{item.name}</h3>
-                  {menuBlurb(item.desc) && <p class="mega-card-desc">{menuBlurb(item.desc)}</p>}
-                  {item.specs && <ul class="mega-card-specs">{item.specs.map((v) => <li>{v}</li>)}</ul>}
-                  <a class="mega-card-cta" href={item.href}>View product <span aria-hidden="true">→</span></a>
-                </div>
-              ))}
+              <div class="mega-models">
+                {productCategories.map((cat, i) => (
+                  <div class="mega-model-list" data-cat-panel={cat.id} hidden={i !== 0}>
+                    <a class="mega-group-head" href={cat.href}>
+                      <span>{cat.heading}</span>
+                      <span class="mega-arrow" aria-hidden="true">↗</span>
+                    </a>
+                    <ul>
+                      {cat.items.map((item) => (
+                        <li>
+                          <a href={`${cat.base}/${item.slug}`} class="mega-model" data-preview-key={`${cat.id}:${item.slug}`}>
+                            <span class="mega-model-name">{item.name}</span>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+
+              <div class="mega-preview">
+                {previews.map((item, i) => (
+                  <div class="mega-card" data-preview={item.key} hidden={i !== 0}>
+                    <picture class="mega-card-media">
+                      <source srcset={`${item.img}.webp`} type="image/webp" />
+                      <img src={`${item.img}.jpg`} alt={item.name} loading="lazy" decoding="async" />
+                    </picture>
+                    <h3 class="mega-card-name">{item.name}</h3>
+                    {menuBlurb(item.desc) && <p class="mega-card-desc">{menuBlurb(item.desc)}</p>}
+                    <a class="mega-card-cta" href={item.href}>View equipment <span aria-hidden="true">↗</span></a>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div class="mega-bar">
+            <div class="container mega-bar-inner">
+              <div class="mega-bar-links">
+                <a href="/products/static-eliminator">Browse static control <span aria-hidden="true">→</span></a>
+                <a href="/products/cleaning-machine">Browse cleaning machines <span aria-hidden="true">→</span></a>
+              </div>
+              <a class="mega-bar-cta" href="/contact">Get a Quote <span aria-hidden="true">↗</span></a>
             </div>
           </div>
         </div>
@@ -118,51 +136,53 @@ const menuGuides = guides.slice(0, 3);
         </div>
 
         <div class="mega" id="mega-resources">
-          <div class="container mega-inner mega-inner-resources">
-            <section class="mega-res-col" aria-labelledby="mega-res-blog">
-              <h3 id="mega-res-blog">Blog</h3>
-              <ul>
-                {menuPosts.map((post) => (
-                  <li>
-                    <a href={`/blog/${post.slug}`} class="mega-res-item">
-                      <picture class="mega-res-media">
-                        <source srcset={`${post.image}.webp`} type="image/webp" />
-                        <img src={`${post.image}.jpg`} alt="" loading="lazy" decoding="async" />
-                      </picture>
-                      <span>
-                        <span class="mega-res-title">{post.title}</span>
-                        <span class="mega-res-meta">{post.readTime}</span>
-                      </span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-              <a class="mega-res-all" href="/blog">All blog posts <span aria-hidden="true">→</span></a>
-            </section>
+          <div class="mega-body">
+            <div class="container mega-inner mega-inner-resources">
+              <section class="mega-res-col" aria-labelledby="mega-res-blog">
+                <p class="mega-eyebrow">Articles &amp; Perspectives</p>
+                <a class="mega-group-head" href="/blog" id="mega-res-blog">
+                  <span>Blog</span><span class="mega-arrow" aria-hidden="true">↗</span>
+                </a>
+                <p class="mega-res-lead">Product insights, application articles and practical advice from Shidike.</p>
+                <ul>
+                  {menuPosts.map((post) => (
+                    <li><a href={`/blog/${post.slug}`} class="mega-res-item">{post.title}</a></li>
+                  ))}
+                </ul>
+                <a class="mega-res-all" href="/blog">Browse blog articles <span aria-hidden="true">→</span></a>
+              </section>
 
-            <section class="mega-res-col" aria-labelledby="mega-res-guides">
-              <h3 id="mega-res-guides">Guides</h3>
-              <ul>
-                {menuGuides.map((guide) => (
-                  <li>
-                    <a href={guide.href} class="mega-res-item">
-                      <picture class="mega-res-media">
-                        <source srcset={`${guide.image}.webp`} type="image/webp" />
-                        <img src={`${guide.image}.jpg`} alt="" loading="lazy" decoding="async" />
-                      </picture>
-                      <span>
-                        <span class="mega-res-title">{guide.title}</span>
-                      </span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-              <a class="mega-res-all" href="/guides">All guides <span aria-hidden="true">→</span></a>
-            </section>
+              <section class="mega-res-col" aria-labelledby="mega-res-guides">
+                <p class="mega-eyebrow">Learn the Fundamentals</p>
+                <a class="mega-group-head" href="/guides" id="mega-res-guides">
+                  <span>Guides</span><span class="mega-arrow" aria-hidden="true">↗</span>
+                </a>
+                <p class="mega-res-lead">Explanations of static control, web cleaning and equipment selection.</p>
+                <ul>
+                  {menuGuides.map((guide) => (
+                    <li><a href={guide.href} class="mega-res-item">{guide.title}</a></li>
+                  ))}
+                </ul>
+                <a class="mega-res-all" href="/guides">Explore all guides <span aria-hidden="true">→</span></a>
+              </section>
 
-            <div class="mega-foot">
-              <a class="mega-foot-link" href="/resources">Browse all resources <span aria-hidden="true">→</span></a>
-              <a class="mega-foot-cta" href="/contact">Ask an engineer <span aria-hidden="true">→</span></a>
+              <div class="mega-res-aside">
+                <picture class="mega-res-media">
+                  <source srcset="/assets/img/guides/ionizing-bar-action.webp" type="image/webp" />
+                  <img src="/assets/img/guides/ionizing-bar-action.jpg" alt="" loading="lazy" decoding="async" />
+                </picture>
+                <h3>Understand your process.</h3>
+                <p>Find a useful starting point before selecting equipment.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mega-bar">
+            <div class="container mega-bar-inner">
+              <div class="mega-bar-links">
+                <a href="/resources">Browse all resources <span aria-hidden="true">→</span></a>
+              </div>
+              <a class="mega-bar-cta" href="/contact">Ask about your application <span aria-hidden="true">↗</span></a>
             </div>
           </div>
         </div>

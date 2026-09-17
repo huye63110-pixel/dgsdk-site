@@ -162,6 +162,7 @@ export const productCategories = [
   {
     id: 'static-control',
     label: 'Static Control',
+    heading: 'Ionizing Bars',
     href: '/products/static-eliminator',
     base: '/products/static-eliminator',
     items: barProducts,
@@ -169,6 +170,7 @@ export const productCategories = [
   {
     id: 'air-blowers',
     label: 'Ionizing Air Blowers',
+    heading: 'Ionizing Air Blowers',
     href: '/products/static-eliminator/ionizing-air-blowers',
     base: '/products/static-eliminator',
     items: blowerProducts,
@@ -176,6 +178,7 @@ export const productCategories = [
   {
     id: 'cleaning-machines',
     label: 'Cleaning Machines',
+    heading: 'Cleaning Machines',
     href: '/products/cleaning-machine',
     base: '/products/cleaning-machine',
     items: [...sheetProducts, ...webProducts],
