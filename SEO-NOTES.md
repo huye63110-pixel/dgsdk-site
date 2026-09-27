@@ -393,8 +393,8 @@ Codex 定位的 11 / 18 / 25 行（ST-G「best ion balance in the range」、ST-
 
 | # | 原句与位置 | 冲突/缺口 | 依据 | 修订 |
 |---|---|---|---|---|
-| A1 | `st-g/e/f-series` 各一处：`All three bar series run a 6.5 kV DC pulse` | ST-G 同页写 pulsed AC（单针交替极性），DC 脉冲是单极性 —— 两者不能同真 | 「6.5 kV DC pulse」是三个系列逐字重复的样板句，而三者放电方式不同；型号页各自的放电方式是更具体的声明 | 改为 `rated 6.5 kV pulse output`（两种读法下都成立，属**收窄**而非选边），并点明 G 为 pulsed AC、E/F 为 pulsed DC |
-| A2 | `st-g-series` 6/53/64/199、`products.js:22-23`、`blog/st-g-…:178,193`、`applications:57,95`、`static-eliminator/index:39,76,122`、`static-eliminator-manufacturer:98`、两份指南 ST-G 行、`ionizing-bar-voltage-output` 全页、`sitemap-images:300` | 同上，ST-G 自身口径 | 同上 | 同上。**ST-E / ST-F 保留 `DC pulse`** —— 其型号页本就写 pulsed DC，无冲突，不做全局替换 |
+| A1 | `st-g/e/f-series` 各一处：`All three bar series run a 6.5 kV DC pulse` | **本行理由已于 2026-09-27 更正，见 §16.1a。** 原写「DC 脉冲是单极性，两者不能同真」—— 这是错的，厂方自己的 ST-E / ST-F 图里脉冲 DC 就是正负双极性的 | 真正的依据只有一条：「6.5 kV DC pulse」是三个系列逐字重复的样板句，**而仓库里没有任何一张图指名 ST-G**，所以没有型号级资料支持任何一种定语 | 结果不变：`rated 6.5 kV pulse output`。理由改为「无型号级资料」，不是「DC 一定错」。放电方式仍待工厂核实 |
+| A2 | `st-g-series` 6/53/64/199、`products.js:22-23`、`blog/st-g-…:178,193`、`applications:57,95`、`static-eliminator/index:39,76,122`、`static-eliminator-manufacturer:98`、两份指南 ST-G 行、`ionizing-bar-voltage-output` 全页、`sitemap-images:300` | 同上，ST-G 自身口径 | 同上（理由见 §16.1a 更正） | 同上。**ST-E / ST-F 保留 `DC pulse`** —— 这两款**有厂方图指名**（`mode-pulsed-dc.jpg` = ST-F，`mode-hf-pulsed-dc.jpg` = ST-E），不做全局替换 |
 | A3 | `static-eliminator/index:39`：`±50/±80/±100 V — all inside the sub-100 V window` | ±100 V 不在 sub-100 V 窗口内；且把设备 ion balance 与材料残压混为一谈（§259 已在 `applications` 修过，此处残留） | §259 既定口径 | 拆成四件事：供电 / 发射高压 / ion balance / 材料残余表面电压（由客户工艺定义） |
 | B1 | `non-contact-cleaning-machine` title/H1/breadcrumb/卡片/FAQ | 标题写 non-contact，正文写「刷子 run against the board」「brushing a dry surface generates charge」—— 刷子接触基材即接触式 | `guides/what-is-web-cleaning:44,57`：「按清洁时接触材料的部件分类。驱动类型、有无抽吸、没有胶黏都不决定是否非接触」「刷式清洁仍是接触式，即使没有黏辊；磁力驱动也不使其清洁辊变成非接触」；同页表格已命名该工艺为 **Brush and vacuum cleaning** | 全部改为 Brush and Vacuum。**URL 不动**。「non-contact」只在页面**纠正**它的地方保留（那是搜索词）；**不虚构真正无接触机型** |
 | B2 | `cleaning-machine/index:38`：`Non-contact refers to the transport: a magnetic levitation drive…` | 与指南第 57 行逐字矛盾 | 同上 | 换成指南的判据 |
@@ -458,8 +458,8 @@ Codex 定位的 11 / 18 / 25 行（ST-G「best ion balance in the range」、ST-
 
 | 待核字段 | 为什么需要 | 没有它不能说 |
 |---|---|---|
-| ~~放电方式的权威口径~~ **已定（2026-09-27，James Hu 确认）：ST-G 就是 AC 脉冲** | 厂方资料里那句 `6.5 kV DC pulse` 对 ST-G 是错的 —— 单极性与「交替正负」冲突。站上写 pulsed AC 是对的，不必改回 | 仍**不能**把 ST-G 的输出写成 DC 脉冲。`DC pulse` 只对 ST-E / ST-F 成立 |
-| **6.5 kV 的定义：峰值 / 有效值 / 每极性峰值** —— 放电方式定了之后，这条成为本组剩下最关键的一项 | 既然是交替极性，6.5 kV 是单侧峰值还是峰峰值直接改变含义；现在无定语 | 不能与 KEYENCE / Simco-Ion / Meech 的 kV 数字直接比较；也不能把 `6.5 kV pulse output` 写成 `±6.5 kV` |
+| **ST-G 的放电方式 —— 仍待工厂核实（2026-09-27 撤回一次错误结论）** | 见下方「§16.1a 撤回记录」。当前**没有**用户本人或 James Hu 的型号确认，也没有原始波形记录 | 不能写成已验证。现有官网写 pulsed AC 只是既有资料口径；**也不能猜成 DC**，不能给 6.5 kV 补 ±，不能以「AC 已确定」为前提再生成任何性能解释 |
+| **6.5 kV 的定义：Vmax / Vmin / Vpp，以及测量参考点** | 现在无定语。注意：**Vpp = Vmax − Vmin**，只有在相对同一参考点正负峰等幅对称时，6.5 kVpp 才等于单侧 3.25 kV；+4 kV / −2.5 kV 同样是 6.5 kVpp | 不能与 KEYENCE / Simco-Ion / Meech 的 kV 数字直接比较；不能把 `6.5 kV pulse output` 写成 `±6.5 kV`；不能由 Vpp 反推单侧幅值 |
 | 型号版本号与出厂标识（哪一版对应现售） | 资料版本不明 | 不能写「当前型号」的任何差异点 |
 | `Static decay time 1 s` 的初始表面电压、测点距离、测量方法、正/负分别数值 | 现为裸值 | 不能写成你线上的衰减时间；不能与风机的 1.5 s @150 mm 对比 |
 | 2× / 150 % 的对照机型与测试条件 | §365 已记，仍缺 | 不能由此推出宽幅或高速下的均匀性 |
@@ -467,6 +467,63 @@ Codex 定位的 11 / 18 / 25 行（ST-G「best ion balance in the range」、ST-
 | 尺寸安装：30 × 82 mm 截面之外的端部接口尺寸、air fitting 规格、安装支架型号、`P = L − 120 mm` 的适用长度范围 | 安装可行性靠这些判断 | 不能承诺装得下 |
 | 维护：发射针更换件号、单售与否、更换扭矩/工具 | 耗材页本批不建，但询价要问得准 | 不能列耗材价格或周期承诺 |
 | 原始记录：出厂检验报告、CE 文件编号与范围 | 目前只有「CE marked」（风机） | 不能给棒加任何认证声明 |
+
+### 16.1a 撤回记录：ST-G 放电方式（2026-09-27）
+
+**我犯了两个错，都撤回。**
+
+**错误一：把一句疑问当成了产品工程确认。** 用户说「不就是 AC 脉冲吗」，那是**疑问**，
+不是确认；随后他明确说「所以 ST-G 是什么的，我也不知道」。我据此在本节写下
+「已定 / James Hu 确认」并提交，这是**替用户做了确认**。已撤回。
+往后：没有型号级书面资料或原始波形，就写「未确认」，不替任何人确认。
+
+**错误二：技术论证本身是错的。** 我写过「DC pulse 必然单极性，所以与交替正负冲突」，
+并据此断定厂方那句 `6.5 kV DC pulse` 对 ST-G 一定是错的。这个前提不成立：
+
+- 仓库里厂方自己的 `mode-pulsed-dc.jpg`（**图上写明 ST-F**）说「Pulsed DC …
+  Positive and negative high-voltage pulses are output in turn. **Polarity does not
+  switch within one pulse**」—— 即脉冲 DC **本身就有正负两种极性**，
+  区别在「一个脉冲内极性变不变」，不在「有没有双极性」。
+- `mode-hf-pulsed-dc.jpg`（**图上写明 ST-E**）说高频脉冲 DC 是
+  「**balanced positive and negative** high-voltage pulse train」，极性快速切换、平均 DC 近零。
+- 业界命名同样不能反推电路：KEYENCE 把**单针交替正负**称作 Pulse AC；
+  Simco-Ion 则使用 bipolar DC 这一命名。**标签不决定电路**。
+
+所以 `6.5 kV DC pulse` 对 ST-G **未必是矛盾**，我当初的「收窄」理由不成立。
+把输出写成 `6.5 kV pulse output` 这个**结果**仍然保留 —— 但理由改为：
+**没有型号级资料能支持任何一种定语**，不是「DC 一定错」。
+
+**另一个算术更正。** 我说过「如果是峰峰值，实际单侧只有 3.25 kV」。
+这只在**相对同一参考点、正负峰等幅对称**时成立（Vpp = Vmax − Vmin）；
++4 kV / −2.5 kV 同样是 6.5 kVpp。不能由 Vpp 反推单侧幅值。
+
+### 16.1b 仓库里现有的原始资料，以及它们的冲突
+
+这是本仓库目前能找到的**全部**厂家原始材料（三张图，无 PDF、无规格书、无波形记录）：
+
+| 文件 | 图上写明的型号 | 原文关键句 | 能证明什么 |
+|---|---|---|---|
+| `mode-pulsed-dc.jpg` | **ST-F** | Pulsed DC；正负脉冲轮流输出；单个脉冲内极性不变 | ST-F 的方式有图为证 |
+| `mode-hf-pulsed-dc.jpg` | **ST-E** | 高频脉冲 DC；正负平衡脉冲串；平均 DC 近零 | ST-E 的方式有图为证 |
+| `operating-modes.jpg` | **没有任何型号** | 「Shidike (SDK) ionizing bars provide **two ionization modes**」：AC Mode 50/60 Hz 正弦、Pulsed AC Mode 方波交替 | **不能用来认定 ST-G**。它是泛指，而且「两种模式」听起来像可选模式，不是某个系列的固定属性 |
+
+**新发现的冲突（未解决）**：`operating-modes.jpg` 的两个波形纵轴都标 **+7 / −7 kV**，
+而全站规格表写 **6.5 kV**。这两个数字对不上，且该图未指明型号。
+在工厂澄清之前，**不要用这张图去支持 ST-G 的任何电压或波形陈述**。
+
+ST-G 页目前引用了 `operating-modes.jpg` 作配图。图本身是厂方的，但它不指名 ST-G ——
+这一点已记在此处；**不要据此把该图当作 ST-G 的型号证据**。
+
+### 16.1c 要向工厂问的（ST-G，整理成一份）
+
+1. **现售型号与资料版本号** —— 哪一版对应现在出货的 ST-G。
+2. **每根针是交替正负，还是正负针分组**（单针双极性 vs 固定极性针交替排列）。
+3. **测量参考点** —— 针对地？针对针？对被测板？
+4. **Vmax / Vmin / Vpp** 三个值，不要只给一个「6.5 kV」。
+5. **频率与占空比**（Ton / Toff / T），以及 100 Hz 是上限还是典型值。
+6. **已有的测试记录**：出厂波形图、charged plate monitor 原始数据、检验单。
+
+拿不到以上任何一项，就在站上保持现状措辞，并注明未确认。
 
 ### 16.2 一款资料最成熟的风机：ST-S200
 

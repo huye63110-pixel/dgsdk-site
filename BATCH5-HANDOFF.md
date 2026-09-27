@@ -12,9 +12,10 @@
 | 环境 | claude.ai 云端容器，Linux，Node v22.22.2 / npm 10.9.7 |
 | 基线 | `origin/main` = `73f59b87dfea8c44d0006e198766d5dcbe446963`（与 Codex 快照一致） |
 | 分支 | `claude/wonderful-knuth-j9h2oc`，从最新 `origin/main` 重开 |
-| 最终 HEAD | `4bd87de` |
-| 提交 | 5 个，见 §3 |
-| 补丁 | `batch5.patch`，已验证可干净应用到 `73f59b8` |
+| Codex 审查 HEAD | `65a1438e90dbd3ad7514d0125edf0c5f647a13de`（其 Vercel Preview 已由 Codex 独立核到 READY） |
+| 当前 HEAD | 见文末「变更记录」，本文件随每次追加更新 |
+| 提交 | 见 §3 |
+| 补丁 | `batch5.patch` 为一次性导出，**会过期**；随时用 `git diff origin/main..HEAD` 重新生成 |
 
 **明确的限制，不声称已验证的部分：**
 
@@ -22,8 +23,9 @@
   **生产 SHA 未独立核实**，只核到远程 main 与快照 SHA 一致。
 - **看不到 Mac 上 `/Users/henry/dgsdk-site` 的未提交修改。**
 - **无 GSC 访问。** 收录状态全部引自简报，未自行查证，本批也**未向 GSC 请求索引**。
-- **未 merge、未推 main、未部署、未推分支。** Vercel 连着这个仓库，推分支会产生公开
-  preview；简报要求「分支推送须先确认不会触发未授权发布」，所以**等你确认后再推**。
+- **未 merge、未推 main、未做生产部署。** 分支已在 2026-09-27 经用户明确授权后推送，
+  Vercel 因此产生了**公开 preview**（这是分支推送的必然结果，不是生产部署）。
+  后续提交沿用该授权继续推同一分支。
 - **未向真实收件人发送任何询盘。** 所有 Formspree 请求在浏览器层被拦截并本地应答。
 
 `claude/wonderful-knuth-j9h2oc` 的 PR #21 早已 squash 合并（`330aa94`），
@@ -37,14 +39,22 @@
 
 ### A. ST-G 的 pulsed AC 与「6.5 kV DC pulse」
 
-厂方资料同时说 ST-G 是 pulsed AC（单针交替极性）和输出 6.5 kV **DC** 脉冲。
-DC 脉冲是单极性，两者不能同真。「6.5 kV DC pulse」是三个系列逐字重复的样板句，
-而三者放电方式不同，所以型号页各自的放电方式是更具体的声明。
+> **本节理由已于 2026-09-27 更正，见 `SEO-NOTES.md` §16.1a。**
+> 我原先写「DC 脉冲是单极性，所以与交替正负不能同真」—— **这是错的**。
+> 仓库里厂方自己的 `mode-pulsed-dc.jpg`（图上写明 ST-F）和 `mode-hf-pulsed-dc.jpg`
+> （图上写明 ST-E）都显示脉冲 DC **本身就有正负两种极性**，区别在「一个脉冲内极性变不变」。
+> 业界命名同样不能反推电路：KEYENCE 把单针交替正负称 Pulse AC，Simco-Ion 使用 bipolar DC。
+> 所以 `6.5 kV DC pulse` 对 ST-G **未必是矛盾**。
 
-改为 `rated 6.5 kV pulse output` —— **在两种读法下都成立**，属收窄，不是选边，
-也不是拿一个推导换另一个推导（SEO-NOTES §293 记过的坑）。真正的答案进 §16 待工厂确认。
+厂方资料同时说 ST-G 是 pulsed AC 和输出 6.5 kV **DC** 脉冲，这两句需要型号级资料才能判定。
+而仓库里**没有任何一张图指名 ST-G**：唯一写 Pulsed AC 的 `operating-modes.jpg` 是泛指
+「Shidike ionizing bars」，而且它标的是 **±7 kV，与全站规格表的 6.5 kV 对不上**（新冲突，未解决）。
 
-**ST-E / ST-F 保留 `DC pulse`**，它们自己的页面就写 pulsed DC，无冲突 —— 不做全局替换。
+所以输出改为 `rated 6.5 kV pulse output`，**理由是「没有型号级资料支持任何一种定语」**，
+不是「DC 一定错」。**ST-G 的放电方式仍属待工厂核实**，站上现有的 pulsed AC 措辞只是
+既有资料口径，不是已验证结论。
+
+**ST-E / ST-F 保留 `DC pulse`** —— 这两款有厂方图**指名**，不做全局替换。
 
 涉及 URL：`/products/static-eliminator/st-g-series`、`/st-e-series`、`/st-f-series`、
 `/products/static-eliminator`、`/applications`、`/static-eliminator-manufacturer`、
@@ -250,9 +260,44 @@ sitemap 的 `lastmod` 按既有脚本从 git 推导，18 个页面变为 2026-09
 
 ## 7. 待你与工厂决定
 
-1. **推不推分支。** 推 `claude/wonderful-knuth-j9h2oc` 会触发 Vercel 公开 preview。
-   简报要求先确认，所以现在停在本地。要我推就说一声。
-2. **工程待核字段**：`SEO-NOTES.md` §16，分 ST-G / ST-S200 / STMT750 三组。
-   最关键的一条是 A 组留下的问题 —— ST-G 究竟是 pulsed AC 还是单极性 DC 脉冲，
-   只有工厂能定。第二关键是 99.9 % 的粒径、采样、前后计数、重复次数、环境与表面判据。
-3. 以下本批**未创建**，按简报要求：耗材独立页、测试指南、新案例、德语页。
+1. **ST-G 的放电方式与 6.5 kV 的定义 —— 只有工厂能定。**
+   要问的六项已整理在 `SEO-NOTES.md` §16.1c：现售型号与资料版本号；每根针是交替正负
+   还是正负针分组；测量参考点；Vmax / Vmin / Vpp 三个值；频率与占空比；已有测试记录。
+   拿不到就保持现状措辞并注明未确认 —— **不要再替任何人确认**。
+2. **99.9 % 的条件**：粒径、采样方法、前后计数、重复次数、环境洁净度、表面检查判据。
+3. **卷材机的供货范围**：报价默认含不含放收卷 / 张力控制。仓库里没有任何报价单或
+   供货范围表，所以页面现在是**请客户在报价中确认**，没有写成确定排除。
+4. 以下本批**未创建**，按简报要求：耗材独立页、测试指南、新案例、德语页。
+
+---
+
+## 变更记录
+
+本文件按提交主题列，不写自身所在提交的 SHA（写不了 —— 那个 SHA 在本文件被提交后才存在）。
+取当前 HEAD 用 `git log --oneline origin/main..HEAD`。
+
+**第一轮（Codex 审查基线 `65a1438`）**
+
+| 提交主题 | 内容 |
+|---|---|
+| `fix(content): resolve the published spec conflicts…` | A / B / C / D 四组事实冲突 |
+| `fix(seo): give the blower page a real route in…` | 风机页正文入口 + 标题层级 |
+| `fix(inquiry): attribute product enquiries…` | 产品询盘归因 + 移除打不开的弹窗 + 键盘焦点 |
+| `fix(cleaning): drop two claims the pages contradict…` | 清洁类目两条错误声明 + 指南内链 |
+| `docs(seo): this batch's fact table…` | SEO-NOTES §15 / §16 |
+| `docs: hand-off notes for this batch…` | 本文件 |
+| `docs(seo): ST-G's discharge method is settled…` | **已被下一轮撤回，见下** |
+
+**第二轮（Codex 验收发现的漏项，2026-09-27）**
+
+| 提交主题 | 对应验收项 |
+|---|---|
+| `fix(content): the sentences the rename and narrowing passes did not reach` | 1 搜索/llms 同步、2 刷式机同页矛盾、3 型号页性能推导与离子平衡、4 `1 s` 条件、6 卷材机供货边界、7 Contact 按钮文案 |
+| `docs(seo): retract the ST-G confirmation, and correct the argument behind it` | 0 / 5 撤回与技术论证更正、6 `dateModified` 与本文件状态 |
+
+**撤回的一条（重要）**：`docs(seo): ST-G's discharge method is settled` 这个提交里写的
+「已定 / James Hu 确认：ST-G 就是 AC 脉冲」**已撤回**。那句话来自一个疑问（「不就是 AC 脉冲吗」），
+不是产品工程确认；用户随后明确说「所以 ST-G 是什么的，我也不知道」。
+同一提交里的技术论证（「DC 脉冲必然单极性」）也是错的，一并更正。
+详见 `SEO-NOTES.md` §16.1a / §16.1b / §16.1c。**代码没有因此回退** —— 站上措辞不变，
+变的是理由和证据状态。
