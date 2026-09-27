@@ -14,7 +14,7 @@ moving-material processes.
 - [ST-G Series](https://www.dg-sdk.com/products/static-eliminator/st-g-series): Pulsed AC ionizing bar, ion balance ±50 V, 30–1000 mm working range, made to length from 300 mm to 3 m.
 - [ST-E Series](https://www.dg-sdk.com/products/static-eliminator/st-e-series): High-frequency pulsed DC ionizing bar for wide-span work.
 - [ST-F Series](https://www.dg-sdk.com/products/static-eliminator/st-f-series): Pulsed DC ionizing bar, faster neutralising.
-- [ST-S200](https://www.dg-sdk.com/products/static-eliminator/st-s200): Mini ionizing air blower, 450 × 450 mm coverage, decay under 1.5 s, 128 × 53.5 × 180 mm, CE marked.
+- [ST-S200](https://www.dg-sdk.com/products/static-eliminator/st-s200): Mini ionizing air blower, 450 × 450 mm coverage area, decay rated ≤1.5 s at 150 mm from the outlet (one point, not across the area), 128 × 53.5 × 180 mm, CE marked.
 - [ST101A](https://www.dg-sdk.com/products/static-eliminator/st-101a): Desktop ionizing air blower, alternating current, 40 × 60 cm coverage, 45–110 CFM.
 - [ST104A](https://www.dg-sdk.com/products/static-eliminator/st-104a): Horizontal ionizing air blower, 60 × 120 cm coverage, 70–120 CFM, optional real-time ion-balance monitoring.
 - [ST1200](https://www.dg-sdk.com/products/static-eliminator/st-1200): Wide-area ionizing air blower, 140 × 120 cm coverage, 1280 mm, suspended or bench mounted.

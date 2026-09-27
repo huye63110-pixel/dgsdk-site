@@ -23,9 +23,9 @@
   **生产 SHA 未独立核实**，只核到远程 main 与快照 SHA 一致。
 - **看不到 Mac 上 `/Users/henry/dgsdk-site` 的未提交修改。**
 - **无 GSC 访问。** 收录状态全部引自简报，未自行查证，本批也**未向 GSC 请求索引**。
-- **未 merge、未推 main、未做生产部署。** 分支已在 2026-09-27 经用户明确授权后推送，
-  Vercel 因此产生了**公开 preview**（这是分支推送的必然结果，不是生产部署）。
-  后续提交沿用该授权继续推同一分支。
+- **已合并上线（2026-09-27）。** 用户授权后 PR [#28](https://github.com/huye63110-pixel/dgsdk-site/pull/28)
+  squash 合并进 `main` = **`69b2976`**，Vercel **Production 部署 success**。
+  此前分支推送产生的 preview 已被生产取代。
 - **未向真实收件人发送任何询盘。** 所有 Formspree 请求在浏览器层被拦截并本地应答。
 
 `claude/wonderful-knuth-j9h2oc` 的 PR #21 早已 squash 合并（`330aa94`），
@@ -128,8 +128,9 @@ title / H1 / 面包屑 / 卡片 / 正文 / FAQ / schema 全部改为 Brush and V
   并在 meta 里写明这不是湿洗/溶剂/助焊剂清洗（SMT 买家询价前就需要知道）。
 - `products.js` 卷材机的 spec chip 写 `Unwind + rewind`，而该机 spec 表里
   没有放卷收卷项。这个 chip 会出现在导航和类目卡上，像是机器配置。
-  改为 `Roll and sheet`，并在页面写一次交付边界：报价是清洁主机，
-  放收卷 / 张力 / 下游工序是另行设备。
+  改为 `Roll and sheet`。**交付边界这一条后来又改了一次**：仓库里没有任何报价单或
+  供货范围表，「规格表没列」不能证明「默认不含」。页面最终写的是
+  **请在报价中确认**放收卷 / 张力 / 下游工序是否包含，**不写成确定排除**。
 
 ---
 
@@ -264,12 +265,18 @@ sitemap 的 `lastmod` 按既有脚本从 git 推导，18 个页面变为 2026-09
   重点几张：`brush-machine-top.png`、`quote-dialog.png`（可见焦点环落在第一个输入框）、
   `blower-sidebar.png`、`stg-specs.png`、`cleaning-index-top.png`。
 
-### 没验到的
+### 验收状态（2026-09-27 更新）
 
-- **生产环境**：代理不通，未验。
-- **部署后表现**：未部署。
-- **Google 抓取与收录**：未查、未请求。
-- **真实收件**：未发送，故未验。
+Codex 对合并版 `69b2976` 独立复验通过：build 45 页 / search 22 项 / sitemap 45 项 /
+155 个 JSON-LD 与 261 条 FAQ / 23 次 mock 询盘，**真实请求 0**；
+生产环境的改名、旧词搜索、modal 的 Tab 与 Esc 均通过。
+
+### 仍未验到的
+
+- **生产环境我自己打不开**：出口代理对 `www.dg-sdk.com` 与 Vercel 域名均返回连接失败。
+  上面的生产结果由 Codex 复验，不是我亲验。
+- **Google 抓取与收录**：风机页实时测试通过、索引请求已排队 —— **排队不等于已收录**。
+- **真实收件**：未发送，故未验。成功响应 ≠ 实际收到 ≠ 合格询盘。
 
 ---
 

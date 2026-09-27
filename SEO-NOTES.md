@@ -406,7 +406,7 @@ Codex 定位的 11 / 18 / 25 行（ST-G「best ion balance in the range」、ST-
 | D1 | `industrial-static-eliminator` / `esd-control-products` 各 3 条 FAQPage schema | schema 文本与正文用词漂移（**既有问题**，基线 build 完全相同） | §270 既定方向 | schema 同步到正文逐字一致 |
 | D2 | `esd-control-products:206`：棒「available in standard lengths」 | 与全部型号页及 `static-eliminator-manufacturer:15`「made to order from 300 mm to 3 m … rather than to a catalogue size」矛盾 | 同上 | **这条是正文错、schema 对**，改正文 |
 | E1 | `pcb-cleaner:6` meta：`Removes flux residues` | 同页 FAQ 写「dry adhesive roller cleaning … no water, solvents, or drying step」；指南写干式辊清洁不是水洗/溶剂洗 | 同页 FAQ + 指南 | 去掉 flux；保留 dust/particles，并写明这不是湿洗/溶剂/助焊剂清洗 |
-| E2 | `products.js:150` chip `Unwind + rewind` | 该机 spec 表无放卷收卷项；chip 出现在导航与类目卡上像是机器配置 | 同页 spec 表 | 改为 `Roll and sheet`，并在页面写一次交付边界：报价是清洁主机，放收卷/张力/下游工序是另行设备 |
+| E2 | `products.js:150` chip `Unwind + rewind` | 该机 spec 表无放卷收卷项；chip 出现在导航与类目卡上像是机器配置 | 同页 spec 表 | 改为 `Roll and sheet`。**交付边界这一条后来又改了一次**：仓库里没有任何报价单或供货范围表，「规格表没列」不能证明「默认不含」，所以页面最终写的是**请在报价中确认是否包含**放收卷 / 张力 / 下游工序，不写成确定排除 |
 
 **不改、已经是对的**：发射针清洁周期。四个页面本来就按环境分档（标准工况月度到季度 /
 粉尘油雾每周 / 洁净室三到六个月），这正是 C 要求的条件化，无需再动。
@@ -448,6 +448,53 @@ Codex 定位的 11 / 18 / 25 行（ST-G「best ion balance in the range」、ST-
 **成功响应 ≠ 实际收到 ≠ 合格询盘。** 本批只让第一种变得可归因。
 
 ---
+
+## 15b. `dateModified` 是手工维护的，已经漂了两次（2026-09-27）
+
+站上 10 个 Article schema 的 `dateModified` 没有任何脚本在管，全靠手写。
+这一轮先漂了一次（3 页停在 09-01，2 页差 11 天），我修完之后**又漏了 5 页** ——
+因为我 grep 只写了双引号键 `"dateModified"`，而一半页面用的是单引号 JS 写法
+`dateModified: '…'`。11 个日期字段只看见 5 个。
+
+**教训**：找字段不要只按一种引号写法 grep，先确认这个键在仓库里有几种写法。
+
+**更正（Codex 复验指出，我原先写错了）**：我说过这个手工口径「与 `sync-sitemap.js` 的规则一致」——
+**不准确**。两者判据不同，而且**不可能**一致：
+
+| | `<lastmod>`（脚本） | `dateModified`（手工） |
+|---|---|---|
+| 依据 | 页面文件 + 其 `src/data/*.js` 导入的**最后一次 git 提交日期** | 最后一次**改变文章内容**的日期 |
+| 能否识别页内 banner / 版式改动 | **不能** —— 只要文件被提交过就算 | 能（人判断） |
+| 能否识别「只改了日期字段」这种提交 | **不能** | 能 |
+
+所以两者**本来就会对不上**，这不是 bug：
+
+- `what-is-web-cleaning`：Article 写 2026-09-12（最后一次内容修改），
+  sitemap 是 2026-09-17（那两次 banner 提交 #22/#23 也算进去了）。
+- 三篇旧 blog：这一轮 Article 填 09-03 / 09-05，而 build 会把它们的 sitemap 自动推到 09-27。
+
+这三个日期**不退回**。它们各自对应的是：
+`optical-film` 09-03 是模板 / schema 更新；`lithium` 与 `photovoltaic` 09-05 是 SEO title 修正 ——
+**都不是正文重写**，上一版提交信息里我写得过重了。
+
+**另一处数字更正**：递归展开 `@graph` 之后，仓库里实际是 **11 个**日期字段，不是我写的 10 个。
+
+**测试顺序（两条，都要写清楚，不然报告会失真）**
+
+1. 裸 checkout 上 `check-sitemap` 会漂；`npm run build` 先跑 `sync-sitemap` 自动同步，
+   **构建后**才 45/45 通过。报告写「构建后检查通过」，不能只写「检查通过」。
+
+2. **`sync-sitemap` 读的是「已提交」的 git 日期，所以必须在 commit 之后再跑一次。**
+   在提交前跑，它对一个刚改过但尚未提交的文件，拿到的是**上一次提交**的日期并把它固化进 sitemap。
+   本轮实测撞到了：`st-s200.astro` 上次提交是 2026-09-13，提交前构建时 sitemap 就停在 09-13
+   且「检查通过」（两边一致，所以看不出来）；提交之后在 clean checkout 上复验才暴露出 09-13 → 09-27。
+   其余几个文件没事，只因为它们本来就在同一天更早的提交里动过。
+
+   **流程：改 → commit → 再 build → 把更新后的 `public/sitemap.xml` 补一个提交。**
+   这也是为什么 clean-checkout 复验必须做 —— 工作区里的「通过」可能是假的。
+
+**建议（尚未实施，等你或 Codex 定）**：若要自动化，需要的是一套**能区分内容改动与版式改动**的判据，
+不是直接复用 `sync-sitemap` 的推导 —— 后者做不到这件事。本轮不扩做算法。
 
 ## 16. 工程待核字段（本批只整理，不写进公开页）
 
