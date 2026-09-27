@@ -598,7 +598,15 @@ const faqs = [
           show('err', 'Your inquiry could not be sent. Please check your connection and try again, or email dgsdk2013@gmail.com directly.');
         } finally {
           submit.disabled = false;
-          submit.textContent = original;
+          // Restore the label from whatever category is selected now, not from
+          // the one captured before the send. A success calls select('quote'),
+          // which already sets the Quote label — restoring the captured string
+          // would leave the previous category's wording on a Quote button. On a
+          // failure nothing is reset, so this restores the same label and the
+          // draft the visitor typed is untouched.
+          var activeLabel = form.querySelector('.ct-type.is-active');
+          var activeType = activeLabel && activeLabel.getAttribute('data-type');
+          submit.textContent = (activeType && BUTTON[activeType]) || original;
         }
       });
     })();

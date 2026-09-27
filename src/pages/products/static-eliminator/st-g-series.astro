@@ -63,7 +63,7 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
             <div><dt>Ion balance</dt><dd><strong>±50 V</strong> — tightest of the three bar series</dd></div>
             <div><dt>Working distance</dt><dd><strong>30–1000 mm</strong></dd></div>
             <div><dt>Output</dt><dd><strong>6.5 kV pulse</strong> · pulsed AC · supply DC 24 V, 12 W</dd></div>
-            <div><dt>Decay time</dt><dd><strong>1 s</strong> · frequency adjustable to 100 Hz</dd></div>
+            <div><dt>Decay time</dt><dd><strong>1 s</strong> rated · frequency adjustable to 100 Hz</dd></div>
             <div><dt>Length</dt><dd><strong>Made to order</strong>, 300 mm to 3 m</dd></div>
           </dl>
           <p class="key-specs-note">
@@ -283,7 +283,7 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
         <div class="scenario-list">
           <div class="scenario-item">
             <h3>Ahead of the cleaning station</h3>
-            <p>Charged film pulls particles back onto a surface seconds after it is cleaned. Neutralizing first is what makes the cleaning hold. At ±50 V the ST-G sits inside the sub-100 V window optical and semiconductor processes work to.</p>
+            <p>Charged film pulls particles back onto a surface seconds after it is cleaned. Neutralizing first is what makes the cleaning hold. The ST-G holds its own ion balance to ±50 V. That is the bar's offset, not the voltage left on your material — the residual your process can tolerate is a separate figure, measured on your own parts and set by your own spec.</p>
           </div>
           <div class="scenario-item">
             <h3>At the unwind or infeed</h3>
@@ -317,7 +317,7 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
           <table class="spec-table">
             <tr><td><strong>ST-G</strong> — pulsed AC</td><td>Ion balance <strong>±50 V</strong>, the tightest of the three. Adjustable frequency to 100 Hz. The default choice unless something below applies.</td></tr>
             <tr><td><strong>ST-E</strong> — high-frequency pulsed DC</td><td>Ion balance ±80 V. Fixed-polarity pins arranged alternately — each pin holds one polarity — which is why this is the bar positioned for a wide or long span, where a single-emitter design drifts.</td></tr>
-            <tr><td><strong>ST-F</strong> — pulsed DC, Hibweer L.C.C.</td><td>Ion balance ±100 V, with neutralizing speed rated <strong>2.5× a conventional bar</strong> — the ST-G and ST-E are rated 2× against the same reference. Choose it when the material moves too fast for a standard bar to keep up.</td></tr>
+            <tr><td><strong>ST-F</strong> — pulsed DC, Hibweer L.C.C.</td><td>Ion balance ±100 V, with neutralizing speed rated <strong>2.5× a conventional bar</strong>; the ST-G and ST-E carry a 2× rating. Neither figure is published with a comparison model or test conditions, so the two ratings cannot be read as measured against one reference. Choose it when the material moves too fast for a standard bar to keep up.</td></tr>
           </table>
         </div>
         <h3>Made to your width</h3>
@@ -339,7 +339,7 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
         <div class="faq-list">
           <details class="faq-item">
             <summary><h3 class="faq-question">What ion balance does the ST-G achieve?</h3></summary>
-            <p class="faq-answer">±50 V. That is the tightest of the three Shidike bar series — the ST-E is ±80 V and the ST-F is ±100 V — and it sits inside the sub-100 V window that optical and semiconductor processes work to.</p>
+            <p class="faq-answer">±50 V. That is the tightest of the three Shidike bar series — the ST-E is ±80 V and the ST-F is ±100 V. It describes the offset of the bar itself. What your process has to meet is the residual surface voltage left on the material, which is a different measurement, taken on your own parts against your own limit.</p>
           </details>
           <details class="faq-item">
             <summary><h3 class="faq-question">What is the ST-G's working distance?</h3></summary>
@@ -363,7 +363,7 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
           </details>
           <details class="faq-item">
             <summary><h3 class="faq-question">How fast does it neutralize?</h3></summary>
-            <p class="faq-answer">Static decay time is 1 second. The supersonic air-intake structure makes it about twice as fast as a conventional bar; if your line needs more than that, the ST-F is rated 2.5× a conventional bar rather than 2×, at a looser ±100 V balance. Both figures are quoted against a conventional bar, and neither is published with a comparison model or test conditions.</p>
+            <p class="faq-answer">Static decay time is rated at 1 second, and that rating is published without the initial surface voltage, the working distance or the measurement method, so it is not a decay time you can hold us to on your line. The supersonic air-intake structure makes it about twice as fast as a conventional bar; if your line needs more than that, the ST-F is rated 2.5× a conventional bar rather than 2×, at a looser ±100 V balance. Both figures are quoted against a conventional bar, and neither is published with a comparison model or test conditions.</p>
           </details>
           <details class="faq-item">
             <summary><h3 class="faq-question">Can I get the bar cut to a length that is not standard?</h3></summary>
@@ -467,7 +467,7 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
       "name": "What ion balance does the ST-G achieve?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "±50 V. That is the tightest of the three Shidike bar series — the ST-E is ±80 V and the ST-F is ±100 V — and it sits inside the sub-100 V window that optical and semiconductor processes work to."
+        "text": "±50 V. That is the tightest of the three Shidike bar series — the ST-E is ±80 V and the ST-F is ±100 V. It describes the offset of the bar itself. What your process has to meet is the residual surface voltage left on the material, which is a different measurement, taken on your own parts against your own limit."
       }
     },
     {
@@ -515,7 +515,7 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
       "name": "How fast does it neutralize?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Static decay time is 1 second. The supersonic air-intake structure makes it about twice as fast as a conventional bar; if your line needs more than that, the ST-F is rated 2.5× a conventional bar rather than 2×, at a looser ±100 V balance. Both figures are quoted against a conventional bar, and neither is published with a comparison model or test conditions."
+        "text": "Static decay time is rated at 1 second, and that rating is published without the initial surface voltage, the working distance or the measurement method, so it is not a decay time you can hold us to on your line. The supersonic air-intake structure makes it about twice as fast as a conventional bar; if your line needs more than that, the ST-F is rated 2.5× a conventional bar rather than 2×, at a looser ±100 V balance. Both figures are quoted against a conventional bar, and neither is published with a comparison model or test conditions."
       }
     },
     {
