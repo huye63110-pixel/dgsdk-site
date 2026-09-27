@@ -19,8 +19,8 @@ const barProducts = [
     name: 'ST-G Intelligent Ionizing Bar', slug: 'st-g-series', cat: 'Ionizing Bars', code: 'ST-G',
     url: canonical + '/st-g-series', image: base + '/assets/img/static-eliminator/st-g.jpg',
     img: '/assets/img/static-eliminator/st-g',
-    desc: 'The all-round bar, with the tightest ion balance of the three bar series at ±50 V (ST-E ±80 V, ST-F ±100 V). Pulsed AC applies alternating positive and negative high voltage to a single emitter pin, which produces more ions than conventional AC and avoids the uneven neutralization AC bars are known for. Pulse frequency is adjustable, so the same bar handles a fast-moving web or a still workspace. 6.5 kV DC pulse from a DC 24 V supply, 12 W.',
-    specs: ['Ion balance ±50 V', '6.5 kV DC pulse', '30–1000 mm', 'DC 24 V · 12 W']
+    desc: 'The all-round bar, with the tightest ion balance of the three bar series at ±50 V (ST-E ±80 V, ST-F ±100 V). Pulsed AC applies alternating positive and negative high voltage to a single emitter pin, which produces more ions than conventional AC and avoids the uneven neutralization AC bars are known for. Pulse frequency is adjustable, so the same bar handles a fast-moving web or a still workspace. Rated 6.5 kV pulse output, generated inside the bar from a DC 24 V supply at 12 W.',
+    specs: ['Ion balance ±50 V', '6.5 kV pulse output', '30–1000 mm', 'DC 24 V · 12 W']
   },
   {
     name: 'ST-E Intelligent Ionizing Bar', slug: 'st-e-series', cat: 'Ionizing Bars', code: 'ST-E',
@@ -33,8 +33,8 @@ const barProducts = [
     name: 'ST-F Intelligent Ionizing Bar', slug: 'st-f-series', cat: 'Ionizing Bars', code: 'ST-F',
     url: canonical + '/st-f-series', image: base + '/assets/img/static-eliminator/st-f.jpg',
     img: '/assets/img/static-eliminator/st-f',
-    desc: 'The speed model. Pulsed DC with the Hibweer L.C.C. system, which stops generating negative ions while it makes positive ones and vice versa — giving very strong balance control and neutralizing 2.5 times faster than a conventional bar. Choose it when the material moves too fast for a standard bar to keep up. Ion balance ±100 V, 6.5 kV DC pulse.',
-    specs: ['2.5× a conventional bar', 'Ion balance ±100 V', '6.5 kV DC pulse', '30–1000 mm']
+    desc: 'The speed model. Pulsed DC with the Hibweer L.C.C. system, which stops generating negative ions while it makes positive ones and vice versa — giving very strong balance control and a rated 2.5 times the neutralizing speed of a conventional bar. Choose it when the material moves too fast for a standard bar to keep up. Ion balance ±100 V, 6.5 kV DC pulse.',
+    specs: ['Rated 2.5× a conventional bar', 'Ion balance ±100 V', '6.5 kV DC pulse', '30–1000 mm']
   },
 ];
 const blowerProducts = [
@@ -85,7 +85,7 @@ const sheetProducts = [
     name: 'CCL Cleaning Machine', slug: 'ccl-cleaner', cat: 'Sheet & Board', code: 'ST-DT1340',
     url: canonical + '/ccl-cleaner', image: base + '/assets/img/cleaning-machine/ccl-cleaner.jpg',
     img: '/assets/img/cleaning-machine/ccl-cleaner',
-    specs: ['0.05–3 mm', '99.9 % removal', '0–70 m/min', '350 W']
+    specs: ['0.05–3 mm', '99.9 % rated removal', '0–70 m/min', '350 W']
   },
   {
     name: 'SMT Inline Cleaner', slug: 'smt-cleaner', cat: 'Sheet & Board', code: 'SMT600',
@@ -97,7 +97,7 @@ const sheetProducts = [
     name: 'PCB Surface Cleaner', slug: 'pcb-cleaner', cat: 'Sheet & Board', code: 'STXF',
     url: canonical + '/pcb-cleaner', image: base + '/assets/img/cleaning-machine/pcb-cleaner.jpg',
     img: '/assets/img/cleaning-machine/pcb-cleaner',
-    specs: ['0.05–2 mm', '99.9 % removal', '0–20 m/min', 'Static <50 V']
+    specs: ['0.05–2 mm', '99.9 % rated removal', '0–20 m/min', 'Static <50 V']
   },
   {
     name: 'PCB Vertical Cleaner', slug: 'pcb-vertical-cleaner', cat: 'Sheet & Board', code: 'STC-640',
@@ -141,7 +141,7 @@ const webProducts = [
     name: 'Large-Size Optical Film Cleaner', slug: 'optical-film-cleaner', cat: 'Roll-to-Roll', code: 'STFK',
     url: canonical + '/optical-film-cleaner', image: base + '/assets/img/cleaning-machine/optical.jpg',
     img: '/assets/img/cleaning-machine/optical',
-    specs: ['0.065–0.68 mm', '99.9 % removal', '0–40 m/min', 'Static <100 V']
+    specs: ['0.065–0.68 mm', '99.9 % rated removal', '0–40 m/min', 'Static <100 V']
   },
   {
     name: 'Roll-to-Roll Cleaner', slug: 'roll-chip-cleaner', cat: 'Roll-to-Roll', code: 'Coil Universal',

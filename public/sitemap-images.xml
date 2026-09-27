@@ -297,7 +297,7 @@
     <loc>https://www.dg-sdk.com/guides/ionizing-bar-voltage-output</loc>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/static-eliminator/st-g.jpg</image:loc>
-      <image:title>Shidike ST-G ionizing bar, 6.5 kV DC pulse output</image:title>
+      <image:title>Shidike ST-G ionizing bar, 6.5 kV pulse output</image:title>
     </image:image>
   </url>
 
@@ -314,8 +314,8 @@
     <loc>https://www.dg-sdk.com/products/cleaning-machine/non-contact-cleaning-machine</loc>
     <image:image>
       <image:loc>https://www.dg-sdk.com/assets/img/cleaning-machine/vacuum-brush-cleaner.jpg</image:loc>
-      <image:title>Non-Contact Cleaning Machine STMT750 with VJ-2.2HLS Dust Collector</image:title>
-      <image:caption>Shidike STMT750 non-contact cleaning machine, 750 mm width, using fibre brushes and 2200 cubic metre per hour vacuum extraction into a separate Toray-cartridge collector</image:caption>
+      <image:title>Brush and Vacuum Cleaning Machine STMT750 with VJ-2.2HLS Dust Collector</image:title>
+      <image:caption>Shidike STMT750 brush and vacuum cleaning machine, 750 mm width, using fibre brushes and 2200 cubic metre per hour vacuum extraction into a separate Toray-cartridge collector</image:caption>
     </image:image>
   </url>
 

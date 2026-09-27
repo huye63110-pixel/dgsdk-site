@@ -3,8 +3,8 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
 
 const faqItems = [
   {
-    question: 'What makes it non-contact if the material still runs through the machine?',
-    answer: 'Nothing tacky is pressed against the working surface. Fibre brushes agitate the particles free and a vacuum carries them out of the machine to a separate collector. On an adhesive-roller machine the particle is removed because a tacky roller touches the surface and lifts it; here it is removed by airflow. That is the difference, and it is why the non-contact machine is specified for surfaces that cannot take roller pressure or tack.'
+    question: 'Is this a non-contact cleaning machine?',
+    answer: 'Not in the strict sense, and it is worth being clear about it. The brushes run against the material, so the working face is touched — a brush cleaner is a contact process even without sticky rollers. What this machine leaves out is the adhesive transfer: no tacky roller is pressed onto the surface, and the freed particles leave by airflow into a separate collector rather than by sticking to something. That is why it is specified for surfaces that cannot take roller pressure or tack. If your surface must not be touched at all, this is not the machine — we do not build a cleaning head that works at a clearance from the surface, and we would tell you so rather than configure around it.'
   },
   {
     question: 'How is the dust collected?',
@@ -19,7 +19,7 @@ const faqItems = [
     answer: 'The STMT750 is built at 750 mm. Every machine we build is made to the material, so the width is set from your sample rather than picked from a list.'
   },
   {
-    question: 'Can one machine do both contact and non-contact?',
+    question: 'Can one machine do both brush and adhesive-roller cleaning?',
     answer: 'The STMT750 carries adhesive rollers as well as the brush and vacuum, so a board can be brushed, vacuumed and roller-cleaned in one pass. Whether the rollers are used is set at the panel. If the surface must never be touched by a tacky roller, they are left out of the configuration.'
   },
   {
@@ -30,8 +30,8 @@ const faqItems = [
 ---
 
 <ProductLayout
-  title="Non-Contact Cleaning Machine | Vacuum Brush Dust Removal | Shidike"
-  description="Non-contact cleaning machine using fibre brushes and 2200 m3/h vacuum extraction instead of adhesive transfer. 750 mm cleaning width, 99.9% removal, static held under 100 V, separate Toray-cartridge dust collector. Built to your material."
+  title="Brush and Vacuum Cleaning Machine | Adhesive-Free Dust Removal | Shidike"
+  description="Brush and vacuum cleaning machine: fibre brushes free the particles and 2200 m3/h extraction carries them out, with no adhesive transfer. 750 mm cleaning width, static held under 100 V, separate Toray-cartridge dust collector. Built to your material."
   image="/assets/img/cleaning-machine/vacuum-brush-cleaner.jpg"
   sku="STMT750"
   category="Industrial Cleaning Machine">
@@ -53,7 +53,7 @@ const faqItems = [
         <span>/</span>
         <a href="/products/cleaning-machine">Cleaning Machine</a>
         <span>/</span>
-        <span>Non-Contact</span>
+        <span>Brush and Vacuum</span>
       </div>
 
       <div class="product-top">
@@ -63,7 +63,7 @@ const faqItems = [
             <picture><source srcset="/assets/img/cleaning-machine/vacuum-brush-cleaner.webp" type="image/webp" /><img
               id="mainProductImage"
               src="/assets/img/cleaning-machine/vacuum-brush-cleaner.jpg"
-              alt="STMT750 non-contact cleaning machine with vacuum brush head and VJ-2.2HLS dust collector"
+              alt="STMT750 brush and vacuum cleaning machine with brush head and VJ-2.2HLS dust collector"
             /></picture>
             <button class="slider-arrow right" id="nextImage">&rsaquo;</button>
           </div>
@@ -71,20 +71,22 @@ const faqItems = [
             <picture><source srcset="/assets/img/cleaning-machine/vacuum-brush-cleaner.webp" type="image/webp" /><img
               class="thumb-image active-thumb"
               src="/assets/img/cleaning-machine/vacuum-brush-cleaner.jpg"
-              alt="STMT750 non-contact cleaning machine thumbnail"
+              alt="STMT750 brush and vacuum cleaning machine thumbnail"
               data-full="/assets/img/cleaning-machine/vacuum-brush-cleaner.jpg"
             /></picture>
           </div>
         </div>
 
         <div class="product-summary">
-          <h1>Non-Contact Cleaning Machine</h1>
+          <h1>Brush and Vacuum Cleaning Machine</h1>
           <p class="product-short-desc">
             Special-fibre brushes lift the particles free and a 2200&nbsp;m&sup3;/h vacuum carries them
             out of the machine into a separate collector. Nothing tacky is pressed against the working
             face, which is the reason to specify it: surfaces that cannot take roller pressure or
-            adhesive tack still get cleaned. Built at 750&nbsp;mm as the STMT750, and made to your
-            material rather than to a catalogue size.
+            adhesive tack still get cleaned. The brushes do touch the material, so this is not a
+            non-contact process &mdash; what it removes from the process is the adhesive transfer.
+            Built at 750&nbsp;mm as the STMT750, and made to your material rather than to a
+            catalogue size.
           </p>
 
           <div class="product-actions">
@@ -95,21 +97,21 @@ const faqItems = [
           <dl class="key-specs">
             <div><dt>Cleaning method</dt><dd><strong>Brush + vacuum extraction</strong></dd></div>
             <div><dt>Cleaning width</dt><dd><strong>750 mm</strong> (STMT750)</dd></div>
-            <div><dt>Removal rate</dt><dd><strong>99.9 %</strong></dd></div>
+            <div><dt>Removal rate</dt><dd><strong>99.9 %</strong> rated</dd></div>
             <div><dt>Static control</dt><dd><strong>Under 100 V</strong> on the material</dd></div>
             <div><dt>Line speed</dt><dd><strong>0&ndash;45 m/min</strong>, inverter controlled</dd></div>
           </dl>
-          <p class="key-specs-note">Tighter static control than the adhesive-roller machines, because brushing a dry surface generates charge that would otherwise pull the dust back down.</p>
+          <p class="key-specs-note">Tighter static control than the adhesive-roller machines, because brushing a dry surface generates charge that would otherwise pull the dust back down. The 99.9 % removal figure is the rated value from the product data; it is published without a particle size, a material or a counting method, so treat it as a rating to verify on your own sample rather than a result on your surface.</p>
         </div>
       </div>
 
       <section class="detail-block pd-section">
-        <h2>When You Need Non-Contact</h2>
+        <h2>When a Brush Beats a Roller</h2>
         <p class="pd-lede">An adhesive roller is the right answer for most board and sheet work. These are the cases where it is not.</p>
         <div class="pd-fix">
           <div class="pd-fix-item">
             <h3>The surface cannot take tack</h3>
-            <p>Coated, printed or soft-cured surfaces can lift, mark or gloss where a tacky roller releases. A brush and a vacuum take the particle without loading the surface.</p>
+            <p>Coated, printed or soft-cured surfaces can lift, mark or gloss where a tacky roller releases. A brush and a vacuum take the particle without pressing tack onto it. Whether a given coating tolerates the brush is a question for a sample.</p>
           </div>
           <div class="pd-fix-item">
             <h3>The contamination is not loose dust</h3>
@@ -145,7 +147,7 @@ const faqItems = [
             <tr><td>Adhesive paper roll</td><td>Low-static paper roll</td></tr>
             <tr><td>Cleaning width</td><td>750 mm</td></tr>
             <tr><td>Static control</td><td>Intelligent static elimination system, material held under 100 V</td></tr>
-            <tr><td>Removal rate</td><td>99.9 %</td></tr>
+            <tr><td>Removal rate</td><td>99.9 %, rated &mdash; particle size, material and counting method not specified</td></tr>
             <tr><td>Line speed</td><td>0&ndash;45 m/min, inverter controlled</td></tr>
             <tr><td>Roller gap</td><td>Adjusts automatically for material thickness</td></tr>
             <tr><td>Control</td><td>Touchscreen panel, counter and digital alarm; shuttle, forward/reverse, continuous, feed-stop and emergency stop modes</td></tr>
@@ -196,8 +198,8 @@ const faqItems = [
       </section>
 
       <section class="detail-block pd-section">
-        <h2>Contact or Non-Contact</h2>
-        <p>Most board and sheet work is done with an adhesive roller. It takes off what is stuck, not just what is loose, and it does that with fewer moving parts and a lower purchase cost. Specify the non-contact machine when the surface cannot take tack or roller pressure at all, when the contamination is swarf or fibre rather than settled dust, or when a paper roll running out mid-shift is a production problem.</p>
+        <h2>Adhesive Roller or Brush</h2>
+        <p>Most board and sheet work is done with an adhesive roller. It takes off what is stuck, not just what is loose, and it does that with fewer moving parts and a lower purchase cost. Specify the brush and vacuum machine when the surface cannot take tack or roller pressure, when the contamination is swarf or fibre rather than settled dust, or when a paper roll running out mid-shift is a production problem.</p>
         <p>Both are built to order. Neither is a catalogue item you pick a size from &mdash; send the material, the width, the line speed and the defect, and we come back with a configuration.</p>
         <p><a href="/products/cleaning-machine/contact-cleaning-machine">See the contact cleaning machine &rarr;</a></p>
       </section>
