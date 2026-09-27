@@ -30,3 +30,6 @@ _image-briefs/
 
 # screenshots captured by local verification scripts; never committed
 shots/
+
+# Generated hand-off patches — reproducible from git, not source
+*.patch
