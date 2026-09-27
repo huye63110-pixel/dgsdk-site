@@ -99,11 +99,11 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
         </figure>
         <p>Because each pin does one job rather than alternating, output stays even from one end of the bar to the other. That is the whole point of the design, and it is what a single-emitter bar cannot do at length.</p>
         <p>Shidike rates the intelligent bar series at 150 % more ion generation than a conventional design. That figure is quoted for the series rather than for the ST-E specifically, and it is published without a comparison model or test conditions — so read it as a rating, not as a measure of edge-to-edge uniformity on your own web. The even output along the bar comes from the pin arrangement described above.</p>
-        <p>Ion balance is ±80 V — looser than the ST-G but still inside the sub-100 V window that optical and semiconductor processes work to. High voltage is generated inside the bar from DC 24 V at 12 W.</p>
+        <p>Ion balance is ±80 V — looser than the ST-G. That figure is the offset of the bar itself, not the residual left on your material, which is measured separately against your own process limit. High voltage is generated inside the bar from DC 24 V at 12 W.</p>
         <ul class="feature-list">
           <li>Neutralizes twice as fast as a conventional bar, using a supersonic structure that increases air intake</li>
           <li>Up to 100 Hz pulse rate for high-speed moving targets, with 150 % more ion generation than a conventional design</li>
-          <li>High-frequency pulsed AC suits optical and semiconductor device types with the lowest EOS/ESD sensitivity</li>
+          <li>High-frequency pulsed DC suits optical and semiconductor device types with the lowest EOS/ESD sensitivity</li>
           <li>Detects abnormal discharge, raises an alarm and cuts the high voltage automatically</li>
           <li>Broadband network port for line-level monitoring and industrial networking</li>
           <li>High voltage generated inside the bar — no external power supply box, no fixed HV cable</li>
@@ -120,7 +120,7 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
             <tr><td>Ion generation</td><td>Corona discharge</td></tr>
             <tr><td>Output</td><td>6.5 kV DC pulse (high-frequency pulsed DC)</td></tr>
             <tr><td>Ion balance</td><td>±80 V</td></tr>
-            <tr><td>Static decay time</td><td>1 s</td></tr>
+            <tr><td>Static decay time</td><td>1 s, rated &mdash; initial surface voltage, working distance and measurement method not published</td></tr>
             <tr><td>Working distance</td><td>30–1000 mm</td></tr>
             <tr><td>Operating temperature</td><td>0–45 °C, no condensation</td></tr>
             <tr><td>Operating humidity</td><td>15–75 % RH, no condensation</td></tr>
@@ -201,7 +201,7 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
           </div>
           <div class="scenario-item">
             <h3>Optical and semiconductor handling</h3>
-            <p>±80 V is inside the sub-100 V window these processes work to, and the high-frequency pulsed method suits device types with low EOS/ESD sensitivity.</p>
+            <p>±80 V is the bar's own offset; what these processes have to hold is the residual on the part, measured separately. The high-frequency pulsed method suits device types with low EOS/ESD sensitivity.</p>
           </div>
         </div>
         <div class="application-tags">
@@ -217,15 +217,16 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
       <section class="detail-block pd-section">
         <h2>Which Model, and What Length</h2>
         <p class="pd-lede">
-          All three bar series run a 6.5 kV DC pulse from DC 24 V at 12 W over a 30–1000 mm
-          working range, and all three are made to length. They differ in how the ions are
-          generated, and that decides which one fits your line.
+          All three bar series are rated 6.5 kV pulse output, generated inside the bar from a
+          DC 24 V supply at 12 W, over a 30–1000 mm working range, and all three are made to
+          length. What differs is how that high voltage is applied — pulsed AC on the ST-G,
+          pulsed DC on the ST-E and the ST-F — and that decides which one fits your line.
         </p>
         <div class="spec-table-wrap">
           <table class="spec-table">
             <tr><td><strong>ST-G</strong> — pulsed AC</td><td>Ion balance <strong>±50 V</strong>, the tightest of the three. Adjustable frequency to 100 Hz. The default choice unless something below applies.</td></tr>
             <tr><td><strong>ST-E</strong> — high-frequency pulsed DC</td><td>Ion balance ±80 V. Fixed-polarity pins arranged alternately — each pin holds one polarity — which is why this is the bar positioned for a wide or long span, where a single-emitter design drifts.</td></tr>
-            <tr><td><strong>ST-F</strong> — pulsed DC, Hibweer L.C.C.</td><td>Ion balance ±100 V, with neutralizing speed rated <strong>2.5× a conventional bar</strong> — the ST-G and ST-E are rated 2× against the same reference. Choose it when the material moves too fast for a standard bar to keep up.</td></tr>
+            <tr><td><strong>ST-F</strong> — pulsed DC, Hibweer L.C.C.</td><td>Ion balance ±100 V, with neutralizing speed rated <strong>2.5× a conventional bar</strong>; the ST-G and ST-E carry a 2× rating. Neither figure is published with a comparison model or test conditions, so the two ratings cannot be read as measured against one reference. Choose it when the material moves too fast for a standard bar to keep up.</td></tr>
           </table>
         </div>
         <h3>Made to your width</h3>
@@ -241,7 +242,7 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
         <div class="faq-list">
           <details class="faq-item">
             <summary><h3 class="faq-question">What ion balance does the ST-E achieve?</h3></summary>
-            <p class="faq-answer">±80 V. That is looser than the ST-G at ±50 V and tighter than the ST-F at ±100 V. All three sit inside the sub-100 V window that optical and semiconductor processes work to. The ST-E trades a little balance for the pin arrangement that holds output even across a wide span.</p>
+            <p class="faq-answer">±80 V. That is looser than the ST-G at ±50 V and tighter than the ST-F at ±100 V. All three figures describe the offset of the bar itself, not the residual surface voltage left on your material — that is a separate measurement against your own process limit. The ST-E trades a little balance for the pin arrangement that holds output even across a wide span.</p>
           </details>
           <details class="faq-item">
             <summary><h3 class="faq-question">Why choose the ST-E over the ST-G?</h3></summary>
@@ -333,7 +334,7 @@ import ProductLayout from '../../../layouts/ProductLayout.astro';
       "name": "What ion balance does the ST-E achieve?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "±80 V. That is looser than the ST-G at ±50 V and tighter than the ST-F at ±100 V. All three sit inside the sub-100 V window that optical and semiconductor processes work to. The ST-E trades a little balance for the pin arrangement that holds output even across a wide span."
+        "text": "±80 V. That is looser than the ST-G at ±50 V and tighter than the ST-F at ±100 V. All three figures describe the offset of the bar itself, not the residual surface voltage left on your material — that is a separate measurement against your own process limit. The ST-E trades a little balance for the pin arrangement that holds output even across a wide span."
       }
     },
     {

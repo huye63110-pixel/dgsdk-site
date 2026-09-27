@@ -380,3 +380,217 @@ Codex 定位的 11 / 18 / 25 行（ST-G「best ion balance in the range」、ST-
 
 **定位声明时要确认它是否真的渲染。** 这一批三条里有三条在死字段里。
 源码 grep 到的行号不等于线上内容 —— 要回到 `dist/` 里确认。
+
+---
+
+## 15. 第五批：事实冲突、归因与内链（2026-09-27）
+
+基线 `origin/main` = `73f59b87dfea8c44d0006e198766d5dcbe446963`。
+云端**无法访问生产**（出口代理对 `www.dg-sdk.com` CONNECT 403），也看不到 Mac 未提交修改，
+所以生产 SHA 未独立核实，只核到远程 main 与 Codex 快照一致。
+
+### 事实表（原句 → 依据 → 修订）
+
+| # | 原句与位置 | 冲突/缺口 | 依据 | 修订 |
+|---|---|---|---|---|
+| A1 | `st-g/e/f-series` 各一处：`All three bar series run a 6.5 kV DC pulse` | **本行理由已于 2026-09-27 更正，见 §16.1a。** 原写「DC 脉冲是单极性，两者不能同真」—— 这是错的，厂方自己的 ST-E / ST-F 图里脉冲 DC 就是正负双极性的 | 真正的依据：catalog 第 11 页参数表把 `Output Mode` 写成 **`AC pulse / DC pulse 6.5 KV`** —— 原文自己并列了两种模式，没有给出单一定语 | 结果不变：`rated 6.5 kV pulse output`，这正是对一句并列原文的忠实转述。**放电方式本身有 catalog 支持（Pulse-AC），不属待核**；待核的是这一栏并列的含义与 6.5 kV 的定义 |
+| A2 | `st-g-series` 6/53/64/199、`products.js:22-23`、`blog/st-g-…:178,193`、`applications:57,95`、`static-eliminator/index:39,76,122`、`static-eliminator-manufacturer:98`、两份指南 ST-G 行、`ionizing-bar-voltage-output` 全页、`sitemap-images:300` | 同上，ST-G 自身口径 | 同上（理由见 §16.1a / §16.1b） | 同上。**ST-E / ST-F 保留 `DC pulse`** —— 两款各有指名型号的图，方向与 catalog 一致，不做全局替换 |
+| A3 | `static-eliminator/index:39`：`±50/±80/±100 V — all inside the sub-100 V window` | ±100 V 不在 sub-100 V 窗口内；且把设备 ion balance 与材料残压混为一谈（§259 已在 `applications` 修过，此处残留） | §259 既定口径 | 拆成四件事：供电 / 发射高压 / ion balance / 材料残余表面电压（由客户工艺定义） |
+| B1 | `non-contact-cleaning-machine` title/H1/breadcrumb/卡片/FAQ | 标题写 non-contact，正文写「刷子 run against the board」「brushing a dry surface generates charge」—— 刷子接触基材即接触式 | `guides/what-is-web-cleaning:44,57`：「按清洁时接触材料的部件分类。驱动类型、有无抽吸、没有胶黏都不决定是否非接触」「刷式清洁仍是接触式，即使没有黏辊；磁力驱动也不使其清洁辊变成非接触」；同页表格已命名该工艺为 **Brush and vacuum cleaning** | 全部改为 Brush and Vacuum。**URL 不动**。「non-contact」只在页面**纠正**它的地方保留（那是搜索词）；**不虚构真正无接触机型** |
+| B2 | `cleaning-machine/index:38`：`Non-contact refers to the transport: a magnetic levitation drive…` | 与指南第 57 行逐字矛盾 | 同上 | 换成指南的判据 |
+| C1 | `contact-` / `non-contact-cleaning-machine` 的 `99.9 %`、`products.js` 三条 chip、类目卡两条 | 无粒径、无材料、无计数方法 | 无一手资料 | 保留数字，标为 rated，并在两页各写明缺失条件一次 |
+| C2 | `st-f-series` title/desc/43/52/69/97/100/244/336、`products.js:36-37`、两份指南 183/211 与对照表 | 对照表早已写 rated 且注明无对照机型与测试条件，型号页仍当事实陈述 | §365 既定：只能写标称倍数 | 全部改为 rated / nominal，并补一句「非你线上的保证衰减时间」 |
+| C3 | 三款离子棒 spec 表 `Static decay time 1 s` | 无初始电压、无距离、无测量方法（风机页已按距离与方法公布） | 风机页既有写法 | 标为 rated 并列出缺失条件 |
+| C4 | `backlight-cleaner:104` `damage-free cleaning` | 无条件表面保证，同页正文却写「confirm it on your own film」 | 同页正文 | 收窄为「清洁过程不应留痕，是否留痕以你的膜为准」 |
+| C5 | `contact-cleaning-machine:113` 磁悬浮「runs through without curling or folding a corner」 | 由「磁悬浮」这个名称推出结果 | §302 既定：名称可写，结果不可 | 只留驱动名称，结果交样品确认 |
+| D1 | `industrial-static-eliminator` / `esd-control-products` 各 3 条 FAQPage schema | schema 文本与正文用词漂移（**既有问题**，基线 build 完全相同） | §270 既定方向 | schema 同步到正文逐字一致 |
+| D2 | `esd-control-products:206`：棒「available in standard lengths」 | 与全部型号页及 `static-eliminator-manufacturer:15`「made to order from 300 mm to 3 m … rather than to a catalogue size」矛盾 | 同上 | **这条是正文错、schema 对**，改正文 |
+| E1 | `pcb-cleaner:6` meta：`Removes flux residues` | 同页 FAQ 写「dry adhesive roller cleaning … no water, solvents, or drying step」；指南写干式辊清洁不是水洗/溶剂洗 | 同页 FAQ + 指南 | 去掉 flux；保留 dust/particles，并写明这不是湿洗/溶剂/助焊剂清洗 |
+| E2 | `products.js:150` chip `Unwind + rewind` | 该机 spec 表无放卷收卷项；chip 出现在导航与类目卡上像是机器配置 | 同页 spec 表 | 改为 `Roll and sheet`，并在页面写一次交付边界：报价是清洁主机，放收卷/张力/下游工序是另行设备 |
+
+**不改、已经是对的**：发射针清洁周期。四个页面本来就按环境分档（标准工况月度到季度 /
+粉尘油雾每周 / 洁净室三到六个月），这正是 C 要求的条件化，无需再动。
+
+### 可发现性（只改可改的，不声称收录）
+
+- 风机页 `/products/static-eliminator/ionizing-air-blowers`：自 canonical、`robots index, follow`、
+  在 `sitemap.xml` 内、45 页都有链接 —— 但**只因为它在导航里**。剥掉 header/footer/nav 后
+  **45 页里只有 4 页**从正文链它，而 `/guides/what-is-an-ionizing-bar`（站内 113 次点击里的 62 次、
+  均位 8.4）**不在其中**。已从该指南的对照表与 bar-vs-blower 问答、类目页风机段与结尾段
+  补 4 个正文入口（都是给已有词加链接，不加文案、不复制表格）。
+- 该页标题层级原为 H1 → H3 → H2（侧栏 `Browse Categories` 用了 h3）。另两个类目页早已用 h2。
+  各页有自己的 scoped 样式块，本页写 `.products-sidebar-box h3`、另两页写 h2，所以**选择器随元素一起改**。
+  Chromium 前后实测 12.5px / 700 / rgb(125,141,151) / 10px / 15px 行盒三页一致，视觉零变化。
+- `what-is-web-cleaning`（已收录、均位 15）原本只有 3 个列表页从正文链它，**没有一个清洁产品页**。
+  已从类目页、两个工艺页、卷材机补 4 条，3/45 → 7/45。
+- **未做并记录原因**：风机页是唯一不在 `sitemap-images.xml` 的产品详情页，但它那四张型号图
+  已在各自型号页下列出，补上只是重复条目、无发现增益。
+- **三种状态分开**：以上只改变「可被发现的程度」。公开可抓取 ≠ Google 已抓取 ≠ 实际收录。
+  本批**不向 GSC 请求索引**。
+
+### 询盘归因（实测，全程拦截，未向真实收件人发送任何询盘）
+
+| 怀疑 | 实测结果 |
+|---|---|
+| 21 产品页重复 `#quoteModal` 导致双提交 | **不成立**。一次点击 = 恰好一个请求（桌面与 390px 均如此）。两段脚本都取到第一个元素、都加同一个 class，幂等 |
+| 重复 ID 导致丢单 | **不成立**。用户看得见的那个表单就是会提交的那个 |
+| 真正的后果 | `Layout.astro` 的全站弹窗**在 45 页全部打不开**：产品页上它是第二个 `#quoteModal`；其余 24 页**没有任何 `.quote-btn`**（导航的「Get a Quote」是指向 `/contact` 的链接）。没有任何已发布 JS 引用它。已移除 —— 同时消掉 21 页的重复 ID 与 45 页的一个隐藏 Formspree 表单 |
+| `public/js/inquiry.js` | 仓库里**不存在**，与「线上 404」一致。不视为已启用，不搬运 |
+| **归因本身** | `quoteFormProduct` 原本只发 website/name/email/phone/message —— 从 ST-G 页发出的询盘与从 FPC 清洁机页发出的**无法区分**。`/contact` 与首页表单本就带上下文。已补隐藏字段：`_subject` / `source=product-page` / `product` / `model`（有 sku 时）/ `page` / `entry`。`entry` 区分同页三个按钮（Get a Quote / Ask an Engineer / Request a Quote），它们本来也无法区分 |
+| 只记页面/产品/入口 | 未新增任何个人字段，未引入任何分析调用 |
+
+键盘与焦点（改前 → 改后，逐项实测）：Escape 不关闭 → 关闭并解锁滚动；焦点留在按钮上 →
+落到第一个输入框；Tab 走出弹窗到 WhatsApp/About Shidike → Tab 环锁在弹窗内；
+背景仍可滚动 → 打开时锁定、关闭时还原；无 role/aria-modal → `role="dialog"`、
+`aria-modal="true"`、由自身标题标注；关闭后焦点无处可去 → 回到打开它的那个按钮。
+表单标记与提交处理除隐藏字段外未改动。
+
+**成功响应 ≠ 实际收到 ≠ 合格询盘。** 本批只让第一种变得可归因。
+
+---
+
+## 16. 工程待核字段（本批只整理，不写进公开页）
+
+只列**真实存在**的待核项。没有一手记录前不得包装成实测数据，不造手册、不做占位下载按钮。
+拿到后复用 Resources，不新建耗材页 / 测试指南 / 案例页 / 德语页（本批不创建）。
+
+### 16.1 ST-G 离子棒
+
+| 待核字段 | 为什么需要 | 没有它不能说 |
+|---|---|---|
+| **ST-G 的放电方式 —— 有 catalog 型号原文支持，保留**（见 §16.1b） | `SHIDIKE CATALOG v3.pdf` 第 11 页标题 `MODEL: ST-G (AC INTEGRATED)` 与 Product Introduction 明写 Pulse-AC、单针交替正负 | 可以写「ST-G 采用 pulsed AC」这一**产品资料描述**；**不能**写成独立实测已验证，不能给 6.5 kV 补 ±。待核的是参数表 `AC pulse / DC pulse` 并列的含义，不是放电方式本身 |
+| **6.5 kV 的定义：Vmax / Vmin / Vpp，以及测量参考点** | 现在无定语。注意：**Vpp = Vmax − Vmin**，只有在相对同一参考点正负峰等幅对称时，6.5 kVpp 才等于单侧 3.25 kV；+4 kV / −2.5 kV 同样是 6.5 kVpp | 不能与 KEYENCE / Simco-Ion / Meech 的 kV 数字直接比较；不能把 `6.5 kV pulse output` 写成 `±6.5 kV`；不能由 Vpp 反推单侧幅值 |
+| 型号版本号与出厂标识（哪一版对应现售） | 资料版本不明 | 不能写「当前型号」的任何差异点 |
+| `Static decay time 1 s` 的初始表面电压、测点距离、测量方法、正/负分别数值 | 现为裸值 | 不能写成你线上的衰减时间；不能与风机的 1.5 s @150 mm 对比 |
+| 2× / 150 % 的对照机型与测试条件 | §365 已记，仍缺 | 不能由此推出宽幅或高速下的均匀性 |
+| 臭氧浓度与颗粒发生量（测法、距离、风量条件） | §11 已记 | 不能写洁净室适用性、不能写「低臭氧」 |
+| 尺寸安装：30 × 82 mm 截面之外的端部接口尺寸、air fitting 规格、安装支架型号、`P = L − 120 mm` 的适用长度范围 | 安装可行性靠这些判断 | 不能承诺装得下 |
+| 维护：发射针更换件号、单售与否、更换扭矩/工具 | 耗材页本批不建，但询价要问得准 | 不能列耗材价格或周期承诺 |
+| 原始记录：出厂检验报告、CE 文件编号与范围 | 目前只有「CE marked」（风机） | 不能给棒加任何认证声明 |
+
+### 16.1a 撤回与更正记录：ST-G 放电方式（2026-09-27，两次）
+
+**第一次撤回 —— 我把一句疑问当成了产品工程确认。**
+用户说「不就是 AC 脉冲吗」，那是**疑问**；随后他明确说「所以 ST-G 是什么的，我也不知道」。
+我据此写下「已定 / James Hu 确认」并提交。**撤回的是这个归属** ——
+不是「ST-G 用 Pulse-AC」这件事本身。不拿用户的口头反问当型号确认。
+
+**第二次更正 —— 我只在 repo 里找证据，找不到就写成「没有资料」。**
+我上一版写过「仓库里没有任何一张图指名 ST-G，所以没有型号级资料支持任何一种定语」。
+前半句对（限于本仓库），后半句错：**用户手上的产品目录里 ST-G 是整页专章，明确指名**。
+「本仓库里没有」不等于「不存在」，何况用户此前提过 catalog。已改正，见 §16.1b。
+
+**技术论证的更正（这条仍然成立）。** 我写过「DC pulse 必然单极性，所以与交替正负冲突」——
+这个前提不成立：厂方 ST-F 图里 pulsed DC 就是正负轮流输出的，区别在「单个脉冲内极性变不变」；
+KEYENCE 把单针交替正负称 Pulse AC，Simco-Ion 使用 bipolar DC 命名，**标签不决定电路**。
+
+**算术更正（仍然成立）。** 我说过「若为峰峰值则单侧只有 3.25 kV」。
+只有在**相对同一参考点、正负峰等幅对称**时才成立（Vpp = Vmax − Vmin）；
++4 kV / −2.5 kV 同样是 6.5 kVpp。不能由 Vpp 反推单侧幅值。
+
+### 16.1b 证据状态：ST-G 的 Pulse-AC **有型号原始资料支持**
+
+**一手来源（由 Codex 在用户 Mac 上找到、逐页抽取并目视核对；我在云端无法访问该文件，
+未亲自查验，以下为转述）：**
+
+| 项 | 值 |
+|---|---|
+| 文件 | `/Users/henry/Desktop/Business_DGSDK/史帝克图片/SHIDIKE CATALOG v3.pdf`（18 页） |
+| SHA256 | `743654231bfaf9a7cc135280377eacaec84d554e1e261204f7ff40a9a0612996` |
+| 交叉核对 | `SHIDIKE CATALOG.pdf`，SHA256 `8a2e229ce06369027d5ac8631fef1886ba03c71f1a6c393f28ffb6439fa51ae3`，G/E/F 对应页抽取文字与 v3 一致 |
+| 页码 | **第 11 页（ST-G 整页）** |
+
+**第 11 页原文（决定性的是标题与正文，不是配图）：**
+
+- 标题：`SHIDIKE SMART IONIZING BAR / MODEL: ST-G (AC INTEGRATED)`
+- Product Introduction：`The ST-G series Smart Ionizing Bar uses Pulse-AC mode for high
+  efficiency and a small form factor. Pulse-AC alternately applies "+" and "-" high voltage
+  to a single electrode pin to generate ions of both polarities.`
+- 同页右侧 Operating Mode 图标注 Pulsed AC Mode，`0.1 Hz to 100 Hz`（**辅助证据**）
+- 参数表：`Product Model ST-G` / `Input Voltage DC 24V` / `Power 12 W` /
+  `Ion Generation Method Corona discharge` / **`Output Mode AC pulse / DC pulse 6.5 KV`** /
+  `Ion Balance ±50 V`
+
+**结论：站上「ST-G 采用 pulsed AC、单针交替正负」这一资料描述有型号原文支持，保留。**
+它是**产品资料依据**，不是独立实测硬件 —— 两者仍要分清，但已足够支撑产品文案。
+
+### 16.1c 真正还没解决的（不要再扩大成「整个放电方式没依据」）
+
+1. **参数表 `Output Mode: AC pulse / DC pulse 6.5 KV` 的含义。**
+   同一栏并列写了两种模式。可能是多模式可选，可能是三个系列共用的通用表。
+   **不得直接判为笔误**，也不得据此否认同页指名 ST-G 的 Pulse-AC 说明。
+2. **6.5 kV 的定义：Vmax / Vmin / Vpp，以及测量参考点 —— 用户本人也不知道（2026-09-27）。**
+   他明确说不清楚这是峰值还是有效值。**这句话不构成数值定义**，和之前那句「不就是 AC 脉冲吗」
+   一样，属于聊天，不是资料。此项维持待核。
+
+   网站维持 catalog 的 `6.5 kV` 原值，**不加** peak / RMS / peak-to-peak / `±`，
+   **不做换算**，**不做跨品牌电压性能结论**。
+   Codex 那句「倾向脉冲幅值 / 峰值」是**低把握推测**，
+   **不得进入规格表，也不得写进任何「已确认」记录**。
+
+3. **对标品牌：Simco，但具体型号不明（用户本人不记得）。**
+   Simco-Ion 不同型号的电压口径本就不同。**未知对应型号时，不得用任何 Simco 规格反推 ST-G**，
+   也不得据此判断 6.5 kV 是哪一种定义。站上目前**没有出现任何竞品名**，保持如此。
+4. **仓库那三张 JPEG 的来源。** 带 Shidike 抬头**不等于**未经改写的厂家原图。
+   其中 `operating-modes.jpg` 纵轴标 **±7 kV**，与 catalog 的 6.5 kV 不一致，
+   且该图**不指名型号**。**不要用这类泛指图去覆盖 catalog 的型号数据，也不要从它推导型号事实。**
+   待办：追溯这三张图的出处，确认是否出自同一份 catalog 的哪一页。
+
+| 文件 | 图上写明的型号 | 状态 |
+|---|---|---|
+| `mode-pulsed-dc.jpg` | ST-F | 与 catalog 方向一致，来源待追溯 |
+| `mode-hf-pulsed-dc.jpg` | ST-E | 同上 |
+| `operating-modes.jpg` | **无型号** | **±7 kV 与 catalog 6.5 kV 冲突；不作为 ST-G 依据** |
+
+### 16.1c-bis 一条长期规则（第三次踩到了）
+
+**聊天不是资料。** 已经有三次把对话内容误当依据的风险点：
+「不就是 AC 脉冲吗」（疑问）、「我也不知道」（不知道）、「对标 Simco」（不记得型号）。
+这些都**不能**写进规格、不能写进「已确认」、不能作为推导前提。
+能进规格的只有：**指名型号的原始资料**（如 catalog 第 11 页），或**带原始记录的实测**。
+第三方（Codex 或我）的倾向性推测，无论多合理，都停在「推测」这一栏。
+
+### 16.1d 要向工厂问的（ST-G）
+
+1. 参数表 `AC pulse / DC pulse` 并列：是可选双模式，还是通用表沿用？
+2. 现售型号与 catalog 版本号（v3 是否为现行版）。
+3. 每根针交替正负，还是正负针分组。
+4. 测量参考点（针对地 / 针对针 / 对被测板）。
+5. **Vmax / Vmin / Vpp 三个值**，不要只给一个「6.5 kV」。
+6. 频率与占空比（Ton / Toff / T）；0.1–100 Hz 是范围还是典型值。
+7. 已有测试记录：出厂波形图、charged plate monitor 原始数据、检验单。
+
+### 16.2 一款资料最成熟的风机：ST-S200
+
+选它是因为站上已有最完整的可核数据（450 × 450 mm、≤1.5 s @150 mm、300 mm 处 3 s、
+≤48.2 CFM、≤38.9 dB、0.05 ppm 臭氧、±5000 V、128 × 53.5 × 180 mm、400 g、CE、一年保）。
+
+| 待核字段 | 说明 |
+|---|---|
+| **距离与测点**：1.5 s 与 3 s 各自的测点位置、被测板尺寸、初始电压、终止电压阈值 | 现只写「measured 150 mm in front of the outlet」，缺初始/终止电压 |
+| **风量档位**：≤48.2 CFM 是哪一档；各档对应的衰减时间与噪音 | 现为单值加「fan speed is adjustable」 |
+| **离子平衡（offset voltage）**：ST-S200 未公布偏置电压（§126 已记） | 另三款风机（ST101A / ST104A / ST1200）都写 0 V ±10 V；ST-S200 的 spec 表明写「No offset voltage published for this model」 |
+| **正/负分别的起止电压与衰减时间** | ST101A / ST104A / ST1200 有正负分列（如 ST101A 300 mm 处正 1.2 s、负 1.3 s），ST-S200 只有合并值 |
+| 仪器：charged plate monitor 型号、板尺寸、电容、环境温湿度 | 所有衰减数字的前提 |
+| 0.05 ppm 臭氧的测点、距离、运行时长、仪器 | 现为裸值 |
+| 原始记录：出厂测试单、CE 证书编号与适用指令 | 现只写「CE marked」 |
+
+### 16.3 一款清洁配置：STMT750（刷+抽吸，已改名 Brush and Vacuum）
+
+| 待核字段 | 说明 |
+|---|---|
+| **材料**：适用基材清单、表面处理/涂层、禁用材料 | 现只写「set from your sample」 |
+| **幅宽与厚度**：750 mm 之外的可做幅宽区间；厚度上下限（`Roller gap adjusts automatically` 的实际行程） | 厚度区间完全缺 |
+| **速度**：0–45 m/min 与清洁效果的关系（各速度下的去除率） | 现为裸区间 |
+| **接触面**：两种刷（cotton-nylon / Tetoron）的毛径、密度、转速、压入量、更换周期 | 决定会不会刮伤 |
+| **输送接口**：进出料辊高度、辊距、与上下游的对接方式、所需前后留空 | 现只写「inline unit with roller conveyors either side」 |
+| **标准配置与选配的分界**：黏辊与低静电纸卷是标配还是选配；VJ-2.2HLS 集尘器是否随机 | 现写「carries adhesive rollers as well」「a separate collector sits beside the machine」，界线不清 |
+| **抽吸与收集**：2200 m³/h 是集尘器额定还是机口实测；8 m² Toray 滤芯件号、过滤等级、更换周期；30 L 抽屉满载时长 | 混了两套数据 |
+| **去除率 99.9 % 的条件**：粒径区间、采样方法、清洁前后计数、重复次数、环境洁净度、表面检查判据 | 本批已标 rated 并写明缺失，这是补齐它需要的全部字段 |
+| **静电 <100 V**：测点、仪器、初始电压、是进料侧还是出料侧 | 现为裸值 |
+| 原始记录：出厂检验单、辊胶卷尺寸与零件号、可公开的许可/认证范围 | 耗材单售与适配关系也在此确认 |
+
+### 16.4 本批明确不做
+
+耗材独立页、测试指南、新案例页、德语页 —— 不创建。
+未拿到一手数据前不写任何实测数字，不放待补参数占位，不放空下载按钮。

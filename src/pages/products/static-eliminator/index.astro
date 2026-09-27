@@ -36,7 +36,7 @@ const faqItems = [
   },
   {
     question: 'What voltage does an anti static bar output?',
-    answer: 'Shidike bars run on a 6.5 kV DC pulse from a DC 24 V supply at 12 W. Ion balance is ±50 V on the ST-G, ±80 V on the ST-E and ±100 V on the ST-F — all inside the sub-100 V window optical and semiconductor work needs.'
+    answer: 'Shidike bars are rated 6.5 kV pulse output, generated inside the bar from a DC 24 V supply at 12 W — that figure is the high voltage reaching the emitter pins, not the supply you wire up. How the pulse is applied differs by series: pulsed AC on the ST-G, pulsed DC on the ST-E and the ST-F. Ion balance is a separate figure — ±50 V on the ST-G, ±80 V on the ST-E, ±100 V on the ST-F — and it describes the offset of the bar itself, not the residual surface voltage left on your material, which your process defines.'
   },
   {
     question: 'How close should an anti static bar be mounted to the material?',
@@ -73,7 +73,7 @@ const faqItems = [
 <Layout
   title="Industrial Static Eliminators, Ionizing Bars & Air Blowers | Shidike"
   image="/assets/img/static-eliminator/st-g.jpg"
-  description="Shidike anti static bars and ionizing air blowers. 6.5 kV DC pulse, bar ion balance from ±50 V, 30–1000 mm working range, made to length up to 3 m."
+  description="Shidike anti static bars and ionizing air blowers. 6.5 kV pulse output, bar ion balance from ±50 V, 30–1000 mm working range, made to length up to 3 m."
 >
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org',
@@ -119,7 +119,7 @@ const faqItems = [
       <span class="products-hero-kicker" data-aos="fade-down" data-aos-duration="600">Primary Product Line · Worldwide Supply</span>
       <h1 data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">Industrial Static Eliminators, Ionizing Bars and Air Blowers</h1>
       <p data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
-        Bar-type static eliminators on a 6.5 kV DC pulse, ion balance from ±50 V over a 30–1000 mm working range, built to the length your line needs, plus ionizing air blowers for workstations and enclosed process areas.
+        Bar-type static eliminators rated 6.5 kV pulse output, bar ion balance from ±50 V over a 30–1000 mm working range, built to the length your line needs, plus ionizing air blowers for workstations and enclosed process areas.
       </p>
     </div>
   </section>
@@ -182,7 +182,7 @@ const faqItems = [
         <section class="pl-group" id="blowers">
           <div class="pl-group-head">
             <h2>Ionizing Air Blowers &amp; Anti Static Blowers</h2>
-            <p>Ions carried to the target on moving air, reaching farther than a bar. For workstations, enclosures, and irregular parts.</p>
+            <p>Ions carried to the target on moving air, reaching farther than a bar. For workstations, enclosures, and irregular parts. The <a href="/products/static-eliminator/ionizing-air-blowers">ionizing air blowers</a> page compares the four models side by side and gives the decay figures with the distance each was measured at.</p>
           </div>
           <div class="pcard-grid">
             {blowerProducts.map(item => (
@@ -234,7 +234,7 @@ const faqItems = [
   <section class="faq-tail">
     <div class="container">
       <h2>What to send for a model recommendation</h2>
-      <p>Bar length is made to order, so a recommendation needs the real process &mdash; and on most lines the answer is an industrial static control system rather than one bar: a bar at each point where the material separates, sized to the width, plus a blower where a bar cannot be fitted. Send these and Shidike will return the models, bar lengths, mounting positions and unit count:</p>
+      <p>Bar length is made to order, so a recommendation needs the real process &mdash; and on most lines the answer is an industrial static control system rather than one bar: a bar at each point where the material separates, sized to the width, plus <a href="/products/static-eliminator/ionizing-air-blowers">a blower</a> where a bar cannot be fitted. Send these and Shidike will return the models, bar lengths, mounting positions and unit count:</p>
       <ul class="send-list">
         <li>Material and target width</li>
         <li>Line speed</li>
