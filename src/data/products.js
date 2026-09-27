@@ -147,7 +147,7 @@ const webProducts = [
     name: 'Roll-to-Roll Cleaner', slug: 'roll-chip-cleaner', cat: 'Roll-to-Roll', code: 'Coil Universal',
     url: canonical + '/roll-chip-cleaner', image: base + '/assets/img/cleaning-machine/roll-chip-cleaner.jpg',
     img: '/assets/img/cleaning-machine/roll-chip-cleaner',
-    specs: ['0.05–2 mm', 'Surface static <50 V', '0–20 m/min', 'Unwind + rewind']
+    specs: ['0.05–2 mm', 'Surface static <50 V', '0–20 m/min', 'Roll and sheet']
   },
 ];
   return { sheetProducts, webProducts };
