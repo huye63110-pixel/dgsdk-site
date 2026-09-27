@@ -406,7 +406,7 @@ Codex 定位的 11 / 18 / 25 行（ST-G「best ion balance in the range」、ST-
 | D1 | `industrial-static-eliminator` / `esd-control-products` 各 3 条 FAQPage schema | schema 文本与正文用词漂移（**既有问题**，基线 build 完全相同） | §270 既定方向 | schema 同步到正文逐字一致 |
 | D2 | `esd-control-products:206`：棒「available in standard lengths」 | 与全部型号页及 `static-eliminator-manufacturer:15`「made to order from 300 mm to 3 m … rather than to a catalogue size」矛盾 | 同上 | **这条是正文错、schema 对**，改正文 |
 | E1 | `pcb-cleaner:6` meta：`Removes flux residues` | 同页 FAQ 写「dry adhesive roller cleaning … no water, solvents, or drying step」；指南写干式辊清洁不是水洗/溶剂洗 | 同页 FAQ + 指南 | 去掉 flux；保留 dust/particles，并写明这不是湿洗/溶剂/助焊剂清洗 |
-| E2 | `products.js:150` chip `Unwind + rewind` | 该机 spec 表无放卷收卷项；chip 出现在导航与类目卡上像是机器配置 | 同页 spec 表 | 改为 `Roll and sheet`，并在页面写一次交付边界：报价是清洁主机，放收卷/张力/下游工序是另行设备 |
+| E2 | `products.js:150` chip `Unwind + rewind` | 该机 spec 表无放卷收卷项；chip 出现在导航与类目卡上像是机器配置 | 同页 spec 表 | 改为 `Roll and sheet`。**交付边界这一条后来又改了一次**：仓库里没有任何报价单或供货范围表，「规格表没列」不能证明「默认不含」，所以页面最终写的是**请在报价中确认是否包含**放收卷 / 张力 / 下游工序，不写成确定排除 |
 
 **不改、已经是对的**：发射针清洁周期。四个页面本来就按环境分档（标准工况月度到季度 /
 粉尘油雾每周 / 洁净室三到六个月），这正是 C 要求的条件化，无需再动。
@@ -448,6 +448,24 @@ Codex 定位的 11 / 18 / 25 行（ST-G「best ion balance in the range」、ST-
 **成功响应 ≠ 实际收到 ≠ 合格询盘。** 本批只让第一种变得可归因。
 
 ---
+
+## 15b. `dateModified` 是手工维护的，已经漂了两次（2026-09-27）
+
+站上 10 个 Article schema 的 `dateModified` 没有任何脚本在管，全靠手写。
+这一轮先漂了一次（3 页停在 09-01，2 页差 11 天），我修完之后**又漏了 5 页** ——
+因为我 grep 只写了双引号键 `"dateModified"`，而一半页面用的是单引号 JS 写法
+`dateModified: '…'`。11 个日期字段只看见 5 个。
+
+**教训**：找字段不要只按一种引号写法 grep，先确认这个键在仓库里有几种写法。
+
+**当前口径**（与 `scripts/sync-sitemap.js` 对 `<lastmod>` 的规则一致）：
+取**最后一次改变该页自身内容**的提交日期；
+**不算**全站 banner / 版式这类共享改动 —— 所以 `what-is-web-cleaning` 保持 2026-09-12，
+它那两次 09-17 提交是 banner（#22/#23），不是文章内容。
+
+**建议（尚未实施，等你或 Codex 定）**：把这个字段也接进 `sync-sitemap.js` 的同一套推导，
+加 `--check` 让 CI 拦住漂移。`lastmod` 当初就是因为同样的手工维护出过问题才改成从 git 推导的。
+本轮按「只做收尾两项、不自行扩范围」没有动脚本。
 
 ## 16. 工程待核字段（本批只整理，不写进公开页）
 
