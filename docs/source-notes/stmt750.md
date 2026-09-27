@@ -45,7 +45,7 @@ it must not be described as suitable for every populated board.
 | Supply | 380 V / 50 Hz, 2.2 kW | **Number of phases is not given** |
 | Airflow | 2200 m³/h | |
 | Noise | **74 ±2 dB** | **No A-weighting basis.** The page said dB(A); corrected to dB |
-| Filter | Toray filter cartridge × 1, 8 m² | **Not HEPA.** No filtration class is given, and none is to be stated |
+| Filter | Toray filter cartridge × 1, 8 m² | **HEPA classification not established by the catalogue** — no filtration class is given either way, so none is to be stated in either direction |
 | Filter cleaning | Manual shaker | |
 | Collection | 30 L drawer |
 

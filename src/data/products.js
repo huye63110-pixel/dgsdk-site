@@ -42,8 +42,8 @@ const blowerProducts = [
     name: 'ST-S200 Mini Ionizer Fan', slug: 'st-s200', cat: 'Ionizing Blowers', code: 'ST-S200',
     url: canonical + '/st-s200', image: base + '/assets/img/static-eliminator/st-s200.jpg',
     img: '/assets/img/static-eliminator/st-s200',
-    desc: 'The smallest unit in the range, small enough to build into a machine. Synchronous positive and negative emitters at ±5000 V with tungsten-alloy tips and a decoupled discharge barrel. Clears a 450 × 450 mm area in under 1.5 s measured 150 mm in front of the outlet, at under 38.9 dB and 0.05 ppm ozone. 128 × 53.5 × 180 mm, 400 g, CE marked, one-year warranty.',
-    specs: ['450 × 450 mm coverage', '≤1.5 s decay', '≤48.2 CFM', 'CE · 1-year warranty']
+    desc: 'The smallest unit in the range, small enough to build into a machine. Synchronous positive and negative emitters at ±5000 V with tungsten-alloy tips and a decoupled discharge barrel. Coverage area 450 × 450 mm. Decay is rated ≤1.5 s at a single point 150 mm in front of the outlet, not across the area. Under 38.9 dB and 0.05 ppm ozone. 128 × 53.5 × 180 mm, 400 g, CE marked, one-year warranty.',
+    specs: ['450 × 450 mm coverage', '≤1.5 s at 150 mm', '≤48.2 CFM', 'CE · 1-year warranty']
   },
   {
     name: 'ST101A Desktop Ionizing Air Blower', slug: 'st-101a', cat: 'Ionizing Blowers', code: 'ST101A',
