@@ -39,22 +39,31 @@
 
 ### A. ST-G 的 pulsed AC 与「6.5 kV DC pulse」
 
-> **本节理由已于 2026-09-27 更正，见 `SEO-NOTES.md` §16.1a。**
-> 我原先写「DC 脉冲是单极性，所以与交替正负不能同真」—— **这是错的**。
-> 仓库里厂方自己的 `mode-pulsed-dc.jpg`（图上写明 ST-F）和 `mode-hf-pulsed-dc.jpg`
-> （图上写明 ST-E）都显示脉冲 DC **本身就有正负两种极性**，区别在「一个脉冲内极性变不变」。
-> 业界命名同样不能反推电路：KEYENCE 把单针交替正负称 Pulse AC，Simco-Ion 使用 bipolar DC。
-> 所以 `6.5 kV DC pulse` 对 ST-G **未必是矛盾**。
+> **本节经过两次更正，见 `SEO-NOTES.md` §16.1a / §16.1b。**
+> 更正一：我原先写「DC 脉冲是单极性，所以与交替正负不能同真」—— **错的**。厂方 ST-F 图里
+> pulsed DC 就是正负轮流输出，区别在「单个脉冲内极性变不变」；KEYENCE 把单针交替正负称
+> Pulse AC，Simco-Ion 使用 bipolar DC，**标签不决定电路**。
+> 更正二：我只在 repo 里找证据，找不到就写成「没有型号级资料」。**用户的产品目录里 ST-G
+> 是整页专章，明确指名。**「本仓库里没有」不等于「不存在」。
 
-厂方资料同时说 ST-G 是 pulsed AC 和输出 6.5 kV **DC** 脉冲，这两句需要型号级资料才能判定。
-而仓库里**没有任何一张图指名 ST-G**：唯一写 Pulsed AC 的 `operating-modes.jpg` 是泛指
-「Shidike ionizing bars」，而且它标的是 **±7 kV，与全站规格表的 6.5 kV 对不上**（新冲突，未解决）。
+**ST-G 的 pulsed AC 有型号原始资料支持，保留。** 依据是用户 Mac 上的
+`SHIDIKE CATALOG v3.pdf`（18 页，SHA256 `743654…612996`）**第 11 页**，由 Codex 抽取并目视核对
+（我在云端打不开该文件，未亲自查验，此处为转述）：
 
-所以输出改为 `rated 6.5 kV pulse output`，**理由是「没有型号级资料支持任何一种定语」**，
-不是「DC 一定错」。**ST-G 的放电方式仍属待工厂核实**，站上现有的 pulsed AC 措辞只是
-既有资料口径，不是已验证结论。
+- 标题 `SHIDIKE SMART IONIZING BAR / MODEL: ST-G (AC INTEGRATED)`
+- Product Introduction 原句：`The ST-G series Smart Ionizing Bar uses Pulse-AC mode … Pulse-AC
+  alternately applies "+" and "-" high voltage to a single electrode pin to generate ions of both polarities.`
+- 参数表：`Output Mode` = **`AC pulse / DC pulse 6.5 KV`**，`Ion Balance ±50 V`
 
-**ST-E / ST-F 保留 `DC pulse`** —— 这两款有厂方图**指名**，不做全局替换。
+输出仍写 `rated 6.5 kV pulse output` —— **理由变了**：参数表原文自己把两种模式**并列**，
+没有给出单一定语，所以中性转述才是忠实的。不是「DC 一定错」，也不是「没有资料」。
+
+**还没解决的是**：那一栏并列的含义（多模式可选？通用表沿用？**不得判为笔误**）、
+6.5 kV 是 Vmax / Vmin / Vpp 哪一个（**不能补成 ±6.5 kV**）、
+以及仓库那三张 JPEG 的出处 —— 带 Shidike 抬头不等于未经改写的原图，
+其中 `operating-modes.jpg` 标 ±7 kV 且不指名型号，**不得用它覆盖 catalog 的 6.5 kV**。
+
+**ST-E / ST-F 保留 `DC pulse`** —— 两款各有指名型号的图，方向与 catalog 一致，不做全局替换。
 
 涉及 URL：`/products/static-eliminator/st-g-series`、`/st-e-series`、`/st-f-series`、
 `/products/static-eliminator`、`/applications`、`/static-eliminator-manufacturer`、
@@ -260,10 +269,11 @@ sitemap 的 `lastmod` 按既有脚本从 git 推导，18 个页面变为 2026-09
 
 ## 7. 待你与工厂决定
 
-1. **ST-G 的放电方式与 6.5 kV 的定义 —— 只有工厂能定。**
-   要问的六项已整理在 `SEO-NOTES.md` §16.1c：现售型号与资料版本号；每根针是交替正负
-   还是正负针分组；测量参考点；Vmax / Vmin / Vpp 三个值；频率与占空比；已有测试记录。
-   拿不到就保持现状措辞并注明未确认 —— **不要再替任何人确认**。
+1. **ST-G 的放电方式已有 catalog 依据，不必再问；要问的是参数表的歧义与 6.5 kV 的定义。**
+   七项已整理在 `SEO-NOTES.md` §16.1d：`AC pulse / DC pulse` 并列是可选双模式还是通用表沿用；
+   catalog v3 是否现行版；每根针交替正负还是正负针分组；测量参考点；
+   **Vmax / Vmin / Vpp 三个值**；频率与占空比；已有测试记录。
+   拿不到就保持现状措辞并注明未确认 —— **不要替任何人确认**。
 2. **99.9 % 的条件**：粒径、采样方法、前后计数、重复次数、环境洁净度、表面检查判据。
 3. **卷材机的供货范围**：报价默认含不含放收卷 / 张力控制。仓库里没有任何报价单或
    供货范围表，所以页面现在是**请客户在报价中确认**，没有写成确定排除。
@@ -295,9 +305,16 @@ sitemap 的 `lastmod` 按既有脚本从 git 推导，18 个页面变为 2026-09
 | `fix(content): the sentences the rename and narrowing passes did not reach` | 1 搜索/llms 同步、2 刷式机同页矛盾、3 型号页性能推导与离子平衡、4 `1 s` 条件、6 卷材机供货边界、7 Contact 按钮文案 |
 | `docs(seo): retract the ST-G confirmation, and correct the argument behind it` | 0 / 5 撤回与技术论证更正、6 `dateModified` 与本文件状态 |
 
-**撤回的一条（重要）**：`docs(seo): ST-G's discharge method is settled` 这个提交里写的
-「已定 / James Hu 确认：ST-G 就是 AC 脉冲」**已撤回**。那句话来自一个疑问（「不就是 AC 脉冲吗」），
-不是产品工程确认；用户随后明确说「所以 ST-G 是什么的，我也不知道」。
-同一提交里的技术论证（「DC 脉冲必然单极性」）也是错的，一并更正。
-详见 `SEO-NOTES.md` §16.1a / §16.1b / §16.1c。**代码没有因此回退** —— 站上措辞不变，
-变的是理由和证据状态。
+**撤回与更正（重要，分清楚是哪一部分）**
+
+`docs(seo): ST-G's discharge method is settled` 里有三样东西，**只撤回其中一样**：
+
+| | 状态 |
+|---|---|
+| 「已定 / James Hu 确认」这个**归属** | **撤回**。来自一个疑问（「不就是 AC 脉冲吗」），不是产品工程确认；用户随后说「所以 ST-G 是什么的，我也不知道」 |
+| 「DC 脉冲必然单极性」这个**论证** | **撤回**。厂方 ST-F 图与业界命名都推翻它 |
+| **「ST-G 采用 Pulse-AC」这件事本身** | **不撤回**。`SHIDIKE CATALOG v3.pdf` 第 11 页标题与 Product Introduction 明确指名 ST-G 并写明 Pulse-AC、单针交替正负 |
+
+中间我还多错了一步：只在 repo 里找证据，找不到就写成「没有任何资料指名 ST-G」——
+**已改正**，依据补在 `SEO-NOTES.md` §16.1b。
+**代码自始至终没有回退**，站上措辞不变，变的是理由与证据状态。
