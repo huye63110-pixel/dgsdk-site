@@ -641,3 +641,100 @@ KEYENCE 把单针交替正负称 Pulse AC，Simco-Ion 使用 bipolar DC 命名�
 
 耗材独立页、测试指南、新案例页、德语页 —— 不创建。
 未拿到一手数据前不写任何实测数字，不放待补参数占位，不放空下载按钮。
+
+---
+
+## 17. 第六批：首页标题与类目改名对齐（2026-09-28）
+
+第五批（PR #31，`aaf6064`）把清洁类目从 **Web Cleaning Systems** 改名为
+**Dry Surface Cleaning Machines for PCB, FPC and Film**，理由是那批机器里
+大多数不是连续卷材机，「web」是比机器本身更宽的声明。
+
+**首页不在那一批的范围里，于是留下了落差**：首页 title / H1 仍把整条产品线
+叫 Web Cleaning Systems，点进去的类目页却叫 Dry Surface Cleaning Machines。
+这不是审计报出来的问题，是上一批自己改出来的 —— 本批把它补齐。
+
+来源：用户发来的 Semrush 站点审计截图（抓取日 2026-09-28，53/100 页），
+截图里首页标题仍是旧措辞。**审计本身只报了一类问题（未压缩的 JS/CSS），
+没有报这条**；这条是看截图时顺带核出来的。
+
+### 17.1 改了什么
+
+| 位置 | 原文 | 现文 |
+|---|---|---|
+| `index.astro` title | `Static Control Equipment & Web Cleaning Systems \| Shidike` | `Static Control Equipment & Surface Cleaning \| Shidike` |
+| `index.astro` H1 | `Static Control Equipment & Web Cleaning Systems` | `Static Control Equipment & Surface Cleaning` |
+| `index.astro` meta description + hero 正文（同一句，两处） | `film and sheet cleaning systems` | `board, sheet and film cleaning machines` |
+| `index.astro` 公司简介段 | `ionizing bars, ionizing air blowers and web cleaning systems` | `… and surface cleaning machines` |
+| `public/llms.txt` 类目条目 | `[Web Cleaning Systems](/products/cleaning-machine): Category overview.` | `[Dry Surface Cleaning Machines](…): Category overview, for PCB, FPC, sheet and film.` |
+
+`Static Control & Surface Cleaning` 这个搭配不是新造的 —— `/resources`
+（`Static Control & Surface Cleaning Knowledge Base`）与第五批改过的
+`/guides`（`Static Control & Surface Cleaning Guides`）已经在用，本批是让首页
+跟上，全站口径统一。
+
+`board, sheet and film` 也直接取自类目页自己的 `CollectionPage.description`
+（`Dry surface cleaning machines for boards, sheets and films`）。
+原来的 `film and sheet` **不是错的，是偏窄** —— 它漏掉了板材（PCB/FPC），
+而类目页和首页那张卡片都指向板材机型。
+
+### 17.2 刻意没改的，以及理由
+
+| 位置 | 原文 | 为什么不动 |
+|---|---|---|
+| `index.astro:94` | `Expertise in static control & web cleaning` | 这是**能力**陈述，不是产品线命名。卷材清洁确实是他们做的事（接触式清洁机公布到 70 m/min），说「有 web cleaning 的经验」为真 |
+| `index.astro:129` H2 | `Common Static Control & Web Cleaning Problems` | 同上。该段六张卡讲的确实是卷材线上的问题（粉尘回吸、薄膜贴辊、叠片错位），且链向 `/guides/what-is-web-cleaning` |
+| `guides/what-is-web-cleaning.astro` | 全页 | 这一页**定义**了 web cleaning，并且正是第五批 B 组的判据来源（「适合片材的机器不自动等于连续卷材清洁系统」）。它是证据，不是要清理的旧词 |
+| `Layout.astro:59` | `<meta name="keywords" … web cleaning system>` | Google 早已完全忽略 keywords。改它会重写全部 45 页的 HTML，收益为零 |
+| `static-eliminator-manufacturer.astro:60` | Organization JSON-LD 的 `knowsAbout: 'Contact cleaning machines and web cleaning systems'` | `knowsAbout` 是**主题**清单，不是产品目录名；且在另一页上，不顺势扩批 |
+
+**判据**：把整条产品线**命名**为 Web Cleaning Systems 是过宽声明（多数机器不是
+连续卷材机）；描述 web cleaning 的**问题**或**能力**则为真。指南页自己教的就是
+这个区分。这条判据留在这里供 Codex 质疑。
+
+### 17.3 H1 的排版回归（改后复测发现的，不是推断）
+
+第一版写成 `& Surface Cleaning Machines`（27 字符）。机械校验全绿，
+**但浏览器复测发现 801–1200 px 整个区间 H1 从 2 行变 3 行**（≥1280 px 才回到 2 行）。
+`.hero-second-line` 在 >800 px 是 `display:block`，第二行自己会折。
+基线两行是 24 / 22 字符，第二行超过约 24 就折。
+
+在浏览器里实测了五个候选，只列结果：
+
+| 候选 | 801–1200 px |
+|---|---|
+| 基线 `& Web Cleaning Systems` | 2 行 |
+| `& Surface Cleaning Machines`（第一版） | **3 行** |
+| `& Surface Cleaning`（采用） | 2 行 |
+| `Static Control` / `& Surface Cleaning Equipment` | **3 行** |
+| `Static Control &` / `Surface Cleaning Machines` | 2 行，但「Static Control Machines」不成立 —— 棒和风机不是 machines |
+
+**采用 `& Surface Cleaning`。** 17 个宽度（801–1920 px）逐一复测，行数与基线逐项相同，
+桌面与移动页高完全一致（6220 / 9301 px），无横向滚动。
+900 px 页高 +24 px，来自 hero 正文那句多出的 4 个字符多折一行 —— 是内容变化，不是布局回退。
+
+**记录这条是因为它是改后复测抓到的，不是改前推断出来的**，与第五批风机页
+h3→h2 选择器那次同类：字符数看着差不多，渲染不一定。
+
+### 17.4 未压缩的 JS —— 审计唯一报出的问题，本批不动
+
+Semrush 报「未缩小的 Javascript 和 CSS 文件 · 3」。实际是三个手写 JS：
+
+```
+public/js/home-v12.js
+public/js/hero-stats-countup.js
+public/js/certificate-carousel.js
+```
+
+**CSS 不在其中** —— `scripts/minify-css.js` 已在每次 build 把 `src/styles/*.css`
+压缩进 `public/css/`。只有这三个 JS 没走压缩。
+
+按既定边界（「首页 3 个 JS 压缩警告不扩大成本批重构」）本批不处理。
+这是**有意延后**，不是遗漏。
+
+### 17.5 没验到的
+
+- **生产环境仍打不开**：出口代理对 `www.dg-sdk.com`、`dg-sdk.com` 与 `*.vercel.app`
+  返回连接失败。以上全部是对仓库与本地 build 的核验，不是线上核验。
+- **截图那次抓取在部署前还是部署后，无法从截图判断**。要核 PR #31 的改动是否
+  已被抓到，需重跑一次 Semrush 活动再比较抓取结果。
