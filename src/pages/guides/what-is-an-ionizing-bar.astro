@@ -176,11 +176,11 @@ import Layout from '../../layouts/Layout.astro';
       <h2>How to Choose the Right Ion Bar</h2>
       <p>Five factors determine the correct static eliminator for a given application:</p>
       <ol>
-        <li><strong>Coverage length</strong> — select a bar length that matches or slightly exceeds substrate width (150–1,500mm standard; custom lengths available)</li>
-        <li><strong>Working distance</strong> — most units operate at 25–300mm; use DC pulsed type within 50–100mm for residual charge below ±20V</li>
-        <li><strong>Line speed</strong> — high-speed lines need multiple bars in series or closer mounting to maintain low residual charge</li>
-        <li><strong>AC vs. DC</strong> — AC for general use; DC pulsed or intelligent type for display and semiconductor applications</li>
-        <li><strong>Environment</strong> — cleanrooms require sealed housings; dusty environments require accessible needle arrays for cleaning</li>
+        <li><strong>Geometry and width</strong> — a bar suits a fixed line across moving material; the length is cut to the charged width. Shidike bars are made to order from 300&nbsp;mm to 3&nbsp;m rather than picked from catalogue sizes. Where the charge is on a stationary part, a stack or an operator&rsquo;s hands, a <a href="/products/static-eliminator/ionizing-air-blowers">blower</a> is the form that reaches it.</li>
+        <li><strong>Dwell time</strong> — how long the material is actually in front of the ionizer, which is line speed and bar count together. Too short and no ion balance figure will save the result.</li>
+        <li><strong>Distance and obstruction</strong> — the mounting distance you can really achieve, and whether rollers, guards or framework sit between the emitter and the surface. The 30–1000&nbsp;mm working range quoted for the bar series is a rating, not a promise of equal performance across it.</li>
+        <li><strong>Airflow around the material</strong> — extraction, cooling fans and the web&rsquo;s own draught move the ion cloud. A bar that measures well on a bench can miss on the line for this reason alone.</li>
+        <li><strong>Mounting and maintenance access</strong> — where the bar physically fits, and whether the emitter pins can be reached for cleaning without stripping the station. Dusty and oil-mist environments need that access more often.</li>
       </ol>
 
       <picture>
@@ -232,19 +232,19 @@ import Layout from '../../layouts/Layout.astro';
       <div class="faq-list">
         <div class="faq-item">
           <h3 class="faq-question">What is the difference between an ionizing bar and an ionizing blower?</h3>
-          <p class="faq-answer">An ionizing bar covers a linear strip — it neutralizes static across the full width of a moving surface on a conveyor. An <a href="/products/static-eliminator/ionizing-air-blowers">ionizing blower</a> directs ion-laden airflow to a point or area and suits workbench applications. For production lines, the bar is the standard choice.</p>
+          <p class="faq-answer">An ionizing bar covers a linear strip — it neutralizes static across the full width of a moving surface on a conveyor. An <a href="/products/static-eliminator/ionizing-air-blowers">ionizing blower</a> directs ion-laden airflow to a point or area and suits workbench applications. Which suits a production line depends on where the charge is: across moving material a bar fits the geometry, while a stationary part, a stack or a loading position is what a blower reaches.</p>
         </div>
         <div class="faq-item">
           <h3 class="faq-question">How close does an ionizing bar need to be to work?</h3>
-          <p class="faq-answer">Most ionization bars work at 25–150mm from the surface. Standard DC pulsed models achieve ±20–50V residual at 50–100mm. Long-range static eliminators (e.g., <a href="/products/static-eliminator/st-f-series">ST-F Series</a>) operate at up to 300–400mm.</p>
+          <p class="faq-answer">Close enough that the ion cloud still reaches the surface, and that depends on your installation rather than on a general figure. The Shidike bar series is rated for a 30–1000 mm working range — a rating for the range, not a guarantee of the same result throughout it. The residual voltage left on your material is a separate measurement, taken on your own parts against your own limit, and it is what decides whether the distance you can actually achieve is close enough. Mounting and measurement are covered on the <a href="/products/static-eliminator/ionizing-air-blowers#installation">blower page</a>.</p>
         </div>
         <div class="faq-item">
           <h3 class="faq-question">Is a static elimination bar safe to touch?</h3>
-          <p class="faq-answer">The ion cloud emitted from the unit is safe to touch. The housing is grounded and ion current at the surface is extremely low (microamps). Industrial static eliminators automatically disconnect high voltage if the housing is opened.</p>
+          <p class="faq-answer">The ion cloud emitted from the unit is safe to touch. The housing is grounded and ion current at the surface is extremely low (microamps). The Shidike intelligent bar series detects abnormal discharge, raises an alarm and cuts the high voltage automatically; what any other manufacturer's unit does is in its own documentation, not something to assume.</p>
         </div>
         <div class="faq-item">
           <h3 class="faq-question">How do I know if my static eliminator is working?</h3>
-          <p class="faq-answer">Measure residual charge with a static field meter after the unit. A functioning static eliminator reduces charge to below ±100V for most applications, below ±20V for precision work. Intelligent models include built-in ion balance indicators.</p>
+          <p class="faq-answer">Measure residual charge with a static field meter after the unit. A working installation brings the surface inside whatever window your process sets — that limit comes from your own parts and your downstream step, not from the ionizer, and it is a different figure from the bar's own ion balance. Intelligent models include built-in ion balance indicators.</p>
         </div>
         <div class="faq-item">
           <h3 class="faq-question">What causes a static eliminator to fail?</h3>
@@ -353,7 +353,7 @@ import Layout from '../../layouts/Layout.astro';
         "name": "What is the difference between an ionizing bar and an ionizing blower?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "An ionizing bar covers a linear strip — it neutralizes static across the full width of a moving surface on a conveyor. An ionizing blower directs ion-laden airflow to a point or area and suits workbench applications. For production lines, the bar is the standard choice."
+          "text": "An ionizing bar covers a linear strip — it neutralizes static across the full width of a moving surface on a conveyor. An ionizing blower directs ion-laden airflow to a point or area and suits workbench applications. Which suits a production line depends on where the charge is: across moving material a bar fits the geometry, while a stationary part, a stack or a loading position is what a blower reaches."
         }
       },
       {
@@ -361,7 +361,7 @@ import Layout from '../../layouts/Layout.astro';
         "name": "How close does an ionizing bar need to be to work?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Most ionization bars work at 25–150mm from the surface. Standard DC pulsed models achieve ±20–50V residual at 50–100mm. Long-range static eliminators (e.g., ST-F Series) operate at up to 300–400mm."
+          "text": "Close enough that the ion cloud still reaches the surface, and that depends on your installation rather than on a general figure. The Shidike bar series is rated for a 30–1000 mm working range — a rating for the range, not a guarantee of the same result throughout it. The residual voltage left on your material is a separate measurement, taken on your own parts against your own limit, and it is what decides whether the distance you can actually achieve is close enough. Mounting and measurement are covered on the blower page."
         }
       },
       {
@@ -369,7 +369,7 @@ import Layout from '../../layouts/Layout.astro';
         "name": "Is a static elimination bar safe to touch?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The ion cloud emitted from the unit is safe to touch. The housing is grounded and ion current at the surface is extremely low (microamps). Industrial static eliminators automatically disconnect high voltage if the housing is opened."
+          "text": "The ion cloud emitted from the unit is safe to touch. The housing is grounded and ion current at the surface is extremely low (microamps). The Shidike intelligent bar series detects abnormal discharge, raises an alarm and cuts the high voltage automatically; what any other manufacturer's unit does is in its own documentation, not something to assume."
         }
       },
       {
@@ -377,7 +377,7 @@ import Layout from '../../layouts/Layout.astro';
         "name": "How do I know if my static eliminator is working?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Measure residual charge with a static field meter after the unit. A functioning static eliminator reduces charge to below ±100V for most applications, below ±20V for precision work. Intelligent models include built-in ion balance indicators."
+          "text": "Measure residual charge with a static field meter after the unit. A working installation brings the surface inside whatever window your process sets — that limit comes from your own parts and your downstream step, not from the ionizer, and it is a different figure from the bar's own ion balance. Intelligent models include built-in ion balance indicators."
         }
       },
       {
@@ -441,5 +441,5 @@ import Layout from '../../layouts/Layout.astro';
   </script>
 
   <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.dg-sdk.com"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.dg-sdk.com/guides"}, {"@type": "ListItem", "position": 3, "name": "What Is an Ionizing Bar?", "item": "https://www.dg-sdk.com/guides/what-is-an-ionizing-bar"}]})} />
-  <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "Article", "headline": "What Is an Ionizing Bar? How It Works & When to Use One", "description": "An ionizing bar (ion bar) emits positive and negative ions to neutralize static electricity on surfaces. How ionizing bars work, types, applications, and how to choose one.", "url": "https://www.dg-sdk.com/guides/what-is-an-ionizing-bar", "image": "https://www.dg-sdk.com/assets/img/guides/ionizing-bar-action.jpg", "datePublished": "2026-05-26", "dateModified": "2026-09-27", "author": {"@type": "Organization", "name": "Shidike", "url": "https://www.dg-sdk.com"}, "publisher": {"@type": "Organization", "name": "Shidike", "legalName": "Dongguan Shidike Intelligent Equipment Co., Ltd."}, "mainEntityOfPage": "https://www.dg-sdk.com/guides/what-is-an-ionizing-bar", "inLanguage": "en"})} />
+  <script type="application/ld+json" set:html={JSON.stringify({"@context": "https://schema.org", "@type": "Article", "headline": "What Is an Ionizing Bar? How It Works & When to Use One", "description": "An ionizing bar (ion bar) emits positive and negative ions to neutralize static electricity on surfaces. How ionizing bars work, types, applications, and how to choose one.", "url": "https://www.dg-sdk.com/guides/what-is-an-ionizing-bar", "image": "https://www.dg-sdk.com/assets/img/guides/ionizing-bar-action.jpg", "datePublished": "2026-05-26", "dateModified": "2026-09-28", "author": {"@type": "Organization", "name": "Shidike", "url": "https://www.dg-sdk.com"}, "publisher": {"@type": "Organization", "name": "Shidike", "legalName": "Dongguan Shidike Intelligent Equipment Co., Ltd."}, "mainEntityOfPage": "https://www.dg-sdk.com/guides/what-is-an-ionizing-bar", "inLanguage": "en"})} />
 </Layout>

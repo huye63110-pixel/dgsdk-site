@@ -36,7 +36,7 @@ const description = "Step-by-step guide to operating an optical film dust remova
       legalName: 'Dongguan Shidike Intelligent Equipment Co., Ltd.'
     },
     datePublished: '2026-05-14',
-    dateModified: '2026-09-03',
+    dateModified: '2026-09-28',
     mainEntityOfPage: url
   })} />
 
@@ -95,7 +95,7 @@ const description = "Step-by-step guide to operating an optical film dust remova
           <h3>3. Materials & Consumables</h3>
           <ul>
             <li><strong>Film preparation:</strong> Stack optical films neatly on a dedicated anti-static tray. No bending, scratches, or overlapping. Labels clearly marked.</li>
-            <li><strong>Consumables ready:</strong> Compatible <strong>high-tack dust collection rolls</strong>, lint-free wiping cloths, anhydrous ethanol, anti-static tweezers.</li>
+            <li><strong>Consumables ready:</strong> Compatible <strong>high-tack dust collection rolls</strong>, lint-free wiping cloths, the cleaning solvent the manual specifies for the rollers fitted, anti-static tweezers.</li>
             <li><strong>Tools on hand:</strong> Calipers, timer, and cleanliness inspection tools — all in clean, standby condition.</li>
           </ul>
         </section>
@@ -114,18 +114,18 @@ const description = "Step-by-step guide to operating an optical film dust remova
               <tbody>
                 <tr>
                   <td>Conveyor Speed</td>
-                  <td>1–5 m/min</td>
-                  <td>Low speed for thin films; medium for thicker films to avoid stretching</td>
+                  <td>From the manual for the machine supplied</td>
+                  <td>Set within that machine&rsquo;s range, then confirmed on your own film: fast enough for throughput, slow enough that the film is not stretched or marked</td>
                 </tr>
                 <tr>
                   <td>Roller Pressure</td>
-                  <td>0.2–0.5 MPa</td>
-                  <td>Light, even contact — no pressure marks or wrinkles</td>
+                  <td>From the manual for the machine supplied</td>
+                  <td>Light, even contact with no pressure marks or wrinkles. The setting depends on the roller fitted and the film, so it is established on a sample rather than read off a general figure</td>
                 </tr>
                 <tr>
-                  <td>Static Elimination Voltage</td>
-                  <td>5–7 kV</td>
-                  <td>Balanced ion airflow, full static discharge across film surface</td>
+                  <td>Static Elimination</td>
+                  <td>Per the bar or blower fitted</td>
+                  <td>What matters is not the emitter voltage but the residual left on the film &mdash; a separate measurement, against the limit your own process sets</td>
                 </tr>
               </tbody>
             </table>
@@ -161,17 +161,17 @@ const description = "Step-by-step guide to operating an optical film dust remova
           <div class="step-num">Step 3</div>
           <h3>Roller Pressure & Gap Adjustment</h3>
           <p><strong>Action:</strong> Use the lift adjustment knob to set the upper and lower <strong>silicone tack roller</strong> gap and pressure to match the film thickness.</p>
-          <p><strong>What to check:</strong> For film thickness 0.05–0.5mm, set the roller gap 0.02–0.05mm smaller than film thickness. Pressure should be even with no marks.</p>
+          <p><strong>What to check:</strong> Set the gap from the manual for the machine supplied, against the measured thickness of your own film. Pressure should be even, with no marks and no wrinkling at the edges.</p>
           <div class="blog-quote">
-            <p>Industry data shows over 60% of film damage originates from incorrect roller pressure. Always test with a scrap film before running production.</p>
+            <p>Roller pressure is where film gets damaged, so prove the setting on scrap before it runs production. Check the film after the pass, not only the particle count.</p>
           </div>
         </div>
 
         <div class="step-block" id="step4">
           <div class="step-num">Step 4</div>
           <h3>Speed & Static Parameter Calibration</h3>
-          <p><strong>Action:</strong> Set conveyor speed to 1–3 m/min. Set static elimination voltage to 5–7 kV with balanced ion airflow covering the full film surface.</p>
-          <p><strong>What to check:</strong> Speed is stable with no fluctuation. Static eliminator is 5–10 cm from film surface, positioned at 45°. Ion coverage is even across the film width.</p>
+          <p><strong>Action:</strong> Set the conveyor speed from the manual for the machine supplied. Mount the static eliminator at the distance and orientation its own documentation gives, so the ion cloud covers the full film width.</p>
+          <p><strong>What to check:</strong> Speed is stable with no fluctuation, and the residual surface voltage after the bar is inside the limit your process sets &mdash; measured on the film, not inferred from the emitter voltage. Ion coverage is even across the width, including the edges.</p>
           <div class="blog-quote">
             <p>Too fast = insufficient cleaning. Too slow = reduced throughput. Residual static causes secondary dust attraction — always verify elimination is complete.</p>
           </div>
@@ -221,7 +221,7 @@ const description = "Step-by-step guide to operating an optical film dust remova
           <div class="step-num">Step 9</div>
           <h3>Shutdown & Maintenance</h3>
           <p><strong>Action:</strong> Power off the machine, remove waste materials, and clean the housing, tack rollers, and conveyor bed.</p>
-          <p><strong>What to check:</strong> Wipe tack rollers and work surfaces with lint-free cloth dampened with anhydrous ethanol. Remove all adhesive residue and dust. Replace filters on schedule.</p>
+          <p><strong>What to check:</strong> Clean the tack rollers only by the method the roller material allows &mdash; a solvent that suits one roller compound can swell or glaze another, so follow the manual for the rollers fitted rather than a general recipe. Work surfaces take a lint-free cloth. Remove adhesive residue and dust, and replace filters on the schedule in the manual.</p>
           <div class="blog-quote">
             <p>Daily shutdown cleaning is mandatory. Weekly deep maintenance extends machine life and ensures consistent long-term cleaning performance.</p>
           </div>
@@ -288,7 +288,7 @@ const description = "Step-by-step guide to operating an optical film dust remova
             <i class="fas fa-check-circle"></i>
             <div>
               <strong>Static Elimination</strong>
-              <p>Surface electrostatic potential ≤ ±100V measured by electrostatic meter. No visible dust attraction after cleaning.</p>
+              <p>Residual surface voltage inside the limit your own process sets, measured on the film with a static field meter after the cleaning pass &mdash; that limit comes from your parts and your downstream step, not from the machine. No visible dust attraction after cleaning.</p>
             </div>
           </li>
           <li>
