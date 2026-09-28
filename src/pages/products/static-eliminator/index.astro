@@ -12,7 +12,7 @@ const faqItems = [
   },
   {
     question: 'How does a static eliminator work?',
-    answer: 'A static eliminator applies high voltage to a row of emitter points, ionizing the surrounding air by corona discharge. Positive and negative ions drift toward the oppositely charged surface until its voltage falls toward zero. The process is self-limiting: once the surface reaches neutral, ion uptake stops. Shidike bars run a 6.5 kV DC pulse at 12 W and hold ion balance at ±50 V on the ST-G, the tightest in the range.'
+    answer: 'A static eliminator applies high voltage to a row of emitter points, ionizing the surrounding air by corona discharge. Positive and negative ions drift toward the oppositely charged surface until its voltage falls toward zero. The process is self-limiting: once the surface reaches neutral, ion uptake stops. Shidike bars are rated 6.5 kV pulse output at 12 W. How that pulse is applied differs by series — pulsed AC on the ST-G, pulsed DC on the ST-E and the ST-F — and ion balance is ±50 V on the ST-G, the tightest in the range.'
   },
   {
     question: 'What is an industrial static eliminator?',
@@ -168,7 +168,7 @@ const faqItems = [
                   <img src={`${item.img}.jpg`} alt={item.name} loading="lazy" />
                 </picture>
                 <div class="pcard-body">
-                  <span class="pcard-cat">{item.cat}</span>
+                  <span class="pcard-cat">{item.cat}{item.method ? ` · ${item.method}` : ''}</span>
                   <h3>{item.code}</h3>
                   <p class="pcard-name">{item.name}</p>
                   <ul class="pcard-specs">{item.specs.map(v => <li>{v}</li>)}</ul>
@@ -242,7 +242,7 @@ const faqItems = [
         <li>Ionizer-to-target distance and available mounting space</li>
         <li>Required PLC, alarm, or machine-control signals</li>
       </ul>
-      <p><a class="send-cta" href="/contact">Send your application details →</a></p>
+      <p><a class="send-cta" href="/contact?type=selection&amp;product=Industrial%20Static%20Control">Send your application details →</a></p>
 
       <h2>Common questions</h2>
       <div class="faq-list">
