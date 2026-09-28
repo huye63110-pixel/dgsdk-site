@@ -94,21 +94,21 @@ import Layout from '../../layouts/Layout.astro';
       </ul>
 
       <h2>Types of Ionizing Bars</h2>
-      <p>The three main types differ in power supply, ion balance method, and performance level.</p>
+      <p>The three groupings below differ in how the high voltage is applied and in what the bar does about its own condition. What residual any of them leaves is a property of your material and your line, measured there.</p>
 
       <h3>1. AC Ionizer Bars</h3>
       <p>
-        AC ion bars produce both ion polarities from each needle simultaneously. They are simple, reliable, and cost-effective. Ion balance can drift as needles contaminate unevenly. Residual charge: <strong>±10–50V</strong>. Best for: packaging lines, general conveyors, cost-sensitive applications.
+        AC ion bars produce both ion polarities from each needle, alternating at mains frequency. They are simple and cost-effective. Because both polarities come from the same needle, ion balance drifts as needles contaminate unevenly, and on material moving quickly past the bar the alternation can leave over- and under-neutralised bands. What residual that leaves on your material depends on your material and your line, and is measured there.
       </p>
 
-      <h3>2. DC Pulsed Static Eliminators</h3>
+      <h3>2. Pulsed Static Eliminators</h3>
       <p>
-        DC pulsed units alternate positive and negative pulses with separate needle rows for each polarity. This enables precise ion balance adjustment. Residual charge: <strong>±5–20V</strong>. Self-diagnostic feedback is standard on most models. Best for: display panels, optical film lamination, high-speed lines.
+        Pulsed units apply positive and negative high voltage as controlled pulses at an adjustable frequency, so the ion cloud can be matched to the line speed rather than to the mains. Shidike does this two ways: the ST-G is pulsed AC, alternating both polarities on a single emitter pin, while the ST-E and ST-F are pulsed DC, separating the polarities between pins or in time. Which one suits is a question of span and speed, not of industry.
       </p>
 
       <h3>3. Intelligent Anti-Static Bars</h3>
       <p>
-        Intelligent static eliminators — such as the <a href="/products/static-eliminator/st-g-series">DGSDK ST-G Series</a> — combine DC pulsed ionization with real-time self-diagnostic monitoring. Built-in sensors detect needle contamination and ion imbalance before yield loss occurs. Best for: display manufacturing, semiconductor lines, critical production environments.
+        Intelligent static eliminators — such as the <a href="/products/static-eliminator/st-g-series">DGSDK ST-G Series</a>, which the product data describes as pulsed AC — add monitoring to the discharge. The Shidike intelligent series detects abnormal discharge, raises an alarm and cuts the high voltage automatically, so a failed bar is visible rather than silent. Suited to lines where an unnoticed failure is expensive.
       </p>
 
       <h2>Ionizing Bar vs. Other Static Control Methods</h2>
@@ -153,7 +153,7 @@ import Layout from '../../layouts/Layout.astro';
         </table>
       </div>
       <p>
-        Ionizing bars provide linear coverage across conveyor widths and work on insulators — a key advantage over grounding methods which require a conductive path. For production lines where film, panels, or substrates move on conveyors, an ionizing bar is the standard static control solution.
+        Ionizing bars provide linear coverage across conveyor widths and work on insulators — a key advantage over grounding methods which require a conductive path. Where film, panels or substrates move past a fixed point on a conveyor, a bar fits that geometry. Where the charge sits on something stationary, a blower is the form that reaches it.
       </p>
 
       <h2>Where Are Ionizing Bars Used?</h2>
@@ -176,7 +176,7 @@ import Layout from '../../layouts/Layout.astro';
       <h2>How to Choose the Right Ion Bar</h2>
       <p>Five factors determine the correct static eliminator for a given application:</p>
       <ol>
-        <li><strong>Geometry and width</strong> — a bar suits a fixed line across moving material; the length is cut to the charged width. Shidike bars are made to order from 300&nbsp;mm to 3&nbsp;m rather than picked from catalogue sizes. Where the charge is on a stationary part, a stack or an operator&rsquo;s hands, a <a href="/products/static-eliminator/ionizing-air-blowers">blower</a> is the form that reaches it.</li>
+        <li><strong>Geometry and width</strong> — a bar suits a fixed line across moving material; the length is cut to the charged width. Shidike bars are made to order from 300&nbsp;mm to 3&nbsp;m rather than picked from catalogue sizes. Where the charge is on a stationary insulating part, a tray or a loading position, a <a href="/products/static-eliminator/ionizing-air-blowers">blower</a> is the form that reaches it. Ionization does not replace grounding people and conductive equipment &mdash; it is what reaches the insulators that cannot be grounded.</li>
         <li><strong>Dwell time</strong> — how long the material is actually in front of the ionizer, which is line speed and bar count together. Too short and no ion balance figure will save the result.</li>
         <li><strong>Distance and obstruction</strong> — the mounting distance you can really achieve, and whether rollers, guards or framework sit between the emitter and the surface. The 30–1000&nbsp;mm working range quoted for the bar series is a rating, not a promise of equal performance across it.</li>
         <li><strong>Airflow around the material</strong> — extraction, cooling fans and the web&rsquo;s own draught move the ion cloud. A bar that measures well on a bench can miss on the line for this reason alone.</li>
@@ -204,21 +204,21 @@ import Layout from '../../layouts/Layout.astro';
 
       <h2>DGSDK Ionizing Bar Products</h2>
       <p>
-        DGSDK manufactures ionization bars for display, PCB, optical film, and industrial applications. All models use DC pulsed or intelligent ionization with self-diagnostic capability. For a worked example of specifying one, see <a href="/blog/st-g-ionizing-bar-guide">how to specify, mount and verify the ST-G</a>.
+        DGSDK manufactures ionization bars for display, PCB, optical film, and industrial applications. The three bar series differ in discharge method — the ST-G is pulsed AC, the ST-E and ST-F pulsed DC — and all three detect abnormal discharge, raise an alarm and cut the high voltage automatically. For a worked example of specifying one, see <a href="/blog/st-g-ionizing-bar-guide">how to specify, mount and verify the ST-G</a>.
       </p>
 
       <div class="advantage-grid" style="margin:28px 0;">
         <div class="advantage-card blue">
           <h3><a href="/products/static-eliminator/st-g-series" style="color:inherit;text-decoration:none;">ST-G Series</a></h3>
-          <p>Intelligent static elimination rod with self-diagnostic monitoring. DC ±5kV, suitable for display panel, PCB and optical film manufacturing.</p>
+          <p>Pulsed AC on a single emitter pin, with abnormal-discharge alarm and automatic high-voltage cut-off. Ion balance ±50&nbsp;V, the tightest of the three series.</p>
         </div>
         <div class="advantage-card yellow">
           <h3><a href="/products/static-eliminator/st-e-series" style="color:inherit;text-decoration:none;">ST-E Series</a></h3>
-          <p>Compact inline ion bar for conveyor integration. Ideal for tight installation spaces in SMT and PCB production lines.</p>
+          <p>High-frequency pulsed DC with fixed-polarity pins arranged alternately, which is why it is the series positioned for a wide or long span. Ion balance ±80&nbsp;V.</p>
         </div>
         <div class="advantage-card green">
           <h3><a href="/products/static-eliminator/st-f-series" style="color:inherit;text-decoration:none;">ST-F Series</a></h3>
-          <p>Long-range static eliminator for applications requiring extended working distance up to 400mm from the substrate.</p>
+          <p>Pulsed DC with the Hibweer L.C.C. system, rated 2.5× a conventional bar for neutralizing speed. Ion balance ±100&nbsp;V. Like the other two series it is rated for a 30–1000&nbsp;mm working range — a rating for the range, not the same result throughout it.</p>
         </div>
       </div>
 
@@ -252,7 +252,7 @@ import Layout from '../../layouts/Layout.astro';
         </div>
         <div class="faq-item">
           <h3 class="faq-question">Can one ion rod cover the full width of my production line?</h3>
-          <p class="faq-answer">Standard ion rods reach up to 1,500mm and link end-to-end for wider applications. DGSDK produces static eliminators in custom lengths. <a href="/contact">Contact us</a> with your substrate width and line speed to confirm the right configuration.</p>
+          <p class="faq-answer">Shidike bars are made to order from 300 mm to 3 m, cut to the charged width of your material rather than picked from catalogue sizes. <a href="/contact">Contact us</a> with your substrate width and line speed to confirm the right configuration.</p>
         </div>
         <div class="faq-item">
           <h3 class="faq-question">Is an ionizer bar the same as an ionizing bar?</h3>
@@ -393,7 +393,7 @@ import Layout from '../../layouts/Layout.astro';
         "name": "Can one ion rod cover the full width of my production line?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Standard ion rods reach up to 1,500mm and link end-to-end for wider applications. DGSDK produces static eliminators in custom lengths. Contact us with your substrate width and line speed to confirm the right configuration."
+          "text": "Shidike bars are made to order from 300 mm to 3 m, cut to the charged width of your material rather than picked from catalogue sizes. Contact us with your substrate width and line speed to confirm the right configuration."
         }
       },
       {

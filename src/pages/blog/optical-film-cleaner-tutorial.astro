@@ -76,7 +76,7 @@ const description = "Step-by-step guide to operating an optical film dust remova
         <section id="env">
           <h3>1. Environment Setup</h3>
           <ul>
-            <li><strong>Cleanroom conditions:</strong> Operate in a Class 1000 (ISO 6) or better cleanroom. Maintain temperature at 22±3°C and relative humidity between 45%–65%. No dust, oil vapor, or odor.</li>
+            <li><strong>Environment:</strong> Work in the cleanliness class your own film and downstream process require &mdash; a film going into a display lamination step and one going into general converting do not need the same room. Temperature and humidity matter because they change how the film holds charge and how the roller behaves, so set them from the manual for the machine and rollers supplied rather than from a general figure. No dust, oil vapour or odour.</li>
             <li><strong>Static protection:</strong> Wear cleanroom garments, lint-free gloves, and an anti-static wrist strap. Verify the machine chassis is properly grounded.</li>
             <li><strong>Safety check:</strong> Clear the work area of obstructions and flammables. Confirm the emergency stop button functions and all safety guards are in place.</li>
           </ul>
@@ -140,7 +140,7 @@ const description = "Step-by-step guide to operating an optical film dust remova
         <div class="step-block" id="step1">
           <div class="step-num">Step 1</div>
           <h3>Startup & No-Load Test</h3>
-          <p><strong>Action:</strong> Power on the machine, activate the conveyor, static elimination, and tack roller systems. Run without film for 3–5 minutes.</p>
+          <p><strong>Action:</strong> Power on the machine, activate the conveyor, static elimination, and tack roller systems. Run without film for the warm-up period given in the manual for the machine supplied, and watch that the conveyor, the rollers and the eliminator all come up before anything is loaded.</p>
           <p><strong>What to check:</strong> Stable conveyor direction, synchronized roller rotation, static elimination indicator lit, no abnormal vibration or noise.</p>
           <div class="blog-quote">
             <p>Always complete the full no-load test before loading film. This prevents jams and film damage caused by undetected issues.</p>
@@ -173,7 +173,7 @@ const description = "Step-by-step guide to operating an optical film dust remova
           <p><strong>Action:</strong> Set the conveyor speed from the manual for the machine supplied. Mount the static eliminator at the distance and orientation its own documentation gives, so the ion cloud covers the full film width.</p>
           <p><strong>What to check:</strong> Speed is stable with no fluctuation, and the residual surface voltage after the bar is inside the limit your process sets &mdash; measured on the film, not inferred from the emitter voltage. Ion coverage is even across the width, including the edges.</p>
           <div class="blog-quote">
-            <p>Too fast = insufficient cleaning. Too slow = reduced throughput. Residual static causes secondary dust attraction — always verify elimination is complete.</p>
+            <p>Too fast = insufficient cleaning. Too slow = reduced throughput. Residual static pulls dust back onto a cleaned surface, so measure the residual on the film after the bar and check it against the limit your process sets &mdash; the target is inside that limit, not zero.</p>
           </div>
         </div>
 
@@ -200,7 +200,7 @@ const description = "Step-by-step guide to operating an optical film dust remova
         <div class="step-block" id="step7">
           <div class="step-num">Step 7</div>
           <h3>Mid-Run Quality Inspection</h3>
-          <p><strong>Action:</strong> Every 20–30 sheets, pull one film and inspect under bright light or a cleanliness tester.</p>
+          <p><strong>Action:</strong> Pull a film at intervals and inspect it under bright light or with a cleanliness tester. How often depends on what a missed sheet costs you and how quickly the rollers load with your contamination &mdash; set the interval from that, then tighten or relax it on what the checks actually show.</p>
           <p><strong>What to check:</strong> No dust, fiber, adhesive residue, or scratches on either surface. Cleanliness meets spec.</p>
           <div class="blog-quote">
             <p>Mid-run inspection catches problems early and prevents batch failures. This step alone significantly improves overall yield.</p>
@@ -223,7 +223,7 @@ const description = "Step-by-step guide to operating an optical film dust remova
           <p><strong>Action:</strong> Power off the machine, remove waste materials, and clean the housing, tack rollers, and conveyor bed.</p>
           <p><strong>What to check:</strong> Clean the tack rollers only by the method the roller material allows &mdash; a solvent that suits one roller compound can swell or glaze another, so follow the manual for the rollers fitted rather than a general recipe. Work surfaces take a lint-free cloth. Remove adhesive residue and dust, and replace filters on the schedule in the manual.</p>
           <div class="blog-quote">
-            <p>Daily shutdown cleaning is mandatory. Weekly deep maintenance extends machine life and ensures consistent long-term cleaning performance.</p>
+            <p>Shutdown cleaning is what stops today&rsquo;s contamination becoming tomorrow&rsquo;s defect. Follow the intervals in the manual for the machine supplied and scale them to how hard the machine is actually run &mdash; a single shift on clean film and continuous running on a dusty line do not need the same schedule.</p>
           </div>
         </div>
       </section>
@@ -246,7 +246,7 @@ const description = "Step-by-step guide to operating an optical film dust remova
           <div class="trouble-item">
             <h4>Problem 3: Roller Adhesive Contaminating Film</h4>
             <p><strong>Cause:</strong> Low-quality tack rollers, excessive ambient temperature, mismatched collection paper tack level, or infrequent cleaning.</p>
-            <p><strong>Fix:</strong> Use quality silicone tack rollers. Control room temperature. Match paper tack to roller spec. Clean rollers daily.</p>
+            <p><strong>Fix:</strong> Use silicone tack rollers suited to the film. Control room temperature. Match paper tack to the roller specification. Clean the rollers on the interval the manual gives, by the method the roller material allows, and bring it forward if they load faster than that on your material.</p>
           </div>
           <div class="trouble-item">
             <h4>Problem 4: Film Deviation or Jamming</h4>
@@ -256,7 +256,7 @@ const description = "Step-by-step guide to operating an optical film dust remova
           <div class="trouble-item">
             <h4>Problem 5: Static Elimination Failure & Re-Attraction</h4>
             <p><strong>Cause:</strong> Faulty static bar, insufficient voltage, incorrect distance, or humidity out of range.</p>
-            <p><strong>Fix:</strong> Service the static eliminator. Adjust voltage and distance. Control humidity to 45%–65%. Verify grounding.</p>
+            <p><strong>Fix:</strong> Service the static eliminator &mdash; contaminated emitter pins are the usual cause. Check the mounting distance against the eliminator&rsquo;s own documentation, and measure the residual on the film rather than adjusting by eye. Humidity changes how the film holds charge, so hold it where your own process specifies. Verify grounding.</p>
           </div>
           <div class="trouble-item">
             <h4>Problem 6: Collection Paper Tearing, Curling, or Failing</h4>
