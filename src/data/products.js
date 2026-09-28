@@ -16,21 +16,21 @@ const staticEliminator = (() => {
   const canonical = base + '/products/static-eliminator';
 const barProducts = [
   {
-    name: 'ST-G Intelligent Ionizing Bar', slug: 'st-g-series', cat: 'Ionizing Bars', code: 'ST-G',
+    name: 'ST-G Intelligent Ionizing Bar', slug: 'st-g-series', cat: 'Ionizing Bars', code: 'ST-G', method: 'Pulsed AC',
     url: canonical + '/st-g-series', image: base + '/assets/img/static-eliminator/st-g.jpg',
     img: '/assets/img/static-eliminator/st-g',
     desc: 'The all-round bar, with the tightest ion balance of the three bar series at ±50 V (ST-E ±80 V, ST-F ±100 V). Pulsed AC applies alternating positive and negative high voltage to a single emitter pin, which produces more ions than conventional AC and avoids the uneven neutralization AC bars are known for. Pulse frequency is adjustable, so the same bar handles a fast-moving web or a still workspace. Rated 6.5 kV pulse output, generated inside the bar from a DC 24 V supply at 12 W.',
     specs: ['Ion balance ±50 V', '6.5 kV pulse output', '30–1000 mm', 'DC 24 V · 12 W']
   },
   {
-    name: 'ST-E Intelligent Ionizing Bar', slug: 'st-e-series', cat: 'Ionizing Bars', code: 'ST-E',
+    name: 'ST-E Intelligent Ionizing Bar', slug: 'st-e-series', cat: 'Ionizing Bars', code: 'ST-E', method: 'Pulsed DC',
     url: canonical + '/st-e-series', image: base + '/assets/img/static-eliminator/st-e.jpg',
     img: '/assets/img/static-eliminator/st-e',
     desc: 'High-frequency pulsed DC with fixed-polarity emitter pins arranged alternately along the bar — each pin holds one polarity instead of alternating, which is the design reason this is the bar positioned for wide or long spans. The 150 % ion-generation figure is rated for the intelligent bar series against a conventional design, not for the ST-E alone, and is published without a comparison model or test conditions. Built for large-area, high-speed lines. Ion balance ±80 V, 6.5 kV DC pulse, 12 W.',
     specs: ['Ion balance ±80 V', '6.5 kV DC pulse', '30–1000 mm', 'Alternating fixed-polarity pins']
   },
   {
-    name: 'ST-F Intelligent Ionizing Bar', slug: 'st-f-series', cat: 'Ionizing Bars', code: 'ST-F',
+    name: 'ST-F Intelligent Ionizing Bar', slug: 'st-f-series', cat: 'Ionizing Bars', code: 'ST-F', method: 'Pulsed DC',
     url: canonical + '/st-f-series', image: base + '/assets/img/static-eliminator/st-f.jpg',
     img: '/assets/img/static-eliminator/st-f',
     desc: 'The speed model. Pulsed DC with the Hibweer L.C.C. system, which stops generating negative ions while it makes positive ones and vice versa — giving very strong balance control and a rated 2.5 times the neutralizing speed of a conventional bar. Choose it when the material moves too fast for a standard bar to keep up. Ion balance ±100 V, 6.5 kV DC pulse.',
@@ -138,13 +138,13 @@ const sheetProducts = [
 ];
 const webProducts = [
   {
-    name: 'Large-Size Optical Film Cleaner', slug: 'optical-film-cleaner', cat: 'Roll-to-Roll', code: 'STFK',
+    name: 'Large-Size Optical Film Cleaner', slug: 'optical-film-cleaner', cat: 'Optical Film', code: 'STFK',
     url: canonical + '/optical-film-cleaner', image: base + '/assets/img/cleaning-machine/optical.jpg',
     img: '/assets/img/cleaning-machine/optical',
     specs: ['0.065–0.68 mm', '99.9 % rated removal', '0–40 m/min', 'Static <100 V']
   },
   {
-    name: 'Roll-to-Roll Cleaner', slug: 'roll-chip-cleaner', cat: 'Roll-to-Roll', code: 'Coil Universal',
+    name: 'Roll-to-Roll Cleaner', slug: 'roll-chip-cleaner', cat: 'Roll & Sheet', code: 'Coil Universal',
     url: canonical + '/roll-chip-cleaner', image: base + '/assets/img/cleaning-machine/roll-chip-cleaner.jpg',
     img: '/assets/img/cleaning-machine/roll-chip-cleaner',
     specs: ['0.05–2 mm', 'Surface static <50 V', '0–20 m/min', 'Roll and sheet']
