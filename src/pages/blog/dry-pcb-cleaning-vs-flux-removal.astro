@@ -1,0 +1,230 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const base = 'https://www.dg-sdk.com';
+const url = base + '/blog/dry-pcb-cleaning-vs-flux-removal';
+const title = 'Dry PCB Cleaning and Flux Removal: Match the Process to the Contamination';
+const seoTitle = 'Dry PCB Cleaning vs Flux Removal';
+const description = 'Choose PCB cleaning by process stage and contamination: dry particles before solder paste printing, flux residues after assembly, and separate verification methods.';
+const faqItems = [
+  {
+    q: 'Can a dry PCB cleaner remove flux residues?',
+    a: 'The dry contact-cleaning process described here targets loose particles on an unpopulated board before solder paste printing. It is not a validated flux-removal or ionic-cleanliness process. Flux residues need a separate method matched to the flux, assembly materials and customer requirements.'
+  },
+  {
+    q: 'Where should dry PCB cleaning go in an SMT line?',
+    a: 'For the pre-print application discussed here, evaluate cleaning after particle-generating handling or marking and before the solder paste printer. Check the transfer path to the printer for renewed contamination. Confirm board support, contact compatibility and line interfaces for the actual installation.'
+  },
+  {
+    q: 'Does no-clean flux always need cleaning?',
+    a: 'No. Whether residues may remain depends on the specific flux, its processing conditions and the assembly requirements. Check the flux supplier guidance and any reliability or conformal-coating requirements. If cleaning is necessary, validate the removal method instead of assuming that wiping away visible residue is sufficient.'
+  }
+];
+---
+
+<Layout title={seoTitle + ' | Shidike'} description={description} canonical={url}
+  image="/assets/img/cleaning-machine/smt-cleaner.jpg">
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: base },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: base + '/blog' },
+      { '@type': 'ListItem', position: 3, name: title, item: url }
+    ]
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: title,
+    description,
+    image: base + '/assets/img/cleaning-machine/smt-cleaner.jpg',
+    author: { '@type': 'Organization', name: 'Shidike', url: base },
+    publisher: { '@type': 'Organization', name: 'Shidike', legalName: 'Dongguan Shidike Intelligent Equipment Co., Ltd.', url: base },
+    datePublished: '2026-09-30',
+    dateModified: '2026-09-30',
+    mainEntityOfPage: url
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map(item => ({
+      '@type': 'Question', name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a }
+    }))
+  })} />
+
+  <article class="post">
+    <header class="post-head">
+      <div class="container post-col">
+        <div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog">Blog</a><span>/</span>Dry PCB Cleaning</div>
+        <div class="post-tags"><span class="blog-tag">PCB Cleaning</span><span class="blog-tag">SMT</span><span class="blog-tag">Process Selection</span></div>
+        <h1>{title}</h1>
+        <p class="post-lead">Loose particles before solder paste printing and flux residues after soldering are different cleaning problems. Start with the board's production stage, the contamination and the evidence you need at acceptance.</p>
+        <div class="post-info"><span>September 30, 2026</span><span>Shidike Technical Team</span><span>8 min read</span></div>
+      </div>
+    </header>
+
+    <div class="container post-col post-body">
+      <picture class="post-figure">
+        <source srcset="/assets/img/cleaning-machine/smt-cleaner.webp" type="image/webp" />
+        <img src="/assets/img/cleaning-machine/smt-cleaner.jpg" alt="Shidike SMT inline dry PCB cleaning machine" width="849" height="1132" loading="lazy" decoding="async" />
+      </picture>
+
+      <section id="different-problems">
+        <h2>What does “PCB cleaning” need to remove?</h2>
+        <p><strong>Dry PCB cleaning before solder paste printing targets loose surface particles. Post-assembly defluxing targets flux residues left by soldering.</strong> A clean-looking surface is not, by itself, evidence of acceptable ionic cleanliness. These tasks can require different equipment and different acceptance checks.</p>
+        <p>The word “inline” does not identify the cleaning mechanism. <a href="https://www.teknek.com/products/board-sheet-cleaners/smt-ii/">Teknek's SMT II description</a> places particle removal before paste printing. <a href="https://www.zestron.com/usa/en/applications/smt/pcb-defluxing-cleaning">ZESTRON's defluxing overview</a> describes assembly-cleaning applications, including processes with washing, rinsing and drying. Both can be part of a production line, but they address different contamination.</p>
+        <div class="blog-quote"><p><strong>First question for a supplier:</strong> “What is on the board, and which manufacturing step happens immediately before and after cleaning?” This is more useful than asking for a generic PCB cleaner.</p></div>
+      </section>
+
+      <section id="process-selection">
+        <h2>Match the board stage to the cleaning task</h2>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="PCB cleaning process selection table">
+          <table>
+            <thead><tr><th scope="col">Board and contamination</th><th scope="col">Process to evaluate</th><th scope="col">What must be verified</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Unpopulated board; loose dust, fibres or marking debris</th><td>Dry particle removal before paste printing, with a contact method only where the board permits it.</td><td>Particle condition before and after cleaning; surface marks, support and transfer to the printer.</td></tr>
+              <tr><th scope="row">Unpopulated board; oily film, fingerprints or adherent residue</th><td>Identify the residue and qualify an appropriate removal process.</td><td>Removal effectiveness and compatibility with the actual board finish. Do not assume particle pickup removes a film.</td></tr>
+              <tr><th scope="row">Board already printed with solder paste</th><td>A separately approved misprint or rework process if cleaning is needed.</td><td>Paste removal and board condition under that process. The pre-print contact-roller route described here does not apply.</td></tr>
+              <tr><th scope="row">Populated or soldered assembly; flux residue</th><td>Review whether residues may remain; if required, qualify defluxing for the assembly.</td><td>Residue removal, access beneath components, material compatibility and the specified cleanliness requirements.</td></tr>
+              <tr><th scope="row">Board awaiting coating, or already coated</th><td>Define the coating, cure state, cleaning objective and permitted contact or chemistry first.</td><td>Coating adhesion requirements or compatibility with the existing coating, as applicable.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>A single board can carry more than one type of contamination. Removing visible particles does not establish that oily or ionic residues have also been removed. Where both are relevant, define separate checks before choosing the process.</p>
+      </section>
+
+      <section id="pre-print-cleaning">
+        <h2>Where dry PCB cleaning fits before solder paste printing</h2>
+        <p>For a pre-print trial, map the board path from unpacking or loading through any marking and handling steps to the printer. Identify where particles appear, then evaluate cleaning after the relevant source and before printing. Also inspect the short transfer after cleaning: guides, conveyor contact and handling can introduce contamination again.</p>
+        <p>The <a href="/products/cleaning-machine/smt-cleaner">Shidike SMT inline cleaner</a> uses a dry contact-cleaning approach for loose particles on bare boards. Review the surfaces that the rollers will touch, board support, thickness and warp with the supplier. A board that fits the conveyor is not automatically suitable for roller contact.</p>
+        <p>Keep the application boundary clear: this is a <strong>before-paste-printing</strong> discussion. Fresh solder paste must not be treated as another dusty surface. Populated boards also need a separate review of component height, underside clearance and contact risks. See our <a href="/guides/what-is-web-cleaning#validation">cleaning-trial guide</a> for the broader principle of matching particle-removal methods to the material.</p>
+      </section>
+
+      <section id="no-clean-flux">
+        <h2>“No-clean” flux is a process decision, not a visual check</h2>
+        <p>Do not turn the term “no-clean” into a universal rule either for or against cleaning. <a href="https://www.indium.com/blog/no-clean-flux/">Indium's explanation of no-clean flux</a> describes residues intended to remain under suitable processing conditions, and cautions that partial removal can expose active material previously contained within the residue.</p>
+        <p>Check the exact flux or solder-paste documentation, the soldering process and the customer's assembly requirements. If a conformal coating will follow, include its preparation requirements in that review. <a href="https://www.microcare.com/en-US/Resources/Resource-Center/Tech-Articles/Why-Clean-a-No-Clean-Flux">MicroCare discusses residue-related coating adhesion problems</a> and the need to match a cleaning agent to both the contamination and the assembly materials.</p>
+        <p>That does not establish one solvent, temperature or cycle for every PCB. If removal is required, qualify the complete process on representative assemblies. Wiping away what is easy to see is not evidence that residue beneath components, or chemical contamination elsewhere, meets the requirement.</p>
+      </section>
+
+      <section id="verification">
+        <h2>Use separate checks for particles, surface condition and residues</h2>
+        <div class="step-block">
+          <div class="step-num">Check 1</div><h3>Particles and the inspection method</h3>
+          <p>Compare agreed areas before and after cleaning using the same lighting, magnification and recording method. Record board identification and the location of defects. Define what counts as a particle and what result is acceptable before the trial; a casual photograph alone is a weak basis for comparing runs.</p>
+        </div>
+        <div class="step-block">
+          <div class="step-num">Check 2</div><h3>The board surface and handling path</h3>
+          <p>Inspect for marks, scratches, coating changes and edge damage separately from particle removal. Include representative finishes and the board conditions the line will actually encounter. Check the surface again at the downstream process entry, not only at the cleaner exit.</p>
+        </div>
+        <div class="step-block">
+          <div class="step-num">Check 3</div><h3>Static control, where relevant</h3>
+          <p>If the trial includes ionization, record the material measurement location, instrument, geometry and operating conditions separately. An ionizer's published ion-balance value is not a measured residual voltage on your PCB and is not a cleanliness result. Set the relevant acceptance criterion for the process rather than copying a voltage from a product brochure.</p>
+        </div>
+        <div class="step-block">
+          <div class="step-num">Check 4</div><h3>Chemical and ionic cleanliness</h3>
+          <p>Where the assembly specification requires residue or ionic-contamination verification, use the specified method and qualified support. <a href="https://kyzen.com/ask-dr-adam/what-is-ionic-contamination/">KYZEN's ionic-contamination overview</a> explains that contamination can originate in board fabrication, assembly materials and handling, and discusses dedicated analysis such as ion chromatography. A particle count or a static measurement cannot substitute for that assessment.</p>
+        </div>
+      </section>
+
+      <section id="trial-record">
+        <h2>Prepare a useful PCB cleaning trial brief</h2>
+        <p>Before requesting a machine configuration, prepare a short record that the production engineer, quality team and supplier can all review:</p>
+        <ol>
+          <li><strong>Board state:</strong> dimensions, thickness, warp, surface finish, coating and whether paste or components are present.</li>
+          <li><strong>Contamination:</strong> observed material, suspected source, affected side and locations, with representative samples or images.</li>
+          <li><strong>Process position:</strong> the preceding and following operations, allowed contact areas and the transfer path after cleaning.</li>
+          <li><strong>Line integration:</strong> conveyor height and direction, edge support, required cycle time and the actual upstream/downstream interface requirements.</li>
+          <li><strong>Acceptance:</strong> separate criteria and methods for particles, surface condition, static and chemical residues, marking each as applicable or not applicable.</li>
+          <li><strong>Trial record:</strong> sample IDs, machine configuration, consumable condition, operating settings and results for each agreed check.</li>
+        </ol>
+        <p>This brief helps distinguish a particle-cleaning equipment enquiry from a defluxing or rework requirement. It also makes a failed trial useful: you can identify which requirement was missed instead of treating every result as simply “clean” or “dirty”.</p>
+      </section>
+
+      <section id="faq">
+        <h2>Frequently asked questions</h2>
+        <div class="faq-list">
+          {faqItems.map(item => <details class="faq-item"><summary>{item.q}</summary><p>{item.a}</p></details>)}
+        </div>
+      </section>
+
+      <div class="post-cta">
+        <h2>Planning dry PCB cleaning before your paste printer?</h2>
+        <p>Send the board details, contamination examples and line position to our team. We can review whether a dry contact-cleaning trial fits the application and which information is needed for a configuration proposal.</p>
+        <p><a class="send-cta" href="/products/cleaning-machine/smt-cleaner">View the SMT Inline Cleaner &rarr;</a><a class="send-alt" href="/contact">Discuss Your Application &rarr;</a></p>
+      </div>
+    </div>
+  </article>
+  <style>
+    .post-col { max-width: 780px; }
+    .post-head { background: #f7f8fa; padding: 48px 0 34px; border-bottom: 1px solid var(--hairline); }
+    .post-head .breadcrumb { font-size: 13px; color: #7d8d97; margin-bottom: 18px; }
+    .post-head .breadcrumb a { color: var(--brand-deep); text-decoration: none; }
+    .post-head .breadcrumb span { margin: 0 8px; }
+    .post-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .blog-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      background: #eef4f8; color: #4a6373; padding: 4px 9px; border-radius: 999px;
+    }
+    .post-head h1 {
+      font-size: clamp(1.7rem, 3.4vw, 2.5rem); line-height: 1.2; font-weight: 800;
+      letter-spacing: -.02em; color: var(--navy); margin: 0 0 14px;
+    }
+    .post-lead { font-size: 1.05rem; line-height: 1.75; color: #46545f; margin: 0 0 18px; }
+    .post-info { display: flex; flex-wrap: wrap; gap: 16px; font-size: 12.5px; color: #8a99a4; }
+
+    .post-body { padding: 34px 0 70px; }
+    .post-figure { display: block; margin: 0 0 30px; }
+    .post-figure img {
+      display: block; width: 100%; height: auto; border: 1px solid var(--hairline); border-radius: 8px;
+    }
+    .post-body h2 {
+      font-size: 1.42rem; font-weight: 700; letter-spacing: -.01em; color: var(--navy);
+      margin: 34px 0 12px;
+    }
+    .post-body p { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 15px; }
+    .post-body a { color: var(--brand-deep); }
+    .post-body h3 {
+      font-size: 1.12rem; font-weight: 700; color: var(--navy); margin: 26px 0 10px;
+    }
+    .post-body ul, .post-body ol { margin: 0 0 15px; padding-left: 22px; }
+    .post-body li { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 7px; }
+    .post-body blockquote, .post-body .blog-quote {
+      margin: 0 0 18px; padding: 13px 16px; background: #f2f6f9;
+      border-left: 3px solid var(--brand-deep); border-radius: 0 8px 8px 0;
+    }
+    .post-body .blog-quote p:last-child { margin-bottom: 0; }
+    .post-body .step-block { margin: 0 0 22px; }
+    .post-body .step-num {
+      display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .06em;
+      text-transform: uppercase; background: var(--navy); color: #fff;
+      padding: 4px 10px; border-radius: 999px; margin-bottom: 8px;
+    }
+    .formula {
+      font-size: 1.2rem !important; font-weight: 700; text-align: center; color: var(--navy) !important;
+      background: #f2f6f9; border: 1px solid var(--hairline); border-radius: 8px; padding: 14px;
+    }
+
+    .table-wrap { overflow-x: auto; margin: 0 0 20px; }
+    .post-body table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+    .post-body th, .post-body td {
+      text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--hairline); vertical-align: top;
+    }
+    .post-body thead th { background: #f2f6f9; font-weight: 700; color: var(--navy); }
+    .post-body tbody th { width: 22%; font-weight: 700; color: var(--navy); background: #fafbfc; }
+
+    .faq-list { display: flex; flex-direction: column; margin: 6px 0 0; border-top: 1px solid var(--hairline); }
+    .faq-item { padding: 15px 4px; border-bottom: 1px solid var(--hairline); }
+    .faq-item summary { cursor: pointer; font-weight: 700; color: var(--navy); font-size: 15.5px; }
+    .faq-item p { margin: 10px 0 0; }
+
+    .post-cta {
+      margin-top: 40px; padding: 26px 26px 22px; background: #f7f8fa;
+      border: 1px solid var(--hairline); border-radius: 10px;
+    }
+    .post-cta h2 { margin-top: 0; font-size: 1.25rem; }
+    .send-cta, .send-alt { display: inline-block; font-weight: 700; margin-right: 22px; }
+  </style>
+</Layout>

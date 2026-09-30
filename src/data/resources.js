@@ -10,6 +10,17 @@
 // reword it here too.
 export const posts = [
   {
+    slug: 'dry-pcb-cleaning-vs-flux-removal',
+    category: 'Surface Cleaning',
+    title: 'Dry PCB Cleaning and Flux Removal: Match the Process to the Contamination',
+    excerpt: 'A process-stage decision table for dry particles before paste printing, flux residues after assembly, and the separate checks each cleaning task needs.',
+    date: 'September 30, 2026',
+    datePublished: '2026-09-30',
+    tags: ['PCB Cleaning', 'SMT', 'Process Selection'],
+    image: '/assets/img/cleaning-machine/smt-cleaner',
+    readTime: '8 min read',
+  },
+  {
     slug: 'st-g-ionizing-bar-guide',
     category: 'Static Control',
     title: 'The ST-G Ionizing Bar: How to Specify, Mount and Verify an Anti Static Bar',

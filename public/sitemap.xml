@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <!-- ===== CORE PAGES ===== -->
-  <url><loc>https://www.dg-sdk.com/</loc><lastmod>2026-09-28</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.dg-sdk.com/</loc><lastmod>2026-09-30</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://www.dg-sdk.com/about</loc><lastmod>2026-09-17</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.dg-sdk.com/applications</loc><lastmod>2026-09-27</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.dg-sdk.com/contact</loc><lastmod>2026-09-27</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
@@ -34,6 +34,12 @@
   </url>
 
   <!-- ===== BLOG (EN) ===== -->
+  <url>
+    <loc>https://www.dg-sdk.com/blog/dry-pcb-cleaning-vs-flux-removal</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
   <url><loc>https://www.dg-sdk.com/blog</loc><lastmod>2026-09-17</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url>
     <loc>https://www.dg-sdk.com/blog/st-g-ionizing-bar-guide</loc>
