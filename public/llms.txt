@@ -25,7 +25,7 @@ moving-material processes.
 Second product line. Every machine is built to the customer's material; there is no
 standard model.
 
-- [Web Cleaning Systems](https://www.dg-sdk.com/products/cleaning-machine): Category overview.
+- [Dry Surface Cleaning Machines](https://www.dg-sdk.com/products/cleaning-machine): Category overview, for PCB, FPC, sheet and film.
 - [Contact Cleaning Machine](https://www.dg-sdk.com/products/cleaning-machine/contact-cleaning-machine): Elastomer roller lifts particles onto an adhesive paper roll. 50–1340 mm width, 0.05–3 mm material, up to 70 m/min, 99.9% rated removal (published without a particle size, material or counting method). Three belt types (elastic as standard, using Nitta and Forbo Siegling; roller; round) and three roller materials (liquid silicone, solid silicone, rubber).
 - [Brush and Vacuum Cleaning Machine](https://www.dg-sdk.com/products/cleaning-machine/non-contact-cleaning-machine) (also searched as "non-contact cleaning machine"): Fibre brushes plus 2200 m³/h vacuum extraction, no adhesive transfer on the working face. The brushes do touch the material, so this is not a non-contact process. STMT750, 750 mm width, static held under 100 V.
 
