@@ -11,6 +11,8 @@
     "check-search": "node scripts/sync-search.js --check",
     "sync-sitemap": "node scripts/sync-sitemap.js",
     "check-sitemap": "node scripts/sync-sitemap.js --check",
+    "check-sitemap-history": "node scripts/sync-sitemap.js --check --require-full-history",
+    "test-sitemap": "node --test scripts/sync-sitemap.test.js",
     "minify-css": "node scripts/minify-css.js"
   },
   "dependencies": {
