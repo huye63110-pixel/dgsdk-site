@@ -43,6 +43,7 @@ backlight panel, LCM module and roll material.
 - [ESD Control Products](https://www.dg-sdk.com/guides/esd-control-products): Buyer's guide.
 - [What Is Web Cleaning](https://www.dg-sdk.com/guides/what-is-web-cleaning): Contact against non-contact dry particle removal, and what a cleaning trial has to record.
 - [Technical Blog](https://www.dg-sdk.com/blog): Application guides for lithium battery, photovoltaic and optical film production.
+- [Comparing Ionizer Datasheets](https://www.dg-sdk.com/blog/comparing-ionizer-datasheets): Decay time and ion balance test conditions, measurement geometry, airflow and a blank comparison worksheet; distinguish charged-plate results from application measurements.
 - [Dry PCB Cleaning and Flux Removal](https://www.dg-sdk.com/blog/dry-pcb-cleaning-vs-flux-removal): Match pre-print particle removal and post-assembly residue cleaning to the board stage, with a process-selection table and separate verification checks.
 
 ## Company

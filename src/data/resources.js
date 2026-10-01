@@ -10,6 +10,17 @@
 // reword it here too.
 export const posts = [
   {
+    slug: 'comparing-ionizer-datasheets',
+    category: 'Static Control',
+    title: 'Comparing Ionizer Datasheets: Which Test Conditions Must Match?',
+    excerpt: 'Compare decay time and ion balance using endpoints, polarity, test geometry and operating conditions, with a blank supplier comparison worksheet.',
+    date: 'October 1, 2026',
+    datePublished: '2026-10-01',
+    tags: ['Static Control', 'Ionizer Testing', 'Selection Guide'],
+    image: '/assets/img/static-eliminator/st-g',
+    readTime: '8 min read',
+  },
+  {
     slug: 'dry-pcb-cleaning-vs-flux-removal',
     category: 'Surface Cleaning',
     title: 'Dry PCB Cleaning and Flux Removal: Match the Process to the Contamination',

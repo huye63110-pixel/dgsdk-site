@@ -1,0 +1,219 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const base = 'https://www.dg-sdk.com';
+const url = base + '/blog/comparing-ionizer-datasheets';
+const title = 'Comparing Ionizer Datasheets: Which Test Conditions Must Match?';
+const seoTitle = 'Compare Ionizer Specs: Decay Time & Ion Balance';
+const description = 'Compare ionizer decay time and ion balance using test endpoints, polarity, distance and airflow. Includes a blank worksheet for reviewing supplier datasheets.';
+const faqItems = [
+  {
+    q: 'Can I compare two ionizers using decay time alone?',
+    a: 'Only after checking what each time measures: starting and ending voltage, polarity, test target, measurement position and operating conditions. A shorter time from a different setup does not establish better performance for your application. Review offset voltage separately and verify the selected configuration on the actual process.'
+  },
+  {
+    q: 'Is ion balance the residual voltage on my film or PCB?',
+    a: 'No. A charged-plate ion-balance or offset-voltage result describes the test plate under the reported conditions. It cannot be substituted for a measurement on your material. The application needs its own measurement position, instrument method and acceptance criterion.'
+  },
+  {
+    q: 'What should I request when a datasheet omits test conditions?',
+    a: 'Request the report and revision behind the rating, both polarity results, the voltage endpoints, instrument and plate details, measurement geometry and operating settings. Mark missing fields as not reported. Do not infer a whole working-area result from a centre-point measurement or a universal operating speed from a static decay-time figure.'
+  }
+];
+const comparisonFields = [
+  'Model, configuration and document revision',
+  'Test method and edition; report date',
+  'CPM model, plate size and capacitance',
+  'Distance reference, orientation and test-point map',
+  'Positive decay: start voltage, stop voltage, time',
+  'Negative decay: start voltage, stop voltage, time',
+  'Offset: average, peaks or range; observation period',
+  'Operating mode, frequency and control settings',
+  'Fan setting or air supply; pressure and flow if reported',
+  'Background airflow, temperature and humidity',
+  'Emitter condition; test preparation and repetitions',
+  'Missing information and supplier response'
+];
+---
+
+<Layout title={seoTitle + ' | Shidike'} description={description} canonical={url}
+  image="/assets/img/static-eliminator/st-g.jpg">
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: base },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: base + '/blog' },
+      { '@type': 'ListItem', position: 3, name: title, item: url }
+    ]
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BlogPosting', headline: title, description,
+    image: base + '/assets/img/static-eliminator/st-g.jpg',
+    author: { '@type': 'Organization', name: 'Shidike', url: base },
+    publisher: { '@type': 'Organization', name: 'Shidike', legalName: 'Dongguan Shidike Intelligent Equipment Co., Ltd.', url: base },
+    datePublished: '2026-10-01', dateModified: '2026-10-01', mainEntityOfPage: url
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'FAQPage',
+    mainEntity: faqItems.map(item => ({ '@type': 'Question', name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a } }))
+  })} />
+
+  <article class="post">
+    <header class="post-head">
+      <div class="container post-col">
+        <div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog">Blog</a><span>/</span>Comparing Ionizer Datasheets</div>
+        <div class="post-tags"><span class="blog-tag">Static Control</span><span class="blog-tag">Ionizer Testing</span><span class="blog-tag">Selection Guide</span></div>
+        <h1>{title}</h1>
+        <p class="post-lead">A decay-time number describes a defined voltage change on a defined test target. Before comparing two ionizers, check the conditions behind the numbers, then plan a separate verification on your material.</p>
+        <div class="post-info"><span>October 1, 2026</span><span>Shidike Technical Team</span><span>8 min read</span></div>
+      </div>
+    </header>
+
+    <div class="container post-col post-body">
+      <picture class="post-figure">
+        <source srcset="/assets/img/static-eliminator/st-g.webp" type="image/webp" />
+        <img src="/assets/img/static-eliminator/st-g.jpg" alt="Shidike ST-G ionizing bar product view" width="1180" height="885" loading="lazy" decoding="async" />
+      </picture>
+
+      <section id="two-measurements">
+        <h2>Start by separating decay time from ion balance</h2>
+        <p><strong>Compare the test method, target and operating conditions before ranking ionizer specifications.</strong> Decay time and ion balance answer different questions. The public <a href="https://www.esda.org/store/standards/product/264/ansiesd-stm3-1-2024/">ESDA summary of ANSI/ESD STM3.1-2024</a> identifies discharge time and offset voltage as separate measurements made under specified conditions.</p>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Ionizer measurement definitions">
+          <table>
+            <thead><tr><th scope="col">Reported value</th><th scope="col">What to establish</th><th scope="col">What it does not establish</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Decay or discharge time</th><td>The time for a test target to move between stated voltage endpoints, for a stated polarity.</td><td>A production line speed or a result over every working distance.</td></tr>
+              <tr><th scope="row">Ion balance or offset voltage</th><td>The voltage observed on the test plate in the ionized environment, using the reported measurement method.</td><td>The residual voltage on any film, PCB or insulating part passing through the equipment.</td></tr>
+              <tr><th scope="row">Emitter output voltage</th><td>The electrical quantity, waveform definition and measurement reference behind the kV figure.</td><td>A ranking of neutralization performance based on kV alone.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>For a first comparison, give each result its own row. Do not combine the fastest decay figure, the best offset and the largest working distance into one operating claim unless the report demonstrates that combination.</p>
+      </section>
+
+      <section id="endpoints-polarity">
+        <h2>Read the voltage endpoints and both polarities</h2>
+        <p>A time without a start and stop voltage is an incomplete comparison. <a href="https://www.keyence.com.cn/ss/products/static/static-electricity/faq/basic.jsp">KEYENCE's official technical Q&amp;A</a> gives examples using ±1000 V to ±100 V and identifies the charged-plate test setup and air conditions. In that notation, the two tests are <strong>+1000 V to +100 V</strong> and <strong>−1000 V to −100 V</strong>. It does not mean a sweep from a positive voltage to a negative one.</p>
+        <p>Record the positive and negative results separately. If a sheet gives one headline time, ask whether it is a typical result, a maximum, an average or one polarity only. A result over a different voltage interval cannot simply be rescaled into the interval you need.</p>
+        <div class="blog-quote"><p><strong>A useful comparison question:</strong> “Can you supply both polarity results for the same voltage endpoints and the measurement positions shown in our proposed installation?” Keep any unavailable answer marked as not reported.</p></div>
+      </section>
+
+      <section id="measurement-geometry">
+        <h2>Compare the test target and its position</h2>
+        <p>A charged plate monitor, or CPM, provides a controlled conductive target. Its plate is not the same object as a moving film or assembled product. <a href="https://technology-ionization.simco-ion.com/LinkClick.aspx?link=%2Fdocuments%3FCommand%3DCore_Download%26EntryId%3D1456&amp;mid=933&amp;portalid=0&amp;tabid=200">Simco-Ion's CPM Measurements application note</a> explains why plate area, capacitance, surrounding objects and instrument response matter to the readings.</p>
+        <p>Ask how distance was measured: from which part of the ionizer to which part of the target, and at what orientation? Keep a sketch or test-point map with the results. A centre reading is not an edge reading, and a near-field result is not evidence for the same performance farther away.</p>
+        <p>Also check how offset was recorded. An average, a range and positive/negative peaks are different descriptions, especially for a changing signal. The same Simco-Ion note distinguishes these readings; preserve the original description and observation period instead of reducing every result to an unexplained “±” number.</p>
+      </section>
+
+      <section id="operating-conditions">
+        <h2>Record airflow and settings without forcing unlike equipment to be identical</h2>
+        <p>“Same conditions” needs a practical definition. Agree on the application target, measurement geometry and evaluation method. Then document the configuration each candidate actually requires. Different designs may need different operating modes or air arrangements; hiding those differences makes a comparison less useful.</p>
+        <p>The <a href="https://www.simco-ion.com/Portals/0/Documents/Updated%20PDF%20Sheets%20and%20Manuals/5201128%20Rev%20E.pdf">Simco-Ion Ioncell manual, Rev E</a> illustrates this point by reporting conditions for configurations with and without a fan and for an air-tube arrangement. The tables identify distance and, where applicable, air-supply details. Those model-specific settings are not recommendations for another ionizer.</p>
+        <p>For your review, record the fan setting, air pressure and flow where available, tubing or nozzle arrangement, background airflow and the selected control settings. Pressure and flow need separate fields. If a supplier changes settings between offset and decay measurements, keep that change visible rather than treating the results as one tested configuration.</p>
+      </section>
+
+      <section id="comparison-worksheet">
+        <h2>A blank ionizer datasheet comparison worksheet</h2>
+        <p>Copy this table into the enquiry or trial record. Fill each column from the relevant report, with its units and source page. Use “not reported” for missing information; use “not applicable” only when the field genuinely does not apply to that configuration.</p>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Blank ionizer comparison worksheet">
+          <table>
+            <thead><tr><th scope="col">Record this field</th><th scope="col">Candidate A</th><th scope="col">Candidate B</th></tr></thead>
+            <tbody>{comparisonFields.map(field => <tr><th scope="row">{field}</th><td>________</td><td>________</td></tr>)}</tbody>
+          </table>
+        </div>
+        <p>Attach the test-point sketch and retain separate results for each point. For a longer bar or a wider work area, ask which positions were actually tested. Do not fill the gaps by assuming that one centre-point result covers the whole area.</p>
+      </section>
+
+      <section id="application-check">
+        <h2>Use the comparison to plan the application check</h2>
+        <p>Comparable datasheets help narrow a shortlist; they do not finish the production trial. <a href="https://content2.smcetech.com/pdf/ES100-168A.pdf">SMC's IZT44/45 catalogue</a> identifies its charged-plate conditions and cautions that results on the actual object depend on its material and dimensions. Its stated test-method edition should also stay attached to those figures rather than being silently replaced by a newer edition.</p>
+        <div class="step-block"><div class="step-num">Step 1</div><h3>Define the actual task</h3><p>Record the material, exposed surfaces, movement or handling sequence, available space and the process requirement. Identify where charge is observed and where the result needs to be checked.</p></div>
+        <div class="step-block"><div class="step-num">Step 2</div><h3>Agree what will be measured</h3><p>Keep the CPM comparison separate from measurements on the actual material. Define the instrument method, measurement location and geometry for each. Set acceptance criteria with the process owner; do not adopt a supplier's ion-balance figure as a universal material-residual limit.</p></div>
+        <div class="step-block"><div class="step-num">Step 3</div><h3>Review gaps before selecting a configuration</h3><p>Sort the comparison into documented conditions, unresolved conditions and application checks still needed. If one candidate has a shorter headline time at a different distance, the immediate outcome is a request for comparable evidence, not a declaration that it is the faster choice for the line.</p></div>
+        <p>For related product context, our <a href="/products/static-eliminator/ionizing-air-blowers#compare">ionizing air blower comparison</a> keeps reported conditions alongside model data. The <a href="/products/static-eliminator/ionizing-air-blowers#installation">installation planning section</a> separates a test-plate check from a check on the actual part. For a bar application, review the <a href="/products/static-eliminator/st-g-series">ST-G product information</a> together with the conditions needed for your installation.</p>
+      </section>
+
+      <section id="faq"><h2>Frequently asked questions</h2><div class="faq-list">{faqItems.map(item => <details class="faq-item"><summary>{item.q}</summary><p>{item.a}</p></details>)}</div></section>
+
+      <div class="post-cta">
+        <h2>Need help comparing ionizer configurations?</h2>
+        <p>Send the available datasheets, a layout sketch and your process requirement. Our team can review the documented conditions, identify missing information and discuss a suitable application trial.</p>
+        <p><a class="send-cta" href="/products/static-eliminator">View Static Control Equipment &rarr;</a><a class="send-alt" href="/contact?type=selection&amp;product=Ionizer%20Specification%20Comparison">Discuss Your Application &rarr;</a></p>
+      </div>
+    </div>
+  </article>
+  <style>
+    .post-col { max-width: 780px; }
+    .post-head { background: #f7f8fa; padding: 48px 0 34px; border-bottom: 1px solid var(--hairline); }
+    .post-head .breadcrumb { font-size: 13px; color: #7d8d97; margin-bottom: 18px; }
+    .post-head .breadcrumb a { color: var(--brand-deep); text-decoration: none; }
+    .post-head .breadcrumb span { margin: 0 8px; }
+    .post-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .blog-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      background: #eef4f8; color: #4a6373; padding: 4px 9px; border-radius: 999px;
+    }
+    .post-head h1 {
+      font-size: clamp(1.7rem, 3.4vw, 2.5rem); line-height: 1.2; font-weight: 800;
+      letter-spacing: -.02em; color: var(--navy); margin: 0 0 14px;
+    }
+    .post-lead { font-size: 1.05rem; line-height: 1.75; color: #46545f; margin: 0 0 18px; }
+    .post-info { display: flex; flex-wrap: wrap; gap: 16px; font-size: 12.5px; color: #8a99a4; }
+
+    .post-body { padding: 34px 0 70px; }
+    .post-figure { display: block; margin: 0 0 30px; }
+    .post-figure img {
+      display: block; width: 100%; height: auto; border: 1px solid var(--hairline); border-radius: 8px;
+    }
+    .post-body h2 {
+      font-size: 1.42rem; font-weight: 700; letter-spacing: -.01em; color: var(--navy);
+      margin: 34px 0 12px;
+    }
+    .post-body p { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 15px; }
+    .post-body a { color: var(--brand-deep); }
+    .post-body h3 {
+      font-size: 1.12rem; font-weight: 700; color: var(--navy); margin: 26px 0 10px;
+    }
+    .post-body ul, .post-body ol { margin: 0 0 15px; padding-left: 22px; }
+    .post-body li { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 7px; }
+    .post-body blockquote, .post-body .blog-quote {
+      margin: 0 0 18px; padding: 13px 16px; background: #f2f6f9;
+      border-left: 3px solid var(--brand-deep); border-radius: 0 8px 8px 0;
+    }
+    .post-body .blog-quote p:last-child { margin-bottom: 0; }
+    .post-body .step-block { margin: 0 0 22px; }
+    .post-body .step-num {
+      display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .06em;
+      text-transform: uppercase; background: var(--navy); color: #fff;
+      padding: 4px 10px; border-radius: 999px; margin-bottom: 8px;
+    }
+    .formula {
+      font-size: 1.2rem !important; font-weight: 700; text-align: center; color: var(--navy) !important;
+      background: #f2f6f9; border: 1px solid var(--hairline); border-radius: 8px; padding: 14px;
+    }
+
+    .table-wrap { overflow-x: auto; margin: 0 0 20px; }
+    .post-body table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+    .post-body th, .post-body td {
+      text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--hairline); vertical-align: top;
+    }
+    .post-body thead th { background: #f2f6f9; font-weight: 700; color: var(--navy); }
+    .post-body tbody th { width: 22%; font-weight: 700; color: var(--navy); background: #fafbfc; }
+
+    .faq-list { display: flex; flex-direction: column; margin: 6px 0 0; border-top: 1px solid var(--hairline); }
+    .faq-item { padding: 15px 4px; border-bottom: 1px solid var(--hairline); }
+    .faq-item summary { cursor: pointer; font-weight: 700; color: var(--navy); font-size: 15.5px; }
+    .faq-item p { margin: 10px 0 0; }
+
+    .post-cta {
+      margin-top: 40px; padding: 26px 26px 22px; background: #f7f8fa;
+      border: 1px solid var(--hairline); border-radius: 10px;
+    }
+    .post-cta h2 { margin-top: 0; font-size: 1.25rem; }
+    .send-cta, .send-alt { display: inline-block; font-weight: 700; margin-right: 22px; }
+    @media (max-width: 767px) {
+      .post-body { padding-left: 16px; padding-right: 16px; }
+    }
+  </style>
+</Layout>
