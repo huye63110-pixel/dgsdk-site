@@ -1,0 +1,218 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const base = 'https://www.dg-sdk.com';
+const url = base + '/blog/coated-optical-film-cleaning-trial-samples';
+const title = 'Preparing Coated Optical Film Samples for a Cleaning Trial';
+const seoTitle = 'Optical Film Cleaning Trials: Sample Preparation';
+const description = 'Prepare coated optical film samples for a cleaning trial: identify faces and liners, retain comparison samples, document handling and agree separate acceptance checks.';
+const faqItems = [
+  {
+    q: 'Should I remove the protective film before sending a cleaning sample?',
+    a: 'Confirm the intended production stage and trial plan first. Record which protective layers are present on each face and who is authorized to remove them. A trial on a protective layer evaluates that exposed layer, not automatically the optical surface beneath it. Follow the material supplier instructions for any agreed removal.'
+  },
+  {
+    q: 'Can a result on one optical film prove another grade is compatible?',
+    a: 'No. Keep the result attached to the tested grade, coating, exposed face, protective-layer state and process configuration. Review relevant material or process differences before applying the result to another film. The shared name optical film is not a compatibility specification.'
+  },
+  {
+    q: 'How many samples and what size should I send?',
+    a: 'Agree the format, dimensions and quantity with the trial team after defining the transport setup, inspection methods, comparisons and repeat measurements. Include any retained-reference or return requirements in that plan. There is no single sample count or size suitable for every coating and cleaning machine.'
+  }
+];
+const handoverFields = [
+  { name: 'Material identity', detail: 'Supplier, exact grade, batch or roll ID and document revision.' },
+  { name: 'Face map', detail: 'Face A/B, functional layers, adhesive surfaces, intended cleaning face and orientation.' },
+  { name: 'Protective layers', detail: 'Layers present on each face; any removal, replacement or unknown history.' },
+  { name: 'Sample roles', detail: 'Unique IDs for retained reference, optional handling comparison and trial samples; agreed format and quantity.' },
+  { name: 'Starting condition', detail: 'Contamination, existing defects, inspection locations and photograph references.' },
+  { name: 'Prior handling', detail: 'Cutting, winding, storage, wiping, chemical exposure or previous contact treatment.' },
+  { name: 'Permitted actions', detail: 'Approved contact faces, restrictions, proposed handling and items awaiting confirmation.' },
+  { name: 'Evaluation plan', detail: 'Particle, surface/optical and static checks; methods, locations and application-specific acceptance criteria.' },
+  { name: 'Handover and return', detail: 'Packaging arrangement, receiving record, reviewer and permission to retain, consume or return samples.' }
+];
+---
+
+<Layout title={seoTitle + ' | Shidike'} description={description} canonical={url}
+  image="/assets/img/cleaning-machine/optical.jpg">
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: base },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: base + '/blog' },
+      { '@type': 'ListItem', position: 3, name: title, item: url }
+    ]
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BlogPosting', headline: title, description,
+    image: base + '/assets/img/cleaning-machine/optical.jpg',
+    author: { '@type': 'Organization', name: 'Shidike', url: base },
+    publisher: { '@type': 'Organization', name: 'Shidike', legalName: 'Dongguan Shidike Intelligent Equipment Co., Ltd.', url: base },
+    datePublished: '2026-10-02', dateModified: '2026-10-02', mainEntityOfPage: url
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'FAQPage',
+    mainEntity: faqItems.map(item => ({ '@type': 'Question', name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a } }))
+  })} />
+
+  <article class="post">
+    <header class="post-head">
+      <div class="container post-col">
+        <div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog">Blog</a><span>/</span>Optical Film Trial Samples</div>
+        <div class="post-tags"><span class="blog-tag">Optical Film</span><span class="blog-tag">Surface Cleaning</span><span class="blog-tag">Sample Trials</span></div>
+        <h1>{title}</h1>
+        <p class="post-lead">A useful cleaning trial starts with a traceable film sample and a record of its starting condition. Removing particles and preserving the film's intended surface and optical function are separate questions.</p>
+        <div class="post-info"><span>October 2, 2026</span><span>Shidike Technical Team</span><span>8 min read</span></div>
+      </div>
+    </header>
+
+    <div class="container post-col post-body">
+      <picture class="post-figure">
+        <source srcset="/assets/img/cleaning-machine/optical.webp" type="image/webp" />
+        <img src="/assets/img/cleaning-machine/optical.jpg" alt="Shidike optical film cleaning machine" width="443" height="352" loading="lazy" decoding="async" />
+      </picture>
+
+      <section id="identify-the-film">
+        <h2>Identify the film, the face and the layer being tested</h2>
+        <p><strong>Before a coated optical film cleaning trial, document the exact material, exposed face, protective-layer state and handling history.</strong> A label such as “PET optical film” is not enough to identify the surface a cleaning roller would touch.</p>
+        <p>The <a href="https://multimedia.3m.com/mws/media/1839622O/3m-display-surface-product-app-guide-75050141342-pdf.pdf">3M Display Surface Products Application Guide</a> shows examples with different combinations of film, hard coating, easy-clean layers, adhesive and removable liners. Its handling guidance also addresses fingerprints and static-related dust attraction. These examples illustrate why a layer map matters; they do not establish cleaning compatibility for every optical film.</p>
+        <p>Use a simple sketch to identify Face A and Face B, the intended cleaning face and any required orientation. Name functional coatings and adhesive surfaces separately from temporary protection. If a layer or treatment is unknown, leave it marked as unknown and obtain the relevant material information before authorizing contact.</p>
+        <div class="blog-quote"><p><strong>State what the trial actually represents:</strong> a test with the protective layer still attached evaluates that exposed layer. It does not automatically demonstrate the result on the optical surface underneath.</p></div>
+      </section>
+
+      <section id="protective-layers">
+        <h2>Keep protective-layer and handling history with the sample</h2>
+        <p>Do not treat every liner or protective film as incidental packaging. <a href="https://www.nitto.com/sea/en/others/faq/products/documents/file/Surface_Protective_Materials_en.pdf">Nitto's Surface Protective Materials catalogue</a> discusses material selection in relation to the surface, processing and removal conditions. Its precautions address possible effects on coatings and subsequent processing, and call for evaluation on the actual product under its conditions of use.</p>
+        <p>For the handover, record which layers arrived on each face and whether any were removed or replaced. Include known cutting, winding, storage, wiping or chemical exposure. Do not assume that two pieces from the same roll have the same starting condition if one has already been handled or cleaned.</p>
+        <p>Agree which preparation steps are permitted and who will perform them. If a protective layer must be removed to reproduce the production stage, follow the material supplier's instructions and record when that happened. This article does not prescribe one peel method, solvent or packaging material for every film.</p>
+      </section>
+
+      <section id="sample-allocation">
+        <h2>Separate reference samples from samples authorized for cleaning</h2>
+        <p>The following allocation is a suggested trial-design approach, not a universal manufacturer requirement. Agree the comparisons with the trial team and give each specimen a unique ID.</p>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Optical film trial sample roles">
+          <table>
+            <thead><tr><th scope="col">Sample role</th><th scope="col">Purpose</th><th scope="col">Record clearly</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Retained reference</th><td>Keep an identified sample out of the cleaning trial to preserve a comparison with the documented starting state.</td><td>Its existing condition, protective layers, storage and any unavoidable handling.</td></tr>
+              <tr><th scope="row">Handling comparison, if needed</th><td>Help examine whether agreed preparation or handling changes the surface before cleaning is involved.</td><td>The preparation performed and the fact that this sample did not receive the cleaning treatment.</td></tr>
+              <tr><th scope="row">Cleaning trial sample</th><td>Evaluate the agreed cleaning configuration on the identified material and face.</td><td>Sample ID, preparation, settings, pass history and inspection results.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>A handling comparison can be useful when liner removal or transfer between stations is itself under investigation. It helps separate possible contributors; it does not, by itself, prove what caused a defect. Agree repeat measurements and sample allocation with the people interpreting the results.</p>
+        <p>Do not pre-clean an “untreated” reference to make its starting photograph look better. Record the condition first. If a separate inspection or preparation changes a sample, retain that history and adjust its role rather than continuing to call it untreated.</p>
+      </section>
+
+      <section id="starting-condition">
+        <h2>Record contamination and existing defects before the trial</h2>
+        <p>Describe what needs to be removed: loose particles, fibres, suspected residue or material being shed by the substrate. <a href="https://www.teknek.com/solutions/contact-cleaning-key-benefits-limitations/">Teknek's contact-cleaning overview</a> distinguishes dry, unbonded particles from other contamination and discusses limits with heavily shedding materials. That is a useful scope check, not evidence that a particular coating tolerates roller contact.</p>
+        <p>Use identifiable inspection areas and record existing scratches, marks, fingerprints, wrinkles and edge damage. Keep lighting, viewing orientation and image scale comparable when making a before-and-after assessment. A photograph of one clean-looking location should not stand in for the agreed inspection area.</p>
+        <p>Separate observations from assumptions: “visible mark on Face A” is an observation; “roller damage” is a cause that still needs evidence. This distinction is especially useful when material has passed through several handling steps before it reaches the trial team.</p>
+      </section>
+
+      <section id="evaluation-plan">
+        <h2>Agree separate particle, surface and optical checks</h2>
+        <div class="step-block"><div class="step-num">Check 1</div><h3>Particle removal</h3><p>Define the inspection method, locations and relevant particle categories or size bands for the application. Record results within that method's detection limits. Keep the contamination description attached to any removal result.</p></div>
+        <div class="step-block"><div class="step-num">Check 2</div><h3>Surface and optical function</h3><p>Look for changes to the agreed surface features and evaluate the optical properties the film is meant to provide. <a href="https://media.byk-instruments.com/shop/Misc/Whitepaper/White_Paper_Transparency_Measurement_EN_20220427.pdf">BYK-Gardner's transparency measurement white paper</a> distinguishes transmission, haze and clarity and discusses the influence of surfaces and internal structure. A lower haze value is not a universal goal for a film designed to diffuse light. Select the method and acceptance criteria for the actual optical function.</p></div>
+        <div class="step-block"><div class="step-num">Check 3</div><h3>Static, when relevant</h3><p>If ionization is part of the proposed process, document the material measurement separately from particle and surface results. Keep the instrument, location and geometry consistent. An ionizer's rated ion balance is not a measured residual voltage on this film and does not prove that the surface meets its cleanliness requirement.</p></div>
+        <p>Our <a href="/guides/what-is-web-cleaning#validation">cleaning-trial validation guide</a> covers the broader result record. This sample handover provides the material identity and preparation history needed to interpret that record.</p>
+      </section>
+
+      <section id="handover-worksheet">
+        <h2>Optical film sample handover worksheet</h2>
+        <p>Copy and complete this worksheet before dispatch or receipt. Attach the face map and starting-condition images. Use “unknown” or “awaiting confirmation” for gaps rather than filling them from a similar material's datasheet.</p>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Optical film sample handover worksheet">
+          <table>
+            <thead><tr><th scope="col">Field</th><th scope="col">Information to record</th></tr></thead>
+            <tbody>{handoverFields.map(field => <tr><th scope="row">{field.name}</th><td>{field.detail}<br /><strong>Your record:</strong> ____________</td></tr>)}</tbody>
+          </table>
+        </div>
+        <p>Agree sample size and quantity after reviewing the machine's transport requirements, the inspection areas and any repeated or destructive checks. Keep retained-reference and return requirements in the same plan. Place identifiers on the accompanying record or approved packaging; agree any marking or label applied to the material so that it does not compromise the test area.</p>
+        <p>On receipt, confirm the IDs, layer state and visible condition before processing. Record differences from the dispatch information and resolve any uncertainty about the permitted cleaning face or contact method. For method selection, see <a href="/guides/what-is-web-cleaning#methods">contact and non-contact cleaning</a>; a contact-free cleaning head still needs a suitable material-handling arrangement.</p>
+      </section>
+
+      <section id="faq"><h2>Frequently asked questions</h2><div class="faq-list">{faqItems.map(item => <details class="faq-item"><summary>{item.q}</summary><p>{item.a}</p></details>)}</div></section>
+
+      <div class="post-cta">
+        <h2>Planning a cleaning trial for coated optical film?</h2>
+        <p>Send the material grade, face and layer information, contamination examples and process position. Our team can review the proposed trial scope and confirm the sample information needed for a configuration discussion.</p>
+        <p><a class="send-cta" href="/products/cleaning-machine/optical-film-cleaner">View the Optical Film Cleaner &rarr;</a><a class="send-alt" href="/contact?type=selection&amp;product=Coated%20Optical%20Film%20Cleaning%20Trial">Discuss Your Application &rarr;</a></p>
+      </div>
+    </div>
+  </article>
+  <style>
+    .post-col { max-width: 780px; }
+    .post-head { background: #f7f8fa; padding: 48px 0 34px; border-bottom: 1px solid var(--hairline); }
+    .post-head .breadcrumb { font-size: 13px; color: #7d8d97; margin-bottom: 18px; }
+    .post-head .breadcrumb a { color: var(--brand-deep); text-decoration: none; }
+    .post-head .breadcrumb span { margin: 0 8px; }
+    .post-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .blog-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      background: #eef4f8; color: #4a6373; padding: 4px 9px; border-radius: 999px;
+    }
+    .post-head h1 {
+      font-size: clamp(1.7rem, 3.4vw, 2.5rem); line-height: 1.2; font-weight: 800;
+      letter-spacing: -.02em; color: var(--navy); margin: 0 0 14px;
+    }
+    .post-lead { font-size: 1.05rem; line-height: 1.75; color: #46545f; margin: 0 0 18px; }
+    .post-info { display: flex; flex-wrap: wrap; gap: 16px; font-size: 12.5px; color: #8a99a4; }
+
+    .post-body { padding: 34px 0 70px; }
+    .post-figure { display: block; margin: 0 0 30px; }
+    .post-figure img {
+      display: block; width: 100%; height: auto; border: 1px solid var(--hairline); border-radius: 8px;
+    }
+    .post-body h2 {
+      font-size: 1.42rem; font-weight: 700; letter-spacing: -.01em; color: var(--navy);
+      margin: 34px 0 12px;
+    }
+    .post-body p { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 15px; }
+    .post-body a { color: var(--brand-deep); }
+    .post-body h3 {
+      font-size: 1.12rem; font-weight: 700; color: var(--navy); margin: 26px 0 10px;
+    }
+    .post-body ul, .post-body ol { margin: 0 0 15px; padding-left: 22px; }
+    .post-body li { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 7px; }
+    .post-body blockquote, .post-body .blog-quote {
+      margin: 0 0 18px; padding: 13px 16px; background: #f2f6f9;
+      border-left: 3px solid var(--brand-deep); border-radius: 0 8px 8px 0;
+    }
+    .post-body .blog-quote p:last-child { margin-bottom: 0; }
+    .post-body .step-block { margin: 0 0 22px; }
+    .post-body .step-num {
+      display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .06em;
+      text-transform: uppercase; background: var(--navy); color: #fff;
+      padding: 4px 10px; border-radius: 999px; margin-bottom: 8px;
+    }
+    .formula {
+      font-size: 1.2rem !important; font-weight: 700; text-align: center; color: var(--navy) !important;
+      background: #f2f6f9; border: 1px solid var(--hairline); border-radius: 8px; padding: 14px;
+    }
+
+    .table-wrap { overflow-x: auto; margin: 0 0 20px; }
+    .post-body table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+    .post-body th, .post-body td {
+      text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--hairline); vertical-align: top;
+    }
+    .post-body thead th { background: #f2f6f9; font-weight: 700; color: var(--navy); }
+    .post-body tbody th { width: 22%; font-weight: 700; color: var(--navy); background: #fafbfc; }
+
+    .faq-list { display: flex; flex-direction: column; margin: 6px 0 0; border-top: 1px solid var(--hairline); }
+    .faq-item { padding: 15px 4px; border-bottom: 1px solid var(--hairline); }
+    .faq-item summary { cursor: pointer; font-weight: 700; color: var(--navy); font-size: 15.5px; }
+    .faq-item p { margin: 10px 0 0; }
+
+    .post-cta {
+      margin-top: 40px; padding: 26px 26px 22px; background: #f7f8fa;
+      border: 1px solid var(--hairline); border-radius: 10px;
+    }
+    .post-cta h2 { margin-top: 0; font-size: 1.25rem; }
+    .send-cta, .send-alt { display: inline-block; font-weight: 700; margin-right: 22px; }
+    @media (max-width: 767px) {
+      .post-body { padding-left: 16px; padding-right: 16px; }
+    }
+  </style>
+</Layout>

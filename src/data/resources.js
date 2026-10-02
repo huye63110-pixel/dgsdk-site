@@ -10,6 +10,17 @@
 // reword it here too.
 export const posts = [
   {
+    slug: 'coated-optical-film-cleaning-trial-samples',
+    category: 'Surface Cleaning',
+    title: 'Preparing Coated Optical Film Samples for a Cleaning Trial',
+    excerpt: 'Identify film faces, coatings and protective layers, retain useful comparison samples, and document the starting condition with a sample handover worksheet.',
+    date: 'October 2, 2026',
+    datePublished: '2026-10-02',
+    tags: ['Optical Film', 'Surface Cleaning', 'Sample Trials'],
+    image: '/assets/img/cleaning-machine/optical',
+    readTime: '8 min read',
+  },
+  {
     slug: 'comparing-ionizer-datasheets',
     category: 'Static Control',
     title: 'Comparing Ionizer Datasheets: Which Test Conditions Must Match?',
