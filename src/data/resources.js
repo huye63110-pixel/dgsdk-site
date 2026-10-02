@@ -17,7 +17,7 @@ export const posts = [
     date: 'October 2, 2026',
     datePublished: '2026-10-02',
     tags: ['Optical Film', 'Surface Cleaning', 'Sample Trials'],
-    image: '/assets/img/cleaning-machine/optical',
+    image: '/assets/img/blog/optical-film-trial-samples-v1',
     readTime: '8 min read',
   },
   {
