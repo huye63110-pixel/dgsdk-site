@@ -10,6 +10,17 @@
 // reword it here too.
 export const posts = [
   {
+    slug: 'static-returns-after-ionization',
+    category: 'Static Control',
+    title: 'Static Returns After Ionization: Trace the Next Contact and Separation',
+    excerpt: 'Map readings after ionization, after the next separation and before the affected operation. Includes a diagnostic comparison table and blank observation log.',
+    date: 'October 3, 2026',
+    datePublished: '2026-10-03',
+    tags: ['Static Control', 'Film Handling', 'Troubleshooting'],
+    image: '/assets/img/blog/static-returns-observation-map-v1',
+    readTime: '8 min read',
+  },
+  {
     slug: 'coated-optical-film-cleaning-trial-samples',
     category: 'Surface Cleaning',
     title: 'Preparing Coated Optical Film Samples for a Cleaning Trial',
