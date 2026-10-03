@@ -1,0 +1,235 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const base = 'https://www.dg-sdk.com';
+const url = base + '/blog/static-returns-after-ionization';
+const title = 'Static Returns After Ionization: Trace the Next Contact and Separation';
+const seoTitle = 'Static Returns After Ionization: Film Troubleshooting';
+const description = 'Troubleshoot recurring static on film with a three-point process map. Separate downstream charging from measurement effects and record comparable observations.';
+const faqItems = [
+  {
+    q: 'Does static returning mean the ionizing bar has failed?',
+    a: 'Not necessarily. Further contact and separation can generate charge after ionization. First check the ionizer and measurement setup, then compare documented observations around the next process step. A higher downstream reading alone does not identify a faulty bar or prove that one roller caused the change.'
+  },
+  {
+    q: 'Does a near-zero fieldmeter reading prove both sides of the film are uncharged?',
+    a: 'No. Nearby grounded structures and the measurement geometry affect the field reading. A free-space field measurement also does not independently identify the charge on each face of an insulating film. Record the geometry and use a suitable specialist assessment when the material structure requires it.'
+  },
+  {
+    q: 'What residual voltage should the film meet after ionization?',
+    a: 'Use an application-specific criterion agreed with the process owner, together with a defined instrument, method and location. Do not use a bar datasheet ion-balance rating as a universal residual-voltage limit for film. Keep readings in their reported units and repeat the agreed method after any change.'
+  }
+];
+const logFields = [
+  'Material grade, batch and surface or liner state',
+  'Point ID, preceding operation and exposed face',
+  'Instrument, mode, units and verification status',
+  'Probe spacing, orientation and nearby structures',
+  'Run ID, time, speed and operating state',
+  'Ionizer configuration, condition and alarms',
+  'Temperature and humidity, when recorded',
+  'Reading, polarity and observed variation',
+  'Process symptom and independent inspection',
+  'Criterion, comparison limits and next check'
+];
+---
+
+<Layout title={seoTitle + ' | Shidike'} description={description} canonical={url}
+  image="/assets/img/blog/static-returns-observation-map-v1.jpg">
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: base },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: base + '/blog' },
+      { '@type': 'ListItem', position: 3, name: title, item: url }
+    ]
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BlogPosting', headline: title, description,
+    image: base + '/assets/img/blog/static-returns-observation-map-v1.jpg',
+    author: { '@type': 'Organization', name: 'Shidike', url: base },
+    publisher: { '@type': 'Organization', name: 'Shidike', legalName: 'Dongguan Shidike Intelligent Equipment Co., Ltd.', url: base },
+    datePublished: '2026-10-03', dateModified: '2026-10-03', mainEntityOfPage: url
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'FAQPage',
+    mainEntity: faqItems.map(item => ({ '@type': 'Question', name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a } }))
+  })} />
+
+  <article class="post">
+    <header class="post-head">
+      <div class="container post-col">
+        <div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog">Blog</a><span>/</span>Static After Ionization</div>
+        <div class="post-tags"><span class="blog-tag">Static Control</span><span class="blog-tag">Film Handling</span><span class="blog-tag">Troubleshooting</span></div>
+        <h1>{title}</h1>
+        <p class="post-lead">Film may show a low reading after an ionizing bar and a higher reading farther along the line. Check both the intervening process and the measurement setup before deciding what changed.</p>
+        <div class="post-info"><span>October 3, 2026</span><span>Shidike Technical Team</span><span>8 min read</span></div>
+      </div>
+    </header>
+
+    <div class="container post-col post-body">
+      <picture class="post-figure">
+        <source media="(max-width: 600px)" srcset="/assets/img/blog/static-returns-observation-map-v1-mobile.webp" type="image/webp" width="800" height="1200" />
+        <source media="(max-width: 600px)" srcset="/assets/img/blog/static-returns-observation-map-v1-mobile.jpg" type="image/jpeg" width="800" height="1200" />
+        <source srcset="/assets/img/blog/static-returns-observation-map-v1.webp" type="image/webp" />
+        <img src="/assets/img/blog/static-returns-observation-map-v1.jpg" alt="Observation sequence: A after ionization, then contact and separation, B after separation, and C before the affected process" width="1600" height="1000" loading="lazy" decoding="async" />
+      </picture>
+      <p><em>Original process-map illustration. A, B and C are suggested observation roles, not prescribed mounting positions or measured results. Select suitable locations for the actual line.</em></p>
+
+      <section id="why-charge-can-return">
+        <h2>Why film can acquire charge after an ionizer</h2>
+        <p><strong>Ionization does not prevent a later contact-and-separation event from generating charge.</strong> <a href="https://www.esda.org/esd-overview/esd-fundamentals/part-1-an-introduction-to-esd/">ESDA's introduction to electrostatic discharge</a> explains contact-and-separation charging and the influence of material and process conditions. Obvious rubbing is not a prerequisite: separating film from another surface can matter even when the line appears to run smoothly.</p>
+        <p>Follow the material beyond the bar. Mark guide rollers, belts, nip contacts, liner removal and winding on a simple process sketch. These are candidate investigation points, not a list of proven faults. <a href="https://simco-ion.eu/industry-solutions/converting">Simco-Ion's converting overview</a> describes renewed charging as material passes rollers and during later winding operations. Its examples support checking downstream steps; they do not prescribe the same equipment arrangement for every line.</p>
+        <p>A complaint such as “static came back at stacking” therefore needs a location and a record. Note what was actually observed: a meter reading, sticking, a handling interruption or a particle result. Keep these observations separate instead of treating any one of them as proof of the others.</p>
+      </section>
+
+      <section id="measurement-effects">
+        <h2>Check whether the reading changed because the geometry changed</h2>
+        <p>Advanced Energy's <a href="https://www.advancedenergy.com/getmedia/7607f4c6-9ddd-4db9-9399-0b042f8c890f/en-esd-fieldmeters-web-converting-application-note.pdf">Electric Fields and Fieldmeters in Web Converting</a> explains that surrounding charged objects, grounded conductors and the probe affect a field measurement. Nearby grounded surfaces can suppress the measured field. Comparing film close to a metal roller with a later unsupported span can therefore be misleading.</p>
+        <p>The same note explains that a free-space field reading does not distinguish which face of an insulating sheet holds the charge. A low reading is not evidence that every region and layer is uncharged. Complex multilayer or bound-charge questions need an appropriate specialist method.</p>
+        <div class="blog-quote"><p><strong>First comparison question:</strong> “Were these observations made with a comparable instrument method and geometry?” If not, record the difference before attributing the change to the ionizer or the next roller.</p></div>
+        <p>Use the instructions for the actual instrument. For example, the <a href="https://fraser-antistatic.com/wp-content/uploads/2020/07/715-DS-Iss.5-EN.pdf">Fraser 715 datasheet</a> specifies a model-specific measuring distance and calibration target. Those details are not universal settings for other meters. Preserve the selected mode and reported units; a voltage display and field strength per unit distance are not interchangeable labels.</p>
+      </section>
+
+      <section id="three-point-map">
+        <h2>Map three observation roles around the suspected step</h2>
+        <p>The following is a proposed investigation record, not a universal installation drawing. Assign actual point IDs on the line sketch. Use approved sensors or approved access positions, keep machine safeguards in place and do not reach into moving material. If a suitable point is unavailable, mark that gap for engineering review.</p>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Three observation roles for recurring static">
+          <table>
+            <thead><tr><th scope="col">Role</th><th scope="col">Location to identify</th><th scope="col">Question it helps investigate</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">A: after ionization</th><td>After the existing ionization stage and before the next relevant contact.</td><td>What result is actually observed at this stage under the documented conditions?</td></tr>
+              <tr><th scope="row">B: after separation</th><td>After the material leaves the next investigated roller, belt or liner-removal step.</td><td>Does a repeatable change appear across this part of the process?</td></tr>
+              <tr><th scope="row">C: before the affected operation</th><td>Before the stacking, laminating or other operation where the problem is reported.</td><td>Does the earlier observation represent the condition at the point that matters?</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>B and C may be the same physical point on a short path. On a longer path, list every additional contact between them. Do not invent an extra station just to complete three columns. If positions are measured at different times, keep the run IDs and process state with the readings rather than presenting them as simultaneous measurements of one piece of film.</p>
+      </section>
+
+      <section id="repeatable-comparison">
+        <h2>Make a comparison that can be repeated</h2>
+        <div class="step-block"><div class="step-num">Step 1</div><h3>Define the starting configuration</h3><p>Record material grade, batch, exposed surface and liner state. Identify the ionizer model, settings, maintenance condition and displayed alarms. Check its installation and operation against its current documentation. Treat a status light as equipment information, not a measurement on the film.</p></div>
+        <div class="step-block"><div class="step-num">Step 2</div><h3>Keep the observation method attached to each result</h3><p>Use the agreed instrument procedure and record the point, spacing, orientation and surrounding structures. Log line speed and operating state, including start-up or steady running. Keep positive and negative indications and observed variation instead of reporting only the lowest reading.</p></div>
+        <div class="step-block"><div class="step-num">Step 3</div><h3>Repeat a controlled change, then return to the affected operation</h3><p>Have the process owner approve the next comparison and define the acceptance criterion. Change one relevant factor at a time where practical, record exceptions and repeat the observation sequence. Keep required protective controls active. A better result at A alone does not establish the required outcome at C.</p></div>
+        <p>For an equipment test, keep the charged-plate result separate from the material survey. Our <a href="/blog/comparing-ionizer-datasheets">ionizer datasheet comparison guide</a> explains the test conditions behind decay time and ion balance. Neither rating supplies a universal residual-voltage limit for the film on this line.</p>
+      </section>
+
+      <section id="interpret-the-pattern">
+        <h2>Use the pattern to choose the next check</h2>
+        <p>These examples are diagnostic prompts, not findings from a DGSDK trial. “Meets the criterion” means the application criterion and method agreed for that observation point.</p>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Recurring static observation patterns">
+          <table>
+            <thead><tr><th scope="col">Observed pattern</th><th scope="col">Useful next check</th><th scope="col">Avoid this conclusion</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">A already misses its criterion</th><td>Review measurement validity, current ionizer condition, settings and application configuration before blaming a later step.</td><td>The next roller explains the entire problem.</td></tr>
+              <tr><th scope="row">A meets its criterion; B repeatedly does not</th><td>Investigate the intervening operation while documenting geometry and other changing conditions.</td><td>One pair of readings proves the roller caused new charge.</td></tr>
+              <tr><th scope="row">B is acceptable; the problem appears nearer C</th><td>Extend the map through the remaining contacts and repeat the agreed check where the symptom occurs.</td><td>An earlier passing point represents the whole remaining line.</td></tr>
+              <tr><th scope="row">The symptom persists despite acceptable readings</th><td>Review the observation method and investigate other process causes with an independent symptom or cleanliness check.</td><td>The readings prove the symptom is static-related, or rule out every electrostatic effect.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="grounding-and-film">
+        <h2>Keep grounding and insulating-film neutralization separate</h2>
+        <p><a href="https://www.esda.org/esd-overview/esd-fundamentals/part-2-principles-of-esd-control/">ESDA's principles of ESD control</a> distinguish grounding conductive objects from neutralizing common insulating materials. An ordinary insulating plastic lacks a sufficiently conductive path for grounding alone to remove its charge in a useful time. A grounded roller or frame is therefore not proof that the film itself has been neutralized.</p>
+        <p>Record the actual material construction. Conductive coatings, metal layers or static-dissipative treatments require a review of their own electrical behavior and contact paths. Do not classify every material sold as “film” as the same electrical case, or use an extra ionizer as a substitute for required grounding.</p>
+      </section>
+
+      <section id="observation-log">
+        <h2>A blank recurring-static observation log</h2>
+        <p>Use one sheet for each defined comparison. Keep the line sketch and instrument procedure with it. Fill unavailable items as “not recorded” and mark any points that cannot be compared directly.</p>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Blank recurring static observation log">
+          <table>
+            <thead><tr><th scope="col">Record</th><th scope="col">A</th><th scope="col">B</th><th scope="col">C</th></tr></thead>
+            <tbody>{logFields.map(field => <tr><th scope="row">{field}</th><td>______</td><td>______</td><td>______</td></tr>)}</tbody>
+          </table>
+        </div>
+        <p>End the record with three separate entries: what was observed, what explanation is being tested and what check comes next. This makes the handover useful even when the first survey has not yet identified a cause.</p>
+      </section>
+
+      <section id="faq"><h2>Frequently asked questions</h2><div class="faq-list">{faqItems.map(item => <details class="faq-item"><summary>{item.q}</summary><p>{item.a}</p></details>)}</div></section>
+
+      <div class="post-cta">
+        <h2>Need help reviewing recurring static on your line?</h2>
+        <p>Send the material description, travel-path sketch, current ionizer configuration and readings with their measurement conditions. Our team can review the application and discuss which information is needed for a suitable trial.</p>
+        <p><a class="send-cta" href="/products/static-eliminator/st-g-series">View ST-G Ionizing Bar Information &rarr;</a><a class="send-alt" href="/contact?type=selection&amp;product=Recurring%20Static%20on%20Film">Discuss Your Application &rarr;</a></p>
+      </div>
+    </div>
+  </article>
+  <style>
+    .post-col { max-width: 780px; }
+    .post-head { background: #f7f8fa; padding: 48px 0 34px; border-bottom: 1px solid var(--hairline); }
+    .post-head .breadcrumb { font-size: 13px; color: #7d8d97; margin-bottom: 18px; }
+    .post-head .breadcrumb a { color: var(--brand-deep); text-decoration: none; }
+    .post-head .breadcrumb span { margin: 0 8px; }
+    .post-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .blog-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      background: #eef4f8; color: #4a6373; padding: 4px 9px; border-radius: 999px;
+    }
+    .post-head h1 {
+      font-size: clamp(1.7rem, 3.4vw, 2.5rem); line-height: 1.2; font-weight: 800;
+      letter-spacing: -.02em; color: var(--navy); margin: 0 0 14px;
+    }
+    .post-lead { font-size: 1.05rem; line-height: 1.75; color: #46545f; margin: 0 0 18px; }
+    .post-info { display: flex; flex-wrap: wrap; gap: 16px; font-size: 12.5px; color: #8a99a4; }
+
+    .post-body { padding: 34px 0 70px; }
+    .post-figure { display: block; margin: 0 0 30px; }
+    .post-figure img {
+      display: block; width: 100%; height: auto; border: 1px solid var(--hairline); border-radius: 8px;
+    }
+    .post-body h2 {
+      font-size: 1.42rem; font-weight: 700; letter-spacing: -.01em; color: var(--navy);
+      margin: 34px 0 12px;
+    }
+    .post-body p { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 15px; }
+    .post-body a { color: var(--brand-deep); }
+    .post-body h3 {
+      font-size: 1.12rem; font-weight: 700; color: var(--navy); margin: 26px 0 10px;
+    }
+    .post-body ul, .post-body ol { margin: 0 0 15px; padding-left: 22px; }
+    .post-body li { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 7px; }
+    .post-body blockquote, .post-body .blog-quote {
+      margin: 0 0 18px; padding: 13px 16px; background: #f2f6f9;
+      border-left: 3px solid var(--brand-deep); border-radius: 0 8px 8px 0;
+    }
+    .post-body .blog-quote p:last-child { margin-bottom: 0; }
+    .post-body .step-block { margin: 0 0 22px; }
+    .post-body .step-num {
+      display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .06em;
+      text-transform: uppercase; background: var(--navy); color: #fff;
+      padding: 4px 10px; border-radius: 999px; margin-bottom: 8px;
+    }
+    .formula {
+      font-size: 1.2rem !important; font-weight: 700; text-align: center; color: var(--navy) !important;
+      background: #f2f6f9; border: 1px solid var(--hairline); border-radius: 8px; padding: 14px;
+    }
+
+    .table-wrap { overflow-x: auto; margin: 0 0 20px; }
+    .post-body table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+    .post-body th, .post-body td {
+      text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--hairline); vertical-align: top;
+    }
+    .post-body thead th { background: #f2f6f9; font-weight: 700; color: var(--navy); }
+    .post-body tbody th { width: 22%; font-weight: 700; color: var(--navy); background: #fafbfc; }
+
+    .faq-list { display: flex; flex-direction: column; margin: 6px 0 0; border-top: 1px solid var(--hairline); }
+    .faq-item { padding: 15px 4px; border-bottom: 1px solid var(--hairline); }
+    .faq-item summary { cursor: pointer; font-weight: 700; color: var(--navy); font-size: 15.5px; }
+    .faq-item p { margin: 10px 0 0; }
+
+    .post-cta {
+      margin-top: 40px; padding: 26px 26px 22px; background: #f7f8fa;
+      border: 1px solid var(--hairline); border-radius: 10px;
+    }
+    .post-cta h2 { margin-top: 0; font-size: 1.25rem; }
+    .send-cta, .send-alt { display: inline-block; font-weight: 700; margin-right: 22px; }
+    @media (max-width: 767px) {
+      .post-body { padding-left: 16px; padding-right: 16px; }
+    }
+  </style>
+</Layout>
