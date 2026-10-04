@@ -1,0 +1,232 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const base = 'https://www.dg-sdk.com';
+const url = base + '/blog/cleaning-roller-adhesive-roll-particle-transfer';
+const title = 'Cleaning Rollers and Adhesive Collection Rolls: Trace the Particle Transfer';
+const seoTitle = 'Cleaning Roller and Adhesive Roll: Particle Transfer';
+const description = 'Understand the two roles in roller contact cleaning. Trace particle pickup and collection, investigate declining results, and use a blank inspection log.';
+const faqItems = [
+  {
+    q: 'Does the adhesive collection roll touch the material being cleaned?',
+    a: 'In the two-stage arrangement described here, the elastomer cleaning roller contacts the material. A separate adhesive collection roll contacts that roller and receives the particles. Other contact-cleaning designs exist, so identify the actual components before applying this explanation.'
+  },
+  {
+    q: 'How often should the adhesive sheet be refreshed?',
+    a: 'Use the equipment instructions and observations from the actual process. Incoming contamination, material and operating conditions affect how quickly the collecting surface becomes loaded. Record its condition and the cleaning result; there is no universal interval that applies to every line.'
+  },
+  {
+    q: 'Will a tackier roller fix poor particle removal?',
+    a: 'Not necessarily. Check material pickup, transfer to the collector, consumable compatibility and downstream contamination separately. Increasing tack alone does not establish better cleaning and can introduce handling problems with thin materials. Review the approved roller and material combination before changing it.'
+  }
+];
+const logFields = [
+  'Material grade, lot, face and coating or liner state',
+  'Cleaning roller and collection-roll identifiers',
+  'Collector batch, installation and current surface condition',
+  'Run ID, speed and recorded machine settings',
+  'Inspection point, method, area and lighting or magnification',
+  'Incoming material observation',
+  'Immediate cleaner-exit particle observation',
+  'Point-of-use particle observation',
+  'Surface marks, residue and handling observations',
+  'Approved change and other conditions that differed',
+  'Criterion, result, uncertainty and next check'
+];
+---
+
+<Layout title={seoTitle + ' | Shidike'} description={description} canonical={url}
+  image="/assets/img/blog/cleaning-roller-particle-transfer-v1.jpg">
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: base },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: base + '/blog' },
+      { '@type': 'ListItem', position: 3, name: title, item: url }
+    ]
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BlogPosting', headline: title, description,
+    image: base + '/assets/img/blog/cleaning-roller-particle-transfer-v1.jpg',
+    author: { '@type': 'Organization', name: 'Shidike', url: base },
+    publisher: { '@type': 'Organization', name: 'Shidike', legalName: 'Dongguan Shidike Intelligent Equipment Co., Ltd.', url: base },
+    datePublished: '2026-10-04', dateModified: '2026-10-04', mainEntityOfPage: url
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'FAQPage',
+    mainEntity: faqItems.map(item => ({ '@type': 'Question', name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a } }))
+  })} />
+
+  <article class="post">
+    <header class="post-head">
+      <div class="container post-col">
+        <div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog">Blog</a><span>/</span>Cleaning Roller Particle Transfer</div>
+        <div class="post-tags"><span class="blog-tag">Surface Cleaning</span><span class="blog-tag">Contact Cleaning</span><span class="blog-tag">Troubleshooting</span></div>
+        <h1>{title}</h1>
+        <p class="post-lead">A fresh adhesive roll is only one part of a working contact-cleaning process. Follow the particles from the material to the cleaning roller, then to the collector, before deciding which part needs attention.</p>
+        <div class="post-info"><span>October 4, 2026</span><span>Shidike Technical Team</span><span>7 min read</span></div>
+      </div>
+    </header>
+
+    <div class="container post-col post-body">
+      <picture class="post-figure">
+        <source media="(max-width: 600px)" srcset="/assets/img/blog/cleaning-roller-particle-transfer-v1-mobile.webp" type="image/webp" width="800" height="1200" />
+        <source media="(max-width: 600px)" srcset="/assets/img/blog/cleaning-roller-particle-transfer-v1-mobile.jpg" type="image/jpeg" width="800" height="1200" />
+        <source srcset="/assets/img/blog/cleaning-roller-particle-transfer-v1.webp" type="image/webp" />
+        <img src="/assets/img/blog/cleaning-roller-particle-transfer-v1.jpg" alt="Conceptual particle transfer from a material surface to an elastomer cleaning roller, then to a separate adhesive collection roll" width="1600" height="1000" loading="lazy" decoding="async" />
+      </picture>
+      <p><em>Original conceptual illustration of the transfer sequence. The arrows show where particles go, not roller rotation, machine geometry or measured cleaning performance.</em></p>
+
+      <section id="two-separate-roles">
+        <h2>Two surfaces do two different jobs</h2>
+        <p><strong>The cleaning roller picks particles up from the material; the adhesive collection roll receives them from the cleaning roller.</strong> This article concerns an elastomer contact cleaner with a separate collecting roll. It does not describe every contact-cleaning design or a disposable sticky roller applied directly to a surface.</p>
+        <p><a href="https://www.teknek.com/insights/technology/">Teknek's technology overview</a> describes this pickup-and-collection concept for dry, unattached particles. <a href="https://www.kelva.com/contact-cleaner/">KELVA's contact-cleaning description</a> likewise separates the polymer roller from the replaceable adhesive sheets that receive contamination.</p>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Cleaning roller and adhesive collection roll roles">
+          <table>
+            <thead><tr><th scope="col">Component</th><th scope="col">Contact in this arrangement</th><th scope="col">What to identify</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Elastomer cleaning roller</th><td>The material surface and the collecting roll.</td><td>Its intended material-facing surface, condition and approved setup.</td></tr>
+              <tr><th scope="row">Adhesive collection roll</th><td>The cleaning roller, not the material.</td><td>The correct consumable, exposed collecting layer and installation state.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>For broader choices between roller contact, brush-and-vacuum and non-contact methods, start with our <a href="/guides/what-is-web-cleaning">web-cleaning guide</a>. Here the question is narrower: where might transfer be interrupted in a roller-and-collector system?</p>
+      </section>
+
+      <section id="separate-the-checks">
+        <h2>Separate pickup, collection and the next process step</h2>
+        <div class="step-block"><div class="step-num">Check 1</div><h3>What remains immediately after the cleaner?</h3><p>Define a material face and inspection area. Record the incoming condition and the condition at the cleaner exit using a consistent inspection method. A complaint observed only at a later laminating or printing operation does not yet show that pickup failed.</p></div>
+        <div class="step-block"><div class="step-num">Check 2</div><h3>Can particles pass from the cleaning roller to the collector?</h3><p>A fresh collecting surface cannot do its job without the intended contact. The <a href="https://meech.com/wp-content/uploads/2022/05/TakClean-Operating-Manual-No-Pneumatics.pdf">Meech TakClean operating manual</a> identifies collector engagement, consumable installation and contamination on the elastomer among its checks. Use the instructions and service procedure for the actual machine and revision.</p></div>
+        <div class="step-block"><div class="step-num">Check 3</div><h3>What happens between the exit and the point of use?</h3><p>Record the downstream contacts and exposure before the next operation. KELVA describes exit ionization as a way to address electrostatic dust re-attraction. Charge control and particle collection remain different tasks: an ionizer does not replace the collecting roll, and an acceptable exit observation does not establish cleanliness farther downstream.</p></div>
+        <p>Apply the sequence to the actual line layout. Inspect, refresh or adjust internal components only with the equipment made safe under its own procedure. Use approved observation access and keep guards in place during operation.</p>
+      </section>
+
+      <section id="diagnostic-patterns">
+        <h2>Use the symptom to choose the next check</h2>
+        <p>Several causes can produce similar-looking defects. Treat each row as a question to investigate, then record the outcome instead of declaring a cause from appearance alone.</p>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Particle transfer troubleshooting checks">
+          <table>
+            <thead><tr><th scope="col">Observation</th><th scope="col">Next check</th><th scope="col">What it does not prove</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">The exit result worsens during a run</th><td>Record incoming dust and collector condition; compare after an approved refresh with other conditions documented.</td><td>Elapsed time alone specifies the correct sheet-refresh interval.</td></tr>
+              <tr><th scope="row">Particles remain on the cleaning roller with a fresh collector</th><td>Check the intended roll-to-roll contact, installation and approved consumable pairing.</td><td>The collector must simply need a stronger adhesive.</td></tr>
+              <tr><th scope="row">A repeated strip of the material remains dirty</th><td>Identify its position across the width; review contact and the corresponding roller region.</td><td>The visible strip uniquely identifies a mechanical fault.</td></tr>
+              <tr><th scope="row">Marks or residue appear after a consumable change</th><td>Record the new part and batch, and review compatibility and the material's starting condition.</td><td>Every mark is a particle, or the new roll is necessarily the cause.</td></tr>
+              <tr><th scope="row">The exit meets the agreed criterion but the next operation does not</th><td>Repeat comparable inspections at both points and investigate intervening contact, exposure and charge control.</td><td>The cleaner caused the later contamination.</td></tr>
+              <tr><th scope="row">Thin material begins wrapping or handling becomes unstable</th><td>Stop and review the approved material/roller combination and operating conditions.</td><td>More tack or pressure will correct the problem.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Record both the observation and the explanation being tested, including any conditions that prevent a direct comparison.</p>
+      </section>
+
+      <section id="refresh-and-compatibility">
+        <h2>Set refresh decisions from the process, not a universal timer</h2>
+        <p><a href="https://meech.com/faq/takclean/">Meech's TakClean FAQ</a> explains that adhesive-sheet refresh timing depends on the contamination load. For your line, record the collecting surface condition together with the material result. The approved refresh method, acceptable result and inspection frequency must come from the actual equipment and process requirements.</p>
+        <p>Keep a change record: which layer or consumable was refreshed, when, and what else changed. If the next comparison improves, it supports investigating collector condition; a different material lot or operating state may still limit that conclusion. Very rapid loading also warrants checking incoming shedding. Teknek's technology overview discusses bulk or hybrid cleaning for heavily shedding materials, rather than treating faster consumable use as the only answer.</p>
+        <p>Part dimensions alone do not establish compatibility. <a href="https://www.teknek.com/products/adhesive-rolls/">Teknek's adhesive-roll information</a> discusses the role of adhesive formulation and possible chemical transfer. Confirm the intended roller/adhesive pairing with the equipment supplier; this is not a claim that one brand's consumables fit another brand's machine.</p>
+      </section>
+
+      <section id="tack-and-contamination">
+        <h2>More tack is not a complete cleaning specification</h2>
+        <p><a href="https://www.teknek.com/solutions/cleaning-thin-materials/">Teknek's discussion of thin-material cleaning</a> challenges the assumption that higher tack automatically gives better cleaning and describes wrapping risks. Review the actual material, roller surface and handling conditions before changing a formulation or setup. Particle pickup, surface integrity and stable transport are separate acceptance questions.</p>
+        <p>Also identify what needs removing. A dry-particle cleaning process should not be assumed to dissolve an oily film, flux residue or bonded contamination. The <a href="/blog/dry-pcb-cleaning-vs-flux-removal">dry PCB cleaning and flux-removal comparison</a> explains why contamination type and process stage need different methods. Do not add a solvent or copy a cleaning recipe from another machine without the applicable material and equipment guidance.</p>
+      </section>
+
+      <section id="inspection-log">
+        <h2>A blank particle-transfer inspection log</h2>
+        <p>Use this proposed worksheet to compare the starting configuration with one approved change. Keep photographs or inspection records under the same point IDs. Leave unknown information marked “not recorded”; do not fill it with an assumed setting.</p>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Blank particle transfer inspection log">
+          <table>
+            <thead><tr><th scope="col">Record</th><th scope="col">Starting configuration</th><th scope="col">After the documented change</th></tr></thead>
+            <tbody>{logFields.map(field => <tr><th scope="row">{field}</th><td>______</td><td>______</td></tr>)}</tbody>
+          </table>
+        </div>
+        <p>Use comparable inspection areas and methods, and preserve the result in its original form: counts, images or the agreed visual assessment. Record surface and handling observations separately. A better particle result does not, by itself, demonstrate an undamaged coating or an acceptable downstream product.</p>
+        <p>Finish with the observed change, the explanation still being tested and the next check. For a new material rather than an existing-line investigation, our <a href="/blog/coated-optical-film-cleaning-trial-samples">coated-film trial sample guide</a> covers material identity and reference samples before the trial.</p>
+      </section>
+
+      <section id="faq"><h2>Frequently asked questions</h2><div class="faq-list">{faqItems.map(item => <details class="faq-item"><summary>{item.q}</summary><p>{item.a}</p></details>)}</div></section>
+
+      <div class="post-cta">
+        <h2>Review the cleaning process for your material</h2>
+        <p>Send the material and coating details, particle description, current cleaner configuration and the point where the problem is observed. Our team can review the application and discuss the information needed for a suitable cleaning trial.</p>
+        <p><a class="send-cta" href="/products/cleaning-machine/contact-cleaning-machine">Explore Contact Cleaning Equipment &rarr;</a><a class="send-alt" href="/contact?type=selection&amp;product=Contact%20Cleaning%20Particle%20Transfer">Discuss Your Application &rarr;</a></p>
+      </div>
+    </div>
+  </article>
+  <style>
+    .post-col { max-width: 780px; }
+    .post-head { background: #f7f8fa; padding: 48px 0 34px; border-bottom: 1px solid var(--hairline); }
+    .post-head .breadcrumb { font-size: 13px; color: #7d8d97; margin-bottom: 18px; }
+    .post-head .breadcrumb a { color: var(--brand-deep); text-decoration: none; }
+    .post-head .breadcrumb span { margin: 0 8px; }
+    .post-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .blog-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      background: #eef4f8; color: #4a6373; padding: 4px 9px; border-radius: 999px;
+    }
+    .post-head h1 {
+      font-size: clamp(1.7rem, 3.4vw, 2.5rem); line-height: 1.2; font-weight: 800;
+      letter-spacing: -.02em; color: var(--navy); margin: 0 0 14px;
+    }
+    .post-lead { font-size: 1.05rem; line-height: 1.75; color: #46545f; margin: 0 0 18px; }
+    .post-info { display: flex; flex-wrap: wrap; gap: 16px; font-size: 12.5px; color: #8a99a4; }
+
+    .post-body { padding: 34px 0 70px; }
+    .post-figure { display: block; margin: 0 0 30px; }
+    .post-figure img {
+      display: block; width: 100%; height: auto; border: 1px solid var(--hairline); border-radius: 8px;
+    }
+    .post-body h2 {
+      font-size: 1.42rem; font-weight: 700; letter-spacing: -.01em; color: var(--navy);
+      margin: 34px 0 12px;
+    }
+    .post-body p { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 15px; }
+    .post-body a { color: var(--brand-deep); }
+    .post-body h3 {
+      font-size: 1.12rem; font-weight: 700; color: var(--navy); margin: 26px 0 10px;
+    }
+    .post-body ul, .post-body ol { margin: 0 0 15px; padding-left: 22px; }
+    .post-body li { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 7px; }
+    .post-body blockquote, .post-body .blog-quote {
+      margin: 0 0 18px; padding: 13px 16px; background: #f2f6f9;
+      border-left: 3px solid var(--brand-deep); border-radius: 0 8px 8px 0;
+    }
+    .post-body .blog-quote p:last-child { margin-bottom: 0; }
+    .post-body .step-block { margin: 0 0 22px; }
+    .post-body .step-num {
+      display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .06em;
+      text-transform: uppercase; background: var(--navy); color: #fff;
+      padding: 4px 10px; border-radius: 999px; margin-bottom: 8px;
+    }
+    .formula {
+      font-size: 1.2rem !important; font-weight: 700; text-align: center; color: var(--navy) !important;
+      background: #f2f6f9; border: 1px solid var(--hairline); border-radius: 8px; padding: 14px;
+    }
+
+    .table-wrap { overflow-x: auto; margin: 0 0 20px; }
+    .post-body table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+    .post-body th, .post-body td {
+      text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--hairline); vertical-align: top;
+    }
+    .post-body thead th { background: #f2f6f9; font-weight: 700; color: var(--navy); }
+    .post-body tbody th { width: 22%; font-weight: 700; color: var(--navy); background: #fafbfc; }
+
+    .faq-list { display: flex; flex-direction: column; margin: 6px 0 0; border-top: 1px solid var(--hairline); }
+    .faq-item { padding: 15px 4px; border-bottom: 1px solid var(--hairline); }
+    .faq-item summary { cursor: pointer; font-weight: 700; color: var(--navy); font-size: 15.5px; }
+    .faq-item p { margin: 10px 0 0; }
+
+    .post-cta {
+      margin-top: 40px; padding: 26px 26px 22px; background: #f7f8fa;
+      border: 1px solid var(--hairline); border-radius: 10px;
+    }
+    .post-cta h2 { margin-top: 0; font-size: 1.25rem; }
+    .send-cta, .send-alt { display: inline-block; font-weight: 700; margin-right: 22px; }
+    @media (max-width: 767px) {
+      .post-body { padding-left: 16px; padding-right: 16px; }
+    }
+  </style>
+</Layout>

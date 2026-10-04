@@ -43,6 +43,7 @@ backlight panel, LCM module and roll material.
 - [ESD Control Products](https://www.dg-sdk.com/guides/esd-control-products): Buyer's guide.
 - [What Is Web Cleaning](https://www.dg-sdk.com/guides/what-is-web-cleaning): Contact against non-contact dry particle removal, and what a cleaning trial has to record.
 - [Technical Blog](https://www.dg-sdk.com/blog): Application guides for lithium battery, photovoltaic and optical film production.
+- [Cleaning Rollers and Adhesive Rolls](https://www.dg-sdk.com/blog/cleaning-roller-adhesive-roll-particle-transfer): Trace particle pickup and collection, distinguish downstream recontamination, and record a controlled comparison with a blank inspection log.
 - [Static Returns After Ionization](https://www.dg-sdk.com/blog/static-returns-after-ionization): Map downstream contact and separation, distinguish measurement effects and record observations at the affected process before attributing a cause.
 - [Coated Optical Film Cleaning Trial Samples](https://www.dg-sdk.com/blog/coated-optical-film-cleaning-trial-samples): Identify faces and protective layers, document handling and reference samples, and complete a handover worksheet for separate particle, surface and optical checks.
 - [Comparing Ionizer Datasheets](https://www.dg-sdk.com/blog/comparing-ionizer-datasheets): Decay time and ion balance test conditions, measurement geometry, airflow and a blank comparison worksheet; distinguish charged-plate results from application measurements.
