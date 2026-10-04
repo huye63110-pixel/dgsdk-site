@@ -51,7 +51,7 @@ const comparisonFields = [
     image: base + '/assets/img/static-eliminator/st-g.jpg',
     author: { '@type': 'Organization', name: 'Shidike', url: base },
     publisher: { '@type': 'Organization', name: 'Shidike', legalName: 'Dongguan Shidike Intelligent Equipment Co., Ltd.', url: base },
-    datePublished: '2026-10-01', dateModified: '2026-10-01', mainEntityOfPage: url
+    datePublished: '2026-10-01', dateModified: '2026-10-04', mainEntityOfPage: url
   })} />
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org', '@type': 'FAQPage',
@@ -66,7 +66,7 @@ const comparisonFields = [
         <div class="post-tags"><span class="blog-tag">Static Control</span><span class="blog-tag">Ionizer Testing</span><span class="blog-tag">Selection Guide</span></div>
         <h1>{title}</h1>
         <p class="post-lead">A decay-time number describes a defined voltage change on a defined test target. Before comparing two ionizers, check the conditions behind the numbers, then plan a separate verification on your material.</p>
-        <div class="post-info"><span>October 1, 2026</span><span>Shidike Technical Team</span><span>8 min read</span></div>
+        <div class="post-info"><span>October 1, 2026</span><span>Updated October 4, 2026</span><span>Shidike Technical Team</span><span>8 min read</span></div>
       </div>
     </header>
 
@@ -94,28 +94,28 @@ const comparisonFields = [
 
       <section id="endpoints-polarity">
         <h2>Read the voltage endpoints and both polarities</h2>
-        <p>A time without a start and stop voltage is an incomplete comparison. <a href="https://www.keyence.com.cn/ss/products/static/static-electricity/faq/basic.jsp">KEYENCE's official technical Q&amp;A</a> gives examples using ±1000 V to ±100 V and identifies the charged-plate test setup and air conditions. In that notation, the two tests are <strong>+1000 V to +100 V</strong> and <strong>−1000 V to −100 V</strong>. It does not mean a sweep from a positive voltage to a negative one.</p>
+        <p>A time without a start and stop voltage is an incomplete comparison. Ask for the voltage interval used for each reported result, with the sign of both endpoints. Keep the positive-charge test and negative-charge test as separate entries so that an abbreviated headline cannot hide which polarity was measured.</p>
         <p>Record the positive and negative results separately. If a sheet gives one headline time, ask whether it is a typical result, a maximum, an average or one polarity only. A result over a different voltage interval cannot simply be rescaled into the interval you need.</p>
         <div class="blog-quote"><p><strong>A useful comparison question:</strong> “Can you supply both polarity results for the same voltage endpoints and the measurement positions shown in our proposed installation?” Keep any unavailable answer marked as not reported.</p></div>
       </section>
 
       <section id="measurement-geometry">
         <h2>Compare the test target and its position</h2>
-        <p>A charged plate monitor, or CPM, provides a controlled conductive target. Its plate is not the same object as a moving film or assembled product. <a href="https://technology-ionization.simco-ion.com/LinkClick.aspx?link=%2Fdocuments%3FCommand%3DCore_Download%26EntryId%3D1456&amp;mid=933&amp;portalid=0&amp;tabid=200">Simco-Ion's CPM Measurements application note</a> explains why plate area, capacitance, surrounding objects and instrument response matter to the readings.</p>
+        <p>A charged plate monitor, or CPM, uses a conductive test plate. Record the plate and instrument details rather than assuming all reports used the same setup. The public <a href="https://www.esda.org/assets/Store/ToC/ANSI-ESD-STM3.1-2024.pdf">ANSI/ESD STM3.1-2024 contents</a> identify separate instrumentation, plate-capacitance and test-location topics. The contents are a guide to what the full method covers, not a substitute for its test procedure.</p>
         <p>Ask how distance was measured: from which part of the ionizer to which part of the target, and at what orientation? Keep a sketch or test-point map with the results. A centre reading is not an edge reading, and a near-field result is not evidence for the same performance farther away.</p>
-        <p>Also check how offset was recorded. An average, a range and positive/negative peaks are different descriptions, especially for a changing signal. The same Simco-Ion note distinguishes these readings; preserve the original description and observation period instead of reducing every result to an unexplained “±” number.</p>
+        <p>Also check how offset was reported. Keep the report's stated statistic and observation period: an average, a range and positive/negative peaks are different descriptions. If the sheet shows an unexplained “±” number, request its definition before using it in a comparison.</p>
       </section>
 
       <section id="operating-conditions">
         <h2>Record airflow and settings without forcing unlike equipment to be identical</h2>
         <p>“Same conditions” needs a practical definition. Agree on the application target, measurement geometry and evaluation method. Then document the configuration each candidate actually requires. Different designs may need different operating modes or air arrangements; hiding those differences makes a comparison less useful.</p>
-        <p>The <a href="https://www.simco-ion.com/Portals/0/Documents/Updated%20PDF%20Sheets%20and%20Manuals/5201128%20Rev%20E.pdf">Simco-Ion Ioncell manual, Rev E</a> illustrates this point by reporting conditions for configurations with and without a fan and for an air-tube arrangement. The tables identify distance and, where applicable, air-supply details. Those model-specific settings are not recommendations for another ionizer.</p>
+        <p>Use the installation and test documentation for each candidate to identify its required air arrangement. Mark configurations separately when a fan, air supply or control mode changes. Do not transfer another model's operating settings to the equipment under review.</p>
         <p>For your review, record the fan setting, air pressure and flow where available, tubing or nozzle arrangement, background airflow and the selected control settings. Pressure and flow need separate fields. If a supplier changes settings between offset and decay measurements, keep that change visible rather than treating the results as one tested configuration.</p>
       </section>
 
       <section id="comparison-worksheet">
         <h2>A blank ionizer datasheet comparison worksheet</h2>
-        <p>Copy this table into the enquiry or trial record. Fill each column from the relevant report, with its units and source page. Use “not reported” for missing information; use “not applicable” only when the field genuinely does not apply to that configuration.</p>
+        <p>This is a suggested supplier-review worksheet, not a reproduction of a standard's reporting requirements. Copy it into the enquiry or trial record and fill each column from the relevant report, with its units and source page. Use “not reported” for missing information; use “not applicable” only when the field does not apply to that configuration.</p>
         <div class="table-wrap" tabindex="0" role="region" aria-label="Blank ionizer comparison worksheet">
           <table>
             <thead><tr><th scope="col">Record this field</th><th scope="col">Candidate A</th><th scope="col">Candidate B</th></tr></thead>
@@ -127,7 +127,7 @@ const comparisonFields = [
 
       <section id="application-check">
         <h2>Use the comparison to plan the application check</h2>
-        <p>Comparable datasheets help narrow a shortlist; they do not finish the production trial. <a href="https://content2.smcetech.com/pdf/ES100-168A.pdf">SMC's IZT44/45 catalogue</a> identifies its charged-plate conditions and cautions that results on the actual object depend on its material and dimensions. Its stated test-method edition should also stay attached to those figures rather than being silently replaced by a newer edition.</p>
+        <p>Comparable datasheets help narrow a shortlist; they do not finish the production trial. The public scope of <a href="https://webstore.iec.ch/en/publication/68397">IEC 61340-4-7:2025</a> distinguishes published ionizer performance data from qualification for a specific application. Plan that application check separately, and keep the original test-method edition attached to each supplied result.</p>
         <div class="step-block"><div class="step-num">Step 1</div><h3>Define the actual task</h3><p>Record the material, exposed surfaces, movement or handling sequence, available space and the process requirement. Identify where charge is observed and where the result needs to be checked.</p></div>
         <div class="step-block"><div class="step-num">Step 2</div><h3>Agree what will be measured</h3><p>Keep the CPM comparison separate from measurements on the actual material. Define the instrument method, measurement location and geometry for each. Set acceptance criteria with the process owner; do not adopt a supplier's ion-balance figure as a universal material-residual limit.</p></div>
         <div class="step-block"><div class="step-num">Step 3</div><h3>Review gaps before selecting a configuration</h3><p>Sort the comparison into documented conditions, unresolved conditions and application checks still needed. If one candidate has a shorter headline time at a different distance, the immediate outcome is a request for comparable evidence, not a declaration that it is the faster choice for the line.</p></div>

@@ -17,7 +17,7 @@ const faqItems = [
   },
   {
     q: 'Will a tackier roller fix poor particle removal?',
-    a: 'Not necessarily. Check material pickup, transfer to the collector, consumable compatibility and downstream contamination separately. Increasing tack alone does not establish better cleaning and can introduce handling problems with thin materials. Review the approved roller and material combination before changing it.'
+    a: 'Not necessarily. Check material pickup, transfer to the collector, consumable compatibility and downstream contamination separately. A tack rating alone does not establish the particle result, surface condition or transport stability on the actual material. Review the approved roller and material combination before changing it.'
   }
 ];
 const logFields = [
@@ -81,7 +81,7 @@ const logFields = [
       <section id="two-separate-roles">
         <h2>Two surfaces do two different jobs</h2>
         <p><strong>The cleaning roller picks particles up from the material; the adhesive collection roll receives them from the cleaning roller.</strong> This article concerns an elastomer contact cleaner with a separate collecting roll. It does not describe every contact-cleaning design or a disposable sticky roller applied directly to a surface.</p>
-        <p><a href="https://www.teknek.com/insights/technology/">Teknek's technology overview</a> describes this pickup-and-collection concept for dry, unattached particles. <a href="https://www.kelva.com/contact-cleaner/">KELVA's contact-cleaning description</a> likewise separates the polymer roller from the replaceable adhesive sheets that receive contamination.</p>
+        <p>Shidike's STXT640/STXT840 catalogue diagram shows this transfer arrangement. Identify the two components on the actual machine before using the checks below. The illustration describes the transfer path; it does not specify contact pressure, roller formulation or a removal rate. The inspection sequence is a proposed way to organize observations, not a replacement for the machine's operating instructions.</p>
         <div class="table-wrap" tabindex="0" role="region" aria-label="Cleaning roller and adhesive collection roll roles">
           <table>
             <thead><tr><th scope="col">Component</th><th scope="col">Contact in this arrangement</th><th scope="col">What to identify</th></tr></thead>
@@ -97,8 +97,8 @@ const logFields = [
       <section id="separate-the-checks">
         <h2>Separate pickup, collection and the next process step</h2>
         <div class="step-block"><div class="step-num">Check 1</div><h3>What remains immediately after the cleaner?</h3><p>Define a material face and inspection area. Record the incoming condition and the condition at the cleaner exit using a consistent inspection method. A complaint observed only at a later laminating or printing operation does not yet show that pickup failed.</p></div>
-        <div class="step-block"><div class="step-num">Check 2</div><h3>Can particles pass from the cleaning roller to the collector?</h3><p>A fresh collecting surface cannot do its job without the intended contact. The <a href="https://meech.com/wp-content/uploads/2022/05/TakClean-Operating-Manual-No-Pneumatics.pdf">Meech TakClean operating manual</a> identifies collector engagement, consumable installation and contamination on the elastomer among its checks. Use the instructions and service procedure for the actual machine and revision.</p></div>
-        <div class="step-block"><div class="step-num">Check 3</div><h3>What happens between the exit and the point of use?</h3><p>Record the downstream contacts and exposure before the next operation. KELVA describes exit ionization as a way to address electrostatic dust re-attraction. Charge control and particle collection remain different tasks: an ionizer does not replace the collecting roll, and an acceptable exit observation does not establish cleanliness farther downstream.</p></div>
+        <div class="step-block"><div class="step-num">Check 2</div><h3>Can particles pass from the cleaning roller to the collector?</h3><p>For this arrangement, record whether the two surfaces are in their intended operating positions. Identify the installed consumables and record the visible condition of the working roller and collector. Compare these observations with the instructions for the actual machine and revision before deciding whether a setup change is needed.</p></div>
+        <div class="step-block"><div class="step-num">Check 3</div><h3>What happens between the exit and the point of use?</h3><p>Record the downstream contacts and exposure before the next operation, then compare the agreed inspection points. If the line includes ionization, keep its measurement record separate from the particle result. An acceptable exit observation does not establish cleanliness farther downstream, and a charge measurement is not a particle count.</p></div>
         <p>Apply the sequence to the actual line layout. Inspect, refresh or adjust internal components only with the equipment made safe under its own procedure. Use approved observation access and keep guards in place during operation.</p>
       </section>
 
@@ -114,7 +114,7 @@ const logFields = [
               <tr><th scope="row">A repeated strip of the material remains dirty</th><td>Identify its position across the width; review contact and the corresponding roller region.</td><td>The visible strip uniquely identifies a mechanical fault.</td></tr>
               <tr><th scope="row">Marks or residue appear after a consumable change</th><td>Record the new part and batch, and review compatibility and the material's starting condition.</td><td>Every mark is a particle, or the new roll is necessarily the cause.</td></tr>
               <tr><th scope="row">The exit meets the agreed criterion but the next operation does not</th><td>Repeat comparable inspections at both points and investigate intervening contact, exposure and charge control.</td><td>The cleaner caused the later contamination.</td></tr>
-              <tr><th scope="row">Thin material begins wrapping or handling becomes unstable</th><td>Stop and review the approved material/roller combination and operating conditions.</td><td>More tack or pressure will correct the problem.</td></tr>
+              <tr><th scope="row">Material handling becomes unstable</th><td>Stop and review the approved material/roller combination and operating conditions.</td><td>More tack or pressure will correct the problem.</td></tr>
             </tbody>
           </table>
         </div>
@@ -123,14 +123,14 @@ const logFields = [
 
       <section id="refresh-and-compatibility">
         <h2>Set refresh decisions from the process, not a universal timer</h2>
-        <p><a href="https://meech.com/faq/takclean/">Meech's TakClean FAQ</a> explains that adhesive-sheet refresh timing depends on the contamination load. For your line, record the collecting surface condition together with the material result. The approved refresh method, acceptable result and inspection frequency must come from the actual equipment and process requirements.</p>
-        <p>Keep a change record: which layer or consumable was refreshed, when, and what else changed. If the next comparison improves, it supports investigating collector condition; a different material lot or operating state may still limit that conclusion. Very rapid loading also warrants checking incoming shedding. Teknek's technology overview discusses bulk or hybrid cleaning for heavily shedding materials, rather than treating faster consumable use as the only answer.</p>
-        <p>Part dimensions alone do not establish compatibility. <a href="https://www.teknek.com/products/adhesive-rolls/">Teknek's adhesive-roll information</a> discusses the role of adhesive formulation and possible chemical transfer. Confirm the intended roller/adhesive pairing with the equipment supplier; this is not a claim that one brand's consumables fit another brand's machine.</p>
+        <p>Build the refresh record around the actual process: identify the material run, the collecting surface condition and the corresponding exit inspection. Use the equipment instructions for the refresh method and agree the acceptable result and inspection frequency with the process owner. This article does not prescribe a timed interval.</p>
+        <p>Keep a change record: which layer or consumable was refreshed, when, and what else changed. If the next comparison improves, it supports investigating collector condition; a different material lot or operating state may still limit that conclusion. Preserve the incoming inspection as well as the exit result so that a change in the starting material remains visible.</p>
+        <p>Record the approved part identifiers for both the cleaning roller and the collecting roll, including the installed consumable batch. If a proposed replacement differs from that record, confirm its suitability with the equipment supplier before a trial. A matching dimension does not document an approved material and consumable combination.</p>
       </section>
 
       <section id="tack-and-contamination">
         <h2>More tack is not a complete cleaning specification</h2>
-        <p><a href="https://www.teknek.com/solutions/cleaning-thin-materials/">Teknek's discussion of thin-material cleaning</a> challenges the assumption that higher tack automatically gives better cleaning and describes wrapping risks. Review the actual material, roller surface and handling conditions before changing a formulation or setup. Particle pickup, surface integrity and stable transport are separate acceptance questions.</p>
+        <p>Do not use a tack rating as a substitute for an application result. For a proposed change, agree three separate checks: the particles remaining, the condition of the material surface and the stability of transport. Record the actual material, consumables and operating conditions with each result. An improvement in one check does not automatically satisfy the other two.</p>
         <p>Also identify what needs removing. A dry-particle cleaning process should not be assumed to dissolve an oily film, flux residue or bonded contamination. The <a href="/blog/dry-pcb-cleaning-vs-flux-removal">dry PCB cleaning and flux-removal comparison</a> explains why contamination type and process stage need different methods. Do not add a solvent or copy a cleaning recipe from another machine without the applicable material and equipment guidance.</p>
       </section>
 

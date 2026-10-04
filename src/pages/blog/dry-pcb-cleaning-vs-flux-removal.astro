@@ -42,7 +42,7 @@ const faqItems = [
     author: { '@type': 'Organization', name: 'Shidike', url: base },
     publisher: { '@type': 'Organization', name: 'Shidike', legalName: 'Dongguan Shidike Intelligent Equipment Co., Ltd.', url: base },
     datePublished: '2026-09-30',
-    dateModified: '2026-09-30',
+    dateModified: '2026-10-04',
     mainEntityOfPage: url
   })} />
   <script type="application/ld+json" set:html={JSON.stringify({
@@ -61,7 +61,7 @@ const faqItems = [
         <div class="post-tags"><span class="blog-tag">PCB Cleaning</span><span class="blog-tag">SMT</span><span class="blog-tag">Process Selection</span></div>
         <h1>{title}</h1>
         <p class="post-lead">Loose particles before solder paste printing and flux residues after soldering are different cleaning problems. Start with the board's production stage, the contamination and the evidence you need at acceptance.</p>
-        <div class="post-info"><span>September 30, 2026</span><span>Shidike Technical Team</span><span>8 min read</span></div>
+        <div class="post-info"><span>September 30, 2026</span><span>Updated October 4, 2026</span><span>Shidike Technical Team</span><span>8 min read</span></div>
       </div>
     </header>
 
@@ -74,7 +74,7 @@ const faqItems = [
       <section id="different-problems">
         <h2>What does “PCB cleaning” need to remove?</h2>
         <p><strong>Dry PCB cleaning before solder paste printing targets loose surface particles. Post-assembly defluxing targets flux residues left by soldering.</strong> A clean-looking surface is not, by itself, evidence of acceptable ionic cleanliness. These tasks can require different equipment and different acceptance checks.</p>
-        <p>The word “inline” does not identify the cleaning mechanism. <a href="https://www.teknek.com/products/board-sheet-cleaners/smt-ii/">Teknek's SMT II description</a> places particle removal before paste printing. <a href="https://www.zestron.com/usa/en/applications/smt/pcb-defluxing-cleaning">ZESTRON's defluxing overview</a> describes assembly-cleaning applications, including processes with washing, rinsing and drying. Both can be part of a production line, but they address different contamination.</p>
+        <p>The word “inline” describes a machine's place in the line; it does not identify what the process can remove. For the application discussed here, define dry cleaning as a loose-particle removal step on an unpopulated board before paste printing. Treat flux removal after soldering as a separate process to qualify against the assembly's residue and reliability requirements.</p>
         <div class="blog-quote"><p><strong>First question for a supplier:</strong> “What is on the board, and which manufacturing step happens immediately before and after cleaning?” This is more useful than asking for a generic PCB cleaner.</p></div>
       </section>
 
@@ -104,8 +104,8 @@ const faqItems = [
 
       <section id="no-clean-flux">
         <h2>“No-clean” flux is a process decision, not a visual check</h2>
-        <p>Do not turn the term “no-clean” into a universal rule either for or against cleaning. <a href="https://www.indium.com/blog/no-clean-flux/">Indium's explanation of no-clean flux</a> describes residues intended to remain under suitable processing conditions, and cautions that partial removal can expose active material previously contained within the residue.</p>
-        <p>Check the exact flux or solder-paste documentation, the soldering process and the customer's assembly requirements. If a conformal coating will follow, include its preparation requirements in that review. <a href="https://www.microcare.com/en-US/Resources/Resource-Center/Tech-Articles/Why-Clean-a-No-Clean-Flux">MicroCare discusses residue-related coating adhesion problems</a> and the need to match a cleaning agent to both the contamination and the assembly materials.</p>
+        <p>Do not turn the term “no-clean” into a universal rule either for or against cleaning. Decide whether residues may remain by reviewing the exact flux or solder-paste documentation, the actual soldering process and the customer's assembly requirements. A visual inspection alone cannot qualify that decision.</p>
+        <p>If a conformal coating will follow, include its preparation and compatibility requirements in that review. The <a href="https://www.npl.co.uk/products-services/electronics-reliability/surface-insulation-resistance">National Physical Laboratory's surface insulation resistance guidance</a> describes evaluating representative circuit geometries with the relevant process chemistries and includes compatibility assessment of conformal coatings with no-clean solder pastes. This is a separate reliability question from whether loose particles have been removed.</p>
         <p>That does not establish one solvent, temperature or cycle for every PCB. If removal is required, qualify the complete process on representative assemblies. Wiping away what is easy to see is not evidence that residue beneath components, or chemical contamination elsewhere, meets the requirement.</p>
       </section>
 
@@ -125,7 +125,7 @@ const faqItems = [
         </div>
         <div class="step-block">
           <div class="step-num">Check 4</div><h3>Chemical and ionic cleanliness</h3>
-          <p>Where the assembly specification requires residue or ionic-contamination verification, use the specified method and qualified support. <a href="https://kyzen.com/ask-dr-adam/what-is-ionic-contamination/">KYZEN's ionic-contamination overview</a> explains that contamination can originate in board fabrication, assembly materials and handling, and discusses dedicated analysis such as ion chromatography. A particle count or a static measurement cannot substitute for that assessment.</p>
+          <p>Where the assembly specification requires residue or ionic-contamination verification, use the specified method and qualified support. For example, <a href="https://www.ipc.org/sites/default/files/test_methods_docs/2-3_2-3-28b.pdf">IPC-TM-650 Method 2.3.28</a> describes measuring extractable ionic contamination on printed boards and assemblies by ion chromatography. Select the method and acceptance criteria for the actual requirement; a particle count or a static measurement cannot substitute for that assessment.</p>
         </div>
       </section>
 
