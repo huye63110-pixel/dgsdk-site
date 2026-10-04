@@ -36,19 +36,19 @@
   <!-- ===== BLOG (EN) ===== -->
   <url>
     <loc>https://www.dg-sdk.com/blog/coated-optical-film-cleaning-trial-samples</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.dg-sdk.com/blog/comparing-ionizer-datasheets</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.dg-sdk.com/blog/dry-pcb-cleaning-vs-flux-removal</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -321,7 +321,7 @@
 
   <!-- AUTOMATION (ZH) -->
 
-  <url><loc>https://www.dg-sdk.com/blog/static-returns-after-ionization</loc><lastmod>2026-10-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dg-sdk.com/blog/static-returns-after-ionization</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url>
     <loc>https://www.dg-sdk.com/blog/cleaning-roller-adhesive-roll-particle-transfer</loc>
     <lastmod>2026-10-04</lastmod>
