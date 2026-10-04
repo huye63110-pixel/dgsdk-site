@@ -10,6 +10,17 @@
 // reword it here too.
 export const posts = [
   {
+    slug: 'cleaning-roller-adhesive-roll-particle-transfer',
+    category: 'Surface Cleaning',
+    title: 'Cleaning Rollers and Adhesive Collection Rolls: Trace the Particle Transfer',
+    excerpt: 'Trace particles from the material to the cleaning roller and adhesive collector. Separate transfer checks from downstream contamination with a blank inspection log.',
+    date: 'October 4, 2026',
+    datePublished: '2026-10-04',
+    tags: ['Surface Cleaning', 'Contact Cleaning', 'Troubleshooting'],
+    image: '/assets/img/blog/cleaning-roller-particle-transfer-v1',
+    readTime: '7 min read',
+  },
+  {
     slug: 'static-returns-after-ionization',
     category: 'Static Control',
     title: 'Static Returns After Ionization: Trace the Next Contact and Separation',
