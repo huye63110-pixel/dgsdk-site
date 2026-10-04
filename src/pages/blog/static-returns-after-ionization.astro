@@ -13,7 +13,7 @@ const faqItems = [
   },
   {
     q: 'Does a near-zero fieldmeter reading prove both sides of the film are uncharged?',
-    a: 'No. Nearby grounded structures and the measurement geometry affect the field reading. A free-space field measurement also does not independently identify the charge on each face of an insulating film. Record the geometry and use a suitable specialist assessment when the material structure requires it.'
+    a: 'No. Nearby grounded metal can affect a field measurement, and a single reading only records the selected point under the documented conditions. Do not treat it as verification of every position, face or layer. Record the instrument method and geometry, and agree any additional assessment needed for the material.'
   },
   {
     q: 'What residual voltage should the film meet after ionization?',
@@ -49,7 +49,7 @@ const logFields = [
     image: base + '/assets/img/blog/static-returns-observation-map-v1.jpg',
     author: { '@type': 'Organization', name: 'Shidike', url: base },
     publisher: { '@type': 'Organization', name: 'Shidike', legalName: 'Dongguan Shidike Intelligent Equipment Co., Ltd.', url: base },
-    datePublished: '2026-10-03', dateModified: '2026-10-03', mainEntityOfPage: url
+    datePublished: '2026-10-03', dateModified: '2026-10-04', mainEntityOfPage: url
   })} />
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org', '@type': 'FAQPage',
@@ -64,7 +64,7 @@ const logFields = [
         <div class="post-tags"><span class="blog-tag">Static Control</span><span class="blog-tag">Film Handling</span><span class="blog-tag">Troubleshooting</span></div>
         <h1>{title}</h1>
         <p class="post-lead">Film may show a low reading after an ionizing bar and a higher reading farther along the line. Check both the intervening process and the measurement setup before deciding what changed.</p>
-        <div class="post-info"><span>October 3, 2026</span><span>Shidike Technical Team</span><span>8 min read</span></div>
+        <div class="post-info"><span>October 3, 2026</span><span>Updated October 4, 2026</span><span>Shidike Technical Team</span><span>8 min read</span></div>
       </div>
     </header>
 
@@ -80,16 +80,16 @@ const logFields = [
       <section id="why-charge-can-return">
         <h2>Why film can acquire charge after an ionizer</h2>
         <p><strong>Ionization does not prevent a later contact-and-separation event from generating charge.</strong> <a href="https://www.esda.org/esd-overview/esd-fundamentals/part-1-an-introduction-to-esd/">ESDA's introduction to electrostatic discharge</a> explains contact-and-separation charging and the influence of material and process conditions. Obvious rubbing is not a prerequisite: separating film from another surface can matter even when the line appears to run smoothly.</p>
-        <p>Follow the material beyond the bar. Mark guide rollers, belts, nip contacts, liner removal and winding on a simple process sketch. These are candidate investigation points, not a list of proven faults. <a href="https://simco-ion.eu/industry-solutions/converting">Simco-Ion's converting overview</a> describes renewed charging as material passes rollers and during later winding operations. Its examples support checking downstream steps; they do not prescribe the same equipment arrangement for every line.</p>
+        <p>Apply that contact-and-separation principle to the actual material path. On a process sketch, mark where the film touches or separates from rollers, belts, a liner or another surface. Use those locations to plan observations beyond the ionizer. They are candidate investigation points; the sketch alone does not identify a fault or prescribe an equipment arrangement.</p>
         <p>A complaint such as “static came back at stacking” therefore needs a location and a record. Note what was actually observed: a meter reading, sticking, a handling interruption or a particle result. Keep these observations separate instead of treating any one of them as proof of the others.</p>
       </section>
 
       <section id="measurement-effects">
         <h2>Check whether the reading changed because the geometry changed</h2>
-        <p>Advanced Energy's <a href="https://www.advancedenergy.com/getmedia/7607f4c6-9ddd-4db9-9399-0b042f8c890f/en-esd-fieldmeters-web-converting-application-note.pdf">Electric Fields and Fieldmeters in Web Converting</a> explains that surrounding charged objects, grounded conductors and the probe affect a field measurement. Nearby grounded surfaces can suppress the measured field. Comparing film close to a metal roller with a later unsupported span can therefore be misleading.</p>
-        <p>The same note explains that a free-space field reading does not distinguish which face of an insulating sheet holds the charge. A low reading is not evidence that every region and layer is uncharged. Complex multilayer or bound-charge questions need an appropriate specialist method.</p>
+        <p>The technical Q&amp;A on page 34 of <a href="https://www.esda.org/pubs/threshold/2026/jan-feb-2026/index.html">ESDA's January–February 2026 Threshold</a> distinguishes voltage measurements from field-strength measurements and notes that grounded metal can suppress a measured field. For this investigation, record nearby metalwork and the probe geometry before comparing two locations. Treat a change in that setup as a possible measurement difference, not immediate proof of new charge.</p>
+        <p>Limit each conclusion to what was checked. A low reading at one location is not a survey of every part of the film. If the concern involves another face, an internal layer or a different process location, agree an assessment that addresses that question instead of extending the first reading beyond its scope.</p>
         <div class="blog-quote"><p><strong>First comparison question:</strong> “Were these observations made with a comparable instrument method and geometry?” If not, record the difference before attributing the change to the ionizer or the next roller.</p></div>
-        <p>Use the instructions for the actual instrument. For example, the <a href="https://fraser-antistatic.com/wp-content/uploads/2020/07/715-DS-Iss.5-EN.pdf">Fraser 715 datasheet</a> specifies a model-specific measuring distance and calibration target. Those details are not universal settings for other meters. Preserve the selected mode and reported units; a voltage display and field strength per unit distance are not interchangeable labels.</p>
+        <p>Use the procedure and measuring distance specified for the actual instrument and selected mode. Keep the displayed units with every result. The ESDA Q&amp;A concerns ESD-control measurements around sensitive items; its numerical limits are not acceptance limits for a film-cleaning process. Define the process criterion separately.</p>
       </section>
 
       <section id="three-point-map">
