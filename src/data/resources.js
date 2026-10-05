@@ -10,6 +10,17 @@
 // reword it here too.
 export const posts = [
   {
+    slug: 'ionizing-bar-retrofit-planning',
+    category: 'Static Control',
+    title: 'Planning an Ionizing Bar Retrofit: A Pre-Installation Checklist',
+    excerpt: 'Prepare the line drawing, material envelope, mounting access, connection questions and verification plan before adding an ionizing bar to an existing machine.',
+    date: 'October 5, 2026',
+    datePublished: '2026-10-05',
+    tags: ['Static Control', 'Ionizing Bars', 'Application Planning'],
+    image: '/assets/img/blog/ionizing-bar-retrofit-planning-v1',
+    readTime: '7 min read',
+  },
+  {
     slug: 'cleaning-roller-adhesive-roll-particle-transfer',
     category: 'Surface Cleaning',
     title: 'Cleaning Rollers and Adhesive Collection Rolls: Trace the Particle Transfer',
