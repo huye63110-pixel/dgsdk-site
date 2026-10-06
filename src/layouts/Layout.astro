@@ -9,6 +9,17 @@ const {
   image = "/assets/img/static-eliminator/banner-bg2.webp",
   canonical: _rawCanonical = Astro.url.href,
   noLangAlternates = false,
+  // Page-level switch for the hreflang pair in the head. On a single-language
+  // page the only alternate is the page itself, so a page whose query-string
+  // aliases are crawled as separate URLs (the contact page, reached from the
+  // selection CTAs with ?type= and ?product=) opts out: every alias is
+  // otherwise read by an auditor as a URL absent from its own alternate set.
+  //
+  // Deliberately NOT noLangAlternates, which privacy.astro already passes but
+  // which no version of this layout has ever read. Wiring that one up would
+  // silently change a second page's output; it stays dormant until someone
+  // decides that on purpose.
+  emitHreflang = true,
   // The v12 homepage ships a complete stylesheet of its own. Loading the
   // legacy Bootstrap sheet underneath it put back everything the prototype
   // deliberately left at browser defaults - line-height, section padding,
@@ -36,8 +47,12 @@ const path = new URL(canonical).pathname;
     <link rel="canonical" href={canonical} />
 
     <!-- hreflang for multilingual versions -->
-    <link rel="alternate" hreflang="en" href={`${base}${path}`} />
-    <link rel="alternate" hreflang="x-default" href={`${base}${path}`} />
+    {emitHreflang && (
+      <>
+        <link rel="alternate" hreflang="en" href={`${base}${path}`} />
+        <link rel="alternate" hreflang="x-default" href={`${base}${path}`} />
+      </>
+    )}
 
     <!-- Open Graph (Facebook, LinkedIn) -->
     <meta property="og:type" content="website" />
