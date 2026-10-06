@@ -1,0 +1,230 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const base = 'https://www.dg-sdk.com';
+const url = base + '/blog/ionizing-bar-retrofit-planning';
+const title = 'Planning an Ionizing Bar Retrofit: A Pre-Installation Checklist';
+const seoTitle = 'Ionizing Bar Retrofit: Pre-Installation Checklist';
+const description = 'Plan an ionizing bar retrofit with a line drawing, material width and movement, mounting and service access, connection details and a verification worksheet.';
+const faqItems = [
+  {
+    q: 'What information is needed before choosing an ionizing bar length?',
+    a: 'Provide the material width, expected edge movement, target face and available mounting space. Ask for a drawing that distinguishes overall body length, active emitter span and mounting pattern. A matching overall length does not establish coverage or physical fit on the line.'
+  },
+  {
+    q: 'Can an ionizing bar go in the nearest available space?',
+    a: 'Treat that space as a candidate for review. Record the web path, nearby structure, normal guarded configuration, connection route and service access. The equipment and process teams need to confirm the installation and qualification plan before accepting the position.'
+  },
+  {
+    q: 'Does a catalogue decay time prove that a retrofit will work?',
+    a: 'No. A decay-time figure describes a test under particular conditions. It does not, by itself, establish the result on your moving material. Confirm the test conditions, then agree application-specific measurements and acceptance criteria with the process owner.'
+  }
+];
+const handoverFields = [
+  'Machine ID, drawing revision and candidate position',
+  'Material, target face, width and movement range',
+  'Product drawing, support and access review',
+  'Supply, connector and intended interfaces',
+  'Measurement plan, criterion and named acceptance owner',
+  'Open issue, requested evidence, reviewer and decision date'
+];
+const reviewRows = [
+  ['Material width or edge range unclear', 'Marked drawing or operating observation', 'Process owner'],
+  ['Active span or mounting pattern unconfirmed', 'Current product drawing', 'Equipment supplier'],
+  ['Support or guarded access unresolved', 'Machine layout and access review', 'Machine engineering'],
+  ['Connection or alarm behavior unknown', 'Interface documentation', 'Controls engineering'],
+  ['Test location or criterion undecided', 'Agreed measurement and acceptance plan', 'Process and quality teams']
+];
+---
+
+<Layout title={seoTitle + ' | Shidike'} description={description} canonical={url}
+  image="/assets/img/blog/ionizing-bar-retrofit-planning-v1.jpg">
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: base },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: base + '/blog' },
+      { '@type': 'ListItem', position: 3, name: title, item: url }
+    ]
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BlogPosting', headline: title, description,
+    image: base + '/assets/img/blog/ionizing-bar-retrofit-planning-v1.jpg',
+    author: { '@type': 'Organization', name: 'Shidike', url: base },
+    publisher: { '@type': 'Organization', name: 'Shidike', legalName: 'Dongguan Shidike Intelligent Equipment Co., Ltd.', url: base },
+    datePublished: '2026-10-05', dateModified: '2026-10-05', mainEntityOfPage: url
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'FAQPage',
+    mainEntity: faqItems.map(item => ({ '@type': 'Question', name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a } }))
+  })} />
+
+  <article class="post">
+    <header class="post-head">
+      <div class="container post-col">
+        <div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog">Blog</a><span>/</span>Ionizing Bar Retrofit Planning</div>
+        <div class="post-tags"><span class="blog-tag">Static Control</span><span class="blog-tag">Ionizing Bars</span><span class="blog-tag">Application Planning</span></div>
+        <h1>{title}</h1>
+        <p class="post-lead">Before ordering an ionizing bar for an existing line, prepare a drawing that shows what the bar must treat and what surrounds it. A useful retrofit brief connects the material path, mounting space, connections and planned measurements, so each unresolved detail has someone responsible for checking it.</p>
+        <div class="post-info"><span>October 5, 2026</span><span>Shidike Technical Team</span><span>7 min read</span></div>
+      </div>
+    </header>
+
+    <div class="container post-col post-body">
+      <picture class="post-figure">
+        <source media="(max-width: 600px)" srcset="/assets/img/blog/ionizing-bar-retrofit-planning-v1-mobile.webp" type="image/webp" width="800" height="1400" />
+        <source media="(max-width: 600px)" srcset="/assets/img/blog/ionizing-bar-retrofit-planning-v1-mobile.jpg" type="image/jpeg" width="800" height="1400" />
+        <source srcset="/assets/img/blog/ionizing-bar-retrofit-planning-v1.webp" type="image/webp" />
+        <img src="/assets/img/blog/ionizing-bar-retrofit-planning-v1.jpg" alt="Conceptual ionizing-bar retrofit planning brief with a side view of the material path and nearby structure, a separate width view for coverage and edge movement, and prompts for access, connections and measurement." width="1600" height="1000" loading="lazy" decoding="async" />
+      </picture>
+      <p><em>Original conceptual planning diagram. The dashed space is a review area, not a specified mounting position. Confirm active coverage against the material width and edge movement. No dimensions or validated installation are shown.</em></p>
+
+      <section id="existing-line-drawing">
+        <h2>Start with the existing line and a defined problem</h2>
+        <p><strong>Use this proposed planning worksheet to prepare an engineering review.</strong> It does not prescribe installation distances or replace equipment instructions. Begin with the process step that needs attention: which material, which face and which observed problem? Name the person who will decide whether a later trial meets the process requirement.</p>
+        <p>The <a href="https://www.esda.org/esd-overview/esd-fundamentals/part-2-principles-of-esd-control/" target="_blank" rel="noopener noreferrer">ESD Association's principles of control</a> distinguish grounding conductive items from neutralizing charge on insulators, and recommend understanding materials and processes before choosing controls. On the drawing, identify the insulating web separately from conductive machine parts. Adding ionization does not replace a review of the applicable grounding arrangements.</p>
+        <p>Give the sketch a machine ID, revision and fixed reference points. Mark travel direction, roller contacts and separations, nearby structure and the downstream operation of concern. Label candidate positions on that same drawing. Our <a href="/guides/what-is-an-ionizing-bar">ionizing-bar guide</a> explains the basic equipment function; this brief addresses how to assess a proposed addition to an existing machine.</p>
+      </section>
+
+      <section id="material-and-coverage">
+        <h2>Show the material faces, width and movement</h2>
+        <p>Label the two faces consistently, including coatings, liners or exposed surfaces. If the web turns between operations, carry those face labels through the sketch. A photograph marked “top side” can become ambiguous after a change in path.</p>
+        <p>Record the material widths and expected edge movement for the intended jobs. Identify whether the proposed position changes during threading, a roll change or another operating configuration. Where the movement range is unknown, request an observation or drawing instead of assuming the web remains centered.</p>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Dimensions and coverage to distinguish before selection">
+          <table>
+            <thead><tr><th scope="col">Drawing item</th><th scope="col">What to confirm</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Bar body</th><td>Overall dimensions and occupied space, including connectors.</td></tr>
+              <tr><th scope="row">Active span</th><td>The documented emitter span and the coverage question for this application.</td></tr>
+              <tr><th scope="row">Mounting pattern</th><td>Attachment locations and the proposed support arrangement.</td></tr>
+              <tr><th scope="row">Material envelope</th><td>Material width and the positions its faces and edges can occupy.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>These are separate drawing items. An overall bar length does not establish active coverage, and a suitable active span does not establish mechanical fit. Request the current drawing for the proposed model and length.</p>
+      </section>
+
+      <section id="clearance-and-access">
+        <h2>Review support, clearance and access together</h2>
+        <p>For each candidate, record the proposed bar-to-material gap separately from space needed around the body, connector and bracket. Ask machine engineering to review the support and the range of material positions. Leave required clearances to the applicable equipment documentation and installation review; this worksheet provides no universal distance.</p>
+        <p>Show the normal guarded configuration. Can the planned installation, inspection and servicing be carried out using approved access? Record how a technician would reach the bar for the manufacturer's maintenance procedure and how the assembly could be removed. A location that looks accessible in an open-machine photograph still needs review with the production arrangement shown.</p>
+        <p>Mark cable routes and nearby moving parts on the drawing. Record access questions for the responsible engineer; do not resolve a planning gap by bypassing a guard or improvising a reach into operating equipment.</p>
+      </section>
+
+      <section id="connections-and-interfaces">
+        <h2>Confirm connections before specifying integration</h2>
+        <p>List what the line can provide and what the selected equipment requires: electrical supply, mating connector, cable route and any intended control or alarm connection. Ask for the relevant connector and interface documentation. A connector shape or a port shown in a photograph does not identify its pinout, signal type or communication protocol.</p>
+        <p>Give controls engineering a practical question to answer: is the proposal a standalone installation, or must the line receive a status signal or control a function? If integration is intended, record the requested behavior and obtain confirmation that the chosen configuration supports it. Keep unresolved functions out of the purchase specification until confirmed.</p>
+        <p>For a model under consideration, use its current documentation, such as the <a href="/products/static-eliminator/st-g-series">ST-G product information</a>, as the starting point for clarification. This planning brief contains no wiring instructions.</p>
+      </section>
+
+      <section id="planned-verification">
+        <h2>Agree what will be measured and who accepts it</h2>
+        <p>The public scope of <a href="https://webstore.iec.ch/en/publication/68397" target="_blank" rel="noopener noreferrer">IEC 61340-4-7:2025</a> distinguishes ionizer performance measurements under specified conditions from qualification for a user's application. A catalogue figure therefore needs its conditions understood before it is used in the retrofit decision. Our <a href="/blog/comparing-ionizer-datasheets">ionizer datasheet comparison guide</a> covers that review.</p>
+        <p>Keep three questions separate: how the ionizer will be checked, what will be measured on the material, and what production outcome matters. The <a href="https://www.esda.org/esd-overview/esd-fundamentals/part-4-training-and-auditing/" target="_blank" rel="noopener noreferrer">ESD Association's instrumentation guidance</a> explains that instrument choice depends on the measurement and distinguishes field indications from ionizer balance and decay-time measurements.</p>
+        <p>On the drawing, reserve proposed test points and identify the intended instrument, method and operating state. Record measurement geometry separately from the bar's installation gap. The process and quality teams should agree acceptance criteria, access and responsibilities before the trial. For an existing charge problem, use the separate <a href="/blog/static-returns-after-ionization">static-return investigation</a> to organize diagnostic observations.</p>
+      </section>
+
+      <section id="handover-checklist">
+        <h2>Turn unknowns into an evidence request</h2>
+        <p>Adapt this proposed worksheet to the project. Replace the example issue with the exact question, attach the drawing reference and assign a named reviewer. Add the answer and decision date when evidence arrives; a blank is not an approval.</p>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Proposed retrofit issue evidence and owner worksheet">
+          <table>
+            <thead><tr><th scope="col">Unresolved issue</th><th scope="col">Evidence to request</th><th scope="col">Suggested owner</th></tr></thead>
+            <tbody>{reviewRows.map(row => <tr><th scope="row">{row[0]}</th><td>{row[1]}</td><td>{row[2]}</td></tr>)}</tbody>
+          </table>
+        </div>
+        <h3>Blank handover record</h3>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Blank ionizing bar retrofit handover record">
+          <table>
+            <thead><tr><th scope="col">Project information</th><th scope="col">Record or document reference</th></tr></thead>
+            <tbody>{handoverFields.map(field => <tr><th scope="row">{field}</th><td>______</td></tr>)}</tbody>
+          </table>
+        </div>
+        <p>If two candidate locations remain, give each its own open questions. Choose the next drawing, clarification or approved test that can resolve the difference, rather than treating convenient mounting space as proof of suitability.</p>
+      </section>
+
+      <section id="faq"><h2>Frequently asked questions</h2><div class="faq-list">{faqItems.map(item => <details class="faq-item"><summary>{item.q}</summary><p>{item.a}</p></details>)}</div></section>
+
+      <div class="post-cta">
+        <h2>Prepare your ionizing-bar retrofit brief</h2>
+        <p>Send an annotated line drawing, material details, width and movement range, candidate positions and connection questions. Include the process requirement and planned measurements so our team can discuss the information needed for equipment selection.</p>
+        <p><a class="send-cta" href="/products/static-eliminator">Explore Static Control Equipment &rarr;</a><a class="send-alt" href="/contact?type=selection&amp;product=Ionizing%20Bar%20Retrofit%20Planning">Discuss Your Retrofit &rarr;</a></p>
+      </div>
+    </div>
+  </article>
+  <style>
+    .post-col { max-width: 780px; }
+    .post-head { background: #f7f8fa; padding: 48px 0 34px; border-bottom: 1px solid var(--hairline); }
+    .post-head .breadcrumb { font-size: 13px; color: #7d8d97; margin-bottom: 18px; }
+    .post-head .breadcrumb a { color: var(--brand-deep); text-decoration: none; }
+    .post-head .breadcrumb span { margin: 0 8px; }
+    .post-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .blog-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      background: #eef4f8; color: #4a6373; padding: 4px 9px; border-radius: 999px;
+    }
+    .post-head h1 {
+      font-size: clamp(1.7rem, 3.4vw, 2.5rem); line-height: 1.2; font-weight: 800;
+      letter-spacing: -.02em; color: var(--navy); margin: 0 0 14px;
+    }
+    .post-lead { font-size: 1.05rem; line-height: 1.75; color: #46545f; margin: 0 0 18px; }
+    .post-info { display: flex; flex-wrap: wrap; gap: 16px; font-size: 12.5px; color: #8a99a4; }
+
+    .post-body { padding: 34px 0 70px; }
+    .post-figure { display: block; margin: 0 0 30px; }
+    .post-figure img {
+      display: block; width: 100%; height: auto; border: 1px solid var(--hairline); border-radius: 8px;
+    }
+    .post-body h2 {
+      font-size: 1.42rem; font-weight: 700; letter-spacing: -.01em; color: var(--navy);
+      margin: 34px 0 12px;
+    }
+    .post-body p { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 15px; }
+    .post-body a { color: var(--brand-deep); }
+    .post-body h3 {
+      font-size: 1.12rem; font-weight: 700; color: var(--navy); margin: 26px 0 10px;
+    }
+    .post-body ul, .post-body ol { margin: 0 0 15px; padding-left: 22px; }
+    .post-body li { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 7px; }
+    .post-body blockquote, .post-body .blog-quote {
+      margin: 0 0 18px; padding: 13px 16px; background: #f2f6f9;
+      border-left: 3px solid var(--brand-deep); border-radius: 0 8px 8px 0;
+    }
+    .post-body .blog-quote p:last-child { margin-bottom: 0; }
+    .post-body .step-block { margin: 0 0 22px; }
+    .post-body .step-num {
+      display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .06em;
+      text-transform: uppercase; background: var(--navy); color: #fff;
+      padding: 4px 10px; border-radius: 999px; margin-bottom: 8px;
+    }
+    .formula {
+      font-size: 1.2rem !important; font-weight: 700; text-align: center; color: var(--navy) !important;
+      background: #f2f6f9; border: 1px solid var(--hairline); border-radius: 8px; padding: 14px;
+    }
+
+    .table-wrap { overflow-x: auto; margin: 0 0 20px; }
+    .post-body table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+    .post-body th, .post-body td {
+      text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--hairline); vertical-align: top;
+    }
+    .post-body thead th { background: #f2f6f9; font-weight: 700; color: var(--navy); }
+    .post-body tbody th { width: 22%; font-weight: 700; color: var(--navy); background: #fafbfc; }
+
+    .faq-list { display: flex; flex-direction: column; margin: 6px 0 0; border-top: 1px solid var(--hairline); }
+    .faq-item { padding: 15px 4px; border-bottom: 1px solid var(--hairline); }
+    .faq-item summary { cursor: pointer; font-weight: 700; color: var(--navy); font-size: 15.5px; }
+    .faq-item p { margin: 10px 0 0; }
+
+    .post-cta {
+      margin-top: 40px; padding: 26px 26px 22px; background: #f7f8fa;
+      border: 1px solid var(--hairline); border-radius: 10px;
+    }
+    .post-cta h2 { margin-top: 0; font-size: 1.25rem; }
+    .send-cta, .send-alt { display: inline-block; font-weight: 700; margin-right: 22px; }
+    @media (max-width: 767px) {
+      .post-body { padding-left: 16px; padding-right: 16px; }
+    }
+  </style>
+</Layout>

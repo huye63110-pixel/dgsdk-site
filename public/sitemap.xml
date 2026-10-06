@@ -17,8 +17,8 @@
   <url><loc>https://www.dg-sdk.com/privacy</loc><lastmod>2026-09-12</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
 
   <!-- ===== GUIDES (EN) ===== -->
-  <url><loc>https://www.dg-sdk.com/resources</loc><lastmod>2026-10-04</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.dg-sdk.com/guides</loc><lastmod>2026-10-04</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.dg-sdk.com/resources</loc><lastmod>2026-10-05</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.dg-sdk.com/guides</loc><lastmod>2026-10-05</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.dg-sdk.com/products/static-eliminator/ionizing-air-blowers</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.dg-sdk.com/guides/what-is-web-cleaning</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.dg-sdk.com/guides/what-is-esd</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -52,7 +52,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url><loc>https://www.dg-sdk.com/blog</loc><lastmod>2026-10-04</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.dg-sdk.com/blog</loc><lastmod>2026-10-05</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url>
     <loc>https://www.dg-sdk.com/blog/st-g-ionizing-bar-guide</loc>
     <lastmod>2026-09-27</lastmod>
@@ -325,5 +325,9 @@
   <url>
     <loc>https://www.dg-sdk.com/blog/cleaning-roller-adhesive-roll-particle-transfer</loc>
     <lastmod>2026-10-04</lastmod>
+  </url>
+  <url>
+    <loc>https://www.dg-sdk.com/blog/ionizing-bar-retrofit-planning</loc>
+    <lastmod>2026-10-05</lastmod>
   </url>
 </urlset>
