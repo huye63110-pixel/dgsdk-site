@@ -10,6 +10,17 @@
 // reword it here too.
 export const posts = [
   {
+    slug: 'film-cleanliness-before-lamination',
+    category: 'Surface Cleaning',
+    title: 'Film Cleanliness Before Lamination: Record Stops and Transfers',
+    excerpt: 'Link film sections, surface state and handling events after a stop or transfer, with a blank handover log for inspection and restart decisions before lamination.',
+    date: 'October 6, 2026',
+    datePublished: '2026-10-06',
+    tags: ['Surface Cleaning', 'Film Lamination', 'Process Records'],
+    image: '/assets/img/blog/film-cleanliness-handover-v1',
+    readTime: '6 min read',
+  },
+  {
     slug: 'ionizing-bar-retrofit-planning',
     category: 'Static Control',
     title: 'Planning an Ionizing Bar Retrofit: A Pre-Installation Checklist',
