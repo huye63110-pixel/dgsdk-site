@@ -1,0 +1,214 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const base = 'https://www.dg-sdk.com';
+const url = base + '/blog/film-cleanliness-before-lamination';
+const title = 'Film Cleanliness Before Lamination: Record Stops and Transfers';
+const seoTitle = 'Film Cleanliness Before Lamination: Stops & Transfers';
+const description = 'Track film sections, surface state and handling events after cleaning. Use a blank handover log to support inspection and restart decisions before lamination.';
+const faqItems = [
+  {
+    q: 'Does an earlier cleanliness check cover the whole roll after a stop?',
+    a: 'It covers the material and conditions identified in that inspection record. A shared roll or batch number does not show that a later observation concerns the same section. Use the established traceability method and record any limits when linking observations across an interruption.'
+  },
+  {
+    q: 'How long can cleaned film wait before lamination?',
+    a: 'There is no universal waiting time established here. Record the actual event sequence, protection state and relevant observations. The process owner should use the approved material and process criteria to decide whether another inspection or other action is needed.'
+  },
+  {
+    q: 'Does a missing transfer record mean the film must be cleaned again?',
+    a: 'A missing record creates an evidence gap; it does not identify the surface condition or prescribe a remedy. Keep the affected material identifiable and refer the gap to the process or quality owner. Any inspection, release or reprocessing decision should follow the approved procedure.'
+  }
+];
+const handoverFields = [
+  'Run, roll or lot ID; traceable section reference',
+  'Event ID, event order and known start/end times',
+  'Stop, rethread, transfer or temporary-storage details',
+  'Target face, layer state and protection state',
+  'Recorded contacts, handling and other changes',
+  'Before/after observation references and pairing basis',
+  'Inspection method, region and comparison limitations',
+  'Open question and required evidence',
+  'Process criterion or approved procedure reference',
+  'Named reviewer, disposition and decision time'
+];
+---
+
+<Layout title={seoTitle + ' | Shidike'} description={description} canonical={url}
+  image="/assets/img/blog/film-cleanliness-handover-v1.jpg">
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: base },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: base + '/blog' },
+      { '@type': 'ListItem', position: 3, name: title, item: url }
+    ]
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BlogPosting', headline: title, description,
+    image: base + '/assets/img/blog/film-cleanliness-handover-v1.jpg',
+    author: { '@type': 'Organization', name: 'Shidike', url: base },
+    publisher: { '@type': 'Organization', name: 'Shidike', legalName: 'Dongguan Shidike Intelligent Equipment Co., Ltd.', url: base },
+    datePublished: '2026-10-06', dateModified: '2026-10-06', mainEntityOfPage: url
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'FAQPage',
+    mainEntity: faqItems.map(item => ({ '@type': 'Question', name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a } }))
+  })} />
+
+  <article class="post">
+    <header class="post-head">
+      <div class="container post-col">
+        <div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog">Blog</a><span>/</span>Film Cleanliness Before Lamination</div>
+        <div class="post-tags"><span class="blog-tag">Surface Cleaning</span><span class="blog-tag">Film Lamination</span><span class="blog-tag">Process Records</span></div>
+        <h1>{title}</h1>
+        <p class="post-lead">A cleanliness observation made before a line stop still describes the material inspected at that time. Before lamination resumes, connect that record to the film section, handling events and surface state now under review. A clear handover helps the process owner decide what needs checking next.</p>
+        <div class="post-info"><span>October 6, 2026</span><span>Shidike Technical Team</span><span>6 min read</span></div>
+      </div>
+    </header>
+
+    <div class="container post-col post-body">
+      <picture class="post-figure">
+        <source media="(max-width: 600px)" srcset="/assets/img/blog/film-cleanliness-handover-v1-mobile.webp" type="image/webp" width="800" height="1400" />
+        <source media="(max-width: 600px)" srcset="/assets/img/blog/film-cleanliness-handover-v1-mobile.jpg" type="image/jpeg" width="800" height="1400" />
+        <source srcset="/assets/img/blog/film-cleanliness-handover-v1.webp" type="image/webp" />
+        <img src="/assets/img/blog/film-cleanliness-handover-v1.jpg" alt="Conceptual cleanliness record map with observations before a pause, an event log for a stop or transfer including any liner change, and a new observation before lamination. Match lot, face, segment and inspection method." width="1600" height="1000" loading="lazy" decoding="async" />
+      </picture>
+      <p><em>Original conceptual record map. Keep the lot, exposed face and identifiable material segment with each observation, and document changes in inspection conditions. Dotted links indicate record sequence; they do not demonstrate continuous tracking or when contamination occurred. Not a tested line or cleanliness result.</em></p>
+
+      <section id="interruption-record">
+        <h2>Begin with the event that interrupted the record</h2>
+        <p><strong>This is a proposed event and handover log for film between cleaning and lamination.</strong> Use it alongside the approved process instructions. It is intended to make missing information visible, without assigning a universal waiting time or declaring material acceptable from a completed form.</p>
+        <p>Open a record when an interruption relevant to the process needs review: a stop, rethreading, temporary rewind, transfer or storage period. State what happened and which material may be involved. Record known times and event order. If the timing is uncertain, preserve that uncertainty; machine downtime is not necessarily the exposure time of every film section.</p>
+        <p>The public scope of <a href="https://www.iso.org/standard/88599.html" target="_blank" rel="noopener noreferrer">ISO 14644-5:2025</a> includes transfers, personnel practices and monitoring within cleanroom operations. That supports treating handling as part of continuing contamination control. The log here is our proposed adaptation for a film process, not an ISO-required form.</p>
+      </section>
+
+      <section id="section-traceability">
+        <h2>Match the film section before comparing observations</h2>
+        <p>A roll or batch ID identifies a useful group, but does not establish that two observations describe the same material section. On a continuous line, the film at the inspection point after restart may have been elsewhere when the earlier observation was made.</p>
+        <p>Use the line's established traceability method to connect the section with its records: a reliable production-position reference, an identified section or another documented mapping. Record the basis for that connection. Note splices, reverse movement or rethreading that could make the mapping uncertain; a timestamp alone is not a material-position identifier.</p>
+        <p>Keep the inspected face and region identifiable as well. If sampling removes or disturbs the inspected area, describe how the subsequent observation relates to it. Do not present two different sections as the same surface before and after an event.</p>
+        <p>When pairing cannot be established, retain both observations and state the comparison limit. A difference may justify further investigation, but it does not establish that the stop or transfer caused the difference. For checks within a roller cleaner, use the separate <a href="/blog/cleaning-roller-adhesive-roll-particle-transfer">particle-transfer inspection guide</a>.</p>
+      </section>
+
+      <section id="event-state">
+        <h2>Record the surface state at the event</h2>
+        <p>Identify the face intended for lamination and its state before and after the interruption. Record whether it remained exposed, contacted a support, was rewound or had an approved protective layer present. Where a liner is used, distinguish the liner's outer face from the material uncovered when it is removed.</p>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Event details to retain before lamination">
+          <table>
+            <thead><tr><th scope="col">Event detail</th><th scope="col">Useful record</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Stop or restart</th><td>Material reference, known timing and the state while stopped.</td></tr>
+              <tr><th scope="row">Rethreading</th><td>Recorded path or face changes, handling and any section-mapping uncertainty.</td></tr>
+              <tr><th scope="row">Transfer or storage</th><td>Origin, destination, receiving person and protection state.</td></tr>
+              <tr><th scope="row">Protection removed</th><td>Material reference, removal event and the face exposed afterward.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>NASA-hosted <a href="https://epact2.gsfc.nasa.gov/tycho/STEREOContamControl.htm" target="_blank" rel="noopener noreferrer">spacecraft contamination guidance</a> considers protection materials and contamination during cover removal. Its spacecraft requirements do not specify film-line practice. The useful review question is whether the approved protection and removal steps are recorded, rather than assuming that a cover proves cleanliness.</p>
+        <p>Write “no change observed” only within the recorded observation's scope. An empty field means information was not recorded. For material identity and reference samples before an initial trial, see the <a href="/blog/coated-optical-film-cleaning-trial-samples">coated-film sample guide</a>.</p>
+      </section>
+
+      <section id="review-and-disposition">
+        <h2>Separate another inspection from a release decision</h2>
+        <p>Give the reviewer the event record, available observations and any traceability gaps. The process or quality owner should decide whether further inspection, continued holding or another approved action is appropriate under the existing criteria. A stop does not automatically establish contamination; a completed log does not automatically establish readiness.</p>
+        <p>If another surface inspection is required, record the method, face, region, lighting or imaging conditions and result reference. Preserve changes in inspection conditions that limit comparison. The public scope of <a href="https://www.iso.org/standard/76889.html" target="_blank" rel="noopener noreferrer">ISO 14644-9:2022</a> addresses surface-particle assessment but excludes cleanliness requirements for specific processes. The acceptable result for the lamination job therefore needs its own defined criterion.</p>
+        <p>Record the actual decision, its procedure or criterion reference, the responsible person and the material covered. Keep particle observations distinct from other process checks: they do not by themselves establish adhesive compatibility or final bond quality. Our <a href="/guides/what-is-web-cleaning">web-cleaning guide</a> covers the broader equipment and process choices.</p>
+      </section>
+
+      <section id="handover-log">
+        <h2>A blank event and handover log</h2>
+        <p>Use one record per event or a linked event sequence. Attach existing inspection and production records instead of copying results without their context. Adapt the fields to the actual traceability system and approved process.</p>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Blank film cleanliness event and handover log">
+          <table>
+            <thead><tr><th scope="col">Information</th><th scope="col">Record or reference</th></tr></thead>
+            <tbody>{handoverFields.map(field => <tr><th scope="row">{field}</th><td>______</td></tr>)}</tbody>
+          </table>
+        </div>
+        <p>Finish the handover with the open question, who will resolve it and the current material disposition. If no decision has been made, say so. The receiving operator should be able to distinguish an observation, a pending review and an authorized process decision.</p>
+      </section>
+
+      <section id="faq"><h2>Frequently asked questions</h2><div class="faq-list">{faqItems.map(item => <details class="faq-item"><summary>{item.q}</summary><p>{item.a}</p></details>)}</div></section>
+
+      <div class="post-cta">
+        <h2>Discuss cleaning in your film process</h2>
+        <p>Share the material and coating details, the cleaning-to-lamination sequence and the interruption or transfer under review. Include available section references and inspection records so our team can discuss the application and information needed for a trial.</p>
+        <p><a class="send-cta" href="/products/cleaning-machine/optical-film-cleaner">Explore Optical Film Cleaning &rarr;</a><a class="send-alt" href="/contact?type=selection&amp;product=Film%20Cleanliness%20Before%20Lamination">Discuss Your Film Application &rarr;</a></p>
+      </div>
+    </div>
+  </article>
+  <style>
+    .post-col { max-width: 780px; }
+    .post-head { background: #f7f8fa; padding: 48px 0 34px; border-bottom: 1px solid var(--hairline); }
+    .post-head .breadcrumb { font-size: 13px; color: #7d8d97; margin-bottom: 18px; }
+    .post-head .breadcrumb a { color: var(--brand-deep); text-decoration: none; }
+    .post-head .breadcrumb span { margin: 0 8px; }
+    .post-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .blog-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      background: #eef4f8; color: #4a6373; padding: 4px 9px; border-radius: 999px;
+    }
+    .post-head h1 {
+      font-size: clamp(1.7rem, 3.4vw, 2.5rem); line-height: 1.2; font-weight: 800;
+      letter-spacing: -.02em; color: var(--navy); margin: 0 0 14px;
+    }
+    .post-lead { font-size: 1.05rem; line-height: 1.75; color: #46545f; margin: 0 0 18px; }
+    .post-info { display: flex; flex-wrap: wrap; gap: 16px; font-size: 12.5px; color: #8a99a4; }
+
+    .post-body { padding: 34px 0 70px; }
+    .post-figure { display: block; margin: 0 0 30px; }
+    .post-figure img {
+      display: block; width: 100%; height: auto; border: 1px solid var(--hairline); border-radius: 8px;
+    }
+    .post-body h2 {
+      font-size: 1.42rem; font-weight: 700; letter-spacing: -.01em; color: var(--navy);
+      margin: 34px 0 12px;
+    }
+    .post-body p { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 15px; }
+    .post-body a { color: var(--brand-deep); }
+    .post-body h3 {
+      font-size: 1.12rem; font-weight: 700; color: var(--navy); margin: 26px 0 10px;
+    }
+    .post-body ul, .post-body ol { margin: 0 0 15px; padding-left: 22px; }
+    .post-body li { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 7px; }
+    .post-body blockquote, .post-body .blog-quote {
+      margin: 0 0 18px; padding: 13px 16px; background: #f2f6f9;
+      border-left: 3px solid var(--brand-deep); border-radius: 0 8px 8px 0;
+    }
+    .post-body .blog-quote p:last-child { margin-bottom: 0; }
+    .post-body .step-block { margin: 0 0 22px; }
+    .post-body .step-num {
+      display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .06em;
+      text-transform: uppercase; background: var(--navy); color: #fff;
+      padding: 4px 10px; border-radius: 999px; margin-bottom: 8px;
+    }
+    .formula {
+      font-size: 1.2rem !important; font-weight: 700; text-align: center; color: var(--navy) !important;
+      background: #f2f6f9; border: 1px solid var(--hairline); border-radius: 8px; padding: 14px;
+    }
+
+    .table-wrap { overflow-x: auto; margin: 0 0 20px; }
+    .post-body table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+    .post-body th, .post-body td {
+      text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--hairline); vertical-align: top;
+    }
+    .post-body thead th { background: #f2f6f9; font-weight: 700; color: var(--navy); }
+    .post-body tbody th { width: 22%; font-weight: 700; color: var(--navy); background: #fafbfc; }
+
+    .faq-list { display: flex; flex-direction: column; margin: 6px 0 0; border-top: 1px solid var(--hairline); }
+    .faq-item { padding: 15px 4px; border-bottom: 1px solid var(--hairline); }
+    .faq-item summary { cursor: pointer; font-weight: 700; color: var(--navy); font-size: 15.5px; }
+    .faq-item p { margin: 10px 0 0; }
+
+    .post-cta {
+      margin-top: 40px; padding: 26px 26px 22px; background: #f7f8fa;
+      border: 1px solid var(--hairline); border-radius: 10px;
+    }
+    .post-cta h2 { margin-top: 0; font-size: 1.25rem; }
+    .send-cta, .send-alt { display: inline-block; font-weight: 700; margin-right: 22px; }
+    @media (max-width: 767px) {
+      .post-body { padding-left: 16px; padding-right: 16px; }
+    }
+  </style>
+</Layout>
