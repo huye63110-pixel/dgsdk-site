@@ -10,6 +10,17 @@
 // reword it here too.
 export const posts = [
   {
+    slug: 'surface-resistance-vs-surface-voltage',
+    category: 'Static Control',
+    title: 'Surface Resistance vs Surface Voltage: Reading Film Test Results',
+    excerpt: 'Separate applied test voltage, material resistance and noncontact static readings. Compare the units, methods and conditions in film measurement reports.',
+    date: 'October 8, 2026',
+    datePublished: '2026-10-08',
+    tags: ['Static Control', 'Film Testing', 'Measurement Basics'],
+    image: '/assets/img/blog/surface-resistance-vs-voltage-v1',
+    readTime: '5 min read',
+  },
+  {
     slug: 'film-cleanliness-before-lamination',
     category: 'Surface Cleaning',
     title: 'Film Cleanliness Before Lamination: Record Stops and Transfers',
