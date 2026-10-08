@@ -43,6 +43,7 @@ backlight panel, LCM module and roll material.
 - [ESD Control Products](https://www.dg-sdk.com/guides/esd-control-products): Buyer's guide.
 - [What Is Web Cleaning](https://www.dg-sdk.com/guides/what-is-web-cleaning): Contact against non-contact dry particle removal, and what a cleaning trial has to record.
 - [Technical Blog](https://www.dg-sdk.com/blog): Application guides for lithium battery, photovoltaic and optical film production.
+- [Surface Resistance vs Surface Voltage: Reading Film Test Results](https://www.dg-sdk.com/blog/surface-resistance-vs-surface-voltage): Distinguish applied test voltage, material resistance and static field or potential observations when reading film test reports.
 - [Film Cleanliness Before Lamination](https://www.dg-sdk.com/blog/film-cleanliness-before-lamination): Track material sections, surface state and stop or transfer events with a proposed handover log; keep observations separate from process release decisions.
 - [Ionizing Bar Retrofit Planning](https://www.dg-sdk.com/blog/ionizing-bar-retrofit-planning): Prepare line drawings, material and access details, connection questions and an application verification plan with a proposed handover checklist.
 - [Cleaning Rollers and Adhesive Rolls](https://www.dg-sdk.com/blog/cleaning-roller-adhesive-roll-particle-transfer): Trace particle pickup and collection, distinguish downstream recontamination, and record a controlled comparison with a blank inspection log.
