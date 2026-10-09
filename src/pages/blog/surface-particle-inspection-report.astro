@@ -13,7 +13,7 @@ const faqItems = [
   },
   {
     q: 'Does a reporting cutoff prove a detection limit?',
-    a: 'No. Ask whether the stated limit is an analysis filter, an imaging specification or a separately demonstrated detection capability. Request the supporting evidence before treating those meanings as equivalent.'
+    a: 'No. Ask what the limit means and what evidence supports it; do not assume detection performance.'
   },
   {
     q: 'Does none detected mean a film is free of particles?',
@@ -51,7 +51,7 @@ const faqItems = [
         <div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog">Blog</a><span>/</span>Surface Particle Inspection Reports</div>
         <div class="post-tags"><span class="blog-tag">Surface Cleaning</span><span class="blog-tag">Particle Inspection</span><span class="blog-tag">Report Reading</span></div>
         <h1>{title}</h1>
-        <p class="post-lead">A surface particle report lists a count, an inspected area and a size range. Before using it to discuss film cleaning, check what each field means. A larger total does not automatically mean a higher particle concentration, and a small reported size is not a cleaning-machine capability.</p>
+        <p class="post-lead">A surface particle report may list a count, an inspected area and a size range. Before using it to discuss film cleaning, check what each field means. A larger total does not automatically mean a higher particle concentration, and a small reported size is not a cleaning-machine capability.</p>
         <div class="post-info"><span>October 9, 2026</span><span>Shidike Technical Team</span><span>5 min read</span></div>
       </div>
     </header>
@@ -91,12 +91,12 @@ const faqItems = [
       <section id="object-definition">
         <h2>Ask how an object entered the result</h2>
         <p>The NIST study shows that changing the image threshold can change calculated size, and adjoining particles can appear as one object. Its example also excludes objects cut by image edges. These are observations from that imaging workflow, not prescribed settings for industrial film.</p>
-        <p>Request the retained image, analyzed region and object outlines where available. Ask how merged objects, partial edge objects and manual exclusions were handled. Use the answers to understand the report, rather than assuming every laboratory makes the same choices.</p>
+        <p>Where available, review the retained image and object outlines. Ask how merged objects, partial edge objects and manual exclusions were handled.</p>
       </section>
 
       <section id="reporting-limit">
         <h2>A reporting cutoff is not a validated detection limit</h2>
-        <p>An analysis filter determines which objects enter an output. That setting alone does not demonstrate detection capability. When a report states a lower limit, ask whether it means a software cutoff, an imaging-resolution specification or a separately validated detection claim. Request the basis for that claim.</p>
+        <p>Ask what the report's lower limit means: an output filter, an imaging specification or separately demonstrated detection capability. These are different claims; request the evidence for the stated meaning.</p>
         <p>Apply the same discipline to “none detected.” Record it with the inspected regions, method and reporting rules. Do not rewrite it as “no particles anywhere on the film.” Missing observations are not positive evidence about uninspected material.</p>
       </section>
 
