@@ -10,6 +10,17 @@
 // reword it here too.
 export const posts = [
   {
+    slug: 'surface-particle-inspection-report',
+    category: 'Surface Cleaning',
+    title: 'Reading a Surface Particle Inspection Report: Count, Area and Size',
+    excerpt: 'Interpret particle counts, inspected area, size descriptors and reporting limits. See why different totals can have the same count per unit area.',
+    date: 'October 9, 2026',
+    datePublished: '2026-10-09',
+    tags: ['Surface Cleaning', 'Particle Inspection', 'Report Reading'],
+    image: '/assets/img/blog/surface-particle-report-v1',
+    readTime: '5 min read',
+  },
+  {
     slug: 'surface-resistance-vs-surface-voltage',
     category: 'Static Control',
     title: 'Surface Resistance vs Surface Voltage: Reading Film Test Results',
