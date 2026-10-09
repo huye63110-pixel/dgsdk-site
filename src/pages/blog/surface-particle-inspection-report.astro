@@ -1,0 +1,204 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const base = 'https://www.dg-sdk.com';
+const url = base + '/blog/surface-particle-inspection-report';
+const title = 'Reading a Surface Particle Inspection Report: Count, Area and Size';
+const seoTitle = 'Surface Particle Inspection Reports: Count, Area & Size';
+const description = 'Read surface particle inspection reports with the right context: count, inspected area, size descriptors, image analysis settings and reporting limits.';
+const faqItems = [
+  {
+    q: 'Can I compare particle totals from different inspected areas?',
+    a: 'Retain both the count and inspected area, then calculate count per unit area if appropriate. Matching arithmetic density does not establish matching methods, size ranges or representative sampling.'
+  },
+  {
+    q: 'Does a reporting cutoff prove a detection limit?',
+    a: 'No. Ask whether the stated limit is an analysis filter, an imaging specification or a separately demonstrated detection capability. Request the supporting evidence before treating those meanings as equivalent.'
+  },
+  {
+    q: 'Does none detected mean a film is free of particles?',
+    a: 'No. It describes the reported observation within the inspected regions, method and inclusion rules. It does not establish absolute absence across the entire film or roll.'
+  }
+];
+---
+
+<Layout title={seoTitle + ' | Shidike'} description={description} canonical={url}
+  image="/assets/img/blog/surface-particle-report-v1.jpg">
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: base },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: base + '/blog' },
+      { '@type': 'ListItem', position: 3, name: title, item: url }
+    ]
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BlogPosting', headline: title, description,
+    image: base + '/assets/img/blog/surface-particle-report-v1.jpg',
+    author: { '@type': 'Organization', name: 'Shidike', url: base },
+    publisher: { '@type': 'Organization', name: 'Shidike', legalName: 'Dongguan Shidike Intelligent Equipment Co., Ltd.', url: base },
+    datePublished: '2026-10-09', dateModified: '2026-10-09', mainEntityOfPage: url
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'FAQPage',
+    mainEntity: faqItems.map(item => ({ '@type': 'Question', name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a } }))
+  })} />
+
+  <article class="post">
+    <header class="post-head">
+      <div class="container post-col">
+        <div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog">Blog</a><span>/</span>Surface Particle Inspection Reports</div>
+        <div class="post-tags"><span class="blog-tag">Surface Cleaning</span><span class="blog-tag">Particle Inspection</span><span class="blog-tag">Report Reading</span></div>
+        <h1>{title}</h1>
+        <p class="post-lead">A surface particle report lists a count, an inspected area and a size range. Before using it to discuss film cleaning, check what each field means. A larger total does not automatically mean a higher particle concentration, and a small reported size is not a cleaning-machine capability.</p>
+        <div class="post-info"><span>October 9, 2026</span><span>Shidike Technical Team</span><span>5 min read</span></div>
+      </div>
+    </header>
+
+    <div class="container post-col post-body">
+      <picture class="post-figure">
+        <source media="(max-width: 600px)" srcset="/assets/img/blog/surface-particle-report-v1-mobile.webp" type="image/webp" width="800" height="1400" />
+        <source media="(max-width: 600px)" srcset="/assets/img/blog/surface-particle-report-v1-mobile.jpg" type="image/jpeg" width="800" height="1400" />
+        <source srcset="/assets/img/blog/surface-particle-report-v1.webp" type="image/webp" />
+        <img src="/assets/img/blog/surface-particle-report-v1.jpg" alt="Arithmetic examples compare 20 counted objects over 2 square centimetres with 50 over 5 square centimetres. Both give 10 objects per square centimetre despite different totals. These are not DGSDK test results." width="1600" height="1000" loading="lazy" decoding="async" />
+      </picture>
+      <p><em>Original arithmetic illustration, not DGSDK test results or a before-and-after cleaning comparison. Equal calculated density does not establish comparable inspection methods or size ranges.</em></p>
+
+      <section id="count-and-area">
+        <h2>Keep the inspected area beside the count</h2>
+        <p>For a count per unit area, divide the included count by the area actually inspected. Keep that denominator distinct from the nominal area of a sample sheet or an entire roll.</p>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Illustrative arithmetic for particle count per inspected area">
+          <table>
+            <thead><tr><th scope="col">Arithmetic example</th><th scope="col">Counted objects</th><th scope="col">Inspected area</th><th scope="col">Count per area</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">A</th><td>20</td><td>2 cm²</td><td>10 objects/cm²</td></tr>
+              <tr><th scope="row">B</th><td>50</td><td>5 cm²</td><td>10 objects/cm²</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>The examples have different totals but equal arithmetic density. They contain no evidence about a cleaner, removal efficiency or which material is more suitable. Comparing actual reports would also require compatible methods and size ranges.</p>
+        <p>Ask which fields were inspected, whether fields overlap, and how excluded regions enter the area calculation. A useful report preserves the count and area alongside the normalized value. Otherwise, the denominator disappears when a single summary number is copied into an email.</p>
+      </section>
+
+      <section id="size-descriptor">
+        <h2>Read the size descriptor, not just the unit</h2>
+        <p>An area-equivalent diameter describes a circle having the measured object's area. <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1200-22.pdf" target="_blank" rel="noopener noreferrer">NIST's particle-image analysis study</a> uses this calculation for nanoparticle micrographs on textiles; it does not make an irregular object circular.</p>
+        <p>The <a href="https://imagej.net/ij/docs/guide/146-30.html" target="_blank" rel="noopener noreferrer">ImageJ 1.46r guide</a> describes Feret diameter as a maximum caliper dimension. Its Analyze Particles Size filter uses area, not diameter. Spatial calibration connects image pixels with physical units.</p>
+        <p>Before comparing two size columns, request their definitions and units. Keep the original column labels in your review notes. An unlabeled size range should remain unresolved until the laboratory explains it.</p>
+      </section>
+
+      <section id="object-definition">
+        <h2>Ask how an object entered the result</h2>
+        <p>The NIST study shows that changing the image threshold can change calculated size, and adjoining particles can appear as one object. Its example also excludes objects cut by image edges. These are observations from that imaging workflow, not prescribed settings for industrial film.</p>
+        <p>Request the retained image, analyzed region and object outlines where available. Ask how merged objects, partial edge objects and manual exclusions were handled. Use the answers to understand the report, rather than assuming every laboratory makes the same choices.</p>
+      </section>
+
+      <section id="reporting-limit">
+        <h2>A reporting cutoff is not a validated detection limit</h2>
+        <p>An analysis filter determines which objects enter an output. That setting alone does not demonstrate detection capability. When a report states a lower limit, ask whether it means a software cutoff, an imaging-resolution specification or a separately validated detection claim. Request the basis for that claim.</p>
+        <p>Apply the same discipline to “none detected.” Record it with the inspected regions, method and reporting rules. Do not rewrite it as “no particles anywhere on the film.” Missing observations are not positive evidence about uninspected material.</p>
+      </section>
+
+      <section id="count-and-coverage">
+        <h2>Count and area fraction answer different questions</h2>
+        <p>ImageJ documents count and area fraction as distinct outputs. For a thresholded image, area fraction is the percentage of the selected region's pixels meeting the threshold. It is not objects per square centimetre.</p>
+        <p>Keep those headings separate in a comparison sheet. A tally and a coverage percentage cannot substitute for each other; neither alone establishes cleaning efficiency or acceptance for lamination.</p>
+      </section>
+
+      <section id="review-notes">
+        <h2>Turn missing context into questions</h2>
+        <p>The public scope of <a href="https://www.iso.org/standard/76889.html" target="_blank" rel="noopener noreferrer">ISO 14644-9:2022</a> concerns surface particle cleanliness assessment in controlled environments. It does not supply process-specific suitability requirements or cleaning procedures. Citing its title is not evidence that a report complies with it.</p>
+        <p>For your next report review, keep these questions with the original document:</p>
+        <ul>
+          <li>Which material lot, face and locations do the observations represent?</li>
+          <li>Are the count, inspected area, units and size descriptor explicit?</li>
+          <li>Are object selection, exclusions and the stated lower limit explained?</li>
+          <li>Which comparisons remain unsupported, and who can clarify them?</li>
+        </ul>
+        <p>These are proposed reading questions, not a test standard. For preparing material, see <a href="/blog/coated-optical-film-cleaning-trial-samples">coated-film cleaning trial samples</a>. For handling history, see <a href="/blog/film-cleanliness-before-lamination">recording stops and transfers before lamination</a>. Keep those records alongside the inspection report rather than inferring a cause from its totals.</p>
+      </section>
+
+      <section id="faq"><h2>Frequently asked questions</h2><div class="faq-list">{faqItems.map(item => <details class="faq-item"><summary>{item.q}</summary><p>{item.a}</p></details>)}</div></section>
+
+      <div class="post-cta">
+        <h2>Discuss your surface-cleaning application</h2>
+        <p>Share the material, process stage and original inspection report, including its method and limitations. Our team can discuss the application and the information needed for an equipment review.</p>
+        <p><a class="send-cta" href="/products/cleaning-machine">Explore Surface Cleaning Equipment &rarr;</a><a class="send-alt" href="/contact?type=selection&amp;product=Surface%20Particle%20Inspection%20Review">Discuss Your Inspection Report &rarr;</a></p>
+      </div>
+    </div>
+  </article>
+  <style>
+    .post-col { max-width: 780px; }
+    .post-head { background: #f7f8fa; padding: 48px 0 34px; border-bottom: 1px solid var(--hairline); }
+    .post-head .breadcrumb { font-size: 13px; color: #7d8d97; margin-bottom: 18px; }
+    .post-head .breadcrumb a { color: var(--brand-deep); text-decoration: none; }
+    .post-head .breadcrumb span { margin: 0 8px; }
+    .post-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .blog-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      background: #eef4f8; color: #4a6373; padding: 4px 9px; border-radius: 999px;
+    }
+    .post-head h1 {
+      font-size: clamp(1.7rem, 3.4vw, 2.5rem); line-height: 1.2; font-weight: 800;
+      letter-spacing: -.02em; color: var(--navy); margin: 0 0 14px;
+    }
+    .post-lead { font-size: 1.05rem; line-height: 1.75; color: #46545f; margin: 0 0 18px; }
+    .post-info { display: flex; flex-wrap: wrap; gap: 16px; font-size: 12.5px; color: #8a99a4; }
+
+    .post-body { padding: 34px 0 70px; }
+    .post-figure { display: block; margin: 0 0 30px; }
+    .post-figure img {
+      display: block; width: 100%; height: auto; border: 1px solid var(--hairline); border-radius: 8px;
+    }
+    .post-body h2 {
+      font-size: 1.42rem; font-weight: 700; letter-spacing: -.01em; color: var(--navy);
+      margin: 34px 0 12px;
+    }
+    .post-body p { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 15px; }
+    .post-body a { color: var(--brand-deep); }
+    .post-body h3 {
+      font-size: 1.12rem; font-weight: 700; color: var(--navy); margin: 26px 0 10px;
+    }
+    .post-body ul, .post-body ol { margin: 0 0 15px; padding-left: 22px; }
+    .post-body li { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 7px; }
+    .post-body blockquote, .post-body .blog-quote {
+      margin: 0 0 18px; padding: 13px 16px; background: #f2f6f9;
+      border-left: 3px solid var(--brand-deep); border-radius: 0 8px 8px 0;
+    }
+    .post-body .blog-quote p:last-child { margin-bottom: 0; }
+    .post-body .step-block { margin: 0 0 22px; }
+    .post-body .step-num {
+      display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .06em;
+      text-transform: uppercase; background: var(--navy); color: #fff;
+      padding: 4px 10px; border-radius: 999px; margin-bottom: 8px;
+    }
+    .formula {
+      font-size: 1.2rem !important; font-weight: 700; text-align: center; color: var(--navy) !important;
+      background: #f2f6f9; border: 1px solid var(--hairline); border-radius: 8px; padding: 14px;
+    }
+
+    .table-wrap { overflow-x: auto; margin: 0 0 20px; }
+    .post-body table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+    .post-body th, .post-body td {
+      text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--hairline); vertical-align: top;
+    }
+    .post-body thead th { background: #f2f6f9; font-weight: 700; color: var(--navy); }
+    .post-body tbody th { width: 22%; font-weight: 700; color: var(--navy); background: #fafbfc; }
+
+    .faq-list { display: flex; flex-direction: column; margin: 6px 0 0; border-top: 1px solid var(--hairline); }
+    .faq-item { padding: 15px 4px; border-bottom: 1px solid var(--hairline); }
+    .faq-item summary { cursor: pointer; font-weight: 700; color: var(--navy); font-size: 15.5px; }
+    .faq-item p { margin: 10px 0 0; }
+
+    .post-cta {
+      margin-top: 40px; padding: 26px 26px 22px; background: #f7f8fa;
+      border: 1px solid var(--hairline); border-radius: 10px;
+    }
+    .post-cta h2 { margin-top: 0; font-size: 1.25rem; }
+    .send-cta, .send-alt { display: inline-block; font-weight: 700; margin-right: 22px; }
+    @media (max-width: 767px) {
+      .post-body { padding-left: 16px; padding-right: 16px; }
+    }
+  </style>
+</Layout>
