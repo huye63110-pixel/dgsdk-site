@@ -10,6 +10,17 @@
 // reword it here too.
 export const posts = [
   {
+    slug: 'relative-humidity-static-plastic-film',
+    category: 'Static Control',
+    title: 'Relative Humidity and Static on Plastic Film: Read Temperature Too',
+    excerpt: 'Read relative humidity with air temperature, film and process context. Distinguish equipment operating limits from test conditions and process acceptance.',
+    date: 'October 11, 2026',
+    datePublished: '2026-10-11',
+    tags: ['Static Control', 'Film Handling', 'Humidity'],
+    image: '/assets/img/blog/humidity-static-context-v1',
+    readTime: '4 min read',
+  },
+  {
     slug: 'surface-particle-inspection-report',
     category: 'Surface Cleaning',
     title: 'Reading a Surface Particle Inspection Report: Count, Area and Size',
