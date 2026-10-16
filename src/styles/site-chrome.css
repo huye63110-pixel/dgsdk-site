@@ -260,6 +260,14 @@ body { margin: 0; }
   cursor: pointer; transition: background .25s ease;
 }
 .quote-form button:hover { background: #eab308; }
+/* The legacy styles.css gives .quote-form a card of its own (padding, shadow)
+   and caps inputs at 420px, which left the modal's form off-centre in a box
+   inside a box. Inside the modal the content panel is the only card. */
+.quote-modal-content .quote-form { padding: 0; background: none; box-shadow: none; backdrop-filter: none; border-radius: 0; }
+.quote-modal-content .quote-form input,
+.quote-modal-content .quote-form textarea { max-width: none; margin-bottom: 0; }
+.quote-modal-content .quote-form-status { margin: 0; text-align: center; font-size: 15px; line-height: 1.6; color: #15803d; }
+.quote-modal-content .quote-form-status[data-state="error"] { color: #b3261e; }
 .quote-form button:disabled { opacity: .6; cursor: default; }
 @media (max-width: 900px) {
   .quote-modal-content { margin: 30px 16px; padding: 24px; }

@@ -95,6 +95,7 @@
           headers: { Accept: 'application/json' },
         });
         if (res.ok) {
+          if (window.dgTrack) window.dgTrack('lead', { form: 'homepage' });
           form.reset();
           say('Thank you — your message has been sent. We will reply shortly.', true);
         } else {

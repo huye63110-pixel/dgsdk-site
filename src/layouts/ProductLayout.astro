@@ -93,6 +93,7 @@ const breadcrumbItems = [
         <input type="text" name="phone" placeholder="Your Phone" />
         <textarea name="message" rows="5" placeholder="Your Message"></textarea>
         <button type="submit">Send Message</button>
+        <p class="quote-form-status" id="quoteFormStatus" role="status" aria-live="polite" hidden></p>
       </form>
     </div>
   </div>
@@ -125,6 +126,8 @@ const breadcrumbItems = [
         // and "Request a Quote". Record which, so an enquiry says where on the
         // page it started. The label only, nothing the visitor typed.
         if (quoteEntry) quoteEntry.value = opener ? (opener.textContent || '').trim().slice(0, 60) : '';
+        const quoteStatus = document.getElementById('quoteFormStatus');
+        if (quoteStatus) { quoteStatus.hidden = true; quoteStatus.textContent = ''; }
         quoteModal.classList.add('active');
         document.body.style.overflow = 'hidden';
         const first = quoteModal.querySelector('input:not([type="hidden"]):not([tabindex="-1"]), textarea');
@@ -252,7 +255,9 @@ const breadcrumbItems = [
       if (mainImage && imageLightbox && lightboxImage) {
         mainImage.style.cursor = 'zoom-in';
         mainImage.addEventListener('click', () => {
-          lightboxImage.src = mainImage.src;
+          // currentSrc is the file the <picture> actually loaded (WebP); src is
+          // the JPEG fallback, which on some products is a multi-MB file.
+          lightboxImage.src = mainImage.currentSrc || mainImage.src;
           imageLightbox.classList.add('active');
         });
       }
@@ -310,7 +315,15 @@ const breadcrumbItems = [
           const honeypot = quoteForm.querySelector('input[name="website"]');
           if (honeypot && honeypot.value !== '') return;
           const btn = quoteForm.querySelector('button[type="submit"]');
+          const status = document.getElementById('quoteFormStatus');
+          const say = (text, ok) => {
+            if (!status) return;
+            status.hidden = false;
+            status.textContent = text;
+            status.dataset.state = ok ? 'ok' : 'error';
+          };
           if (btn) btn.disabled = true;
+          say('Sending...', true);
           try {
             const res = await fetch('https://formspree.io/f/mvzlpdwy', {
               method: 'POST',
@@ -318,14 +331,16 @@ const breadcrumbItems = [
               headers: { 'Accept': 'application/json' }
             });
             if (res.ok) {
-              alert('Message sent! We will contact you shortly.');
-              closeQuote();
+              const product = quoteForm.querySelector('input[name="product"]');
+              if (window.dgTrack) window.dgTrack('lead', { form: 'product-quote', product: product ? product.value : '' });
               quoteForm.reset();
+              say('Thank you - your enquiry has been sent. We will reply by email shortly.', true);
             } else {
-              alert('Error sending message. Please try again.');
+              // what was typed stays in the form
+              say('Your enquiry could not be sent. Please try again, or email dgsdk2013@gmail.com.', false);
             }
           } catch(err) {
-            alert('Error sending message. Please try again.');
+            say('Your enquiry could not be sent. Please check your connection, or email dgsdk2013@gmail.com.', false);
           } finally {
             if (btn) btn.disabled = false;
           }

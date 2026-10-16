@@ -589,6 +589,14 @@ const faqs = [
             headers: { Accept: 'application/json' }
           });
           if (res.ok) {
+            // read before reset: the inquiry type and product picked
+            var sentType = form.querySelector('.ct-type.is-active');
+            var sentProduct = form.querySelector('[name="product"]');
+            if (window.dgTrack) window.dgTrack('lead', {
+              form: 'contact',
+              inquiry_type: (sentType && sentType.getAttribute('data-type')) || '',
+              product: (sentProduct && !sentProduct.disabled && sentProduct.value) || ''
+            });
             form.reset();
             select('quote');
             show('ok', 'Thank you - your inquiry has been sent. We will come back to you by email.');

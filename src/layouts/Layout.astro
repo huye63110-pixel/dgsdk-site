@@ -3,6 +3,8 @@ import Analytics from '@vercel/analytics/astro';
 import SpeedInsights from '@vercel/speed-insights/astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import { GA4_ID, ADS_ID, ADS_LEAD_LABEL, ADS_CONTACT_LABEL } from '../data/tracking.js';
+const tagId = GA4_ID || ADS_ID;
 const {
   title = "Shidike | Industrial Static Eliminators & Ionizing Bars",
   description = "Shidike manufactures industrial static eliminators, ionizing bars, ionizing blowers, and precision cleaning machines for production lines worldwide.",
@@ -76,6 +78,53 @@ const path = new URL(canonical).pathname;
     <!-- Geo targeting -->
     <meta name="geo.region" content="CN-GD" />
     <meta name="geo.placename" content="Dongguan, Guangdong, China" />
+
+    <!-- Google tag (Ads + GA4). IDs live in src/data/tracking.js; while they
+         are empty gtag.js is not loaded and window.dgTrack is a no-op. -->
+    {tagId && <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${tagId}`}></script>}
+    <script is:inline define:vars={{ ga4: GA4_ID, ads: ADS_ID, leadLabel: ADS_LEAD_LABEL, contactLabel: ADS_CONTACT_LABEL }}>
+      var dgOn = !!(ga4 || ads);
+      window.dataLayer = window.dataLayer || [];
+      if (dgOn) {
+        window.gtag = function () { window.dataLayer.push(arguments); };
+        // No cookie banner on the site, so visitors in the EEA, UK and
+        // Switzerland default to denied (Consent Mode v2): Google receives
+        // cookieless pings there and models the conversions. Everywhere else
+        // is unaffected.
+        gtag('consent', 'default', {
+          ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied',
+          region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH']
+        });
+        gtag('js', new Date());
+        if (ga4) gtag('config', ga4);
+        if (ads) gtag('config', ads);
+      }
+      // kind 'lead' = an enquiry form was sent successfully. Anything else is a
+      // contact click (whatsapp_click / phone_click / email_click). params
+      // carry the form and product only - never what the visitor typed.
+      window.dgTrack = function (kind, params) {
+        if (!dgOn) return;
+        params = params || {};
+        if (kind === 'lead') {
+          gtag('event', 'generate_lead', params);
+          if (ads && leadLabel) gtag('event', 'conversion', { send_to: ads + '/' + leadLabel });
+        } else {
+          gtag('event', kind, params);
+          if (ads && contactLabel) gtag('event', 'conversion', { send_to: ads + '/' + contactLabel });
+        }
+      };
+      if (dgOn) {
+        document.addEventListener('click', function (e) {
+          var a = e.target.closest ? e.target.closest('a[href]') : null;
+          if (!a) return;
+          var href = a.getAttribute('href') || '';
+          var kind = /whatsapp\.com|wa\.me/i.test(href) ? 'whatsapp_click'
+            : /^tel:/i.test(href) ? 'phone_click'
+            : /^mailto:/i.test(href) ? 'email_click' : null;
+          if (kind) window.dgTrack(kind, { page_path: location.pathname });
+        }, true);
+      }
+    </script>
 
     <!-- Performance hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
