@@ -10,6 +10,17 @@
 // reword it here too.
 export const posts = [
   {
+    slug: 'water-break-test-contact-angle-particle-cleanliness',
+    category: 'Surface Cleaning',
+    title: 'Water-Break Test vs Contact Angle: What About Particle Cleanliness?',
+    excerpt: 'Interpret wetting and particle-inspection records separately. Match each reported observation to the cleaning requirement it actually addresses.',
+    date: 'October 20, 2026',
+    datePublished: '2026-10-20',
+    tags: ['Surface Cleaning', 'Wettability', 'Report Reading'],
+    image: '/assets/img/blog/wetting-particle-evidence-v1',
+    readTime: '4 min read',
+  },
+  {
     slug: 'relative-humidity-static-plastic-film',
     category: 'Static Control',
     title: 'Relative Humidity and Static on Plastic Film: Read Temperature Too',
