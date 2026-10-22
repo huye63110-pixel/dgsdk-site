@@ -1,0 +1,191 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const base = 'https://www.dg-sdk.com';
+const url = base + '/blog/ionizer-maintenance-records';
+const title = 'Ionizer Maintenance Records: Separate Work from Verification';
+const seoTitle = 'Ionizer Maintenance Records: Work and Verification';
+const description = 'Link ionizer maintenance work to a separate verification report and review decision. Use a proposed record table to show completed work and missing evidence.';
+const faqItems = [
+  {
+    q: 'Does a completed cleaning entry prove ionizer performance?',
+    a: 'No. It records an action. A performance conclusion needs the relevant result and decision basis.'
+  },
+  {
+    q: 'What if the verification report is missing?',
+    a: 'Mark the attachment as missing and assign someone to locate or clarify it. Do not invent a result.'
+  },
+  {
+    q: 'Can this table replace the approved maintenance documents?',
+    a: 'No. It is a proposed way to link records. Use the applicable maintenance instructions and verification documents for the actual work.'
+  }
+];
+---
+
+<Layout title={seoTitle + ' | Shidike'} description={description} canonical={url}
+  image="/assets/img/blog/ionizer-maintenance-records-v1.jpg">
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: base },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: base + '/blog' },
+      { '@type': 'ListItem', position: 3, name: title, item: url }
+    ]
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BlogPosting', headline: title, description,
+    image: base + '/assets/img/blog/ionizer-maintenance-records-v1.jpg',
+    author: { '@type': 'Organization', name: 'Shidike', url: base },
+    publisher: { '@type': 'Organization', name: 'Shidike', legalName: 'Dongguan Shidike Intelligent Equipment Co., Ltd.', url: base },
+    datePublished: '2026-10-22', dateModified: '2026-10-22', mainEntityOfPage: url
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'FAQPage',
+    mainEntity: faqItems.map(item => ({ '@type': 'Question', name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a } }))
+  })} />
+
+  <article class="post">
+    <header class="post-head">
+      <div class="container post-col">
+        <div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog">Blog</a><span>/</span>Ionizer Maintenance Records</div>
+        <div class="post-tags"><span class="blog-tag">Static Control</span><span class="blog-tag">Maintenance Records</span><span class="blog-tag">Verification</span></div>
+        <h1>{title}</h1>
+        <p class="post-lead">Suppose an ionizing bar's work order is marked “cleaning completed,” but the attached test report belongs to an earlier visit. The work may be documented correctly while the evidence for the current review is incomplete. A useful maintenance record makes that difference visible.</p>
+        <div class="post-info"><span>October 22, 2026</span><span>Shidike Technical Team</span><span>4 min read</span></div>
+      </div>
+    </header>
+
+    <div class="container post-col post-body">
+      <picture class="post-figure">
+        <source media="(max-width: 600px)" srcset="/assets/img/blog/ionizer-maintenance-records-v1-mobile.webp" type="image/webp" width="800" height="1400" />
+        <source media="(max-width: 600px)" srcset="/assets/img/blog/ionizer-maintenance-records-v1-mobile.jpg" type="image/jpeg" width="800" height="1400" />
+        <source srcset="/assets/img/blog/ionizer-maintenance-records-v1.webp" type="image/webp" />
+        <img src="/assets/img/blog/ionizer-maintenance-records-v1.jpg" alt="Proposed record structure linking one asset and maintenance event to work and verification records, with a named decision owner. No measured results." width="1600" height="1000" loading="lazy" decoding="async" />
+      </picture>
+      <p><em>Original proposed record structure. The diagram contains no measured results or prescribed service sequence.</em></p>
+
+      <section id="work-and-verification">
+        <h2>A work entry is different from a measurement result</h2>
+        <p>The public scope of <a href="https://webstore.iec.ch/en/publication/68397" target="_blank" rel="noopener noreferrer">IEC 61340-4-7:2025</a> identifies ionizer offset voltage and decay time as measurements made under specified conditions. It also describes application-specific qualification and periodic performance verification. A note saying “cleaned” supplies neither measured result.</p>
+        <p>The <a href="https://www.esda.org/store/standards/product/465/ansiesd-sp3-3-2026/" target="_blank" rel="noopener noreferrer">ANSI/ESD SP3.3-2026 listing</a> separately addresses periodic verification of air-ionizer performance. Its public description is not a cleaning instruction or a rule for testing after every service action.</p>
+        <p>For this record review, distinguish what someone observed, what they did and which report supports the later decision. If a check was not performed, say so. If its report cannot be found, record that different gap.</p>
+      </section>
+
+      <section id="asset-and-event">
+        <h2>Connect the documents to the same asset and event</h2>
+        <p>Give the record an equipment identifier and installed location, not just the product family. Add the maintenance date, the person who did the work and the instruction reference used. Record actual replacements, adjustments or mounting changes without inferring them from a completed checkbox.</p>
+        <p>A report from another unit, date or configuration needs that difference identified before someone uses it in the review. Keep earlier records as history; do not relabel them as checks of the present arrangement. For interpreting the measurements themselves, use our <a href="/blog/comparing-ionizer-datasheets">ionizer test-condition comparison</a>.</p>
+      </section>
+
+      <section id="maintenance-record">
+        <h2>A proposed record for one maintenance event</h2>
+        <p>Use the asset and event reference above as the common heading. The table is an original documentation aid, not a standard-mandated form. Attach the actual work and verification documents rather than rewriting their procedures here.</p>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Proposed ionizer maintenance event record">
+          <table>
+            <thead><tr><th scope="col">Entry</th><th scope="col">Record or attachment</th><th scope="col">Keep explicit</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Condition found</th><td>Observed condition, exact displayed status and any existing report reference.</td><td>What was observed; what was not checked.</td></tr>
+              <tr><th scope="row">Work performed</th><td>Actual action, instruction reference, person, date and any changed parts or settings.</td><td>Inspection, cleaning and replacement are different actions.</td></tr>
+              <tr><th scope="row">Verification evidence</th><td>Report reference, measured quantity, method/setup, result and applicable criterion.</td><td>Attach the report, or mark the evidence unavailable.</td></tr>
+              <tr><th scope="row">Review decision</th><td>Responsible person, decision basis and unresolved follow-up.</td><td>Who will resolve each missing item.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="incomplete-record">
+        <h2>Example: work complete, attachment unresolved</h2>
+        <p>Consider this hypothetical handover: “Inspection and cleaning recorded; verification report not attached.” Preserve the service entry and ask the named person for the report or clarification. Do not rewrite the note as either “performance passed” or “test failed.” A missing attachment does not tell you which happened.</p>
+        <p>If the report is found, check that its asset and configuration match the event being reviewed. If no check was made, record that and refer the next action to the responsible person. Do not create an earlier reading to make a before-and-after pair look complete.</p>
+      </section>
+
+      <section id="review-decision">
+        <h2>Keep the decision and its basis together</h2>
+        <p>Within electronics ESD programs, <a href="https://www.esda.org/esd-overview/esd-fundamentals/part-4-training-and-auditing/" target="_blank" rel="noopener noreferrer">EOS/ESD Association's verification guidance</a> connects assessment to defined requirements, recorded results and corrective action. That context does not establish a universal service interval or acceptance limit for every film line.</p>
+        <p>Use the maintenance instructions and verification requirements applicable to the installation. This proposed table gives no automatic permission to restart production. Where an operating problem continues after service, keep its investigation separate; our <a href="/blog/static-returns-after-ionization">recurring-static observation guide</a> addresses the material and process record.</p>
+      </section>
+
+      <section id="faq"><h2>Frequently asked questions</h2><div class="faq-list">{faqItems.map(item => <details class="faq-item"><summary>{item.q}</summary><p>{item.a}</p></details>)}</div></section>
+
+      <div class="post-cta">
+        <h2>Discuss the ionizer application behind the record</h2>
+        <p>Share the model, installed location, work completed and available report references. Our team can discuss the application and identify which equipment information is needed for the review.</p>
+        <p><a class="send-cta" href="/products/static-eliminator/ionizing-bars">Explore Ionizing Bars &rarr;</a><a class="send-alt" href="/contact?type=selection&amp;product=Ionizer%20Maintenance%20Record%20Review">Discuss your maintenance record &rarr;</a></p>
+      </div>
+    </div>
+  </article>
+  <style>
+    .post-col { max-width: 780px; }
+    .post-head { background: #f7f8fa; padding: 48px 0 34px; border-bottom: 1px solid var(--hairline); }
+    .post-head .breadcrumb { font-size: 13px; color: #7d8d97; margin-bottom: 18px; }
+    .post-head .breadcrumb a { color: var(--brand-deep); text-decoration: none; }
+    .post-head .breadcrumb span { margin: 0 8px; }
+    .post-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .blog-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      background: #eef4f8; color: #4a6373; padding: 4px 9px; border-radius: 999px;
+    }
+    .post-head h1 {
+      font-size: clamp(1.7rem, 3.4vw, 2.5rem); line-height: 1.2; font-weight: 800;
+      letter-spacing: -.02em; color: var(--navy); margin: 0 0 14px;
+    }
+    .post-lead { font-size: 1.05rem; line-height: 1.75; color: #46545f; margin: 0 0 18px; }
+    .post-info { display: flex; flex-wrap: wrap; gap: 16px; font-size: 12.5px; color: #8a99a4; }
+
+    .post-body { padding: 34px 0 70px; }
+    .post-figure { display: block; margin: 0 0 30px; }
+    .post-figure img {
+      display: block; width: 100%; height: auto; border: 1px solid var(--hairline); border-radius: 8px;
+    }
+    .post-body h2 {
+      font-size: 1.42rem; font-weight: 700; letter-spacing: -.01em; color: var(--navy);
+      margin: 34px 0 12px;
+    }
+    .post-body p { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 15px; }
+    .post-body a { color: var(--brand-deep); }
+    .post-body h3 {
+      font-size: 1.12rem; font-weight: 700; color: var(--navy); margin: 26px 0 10px;
+    }
+    .post-body ul, .post-body ol { margin: 0 0 15px; padding-left: 22px; }
+    .post-body li { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 7px; }
+    .post-body blockquote, .post-body .blog-quote {
+      margin: 0 0 18px; padding: 13px 16px; background: #f2f6f9;
+      border-left: 3px solid var(--brand-deep); border-radius: 0 8px 8px 0;
+    }
+    .post-body .blog-quote p:last-child { margin-bottom: 0; }
+    .post-body .step-block { margin: 0 0 22px; }
+    .post-body .step-num {
+      display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .06em;
+      text-transform: uppercase; background: var(--navy); color: #fff;
+      padding: 4px 10px; border-radius: 999px; margin-bottom: 8px;
+    }
+    .formula {
+      font-size: 1.2rem !important; font-weight: 700; text-align: center; color: var(--navy) !important;
+      background: #f2f6f9; border: 1px solid var(--hairline); border-radius: 8px; padding: 14px;
+    }
+
+    .table-wrap { overflow-x: auto; margin: 0 0 20px; }
+    .post-body table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+    .post-body th, .post-body td {
+      text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--hairline); vertical-align: top;
+    }
+    .post-body thead th { background: #f2f6f9; font-weight: 700; color: var(--navy); }
+    .post-body tbody th { width: 22%; font-weight: 700; color: var(--navy); background: #fafbfc; }
+
+    .faq-list { display: flex; flex-direction: column; margin: 6px 0 0; border-top: 1px solid var(--hairline); }
+    .faq-item { padding: 15px 4px; border-bottom: 1px solid var(--hairline); }
+    .faq-item summary { cursor: pointer; font-weight: 700; color: var(--navy); font-size: 15.5px; }
+    .faq-item p { margin: 10px 0 0; }
+
+    .post-cta {
+      margin-top: 40px; padding: 26px 26px 22px; background: #f7f8fa;
+      border: 1px solid var(--hairline); border-radius: 10px;
+    }
+    .post-cta h2 { margin-top: 0; font-size: 1.25rem; }
+    .send-cta, .send-alt { display: inline-block; font-weight: 700; margin-right: 22px; }
+    @media (max-width: 767px) {
+      .post-body { padding-left: 16px; padding-right: 16px; }
+    }
+  </style>
+</Layout>

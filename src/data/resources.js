@@ -10,6 +10,17 @@
 // reword it here too.
 export const posts = [
   {
+    slug: 'ionizer-maintenance-records',
+    category: 'Static Control',
+    title: 'Ionizer Maintenance Records: Separate Work from Verification',
+    excerpt: 'Connect work performed, a separate verification report and a named review decision. Use a proposed record table to make missing evidence visible.',
+    date: 'October 22, 2026',
+    datePublished: '2026-10-22',
+    tags: ['Static Control', 'Maintenance Records', 'Verification'],
+    image: '/assets/img/blog/ionizer-maintenance-records-v1',
+    readTime: '4 min read',
+  },
+  {
     slug: 'water-break-test-contact-angle-particle-cleanliness',
     category: 'Surface Cleaning',
     title: 'Water-Break Test vs Contact Angle: What About Particle Cleanliness?',
