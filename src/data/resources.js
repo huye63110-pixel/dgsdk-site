@@ -10,6 +10,17 @@
 // reword it here too.
 export const posts = [
   {
+    slug: 'airborne-particle-count-vs-surface-cleanliness',
+    category: 'Surface Cleaning',
+    title: 'Airborne Particle Counts vs Surface Cleanliness: What Each Result Describes',
+    excerpt: 'Compare a room air report with a film-surface inspection through a hypothetical review case. Identify the open question before discussing a cleaning trial.',
+    date: 'October 26, 2026',
+    datePublished: '2026-10-26',
+    tags: ['Surface Cleaning', 'Particle Assessment', 'Cleanroom Reports'],
+    image: '/assets/img/blog/air-surface-particle-samples-v1',
+    readTime: '3 min read',
+  },
+  {
     slug: 'ionizer-maintenance-records',
     category: 'Static Control',
     title: 'Ionizer Maintenance Records: Separate Work from Verification',

@@ -1,0 +1,182 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const base = 'https://www.dg-sdk.com';
+const url = base + '/blog/airborne-particle-count-vs-surface-cleanliness';
+const title = 'Airborne Particle Counts vs Surface Cleanliness: What Each Result Describes';
+const seoTitle = 'Airborne Particle Counts vs Surface Cleanliness';
+const description = 'Compare a room air report with a film-surface inspection through a hypothetical review case. Identify the open question before discussing a cleaning trial.';
+const faqItems = [
+  {
+    q: 'Does a room class demonstrate cleaning-machine efficiency?',
+    a: 'Not from the class label alone. Ask for the trial results supporting the specific removal claim.'
+  },
+  {
+    q: 'Should I send both reports for an equipment discussion?',
+    a: 'Yes, if available. Identify which belongs to the room and which to your material, and state the unresolved cleaning requirement.'
+  }
+];
+---
+
+<Layout title={seoTitle + ' | Shidike'} description={description} canonical={url}
+  image="/assets/img/blog/air-surface-particle-samples-v1.jpg">
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: base },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: base + '/blog' },
+      { '@type': 'ListItem', position: 3, name: title, item: url }
+    ]
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BlogPosting', headline: title, description,
+    image: base + '/assets/img/blog/air-surface-particle-samples-v1.jpg',
+    author: { '@type': 'Organization', name: 'Shidike', url: base },
+    publisher: { '@type': 'Organization', name: 'Shidike', legalName: 'Dongguan Shidike Intelligent Equipment Co., Ltd.', url: base },
+    datePublished: '2026-10-26', dateModified: '2026-10-26', mainEntityOfPage: url
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'FAQPage',
+    mainEntity: faqItems.map(item => ({ '@type': 'Question', name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a } }))
+  })} />
+
+  <article class="post">
+    <header class="post-head">
+      <div class="container post-col">
+        <div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog">Blog</a><span>/</span>Air and Surface Particle Results</div>
+        <div class="post-tags"><span class="blog-tag">Surface Cleaning</span><span class="blog-tag">Particle Assessment</span><span class="blog-tag">Cleanroom Reports</span></div>
+        <h1>{title}</h1>
+        <p class="post-lead">Suppose a film processor receives two reports. The room air report meets its stated requirement, but a film-surface inspection is marked unacceptable against the customer's particle criterion. Before asking which report is wrong, check what each one sampled.</p>
+        <div class="post-info"><span>October 26, 2026</span><span>Shidike Technical Team</span><span>3 min read</span></div>
+      </div>
+    </header>
+
+    <div class="container post-col post-body">
+      <picture class="post-figure">
+        <source media="(max-width: 600px)" srcset="/assets/img/blog/air-surface-particle-samples-v1-mobile.webp" type="image/webp" width="800" height="1400" />
+        <source media="(max-width: 600px)" srcset="/assets/img/blog/air-surface-particle-samples-v1-mobile.jpg" type="image/jpeg" width="800" height="1400" />
+        <source srcset="/assets/img/blog/air-surface-particle-samples-v1.webp" type="image/webp" />
+        <img src="/assets/img/blog/air-surface-particle-samples-v1.jpg" alt="Concept comparison of particles in an air volume and on a surface area." width="1600" height="1000" loading="lazy" decoding="async" />
+      </picture>
+      <p><em>Original concept illustration. The dots are schematic, not measured counts.</em></p>
+
+      <section id="different-samples">
+        <h2>Start with the sampled object</h2>
+        <p><a href="https://www.iso.org/standard/53394.html" target="_blank" rel="noopener noreferrer">ISO 14644-1:2015</a> concerns air classification using airborne particle concentration at specified size thresholds and sampling locations. Its subject is air, not a particular film face.</p>
+        <p><a href="https://www.iso.org/standard/76889.html" target="_blank" rel="noopener noreferrer">ISO 14644-9:2022</a> addresses particle assessment on solid surfaces, including products. It does not prescribe surface-cleaning procedures or the cleanliness required by a specific process.</p>
+        <p>The <a href="https://handbook.ashrae.org/Handbooks/A23/SI/a23_ch19/a23_ch19_si.aspx" target="_blank" rel="noopener noreferrer">ASHRAE Handbook's Clean Spaces chapter</a> distinguishes air concentration used for classification from deposition on a critical product surface. An air result is therefore relevant context, not a substitute for that product's evidence.</p>
+      </section>
+
+      <section id="report-comparison">
+        <h2>Compare the questions, not just the numbers</h2>
+        <p>This original comparison helps place each document in a review. It is not a conversion table between air and surface results.</p>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Air and product-surface report comparison">
+          <table>
+            <thead><tr><th scope="col">Report</th><th scope="col">Sample represented</th><th scope="col">Useful review question</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Air particle report</th><td>Particles in sampled air; concentration per air volume.</td><td>Which location and operating condition does this document cover?</td></tr>
+              <tr><th scope="row">Product-surface report</th><td>Particles on the inspected surface; check the report’s area basis.</td><td>Which material face and process stage does this document cover?</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Keep the units and method with the original result. For the details inside a surface report, see <a href="/blog/surface-particle-inspection-report">count, area and size in particle inspection</a>; those details should not be replaced by a room-class label.</p>
+      </section>
+
+      <section id="two-reports">
+        <h2>A hypothetical case: one requirement met, another unresolved</h2>
+        <p>Return to the opening example. The buyer has an acceptable room report and a rejected film inspection. These outcomes need not contradict one another: the reports concern different samples and requirements.</p>
+        <p>In this hypothetical review, retain both documents and ask the inspection owner to identify the film face, inspection stage and criterion behind the rejection. If the attached image belongs to a protective liner rather than the exposed film, resolve that mismatch before discussing a change to the cleaner.</p>
+        <p>Neither document, by itself, establishes how the particles reached that face. Do not turn the room result into a claim that the cleaner failed, or turn the film result into a declaration that the room classification is wrong.</p>
+      </section>
+
+      <section id="cleaning-discussion">
+        <h2>Bring the product question to the cleaning discussion</h2>
+        <p>For an equipment enquiry, describe the decision you need to make: selecting a cleaner for a particular material, reviewing a trial result, or investigating an existing line. Attach the relevant report and mark any missing information as unknown.</p>
+        <p>If the question concerns a film that passed through several stops or transfers before inspection, include that history. Our <a href="/blog/film-cleanliness-before-lamination">film-cleanliness handover guide</a> addresses that separate task. It does not turn an uncertain history into a confirmed contamination source.</p>
+        <p>Ask for the evidence that would answer the open product question. A room certificate, an inspection image and a cleaner brochure should retain their own labels; assembling them in one folder does not make them a single performance test.</p>
+      </section>
+
+      <section id="faq"><h2>Frequently asked questions</h2><div class="faq-list">{faqItems.map(item => <details class="faq-item"><summary>{item.q}</summary><p>{item.a}</p></details>)}</div></section>
+
+      <div class="post-cta">
+        <h2>Discuss the surface-cleaning requirement</h2>
+        <p>Share the material, face to be cleaned, process stage and available inspection report. Our team can discuss the application and the information needed for a cleaning trial.</p>
+        <p><a class="send-cta" href="/products/cleaning-machine">Explore Cleaning Equipment &rarr;</a><a class="send-alt" href="/contact?type=selection&amp;product=Air%20and%20Surface%20Particle%20Review">Discuss your particle reports &rarr;</a></p>
+      </div>
+    </div>
+  </article>
+  <style>
+    .post-col { max-width: 780px; }
+    .post-head { background: #f7f8fa; padding: 48px 0 34px; border-bottom: 1px solid var(--hairline); }
+    .post-head .breadcrumb { font-size: 13px; color: #7d8d97; margin-bottom: 18px; }
+    .post-head .breadcrumb a { color: var(--brand-deep); text-decoration: none; }
+    .post-head .breadcrumb span { margin: 0 8px; }
+    .post-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .blog-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      background: #eef4f8; color: #4a6373; padding: 4px 9px; border-radius: 999px;
+    }
+    .post-head h1 {
+      font-size: clamp(1.7rem, 3.4vw, 2.5rem); line-height: 1.2; font-weight: 800;
+      letter-spacing: -.02em; color: var(--navy); margin: 0 0 14px;
+    }
+    .post-lead { font-size: 1.05rem; line-height: 1.75; color: #46545f; margin: 0 0 18px; }
+    .post-info { display: flex; flex-wrap: wrap; gap: 16px; font-size: 12.5px; color: #8a99a4; }
+
+    .post-body { padding: 34px 0 70px; }
+    .post-figure { display: block; margin: 0 0 30px; }
+    .post-figure img {
+      display: block; width: 100%; height: auto; border: 1px solid var(--hairline); border-radius: 8px;
+    }
+    .post-body h2 {
+      font-size: 1.42rem; font-weight: 700; letter-spacing: -.01em; color: var(--navy);
+      margin: 34px 0 12px;
+    }
+    .post-body p { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 15px; }
+    .post-body a { color: var(--brand-deep); }
+    .post-body h3 {
+      font-size: 1.12rem; font-weight: 700; color: var(--navy); margin: 26px 0 10px;
+    }
+    .post-body ul, .post-body ol { margin: 0 0 15px; padding-left: 22px; }
+    .post-body li { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 7px; }
+    .post-body blockquote, .post-body .blog-quote {
+      margin: 0 0 18px; padding: 13px 16px; background: #f2f6f9;
+      border-left: 3px solid var(--brand-deep); border-radius: 0 8px 8px 0;
+    }
+    .post-body .blog-quote p:last-child { margin-bottom: 0; }
+    .post-body .step-block { margin: 0 0 22px; }
+    .post-body .step-num {
+      display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .06em;
+      text-transform: uppercase; background: var(--navy); color: #fff;
+      padding: 4px 10px; border-radius: 999px; margin-bottom: 8px;
+    }
+    .formula {
+      font-size: 1.2rem !important; font-weight: 700; text-align: center; color: var(--navy) !important;
+      background: #f2f6f9; border: 1px solid var(--hairline); border-radius: 8px; padding: 14px;
+    }
+
+    .table-wrap { overflow-x: auto; margin: 0 0 20px; }
+    .post-body table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+    .post-body th, .post-body td {
+      text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--hairline); vertical-align: top;
+    }
+    .post-body thead th { background: #f2f6f9; font-weight: 700; color: var(--navy); }
+    .post-body tbody th { width: 22%; font-weight: 700; color: var(--navy); background: #fafbfc; }
+
+    .faq-list { display: flex; flex-direction: column; margin: 6px 0 0; border-top: 1px solid var(--hairline); }
+    .faq-item { padding: 15px 4px; border-bottom: 1px solid var(--hairline); }
+    .faq-item summary { cursor: pointer; font-weight: 700; color: var(--navy); font-size: 15.5px; }
+    .faq-item p { margin: 10px 0 0; }
+
+    .post-cta {
+      margin-top: 40px; padding: 26px 26px 22px; background: #f7f8fa;
+      border: 1px solid var(--hairline); border-radius: 10px;
+    }
+    .post-cta h2 { margin-top: 0; font-size: 1.25rem; }
+    .send-cta, .send-alt { display: inline-block; font-weight: 700; margin-right: 22px; }
+    @media (max-width: 767px) {
+      .post-body { padding-left: 16px; padding-right: 16px; }
+    }
+  </style>
+</Layout>
