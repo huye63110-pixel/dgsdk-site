@@ -1,0 +1,159 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const base = 'https://www.dg-sdk.com';
+const url = base + '/blog/triboelectric-series-plastic-film';
+const title = 'Triboelectric Series for Plastic Film: Read the Conditions Behind the Ranking';
+const seoTitle = 'Triboelectric Series for Plastic Film';
+const description = 'Review a triboelectric chart for a proposed film and roller-cover pairing. Use comparison questions and a hypothetical case to prepare an application discussion.';
+---
+
+<Layout title={seoTitle + ' | Shidike'} description={description} canonical={url}
+  image="/assets/img/blog/triboelectric-material-pair-v1.jpg">
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: base },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: base + '/blog' },
+      { '@type': 'ListItem', position: 3, name: title, item: url }
+    ]
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BlogPosting', headline: title, description,
+    image: base + '/assets/img/blog/triboelectric-material-pair-v1.jpg',
+    author: { '@type': 'Organization', name: 'Shidike', url: base },
+    publisher: { '@type': 'Organization', name: 'Shidike', legalName: 'Dongguan Shidike Intelligent Equipment Co., Ltd.', url: base },
+    datePublished: '2026-10-27', dateModified: '2026-10-27', mainEntityOfPage: url
+  })} />
+
+  <article class="post">
+    <header class="post-head">
+      <div class="container post-col">
+        <div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog">Blog</a><span>/</span>Triboelectric Series for Film</div>
+        <div class="post-tags"><span class="blog-tag">Static Control</span><span class="blog-tag">Material Pairs</span><span class="blog-tag">Triboelectric Series</span></div>
+        <h1>{title}</h1>
+        <p class="post-lead">Suppose a buyer finds two material names close together on a triboelectric chart and proposes changing a roller cover. Before treating that change as a solution, establish what the chart compared and which surfaces would actually meet on the line.</p>
+        <div class="post-info"><span>October 27, 2026</span><span>Shidike Technical Team</span><span>3 min read</span></div>
+      </div>
+    </header>
+
+    <div class="container post-col post-body">
+      <picture class="post-figure">
+        <source media="(max-width: 600px)" srcset="/assets/img/blog/triboelectric-material-pair-v1-mobile.webp" type="image/webp" width="800" height="1400" />
+        <source media="(max-width: 600px)" srcset="/assets/img/blog/triboelectric-material-pair-v1-mobile.jpg" type="image/jpeg" width="800" height="1400" />
+        <source srcset="/assets/img/blog/triboelectric-material-pair-v1.webp" type="image/webp" />
+        <img src="/assets/img/blog/triboelectric-material-pair-v1.jpg" alt="Concept comparison of reference material names with two actual contact faces and prompts for surface, conditions and history." width="1600" height="1000" loading="lazy" decoding="async" />
+      </picture>
+      <p><em>Original concept illustration. Material names and faces are placeholders; no ranking or test result is shown.</em></p>
+
+      <section id="read-the-ranking">
+        <h2>Read the comparison behind the material names</h2>
+        <p>A triboelectric series orders materials by their relative charging tendency after contact and separation. The <a href="https://www.esda.org/esd-overview/esd-fundamentals/part-1-an-introduction-to-esd/" target="_blank" rel="noopener noreferrer">EOS/ESD Association's introduction to ESD</a> treats these tables as general guidance: charging depends on conditions including contact area, separation speed and environment.</p>
+        <p>Keep the chart's source and explanation together. If it gives only material names and a positive-to-negative arrow, leave unreported conditions marked as unknown. A row in a reference chart is not an application voltage measurement.</p>
+      </section>
+
+      <section id="study-boundary">
+        <h2>Keep a study attached to its specimens</h2>
+        <p>A <a href="https://www.nature.com/articles/s41586-024-08530-6" target="_blank" rel="noopener noreferrer">2025 Nature study</a> examined nominally identical polydimethylsiloxane (PDMS) specimens. Their charging relationships evolved with repeated contact, and contact history influenced the ordering that emerged. This was a controlled material study, not a comparison of commercial production films.</p>
+        <p>It provides a reason to ask about sample history behind a ranking. It does not assign a polarity to your film or specify how many contacts would change its behaviour.</p>
+      </section>
+
+      <section id="actual-material-pair">
+        <h2>Apply the reference to one proposed pair</h2>
+        <p>Consider this hypothetical purchasing discussion: the film is described as polyester, but the intended contact face has a coating. The proposed roller has a replaceable cover whose grade has not been supplied. A chart naming polyester and a generic rubber has not yet identified this proposed pair.</p>
+        <p>Use these original comparison questions before writing the selection rationale:</p>
+        <ul>
+          <li><strong>Which two surfaces would meet?</strong> Identify the film's exposed coating and the roller-cover grade. Keep an unknown identity visible instead of substituting the base-film name.</li>
+          <li><strong>What did the reference compare?</strong> Ask whether its material descriptions and stated conditions address those surfaces. Keep differences explicit rather than relabelling the proposed pair as the published one.</li>
+          <li><strong>What decision needs evidence?</strong> State the proposed change and the application result it is intended to improve. Ask the trial team what comparison would support that decision.</li>
+        </ul>
+        <p>In this example, the cover remains a candidate for evaluation. The buyer can request its material information and discuss a trial without claiming that a chart has already established its performance. The example supplies no measured result or preferred cover material.</p>
+      </section>
+
+      <section id="next-question">
+        <h2>Separate selection from a later investigation</h2>
+        <p>A material-selection question asks whether the proposed pair has suitable supporting evidence. An existing-line problem needs its own observations. For charge observed after an ionizer, our <a href="/blog/static-returns-after-ionization">recurring-static investigation article</a> covers the next contact or separation and measurement context.</p>
+        <p>If the discussion includes an electrical reading, use the original report and its measured quantity. Our <a href="/blog/surface-resistance-vs-surface-voltage">surface resistance and surface voltage guide</a> explains those distinctions. Keep that report alongside the material reference, with a clear statement of what remains unresolved.</p>
+      </section>
+
+      <div class="post-cta">
+        <h2>Discuss the material pair on your line</h2>
+        <p>Share the film face, contacting material, proposed change and available observations. Our team can review the static-control application and discuss what information is needed for equipment selection.</p>
+        <p><a class="send-cta" href="/products/static-eliminator">Explore Static Control Equipment &rarr;</a><a class="send-alt" href="/contact?type=selection&amp;product=Film%20Material%20Pair%20Review">Discuss your material pair &rarr;</a></p>
+      </div>
+    </div>
+  </article>
+  <style>
+    .post-col { max-width: 780px; }
+    .post-head { background: #f7f8fa; padding: 48px 0 34px; border-bottom: 1px solid var(--hairline); }
+    .post-head .breadcrumb { font-size: 13px; color: #7d8d97; margin-bottom: 18px; }
+    .post-head .breadcrumb a { color: var(--brand-deep); text-decoration: none; }
+    .post-head .breadcrumb span { margin: 0 8px; }
+    .post-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .blog-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      background: #eef4f8; color: #4a6373; padding: 4px 9px; border-radius: 999px;
+    }
+    .post-head h1 {
+      font-size: clamp(1.7rem, 3.4vw, 2.5rem); line-height: 1.2; font-weight: 800;
+      letter-spacing: -.02em; color: var(--navy); margin: 0 0 14px;
+    }
+    .post-lead { font-size: 1.05rem; line-height: 1.75; color: #46545f; margin: 0 0 18px; }
+    .post-info { display: flex; flex-wrap: wrap; gap: 16px; font-size: 12.5px; color: #8a99a4; }
+
+    .post-body { padding: 34px 0 70px; }
+    .post-figure { display: block; margin: 0 0 30px; }
+    .post-figure img {
+      display: block; width: 100%; height: auto; border: 1px solid var(--hairline); border-radius: 8px;
+    }
+    .post-body h2 {
+      font-size: 1.42rem; font-weight: 700; letter-spacing: -.01em; color: var(--navy);
+      margin: 34px 0 12px;
+    }
+    .post-body p { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 15px; }
+    .post-body a { color: var(--brand-deep); }
+    .post-body h3 {
+      font-size: 1.12rem; font-weight: 700; color: var(--navy); margin: 26px 0 10px;
+    }
+    .post-body ul, .post-body ol { margin: 0 0 15px; padding-left: 22px; }
+    .post-body li { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 7px; }
+    .post-body blockquote, .post-body .blog-quote {
+      margin: 0 0 18px; padding: 13px 16px; background: #f2f6f9;
+      border-left: 3px solid var(--brand-deep); border-radius: 0 8px 8px 0;
+    }
+    .post-body .blog-quote p:last-child { margin-bottom: 0; }
+    .post-body .step-block { margin: 0 0 22px; }
+    .post-body .step-num {
+      display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .06em;
+      text-transform: uppercase; background: var(--navy); color: #fff;
+      padding: 4px 10px; border-radius: 999px; margin-bottom: 8px;
+    }
+    .formula {
+      font-size: 1.2rem !important; font-weight: 700; text-align: center; color: var(--navy) !important;
+      background: #f2f6f9; border: 1px solid var(--hairline); border-radius: 8px; padding: 14px;
+    }
+
+    .table-wrap { overflow-x: auto; margin: 0 0 20px; }
+    .post-body table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+    .post-body th, .post-body td {
+      text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--hairline); vertical-align: top;
+    }
+    .post-body thead th { background: #f2f6f9; font-weight: 700; color: var(--navy); }
+    .post-body tbody th { width: 22%; font-weight: 700; color: var(--navy); background: #fafbfc; }
+
+    .faq-list { display: flex; flex-direction: column; margin: 6px 0 0; border-top: 1px solid var(--hairline); }
+    .faq-item { padding: 15px 4px; border-bottom: 1px solid var(--hairline); }
+    .faq-item summary { cursor: pointer; font-weight: 700; color: var(--navy); font-size: 15.5px; }
+    .faq-item p { margin: 10px 0 0; }
+
+    .post-cta {
+      margin-top: 40px; padding: 26px 26px 22px; background: #f7f8fa;
+      border: 1px solid var(--hairline); border-radius: 10px;
+    }
+    .post-cta h2 { margin-top: 0; font-size: 1.25rem; }
+    .send-cta, .send-alt { display: inline-block; font-weight: 700; margin-right: 22px; }
+    @media (max-width: 767px) {
+      .post-body { padding-left: 16px; padding-right: 16px; }
+    }
+  </style>
+</Layout>

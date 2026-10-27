@@ -43,6 +43,7 @@ backlight panel, LCM module and roll material.
 - [ESD Control Products](https://www.dg-sdk.com/guides/esd-control-products): Buyer's guide.
 - [What Is Web Cleaning](https://www.dg-sdk.com/guides/what-is-web-cleaning): Contact against non-contact dry particle removal, and what a cleaning trial has to record.
 - [Technical Blog](https://www.dg-sdk.com/blog): Application guides for lithium battery, photovoltaic and optical film production.
+- [Triboelectric Series for Plastic Film](https://www.dg-sdk.com/blog/triboelectric-series-plastic-film): Review a material-ranking reference through a hypothetical film and roller-cover selection question.
 - [Airborne Particle Counts vs Surface Cleanliness](https://www.dg-sdk.com/blog/airborne-particle-count-vs-surface-cleanliness): Review a hypothetical air-report and film-inspection case before discussing the open cleaning question.
 - [Ionizer Maintenance Records](https://www.dg-sdk.com/blog/ionizer-maintenance-records): Link the work performed, verification documents and review decision for one maintenance event using a proposed record table.
 - [Water-Break Test vs Contact Angle](https://www.dg-sdk.com/blog/water-break-test-contact-angle-particle-cleanliness): Interpret wetting observations and particle-inspection records without treating one result as proof of every cleaning requirement.
