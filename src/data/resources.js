@@ -10,6 +10,17 @@
 // reword it here too.
 export const posts = [
   {
+    slug: 'triboelectric-series-plastic-film',
+    category: 'Static Control',
+    title: 'Triboelectric Series for Plastic Film: Read the Conditions Behind the Ranking',
+    excerpt: 'Review a triboelectric chart for a proposed film and roller-cover pairing. Use comparison questions and a hypothetical case to prepare an application discussion.',
+    date: 'October 27, 2026',
+    datePublished: '2026-10-27',
+    tags: ['Static Control', 'Material Pairs', 'Triboelectric Series'],
+    image: '/assets/img/blog/triboelectric-material-pair-v1',
+    readTime: '3 min read',
+  },
+  {
     slug: 'airborne-particle-count-vs-surface-cleanliness',
     category: 'Surface Cleaning',
     title: 'Airborne Particle Counts vs Surface Cleanliness: What Each Result Describes',
