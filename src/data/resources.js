@@ -12,7 +12,7 @@ export const posts = [
   {
     slug: 'air-jet-particle-removal-pressure',
     category: 'Surface Cleaning',
-    title: 'Air-Jet Particle Removal: Why Pressure Alone Is Not a Cleaning Result',
+    title: 'Air-Jet Particle Removal: Reviewing Supply Settings and Trial Evidence',
     excerpt: 'Review an air-jet cleaning proposal with a three-part comparison and a hypothetical purchasing case. Identify the evidence needed for your material.',
     date: 'November 2, 2026',
     datePublished: '2026-11-02',
