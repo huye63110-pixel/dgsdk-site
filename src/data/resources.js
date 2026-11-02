@@ -10,6 +10,17 @@
 // reword it here too.
 export const posts = [
   {
+    slug: 'air-jet-particle-removal-pressure',
+    category: 'Surface Cleaning',
+    title: 'Air-Jet Particle Removal: Why Pressure Alone Is Not a Cleaning Result',
+    excerpt: 'Review an air-jet cleaning proposal with a three-part comparison and a hypothetical purchasing case. Identify the evidence needed for your material.',
+    date: 'November 2, 2026',
+    datePublished: '2026-11-02',
+    tags: ['Surface Cleaning', 'Air Jets', 'Particle Removal'],
+    image: '/assets/img/blog/air-jet-pressure-result-v1',
+    readTime: '4 min read',
+  },
+  {
     slug: 'triboelectric-series-plastic-film',
     category: 'Static Control',
     title: 'Triboelectric Series for Plastic Film: Read the Conditions Behind the Ranking',
