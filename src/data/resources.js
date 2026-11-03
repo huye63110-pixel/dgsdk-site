@@ -10,6 +10,17 @@
 // reword it here too.
 export const posts = [
   {
+    slug: 'electrostatic-induction-near-charged-film',
+    category: 'Static Control',
+    title: 'Electrostatic Induction Near Film: An Isolated Metal Example',
+    excerpt: 'Explore an isolated-metal example beside charged film. Follow an original concept diagram and prepare a focused static-control application discussion.',
+    date: 'November 3, 2026',
+    datePublished: '2026-11-03',
+    tags: ['Static Control', 'Electrostatic Induction', 'Film Handling'],
+    image: '/assets/img/blog/film-isolated-metal-induction-v1',
+    readTime: '2 min read',
+  },
+  {
     slug: 'air-jet-particle-removal-pressure',
     category: 'Surface Cleaning',
     title: 'Air-Jet Particle Removal: Reviewing Supply Settings and Trial Evidence',

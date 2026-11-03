@@ -1,0 +1,154 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const base = 'https://www.dg-sdk.com';
+const url = base + '/blog/electrostatic-induction-near-charged-film';
+const title = 'Electrostatic Induction Near Film: An Isolated Metal Example';
+const seoTitle = 'Electrostatic Induction Near Charged Film';
+const description = 'Explore an isolated-metal example beside charged film. Follow an original concept diagram and prepare a focused static-control application discussion.';
+---
+
+<Layout title={seoTitle + ' | Shidike'} description={description} canonical={url}
+  image="/assets/img/blog/film-isolated-metal-induction-v1.jpg">
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: base },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: base + '/blog' },
+      { '@type': 'ListItem', position: 3, name: title, item: url }
+    ]
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BlogPosting', headline: title, description,
+    image: base + '/assets/img/blog/film-isolated-metal-induction-v1.jpg',
+    author: { '@type': 'Organization', name: 'Shidike', url: base },
+    publisher: { '@type': 'Organization', name: 'Shidike', legalName: 'Dongguan Shidike Intelligent Equipment Co., Ltd.', url: base },
+    datePublished: '2026-11-03', dateModified: '2026-11-03', mainEntityOfPage: url
+  })} />
+
+  <article class="post">
+    <header class="post-head">
+      <div class="container post-col">
+        <div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog">Blog</a><span>/</span>Electrostatic Induction Near Film</div>
+        <div class="post-tags"><span class="blog-tag">Static Control</span><span class="blog-tag">Electrostatic Induction</span><span class="blog-tag">Film Handling</span></div>
+        <h1>{title}</h1>
+        <p class="post-lead">A film-handling layout includes a metal guide close to the web, with no intended contact between them. A useful discussion separates two questions: how is charge distributed on the metal, and has its total charge changed?</p>
+        <div class="post-info"><span>November 3, 2026</span><span>Shidike Technical Team</span><span>2 min read</span></div>
+      </div>
+    </header>
+
+    <div class="container post-col post-body">
+      <picture class="post-figure">
+        <source media="(max-width: 600px)" srcset="/assets/img/blog/film-isolated-metal-induction-v1-mobile.webp" type="image/webp" width="800" height="1400" />
+        <source media="(max-width: 600px)" srcset="/assets/img/blog/film-isolated-metal-induction-v1-mobile.jpg" type="image/jpeg" width="800" height="1400" />
+        <source srcset="/assets/img/blog/film-isolated-metal-induction-v1.webp" type="image/webp" />
+        <img src="/assets/img/blog/film-isolated-metal-induction-v1.jpg" alt="Original two-panel example of charged film beside isolated metal." width="1600" height="1000" loading="lazy" decoding="async" />
+      </picture>
+      <p><em>Original concept diagram. Signs are schematic; no operating values or test results are shown.</em></p>
+
+      <section id="read-the-example">
+        <h2>Read the isolated-metal example</h2>
+        <p>Our example uses initially neutral, electrically isolated metal with no charge exchange. The positive film is a chosen illustration, not an assigned polarity for a production material.</p>
+        <p>The <a href="https://www.esda.org/esd-overview/esd-fundamentals/part-1-an-introduction-to-esd/" target="_blank" rel="noopener noreferrer">EOS/ESD Association's introduction</a> explains that an external field can polarize a conductor without changing its total charge. Here, electrons move toward the positive film, leaving an electron deficit farther away.</p>
+        <p>Net neutrality does not establish zero potential or an absence of ESD risk.</p>
+      </section>
+
+      <section id="change-the-boundary">
+        <h2>Keep the model's electrical boundary explicit</h2>
+        <p>A ground connection permits charge transfer, so the isolated-metal assumption no longer applies.</p>
+        <p>The association's <a href="https://www.esda.org/esd-overview/esd-fundamentals/part-3-basic-esd-control-procedures-and-materials/" target="_blank" rel="noopener noreferrer">grounding guidance</a> also distinguishes insulators: grounding nearby metal does not establish that charge on insulating film has been removed.</p>
+        <p>This example supplies no grounding design or operating sequence. On a real line, use the identified material construction and the equipment's verified electrical arrangement; do not replace either with an assumption based on appearance.</p>
+      </section>
+
+      <section id="film-guide-discussion">
+        <h2>Apply the example to one drawing</h2>
+        <p>In a hypothetical design review, a drawing labels two items “plastic web” and “metal guide.” Someone proposes changing the guide because “the film charged it,” but no material sheet, connection detail or test result accompanies that explanation.</p>
+        <p>Start by checking whether the actual web construction and the guide's electrical arrangement match the example. If either is unknown, keep the explanation provisional. The schematic helps define a mechanism to discuss; it does not establish the cause of a production problem or select an ionizer.</p>
+      </section>
+
+      <section id="related-questions">
+        <h2>Continue with the question your application raises</h2>
+        <p>For the wider vocabulary, our <a href="/guides/what-is-esd">ESD introduction</a> covers the broader subject. If the application review leads to equipment selection, the <a href="/guides/what-is-an-ionizing-bar">ionizing-bar guide</a> introduces that product category. Keep the model, the actual line description and the equipment decision distinct.</p>
+      </section>
+
+      <div class="post-cta">
+        <h2>Discuss the film and nearby metal on your line</h2>
+        <p>Share the material description, nearby parts, known connections and the problem you need to investigate. Our team can discuss the static-control application and the information needed for equipment selection.</p>
+        <p><a class="send-cta" href="/products/static-eliminator">Explore Static Control Equipment &rarr;</a><a class="send-alt" href="/contact?type=selection&amp;product=Film%20and%20Nearby%20Metal%20Review">Discuss your application &rarr;</a></p>
+      </div>
+    </div>
+  </article>
+  <style>
+    .post-col { max-width: 780px; }
+    .post-head { background: #f7f8fa; padding: 48px 0 34px; border-bottom: 1px solid var(--hairline); }
+    .post-head .breadcrumb { font-size: 13px; color: #7d8d97; margin-bottom: 18px; }
+    .post-head .breadcrumb a { color: var(--brand-deep); text-decoration: none; }
+    .post-head .breadcrumb span { margin: 0 8px; }
+    .post-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .blog-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      background: #eef4f8; color: #4a6373; padding: 4px 9px; border-radius: 999px;
+    }
+    .post-head h1 {
+      font-size: clamp(1.7rem, 3.4vw, 2.5rem); line-height: 1.2; font-weight: 800;
+      letter-spacing: -.02em; color: var(--navy); margin: 0 0 14px;
+    }
+    .post-lead { font-size: 1.05rem; line-height: 1.75; color: #46545f; margin: 0 0 18px; }
+    .post-info { display: flex; flex-wrap: wrap; gap: 16px; font-size: 12.5px; color: #8a99a4; }
+
+    .post-body { padding: 34px 0 70px; }
+    .post-figure { display: block; margin: 0 0 30px; }
+    .post-figure img {
+      display: block; width: 100%; height: auto; border: 1px solid var(--hairline); border-radius: 8px;
+    }
+    .post-body h2 {
+      font-size: 1.42rem; font-weight: 700; letter-spacing: -.01em; color: var(--navy);
+      margin: 34px 0 12px;
+    }
+    .post-body p { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 15px; }
+    .post-body a { color: var(--brand-deep); }
+    .post-body h3 {
+      font-size: 1.12rem; font-weight: 700; color: var(--navy); margin: 26px 0 10px;
+    }
+    .post-body ul, .post-body ol { margin: 0 0 15px; padding-left: 22px; }
+    .post-body li { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 7px; }
+    .post-body blockquote, .post-body .blog-quote {
+      margin: 0 0 18px; padding: 13px 16px; background: #f2f6f9;
+      border-left: 3px solid var(--brand-deep); border-radius: 0 8px 8px 0;
+    }
+    .post-body .blog-quote p:last-child { margin-bottom: 0; }
+    .post-body .step-block { margin: 0 0 22px; }
+    .post-body .step-num {
+      display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .06em;
+      text-transform: uppercase; background: var(--navy); color: #fff;
+      padding: 4px 10px; border-radius: 999px; margin-bottom: 8px;
+    }
+    .formula {
+      font-size: 1.2rem !important; font-weight: 700; text-align: center; color: var(--navy) !important;
+      background: #f2f6f9; border: 1px solid var(--hairline); border-radius: 8px; padding: 14px;
+    }
+
+    .table-wrap { overflow-x: auto; margin: 0 0 20px; }
+    .post-body table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+    .post-body th, .post-body td {
+      text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--hairline); vertical-align: top;
+    }
+    .post-body thead th { background: #f2f6f9; font-weight: 700; color: var(--navy); }
+    .post-body tbody th { width: 22%; font-weight: 700; color: var(--navy); background: #fafbfc; }
+
+    .faq-list { display: flex; flex-direction: column; margin: 6px 0 0; border-top: 1px solid var(--hairline); }
+    .faq-item { padding: 15px 4px; border-bottom: 1px solid var(--hairline); }
+    .faq-item summary { cursor: pointer; font-weight: 700; color: var(--navy); font-size: 15.5px; }
+    .faq-item p { margin: 10px 0 0; }
+
+    .post-cta {
+      margin-top: 40px; padding: 26px 26px 22px; background: #f7f8fa;
+      border: 1px solid var(--hairline); border-radius: 10px;
+    }
+    .post-cta h2 { margin-top: 0; font-size: 1.25rem; }
+    .send-cta, .send-alt { display: inline-block; font-weight: 700; margin-right: 22px; }
+    @media (max-width: 767px) {
+      .post-body { padding-left: 16px; padding-right: 16px; }
+    }
+  </style>
+</Layout>
