@@ -43,6 +43,7 @@ backlight panel, LCM module and roll material.
 - [ESD Control Products](https://www.dg-sdk.com/guides/esd-control-products): Buyer's guide.
 - [What Is Web Cleaning](https://www.dg-sdk.com/guides/what-is-web-cleaning): Contact against non-contact dry particle removal, and what a cleaning trial has to record.
 - [Technical Blog](https://www.dg-sdk.com/blog): Application guides for lithium battery, photovoltaic and optical film production.
+- [Surface Roughness and Particle Adhesion](https://www.dg-sdk.com/blog/surface-roughness-particle-adhesion): Explore two laboratory studies and an original contact-geometry diagram for a dry-cleaning material discussion.
 - [Electrostatic Induction Near Film](https://www.dg-sdk.com/blog/electrostatic-induction-near-charged-film): Explore an isolated-metal concept example and a hypothetical film-guide discussion.
 - [Air-Jet Particle Removal](https://www.dg-sdk.com/blog/air-jet-particle-removal-pressure): Review two hypothetical cleaning proposals using a comparison of supply settings, the application and trial evidence.
 - [Triboelectric Series for Plastic Film](https://www.dg-sdk.com/blog/triboelectric-series-plastic-film): Review a material-ranking reference through a hypothetical film and roller-cover selection question.

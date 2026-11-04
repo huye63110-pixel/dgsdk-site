@@ -10,6 +10,17 @@
 // reword it here too.
 export const posts = [
   {
+    slug: 'surface-roughness-particle-adhesion',
+    category: 'Surface Cleaning',
+    title: 'Surface Roughness and Particle Adhesion: Read the Contact Geometry',
+    excerpt: 'Explore particle contact on textured surfaces through two laboratory studies and an original diagram. Apply the distinction to a dry-cleaning material review.',
+    date: 'November 4, 2026',
+    datePublished: '2026-11-04',
+    tags: ['Surface Cleaning', 'Particle Adhesion', 'Surface Texture'],
+    image: '/assets/img/blog/particle-roughness-contacts-v1',
+    readTime: '3 min read',
+  },
+  {
     slug: 'electrostatic-induction-near-charged-film',
     category: 'Static Control',
     title: 'Electrostatic Induction Near Film: An Isolated Metal Example',
