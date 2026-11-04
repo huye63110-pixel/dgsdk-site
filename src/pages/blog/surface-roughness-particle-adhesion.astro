@@ -1,0 +1,154 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const base = 'https://www.dg-sdk.com';
+const url = base + '/blog/surface-roughness-particle-adhesion';
+const title = 'Surface Roughness and Particle Adhesion: Read the Contact Geometry';
+const seoTitle = 'Surface Roughness and Particle Adhesion';
+const description = 'Explore particle contact on textured surfaces through two laboratory studies and an original diagram. Apply the distinction to a dry-cleaning material review.';
+---
+
+<Layout title={seoTitle + ' | Shidike'} description={description} canonical={url}
+  image="/assets/img/blog/particle-roughness-contacts-v1.jpg">
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: base },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: base + '/blog' },
+      { '@type': 'ListItem', position: 3, name: title, item: url }
+    ]
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BlogPosting', headline: title, description,
+    image: base + '/assets/img/blog/particle-roughness-contacts-v1.jpg',
+    author: { '@type': 'Organization', name: 'Shidike', url: base },
+    publisher: { '@type': 'Organization', name: 'Shidike', legalName: 'Dongguan Shidike Intelligent Equipment Co., Ltd.', url: base },
+    datePublished: '2026-11-04', dateModified: '2026-11-04', mainEntityOfPage: url
+  })} />
+
+  <article class="post">
+    <header class="post-head">
+      <div class="container post-col">
+        <div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog">Blog</a><span>/</span>Surface Roughness and Particle Adhesion</div>
+        <div class="post-tags"><span class="blog-tag">Surface Cleaning</span><span class="blog-tag">Particle Adhesion</span><span class="blog-tag">Surface Texture</span></div>
+        <h1>{title}</h1>
+        <p class="post-lead">A material review proposes changing from a smooth film finish to a textured one. Will the new surface be easier to clean? Before assigning a cleaning difficulty, look more closely at what the particle actually contacts.</p>
+        <div class="post-info"><span>November 4, 2026</span><span>Shidike Technical Team</span><span>3 min read</span></div>
+      </div>
+    </header>
+
+    <div class="container post-col post-body">
+      <picture class="post-figure">
+        <source media="(max-width: 600px)" srcset="/assets/img/blog/particle-roughness-contacts-v1-mobile.webp" type="image/webp" width="800" height="1400" />
+        <source media="(max-width: 600px)" srcset="/assets/img/blog/particle-roughness-contacts-v1-mobile.jpg" type="image/jpeg" width="800" height="1400" />
+        <source srcset="/assets/img/blog/particle-roughness-contacts-v1.webp" type="image/webp" />
+        <img src="/assets/img/blog/particle-roughness-contacts-v1.jpg" alt="Original concept drawing of one local particle contact and multiple local contacts." width="1600" height="1000" loading="lazy" decoding="async" />
+      </picture>
+      <p><em>Original hypothetical cross-sections, not to scale. The panels do not rank adhesion force or cleaning performance.</em></p>
+
+      <section id="local-contacts">
+        <h2>Start with the local contact</h2>
+        <p>An asperity is a small raised surface feature. Instead of an ideal sphere touching a perfectly flat plane, a real particle can meet local surface features. The diagram isolates that geometry: one local contact in one panel and multiple contacts in the other. It does not specify a material or reproduce a measured surface.</p>
+        <p>Two laboratory studies show why this distinction deserves attention. Both concern adhesion measurements using atomic force microscopy (AFM); neither is a production-film cleaning trial.</p>
+      </section>
+
+      <section id="two-research-findings">
+        <h2>Roughness effects depend on the contact being studied</h2>
+        <p>In <a href="https://pubs.acs.org/doi/10.1021/la0259196" target="_blank" rel="noopener noreferrer">Jones and colleagues' 2002 study</a>, glass microspheres and silicon tips were tested against glass or silicon surfaces. For hydrophilic microsphere contacts, measured pull-off forces were below predictions for ideal sphere-to-flat or sphere-to-sphere contact. The authors attributed the difference to roughness and asperity contacts. This compares a measurement with an idealized model, rather than ranking two commercial film finishes.</p>
+        <p><a href="https://digitalcommons.mtu.edu/michigantech-p/12726/" target="_blank" rel="noopener noreferrer">Tormoen and colleagues' 2005 study</a> examined glass microspheres on a deliberately structured rough surface. When particle size and surface irregularities were of comparable scale, multiple contact points could increase adhesion. The relative size of the particle and the features mattered; the word “rough” alone did not describe that relationship.</p>
+        <p>Our interpretation for a cleaning discussion is therefore conditional: a rougher surface is not automatically easier or harder to clean. These findings explain why contact geometry belongs in the question. They do not supply a universal roughness threshold or a removal-efficiency prediction.</p>
+      </section>
+
+      <section id="material-review-example">
+        <h2>Use the distinction in a material review</h2>
+        <p>Imagine a purchasing brief for two candidate films. Film A is described as smooth and Film B as textured. A reviewer selects B because “less contact should mean easier cleaning.” No description of the contaminating particles or the exposed surfaces accompanies the brief. This is a hypothetical discussion, not a customer case.</p>
+        <p>The selection assumes the contact arrangement that it needs to establish. Neither label identifies how the relevant particles meet that film. Ask the material and trial teams to describe the actual particle/surface pairing before using a contact sketch to explain it.</p>
+        <p>The next decision is practical: keep the proposed film finish tied to the cleaning evaluation and its agreed acceptance requirement. If the team already has a trial report, use our <a href="/blog/surface-particle-inspection-report">surface-particle inspection article</a> to interpret what was counted. For coated samples, the <a href="/blog/coated-optical-film-cleaning-trial-samples">sample-preparation guide</a> helps define which face enters the trial.</p>
+      </section>
+
+      <section id="cleaning-method-discussion">
+        <h2>Connect the surface question to the cleaning method</h2>
+        <p>A contact-geometry explanation is a starting point for discussing the material. Equipment selection still needs an evaluation of the proposed cleaning process on the intended sample. Our <a href="/guides/what-is-web-cleaning">web-cleaning guide</a> introduces the method choices; the two laboratory studies above establish no performance or compatibility claim for a Shidike machine.</p>
+      </section>
+
+      <div class="post-cta">
+        <h2>Discuss cleaning for your material surface</h2>
+        <p>Share the exposed surface, particle problem and proposed cleaning task. Our team can discuss the application and the information needed for an equipment evaluation.</p>
+        <p><a class="send-cta" href="/products/cleaning-machine">Explore Cleaning Equipment &rarr;</a><a class="send-alt" href="/contact?type=selection&amp;product=Textured%20Surface%20Cleaning%20Review">Discuss your cleaning application &rarr;</a></p>
+      </div>
+    </div>
+  </article>
+  <style>
+    .post-col { max-width: 780px; }
+    .post-head { background: #f7f8fa; padding: 48px 0 34px; border-bottom: 1px solid var(--hairline); }
+    .post-head .breadcrumb { font-size: 13px; color: #7d8d97; margin-bottom: 18px; }
+    .post-head .breadcrumb a { color: var(--brand-deep); text-decoration: none; }
+    .post-head .breadcrumb span { margin: 0 8px; }
+    .post-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .blog-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      background: #eef4f8; color: #4a6373; padding: 4px 9px; border-radius: 999px;
+    }
+    .post-head h1 {
+      font-size: clamp(1.7rem, 3.4vw, 2.5rem); line-height: 1.2; font-weight: 800;
+      letter-spacing: -.02em; color: var(--navy); margin: 0 0 14px;
+    }
+    .post-lead { font-size: 1.05rem; line-height: 1.75; color: #46545f; margin: 0 0 18px; }
+    .post-info { display: flex; flex-wrap: wrap; gap: 16px; font-size: 12.5px; color: #8a99a4; }
+
+    .post-body { padding: 34px 0 70px; }
+    .post-figure { display: block; margin: 0 0 30px; }
+    .post-figure img {
+      display: block; width: 100%; height: auto; border: 1px solid var(--hairline); border-radius: 8px;
+    }
+    .post-body h2 {
+      font-size: 1.42rem; font-weight: 700; letter-spacing: -.01em; color: var(--navy);
+      margin: 34px 0 12px;
+    }
+    .post-body p { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 15px; }
+    .post-body a { color: var(--brand-deep); }
+    .post-body h3 {
+      font-size: 1.12rem; font-weight: 700; color: var(--navy); margin: 26px 0 10px;
+    }
+    .post-body ul, .post-body ol { margin: 0 0 15px; padding-left: 22px; }
+    .post-body li { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 7px; }
+    .post-body blockquote, .post-body .blog-quote {
+      margin: 0 0 18px; padding: 13px 16px; background: #f2f6f9;
+      border-left: 3px solid var(--brand-deep); border-radius: 0 8px 8px 0;
+    }
+    .post-body .blog-quote p:last-child { margin-bottom: 0; }
+    .post-body .step-block { margin: 0 0 22px; }
+    .post-body .step-num {
+      display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .06em;
+      text-transform: uppercase; background: var(--navy); color: #fff;
+      padding: 4px 10px; border-radius: 999px; margin-bottom: 8px;
+    }
+    .formula {
+      font-size: 1.2rem !important; font-weight: 700; text-align: center; color: var(--navy) !important;
+      background: #f2f6f9; border: 1px solid var(--hairline); border-radius: 8px; padding: 14px;
+    }
+
+    .table-wrap { overflow-x: auto; margin: 0 0 20px; }
+    .post-body table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+    .post-body th, .post-body td {
+      text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--hairline); vertical-align: top;
+    }
+    .post-body thead th { background: #f2f6f9; font-weight: 700; color: var(--navy); }
+    .post-body tbody th { width: 22%; font-weight: 700; color: var(--navy); background: #fafbfc; }
+
+    .faq-list { display: flex; flex-direction: column; margin: 6px 0 0; border-top: 1px solid var(--hairline); }
+    .faq-item { padding: 15px 4px; border-bottom: 1px solid var(--hairline); }
+    .faq-item summary { cursor: pointer; font-weight: 700; color: var(--navy); font-size: 15.5px; }
+    .faq-item p { margin: 10px 0 0; }
+
+    .post-cta {
+      margin-top: 40px; padding: 26px 26px 22px; background: #f7f8fa;
+      border: 1px solid var(--hairline); border-radius: 10px;
+    }
+    .post-cta h2 { margin-top: 0; font-size: 1.25rem; }
+    .send-cta, .send-alt { display: inline-block; font-weight: 700; margin-right: 22px; }
+    @media (max-width: 767px) {
+      .post-body { padding-left: 16px; padding-right: 16px; }
+    }
+  </style>
+</Layout>
