@@ -17,7 +17,7 @@ export const posts = [
     date: 'November 5, 2026',
     datePublished: '2026-11-05',
     tags: ['Static Control', 'Charge Measurement', 'Insulating Materials'],
-    image: '/assets/img/blog/net-charge-surface-patterns-v1',
+    image: '/assets/img/blog/net-charge-surface-patterns-card-v1',
     readTime: '3 min read',
   },
   {
