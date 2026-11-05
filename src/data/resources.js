@@ -10,6 +10,17 @@
 // reword it here too.
 export const posts = [
   {
+    slug: 'faraday-cup-net-charge-surface-patterns',
+    category: 'Static Control',
+    title: 'Faraday Cup Measurements: Net Charge and Surface Patterns',
+    excerpt: 'Explore Faraday cup measurements through two research sources and an original arithmetic example for reviewing a material report before equipment selection.',
+    date: 'November 5, 2026',
+    datePublished: '2026-11-05',
+    tags: ['Static Control', 'Charge Measurement', 'Insulating Materials'],
+    image: '/assets/img/blog/net-charge-surface-patterns-v1',
+    readTime: '3 min read',
+  },
+  {
     slug: 'surface-roughness-particle-adhesion',
     category: 'Surface Cleaning',
     title: 'Surface Roughness and Particle Adhesion: Read the Contact Geometry',
