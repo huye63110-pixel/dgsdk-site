@@ -10,6 +10,17 @@
 // reword it here too.
 export const posts = [
   {
+    slug: 'particle-size-distribution-number-vs-volume',
+    category: 'Surface Cleaning',
+    title: 'Particle Size Distribution in Cleaning Trials: Number vs Volume',
+    excerpt: 'Review particle size reports for a cleaning trial with an original sphere example, a comparison table and questions to clarify the reporting basis.',
+    date: 'November 7, 2026',
+    datePublished: '2026-11-07',
+    tags: ['Surface Cleaning', 'Particle Size', 'Trial Reports'],
+    image: '/assets/img/blog/particle-size-number-volume-card-v1',
+    readTime: '3 min read',
+  },
+  {
     slug: 'faraday-cup-net-charge-surface-patterns',
     category: 'Static Control',
     title: 'Faraday Cup Measurements: Net Charge and Surface Patterns',
