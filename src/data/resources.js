@@ -10,6 +10,17 @@
 // reword it here too.
 export const posts = [
   {
+    slug: 'ionizing-bar-line-speed-travel-time',
+    category: 'Static Control',
+    title: 'Ionizing Bar Line Speed: Separate Web Width from Travel Time',
+    excerpt: 'Calculate web travel time from distance and line speed, distinguish it from transverse bar span, and see why the result does not establish ionizer performance.',
+    date: 'November 8, 2026',
+    datePublished: '2026-11-08',
+    tags: ['Static Control', 'Ionizing Bars', 'Line Speed'],
+    image: '/assets/img/blog/web-travel-time-card-v1',
+    readTime: '4 min read',
+  },
+  {
     slug: 'particle-size-distribution-number-vs-volume',
     category: 'Surface Cleaning',
     title: 'Particle Size Distribution in Cleaning Trials: Number vs Volume',
