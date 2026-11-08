@@ -43,6 +43,7 @@ backlight panel, LCM module and roll material.
 - [ESD Control Products](https://www.dg-sdk.com/guides/esd-control-products): Buyer's guide.
 - [What Is Web Cleaning](https://www.dg-sdk.com/guides/what-is-web-cleaning): Contact against non-contact dry particle removal, and what a cleaning trial has to record.
 - [Technical Blog](https://www.dg-sdk.com/blog): Application guides for lithium battery, photovoltaic and optical film production.
+- [Ionizing Bar Line Speed](https://www.dg-sdk.com/blog/ionizing-bar-line-speed-travel-time): Distinguish transverse bar span from along-web travel time using an original geometric diagram and hypothetical constant-speed calculations.
 - [Particle Size Distribution: Number vs Volume](https://www.dg-sdk.com/blog/particle-size-distribution-number-vs-volume): An original sphere example for reviewing particle reports in cleaning-trial discussions.
 - [Faraday Cup Net Charge](https://www.dg-sdk.com/blog/faraday-cup-net-charge-surface-patterns): Explore a charge-sum illustration and two research sources for interpreting a material measurement report.
 - [Surface Roughness and Particle Adhesion](https://www.dg-sdk.com/blog/surface-roughness-particle-adhesion): Explore two laboratory studies and an original contact-geometry diagram for a dry-cleaning material discussion.
