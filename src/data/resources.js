@@ -10,6 +10,17 @@
 // reword it here too.
 export const posts = [
   {
+    slug: 'compressed-air-purity-surface-cleaning',
+    category: 'Surface Cleaning',
+    title: 'Compressed Air for Surface Cleaning: Particles, Water and Oil',
+    excerpt: 'Review compressed-air purity for a proposed surface-cleaning process: particle, water and oil requirements, pressure dew point and the sampling location.',
+    date: 'November 12, 2026',
+    datePublished: '2026-11-12',
+    tags: ['Surface Cleaning', 'Compressed Air', 'Application Planning'],
+    image: '/assets/img/blog/compressed-air-purity-card-v1',
+    readTime: '3 min read',
+  },
+  {
     slug: 'ionizing-bar-line-speed-travel-time',
     category: 'Static Control',
     title: 'Ionizing Bar Line Speed: Separate Web Width from Travel Time',
