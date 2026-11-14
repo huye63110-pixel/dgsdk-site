@@ -10,6 +10,17 @@
 // reword it here too.
 export const posts = [
   {
+    slug: 'static-voltage-capacitance',
+    category: 'Static Control',
+    title: 'Static Voltage and Capacitance: Same Charge, Different Voltage',
+    excerpt: 'See how capacitance changes voltage at fixed charge through an ideal capacitor example, and why the result cannot be used as a direct film-charge calculation.',
+    date: 'November 14, 2026',
+    datePublished: '2026-11-14',
+    tags: ['Static Control', 'Capacitance', 'Charge and Voltage'],
+    image: '/assets/img/blog/capacitance-static-voltage-card-v1',
+    readTime: '3 min read',
+  },
+  {
     slug: 'compressed-air-purity-surface-cleaning',
     category: 'Surface Cleaning',
     title: 'Compressed Air for Surface Cleaning: Particles, Water and Oil',
