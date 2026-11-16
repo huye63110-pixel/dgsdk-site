@@ -43,6 +43,7 @@ backlight panel, LCM module and roll material.
 - [ESD Control Products](https://www.dg-sdk.com/guides/esd-control-products): Buyer's guide.
 - [What Is Web Cleaning](https://www.dg-sdk.com/guides/what-is-web-cleaning): Contact against non-contact dry particle removal, and what a cleaning trial has to record.
 - [Technical Blog](https://www.dg-sdk.com/blog): Application guides for lithium battery, photovoltaic and optical film production.
+- [Dust Collector Airflow](https://www.dg-sdk.com/blog/dust-collector-airflow-operating-point): A conceptual fan/system operating-point diagram and blank review record separating supplier airflow data, installed head conditions and material-cleaning evidence.
 - [Static Voltage and Capacitance](https://www.dg-sdk.com/blog/static-voltage-capacitance): An original ideal-capacitor calculation comparing fixed charge with fixed voltage, with explicit limits for interpreting material readings.
 - [Compressed Air Purity for Surface Cleaning](https://www.dg-sdk.com/blog/compressed-air-purity-surface-cleaning): Review contaminant categories, pressure dew point and sampling location with an original blank application brief.
 - [Ionizing Bar Line Speed](https://www.dg-sdk.com/blog/ionizing-bar-line-speed-travel-time): Distinguish transverse bar span from along-web travel time using an original geometric diagram and hypothetical constant-speed calculations.
