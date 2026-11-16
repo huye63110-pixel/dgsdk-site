@@ -1,0 +1,165 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const base = 'https://www.dg-sdk.com';
+const url = base + '/blog/dust-collector-airflow-operating-point';
+const title = 'Dust Collector Airflow: Read the Installed Operating Point';
+const seoTitle = 'Dust Collector Airflow and Static Pressure';
+const description = 'Read dust-collector airflow with its pressure and operating conditions. Use a conceptual fan/system curve and a blank record for a cleaning-head review.';
+---
+
+<Layout title={seoTitle + ' | Shidike'} description={description} canonical={url}
+  image="/assets/img/blog/dust-collector-operating-point-card-v1.jpg">
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: base },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: base + '/blog' },
+      { '@type': 'ListItem', position: 3, name: title, item: url }
+    ]
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BlogPosting', headline: title, description,
+    image: base + '/assets/img/blog/dust-collector-operating-point-card-v1.jpg',
+    author: { '@type': 'Organization', name: 'Shidike', url: base },
+    publisher: { '@type': 'Organization', name: 'Shidike', legalName: 'Dongguan Shidike Intelligent Equipment Co., Ltd.', url: base },
+    datePublished: '2026-11-16', dateModified: '2026-11-16', mainEntityOfPage: url
+  })} />
+
+  <article class="post">
+    <header class="post-head">
+      <div class="container post-col">
+        <div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog">Blog</a><span>/</span>Dust Collector Airflow</div>
+        <div class="post-tags"><span class="blog-tag">Surface Cleaning</span><span class="blog-tag">Dust Collection</span><span class="blog-tag">Airflow and Pressure</span></div>
+        <h1>{title}</h1>
+        <p class="post-lead">A dust collector's airflow figure does not, by itself, establish the flow at an installed cleaning head. Before comparing proposals, identify the pressure, configuration and measurement location behind the number. Then keep the airflow evidence separate from the material-cleaning result.</p>
+        <div class="post-info"><span>November 16, 2026</span><span>Shidike Technical Team</span><span>3 min read</span></div>
+      </div>
+    </header>
+    <div class="container post-col post-body">
+      <picture class="post-figure">
+        <source media="(max-width: 600px)" srcset="/assets/img/blog/dust-collector-operating-point-v1-mobile.webp" type="image/webp" width="800" height="1400" />
+        <source media="(max-width: 600px)" srcset="/assets/img/blog/dust-collector-operating-point-v1-mobile.jpg" type="image/jpeg" width="800" height="1400" />
+        <source srcset="/assets/img/blog/dust-collector-operating-point-v1.webp" type="image/webp" />
+        <img src="/assets/img/blog/dust-collector-operating-point-v1.jpg" alt="Conceptual fan and system curves: higher-resistance system B meets the unchanged fan curve at lower airflow than system A." width="1600" height="1000" loading="lazy" decoding="async" />
+      </picture>
+      <p><em>Original concept diagram with arbitrary curves, not equipment data. The comparison holds fan speed, air density and fan performance unchanged, using a consistent pressure basis and a stable operating region.</em></p>
+
+      <section id="flow-and-pressure">
+        <h2>Read airflow with its matching pressure</h2>
+        <p><a href="https://www.amca.org/educate/articles-and-technical-papers/amca-inmotion-articles/straightening-out-fan-curves.html" target="_blank" rel="noopener noreferrer">AMCA's guide to fan curves</a> pairs airflow with pressure at a duty point. It also distinguishes static-pressure and total-pressure curves. Keep the stated pressure basis when comparing data.</p>
+        <p>If a quotation gives only a maximum airflow, request its test conditions. Do not assume that an unlabeled value means free-air flow, collector-inlet flow or flow measured at the cleaning head.</p>
+      </section>
+
+      <section id="system-resistance">
+        <h2>Find the intersection, then check the assumptions</h2>
+        <p>The fan operates where its performance curve meets the system curve. In the illustration, B requires more pressure at the same flow than A. Its intersection with the unchanged fan curve is farther left: lower airflow.</p>
+        <p>The <a href="https://www.energy.gov/sites/prod/files/2014/05/f16/fan_sourcebook.pdf" target="_blank" rel="noopener noreferrer">DOE/AMCA fan-system sourcebook</a> explains that ducts, fittings, dampers and filters contribute resistance. An airflow review therefore needs the connected system, not only the fan label.</p>
+        <p>The handbook also describes increasing pressure drop as mesh filters collect particles. This is one reason to record filter condition; it is not a universal rule for every collector. Speed control can change the fan curve, and inlet or outlet arrangements can affect installed fan performance. The simple A-to-B comparison does not predict those changes.</p>
+      </section>
+
+      <section id="head-and-material">
+        <h2>Separate fan flow, head conditions and material results</h2>
+        <p>A total fan-flow figure should not be relabeled as a measurement at each branch or collection head. The sourcebook discusses how leaks and alternative flow paths can redistribute airflow. Identify the location to which each result belongs.</p>
+        <p>In the distinct context of local exhaust ventilation, the <a href="https://www.osha.gov/otm/section-3-health-hazards/chapter-3" target="_blank" rel="noopener noreferrer">OSHA technical manual, Appendix III:3-4</a>, separates low hood airflow from poor contaminant control despite satisfactory hood airflow. Air movement and effective collection are different questions.</p>
+        <p>For surface cleaning, ask separately what the material trial showed. Neither a fan curve nor an airflow measurement supplies a particle-removal percentage or a cleaned-surface acceptance result. The diagram above specifies no duct size, machine setting or performance guarantee.</p>
+      </section>
+
+      <section id="review-record">
+        <h2>Keep a short record for the installed configuration</h2>
+        <p><a href="https://www.hse.gov.uk/lev/commissioning.htm" target="_blank" rel="noopener noreferrer">HSE's LEV commissioning guidance</a> connects operating conditions, results at each hood and a schematic with test points. Its scope is exposure control, not a film-cleanliness standard. The blank record below adapts that documentation principle for an equipment discussion; it is not a commissioning certificate.</p>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Blank dust-collector airflow review record">
+          <table>
+            <thead><tr><th scope="col">Record</th><th scope="col">Information to retain</th><th scope="col">Project entry</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Supplier data</th><td>Flow and pressure, units, pressure basis, curve revision</td><td>___</td></tr>
+              <tr><th scope="row">Configuration</th><td>Fan speed/control mode, duct and branch drawing, filter condition</td><td>___</td></tr>
+              <tr><th scope="row">Installed result</th><td>Named test point, method, date, operating conditions and result</td><td>___</td></tr>
+              <tr><th scope="row">Material trial</th><td>Separate surface inspection and agreed acceptance criterion</td><td>___</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Keep an unresolved entry open. A supplier rating, a design prediction and an installed measurement should remain identifiable in the comparison.</p>
+        <p>For the separate supply-side questions, see <a href="/blog/air-jet-particle-removal-pressure">air-jet pressure and particle-removal evidence</a> and <a href="/blog/compressed-air-purity-surface-cleaning">compressed-air purity</a>. Our <a href="/guides/what-is-web-cleaning">web-cleaning guide</a> introduces the broader process choices.</p>
+      </section>
+      <div class="post-cta">
+        <h2>Bring the collection arrangement into the discussion</h2>
+        <p>Share the material, contamination and proposed cleaning layout with Shidike. Include the collector documentation and connection drawing so the application review starts from the same configuration.</p>
+        <p><a class="send-cta" href="/products/cleaning-machine">Explore Cleaning Machines &rarr;</a><a class="send-alt" href="/contact?type=selection&amp;product=Dust%20Collector%20Airflow%20Review">Discuss your cleaning application &rarr;</a></p>
+      </div>
+    </div>
+  </article>
+  <style>
+    .post-col { max-width: 780px; }
+    .post-head { background: #f7f8fa; padding: 48px 0 34px; border-bottom: 1px solid var(--hairline); }
+    .post-head .breadcrumb { font-size: 13px; color: #7d8d97; margin-bottom: 18px; }
+    .post-head .breadcrumb a { color: var(--brand-deep); text-decoration: none; }
+    .post-head .breadcrumb span { margin: 0 8px; }
+    .post-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .blog-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      background: #eef4f8; color: #4a6373; padding: 4px 9px; border-radius: 999px;
+    }
+    .post-head h1 {
+      font-size: clamp(1.7rem, 3.4vw, 2.5rem); line-height: 1.2; font-weight: 800;
+      letter-spacing: -.02em; color: var(--navy); margin: 0 0 14px;
+    }
+    .post-lead { font-size: 1.05rem; line-height: 1.75; color: #46545f; margin: 0 0 18px; }
+    .post-info { display: flex; flex-wrap: wrap; gap: 16px; font-size: 12.5px; color: #8a99a4; }
+
+    .post-body { padding: 34px 0 70px; }
+    .post-figure { display: block; margin: 0 0 30px; }
+    .post-figure img {
+      display: block; width: 100%; height: auto; border: 1px solid var(--hairline); border-radius: 8px;
+    }
+    .post-body h2 {
+      font-size: 1.42rem; font-weight: 700; letter-spacing: -.01em; color: var(--navy);
+      margin: 34px 0 12px;
+    }
+    .post-body p { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 15px; }
+    .post-body a { color: var(--brand-deep); }
+    .post-body h3 {
+      font-size: 1.12rem; font-weight: 700; color: var(--navy); margin: 26px 0 10px;
+    }
+    .post-body ul, .post-body ol { margin: 0 0 15px; padding-left: 22px; }
+    .post-body li { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 7px; }
+    .post-body blockquote, .post-body .blog-quote {
+      margin: 0 0 18px; padding: 13px 16px; background: #f2f6f9;
+      border-left: 3px solid var(--brand-deep); border-radius: 0 8px 8px 0;
+    }
+    .post-body .blog-quote p:last-child { margin-bottom: 0; }
+    .post-body .step-block { margin: 0 0 22px; }
+    .post-body .step-num {
+      display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .06em;
+      text-transform: uppercase; background: var(--navy); color: #fff;
+      padding: 4px 10px; border-radius: 999px; margin-bottom: 8px;
+    }
+    .formula {
+      font-size: 1.2rem !important; font-weight: 700; text-align: center; color: var(--navy) !important;
+      background: #f2f6f9; border: 1px solid var(--hairline); border-radius: 8px; padding: 14px;
+    }
+
+    .table-wrap { overflow-x: auto; margin: 0 0 20px; }
+    .post-body table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+    .post-body th, .post-body td {
+      text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--hairline); vertical-align: top;
+    }
+    .post-body thead th { background: #f2f6f9; font-weight: 700; color: var(--navy); }
+    .post-body tbody th { width: 22%; font-weight: 700; color: var(--navy); background: #fafbfc; }
+
+    .faq-list { display: flex; flex-direction: column; margin: 6px 0 0; border-top: 1px solid var(--hairline); }
+    .faq-item { padding: 15px 4px; border-bottom: 1px solid var(--hairline); }
+    .faq-item summary { cursor: pointer; font-weight: 700; color: var(--navy); font-size: 15.5px; }
+    .faq-item p { margin: 10px 0 0; }
+
+    .post-cta {
+      margin-top: 40px; padding: 26px 26px 22px; background: #f7f8fa;
+      border: 1px solid var(--hairline); border-radius: 10px;
+    }
+    .post-cta h2 { margin-top: 0; font-size: 1.25rem; }
+    .send-cta, .send-alt { display: inline-block; font-weight: 700; margin-right: 22px; }
+    @media (max-width: 767px) {
+      .post-body { padding-left: 16px; padding-right: 16px; }
+    }
+  </style>
+</Layout>

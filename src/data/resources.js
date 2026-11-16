@@ -10,6 +10,17 @@
 // reword it here too.
 export const posts = [
   {
+    slug: 'dust-collector-airflow-operating-point',
+    category: 'Surface Cleaning',
+    title: 'Dust Collector Airflow: Read the Installed Operating Point',
+    excerpt: 'Read dust-collector airflow with its pressure and operating conditions. Use a conceptual fan/system curve and a blank record for a cleaning-head review.',
+    date: 'November 16, 2026',
+    datePublished: '2026-11-16',
+    tags: ['Surface Cleaning', 'Dust Collection', 'Airflow and Pressure'],
+    image: '/assets/img/blog/dust-collector-operating-point-card-v1',
+    readTime: '3 min read',
+  },
+  {
     slug: 'static-voltage-capacitance',
     category: 'Static Control',
     title: 'Static Voltage and Capacitance: Same Charge, Different Voltage',
