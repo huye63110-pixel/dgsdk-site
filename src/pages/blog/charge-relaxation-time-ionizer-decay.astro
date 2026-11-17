@@ -1,0 +1,164 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const base = 'https://www.dg-sdk.com';
+const url = base + '/blog/charge-relaxation-time-ionizer-decay';
+const title = 'Charge Relaxation Time: Why It Is Not an Ionizer Decay Time';
+const seoTitle = 'Charge Relaxation Time vs Ionizer Decay Time';
+const description = 'Interpret charge relaxation time with an isolated-sphere concept diagram and a normalized example. Separate a bulk model from film and ionizer measurements.';
+---
+
+<Layout title={seoTitle + ' | Shidike'} description={description} canonical={url}
+  image="/assets/img/blog/charge-relaxation-volume-surface-card-v1.jpg">
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: base },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: base + '/blog' },
+      { '@type': 'ListItem', position: 3, name: title, item: url }
+    ]
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BlogPosting', headline: title, description,
+    image: base + '/assets/img/blog/charge-relaxation-volume-surface-card-v1.jpg',
+    author: { '@type': 'Organization', name: 'Shidike', url: base },
+    publisher: { '@type': 'Organization', name: 'Shidike', legalName: 'Dongguan Shidike Intelligent Equipment Co., Ltd.', url: base },
+    datePublished: '2026-11-17', dateModified: '2026-11-17', mainEntityOfPage: url
+  })} />
+
+  <article class="post">
+    <header class="post-head">
+      <div class="container post-col">
+        <div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog">Blog</a><span>/</span>Charge Relaxation Time</div>
+        <div class="post-tags"><span class="blog-tag">Static Control</span><span class="blog-tag">Charge Relaxation</span><span class="blog-tag">Ionizer Measurements</span></div>
+        <h1>{title}</h1>
+        <p class="post-lead">A material calculation and an ionizer test can both report seconds while answering different questions. Before using a charge-relaxation time to plan static control, identify what changes in the model and whether it describes the observation on your film.</p>
+        <div class="post-info"><span>November 17, 2026</span><span>Shidike Technical Team</span><span>3 min read</span></div>
+      </div>
+    </header>
+    <div class="container post-col post-body">
+      <picture class="post-figure">
+        <source media="(max-width: 600px)" srcset="/assets/img/blog/charge-relaxation-volume-surface-v1-mobile.webp" type="image/webp" width="800" height="1400" />
+        <source media="(max-width: 600px)" srcset="/assets/img/blog/charge-relaxation-volume-surface-v1-mobile.jpg" type="image/jpeg" width="800" height="1400" />
+        <source srcset="/assets/img/blog/charge-relaxation-volume-surface-v1.webp" type="image/webp" />
+        <img src="/assets/img/blog/charge-relaxation-volume-surface-v1.jpg" alt="Ideal isolated sphere: free charge redistributes from volume to surface while total charge Q remains unchanged." width="1600" height="1000" loading="lazy" decoding="async" />
+      </picture>
+      <p><em>Original concept illustration, not a measurement. Symbols represent charge distribution, not individual particle paths; the second state is a long-time limit.</em></p>
+
+      <section id="bulk-model">
+        <h2>Define the bulk model and its time constant</h2>
+        <p><a href="https://web.mit.edu/6.013_book/www/chapter7/7.7.html" target="_blank" rel="noopener noreferrer">MIT's treatment of uniform conductors</a> derives a decay law for local free volume-charge density. It assumes uniform, constant conductivity σ and permittivity ε, with Ohmic conduction and linear polarization:</p>
+        <p class="formula">τ = ε / σ &nbsp; · &nbsp; ρ<sub>v</sub>(t) / ρ<sub>v</sub>(0) = e<sup>−t/τ</sup></p>
+        <p>Here ε is absolute permittivity in F/m, σ is bulk conductivity in S/m, and τ is in seconds. The density ratio refers to the same location with a nonzero initial density. It is not a film-surface voltage ratio.</p>
+        <p>At t = τ, the ratio is about 0.368; at t = 2τ, about 0.135. These are calculated fractions, not material measurements. One time constant therefore does not mean zero local density.</p>
+        <p>An unspecified resistance reading in ohms is not the conductivity input. Use the reported property and measurement geometry; see <a href="/blog/surface-resistance-vs-surface-voltage">surface resistance versus surface voltage</a> for the separate instrument question.</p>
+      </section>
+
+      <section id="redistribution">
+        <h2>Check whether charge moves or leaves</h2>
+        <p>In their <a href="https://www.rle.mit.edu/cpg/publications/pub72.pdf" target="_blank" rel="noopener noreferrer">conductor-model research</a>, Ling, Kim and White distinguish internal charge moving to the surface from charge flowing through external contacts. In the isolated sphere illustrated here, no charge crosses the outer boundary: total Q stays unchanged. Internal relaxation alone has not neutralized the object.</p>
+      </section>
+
+      <section id="film-observation">
+        <h2>A polymer surface-potential trace needs its own explanation</h2>
+        <p>A <a href="https://research.chalmers.se/en/publication/246585" target="_blank" rel="noopener noreferrer">Chalmers study of LDPE and LDPE/alumina films</a> measured surface-potential decay after positive-corona charging. The researchers compared models involving conduction, polarization, de-trapping and charge transport. For their samples, polarization and charge-transport models gave the best fits.</p>
+        <p>That study does not identify the mechanism in your film. It shows why assigning a single bulk-model time constant to an observed surface-potential trace needs evidence. Keep the specimen, charging history, electrical contacts and measured quantity attached to the result.</p>
+      </section>
+
+      <section id="ionizer-result">
+        <h2>Read an ionizer result as an equipment measurement</h2>
+        <p>The official scope of <a href="https://webstore.iec.ch/en/publication/68397" target="_blank" rel="noopener noreferrer">IEC 61340-4-7:2025</a> covers ionizer charge-neutralization time and offset voltage, or ion balance, under specified conditions. This is a different assessment from calculating ε/σ. The standard's public summary also calls for application-appropriate qualification and verification.</p>
+        <p>A hypothetical review illustrates the distinction. A worksheet contains three entries: “τ = ε/σ,” a measured film-voltage trace, and an ionizer decay-time report. Ask which entry supports the proposed production decision; sharing a time unit does not make them interchangeable.</p>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Charge relaxation and ionizer evidence comparison">
+          <table>
+            <thead><tr><th scope="col">Entry</th><th scope="col">Evidence to identify</th><th scope="col">Open question</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Bulk calculation</th><td>Material properties and model assumptions</td><td>Do they describe this specimen?</td></tr>
+              <tr><th scope="row">Film observation</th><td>Quantity, setup and time trace</td><td>What actually changed?</td></tr>
+              <tr><th scope="row">Ionizer result</th><td>Method, conditions and reported result</td><td>Does it address this application?</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>For the next equipment-review step, use <a href="/blog/comparing-ionizer-datasheets">the ionizer datasheet comparison</a> and <a href="/guides/how-to-prevent-static">the static-prevention guide</a>. Neither the sphere nor the normalized calculation sets a line speed, mounting distance or acceptable residual voltage.</p>
+      </section>
+      <div class="post-cta">
+        <h2>Discuss your film's static-control requirement</h2>
+        <p>Share the material, process location and available measurement report with Shidike. Identify the observation you need to change so the equipment discussion starts with the actual application.</p>
+        <p><a class="send-cta" href="/products/static-eliminator">Explore Static Eliminators &rarr;</a><a class="send-alt" href="/contact?type=selection&amp;product=Charge%20Relaxation%20Application%20Review">Discuss your static-control application &rarr;</a></p>
+      </div>
+    </div>
+  </article>
+  <style>
+    .post-col { max-width: 780px; }
+    .post-head { background: #f7f8fa; padding: 48px 0 34px; border-bottom: 1px solid var(--hairline); }
+    .post-head .breadcrumb { font-size: 13px; color: #7d8d97; margin-bottom: 18px; }
+    .post-head .breadcrumb a { color: var(--brand-deep); text-decoration: none; }
+    .post-head .breadcrumb span { margin: 0 8px; }
+    .post-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .blog-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      background: #eef4f8; color: #4a6373; padding: 4px 9px; border-radius: 999px;
+    }
+    .post-head h1 {
+      font-size: clamp(1.7rem, 3.4vw, 2.5rem); line-height: 1.2; font-weight: 800;
+      letter-spacing: -.02em; color: var(--navy); margin: 0 0 14px;
+    }
+    .post-lead { font-size: 1.05rem; line-height: 1.75; color: #46545f; margin: 0 0 18px; }
+    .post-info { display: flex; flex-wrap: wrap; gap: 16px; font-size: 12.5px; color: #8a99a4; }
+
+    .post-body { padding: 34px 0 70px; }
+    .post-figure { display: block; margin: 0 0 30px; }
+    .post-figure img {
+      display: block; width: 100%; height: auto; border: 1px solid var(--hairline); border-radius: 8px;
+    }
+    .post-body h2 {
+      font-size: 1.42rem; font-weight: 700; letter-spacing: -.01em; color: var(--navy);
+      margin: 34px 0 12px;
+    }
+    .post-body p { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 15px; }
+    .post-body a { color: var(--brand-deep); }
+    .post-body h3 {
+      font-size: 1.12rem; font-weight: 700; color: var(--navy); margin: 26px 0 10px;
+    }
+    .post-body ul, .post-body ol { margin: 0 0 15px; padding-left: 22px; }
+    .post-body li { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 7px; }
+    .post-body blockquote, .post-body .blog-quote {
+      margin: 0 0 18px; padding: 13px 16px; background: #f2f6f9;
+      border-left: 3px solid var(--brand-deep); border-radius: 0 8px 8px 0;
+    }
+    .post-body .blog-quote p:last-child { margin-bottom: 0; }
+    .post-body .step-block { margin: 0 0 22px; }
+    .post-body .step-num {
+      display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .06em;
+      text-transform: uppercase; background: var(--navy); color: #fff;
+      padding: 4px 10px; border-radius: 999px; margin-bottom: 8px;
+    }
+    .formula {
+      font-size: 1.2rem !important; font-weight: 700; text-align: center; color: var(--navy) !important;
+      background: #f2f6f9; border: 1px solid var(--hairline); border-radius: 8px; padding: 14px;
+    }
+
+    .table-wrap { overflow-x: auto; margin: 0 0 20px; }
+    .post-body table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+    .post-body th, .post-body td {
+      text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--hairline); vertical-align: top;
+    }
+    .post-body thead th { background: #f2f6f9; font-weight: 700; color: var(--navy); }
+    .post-body tbody th { width: 22%; font-weight: 700; color: var(--navy); background: #fafbfc; }
+
+    .faq-list { display: flex; flex-direction: column; margin: 6px 0 0; border-top: 1px solid var(--hairline); }
+    .faq-item { padding: 15px 4px; border-bottom: 1px solid var(--hairline); }
+    .faq-item summary { cursor: pointer; font-weight: 700; color: var(--navy); font-size: 15.5px; }
+    .faq-item p { margin: 10px 0 0; }
+
+    .post-cta {
+      margin-top: 40px; padding: 26px 26px 22px; background: #f7f8fa;
+      border: 1px solid var(--hairline); border-radius: 10px;
+    }
+    .post-cta h2 { margin-top: 0; font-size: 1.25rem; }
+    .send-cta, .send-alt { display: inline-block; font-weight: 700; margin-right: 22px; }
+    @media (max-width: 767px) {
+      .post-body { padding-left: 16px; padding-right: 16px; }
+    }
+  </style>
+</Layout>

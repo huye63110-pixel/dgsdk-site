@@ -10,6 +10,17 @@
 // reword it here too.
 export const posts = [
   {
+    slug: 'charge-relaxation-time-ionizer-decay',
+    category: 'Static Control',
+    title: 'Charge Relaxation Time: Why It Is Not an Ionizer Decay Time',
+    excerpt: 'Interpret charge relaxation time with an isolated-sphere concept diagram and a normalized example. Separate a bulk model from film and ionizer measurements.',
+    date: 'November 17, 2026',
+    datePublished: '2026-11-17',
+    tags: ['Static Control', 'Charge Relaxation', 'Ionizer Measurements'],
+    image: '/assets/img/blog/charge-relaxation-volume-surface-card-v1',
+    readTime: '3 min read',
+  },
+  {
     slug: 'dust-collector-airflow-operating-point',
     category: 'Surface Cleaning',
     title: 'Dust Collector Airflow: Read the Installed Operating Point',
