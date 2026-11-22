@@ -10,6 +10,17 @@
 // reword it here too.
 export const posts = [
   {
+    slug: 'filter-efficiency-vs-bypass-leakage',
+    category: 'Surface Cleaning',
+    title: 'Filter Efficiency vs Bypass Leakage in a Cleaning System',
+    excerpt: 'Read filter ratings, installed-system leakage evidence and material-cleaning results separately when evaluating extraction for a dry surface-cleaning line.',
+    date: 'November 22, 2026',
+    datePublished: '2026-11-22',
+    tags: ['Surface Cleaning', 'Dust Collection', 'Filter Bypass'],
+    image: '/assets/img/blog/filter-efficiency-bypass-card-v1',
+    readTime: '3 min read',
+  },
+  {
     slug: 'charge-relaxation-time-ionizer-decay',
     category: 'Static Control',
     title: 'Charge Relaxation Time: Why It Is Not an Ionizer Decay Time',
