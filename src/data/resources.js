@@ -10,6 +10,17 @@
 // reword it here too.
 export const posts = [
   {
+    slug: 'ion-transport-recombination-static-eliminators',
+    category: 'Static Control',
+    title: 'Ion Transport and Recombination in Static Eliminators',
+    excerpt: 'Follow ion generation, transport and recombination, then separate emitter-output claims from ionizer measurements at the working position.',
+    date: 'November 23, 2026',
+    datePublished: '2026-11-23',
+    tags: ['Static Control', 'Ion Transport', 'Recombination'],
+    image: '/assets/img/blog/ion-transport-recombination-card-v1',
+    readTime: '3 min read',
+  },
+  {
     slug: 'filter-efficiency-vs-bypass-leakage',
     category: 'Surface Cleaning',
     title: 'Filter Efficiency vs Bypass Leakage in a Cleaning System',
