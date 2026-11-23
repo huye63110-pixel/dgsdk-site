@@ -1,0 +1,165 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const base = 'https://www.dg-sdk.com';
+const url = base + '/blog/ion-transport-recombination-static-eliminators';
+const title = 'Ion Transport and Recombination in Static Eliminators';
+const seoTitle = 'Static Eliminators: Ion Transport and Recombination';
+const description = 'Follow ion generation, transport and recombination, then separate emitter-output claims from ionizer measurements at the working position.';
+---
+
+<Layout title={seoTitle + ' | Shidike'} description={description} canonical={url}
+  image="/assets/img/blog/ion-transport-recombination-card-v1.jpg">
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: base },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: base + '/blog' },
+      { '@type': 'ListItem', position: 3, name: title, item: url }
+    ]
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BlogPosting', headline: title, description,
+    image: base + '/assets/img/blog/ion-transport-recombination-card-v1.jpg',
+    author: { '@type': 'Organization', name: 'Shidike', url: base },
+    publisher: { '@type': 'Organization', name: 'Shidike', legalName: 'Dongguan Shidike Intelligent Equipment Co., Ltd.', url: base },
+    datePublished: '2026-11-23', dateModified: '2026-11-23', mainEntityOfPage: url
+  })} />
+
+  <article class="post">
+    <header class="post-head">
+      <div class="container post-col">
+        <div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog">Blog</a><span>/</span>Ion Transport and Recombination</div>
+        <div class="post-tags"><span class="blog-tag">Static Control</span><span class="blog-tag">Ion Transport</span><span class="blog-tag">Recombination</span></div>
+        <h1>{title}</h1>
+        <p class="post-lead">An ionizer generates ions near its emitter, but the required result is at the material. Between those locations, transport and losses matter. An emitter-output claim therefore needs a separate working-position measurement before it can support a neutralization claim for an application.</p>
+        <div class="post-info"><span>November 23, 2026</span><span>Shidike Technical Team</span><span>3 min read</span></div>
+      </div>
+    </header>
+    <div class="container post-col post-body">
+      <picture class="post-figure">
+        <source media="(max-width: 600px)" srcset="/assets/img/blog/ion-transport-recombination-v1-mobile.webp" type="image/webp" width="800" height="1400" />
+        <source media="(max-width: 600px)" srcset="/assets/img/blog/ion-transport-recombination-v1-mobile.jpg" type="image/jpeg" width="800" height="1400" />
+        <source srcset="/assets/img/blog/ion-transport-recombination-v1.webp" type="image/webp" />
+        <img src="/assets/img/blog/ion-transport-recombination-v1.jpg" alt="Conceptual ion delivery diagram separating arrival at the working position from opposite-ion recombination and collection on another surface." width="1600" height="1000" loading="lazy" decoding="async" />
+      </picture>
+      <p><em>Original concept diagram. Symbols represent possible processes, not measured ion counts, loss fractions, trajectories or installation dimensions.</em></p>
+
+      <section id="generation-and-arrival">
+        <h2>Separate ion generation from arrival</h2>
+        <p>In an <a href="https://www.jstage.jst.go.jp/article/jasvet/33/1/33_49/_article/-char/en" target="_blank" rel="noopener noreferrer">AC-ionizer experiment by Suzuki and Yosimizu</a>, the researchers distinguished emitter current from current associated with ions reaching the working area. Their transport-efficiency definition compared arriving and generated ion quantities.</p>
+        <p>The distinction matters when reading a proposal: a source quantity and an arrival quantity describe different locations. The paper's particular apparatus and operating conditions do not establish a preferred frequency, airspeed or installation distance for a DGSDK product. Nor should an unspecified power-supply current be relabeled as delivered ion current.</p>
+      </section>
+      <section id="air-ion-losses">
+        <h2>Recombination happens between opposite ions</h2>
+        <p>Positive and negative air ions can meet and become neutralized. That is ion–ion recombination: those charged carriers are no longer available to reach the intended material. Collection on another surface is a different route; the charge is transferred there.</p>
+        <p><a href="https://acp.copernicus.org/articles/15/7203/2015/acp-15-7203-2015.html" target="_blank" rel="noopener noreferrer">Franchin and colleagues' CERN CLOUD study</a> investigated recombination and treated surface collection and attachment to aerosol particles as other ion losses. The work concerns a controlled atmospheric chamber, not an industrial bar's performance. It supports distinguishing the mechanisms; it does not provide a loss percentage for your line.</p>
+      </section>
+      <section id="connected-processes">
+        <h2>Generation is one part of a connected process</h2>
+        <p>The public abstract of <a href="https://ijpest.com/Contents/13/1/art03.html" target="_blank" rel="noopener noreferrer">Okano and colleagues' AC-ionizer modeling study</a> describes generation, transport, accumulation and recombination as separate processes. Their simulation was compared with experiments over a defined frequency range.</p>
+        <p>This supports treating delivery as a system question, rather than ranking an installation from one source-output figure. It is not a general setting guide. For an application discussion, put the emitter, intended working position, nearby surfaces and actual air arrangement on the same drawing. Keep the proposed arrangement separate from what has actually been measured.</p>
+      </section>
+      <section id="working-position">
+        <h2>Connect the mechanism to a working-position result</h2>
+        <p><a href="https://webstore.iec.ch/en/publication/68397" target="_blank" rel="noopener noreferrer">IEC 61340-4-7:2025</a> covers ionizer offset voltage, or ion balance, and charge-neutralization decay time under specified conditions. Its public scope calls for qualification and verification appropriate to the application.</p>
+        <p>Bring those performance questions back to the proposed working position. Keep a residual-voltage reading on the customer's material identified as a material measurement; it is not the ionizer's ion balance. The <a href="/blog/comparing-ionizer-datasheets">ionizer datasheet comparison</a> explains the separate test-condition questions.</p>
+        <p>A slow or uneven result alone does not identify recombination as its cause. The diagram explains possible processes, not a diagnosis from an unmeasured installation.</p>
+      </section>
+      <section id="location-record">
+        <h2>Keep each observation attached to its location</h2>
+        <p>Use this blank record when a quotation, layout and test report appear to describe different locations. It is a discussion aid, not an adjustment procedure or certification form.</p>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Blank ion generation and delivery review record">
+          <table>
+            <thead><tr><th scope="col">Location or result</th><th scope="col">Information to retain</th><th scope="col">Your reference</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Emitter/source</th><td>Which electrical or ion-output quantity was reported?</td><td>___</td></tr>
+              <tr><th scope="row">Delivery arrangement</th><td>Emitter and working-position drawing; nearby surfaces and air arrangement</td><td>___</td></tr>
+              <tr><th scope="row">Ionizer performance</th><td>Offset and decay results with method, position and conditions</td><td>___</td></tr>
+              <tr><th scope="row">Material observation</th><td>Material identity, measurement location and residual-voltage method</td><td>___</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Leave an unmeasured step open for the supplier or test engineer. For the broader application, see <a href="/guides/how-to-prevent-static">the static-prevention guide</a>; for layout preparation, use <a href="/blog/ionizing-bar-retrofit-planning">the ionizing-bar retrofit checklist</a>.</p>
+      </section>
+      <div class="post-cta">
+        <h2>Discuss the working arrangement</h2>
+        <p>Share the material, line layout, proposed ionizer position and available test record with Shidike. Identify the result you need at the material so the equipment discussion starts from the application.</p>
+        <p><a class="send-cta" href="/products/static-eliminator">Explore Static Eliminators &rarr;</a><a class="send-alt" href="/contact?type=selection&amp;product=Ion%20Transport%20Application%20Review">Discuss your static-control application &rarr;</a></p>
+      </div>
+    </div>
+  </article>
+  <style>
+    .post-col { max-width: 780px; }
+    .post-head { background: #f7f8fa; padding: 48px 0 34px; border-bottom: 1px solid var(--hairline); }
+    .post-head .breadcrumb { font-size: 13px; color: #7d8d97; margin-bottom: 18px; }
+    .post-head .breadcrumb a { color: var(--brand-deep); text-decoration: none; }
+    .post-head .breadcrumb span { margin: 0 8px; }
+    .post-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .blog-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      background: #eef4f8; color: #4a6373; padding: 4px 9px; border-radius: 999px;
+    }
+    .post-head h1 {
+      font-size: clamp(1.7rem, 3.4vw, 2.5rem); line-height: 1.2; font-weight: 800;
+      letter-spacing: -.02em; color: var(--navy); margin: 0 0 14px;
+    }
+    .post-lead { font-size: 1.05rem; line-height: 1.75; color: #46545f; margin: 0 0 18px; }
+    .post-info { display: flex; flex-wrap: wrap; gap: 16px; font-size: 12.5px; color: #8a99a4; }
+
+    .post-body { padding: 34px 0 70px; }
+    .post-figure { display: block; margin: 0 0 30px; }
+    .post-figure img {
+      display: block; width: 100%; height: auto; border: 1px solid var(--hairline); border-radius: 8px;
+    }
+    .post-body h2 {
+      font-size: 1.42rem; font-weight: 700; letter-spacing: -.01em; color: var(--navy);
+      margin: 34px 0 12px;
+    }
+    .post-body p { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 15px; }
+    .post-body a { color: var(--brand-deep); }
+    .post-body h3 {
+      font-size: 1.12rem; font-weight: 700; color: var(--navy); margin: 26px 0 10px;
+    }
+    .post-body ul, .post-body ol { margin: 0 0 15px; padding-left: 22px; }
+    .post-body li { font-size: 16px; line-height: 1.78; color: #3d4a54; margin: 0 0 7px; }
+    .post-body blockquote, .post-body .blog-quote {
+      margin: 0 0 18px; padding: 13px 16px; background: #f2f6f9;
+      border-left: 3px solid var(--brand-deep); border-radius: 0 8px 8px 0;
+    }
+    .post-body .blog-quote p:last-child { margin-bottom: 0; }
+    .post-body .step-block { margin: 0 0 22px; }
+    .post-body .step-num {
+      display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .06em;
+      text-transform: uppercase; background: var(--navy); color: #fff;
+      padding: 4px 10px; border-radius: 999px; margin-bottom: 8px;
+    }
+    .formula {
+      font-size: 1.2rem !important; font-weight: 700; text-align: center; color: var(--navy) !important;
+      background: #f2f6f9; border: 1px solid var(--hairline); border-radius: 8px; padding: 14px;
+    }
+
+    .table-wrap { overflow-x: auto; margin: 0 0 20px; }
+    .post-body table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+    .post-body th, .post-body td {
+      text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--hairline); vertical-align: top;
+    }
+    .post-body thead th { background: #f2f6f9; font-weight: 700; color: var(--navy); }
+    .post-body tbody th { width: 22%; font-weight: 700; color: var(--navy); background: #fafbfc; }
+
+    .faq-list { display: flex; flex-direction: column; margin: 6px 0 0; border-top: 1px solid var(--hairline); }
+    .faq-item { padding: 15px 4px; border-bottom: 1px solid var(--hairline); }
+    .faq-item summary { cursor: pointer; font-weight: 700; color: var(--navy); font-size: 15.5px; }
+    .faq-item p { margin: 10px 0 0; }
+
+    .post-cta {
+      margin-top: 40px; padding: 26px 26px 22px; background: #f7f8fa;
+      border: 1px solid var(--hairline); border-radius: 10px;
+    }
+    .post-cta h2 { margin-top: 0; font-size: 1.25rem; }
+    .send-cta, .send-alt { display: inline-block; font-weight: 700; margin-right: 22px; }
+    @media (max-width: 767px) {
+      .post-body { padding-left: 16px; padding-right: 16px; }
+    }
+  </style>
+</Layout>
