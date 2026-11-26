@@ -43,6 +43,7 @@ backlight panel, LCM module and roll material.
 - [ESD Control Products](https://www.dg-sdk.com/guides/esd-control-products): Buyer's guide.
 - [What Is Web Cleaning](https://www.dg-sdk.com/guides/what-is-web-cleaning): Contact against non-contact dry particle removal, and what a cleaning trial has to record.
 - [Technical Blog](https://www.dg-sdk.com/blog): Application guides for lithium battery, photovoltaic and optical film production.
+- [Surface Particle Sampling: Recovery Checks and Blanks](https://www.dg-sdk.com/blog/surface-particle-sampling-recovery-blanks): Separate sampling recovery from blank background when reviewing surface particle counts, and define which evidence a dry-cleaning trial needs.
 - [Ion Transport and Recombination in Static Eliminators](https://www.dg-sdk.com/blog/ion-transport-recombination-static-eliminators): Follow ion generation, transport and recombination, then separate emitter-output claims from ionizer measurements at the working position.
 - [Filter Efficiency vs Bypass Leakage in a Cleaning System](https://www.dg-sdk.com/blog/filter-efficiency-vs-bypass-leakage): Read filter ratings, installed-system leakage evidence and material-cleaning results separately when evaluating extraction for a dry surface-cleaning line.
 - [Charge Relaxation Time: Why It Is Not an Ionizer Decay Time](https://www.dg-sdk.com/blog/charge-relaxation-time-ionizer-decay): Interpret charge relaxation time with an isolated-sphere concept diagram and a normalized example. Separate a bulk model from film and ionizer measurements.

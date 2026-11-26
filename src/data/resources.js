@@ -10,6 +10,17 @@
 // reword it here too.
 export const posts = [
   {
+    slug: 'surface-particle-sampling-recovery-blanks',
+    category: 'Surface Cleaning',
+    title: 'Surface Particle Sampling: Recovery Checks and Blanks',
+    excerpt: 'Separate sampling recovery from blank background when reviewing surface particle counts, and define which evidence a dry-cleaning trial needs.',
+    date: 'November 27, 2026',
+    datePublished: '2026-11-27',
+    tags: ['Surface Cleaning', 'Particle Sampling', 'Measurement Quality'],
+    image: '/assets/img/blog/sampling-recovery-blank-card-v1',
+    readTime: '3 min read',
+  },
+  {
     slug: 'ion-transport-recombination-static-eliminators',
     category: 'Static Control',
     title: 'Ion Transport and Recombination in Static Eliminators',
